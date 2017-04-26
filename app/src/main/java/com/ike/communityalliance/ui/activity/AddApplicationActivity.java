@@ -87,8 +87,6 @@ public class AddApplicationActivity extends BaseActivity {
 
 
     private void initData() {
-
-
         list = new ArrayList<ApplyListItem>(0);
         list.add(new ApplyListItem("shareApp", "干货分享", R.mipmap.ganhuo, 1, "com.issp.association", fileUtils.getSDPATH() + pageName, "", 0));
         list.add(new ApplyListItem("", "灵感贩卖", R.mipmap.linggan, 1, "com.ike.issp", f.getPath()+"/ISSP%E5%85%B1%E4%BA%AB%E5%B9%B3%E5%8F%B03.0.0.apk"
