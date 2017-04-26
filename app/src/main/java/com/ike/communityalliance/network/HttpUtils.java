@@ -697,4 +697,11 @@ public class HttpUtils {
                 .addParams("userId",userId)
                 .build().execute(callback);
     }
+    //获取首页数据
+    public static void getHomePageData(String url,String userId,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .build().execute(callback);
+    }
 }

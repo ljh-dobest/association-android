@@ -272,7 +272,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/font_20"
+                android:textSize="18sp"
+                android:textColor="@color/col_121212"
                 android:textStyle="bold"
                 android:text="@string/woyaotuijian"/>
             <ImageView
@@ -297,7 +298,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="@dimen/font_20"
+                android:textColor="@color/col_121212"
+                android:textSize="18sp"
                 android:text="我的人脉"/>
             <ImageView
                 android:layout_width="40dp"
@@ -326,7 +328,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="@dimen/font_20"
+                android:textColor="@color/col_121212"
+                android:textSize="18sp"
                 android:text="反馈"/>
             <ImageView
                 android:layout_width="40dp"
@@ -350,7 +353,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="@dimen/font_20"
+                android:textSize="18sp"
+                android:textColor="@color/col_121212"
                 android:text="设置"/>
             <ImageView
                 android:layout_width="40dp"
