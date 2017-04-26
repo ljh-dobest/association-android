@@ -4,6 +4,10 @@
         "source": "E:\\project\\AJTalk\\SmallTalk\\IMKit\\build\\intermediates\\bundles\\debug\\res\\xml\\rc_file_path.xml"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\rc_file_path.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\build\\intermediates\\bundles\\debug\\res\\xml\\rc_file_path.xml"
+    },
+    {
         "merged": "F:\\SmallTalk\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\rc_file_path.xml",
         "source": "F:\\SmallTalk\\IMKit\\build\\intermediates\\bundles\\debug\\res\\xml\\rc_file_path.xml"
     }
