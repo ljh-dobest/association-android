@@ -10,6 +10,7 @@
         android:layout_height="400px"
         app:indicator_width="10dp"
         app:indicator_height="10dp"
+        app:delay_time="2000"
         />
     <RelativeLayout
        android:padding="8dp"

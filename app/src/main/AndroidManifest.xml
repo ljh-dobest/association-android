@@ -81,7 +81,7 @@
         <!-- 高德 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="b33391dfeda238bf662d23c34bdfde07" />
+            android:value="97c1726b2117b4c42fd28113cb7e9248" />
         <!-- 定位需要的服务 -->
         <service android:name="com.amap.api.location.APSService" />
 
@@ -170,7 +170,9 @@
         <activity android:name="com.ike.communityalliance.ui.activity.SettingActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.VerifyRecommedInfoActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.ClaimActiviy" />
-        <activity android:name="com.ike.communityalliance.ui.activity.ClaimInfoActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.ClaimInfoActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
         <activity
             android:name="com.ike.communityalliance.ui.activity.UserDetailActivity"
             android:launchMode="singleTop" />
@@ -218,6 +220,16 @@
         <activity android:name="com.ike.communityalliance.ui.activity.UnreadMessageListActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.ViewPagerActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.PersonalInformationActivity"></activity>
+        <receiver
+            android:exported="true"
+            android:name=".server.DemoNotificationReceiver">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

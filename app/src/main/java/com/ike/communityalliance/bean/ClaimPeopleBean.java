@@ -13,15 +13,24 @@ public class ClaimPeopleBean implements Parcelable {
     private String nickname;
     private String numberId;
     private String userPortraitUrl;
-    private String userId;
+    private String claimNumberId;
+    private String claimNickName;
+    private String claimFullName;
 
-    public ClaimPeopleBean(String recommendId, String fullName, String nickname, String numberId, String userPortraitUrl, String userId) {
+    public ClaimPeopleBean(String recommendId, String fullName, String nickname, String numberId, String userPortraitUrl, String claimNumberId, String claimNickName, String claimFullName) {
         this.recommendId = recommendId;
         this.fullName = fullName;
         this.nickname = nickname;
         this.numberId = numberId;
         this.userPortraitUrl = userPortraitUrl;
-        this.userId = userId;
+        this.claimNumberId = claimNumberId;
+        this.claimNickName = claimNickName;
+        this.claimFullName = claimFullName;
+    }
+
+    public ClaimPeopleBean(String nickname, String userPortraitUrl) {
+        this.nickname = nickname;
+        this.userPortraitUrl = userPortraitUrl;
     }
 
     public String getRecommendId() {
@@ -64,12 +73,28 @@ public class ClaimPeopleBean implements Parcelable {
         this.userPortraitUrl = userPortraitUrl;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getClaimNumberId() {
+        return claimNumberId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setClaimNumberId(String claimNumberId) {
+        this.claimNumberId = claimNumberId;
+    }
+
+    public String getClaimNickName() {
+        return claimNickName;
+    }
+
+    public void setClaimNickName(String claimNickName) {
+        this.claimNickName = claimNickName;
+    }
+
+    public String getClaimFullName() {
+        return claimFullName;
+    }
+
+    public void setClaimFullName(String claimFullName) {
+        this.claimFullName = claimFullName;
     }
 
     @Override
@@ -84,7 +109,9 @@ public class ClaimPeopleBean implements Parcelable {
         dest.writeString(this.nickname);
         dest.writeString(this.numberId);
         dest.writeString(this.userPortraitUrl);
-        dest.writeString(this.userId);
+        dest.writeString(this.claimNumberId);
+        dest.writeString(this.claimNickName);
+        dest.writeString(this.claimFullName);
     }
 
     protected ClaimPeopleBean(Parcel in) {
@@ -93,10 +120,12 @@ public class ClaimPeopleBean implements Parcelable {
         this.nickname = in.readString();
         this.numberId = in.readString();
         this.userPortraitUrl = in.readString();
-        this.userId = in.readString();
+        this.claimNumberId = in.readString();
+        this.claimNickName = in.readString();
+        this.claimFullName = in.readString();
     }
 
-    public static final Parcelable.Creator<ClaimPeopleBean> CREATOR = new Parcelable.Creator<ClaimPeopleBean>() {
+    public static final Creator<ClaimPeopleBean> CREATOR = new Creator<ClaimPeopleBean>() {
         @Override
         public ClaimPeopleBean createFromParcel(Parcel source) {
             return new ClaimPeopleBean(source);

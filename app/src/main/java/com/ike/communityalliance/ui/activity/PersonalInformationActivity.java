@@ -26,6 +26,7 @@ import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.presenter.PersonalInfoEditPresenter;
 import com.ike.communityalliance.utils.DateUtils;
 import com.ike.communityalliance.wedget.CircleImageView;
+import com.ike.mylibrary.util.CommonUtils;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.squareup.picasso.Picasso;
@@ -92,6 +93,8 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
     TextView etPersonalInfoClaimUser;
     @BindView(R.id.tv_personal_info_moreInfo)
     TextView tvPersonalInfoMoreInfo;
+    @BindView(R.id.et_personal_info_email)
+    EditText et_personal_info_email;
     private ArrayList<String> options1Items=new ArrayList<>();
     private ArrayList<String> options2Items=new ArrayList<>();
     private ArrayList<String> options3Items=new ArrayList<>();
@@ -151,6 +154,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         etPersonalInfoMobile.setText(mobile);
         etPersonalInfoRecomendUser.setText(recommendUserId);
         etPersonalInfoClaimUser.setText(claimUserId);
+        et_personal_info_email.setText(email);
         pbPersonalInfoCreditScore.setProgress(Integer.valueOf(creditScore));
         pbPersonalInfoExperience.setProgress( Integer.valueOf(experience));
         tvPersonalInfoContributionScore.setText(contributionScore);
@@ -233,6 +237,11 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                 address=spPersonalInfoProvince.getSelectedItem().toString()+spPersonalInfoCitys.getSelectedItem().toString()+spPersonalInfoCountys.getSelectedItem().toString();
                 birthday=etPersonalInfoBirthday.getText().toString();
                 age=etPersonalInfoAge.getText().toString();
+                email=et_personal_info_email.getText().toString();
+                if (!CommonUtils.isEmail(email)) {
+                    T.showShort(this, "邮箱格式不正确");
+                    return;
+                }
                 if(imgPath.equals("")){
                     userInfo=new UserInfo(userId,nickName,sex,mobile,birthday,address,email,age);
                      postPersonalInfo(userInfo,"1");

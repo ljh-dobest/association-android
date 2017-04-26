@@ -1,8 +1,8 @@
 package com.ike.communityalliance.ui.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +14,23 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.BannerImageLoader;
 import com.ike.communityalliance.adapter.HomePageGVAdapter;
 import com.ike.communityalliance.adapter.HomePageLVAdapter;
+import com.ike.communityalliance.base.BaseMvpFragment;
+import com.ike.communityalliance.bean.AdvsBean;
+import com.ike.communityalliance.bean.HomePageBean;
+import com.ike.communityalliance.constant.Const;
+import com.ike.communityalliance.interfaces.IHomePageView;
+import com.ike.communityalliance.network.HttpUtils;
+import com.ike.communityalliance.presenter.HomePageFragmentPresenter;
 import com.ike.communityalliance.ui.activity.ClaimActiviy;
+import com.ike.mylibrary.util.T;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,7 +40,7 @@ import butterknife.OnClick;
  * Created by just on 2017/3/1.
  */
 
-public class HomeFragment extends Fragment implements AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
+public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
     LinearLayout homepage_lv_header;
     RelativeLayout home_lv_header2;
     Banner homepage_banner;
@@ -42,38 +50,41 @@ public class HomeFragment extends Fragment implements AbsListView.OnScrollListen
     @BindView(R.id.homepage_iv_top)
     ImageView homepage_iv_top;
     private ArrayList<String> imgList;
-    String[] images={"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};
+    private SharedPreferences sp;
+    private String useId;
     private ArrayList<String> data;
+    private List<AdvsBean> advsBeanList;
 private HomePageLVAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            super.onCreateView(inflater,container,savedInstanceState);
         View containerView=inflater.inflate(R.layout.homepage_fragment,container,false);
         homepage_lv_header= (LinearLayout) inflater.inflate(R.layout.homepage_lv_header,null);
         home_lv_header2= (RelativeLayout) inflater.inflate(R.layout.home_lv_header2,null);
         homepage_banner= (Banner) homepage_lv_header.findViewById(R.id.homepage_banner);
         homepage_gv= (GridView) home_lv_header2.findViewById(R.id.homepage_gv);
         ButterKnife.bind(this,containerView);
+        sp =getContext().getSharedPreferences("config",getContext().MODE_PRIVATE);
+        useId=sp.getString(Const.LOGIN_ID,"");
         initView();
+        getHomePageData(useId);
         return  containerView;
     }
 
+    @Override
+    public HomePageFragmentPresenter initPresenter() {
+        return new HomePageFragmentPresenter();
+    }
+
     private void initView() {
-        initBanner();
         initGridView();
         initListView();
     }
 
     private void initListView() {
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            list.add("i");
-        }
         homepage_lv.addHeaderView(homepage_lv_header);
         homepage_lv.addHeaderView(home_lv_header2);
-         adapter=new HomePageLVAdapter(getContext(),list);
+         adapter=new HomePageLVAdapter(getContext());
         homepage_lv.setAdapter(adapter);
         homepage_lv.setOnScrollListener(this);
         homepage_lv.setOnItemClickListener(this);
@@ -86,11 +97,10 @@ private HomePageLVAdapter adapter;
         homepage_gv.setAdapter(new HomePageGVAdapter(getContext(), data));
         homepage_gv.setOnItemClickListener(this);
     }
-
-    private void initBanner() {
+    private void initBanner(List<AdvsBean> advsBeanList) {
         imgList=new ArrayList<>();
-        for (int i = 0; i < images.length; i++) {
-            imgList.add(images[i]);
+        for (int i = 0; i < advsBeanList.size(); i++) {
+            imgList.add(HttpUtils.IMAGE_RUL+advsBeanList.get(i).getArticleImage());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -106,11 +116,6 @@ private HomePageLVAdapter adapter;
                 homepage_lv.smoothScrollToPosition(0);
                 break;
         }
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        homepage_banner.startAutoPlay();
     }
     @Override
     public void onStop() {
@@ -133,7 +138,7 @@ private HomePageLVAdapter adapter;
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(parent.getId()==R.id.homepage_gv){
+        if(parent.getId()== R.id.homepage_gv){
             switch (position) {
                 case 0:
                     startActivity(new Intent(getActivity(), ClaimActiviy.class));
@@ -150,6 +155,32 @@ private HomePageLVAdapter adapter;
         }else{
             //跳到认领信息页面
         }
+
+    }
+
+    @Override
+    public void getHomePageData(String userId) {
+       presenter.getHomePageFragmentData(userId);
+    }
+
+    @Override
+    public void setHomePageData(HomePageBean homePageData) {
+        initBanner(homePageData.getAdvs());
+        adapter.setData(homePageData);
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(String errorString) {
 
     }
 }
