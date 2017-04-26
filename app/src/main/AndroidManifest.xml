@@ -57,6 +57,9 @@
 
     <!-- 控制振动器 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 操作文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- android:authorities="cn.rongcloud.im.FileProvider" -->
     <application
@@ -86,7 +89,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity">
+        <activity android:name="com.ike.communityalliance.ui.activity.AddApplicationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

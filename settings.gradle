@@ -1,1 +1,2 @@
-include ':app', ':IMLib', ':IMKit', ':mylibrary', ':libzxing', ':base-diskcache',':RedPacket'
+include ':app', ':IMLib', ':IMKit', ':mylibrary', ':libzxing', ':base-diskcache', ':RedPacket',
+        ':Libraries:DroidPlugin', ':drygoodsshare', ':crowdfunding', ':inspirationtosell', ':platform'

@@ -18,6 +18,9 @@ import com.ike.communityalliance.exception.CrashHandler;
 import com.ike.communityalliance.message.TalkTalkMessage;
 import com.ike.communityalliance.wedget.RongDatabaseDriver;
 import com.ike.communityalliance.wedget.RongDatabaseFilesProvider;
+import com.liulishuo.filedownloader.FileDownloader;
+import com.morgoo.droidplugin.PluginApplication;
+import com.morgoo.droidplugin.PluginHelper;
 
 import io.rong.imageloader.cache.disc.naming.Md5FileNameGenerator;
 import io.rong.imageloader.core.DisplayImageOptions;
@@ -33,7 +36,7 @@ import io.rong.imlib.ipc.RongExceptionHandler;
  * Created by Min on 2016/11/23.
  */
 
-public class App extends MultiDexApplication {
+public class App extends PluginApplication {
     private static App sInstance;
     private static DisplayImageOptions options;
 
@@ -46,6 +49,8 @@ public class App extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         sInstance=this;
+        FileDownloader.init(getApplicationContext());
+        PluginHelper.getInstance().applicationOnCreate(getBaseContext());
         //
         Stetho.initialize(new Stetho.Initializer(this) {
             @Override
@@ -164,5 +169,10 @@ public class App extends MultiDexApplication {
         super.onTerminate();
         groupsDAO.delete(userid);
         friendInfoDAO.delete(userid);
+    }
+    @Override
+    protected void attachBaseContext(Context base) {
+        PluginHelper.getInstance().applicationAttachBaseContext(base);
+        super.attachBaseContext(base);
     }
 }
