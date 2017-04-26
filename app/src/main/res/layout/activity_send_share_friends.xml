@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_send_share_friends"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ike.communityalliance.ui.activity.SendShareFriendsActivity">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+    android:background="@color/white"
+    android:paddingLeft="20px"
+    android:id="@+id/rl_interestHeader"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_centerVertical="true"
+        android:id="@+id/ll_sendshareFriend_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_sendshareFriend_back"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/btn_back"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/col_10DB9F"
+            android:text="返回"
+            android:textSize="@dimen/font_32"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20px"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_sendshareFriend_public"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="发送"
+      />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/col_333333"/>
+    <EditText
+        android:id="@+id/et_sendshareFriend_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:minLines="8"
+        android:scrollbars="vertical"
+        android:background="@android:drawable/edit_text"
+        >
+    </EditText>
+    <com.ike.communityalliance.wedget.DemoGridView
+        android:id="@+id/gv_sendshareFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp" />
+</com.zhy.autolayout.AutoLinearLayout>

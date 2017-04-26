@@ -1,0 +1,67 @@
+package com.ike.communityalliance.presenter;
+
+import android.content.Context;
+import android.view.ViewGroup;
+
+import com.ike.communityalliance.base.BasePersenter;
+import com.ike.communityalliance.bean.ProvinceBean;
+import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
+import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
+import com.ike.communityalliance.listener.OnVerifyRecommedInfoFinishListener;
+import com.ike.communityalliance.module.VerifyRecommedInfoMoudle;
+
+import java.util.ArrayList;
+
+/**
+ * Created by just on 2017/3/5.
+ */
+
+public class VerifyRecommedInfoPresenter extends BasePersenter<IVerifyRecommedInfoView> implements OnVerifyRecommedInfoFinishListener {
+    private VerifyRecommedInfoMoudle verifyRecommedInfoMoudle;
+    public VerifyRecommedInfoPresenter() {
+        verifyRecommedInfoMoudle=new VerifyRecommedInfoMoudle();
+    }
+    public void postVerifyRecommedInfo(VerifyRecommedInfoBean verifyRecommedInfoBean){
+              verifyRecommedInfoMoudle.verifyRecommedInfo(verifyRecommedInfoBean,this);
+    }
+    public void parserData(Context mcontext, String fileName){
+             verifyRecommedInfoMoudle.getParserData(mcontext,fileName,this);
+    }
+    public void getHobby(ViewGroup group){
+        verifyRecommedInfoMoudle.getHobby(group,this);
+    }
+    @Override
+    public void showTextEmpty() {
+        if (mView!=null){
+            mView.showTextEmpty();
+        }
+    }
+
+    @Override
+    public void succeedToVerifyInfo() {
+        if (mView!=null){
+            mView.succeedVerifyInfo();
+        }
+    }
+
+    @Override
+    public void failedToVerifyInfo(String string) {
+        if (mView!=null){
+            mView.showVerifyInfoError(string);
+        }
+    }
+
+    @Override
+    public void returnParserData(ArrayList<ProvinceBean> data) {
+        if (mView!=null){
+            mView.setProvinceData(data);
+        }
+    }
+
+    @Override
+    public void returnHobby(ArrayList<String> hobbys) {
+        if (mView!=null){
+            mView.setHobby(hobbys);
+        }
+    }
+}

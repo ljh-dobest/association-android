@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="100dp">
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/iv_votedetail_userHeader"
+            android:scaleType="fitCenter"
+            app:riv_corner_radius="8dp"
+            app:riv_tile_mode="repeat"
+            app:riv_oval="false" />
+        <TextView
+            android:layout_toRightOf="@id/iv_votedetail_userHeader"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_votedetail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="王博文儿"/>
+        <TextView
+            android:id="@+id/tv_votedetail_select"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="2017.02.05 15:30"
+            />
+</RelativeLayout>
