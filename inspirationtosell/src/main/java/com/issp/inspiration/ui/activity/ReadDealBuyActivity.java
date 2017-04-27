@@ -38,7 +38,6 @@ import butterknife.OnClick;
 public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadDealBuyInfoPresenter> implements IReadDealBuyView {
 
 
-    DealBuyBean bean;
     @BindView(R.id.lt_main_title_left)
     TextView ltMainTitleLeft;
     @BindView(R.id.lt_main_title)
@@ -90,6 +89,9 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     @BindView(R.id.wv_play)
     WebView wvPlay;
 
+    DealBuyBean bean;
+    String userId;
+    String activesId;
 
     private static final int REQUEST_CODE = 1;
 
@@ -104,16 +106,17 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     private void initData() {
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("");
-        Intent intent = getIntent();
-        bean = (DealBuyBean) intent.getSerializableExtra("bean");
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
+        activesId=intent.getStringExtra("activesId");
         getDealBuy();
     }
 
     private void getDealBuy() {
 
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
-        formData.put("articleId", bean.getId());
+        formData.put("userId", userId);
+        formData.put("articleId", activesId);
         presenter.ReadShareInfoPresenter(formData);
     }
 
@@ -174,7 +177,7 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     @OnClick(R.id.ll_like)
     void likeClick() {
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("articleId", bean.getId());
         formData.put("type", "5");
         formData.put("status", "1");
@@ -221,6 +224,7 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
             llPlay.setVisibility(View.VISIBLE);
             wvPlay.loadData(data.getDealContent(), "text/html; charset=UTF-8", null);
         }
+        data.setUserId(userId);
         bean = data;
     }
 

@@ -55,6 +55,7 @@ public class MInPlatformActivity extends BaseMvpActivity<IMinPlatformListView, M
     private int page = 1;
 
     private boolean isRefresh;
+    String userId;
 
 
     @Override
@@ -76,6 +77,8 @@ public class MInPlatformActivity extends BaseMvpActivity<IMinPlatformListView, M
 
     private void initView() {
 
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
         ltMainTitle.setText("我参与的活动");
         ltMainTitleRight.setVisibility(View.GONE);
         xrefreshview.setPullLoadEnable(true);
@@ -130,7 +133,7 @@ public class MInPlatformActivity extends BaseMvpActivity<IMinPlatformListView, M
     private void initData() {
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("type", "6");
         presenter.platformInfoPresenter(formData);
 
@@ -141,7 +144,8 @@ public class MInPlatformActivity extends BaseMvpActivity<IMinPlatformListView, M
             @Override
             public void onItemClick(View view, PlatformBean data) {
                 Intent intent = new Intent(MInPlatformActivity.this, PlatformParticularsActivity.class);
-                intent.putExtra("bean", data);
+                intent.putExtra("userId",userId);
+                intent.putExtra("activesId",data.getId());
                 startActivity(intent);
             }
         });

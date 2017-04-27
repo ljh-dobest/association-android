@@ -27,6 +27,7 @@ import com.issp.inspiration.ui.activity.CommentMessageActivity;
 import com.issp.inspiration.ui.activity.FeedForCommentActivity;
 import com.issp.inspiration.ui.activity.ReadDealBuyActivity;
 import com.issp.inspiration.utils.DisplayUtils;
+import com.issp.inspiration.utils.PreferenceService;
 import com.issp.inspiration.utils.T;
 import com.issp.inspiration.view.BannerViewPager;
 import com.issp.inspiration.view.CustomGifHeader;
@@ -75,6 +76,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     private int limit = 20;
     private int page = 1;
 
+    private String userId;
+
     private BannerViewPager mBannerViewPager;
     private int[] mImageIds = new int[]{R.mipmap.banner, R.mipmap.banner02};// 测试图片id
 
@@ -87,6 +90,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     }
 
     private void initView() {
+        PreferenceService ps=new PreferenceService(MainActivity.this);
+        userId=ps.getPreferences("loginid");
         lt_main_title.setText("灵感贩卖");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -139,7 +144,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             @Override
             public void onItemClick(View view, DealBuyBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadDealBuyActivity.class);
-                intent.putExtra("bean", bean);
+                intent.putExtra("userId",userId);
+                intent.putExtra("activesId",bean.getId());
                 startActivity(intent);
             }
 
@@ -147,7 +153,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             public void onLikeClick(View view, DealBuyBean bean) {
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", userId);
                 formData.put("articleId", bean.getId());
                 formData.put("type", "5");
                 formData.put("status", "1");
@@ -160,6 +166,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             @Override
             public void onCommentClick(View view, DealBuyBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
+                intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -172,7 +179,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     private void initData() {
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("page", page + "");
         presenter.ShareInfoPresenter(formData);
 

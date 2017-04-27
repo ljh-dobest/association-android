@@ -76,12 +76,15 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
     LinearLayout llComment;
     @BindView(R.id.ll_collect)
     LinearLayout llCollect;
-
-    ShareBean bean;
     @BindView(R.id.iv_image)
     ImageView ivImage;
     @BindView(R.id.wv_cynopsis)
     WebView wvCynopsis;
+
+
+    ShareBean bean;
+    String userId;
+    String activesId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,10 +98,12 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("");
         Intent intent = getIntent();
-        bean = (ShareBean) intent.getSerializableExtra("bean");
+
+        userId=intent.getStringExtra("userId");
+        activesId=intent.getStringExtra("activesId");
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
-        formData.put("shareId", bean.getId());
+        formData.put("userId", userId);
+        formData.put("shareId", activesId);
         presenter.ReadShareInfoPresenter(formData);
     }
 
@@ -126,7 +131,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
     @OnClick(R.id.ll_like)
     void likeClick() {
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("articleId", bean.getId());
         formData.put("type", "3");
         formData.put("status", "1");
@@ -136,6 +141,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
     @OnClick(R.id.ll_comment)
     void commentClick() {
         Intent intent = new Intent(ReadShareActivity.this, FeedForCommentActivity.class);
+        intent.putExtra("userId",userId);
         intent.putExtra("bean", bean);
         startActivity(intent);
     }
@@ -175,6 +181,9 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
                 ivLikeBtn.setImageResource(R.mipmap.img_comments_have_thumb_up_btn);
                 break;
         }
+
+        data.setUserId(userId);
+        bean=data;
     }
 
     @Override

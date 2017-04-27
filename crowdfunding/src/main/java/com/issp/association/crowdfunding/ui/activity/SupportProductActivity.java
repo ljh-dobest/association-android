@@ -70,6 +70,8 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
     private int mLoadCount = 0;
     SupportProductAdapter adapter;
 
+    private String userId;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +81,9 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
     }
 
     private void initView() {
-        bean = (ProductCollectBean) getIntent().getSerializableExtra("bean");
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
+        bean = (ProductCollectBean) intent.getSerializableExtra("bean");
         personList.addAll(bean.getProductReward());
         ltMainTitle.setText(getString(R.string.str_title_support));
 
@@ -133,6 +137,7 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
             @Override
             public void onSupportClick(View view, ProductRewardBean bean) {
                 Intent intent = new Intent(SupportProductActivity.this, AddSupportProjectActivity.class);
+                intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }

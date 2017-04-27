@@ -89,7 +89,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity">
+        <activity android:name="com.ike.communityalliance.ui.activity.AddApplicationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

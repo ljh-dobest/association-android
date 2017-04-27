@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
+import com.issp.association.crowdfunding.bean.ProductCollectBean;
+import com.issp.association.crowdfunding.bean.ProductRewardBean;
 import com.issp.association.crowdfunding.interfaces.IAddSupportProjectView;
 import com.issp.association.crowdfunding.presenters.AddSupportProjectPresenter;
 import com.issp.association.crowdfunding.utils.AMUtils;
@@ -54,6 +56,9 @@ public class AddSupportProjectActivity extends BaseMvpActivity<IAddSupportProjec
     @BindView(R.id.ll_add_address)
     LinearLayout llAddAddress;
 
+    private String userId;
+    private ProductRewardBean bean;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +74,9 @@ public class AddSupportProjectActivity extends BaseMvpActivity<IAddSupportProjec
 
     private void initView() {
         ltMainTitle.setText(getString(R.string.str_add_support_project));
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
+        bean = (ProductRewardBean) intent.getSerializableExtra("bean");
 
     }
 

@@ -108,7 +108,7 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
             @Override
             public void onClick(View v) {
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", bean.getId());
                 formData.put("title", bean.getTitle());
                 formData.put("content", bean.getContent());
                 formData.put("dealContent", bean.getDealContent());

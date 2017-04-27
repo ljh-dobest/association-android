@@ -56,6 +56,8 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
     private boolean isIDCard;
     private boolean isCheckId;
 
+    private String userId;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +67,8 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
     }
 
     private void initData() {
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("身份验证");
         ltMainTitleRight.setCompoundDrawables(null, null, null, null);
@@ -181,7 +185,7 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
         String mobile = etMobile.getText().toString().trim();
 
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("userName", userName);
         formData.put("idcard", idCard);
         formData.put("mobile", mobile);
