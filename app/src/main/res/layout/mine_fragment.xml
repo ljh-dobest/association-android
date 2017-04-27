@@ -58,6 +58,8 @@
             android:background="@color/col_ECEEF0"
             android:layout_height="5dp"/>
         <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:id="@+id/rl_mine_userMsg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -65,14 +67,14 @@
             <com.ike.communityalliance.wedget.XCRoundRectImageView
                 android:layout_marginTop="10dp"
                 android:id="@+id/iv_mine_userIcon"
-                android:layout_centerHorizontal="true"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/default_portrait" />
-            <LinearLayout
-                android:id="@+id/ll_mine_1"
-                android:layout_below="@+id/iv_mine_userIcon"
-                android:layout_centerHorizontal="true"
+            <RelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_mine_userIcon"
+                android:id="@+id/rl_mine_1"
                 android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,28 +87,40 @@
                     android:text="王博文"
                     android:textSize="16sp" />
                 <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/tv_mine_name"
                     android:id="@+id/tv_mine_age"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:text="29岁"/>
                 <ImageView
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/tv_mine_name"
+                    android:layout_toRightOf="@id/tv_mine_age"
+                    android:layout_marginLeft="8dp"
                     android:id="@+id/iv_mine_sex"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@drawable/mine_man"/>
-                </LinearLayout>
+                </RelativeLayout>
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/iv_mine_edit"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/mine_edit"
+                />
+        </RelativeLayout>
             <LinearLayout
-                android:layout_below="@id/ll_mine_1"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_marginLeft="30dp"
                     android:id="@+id/ll_mine_left"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -126,6 +140,7 @@
                             android:text="11111111111"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -139,6 +154,7 @@
                             android:text="孟小宝"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -152,6 +168,7 @@
                             android:text="1382465455454"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -165,6 +182,7 @@
                             android:text="2015-04-22"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -199,6 +217,7 @@
                             android:text="黄金甲"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -212,6 +231,7 @@
                             android:text="孟小宝"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -225,6 +245,7 @@
                             android:text="138"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -240,17 +261,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-
-            <ImageView
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:id="@+id/iv_mine_edit"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/mine_edit"
-                />
-            </RelativeLayout>
         <View
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
@@ -264,15 +274,16 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/mine_recomend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_recomend"
                 />
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:layout_weight="1"
+                android:textSize="15sp"
                 android:textColor="@color/col_121212"
                 android:textStyle="bold"
                 android:text="@string/woyaotuijian"/>
@@ -281,6 +292,40 @@
                 android:layout_height="40dp"
                 android:src="@drawable/rp_arrow"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/col_ECEEF0"/>
+        <LinearLayout
+            android:id="@+id/ll_mine_wasRecomend"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_isrecomend"
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/col_121212"
+                android:textSize="15sp"
+                android:text="已推荐人"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/rp_arrow"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/col_ECEEF0"/>
         <LinearLayout
             android:id="@+id/ll_mine_contacts"
             android:padding="10dp"
@@ -289,17 +334,18 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/mine_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_contacts"
                 />
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:textStyle="bold"
                 android:textColor="@color/col_121212"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:text="我的人脉"/>
             <ImageView
                 android:layout_width="40dp"
@@ -312,6 +358,36 @@
             android:background="@color/col_ECEEF0"
             android:layout_height="10dp"/>
         <LinearLayout
+            android:id="@+id/ll_mine_wallet"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_wallet"
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/col_121212"
+                android:text="钱包"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/rp_arrow"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/col_ECEEF0"/>
+        <LinearLayout
             android:id="@+id/ll_mine_feedback"
             android:padding="10dp"
             android:layout_width="match_parent"
@@ -319,23 +395,28 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/mine_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_feedback"
                 />
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:textStyle="bold"
                 android:textColor="@color/col_121212"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:text="反馈"/>
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/rp_arrow"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/col_ECEEF0"/>
         <LinearLayout
             android:id="@+id/ll_mine_setting"
             android:padding="10dp"
@@ -344,16 +425,17 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/mine_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_setting"
                 />
             <TextView
                 android:layout_marginLeft="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/col_121212"
                 android:text="设置"/>
             <ImageView
