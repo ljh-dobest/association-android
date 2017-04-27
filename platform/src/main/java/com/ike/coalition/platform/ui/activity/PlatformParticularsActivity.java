@@ -75,8 +75,10 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
     @BindView(R.id.ll_handle)
     LinearLayout llHandle;
 
-    Dialog mDialog;
-    PlatformBean bean;
+    private Dialog mDialog;
+    private PlatformBean bean;
+    private String  userId;
+    private String  activesId;
 
     PlatformRegisteredAdapter adapter;
 
@@ -91,10 +93,13 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
     }
 
     private void initData() {
-        bean = (PlatformBean) getIntent().getSerializableExtra("bean");
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
+        activesId=intent.getStringExtra("activesId");
+       // bean = (PlatformBean) getIntent().getSerializableExtra("bean");
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
-        formData.put("activesId", bean.getId());
+        formData.put("userId", userId);
+        formData.put("activesId", activesId);
         presenter.ParticularsPresenter(formData);
     }
 
@@ -120,8 +125,8 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
             @Override
             public void onClick(View v) {
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
-                formData.put("activesId", bean.getId());
+                formData.put("userId", userId);
+                formData.put("activesId", activesId);
                 formData.put("userName", etUserName.getText().toString().trim());
                 formData.put("mobile", etUserName.getText().toString().trim());
                 formData.put("wechat", etUserName.getText().toString().trim());
@@ -139,8 +144,8 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
     @OnClick(R.id.iv_like)
     void onClick(){
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
-        formData.put("articleId",bean.getId());
+        formData.put("userId", userId);
+        formData.put("articleId",activesId);
         formData.put("type","6");
         formData.put("status", bean.getStatus()==0?"1":"0");
         presenter.addUserPraise(formData);
@@ -229,12 +234,14 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
             case R.id.tv_more:
                 Intent intent = new Intent(PlatformParticularsActivity.this, PlatformRegisteredActivity.class);
                 bean.setJoinUsersNumber(joinUsersNumber);
+                intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
                 break;
             case R.id.iv_comment_btn:
                 Intent feedIntent = new Intent(PlatformParticularsActivity.this, FeedForCommentActivity.class);
                 feedIntent.putExtra("bean", bean);
+                feedIntent.putExtra("userId",userId);
                 startActivity(feedIntent);
                 break;
             case R.id.iv_like:

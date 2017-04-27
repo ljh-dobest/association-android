@@ -92,6 +92,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     private String path;
     File file;
 
+    private String userId;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,6 +112,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
 
     private void initView() {
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
         etDealContent.setEditorHeight(300);
         activityAsk.addOnLayoutChangeListener(this);
     }
@@ -212,7 +216,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                                 String path = imageRadioResultEvent.getResult().getOriginalPath();
                                 File file = new File(path);
                                 Map<String, String> params = new HashMap<String, String>(0);
-                                params.put("userId", "111");
+                                params.put("userId", userId);
                                 presenter.uploadPicturesPresenter(params, file, "file");
                             }
                         }).openGallery();
@@ -275,14 +279,14 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         }
         if (isRelease) {
             Map<String, String> formData = new HashMap<String, String>(0);
-            formData.put("userId", "111");
+            formData.put("userId", userId);
             formData.put("arctitle", title);
             formData.put("synopsis", content);
             formData.put("shareContent", dealContent);
             presenter.publishAnArticlePresenter(formData, file, "file");
         }else {
             ShareBean bean=new ShareBean();
-            bean.setUserId("111");
+            bean.setUserId(userId);
             bean.setTitle(title);
             bean.setSynopsis(content);
             bean.setContent(dealContent);

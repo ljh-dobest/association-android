@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -49,6 +50,8 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
     private String userName;
     private String pwd;
 
+    public static int MODE = Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,7 +63,7 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
         groupsDAO = new GroupsDAOImpl(getContext());
         friendInfoDAO = new FriendInfoDAOImpl(getContext());
         groupMemberDAO = new GroupMemberDAOImpl(getContext());
-        sharedPreferences = getContext().getSharedPreferences("config", getContext().MODE_PRIVATE);
+        sharedPreferences = getContext().getSharedPreferences("config", MODE);
         editor = sharedPreferences.edit();
         return containerView;
     }

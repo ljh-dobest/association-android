@@ -21,7 +21,7 @@ public class PreferenceService {
     private SharedPreferences sp;
 
     //此为提供方的包名
-    private static String PREFERENCE_PACKAGE="com.example.just.shequnlianmeng";
+    private static String PREFERENCE_PACKAGE="com.ike.communityalliance";
     public static int MODE = Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE;
     public PreferenceService(Activity activity){
         this.activity=activity;
@@ -30,12 +30,18 @@ public class PreferenceService {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        sp=context.getSharedPreferences("ikePS",MODE);
+        MODE=Context.MODE_PRIVATE;
+        sp=context.getSharedPreferences("config",MODE);
+
     }
 
-    //取
-    public String getPreferences() {
-        String content=sp.getString("user","");
+    /**
+     * 取值
+     * @param key
+     * @return
+     */
+    public String getPreferences(String key) {
+        String content=sp.getString(key,"");
         return content;
     }
     /**

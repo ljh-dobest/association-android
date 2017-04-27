@@ -71,7 +71,7 @@ public class GraphicDetailsActivity extends AutoLayoutActivity implements View.O
     private int keyHeight = 0;
     private int goldNum = 0;
 
-
+private String userId;
     private int REQUEST_CONTENT = 200;
 
     @Override
@@ -84,6 +84,8 @@ public class GraphicDetailsActivity extends AutoLayoutActivity implements View.O
         llInsert.addOnLayoutChangeListener(this);
     }
     private void initView(){
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
         ltMainTitleLeft.setText("取消");
         ltMainTitleLeft.setCompoundDrawables(null,null,null,null);
         ltMainTitleRight.setText("保存");
@@ -128,7 +130,7 @@ public class GraphicDetailsActivity extends AutoLayoutActivity implements View.O
                                 String path = imageRadioResultEvent.getResult().getOriginalPath();
                                 File file = new File(path);
                                 Map<String, String> params = new HashMap<String, String>(0);
-                                params.put("userId", "111");
+                                params.put("userId", userId);
                                // presenter.uploadPicturesPresenter(params, file, "file");
                                 HttpUtils.sendFormatPostRequest("/files",params,file,"file", new StringCallback() {
                                     @Override

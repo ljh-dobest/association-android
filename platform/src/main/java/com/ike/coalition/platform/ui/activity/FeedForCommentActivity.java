@@ -68,6 +68,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     FeedForCommentListAdapter adapter;
 
     private PlatformBean bean;
+    private String userId;
 
 
     @Override
@@ -83,6 +84,8 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     private void initView() {
         ltMainTitle.setText("评论列表");
         Intent intent = getIntent();
+
+        userId=intent.getStringExtra("userId");
         bean = (PlatformBean) intent.getSerializableExtra("bean");
 
         xRefreshView.setPullLoadEnable(true);
@@ -136,7 +139,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("articleId", bean.getId());
-        formData.put("userId","111");
+        formData.put("userId",userId);
         formData.put("type","6");
         presenter.FeedCommentInfo(formData);
     }
@@ -161,7 +164,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
                 formData.put("commentId",commentsBean.getId());
             }
             formData.put("articleId", bean.getId());
-            formData.put("userId", "111");
+            formData.put("userId", userId);
             formData.put("type","6");
             formData.put("content", editText.getText().toString().trim());
             presenter.addFeedCommentInfo(formData);
@@ -183,7 +186,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
             public void onLikeClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean bean) {
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", userId);
                 formData.put("commentId",bean.getId());
                 formData.put("status", bean.getLikesStatus()==0?"1":"0");
                 presenter.addCommentLikes(formData);

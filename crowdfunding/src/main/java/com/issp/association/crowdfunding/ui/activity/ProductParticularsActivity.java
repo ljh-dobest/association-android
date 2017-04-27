@@ -54,6 +54,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
     RelativeLayout relativeLayout;
 
     private ProductCollectBean bean;
+    private String userId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,9 +65,11 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
     }
 
     void initData() {
-        bean = (ProductCollectBean) getIntent().getSerializableExtra("bean");
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
+        bean = (ProductCollectBean) intent.getSerializableExtra("bean");
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("articleId", bean.getId());
         formData.put("type", "1");
         presenter.productCommentInfoPresenter(formData);
@@ -80,6 +83,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
     @OnClick(R.id.tv_check_indent)
     void checkIndentClick() {
         Intent intent = new Intent(ProductParticularsActivity.this, SupportProductActivity.class);
+        intent.putExtra("userId",userId);
         intent.putExtra("bean", bean);
         startActivity(intent);
     }
@@ -141,7 +145,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
                 break;
             case R.id.iv_like_btn:
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", userId);
                 formData.put("articleId", bean.getId());
                 formData.put("type", "1");
                 formData.put("status","1");
@@ -149,6 +153,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
                 break;
             case R.id.iv_comment_btn:
                 Intent intent = new Intent(ProductParticularsActivity.this, FeedForCommentActivity.class);
+                intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
                 break;

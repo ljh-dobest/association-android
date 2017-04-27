@@ -68,6 +68,8 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     FeedForCommentListAdapter adapter;
 
     private DealBuyBean bean;
+    private String  userId;
+
 
 
     @Override
@@ -83,6 +85,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     private void initView() {
         ltMainTitle.setText("评论列表");
         Intent intent = getIntent();
+        userId=intent.getStringExtra("userId");
         bean = (DealBuyBean) intent.getSerializableExtra("bean");
 
         xRefreshView.setPullLoadEnable(true);
@@ -136,7 +139,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("articleId", bean.getId());
-        formData.put("userId","111");
+        formData.put("userId",userId);
         formData.put("type","5");
         presenter.FeedCommentInfo(formData);
     }
@@ -161,7 +164,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
                 formData.put("commentId",commentsBean.getId());
             }
             formData.put("articleId", bean.getId());
-            formData.put("userId", "111");
+            formData.put("userId", userId);
             formData.put("type","5");
             formData.put("content", editText.getText().toString().trim());
             presenter.addFeedCommentInfo(formData);
@@ -172,23 +175,23 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     void initItemClick(){
         adapter.setOnItemClickListener(new FeedForCommentListAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean bean) {
+            public void onItemClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean data) {
                 isComment=true;
                 editText.requestFocus();
                 tvSubmitComment.setVisibility(View.VISIBLE);
-                editText.setHint("回复"+bean.getNickname());
+                editText.setHint("回复"+data.getNickname());
             }
 
             @Override
-            public void onLikeClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean bean) {
+            public void onLikeClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean data) {
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
-                formData.put("commentId",bean.getId());
-                formData.put("status", bean.getLikesStatus()==0?"1":"0");
+                formData.put("userId", userId);
+                formData.put("commentId",data.getId());
+                formData.put("status", data.getLikesStatus()==0?"1":"0");
                 presenter.addCommentLikes(formData);
                 FeedForCommentActivity.this.viewHolder=viewHolder;
-                FeedForCommentActivity.this.commentsBean=bean;
+                FeedForCommentActivity.this.commentsBean=data;
             }
         });
     }

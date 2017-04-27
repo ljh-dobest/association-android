@@ -54,6 +54,7 @@ public class PlatformRegisteredActivity extends BaseMvpActivity<IPlatformRegiste
     PlatformBean bean;
     PlatformRegisteredAdapter adapter;
     List<UserBean> personList;
+    private String userId;
 
 
     @Override
@@ -71,6 +72,8 @@ public class PlatformRegisteredActivity extends BaseMvpActivity<IPlatformRegiste
     }
 
     private void initView() {
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
         bean = (PlatformBean) getIntent().getSerializableExtra("bean");
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("已报名（" + bean.getJoinUsersNumber() + "）");
@@ -83,7 +86,7 @@ public class PlatformRegisteredActivity extends BaseMvpActivity<IPlatformRegiste
     private void initData() {
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("activesId", bean.getId());
         presenter.PlatformRegisteredPresenter(formData);
 

@@ -103,11 +103,15 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
     private String path;
     private File file;
 
+    private String userId;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_crowd_funding);
         ButterKnife.bind(this);
+        Intent intent=getIntent();
+        userId=intent.getStringExtra("userId");
         checkedChanged();
         addCommodity();
     }
@@ -245,7 +249,7 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
             T.showLong(AddCrowdFundingActivity.this,"请输入商品");
             return;
         }
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("title", title);
         formData.put("capital", capital);
         formData.put("content", content);
@@ -301,6 +305,7 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
                 break;
             case R.id.ll_product_content:
                 Intent intent = new Intent(AddCrowdFundingActivity.this, GraphicDetailsActivity.class);
+                intent.putExtra("userId",userId);
                 startActivityForResult(intent, REQUEST_CONTENT);
                 break;
             case R.id.iv_add_commodity:

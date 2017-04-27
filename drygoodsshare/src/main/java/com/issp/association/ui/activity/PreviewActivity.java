@@ -16,13 +16,13 @@ import com.issp.association.base.view.BaseMvpActivity;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.interfaces.IPreviewView;
 import com.issp.association.presenters.PreviewPresenter;
-import com.issp.association.presenters.ShareInfoPresenter;
 import com.issp.association.utils.DisplayUtils;
 import com.issp.association.utils.T;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,7 +67,7 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
         ButterKnife.bind(this);
-        ltMainTitleRight.setCompoundDrawables(null,null,null,null);
+        ltMainTitleRight.setCompoundDrawables(null, null, null, null);
         initData();
     }
 
@@ -77,7 +77,7 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         ltMainTitleRight.setText("发布");
         tvDealBuyUserName.setText("");
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy.MM.dd hh:mm");
-        String date = sDateFormat.format(new java.util.Date());
+        String date = sDateFormat.format(new Date());
         tvTime.setText(date);
         file = new File(bean.getImage());
         //Picasso.with(PreviewActivity.this).load(file).transform(new CircleTransform()).into(ivDealBuyIcon);
@@ -104,7 +104,7 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
             @Override
             public void onClick(View v) {
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", bean.getUserId());
                 formData.put("arctitle", bean.getTitle());
                 formData.put("synopsis", bean.getContent());
                 formData.put("shareContent", bean.getContent());
@@ -147,8 +147,18 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         return new PreviewPresenter();
     }
 
-    @OnClick(R.id.lt_main_title_right)
-    public void onViewClicked() {
-        showComfirmDialog();
+    @OnClick({R.id.lt_main_title_left, R.id.lt_main_title_right})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.lt_main_title_left:
+                PreviewActivity.this.finish();
+                break;
+            case R.id.lt_main_title_right:
+                showComfirmDialog();
+                break;
+        }
+
     }
+
+
 }

@@ -63,7 +63,7 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
     private int mLoadCount = 0;
     MinShareListAdapter adapter;
 
-
+    String userId;
     private boolean isRefresh;
     private int page = 1;
     private int type;
@@ -85,6 +85,8 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
     }
 
     private void initView() {
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
         xRefreshView.setPullLoadEnable(true);
 
         recyclerView.setHasFixedSize(true);
@@ -134,13 +136,14 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
     private void initData() {
         // isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "110");
+        formData.put("userId", userId);
         // formData.put("page", page + "");
         presenter.MinShareInfoPresenter(formData);
     }
 
     TextView tv_like_btn;
     ImageView iv_like_btn;
+
     private void initClick() {
         adapter.setOnItemClickListener(new MinShareListAdapter.OnItemClickListener() {
             @Override
@@ -151,7 +154,8 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
             @Override
             public void onItemClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MinShareActivity.this, ReadShareActivity.class);
-                intent.putExtra("bean", bean);
+                intent.putExtra("userId",userId);
+                intent.putExtra("activesId",bean.getId());
                 startActivity(intent);
             }
 
@@ -159,7 +163,7 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
             public void onLikeClick(View view, ShareBean bean) {
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", userId);
                 formData.put("articleId", bean.getId());
                 formData.put("type", "3");
                 formData.put("status", "1");
@@ -172,6 +176,7 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
             @Override
             public void onCommentClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MinShareActivity.this, FeedForCommentActivity.class);
+                intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }

@@ -1,5 +1,6 @@
 package com.issp.association.crowdfunding.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -65,6 +66,7 @@ public class MinProductActivity extends BaseMvpActivity<IMinProductListView, Min
     private int type = 1;
 
     private RadioButton radioButtons[];
+    private String userId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,6 +83,8 @@ public class MinProductActivity extends BaseMvpActivity<IMinProductListView, Min
     }
 
     private void initView() {
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
         xRefreshView.setPullLoadEnable(true);
 
         recyclerView.setHasFixedSize(true);
@@ -103,8 +107,8 @@ public class MinProductActivity extends BaseMvpActivity<IMinProductListView, Min
         //并注释掉第四行代码
         CustomerFooter customerFooter = new CustomerFooter(this);
         customerFooter.setRecyclerView(recyclerView);
-       adapter.setCustomLoadMoreView(customerFooter);
-       // adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+        adapter.setCustomLoadMoreView(customerFooter);
+        // adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
         xRefreshView.enableReleaseToLoadMore(true);
         xRefreshView.enableRecyclerViewPullUp(true);
         xRefreshView.enablePullUpWhenLoadCompleted(true);
@@ -114,21 +118,21 @@ public class MinProductActivity extends BaseMvpActivity<IMinProductListView, Min
 
             @Override
             public void onRefresh(boolean isPullDown) {
-                page=1;
-                 initData();
+                page = 1;
+                initData();
             }
 
             @Override
             public void onLoadMore(boolean isSilence) {
                 page++;
-                  initData();
+                initData();
             }
         });
     }
 
     private void initData() {
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "110");
+        formData.put("userId", userId);
         formData.put("type", type + "");
         presenter.ShareInfoPresenter(formData);
     }
@@ -200,14 +204,14 @@ public class MinProductActivity extends BaseMvpActivity<IMinProductListView, Min
         } else {
             xRefreshView.stopLoadMore(true);
         }
-        if (data.size()==0) {
-            if (type==1){
-                T.showShort(MinProductActivity.this,"你还没有发布不过众筹");
-            }else {
-                T.showShort(MinProductActivity.this,"你还没有支持任何众筹");
+        if (data.size() == 0) {
+            if (type == 1) {
+                T.showShort(MinProductActivity.this, "你还没有发布不过众筹");
+            } else {
+                T.showShort(MinProductActivity.this, "你还没有支持任何众筹");
             }
 
-        }else {
+        } else {
             adapter.setData(data);
         }
     }

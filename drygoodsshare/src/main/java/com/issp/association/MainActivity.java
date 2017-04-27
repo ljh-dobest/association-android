@@ -27,6 +27,7 @@ import com.issp.association.ui.activity.FeedForCommentActivity;
 import com.issp.association.ui.activity.MinShareActivity;
 import com.issp.association.ui.activity.ReadShareActivity;
 import com.issp.association.utils.DisplayUtils;
+import com.issp.association.utils.PreferenceService;
 import com.issp.association.utils.T;
 import com.issp.association.view.BannerViewPager;
 import com.issp.association.view.CustomGifHeader;
@@ -69,6 +70,8 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     private int mLoadCount = 0;
 
 
+    private String userId;
+
     private int limit = 20;
     private int page = 1;
 
@@ -84,6 +87,8 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     }
 
     private void initView() {
+        PreferenceService ps=new PreferenceService(MainActivity.this);
+        userId=ps.getPreferences("loginid");
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -136,7 +141,8 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             @Override
             public void onItemClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
-                intent.putExtra("bean", bean);
+                intent.putExtra("userId",userId);
+                intent.putExtra("activesId",bean.getId());
                 startActivity(intent);
             }
 
@@ -144,7 +150,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             public void onLikeClick(View view, ShareBean bean) {
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", userId);
                 formData.put("articleId", bean.getId());
                 formData.put("type", "3");
                 formData.put("status", "1");
@@ -157,6 +163,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             @Override
             public void onCommentClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
+                intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -169,7 +176,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     private void initData() {
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("page", page + "");
         presenter.ShareInfoPresenter(formData);
 
@@ -217,6 +224,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MinShareActivity.class);
+                    intent.putExtra("userId",userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

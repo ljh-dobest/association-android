@@ -30,6 +30,7 @@ import com.ike.coalition.platform.ui.activity.CommentMessageActivity;
 import com.ike.coalition.platform.ui.activity.MInPlatformActivity;
 import com.ike.coalition.platform.ui.activity.PlatformParticularsActivity;
 import com.ike.coalition.platform.utils.DisplayUtils;
+import com.ike.coalition.platform.utils.PreferenceService;
 import com.ike.coalition.platform.utils.T;
 import com.ike.coalition.platform.view.BannerViewPager;
 import com.ike.coalition.platform.view.CustomGifHeader;
@@ -82,6 +83,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     private boolean isRefresh;
     Banner homepage_banner;
 
+    private String userId;
+
     private ArrayList<String> imgList;
     String[] images = {"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
             "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
@@ -106,6 +109,9 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     ImageView iv_like_btn;
 
     private void initView() {
+        PreferenceService ps=new PreferenceService(MainActivity.this);
+        userId=ps.getPreferences("loginid");
+
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
 
@@ -162,7 +168,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     private void initData() {
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("type", "6");
       //  formData.put("limit", limit + "");
         formData.put("page", page + "");
@@ -175,7 +181,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
             @Override
             public void onItemClick(View view, PlatformBean data) {
                 Intent intent = new Intent(MainActivity.this, PlatformParticularsActivity.class);
-                intent.putExtra("bean", data);
+                intent.putExtra("userId",userId);
+                intent.putExtra("activesId",data.getId());
                 startActivity(intent);
             }
         });
@@ -244,6 +251,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
                 public void onClick(View v) {
 
                     Intent intent = new Intent(MainActivity.this, MInPlatformActivity.class);
+                    intent.putExtra("userId",userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

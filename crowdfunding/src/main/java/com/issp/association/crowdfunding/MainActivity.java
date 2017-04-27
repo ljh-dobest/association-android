@@ -29,6 +29,7 @@ import com.issp.association.crowdfunding.ui.activity.MinProductActivity;
 import com.issp.association.crowdfunding.ui.activity.ProductIDCardActivity;
 import com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity;
 import com.issp.association.crowdfunding.utils.DisplayUtils;
+import com.issp.association.crowdfunding.utils.PreferenceService;
 import com.issp.association.crowdfunding.utils.T;
 import com.issp.association.crowdfunding.view.BannerViewPager;
 import com.issp.association.crowdfunding.view.CustomGifHeader;
@@ -84,6 +85,9 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
     Banner homepage_banner;
     private boolean isIDCard;
 
+
+    private String userId;
+
     private ArrayList<String> imgList;
     String[] images = {"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
             "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
@@ -108,6 +112,8 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
     ImageView iv_like_btn;
 
     private void initView() {
+        PreferenceService ps = new PreferenceService(MainActivity.this);
+        userId = ps.getPreferences("loginid");
         lt_main_title.setText(getString(R.string.str_title_main));
 
         xRefreshView.setPullLoadEnable(true);
@@ -164,6 +170,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
             @Override
             public void onItemClick(View view, ProductCollectBean bean) {
                 Intent intent = new Intent(MainActivity.this, ProductParticularsActivity.class);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -172,7 +179,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
             public void onLikeClick(View view, ProductCollectBean bean) {
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", "111");
+                formData.put("userId", userId);
                 formData.put("articleId", bean.getId());
                 formData.put("type", "1");
                 formData.put("status", "1");
@@ -185,6 +192,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
             @Override
             public void onCommentClick(View view, ProductCollectBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
 
@@ -192,16 +200,17 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
         });
         checkIDCard();
     }
-    private void checkIDCard(){
+
+    private void checkIDCard() {
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         presenter.selectProductIdCardPresenter(formData);
     }
 
     private void initData() {
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", "111");
+        formData.put("userId", userId);
         formData.put("type", "1");
         formData.put("limit", limit + "");
         formData.put("page", page + "");
@@ -282,7 +291,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
                 public void onClick(View v) {
 
                     Intent intent = new Intent(MainActivity.this, MinProductActivity.class);
-
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }
@@ -346,11 +355,13 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
 
     @OnClick(R.id.tv_add_product)
     public void onViewClicked() {
-        if (isIDCard){
+        if (isIDCard) {
             Intent intent = new Intent(MainActivity.this, AddCrowdFundingActivity.class);
+            intent.putExtra("userId",userId);
             startActivity(intent);
-        }else {
+        } else {
             Intent intent = new Intent(MainActivity.this, ProductIDCardActivity.class);
+            intent.putExtra("userId",userId);
             startActivity(intent);
         }
     }
