@@ -15,22 +15,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.MinShareActivity"/>
-        <activity android:name=".ui.activity.CommentMessageActivity"/>
+        <activity android:name=".ui.activity.MinShareActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.CommentMessageActivity"
+            android:exported="true"/>
 
         <activity android:name=".ui.activity.FeedForCommentActivity"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden"
+            android:exported="true"/>
 
-        <activity android:name=".ui.activity.ReadShareActivity"/>
-        <activity android:name=".ui.activity.PreviewActivity"/>
-        <activity android:name=".ui.activity.AddArticleActivity"/>
+        <activity android:name=".ui.activity.ReadShareActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.PreviewActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.AddArticleActivity"
+            android:exported="true"/>
 
         <!--选择图片-->
         <activity

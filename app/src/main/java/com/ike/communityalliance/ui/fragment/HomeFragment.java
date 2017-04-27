@@ -25,6 +25,7 @@ import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IHomePageView;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.presenter.HomePageFragmentPresenter;
+import com.ike.communityalliance.ui.activity.AddApplicationActivity;
 import com.ike.communityalliance.ui.activity.ClaimActiviy;
 import com.ike.mylibrary.util.T;
 import com.youth.banner.Banner;
@@ -55,11 +56,15 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     private ArrayList<String> data;
     private List<AdvsBean> advsBeanList;
 private HomePageLVAdapter adapter;
+
+    private ImageView iv_home_appcenter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             super.onCreateView(inflater,container,savedInstanceState);
         View containerView=inflater.inflate(R.layout.homepage_fragment,container,false);
         homepage_lv_header= (LinearLayout) inflater.inflate(R.layout.homepage_lv_header,null);
+        iv_home_appcenter= (ImageView) homepage_lv_header.findViewById(R.id.iv_home_appcenter);
         home_lv_header2= (RelativeLayout) inflater.inflate(R.layout.home_lv_header2,null);
         homepage_banner= (Banner) homepage_lv_header.findViewById(R.id.homepage_banner);
         homepage_gv= (GridView) home_lv_header2.findViewById(R.id.homepage_gv);
@@ -88,6 +93,13 @@ private HomePageLVAdapter adapter;
         homepage_lv.setAdapter(adapter);
         homepage_lv.setOnScrollListener(this);
         homepage_lv.setOnItemClickListener(this);
+        iv_home_appcenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(), AddApplicationActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

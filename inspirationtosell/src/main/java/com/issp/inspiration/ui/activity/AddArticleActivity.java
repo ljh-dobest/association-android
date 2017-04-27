@@ -122,6 +122,9 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         userId=intent.getStringExtra("userId");
         etDealContent.setEditorHeight(300);
         activityAsk.addOnLayoutChangeListener(this);
+
+        etContent.setPlaceholder("请输入简介（40字~140字以内）");
+        etDealContent.setPlaceholder("输入正文");
         initDialog();
     }
 

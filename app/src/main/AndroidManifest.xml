@@ -89,7 +89,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name="com.ike.communityalliance.ui.activity.AddApplicationActivity">
+        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -122,6 +122,7 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.AddApplicationActivity"/>
         <activity
             android:name="com.ike.communityalliance.ui.activity.ConversationActivity"
             android:launchMode="singleTop"

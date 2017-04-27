@@ -113,10 +113,6 @@
                     android:layout_height="2px"
                     android:background="@color/aam_item_border" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="请输入简介（40字~140字以内）" />
 
                 <jp.wasabeef.richeditor.RichEditor
                     android:id="@+id/et_content"
@@ -130,10 +126,7 @@
                     android:layout_height="2px"
                     android:background="@color/aam_item_border" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="在此输入内容将被隐藏，作为贩卖商品" />
+
                 <jp.wasabeef.richeditor.RichEditor
                     android:id="@+id/et_deal_content"
                     android:layout_width="match_parent"
