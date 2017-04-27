@@ -89,7 +89,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name="com.ike.communityalliance.ui.activity.AddApplicationActivity">
+        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -117,7 +117,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="com.min.smalltalk"
+                    android:host="com.ike.communityalliance"
                     android:pathPrefix="/conversationlist"
                     android:scheme="rong" />
             </intent-filter>
@@ -133,7 +133,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="com.min.smalltalk"
+                    android:host="com.ike.communityalliance"
                     android:pathPrefix="/conversation/"
                     android:scheme="rong" />
             </intent-filter>
@@ -149,7 +149,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="com.min.smalltalk"
+                    android:host="com.ike.communityalliance"
                     android:pathPrefix="/subconversationlist"
                     android:scheme="rong" />
             </intent-filter>
