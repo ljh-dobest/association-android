@@ -48,7 +48,7 @@ public class MainRadioGroup extends RadioGroup {
           //      int left = (int) ((getMeasuredWidth() * 0.2f) / 10);
                 int top = (int) (getMeasuredHeight() * 0.15f);
                 int right = (int) (getMeasuredHeight()*0.45f);
-                int bottom = (int) (getMeasuredWidth() /5*0.5f);
+                int bottom = (int) (getMeasuredWidth() /5*0.48f);
           //      System.out.println("right="+right+"bottom"+bottom);
                 LayoutParams lp = new LayoutParams(0, LayoutParams.MATCH_PARENT,1);
                 rb.setLayoutParams(lp);

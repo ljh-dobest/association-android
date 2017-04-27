@@ -9,15 +9,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Process;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ike.communityalliance.R;
+import com.ike.communityalliance.adapter.MainPageAdapter;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.bean.FriendInfo;
 import com.ike.communityalliance.bean.ProvinceBean;
@@ -56,16 +57,12 @@ import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.message.ContactNotificationMessage;
 
+import static com.ike.mylibrary.util.L.isDebug;
 
-public class Main2Activity extends BaseActivity implements RadioGroup.OnCheckedChangeListener, ViewPager.OnPageChangeListener {
-    @BindView(R.id.rb_home)
-    RadioButton rb_home;
-    @BindView(R.id.rb_chat)
-    RadioButton rb_chat;
-    @BindView(R.id.rb_mine)
-    RadioButton rb_mine;
-    @BindView(R.id.rg)
-    RadioGroup radioGroup;
+
+public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChangeListener {
+    @BindView(R.id.tab_layout)
+    TabLayout tabLayout;
     @BindView(R.id.main_vp)
     ViewPager main_vp;
     @BindView(R.id.rl_main_header)
@@ -79,18 +76,17 @@ public class Main2Activity extends BaseActivity implements RadioGroup.OnCheckedC
     ImageView iv_main_chat_more;
     @BindView(R.id.tv_main_title)
     TextView tv_main_title;
-    //弹出艾聊框
-    private ImageView chatMore;
     private ChatPopupWindow chatPopupWindow;
+    private MainPageAdapter adapter;
     /**
      * 会话列表的fragment
      */
     private Fragment mConversationListFragment = null;
-    private boolean isDebug;
     private Context mContext;
     public static final String EXIT = "EXIT";
     private Conversation.ConversationType[] mConversationsTypes = null;
-
+    private Integer[] images={R.drawable.main_home_bg,R.drawable.main_chat_bg,R.drawable.main_mine_bg};
+    private String[] names={"首页","聊天","我的"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,29 +116,31 @@ public class Main2Activity extends BaseActivity implements RadioGroup.OnCheckedC
     private void init() {
         chatPopupWindow = new ChatPopupWindow(mContext);
         Fragment conversationList = initConversationList();
-        radioButtons = new RadioButton[]{rb_home, rb_chat, rb_mine};
         fragments = new ArrayList<Fragment>();
         fragments.add(new HomeFragment());
         fragments.add(conversationList);
         fragments.add(new MineFragment());
-        main_vp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return fragments.get(position);
-            }
-
-            @Override
-            public int getCount() {
-                return fragments.size();
-            }
-        });
-        radioGroup.setOnCheckedChangeListener(this);
-        rb_home.setChecked(true);
+        adapter=new MainPageAdapter(getSupportFragmentManager(),fragments);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        main_vp.setAdapter(adapter);
         main_vp.addOnPageChangeListener(this);
         main_vp.setCurrentItem(0);
+        tabLayout.setupWithViewPager(main_vp,true );
+        initTab();
         initData();
     }
-
+    private void initTab() {
+        int tabCount = tabLayout.getTabCount();//获取TabLayout的个数
+        for (int i=0; i<tabCount; i++) {
+            View view = LayoutInflater.from(this).inflate(R.layout.tab_item,null);
+            ImageView imageView = (ImageView) view.findViewById(R.id.iv_tab);
+            imageView.setImageDrawable(getResources().getDrawable(images[i]));
+            TextView textView = (TextView) view.findViewById(R.id.tv_msg);
+            textView.setText(names[i]);
+            TabLayout.Tab tab = tabLayout.getTabAt(i);////获取TabLayout的子元素Tab
+            tab.setCustomView(view);//设置TabLayout的子元素Tab的布局View
+        }
+    }
     protected void initData() {
 
         final Conversation.ConversationType[] conversationTypes = {
@@ -297,28 +295,7 @@ public class Main2Activity extends BaseActivity implements RadioGroup.OnCheckedC
         });
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        int curItem = 0;
-        reset();
-        RadioButton rb = (RadioButton) group.findViewById(checkedId);
-        rb.setTextColor(checkedcolor);
-        for (int i = 0; i < radioButtons.length; i++) {
-            if (checkedId == radioButtons[i].getId()) {
-                curItem = i;
-            }
-        }
-        main_vp.setCurrentItem(curItem);
-        if (curItem == 1) {
-            iv_main_chat_more.setVisibility(View.VISIBLE);
-            iv_main_recomend.setVisibility(View.GONE);
-            tv_main_title.setText("聊天");
-        }else if(curItem==0){
-            iv_main_chat_more.setVisibility(View.GONE);
-            iv_main_recomend.setVisibility(View.VISIBLE);
-            tv_main_title.setText("社群联盟");
-        }
-    }
+
 
 
     private void reset() {
@@ -356,14 +333,6 @@ public class Main2Activity extends BaseActivity implements RadioGroup.OnCheckedC
 
     @Override
     public void onPageSelected(int position) {
-        RadioButton rb = null;
-        for (int i = 0; i < radioButtons.length; i++) {
-            rb = radioButtons[i];
-            rb.setChecked(false);
-            if (position == i) {
-                rb.setChecked(true);
-            }
-        }
         switch (position) {
             case 0:
                 iv_main_chat_more.setVisibility(View.GONE);
