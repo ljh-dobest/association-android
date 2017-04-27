@@ -15,18 +15,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.PlatformParticularsActivity"/>
-        <activity android:name=".ui.activity.MInPlatformActivity"/>
-        <activity android:name=".ui.activity.PlatformRegisteredActivity"/>
-        <activity android:name=".ui.activity.FeedForCommentActivity"/>
-        <activity android:name=".ui.activity.CommentMessageActivity"/>
+        <activity android:name=".ui.activity.PlatformParticularsActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.MInPlatformActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.PlatformRegisteredActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.FeedForCommentActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.CommentMessageActivity"
+            android:exported="true"/>
         <meta-data
             android:name="design_width"
             android:value="750" />
