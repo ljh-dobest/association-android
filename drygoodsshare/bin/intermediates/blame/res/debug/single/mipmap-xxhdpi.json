@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\close.png",
+        "source": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xxhdpi\\close.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\back.png",
+        "source": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xxhdpi\\back.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\add_association.png",
+        "source": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xxhdpi\\add_association.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\more.png",
+        "source": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xxhdpi\\more.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher_round.png",
+        "source": "E:\\project\\xiangmu\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    }
+]

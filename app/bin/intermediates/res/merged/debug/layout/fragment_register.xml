@@ -1,0 +1,85 @@
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+    <!-- 注册 -->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/ph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <AutoCompleteTextView
+                android:id="@+id/et_re_ph"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/phone"
+                android:inputType="textPhonetic"
+                android:maxLines="1"/>
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="40px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_re_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="昵称"
+                android:imeOptions="actionUnspecified"
+                android:inputType="text"
+                android:maxLines="1"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="40px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_re_pw"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/prompt_password"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="40px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_re_invite_code"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/InviteCode"
+                android:maxLines="1"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:textColor="@color/col_444343"
+            android:background="@drawable/btn_login"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="600px"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            android:textSize="@dimen/font_32"
+            android:text="@string/register"
+            android:textStyle="bold" />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

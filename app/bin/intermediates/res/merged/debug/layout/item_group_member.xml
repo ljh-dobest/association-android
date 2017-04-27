@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="60dp"
+    android:padding="8dp"
+    android:gravity="center_horizontal"
+    android:layout_height="wrap_content">
+        <com.ike.communityalliance.wedget.image.SelectableRoundedImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/siv_group_member_head"
+            android:src="@mipmap/default_fmessage"
+          />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_group_member_name"
+             android:maxLines="1"
+            android:textSize="14sp"
+            android:text="群员"/>
+</LinearLayout>

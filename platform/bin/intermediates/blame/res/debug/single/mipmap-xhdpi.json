@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_have_thumb_up_btn.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_have_thumb_up_btn.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\banner02.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\banner02.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_comment_btn.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_comment_btn.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_collect_btn_.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_collect_btn_.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\add_association.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\add_association.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\more.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\more.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_collect_btn_no.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_collect_btn_no.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_like_btn.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_like_btn.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\header.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\header.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\back.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\back.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\banner.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\banner.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_comments_have_thumb_up_btn.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_comments_have_thumb_up_btn.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_share_btn.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_share_btn.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_like_btn_no.png",
+        "source": "E:\\project\\xiangmu\\association-android\\platform\\src\\main\\res\\mipmap-xhdpi\\img_like_btn_no.png"
+    }
+]

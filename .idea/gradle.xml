@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/IMKit" />
+            <option value="$PROJECT_DIR$/IMLib" />
+            <option value="$PROJECT_DIR$/Libraries" />
+            <option value="$PROJECT_DIR$/Libraries/DroidPlugin" />
+            <option value="$PROJECT_DIR$/RedPacket" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base-diskcache" />
+            <option value="$PROJECT_DIR$/crowdfunding" />
+            <option value="$PROJECT_DIR$/drygoodsshare" />
+            <option value="$PROJECT_DIR$/inspirationtosell" />
+            <option value="$PROJECT_DIR$/libzxing" />
+            <option value="$PROJECT_DIR$/mylibrary" />
+            <option value="$PROJECT_DIR$/platform" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

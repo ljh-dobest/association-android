@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scan_line.png",
+        "source": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scan_line.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\qr_code_bg.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\qr_code_bg.9.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\shadow.png",
+        "source": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\shadow.png"
+    }
+]

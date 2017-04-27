@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:gravity="center_vertical"
+    >
+    <TextView
+        android:id="@+id/tv_replayusers_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:textColor="@color/col_E71717"
+        android:text="周杰伦"
+        />
+    <TextView
+        android:layout_toRightOf="@id/tv_replayusers_nickname"
+        android:id="@+id/tv_replayusers_replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:textColor="@color/col_333333"
+        android:text="回复"
+        />
+    <TextView
+        android:layout_toRightOf="@id/tv_replayusers_replay"
+        android:id="@+id/tv_replayusers_fromNickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24px"
+        android:textColor="@color/col_E71717"
+        android:text="王祖蓝"
+        />
+     <TextView
+         android:layout_toRightOf="@id/tv_replayusers_fromNickname"
+         android:layout_alignTop="@id/tv_replayusers_fromNickname"
+         android:id="@+id/tv_replayusers_content"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="24px"
+         android:textColor="@color/col_333333"
+         android:text=":你好啊"
+         />
+
+</com.zhy.autolayout.AutoRelativeLayout>

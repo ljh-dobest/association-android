@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_vote_create_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28px"
+                android:textColor="@color/col_999999"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:text="选项2:" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
+            <!--<com.min.mylibrary.widget.ClearWriteEditText
+                android:id="@+id/et_vote_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:ems="11"
+                android:inputType="text"
+                android:maxLength="11" />-->
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="34px"
+                android:textColor="@color/col_666666"
+                android:textStyle="bold"
+                android:id="@+id/tv_content"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_vote_create_remove"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/remove_new" />
+    </LinearLayout>
+</RelativeLayout>
