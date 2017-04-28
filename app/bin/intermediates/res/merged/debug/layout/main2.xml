@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_home_page"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
@@ -36,47 +37,39 @@
             android:src="@mipmap/add"/>
     </RelativeLayout>
     <View
-        android:layout_below="@id/rl_main_header"
-        android:id="@+id/main_view_1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/col_ECEEF0"/>
     <android.support.v4.view.ViewPager
-        android:layout_below="@id/main_view_1"
-        android:layout_above="@+id/rg"
         android:id="@+id/main_vp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
+        android:layout_weight="1"
     ></android.support.v4.view.ViewPager>
-    <com.ike.communityalliance.wedget.MainRadioGroup
-        android:layout_alignParentBottom="true"
-        android:id="@+id/rg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        >
-        <RadioButton
-            android:id="@+id/rb_home"
-            android:text="首页"
-            style="@style/radio_button_styles"
-            />
-        <RadioButton
-            android:id="@+id/rb_chat"
-            android:text="聊天"
-            style="@style/radio_button_styles"
-            />
-        <RadioButton
-            android:id="@+id/rb_mine"
-            android:text="我的"
-            style="@style/radio_button_styles"
-            />
-
-    </com.ike.communityalliance.wedget.MainRadioGroup>
     <View
-        android:layout_above="@id/rg"
-        android:id="@+id/main_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#cccccc"
-        />
-</RelativeLayout>
+        android:background="@color/col_ECEEF0" />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabBackground="@android:color/white"
+        app:tabIndicatorColor="@android:color/transparent">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/tab_item" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/tab_item" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout="@layout/tab_item" />
+    </android.support.design.widget.TabLayout>
+</LinearLayout>

@@ -8,8 +8,8 @@ package com.morgoo.droidplugin;
 
 public final class R {
     public static final class drawable {
-        public static final int plugin_activity_loading = 0x7f020100;
-        public static final int plugin_activity_loading_bitmap = 0x7f020101;
+        public static final int plugin_activity_loading = 0x7f0200f7;
+        public static final int plugin_activity_loading_bitmap = 0x7f0200f8;
     }
     public static final class string {
         public static final int service_name_plugin_manager_service = 0x7f0902d1;

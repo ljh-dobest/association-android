@@ -361,6 +361,7 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name="com.ike.communityalliance.ui.activity.MineRecomendActivity" />
         <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapLocationActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapPreviewActivity" />

@@ -15,7 +15,7 @@ import java.lang.Override;
 public class LoginFragment_ViewBinding<T extends LoginFragment> implements Unbinder {
   protected T target;
 
-  private View view2131755937;
+  private View view2131755943;
 
   @UiThread
   public LoginFragment_ViewBinding(final T target, View source) {
@@ -25,7 +25,7 @@ public class LoginFragment_ViewBinding<T extends LoginFragment> implements Unbin
     target.et_userName = Utils.findRequiredViewAsType(source, R.id.et_userName, "field 'et_userName'", EditText.class);
     target.et_pw = Utils.findRequiredViewAsType(source, R.id.et_login_pw, "field 'et_pw'", EditText.class);
     view = Utils.findRequiredView(source, R.id.sign_in_btn, "method 'loginOnClick'");
-    view2131755937 = view;
+    view2131755943 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -43,8 +43,8 @@ public class LoginFragment_ViewBinding<T extends LoginFragment> implements Unbin
     target.et_userName = null;
     target.et_pw = null;
 
-    view2131755937.setOnClickListener(null);
-    view2131755937 = null;
+    view2131755943.setOnClickListener(null);
+    view2131755943 = null;
 
     this.target = null;
   }

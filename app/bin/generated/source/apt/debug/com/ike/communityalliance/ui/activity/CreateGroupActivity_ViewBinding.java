@@ -18,7 +18,7 @@ import java.lang.Override;
 public class CreateGroupActivity_ViewBinding<T extends CreateGroupActivity> implements Unbinder {
   protected T target;
 
-  private View view2131756106;
+  private View view2131756112;
 
   private View view2131755529;
 
@@ -29,7 +29,7 @@ public class CreateGroupActivity_ViewBinding<T extends CreateGroupActivity> impl
     View view;
     view = Utils.findRequiredView(source, R.id.iv_title_back, "field 'ivTitleBack' and method 'onClick'");
     target.ivTitleBack = Utils.castView(view, R.id.iv_title_back, "field 'ivTitleBack'", ImageView.class);
-    view2131756106 = view;
+    view2131756112 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -62,8 +62,8 @@ public class CreateGroupActivity_ViewBinding<T extends CreateGroupActivity> impl
     target.btnCreateGroup = null;
     target.tvTitle = null;
 
-    view2131756106.setOnClickListener(null);
-    view2131756106 = null;
+    view2131756112.setOnClickListener(null);
+    view2131756112 = null;
     view2131755529.setOnClickListener(null);
     view2131755529 = null;
 

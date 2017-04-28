@@ -20,9 +20,9 @@ import java.lang.Override;
 public class VoteDetailActivity_ViewBinding<T extends VoteDetailActivity> implements Unbinder {
   protected T target;
 
-  private View view2131755859;
+  private View view2131755865;
 
-  private View view2131755871;
+  private View view2131755877;
 
   @UiThread
   public VoteDetailActivity_ViewBinding(final T target, View source) {
@@ -32,7 +32,7 @@ public class VoteDetailActivity_ViewBinding<T extends VoteDetailActivity> implem
     target.listView = Utils.findRequiredViewAsType(source, R.id.listView, "field 'listView'", ListView.class);
     view = Utils.findRequiredView(source, R.id.ll_vote_detail_back, "field 'll_vote_detail_back' and method 'onClick'");
     target.ll_vote_detail_back = Utils.castView(view, R.id.ll_vote_detail_back, "field 'll_vote_detail_back'", LinearLayout.class);
-    view2131755859 = view;
+    view2131755865 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -50,7 +50,7 @@ public class VoteDetailActivity_ViewBinding<T extends VoteDetailActivity> implem
     target.tv_vote_detail_title = Utils.findRequiredViewAsType(source, R.id.tv_vote_detail_title, "field 'tv_vote_detail_title'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btn_vote, "field 'btnVote' and method 'onClick'");
     target.btnVote = Utils.castView(view, R.id.btn_vote, "field 'btnVote'", Button.class);
-    view2131755871 = view;
+    view2131755877 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -82,10 +82,10 @@ public class VoteDetailActivity_ViewBinding<T extends VoteDetailActivity> implem
     target.activityVoteDetail = null;
     target.rv_votedetail_joinusers = null;
 
-    view2131755859.setOnClickListener(null);
-    view2131755859 = null;
-    view2131755871.setOnClickListener(null);
-    view2131755871 = null;
+    view2131755865.setOnClickListener(null);
+    view2131755865 = null;
+    view2131755877.setOnClickListener(null);
+    view2131755877 = null;
 
     this.target = null;
   }

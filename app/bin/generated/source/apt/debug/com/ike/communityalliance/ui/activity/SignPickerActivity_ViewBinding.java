@@ -17,9 +17,9 @@ import java.lang.Override;
 public class SignPickerActivity_ViewBinding<T extends SignPickerActivity> implements Unbinder {
   protected T target;
 
-  private View view2131755802;
+  private View view2131755807;
 
-  private View view2131755800;
+  private View view2131755805;
 
   @UiThread
   public SignPickerActivity_ViewBinding(final T target, View source) {
@@ -29,7 +29,7 @@ public class SignPickerActivity_ViewBinding<T extends SignPickerActivity> implem
     target.picker = Utils.findRequiredViewAsType(source, R.id.my_datepicker, "field 'picker'", MaterialCalendarView.class);
     view = Utils.findRequiredView(source, R.id.btn_signpicker_sign, "field 'btn_signpicker_sign' and method 'onSignViewClick'");
     target.btn_signpicker_sign = Utils.castView(view, R.id.btn_signpicker_sign, "field 'btn_signpicker_sign'", Button.class);
-    view2131755802 = view;
+    view2131755807 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -38,7 +38,7 @@ public class SignPickerActivity_ViewBinding<T extends SignPickerActivity> implem
     });
     view = Utils.findRequiredView(source, R.id.tv_signpicker_back, "field 'tv_signpicker_back' and method 'onSignViewClick'");
     target.tv_signpicker_back = Utils.castView(view, R.id.tv_signpicker_back, "field 'tv_signpicker_back'", TextView.class);
-    view2131755800 = view;
+    view2131755805 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -57,10 +57,10 @@ public class SignPickerActivity_ViewBinding<T extends SignPickerActivity> implem
     target.btn_signpicker_sign = null;
     target.tv_signpicker_back = null;
 
-    view2131755802.setOnClickListener(null);
-    view2131755802 = null;
-    view2131755800.setOnClickListener(null);
-    view2131755800 = null;
+    view2131755807.setOnClickListener(null);
+    view2131755807 = null;
+    view2131755805.setOnClickListener(null);
+    view2131755805 = null;
 
     this.target = null;
   }

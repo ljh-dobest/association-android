@@ -48,12 +48,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\gallery_ic_corner_selector.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\c255aaa2976bdebe47be0a0c30e0da7339f57846\\output\\res\\drawable-xxxhdpi-v4\\gallery_ic_corner_selector.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
         "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\gallery_ic_corner_selector.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\c255aaa2976bdebe47be0a0c30e0da7339f57846\\output\\res\\drawable-xxxhdpi-v4\\gallery_ic_corner_selector.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\gallery_ucrop_ic_rotate.png",
@@ -84,12 +84,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\gallery_ucrop_ic_next.png",
         "source": "C:\\Users\\Min\\.android\\build-cache\\c255aaa2976bdebe47be0a0c30e0da7339f57846\\output\\res\\drawable-xxxhdpi-v4\\gallery_ucrop_ic_next.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png",

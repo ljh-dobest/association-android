@@ -21,13 +21,13 @@ import java.lang.Override;
 public class PersonalInformationActivity_ViewBinding<T extends PersonalInformationActivity> implements Unbinder {
   protected T target;
 
-  private View view2131755665;
+  private View view2131755668;
 
-  private View view2131755666;
+  private View view2131755669;
 
-  private View view2131755667;
+  private View view2131755670;
 
-  private View view2131755682;
+  private View view2131755685;
 
   @UiThread
   public PersonalInformationActivity_ViewBinding(final T target, View source) {
@@ -36,7 +36,7 @@ public class PersonalInformationActivity_ViewBinding<T extends PersonalInformati
     View view;
     view = Utils.findRequiredView(source, R.id.et_personal_info_back, "field 'etPersonalInfoBack' and method 'onViewClicked'");
     target.etPersonalInfoBack = Utils.castView(view, R.id.et_personal_info_back, "field 'etPersonalInfoBack'", TextView.class);
-    view2131755665 = view;
+    view2131755668 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -45,7 +45,7 @@ public class PersonalInformationActivity_ViewBinding<T extends PersonalInformati
     });
     view = Utils.findRequiredView(source, R.id.et_personal_info_save, "field 'etPersonalInfoSave' and method 'onViewClicked'");
     target.etPersonalInfoSave = Utils.castView(view, R.id.et_personal_info_save, "field 'etPersonalInfoSave'", TextView.class);
-    view2131755666 = view;
+    view2131755669 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -54,7 +54,7 @@ public class PersonalInformationActivity_ViewBinding<T extends PersonalInformati
     });
     view = Utils.findRequiredView(source, R.id.iv_personal_info_userIcon, "field 'ivPersonalInfoUserIcon' and method 'onViewClicked'");
     target.ivPersonalInfoUserIcon = Utils.castView(view, R.id.iv_personal_info_userIcon, "field 'ivPersonalInfoUserIcon'", CircleImageView.class);
-    view2131755667 = view;
+    view2131755670 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -77,7 +77,7 @@ public class PersonalInformationActivity_ViewBinding<T extends PersonalInformati
     target.spPersonalInfoCountys = Utils.findRequiredViewAsType(source, R.id.sp_personal_info_countys, "field 'spPersonalInfoCountys'", Spinner.class);
     view = Utils.findRequiredView(source, R.id.et_personal_info_birthday, "field 'etPersonalInfoBirthday' and method 'onViewClicked'");
     target.etPersonalInfoBirthday = Utils.castView(view, R.id.et_personal_info_birthday, "field 'etPersonalInfoBirthday'", EditText.class);
-    view2131755682 = view;
+    view2131755685 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -121,14 +121,14 @@ public class PersonalInformationActivity_ViewBinding<T extends PersonalInformati
     target.tvPersonalInfoMoreInfo = null;
     target.et_personal_info_email = null;
 
-    view2131755665.setOnClickListener(null);
-    view2131755665 = null;
-    view2131755666.setOnClickListener(null);
-    view2131755666 = null;
-    view2131755667.setOnClickListener(null);
-    view2131755667 = null;
-    view2131755682.setOnClickListener(null);
-    view2131755682 = null;
+    view2131755668.setOnClickListener(null);
+    view2131755668 = null;
+    view2131755669.setOnClickListener(null);
+    view2131755669 = null;
+    view2131755670.setOnClickListener(null);
+    view2131755670 = null;
+    view2131755685.setOnClickListener(null);
+    view2131755685 = null;
 
     this.target = null;
   }

@@ -13,12 +13,12 @@
 -printconfiguration 'E:\project\xiangmu\association-android\app\bin\intermediates\multi-dex\debug\components.flags'
 
 
-# view AndroidManifest.xml #generated:453
+# view AndroidManifest.xml #generated:454
 -keep class io.rong.push.PushReceiver {
     <init>(...);
 }
 
-# view AndroidManifest.xml #generated:448
+# view AndroidManifest.xml #generated:449
 -keep class io.rong.push.PushService {
     <init>(...);
 }
