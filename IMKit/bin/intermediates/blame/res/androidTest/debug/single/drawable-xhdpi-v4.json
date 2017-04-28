@@ -848,12 +848,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_voice_sent_play2.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f618.png",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f618.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_bubble_white.9.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f48a.png",

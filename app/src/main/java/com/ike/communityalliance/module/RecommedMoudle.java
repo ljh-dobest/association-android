@@ -32,7 +32,7 @@ import okhttp3.Call;
 public class RecommedMoudle {
     public void recommed(RecommendBean recommendBean, final OnRecommedFinishListener listener) {
       if(recommendBean.getUserId().equals("")||recommendBean.getFullName().equals("")||recommendBean.getMobile().equals("")||recommendBean.getSex().equals("")
-              ||recommendBean.getHobby().size()==0||recommendBean.getAddress().size()==0||recommendBean.getRelationship().size()==0
+              ||recommendBean.getHobby().equals("")||recommendBean.getAddress().size()==0||recommendBean.getRelationship().equals("")
               ||recommendBean.getCreditScore().equals("")){
           listener.showTextEmpty();
           return;
@@ -62,7 +62,10 @@ public class RecommedMoudle {
                                   listener.showRecommedError("推荐失败");
                                   break;
                               case 100:
-                                  listener.showRecommedError("账户已存在");
+                                  listener.showRecommedError("有信息为空");
+                                  break;
+                              case 101:
+                                  listener.showRecommedError("数据插入失败");
                                   break;
                               case 300:
                                   listener.showRecommedError("账户已推荐");
@@ -88,33 +91,46 @@ public class RecommedMoudle {
                     }
                 }).start();
      }
-
+    private boolean isFirstHobby=true;
     //获取选择的爱好
     public void getHobby(ViewGroup group, OnRecommedFinishListener listener) {
-        ArrayList<String> hobbys=new ArrayList<>();
+        String hobbys="";
         for (int i = 0; i < group.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) group.getChildAt(i);
             for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
                 RadioButton rb= (RadioButton) ll.getChildAt(j);
-                if (rb.isChecked()){
-                    hobbys.add(rb.getText().toString());
+                if (rb.isChecked()) {
+                    if (isFirstHobby) {
+                        hobbys = rb.getText().toString();
+                        isFirstHobby = false;
+                    } else {
+                        hobbys = hobbys + "," + rb.getText().toString();
+                    }
                 }
             }
         }
+        isFirstHobby=true;
         listener.returnHobbys(hobbys);
     }
+    private boolean isFirstCharacter=true;
     //获取选择的性格
     public void getCharacters(ViewGroup group, OnRecommedFinishListener listener) {
-        ArrayList<String> characters=new ArrayList<>();
+        String characters="";
         for (int i = 0; i < group.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) group.getChildAt(i);
             for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
                 RadioButton rb= (RadioButton) ll.getChildAt(j);
                 if (rb.isChecked()){
-                    characters.add(rb.getText().toString());
+                    if (isFirstCharacter){
+                        characters=rb.getText().toString();
+                        isFirstCharacter=false;
+                    }else{
+                        characters=characters+","+rb.getText().toString();
+                    }
                 }
             }
         }
+        isFirstCharacter=true;
         listener.returnCharacters(characters);
     }
     private HashMap<String,Object> getMap(ArrayList<ProvinceBean> result) {

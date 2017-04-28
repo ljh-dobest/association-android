@@ -18,9 +18,9 @@ import java.lang.Override;
 public class UnreadMessageListActivity_ViewBinding<T extends UnreadMessageListActivity> implements Unbinder {
   protected T target;
 
-  private View view2131755806;
+  private View view2131755811;
 
-  private View view2131755807;
+  private View view2131755812;
 
   @UiThread
   public UnreadMessageListActivity_ViewBinding(final T target, View source) {
@@ -29,7 +29,7 @@ public class UnreadMessageListActivity_ViewBinding<T extends UnreadMessageListAc
     View view;
     view = Utils.findRequiredView(source, R.id.ll_unread_msg_back, "field 'llUnreadMsgBack' and method 'onViewClicked'");
     target.llUnreadMsgBack = Utils.castView(view, R.id.ll_unread_msg_back, "field 'llUnreadMsgBack'", AutoLinearLayout.class);
-    view2131755806 = view;
+    view2131755811 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -38,7 +38,7 @@ public class UnreadMessageListActivity_ViewBinding<T extends UnreadMessageListAc
     });
     view = Utils.findRequiredView(source, R.id.tv_unread_msg_clear, "field 'tvUnreadMsgClear' and method 'onViewClicked'");
     target.tvUnreadMsgClear = Utils.castView(view, R.id.tv_unread_msg_clear, "field 'tvUnreadMsgClear'", TextView.class);
-    view2131755807 = view;
+    view2131755812 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -60,10 +60,10 @@ public class UnreadMessageListActivity_ViewBinding<T extends UnreadMessageListAc
     target.rvUnreadMsg = null;
     target.activity_unread_message_list = null;
 
-    view2131755806.setOnClickListener(null);
-    view2131755806 = null;
-    view2131755807.setOnClickListener(null);
-    view2131755807 = null;
+    view2131755811.setOnClickListener(null);
+    view2131755811 = null;
+    view2131755812.setOnClickListener(null);
+    view2131755812 = null;
 
     this.target = null;
   }

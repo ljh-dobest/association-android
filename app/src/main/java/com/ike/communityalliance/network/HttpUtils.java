@@ -25,8 +25,8 @@ import okhttp3.OkHttpClient;
  */
 public class HttpUtils {
     public static final String CACHE_PATH= Environment.getExternalStorageDirectory().getAbsolutePath()+"/SmallTalk/";
-      public static final String IMAGE_RUL ="http://192.168.0.104:90";
-      public static final String BASE_RUL ="http://192.168.0.104:90/appapi/app";
+      public static final String IMAGE_RUL ="https://sq.bjike.com";
+      public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
 
     /**
      * post请求
@@ -578,22 +578,20 @@ public class HttpUtils {
                 .addParams("type",type)
                 .build().execute(callback);
     }
+    //提交推荐信息
     public static void postRecommend(String url, RecommendBean recommendBean, StringCallback callback){
         Gson gson = new Gson();
-        String hobbys = gson.toJson(recommendBean.getHobby());
-        String relationships = gson.toJson(recommendBean.getRelationship());
         String addressList = gson.toJson(recommendBean.getAddress());
-        String characterlist=gson.toJson(recommendBean.getCharacter());
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",recommendBean.getUserId())
                 .addParams("fullName",recommendBean.getFullName())
                 .addParams("mobile",recommendBean.getMobile())
                 .addParams("sex",recommendBean.getSex())
-                .addParams("hobby",hobbys)
+                .addParams("hobby",recommendBean.getHobby())
                 .addParams("address",addressList)
-                .addParams("relationship",relationships)
-                .addParams("character",characterlist)
+                .addParams("relationship",recommendBean.getRelationship())
+                .addParams("character",recommendBean.getCharacter())
                 .addParams("creditScore",recommendBean.getCreditScore())
                 .addParams("birthday",recommendBean.getBirthday())
                 .addParams("homeplace",recommendBean.getHomeplace())
@@ -605,6 +603,30 @@ public class HttpUtils {
                 .addParams("spouseName",recommendBean.getSpouseName())
                 .addParams("childrenName",recommendBean.getChildrenName())
                 .addParams("childrenSchool",recommendBean.getChildrenSchool())
+                .build().execute(callback);
+    }
+    //提交推荐信息
+    public static void postRecommend2(String url, RecommendBean recommendBean, StringCallback callback){
+        Gson gson = new Gson();
+        String addressList = gson.toJson(recommendBean.getAddress());
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",recommendBean.getUserId())
+                .addParams("fullName",recommendBean.getFullName())
+                .addParams("mobile",recommendBean.getMobile())
+                .addParams("sex",recommendBean.getSex())
+                .addParams("hobby",recommendBean.getHobby())
+                .addParams("address",addressList)
+                .addParams("relationship",recommendBean.getRelationship())
+                .addParams("creditScore",recommendBean.getCreditScore())
+                .addParams("birthday",recommendBean.getBirthday())
+                .addParams("homeplace",recommendBean.getHomeplace())
+                .addParams("character",recommendBean.getCharacter())
+                .addParams("finishSchool",recommendBean.getFinishSchool())
+                .addParams("company",recommendBean.getCompany())
+                .addParams("fatherName",recommendBean.getFatherName())
+                .addParams("motherName",recommendBean.getMotherName())
+                .addParams("marriage",recommendBean.getMarriage())
                 .build().execute(callback);
     }
 

@@ -20,9 +20,9 @@ import java.lang.Override;
 public class ShareFriendContentActivity_ViewBinding<T extends ShareFriendContentActivity> implements Unbinder {
   protected T target;
 
-  private View view2131755779;
-
   private View view2131755784;
+
+  private View view2131755789;
 
   @UiThread
   public ShareFriendContentActivity_ViewBinding(final T target, View source) {
@@ -31,7 +31,7 @@ public class ShareFriendContentActivity_ViewBinding<T extends ShareFriendContent
     View view;
     view = Utils.findRequiredView(source, R.id.ll_sendshareFriendContent_back, "field 'll_sendshareFriendContent_back' and method 'ShareFriendsContentViewClcik'");
     target.ll_sendshareFriendContent_back = Utils.castView(view, R.id.ll_sendshareFriendContent_back, "field 'll_sendshareFriendContent_back'", LinearLayout.class);
-    view2131755779 = view;
+    view2131755784 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -49,7 +49,7 @@ public class ShareFriendContentActivity_ViewBinding<T extends ShareFriendContent
     target.iv_shareFriendContent_discu = Utils.findRequiredViewAsType(source, R.id.iv_shareFriendContent_discu, "field 'iv_shareFriendContent_discu'", TextView.class);
     view = Utils.findRequiredView(source, R.id.iv_shareFriendContent_todicu, "field 'iv_shareFriendContent_todicu' and method 'ShareFriendsContentViewClcik'");
     target.iv_shareFriendContent_todicu = Utils.castView(view, R.id.iv_shareFriendContent_todicu, "field 'iv_shareFriendContent_todicu'", ImageView.class);
-    view2131755784 = view;
+    view2131755789 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -80,10 +80,10 @@ public class ShareFriendContentActivity_ViewBinding<T extends ShareFriendContent
     target.rv_shareFriendContent = null;
     target.rl_shareFriendContent_main = null;
 
-    view2131755779.setOnClickListener(null);
-    view2131755779 = null;
     view2131755784.setOnClickListener(null);
     view2131755784 = null;
+    view2131755789.setOnClickListener(null);
+    view2131755789 = null;
 
     this.target = null;
   }

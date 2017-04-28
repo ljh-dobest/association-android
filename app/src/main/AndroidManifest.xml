@@ -63,7 +63,7 @@
 
     <!-- android:authorities="cn.rongcloud.im.FileProvider" -->
     <application
-        android:name="com.ike.communityalliance.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -89,7 +89,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity">
+        <activity android:name=".ui.activity.LoadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -97,16 +97,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ike.communityalliance.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name="com.ike.communityalliance.ui.Main2Activity"
+            android:name=".ui.Main2Activity"
             android:launchMode="singleTop" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:launchMode="singleTop" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.ConversationListActivity"
+            android:name=".ui.activity.ConversationListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light"
@@ -124,7 +124,7 @@
         </activity>
         <activity android:name=".ui.activity.AddApplicationActivity"/>
         <activity
-            android:name="com.ike.communityalliance.ui.activity.ConversationActivity"
+            android:name=".ui.activity.ConversationActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
@@ -139,9 +139,9 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ike.communityalliance.ui.activity.NewFriendListActivity" />
+        <activity android:name=".ui.activity.NewFriendListActivity" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.SubConversationListActivtiy"
+            android:name=".ui.activity.SubConversationListActivtiy"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
@@ -155,50 +155,51 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ike.communityalliance.ui.activity.ShareFriendsActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.LoginActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.Login2Activity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="com.ike.communityalliance.ui.activity.InteresitingActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.SearchFriendActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.SelectFriendsActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.CreateGroupActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupListActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupDetailActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.PrivateChatDetailActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.SignPickerActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.MineCardActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.RecommendActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.RelationMapActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.FeedBackActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.SettingActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.VerifyRecommedInfoActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.ClaimActiviy" />
-        <activity android:name="com.ike.communityalliance.ui.activity.ClaimInfoActivity"
-            android:windowSoftInputMode="adjustResize"
-            />
+        <activity android:name=".ui.activity.ShareFriendsActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.UserDetailActivity"
+            android:name=".ui.activity.Login2Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.activity.InteresitingActivity" />
+        <activity android:name=".ui.activity.SearchFriendActivity" />
+        <activity android:name=".ui.activity.SelectFriendsActivity" />
+        <activity android:name=".ui.activity.CreateGroupActivity" />
+        <activity android:name=".ui.activity.GroupListActivity" />
+        <activity android:name=".ui.activity.GroupDetailActivity" />
+        <activity android:name=".ui.activity.PrivateChatDetailActivity" />
+        <activity android:name=".ui.activity.SignPickerActivity" />
+        <activity android:name=".ui.activity.MineCardActivity" />
+        <activity android:name=".ui.activity.RecommendActivity" />
+        <activity android:name=".ui.activity.RelationMapActivity" />
+        <activity android:name=".ui.activity.FeedBackActivity" />
+        <activity android:name=".ui.activity.SettingActivity" />
+        <activity android:name=".ui.activity.VerifyRecommedInfoActivity" />
+        <activity android:name=".ui.activity.ClaimActiviy" />
+        <activity
+            android:name=".ui.activity.ClaimInfoActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.activity.UserDetailActivity"
             android:launchMode="singleTop" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupMemberActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.ZxingActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupNoticeActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupFlexibleActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupAddFlexibleActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.FlexibleDetailActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.MyPhoneActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.FriendActivity" />
+        <activity android:name=".ui.activity.GroupMemberActivity" />
+        <activity android:name=".ui.activity.ZxingActivity" />
+        <activity android:name=".ui.activity.GroupNoticeActivity" />
+        <activity android:name=".ui.activity.GroupFlexibleActivity" />
+        <activity android:name=".ui.activity.GroupAddFlexibleActivity" />
+        <activity android:name=".ui.activity.FlexibleDetailActivity" />
+        <activity android:name=".ui.activity.MyPhoneActivity" />
+        <activity android:name=".ui.activity.FriendActivity" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.SelectPicPopupWindow"
+            android:name=".ui.activity.SelectPicPopupWindow"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.ike.communityalliance.ui.activity.IatSettings" />
-        <activity android:name="com.ike.communityalliance.ui.activity.AMAPLocationActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.GroupVoteActivity" />
+        <activity android:name=".ui.activity.IatSettings" />
+        <activity android:name=".ui.activity.AMAPLocationActivity" />
+        <activity android:name=".ui.activity.GroupVoteActivity" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.VoteDetailActivity"
+            android:name=".ui.activity.VoteDetailActivity"
             android:launchMode="singleTop" />
-        <activity android:name="com.ike.communityalliance.ui.activity.AddVoteActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.ClaimFriendsActivity" />
+        <activity android:name=".ui.activity.AddVoteActivity" />
+        <activity android:name=".ui.activity.ClaimFriendsActivity" />
 
         <meta-data
             android:name="design_width"
@@ -207,9 +208,9 @@
             android:name="design_height"
             android:value="1334" />
 
-        <activity android:name="com.ike.communityalliance.ui.activity.CreateInterestGroupActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.LogoActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.SendShareFriendsActivity" />
+        <activity android:name=".ui.activity.CreateInterestGroupActivity" />
+        <activity android:name=".ui.activity.LogoActivity" />
+        <activity android:name=".ui.activity.SendShareFriendsActivity" />
         <activity
             android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
             android:exported="true"
@@ -218,15 +219,16 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.ike.communityalliance.ui.activity.ShareFriendContentActivity"
+            android:name=".ui.activity.ShareFriendContentActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity android:name="com.ike.communityalliance.ui.activity.AddFlexibleContentActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.UnreadMessageListActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.ViewPagerActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.PersonalInformationActivity"></activity>
+        <activity android:name=".ui.activity.AddFlexibleContentActivity" />
+        <activity android:name=".ui.activity.UnreadMessageListActivity" />
+        <activity android:name=".ui.activity.ViewPagerActivity" />
+        <activity android:name=".ui.activity.PersonalInformationActivity" />
+
         <receiver
-            android:exported="true"
-            android:name=".server.DemoNotificationReceiver">
+            android:name=".server.DemoNotificationReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
                 <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
@@ -234,6 +236,8 @@
                 <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".ui.activity.MineRecomendActivity"></activity>
     </application>
 
 </manifest>

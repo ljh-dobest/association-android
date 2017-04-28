@@ -11,10 +11,10 @@ public class RecommendBean {
     private String fullName;
     private String mobile;
     private String sex;
-    private ArrayList<String> hobby;
+    private String hobby;
     private ArrayList<String> address;
-    private ArrayList<String> relationship;
-    private ArrayList<String> character;
+    private String relationship;
+    private String character;
     private String creditScore;
     private String birthday;
     private String homeplace;
@@ -27,7 +27,7 @@ public class RecommendBean {
     private String childrenName;
     private String childrenSchool;
 
-    public RecommendBean(String userId, String fullName, String mobile, String sex, ArrayList<String> hobby, ArrayList<String> address, ArrayList<String> relationship, ArrayList<String> character, String creditScore, String birthday, String homeplace, String finishSchool, String company, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool) {
+    public RecommendBean(String userId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String relationship, String character, String creditScore, String birthday, String homeplace, String finishSchool, String company, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool) {
         this.userId = userId;
         this.fullName = fullName;
         this.mobile = mobile;
@@ -47,14 +47,6 @@ public class RecommendBean {
         this.spouseName = spouseName;
         this.childrenName = childrenName;
         this.childrenSchool = childrenSchool;
-    }
-
-    public ArrayList<String> getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(ArrayList<String> character) {
-        this.character = character;
     }
 
     public String getUserId() {
@@ -89,11 +81,11 @@ public class RecommendBean {
         this.sex = sex;
     }
 
-    public ArrayList<String> getHobby() {
+    public String getHobby() {
         return hobby;
     }
 
-    public void setHobby(ArrayList<String> hobby) {
+    public void setHobby(String hobby) {
         this.hobby = hobby;
     }
 
@@ -105,12 +97,20 @@ public class RecommendBean {
         this.address = address;
     }
 
-    public ArrayList<String> getRelationship() {
+    public String getRelationship() {
         return relationship;
     }
 
-    public void setRelationship(ArrayList<String> relationship) {
+    public void setRelationship(String relationship) {
         this.relationship = relationship;
+    }
+
+    public String getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(String character) {
+        this.character = character;
     }
 
     public String getCreditScore() {

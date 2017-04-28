@@ -4,6 +4,18 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\good.png"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\mined.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\mined.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\homed.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\homed.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\top.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\top.png"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_back.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_back.png"
     },
@@ -20,11 +32,27 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\home.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\home.png"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\send_sharefriends.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\send_sharefriends.png"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\chated.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\chated.png"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ungood.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\ungood.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\mine.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\mine.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\chat.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xxhdpi\\chat.png"
     }
 ]

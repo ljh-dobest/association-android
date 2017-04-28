@@ -17,7 +17,7 @@ import java.lang.Override;
 public class AddApplicationActivity_ViewBinding<T extends AddApplicationActivity> implements Unbinder {
   protected T target;
 
-  private View view2131756404;
+  private View view2131756415;
 
   private View view2131755437;
 
@@ -28,7 +28,7 @@ public class AddApplicationActivity_ViewBinding<T extends AddApplicationActivity
     View view;
     view = Utils.findRequiredView(source, R.id.lt_main_title_left, "field 'ltMainTitleLeft' and method 'leftClick'");
     target.ltMainTitleLeft = Utils.castView(view, R.id.lt_main_title_left, "field 'ltMainTitleLeft'", TextView.class);
-    view2131756404 = view;
+    view2131756415 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -59,8 +59,8 @@ public class AddApplicationActivity_ViewBinding<T extends AddApplicationActivity
     target.ltMainTitleRight = null;
     target.gvApplication = null;
 
-    view2131756404.setOnClickListener(null);
-    view2131756404 = null;
+    view2131756415.setOnClickListener(null);
+    view2131756415 = null;
     ((AdapterView<?>) view2131755437).setOnItemClickListener(null);
     view2131755437 = null;
 

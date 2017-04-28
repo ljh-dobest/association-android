@@ -16,9 +16,9 @@ import java.lang.Override;
 public class ClaimActiviy_ViewBinding<T extends ClaimActiviy> implements Unbinder {
   protected T target;
 
-  private View view2131755882;
+  private View view2131755888;
 
-  private View view2131755883;
+  private View view2131755889;
 
   @UiThread
   public ClaimActiviy_ViewBinding(final T target, View source) {
@@ -28,7 +28,7 @@ public class ClaimActiviy_ViewBinding<T extends ClaimActiviy> implements Unbinde
     target.rv_calim = Utils.findRequiredViewAsType(source, R.id.rv_calim, "field 'rv_calim'", RecyclerView.class);
     view = Utils.findRequiredView(source, R.id.iv_claim_back, "field 'iv_claim_back' and method 'claimViewOnCliick'");
     target.iv_claim_back = Utils.castView(view, R.id.iv_claim_back, "field 'iv_claim_back'", ImageView.class);
-    view2131755882 = view;
+    view2131755888 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -37,7 +37,7 @@ public class ClaimActiviy_ViewBinding<T extends ClaimActiviy> implements Unbinde
     });
     view = Utils.findRequiredView(source, R.id.iv_claim_more, "field 'iv_claim_more' and method 'claimViewOnCliick'");
     target.iv_claim_more = Utils.castView(view, R.id.iv_claim_more, "field 'iv_claim_more'", ImageView.class);
-    view2131755883 = view;
+    view2131755889 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -56,10 +56,10 @@ public class ClaimActiviy_ViewBinding<T extends ClaimActiviy> implements Unbinde
     target.iv_claim_back = null;
     target.iv_claim_more = null;
 
-    view2131755882.setOnClickListener(null);
-    view2131755882 = null;
-    view2131755883.setOnClickListener(null);
-    view2131755883 = null;
+    view2131755888.setOnClickListener(null);
+    view2131755888 = null;
+    view2131755889.setOnClickListener(null);
+    view2131755889 = null;
 
     this.target = null;
   }

@@ -1336,12 +1336,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\src\\main\\res\\drawable-xhdpi\\u1f62f.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_cs_follow.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_cs_follow.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_menu_text.png",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_menu_text.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_cs_follow.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\src\\main\\res\\drawable-xhdpi\\rc_cs_follow.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\rc_ic_warning.png",

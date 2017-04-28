@@ -73,14 +73,14 @@ public class RecommendPresenterImpl extends BasePersenter<IRecommedView> impleme
     }
 
     @Override
-    public void returnHobbys(ArrayList<String> hobbys) {
+    public void returnHobbys(String hobbys) {
         if(mView!=null){
             mView.setHobbys(hobbys);
         }
     }
 
     @Override
-    public void returnCharacters(ArrayList<String> characters) {
+    public void returnCharacters(String characters) {
         if(mView!=null){
             mView.setCharacters(characters);
         }

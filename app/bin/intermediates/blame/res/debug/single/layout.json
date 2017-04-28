@@ -132,6 +132,10 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\mine_fragment.xml"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_mine_recomend.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_mine_recomend.xml"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_new_friends.xml",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\item_new_friends.xml"
     },
@@ -142,6 +146,10 @@
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\mine_was_recomed_rv_item.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\mine_was_recomed_rv_item.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_location_preview_activity.xml",
@@ -1134,6 +1142,10 @@
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_unread_message_list.xml",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_unread_message_list.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\tab_item.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\tab_item.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_albums.xml",
