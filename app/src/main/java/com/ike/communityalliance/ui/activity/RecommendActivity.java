@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,26 +15,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bigkoo.pickerview.TimePickerView;
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseMvpActivity;
 import com.ike.communityalliance.bean.CityBean;
 import com.ike.communityalliance.bean.CountyBean;
 import com.ike.communityalliance.bean.ProvinceBean;
 import com.ike.communityalliance.bean.RecommendBean;
+import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IRecommedView;
 import com.ike.communityalliance.presenter.RecommendPresenterImpl;
+import com.ike.mylibrary.util.T;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
-public class RecommendActivity extends BaseMvpActivity<IRecommedView,RecommendPresenterImpl> implements RadioGroup.OnCheckedChangeListener,IRecommedView, View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class RecommendActivity extends BaseMvpActivity<IRecommedView,RecommendPresenterImpl> implements RadioGroup.OnCheckedChangeListener,IRecommedView,AdapterView.OnItemSelectedListener {
    private final String[] creditScores= new String[]{"100", "90", "80","70","60","50","40","30","20","10"};
     private final String[] relationships=new String[]{"亲人","情侣","同事","校友","老乡"};
     @BindView(R.id.et_recom_name)
@@ -95,10 +97,10 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView,RecommendPr
     private String fullName;
     private String mobile;
 private String sex="1";
-    private ArrayList<String> hobby=new ArrayList<>();
+    private String hobby;
     private ArrayList<String> address=new ArrayList<>();
-    private ArrayList<String> relationship=new ArrayList<>();
-    private ArrayList<String> character=new ArrayList<>();
+    private String relationship;
+    private String character;
     private String creditScore;
     private String birthday;
     private String homeplace;
@@ -118,12 +120,15 @@ private String sex="1";
     private ArrayAdapter county_adapter;
      private ArrayList<ProvinceBean> data;
     private ArrayList<CityBean> citys;
+    private SharedPreferences sp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
         ButterKnife.bind(this);
+        sp =getSharedPreferences("config",MODE_PRIVATE);
+        userId=sp.getString(Const.LOGIN_ID,"");
         presenter.getParserData(this,"data.txt");
         initView();
     }
@@ -147,31 +152,34 @@ private String sex="1";
     public void initView() {
         rg_recom_marriage.setOnCheckedChangeListener(this);
         rg_recom_sex.setOnCheckedChangeListener(this);
-        et_recom_birthday.setOnClickListener(this);
-        btn_recommend.setOnClickListener(this);
         sp_recom_province.setOnItemSelectedListener(this);
         sp_recom_city.setOnItemSelectedListener(this);
         sp_recom_jgprovince.setOnItemSelectedListener(this);
         sp_recom_jgcitys.setOnItemSelectedListener(this);
-        et_recom_relationship.setOnClickListener(this);
-        et_recom_creditScore.setOnClickListener(this);
-        tv_recom_back.setOnClickListener(this);
     }
       //获取控件的信息
     @Override
     public void getViewData() {
-        userId="110";
+        address.clear();
         fullName=et_recom_name.getText().toString().trim();
         mobile=et_recom_mobile.getText().toString().trim();
        address.add(sp_recom_province.getSelectedItem().toString());
        address.add(sp_recom_city.getSelectedItem().toString());
-       address.add(sp_recom_county.getSelectedItem().toString());
-        homeplace=sp_recom_jgprovince.getSelectedItem().toString()+"省"+
-                 sp_recom_jgcitys.getSelectedItem().toString()+"市"+
-                 sp_recom_jgcountys.getSelectedItem().toString()+"县";
+        try {
+            address.add(sp_recom_county.getSelectedItem().toString());
+        }catch (Exception e){
+            address.add("");
+        }
+        address.add("");
+        homeplace=sp_recom_jgprovince.getSelectedItem().toString()+
+                 sp_recom_jgcitys.getSelectedItem().toString();
+        try {
+            homeplace=homeplace+sp_recom_jgcountys.getSelectedItem().toString();
+        }catch (Exception e){
+            homeplace=homeplace+"";
+        }
         getHobbys(rg_recom_like);
         getCharacters(rg_recom_character);
-        relationship.add(et_recom_relationship.getText().toString());
         creditScore=et_recom_creditScore.getText().toString().trim();
         birthday=et_recom_birthday.getText().toString().trim();
         finishSchool=et_recom_school.getText().toString().trim();
@@ -211,8 +219,8 @@ private String sex="1";
     }
 
     @Override
-    public void setHobbys(List<String> hobbys) {
-        hobby= (ArrayList<String>) hobbys;
+    public void setHobbys(String hobbys) {
+        this.hobby=  hobbys;
     }
 
     @Override
@@ -221,8 +229,8 @@ private String sex="1";
     }
 
     @Override
-    public void setCharacters(List<String> characters) {
-      character= (ArrayList<String>) characters;
+    public void setCharacters(String characters) {
+      this.character= characters;
     }
 
     @Override
@@ -249,7 +257,7 @@ private String sex="1";
         }
     }
 
-    @Override
+    @OnClick({R.id.tv_recom_back,R.id.et_recom_birthday,R.id.btn_recommend,R.id.et_recom_relationship,R.id.et_recom_creditScore})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_recom_back:
@@ -268,9 +276,9 @@ private String sex="1";
                 break;
             case R.id.btn_recommend:
                 getViewData();
-                presenter.verifyRecommedInfo(new RecommendBean(userId,fullName,mobile,sex,hobby,address,relationship,character,
-                        creditScore,birthday,homeplace,finishSchool,company,fatherName, motherName,marriage,
-                        spouseName,childrenName,childrenSchool));
+                    presenter.verifyRecommedInfo(new RecommendBean(userId,fullName,mobile,sex,hobby,address,relationship,character,
+                            creditScore,birthday,homeplace,finishSchool,company,fatherName, motherName,marriage,
+                            spouseName,childrenName,childrenSchool));
                 break;
             case R.id.et_recom_relationship:
                 //弹出关系选择框
@@ -280,6 +288,7 @@ private String sex="1";
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         et_recom_relationship.setText(relationships[i]);
+                        relationship=i+"";
                         dialogInterface.dismiss();
                     }
                 });

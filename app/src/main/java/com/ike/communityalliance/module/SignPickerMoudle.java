@@ -11,6 +11,7 @@ import com.ike.communityalliance.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -42,7 +43,8 @@ public class SignPickerMoudle {
                      listener.returnSignPickerData(dateBeanList);
                      break;
                  case 0:
-                     listener.showError("无数据");
+                     List<DateBean> dateBeanList1=new ArrayList<DateBean>();
+                     listener.returnSignPickerData(dateBeanList1);
                      break;
              }
 

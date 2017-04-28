@@ -117,11 +117,11 @@
                 <RadioButton
                     android:id="@+id/rb_recom_like1"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="跳舞" />
+                    android:text="舞蹈" />
                 <RadioButton
                     android:id="@+id/rb_recom_like2"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="唱歌"/>
+                    android:text="音乐"/>
                 <RadioButton
                     android:id="@+id/rb_recom_like3"
                     style="@style/claimInfo_item_rb_styles"
@@ -129,7 +129,7 @@
                 <RadioButton
                     android:id="@+id/rb_recom_like4"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="钢琴"/>
+                    android:text="乐器"/>
             </com.zhy.autolayout.AutoLinearLayout>
             <com.zhy.autolayout.AutoLinearLayout
                 android:layout_marginTop="14px"
@@ -144,15 +144,19 @@
                 <RadioButton
                     android:id="@+id/rb_recom_like5"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="睡觉" />
+                    android:text="游戏" />
                 <RadioButton
                     android:id="@+id/rb_recom_like6"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="看电影"/>
+                    android:text="影视"/>
                 <RadioButton
                     android:id="@+id/rb_recom_like7"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="吃饭打豆豆"/>
+                    android:text="旅行"/>
+                <RadioButton
+                    android:id="@+id/rb_recom_like12"
+                    style="@style/claimInfo_item_rb_styles"
+                    android:text="棋类"/>
             </com.zhy.autolayout.AutoLinearLayout>
             <com.zhy.autolayout.AutoLinearLayout
                 android:layout_marginTop="14px"
@@ -168,19 +172,19 @@
                 <RadioButton
                     android:id="@+id/rb_recom_like8"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="韩流" />
+                    android:text="美食" />
                 <RadioButton
                     android:id="@+id/rb_recom_like9"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="综艺"/>
+                    android:text="社交"/>
                 <RadioButton
                     android:id="@+id/rb_recom_like10"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="看书"/>
+                    android:text="阅读"/>
                 <RadioButton
                     android:id="@+id/rb_recom_like11"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="爬山"/>
+                    android:text="运动"/>
             </com.zhy.autolayout.AutoLinearLayout>
         </RadioGroup>
         <com.zhy.autolayout.AutoLinearLayout
@@ -268,19 +272,19 @@
                 <RadioButton
                     android:id="@+id/rb_recom_character1"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="可爱" />
+                    android:text="死宅" />
                 <RadioButton
                     android:id="@+id/rb_recom_character2"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="逗逼"/>
+                    android:text="幽默"/>
                 <RadioButton
                     android:id="@+id/rb_recom_character3"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="淑女"/>
+                    android:text="漂亮"/>
                 <RadioButton
                     android:id="@+id/rb_recom_character4"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="贤惠"/>
+                    android:text="大方"/>
             </com.zhy.autolayout.AutoLinearLayout>
             <com.zhy.autolayout.AutoLinearLayout
                 android:layout_marginTop="14px"
@@ -295,15 +299,19 @@
                 <RadioButton
                     android:id="@+id/rb_recom_character5"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="努力" />
+                    android:text="急躁" />
                 <RadioButton
                     android:id="@+id/rb_recom_character6"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="好看的"/>
+                    android:text="轻浮"/>
                 <RadioButton
                     android:id="@+id/rb_recom_character7"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="热心帮助人"/>
+                    android:text="花心"/>
+                <RadioButton
+                    android:id="@+id/rb_recom_character12"
+                    style="@style/claimInfo_item_rb_styles"
+                    android:text="逗比"/>
             </com.zhy.autolayout.AutoLinearLayout>
             <com.zhy.autolayout.AutoLinearLayout
                 android:layout_marginTop="14px"
@@ -319,19 +327,19 @@
                 <RadioButton
                     android:id="@+id/rb_recom_character8"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="好学" />
+                    android:text="活泼" />
                 <RadioButton
                     android:id="@+id/rb_recom_character9"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="懒惰"/>
+                    android:text="高冷"/>
                 <RadioButton
                     android:id="@+id/rb_recom_character10"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="活泼"/>
+                    android:text="诚信"/>
                 <RadioButton
                     android:id="@+id/rb_recom_character11"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="爱心"/>
+                    android:text="可爱"/>
             </com.zhy.autolayout.AutoLinearLayout>
         </RadioGroup>
         <com.zhy.autolayout.AutoLinearLayout
@@ -464,6 +472,7 @@
             </com.zhy.autolayout.AutoLinearLayout>
         </com.zhy.autolayout.AutoLinearLayout>
         <Button
+            android:background="@drawable/btn_shape"
             android:id="@+id/btn_recommend"
             android:gravity="center"
             android:layout_width="match_parent"
