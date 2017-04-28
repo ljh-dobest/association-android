@@ -13,7 +13,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.R;
+import com.issp.association.crowdfunding.bean.Code;
+import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.bean.ProductRewardBean;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.issp.association.crowdfunding.utils.T;
@@ -24,6 +28,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.File;
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,6 +90,7 @@ private String userId;
     }
     private void initView(){
         Intent intent=getIntent();
+        ltMainTitle.setText("图文详情");
         userId=intent.getStringExtra("userId");
         ltMainTitleLeft.setText("取消");
         ltMainTitleLeft.setCompoundDrawables(null,null,null,null);
@@ -140,9 +146,26 @@ private String userId;
 
                                     @Override
                                     public void onResponse(String response, int id) {
-                                        String imgUrl = HttpUtils.IMAGE_RUL + response;
-                                        etContent.insertImage(imgUrl, "dachshund");
-                                        T.showShort(GraphicDetailsActivity.this, "上传成功");
+                                        try {
+                                            Gson gson=new Gson();
+                                            Type type = new TypeToken<Code<ProductCollectBean>>() {
+                                            }.getType();
+                                            Code<ProductCollectBean> code = gson.fromJson(response,type);
+                                            switch (code.getCode()){
+                                                case 200:
+                                                    String imgUrl = HttpUtils.IMAGE_RUL + code.getData().getImage();
+                                                    etContent.insertImage(imgUrl, "dachshund");
+                                                    T.showShort(GraphicDetailsActivity.this, "上传成功");
+                                                    break;
+                                                case 0:
+                                                    T.showShort(GraphicDetailsActivity.this, "上传失败");
+                                                    break;
+                                            }
+                                        }catch (Exception e){
+                                            T.showShort(GraphicDetailsActivity.this, "系统异常");
+                                        }
+
+
                                     }
                                 });
                             }

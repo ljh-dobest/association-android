@@ -110,7 +110,7 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
         ComfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);
-        tv_reminder.setText("信息提交成功/n火速审核");
+        tv_reminder.setText("信息提交成功\n火速审核");
         Button btn_comfirm_dialog_comfirm = (Button) window.findViewById(R.id.btn_comfirm_dialog_comfirm);
         ImageView iv_comfirm_dialog_cancel = (ImageView) window.findViewById(R.id.iv_comfirm_dialog_cancel);
         btn_comfirm_dialog_comfirm.setOnClickListener(new View.OnClickListener() {

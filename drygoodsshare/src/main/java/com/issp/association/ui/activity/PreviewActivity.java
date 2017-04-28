@@ -1,6 +1,7 @@
 package com.issp.association.ui.activity;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -62,6 +63,9 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
     ShareBean bean;
     File file;
 
+    AlertDialog comfirmDialog;
+    private ProgressDialog pd;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,13 +92,13 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
     }
 
     public void showComfirmDialog() {
-        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
-        ComfirmDialog.show();
-        Window window = ComfirmDialog.getWindow();
-        WindowManager.LayoutParams lp = ComfirmDialog.getWindow().getAttributes();
+        comfirmDialog = new AlertDialog.Builder(this).create();
+        comfirmDialog.show();
+        Window window = comfirmDialog.getWindow();
+        WindowManager.LayoutParams lp = comfirmDialog.getWindow().getAttributes();
         lp.width = DisplayUtils.dp2px(PreviewActivity.this, 300);//定义宽度
         lp.height = DisplayUtils.dp2px(PreviewActivity.this, 200);//定义高度
-        ComfirmDialog.getWindow().setAttributes(lp);
+        comfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);
         tv_reminder.setText("确定发布内容");
@@ -103,18 +107,23 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         btn_comfirm_dialog_comfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pd = new ProgressDialog(PreviewActivity.this);
+                pd.setTitle("提示");
+                pd.setMessage("正在添加干货分享、、、");
+                pd.show();
                 Map<String, String> formData = new HashMap<String, String>(0);
                 formData.put("userId", bean.getUserId());
                 formData.put("arctitle", bean.getTitle());
                 formData.put("synopsis", bean.getContent());
                 formData.put("shareContent", bean.getContent());
                 presenter.publishAnArticlePresenter(formData, file, "file");
+                comfirmDialog.dismiss();
             }
         });
         iv_comfirm_dialog_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ComfirmDialog.dismiss();
+                comfirmDialog.dismiss();
             }
         });
     }
@@ -131,7 +140,7 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
 
     @Override
     public void publishAnArticleView(String data) {
-
+        pd.dismiss();
         T.showShort(PreviewActivity.this, data);
         App.activityMap.get("AddArticleActivity").finish();
         PreviewActivity.this.finish();

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.bean.ProductRewardBean;
+import com.issp.association.crowdfunding.bean.RewardBean;
 import com.issp.association.crowdfunding.utils.T;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -74,14 +75,14 @@ public class AddCommodityActivity extends AutoLayoutActivity {
             T.showLong(AddCommodityActivity.this,"请输入支持价格");
             return;
         }
-        if (null!=comment){
+        if (null==comment){
             T.showLong(AddCommodityActivity.this,"请输入文字详情");
             return;
         }
-        ProductRewardBean bean = new ProductRewardBean();
-        bean.setRewardTitle(etCommodityTitle.getText().toString().trim());
+        RewardBean bean = new RewardBean();
+        bean.setProductTitle(etCommodityTitle.getText().toString().trim());
         bean.setSupportMoney(Double.parseDouble(etCommoditySupportMoney.getText().toString().trim()));
-        bean.setRewardContent(comment);
+        bean.setProductContent(comment);
         Intent it = new Intent();
         it.putExtra("ProductReward", bean);
         setResult(REQUEST_CODE, it);

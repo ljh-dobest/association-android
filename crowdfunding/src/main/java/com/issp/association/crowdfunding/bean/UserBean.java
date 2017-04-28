@@ -40,6 +40,9 @@ public class UserBean implements Serializable {
     private String userPortraitUrl;
     private String recommendUserId;
 
+    private String userName;
+    private String idcard;
+
     public String getUserId() {
         return userId;
     }
@@ -126,5 +129,21 @@ public class UserBean implements Serializable {
 
     public void setRecommendUserId(String recommendUserId) {
         this.recommendUserId = recommendUserId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getIdcard() {
+        return idcard;
+    }
+
+    public void setIdcard(String idcard) {
+        this.idcard = idcard;
     }
 }

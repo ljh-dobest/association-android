@@ -6,6 +6,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ import com.issp.association.ui.activity.FeedForCommentActivity;
 import com.issp.association.ui.activity.MinShareActivity;
 import com.issp.association.ui.activity.ReadShareActivity;
 import com.issp.association.utils.DisplayUtils;
+import com.issp.association.utils.L;
 import com.issp.association.utils.PreferenceService;
 import com.issp.association.utils.T;
 import com.issp.association.view.BannerViewPager;
@@ -89,6 +91,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     private void initView() {
         PreferenceService ps=new PreferenceService(MainActivity.this);
         userId=ps.getPreferences("loginid");
+        Log.e("userId",userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -275,6 +278,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     public void onViewClicked() {
 
         Intent intent=new Intent(MainActivity.this, AddArticleActivity.class);
+        intent.putExtra("userId",userId);
         startActivity(intent);
     }
 }

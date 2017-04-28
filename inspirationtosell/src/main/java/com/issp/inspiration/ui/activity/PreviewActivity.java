@@ -1,7 +1,7 @@
 package com.issp.inspiration.ui.activity;
 
 import android.app.AlertDialog;
-import android.content.Intent;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -13,14 +13,10 @@ import android.widget.TextView;
 
 import com.issp.inspiration.App;
 import com.issp.inspiration.R;
-import com.issp.inspiration.base.presenter.BasePersenter;
 import com.issp.inspiration.base.view.BaseMvpActivity;
 import com.issp.inspiration.bean.DealBuyBean;
 import com.issp.inspiration.interfaces.IPreviewView;
-import com.issp.inspiration.listeners.OnPreviewListener;
-import com.issp.inspiration.presenters.AddArticlePresenter;
 import com.issp.inspiration.presenters.PreviewPresenter;
-import com.issp.inspiration.utils.CircleTransform;
 import com.issp.inspiration.utils.DisplayUtils;
 import com.issp.inspiration.utils.T;
 import com.squareup.picasso.Picasso;
@@ -65,13 +61,15 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
 
     DealBuyBean bean;
     File file;
+    private AlertDialog comfirmDialog;
+    private ProgressDialog pd;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
         ButterKnife.bind(this);
-        ltMainTitleRight.setCompoundDrawables(null,null,null,null);
+        ltMainTitleRight.setCompoundDrawables(null, null, null, null);
         initData();
     }
 
@@ -92,13 +90,13 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
     }
 
     public void showComfirmDialog() {
-        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
-        ComfirmDialog.show();
-        Window window = ComfirmDialog.getWindow();
-        WindowManager.LayoutParams lp = ComfirmDialog.getWindow().getAttributes();
+        comfirmDialog = new AlertDialog.Builder(this).create();
+        comfirmDialog.show();
+        Window window = comfirmDialog.getWindow();
+        WindowManager.LayoutParams lp = comfirmDialog.getWindow().getAttributes();
         lp.width = DisplayUtils.dp2px(PreviewActivity.this, 300);//定义宽度
         lp.height = DisplayUtils.dp2px(PreviewActivity.this, 200);//定义高度
-        ComfirmDialog.getWindow().setAttributes(lp);
+        comfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);
         tv_reminder.setText("确定发布内容");
@@ -107,6 +105,10 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         btn_comfirm_dialog_comfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pd=new ProgressDialog(PreviewActivity.this);
+                pd.setTitle("提示");
+                pd.setMessage("正在添加灵感贩卖、、、");
+                pd.show();
                 Map<String, String> formData = new HashMap<String, String>(0);
                 formData.put("userId", bean.getId());
                 formData.put("title", bean.getTitle());
@@ -114,12 +116,13 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
                 formData.put("dealContent", bean.getDealContent());
                 formData.put("dealContribution", bean.getDealContribution() + "");
                 presenter.publishAnArticlePresenter(formData, file, "file");
+                comfirmDialog.dismiss();
             }
         });
         iv_comfirm_dialog_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ComfirmDialog.dismiss();
+                comfirmDialog.dismiss();
             }
         });
     }
@@ -136,7 +139,7 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
 
     @Override
     public void publishAnArticleView(String data) {
-
+        pd.dismiss();
         T.showShort(PreviewActivity.this, "灵感贩卖发表成功！");
         App.activityMap.get("AddArticleActivity").finish();
         PreviewActivity.this.finish();

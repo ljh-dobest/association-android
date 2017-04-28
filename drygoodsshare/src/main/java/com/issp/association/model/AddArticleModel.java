@@ -64,7 +64,7 @@ public class AddArticleModel {
      * @param fileName
      * @param listener
      */
-    public void publishAnArticle(Map<String, String> params, File file, String fileName,  final OnAddArticleListListener listener) {
+    public void publishAnArticle(Map<String, String> params, File file, String fileName, final OnAddArticleListListener listener) {
 
         HttpUtils.sendFormatPostRequest("/addShare", params, file, fileName, new StringCallback() {
             @Override
@@ -74,20 +74,24 @@ public class AddArticleModel {
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code>() {
-                }.getType();
-                Code code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.publishAnArticleListener("干货分享发表成功");
-                        break;
-                    case 100:
-                        listener.showError("");
-                        break;
-                    case 0:
-                        listener.showError("干货分享发表失败");
-                        break;
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code>() {
+                    }.getType();
+                    Code code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.publishAnArticleListener("干货分享发表成功");
+                            break;
+                        case 100:
+                            listener.showError("");
+                            break;
+                        case 0:
+                            listener.showError("干货分享发表失败");
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("未知错误");
                 }
             }
         });

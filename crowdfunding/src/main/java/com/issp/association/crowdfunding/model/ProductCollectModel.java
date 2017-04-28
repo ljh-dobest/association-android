@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
+import com.issp.association.crowdfunding.bean.UserBean;
 import com.issp.association.crowdfunding.listeners.OnProductCollectListener;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -61,12 +62,16 @@ public class ProductCollectModel {
             @Override
             public void onResponse(String response, int id) {
                 Gson gson = new Gson();
-                Type type = new TypeToken<Code>() {
+                Type type = new TypeToken<Code<UserBean>>() {
                 }.getType();
-                Code code = gson.fromJson(response, type);
+                Code<UserBean> code = gson.fromJson(response, type);
                 switch (code.getCode()) {
                     case 200:
-                        listener.selectProductIdCard("已验证");
+                        if (null==code.getData().getIdcard()){
+                            listener.showError(code.getMsgs());
+                        }else {
+                            listener.selectProductIdCard("已验证");
+                        }
                         break;
                     case 100:
                         listener.showError(code.getMsgs());

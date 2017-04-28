@@ -18,8 +18,8 @@ import okhttp3.Call;
  */
 
 public class AddProductCollectModel {
-    public void productCollect(Map<String, String> formData, File file, String fileName, final OnAddProductCollectListener listener){
-        HttpUtils.sendFormatPostRequest("/files", formData, file, fileName, new StringCallback() {
+    public void productCollect(Map<String, String> formData, File file, String fileName, final OnAddProductCollectListener listener) {
+        HttpUtils.sendFormatPostRequest("/productCollect", formData, file, fileName, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
                 listener.showError(e.toString());
@@ -27,20 +27,24 @@ public class AddProductCollectModel {
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code>() {
-                }.getType();
-                Code code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.productCollect("众筹添加成功");
-                        break;
-                    case 100:
-                        listener.showError(code.getMsgs());
-                        break;
-                    case 0:
-                        listener.showError("众筹添加失败");
-                        break;
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code>() {
+                    }.getType();
+                    Code code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.productCollect("众筹添加成功");
+                            break;
+                        case 100:
+                            listener.showError(code.getMsgs());
+                            break;
+                        case 0:
+                            listener.showError("众筹添加失败");
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("未知错误");
                 }
             }
         });

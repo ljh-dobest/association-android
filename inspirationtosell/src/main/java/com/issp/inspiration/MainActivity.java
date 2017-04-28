@@ -279,6 +279,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     @OnClick(R.id.tv_add_article)
     public void onViewClicked() {
         Intent intent=new Intent(MainActivity.this, AddArticleActivity.class);
+        intent.putExtra("userId",userId);
         startActivity(intent);
     }
 }

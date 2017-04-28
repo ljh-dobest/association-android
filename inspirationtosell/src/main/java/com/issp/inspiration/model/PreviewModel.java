@@ -41,21 +41,26 @@ public class PreviewModel {
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code>() {
-                }.getType();
-                Code code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.publishAnArticleListener("灵感贩卖发表成功");
-                        break;
-                    case 100:
-                        listener.showError("");
-                        break;
-                    case 0:
-                        listener.showError("灵感贩卖发表失败");
-                        break;
-                }
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code>() {
+                    }.getType();
+                    Code code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.publishAnArticleListener("灵感贩卖发表成功");
+                            break;
+                        case 100:
+                            listener.showError("");
+                            break;
+                        case 0:
+                            listener.showError("灵感贩卖发表失败");
+                            break;
+                    }
+                 } catch (Exception e) {
+                listener.showError("未知错误");
+            }
+
             }
         });
     }

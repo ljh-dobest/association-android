@@ -1,7 +1,7 @@
 package com.issp.association.ui.activity;
 
 
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -9,8 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -91,6 +90,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     private String path;
     File file;
+    android.app.AlertDialog comfirmDialog;
+    private ProgressDialog pd;
 
     private String userId;
 
@@ -112,8 +113,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
 
     private void initView() {
-        Intent intent=getIntent();
-        userId=intent.getStringExtra("userId");
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
         etDealContent.setEditorHeight(300);
         activityAsk.addOnLayoutChangeListener(this);
         etContent.setPlaceholder("请输入简介（40字~140字以内）");
@@ -145,7 +146,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     @Override
     public void publishAnArticleView(String data) {
-
+        pd.dismiss();
         T.showShort(AddArticleActivity.this, data);
         AddArticleActivity.this.finish();
     }
@@ -156,7 +157,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     }
 
     @OnClick({R.id.ll_ask_back, R.id.tv_image, R.id.et_title, R.id.et_content, R.id.et_deal_content, R.id.iv_ask_camera,
-            R.id.iv_ask_picture,  R.id.tv_preview, R.id.tv_ask_release})
+            R.id.iv_ask_picture, R.id.tv_preview, R.id.tv_ask_release})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_ask_back:
@@ -232,14 +233,15 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                 break;
         }
     }
+
     public void showComfirmDialog() {
-        final android.app.AlertDialog ComfirmDialog = new android.app.AlertDialog.Builder(this).create();
-        ComfirmDialog.show();
-        Window window = ComfirmDialog.getWindow();
-        WindowManager.LayoutParams lp = ComfirmDialog.getWindow().getAttributes();
+        comfirmDialog = new android.app.AlertDialog.Builder(this).create();
+        comfirmDialog.show();
+        Window window = comfirmDialog.getWindow();
+        WindowManager.LayoutParams lp = comfirmDialog.getWindow().getAttributes();
         lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 300);//定义宽度
         lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 200);//定义高度
-        ComfirmDialog.getWindow().setAttributes(lp);
+        comfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);
         tv_reminder.setText("确定发布内容");
@@ -249,17 +251,19 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             @Override
             public void onClick(View v) {
 
+                comfirmDialog.dismiss();
                 releaseArticle(true);
             }
         });
         iv_comfirm_dialog_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ComfirmDialog.dismiss();
+                comfirmDialog.dismiss();
             }
         });
     }
-    private void releaseArticle(boolean isRelease){
+
+    private void releaseArticle(boolean isRelease) {
         String title = etTitle.getText().toString().trim();                //标题
         String content = etContent.getHtml().trim();             //非交易内容
         String dealContent = etDealContent.getHtml();         //交易内容
@@ -275,27 +279,32 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             T.showLong(AddArticleActivity.this, "分享文章内容不能为空！");
             return;
         }
-        if (null==file){
+        if (null == file) {
             T.showLong(AddArticleActivity.this, "请选择背景图片！");
             return;
         }
         if (isRelease) {
+            pd=new ProgressDialog(AddArticleActivity.this);
+            pd.setTitle("提示");
+            pd.setMessage("正在添加干货分享、、、");
+            pd.show();
             Map<String, String> formData = new HashMap<String, String>(0);
             formData.put("userId", userId);
             formData.put("arctitle", title);
             formData.put("synopsis", content);
             formData.put("shareContent", dealContent);
+            Log.e("formData",formData.toString());
             presenter.publishAnArticlePresenter(formData, file, "file");
-        }else {
-            ShareBean bean=new ShareBean();
+        } else {
+            ShareBean bean = new ShareBean();
             bean.setUserId(userId);
             bean.setTitle(title);
             bean.setSynopsis(content);
             bean.setContent(dealContent);
             bean.setImage(path);
 
-            Intent intent=new Intent(AddArticleActivity.this,PreviewActivity.class);
-            intent.putExtra("bean",bean);
+            Intent intent = new Intent(AddArticleActivity.this, PreviewActivity.class);
+            intent.putExtra("bean", bean);
             startActivity(intent);
         }
     }

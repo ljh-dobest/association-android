@@ -1,6 +1,7 @@
 package com.issp.inspiration.ui.activity;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -37,7 +38,6 @@ import com.zhy.autolayout.AutoRelativeLayout;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -97,6 +97,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     private String path;
     File file;
+    android.app.AlertDialog comfirmDialog;
+    private ProgressDialog pd;
 
     private String userId;
 
@@ -118,8 +120,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
 
     private void initView() {
-        Intent intent=getIntent();
-        userId=intent.getStringExtra("userId");
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
         etDealContent.setEditorHeight(300);
         activityAsk.addOnLayoutChangeListener(this);
 
@@ -161,7 +163,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     @Override
     public void publishAnArticleView(String data) {
-
+        pd.dismiss();
         T.showShort(AddArticleActivity.this, "灵感贩卖发表成功！");
         AddArticleActivity.this.finish();
     }
@@ -250,14 +252,15 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                 break;
         }
     }
+
     public void showComfirmDialog() {
-        final android.app.AlertDialog ComfirmDialog = new android.app.AlertDialog.Builder(this).create();
-        ComfirmDialog.show();
-        Window window = ComfirmDialog.getWindow();
-        WindowManager.LayoutParams lp = ComfirmDialog.getWindow().getAttributes();
+        comfirmDialog = new android.app.AlertDialog.Builder(this).create();
+        comfirmDialog.show();
+        Window window = comfirmDialog.getWindow();
+        WindowManager.LayoutParams lp = comfirmDialog.getWindow().getAttributes();
         lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 300);//定义宽度
         lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 200);//定义高度
-        ComfirmDialog.getWindow().setAttributes(lp);
+        comfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);
         tv_reminder.setText("确定发布内容");
@@ -268,16 +271,18 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             public void onClick(View v) {
 
                 releaseArticle(true);
+                comfirmDialog.dismiss();
             }
         });
         iv_comfirm_dialog_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ComfirmDialog.dismiss();
+                comfirmDialog.dismiss();
             }
         });
     }
-    private void releaseArticle(boolean isRelease){
+
+    private void releaseArticle(boolean isRelease) {
         String title = etTitle.getText().toString().trim();                //标题
         String content = etContent.getHtml().trim();             //非交易内容
         String dealContent = etDealContent.getHtml();         //交易内容
@@ -294,11 +299,15 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             T.showLong(AddArticleActivity.this, "交易内容为空！");
             return;
         }
-        if (null==file){
+        if (null == file) {
             T.showLong(AddArticleActivity.this, "请选择背景图片！");
             return;
         }
         if (isRelease) {
+            pd=new ProgressDialog(AddArticleActivity.this);
+            pd.setTitle("提示");
+            pd.setMessage("正在添加灵感贩卖、、、");
+            pd.show();
             Map<String, String> formData = new HashMap<String, String>(0);
             formData.put("userId", userId);
             formData.put("title", title);
@@ -306,8 +315,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             formData.put("dealContent", dealContent);
             formData.put("dealContribution", dealContribution);
             presenter.publishAnArticlePresenter(formData, file, "file");
-        }else {
-            DealBuyBean bean=new DealBuyBean();
+        } else {
+            DealBuyBean bean = new DealBuyBean();
             bean.setUserId(userId);
             bean.setTitle(title);
             bean.setContent(content);
@@ -315,11 +324,11 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             bean.setImage(path);
             if (!dealContribution.equals("")) {
                 bean.setDealContribution(Integer.parseInt(dealContribution));
-            }else {
+            } else {
                 bean.setDealContribution(0);
             }
-            Intent intent=new Intent(AddArticleActivity.this,PreviewActivity.class);
-            intent.putExtra("bean",bean);
+            Intent intent = new Intent(AddArticleActivity.this, PreviewActivity.class);
+            intent.putExtra("bean", bean);
             startActivity(intent);
         }
     }

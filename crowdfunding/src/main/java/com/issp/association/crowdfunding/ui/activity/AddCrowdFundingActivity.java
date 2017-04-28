@@ -2,6 +2,7 @@ package com.issp.association.crowdfunding.ui.activity;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -28,6 +29,7 @@ import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.bean.ProductRewardBean;
+import com.issp.association.crowdfunding.bean.RewardBean;
 import com.issp.association.crowdfunding.interfaces.IAddCrowdFundingView;
 import com.issp.association.crowdfunding.presenters.AddProductCollectPresenter;
 import com.issp.association.crowdfunding.utils.DisplayUtils;
@@ -93,25 +95,27 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
     ImageView ivAddCommodity;
 
     private List<View> layoutList = new ArrayList<View>(0);
-    Map<Integer, ProductRewardBean> listBean = new HashMap<Integer, ProductRewardBean>(0);
+    Map<Integer, RewardBean> listBean = new HashMap<Integer, RewardBean>(0);
 
     private int REQUEST_CODE = 1;
     private int REQUEST_CONTENT = 200;
 
-    private int crowdType;
+    private int crowdType=1;
     private String content;
     private String path;
     private File file;
 
     private String userId;
+    private ProgressDialog pd;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_crowd_funding);
         ButterKnife.bind(this);
-        Intent intent=getIntent();
-        userId=intent.getStringExtra("userId");
+        ltMainTitle.setText("发起众筹");
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
         checkedChanged();
         addCommodity();
     }
@@ -120,7 +124,7 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
         rgType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                switch (group.getId()) {
+                switch (checkedId) {
                     case R.id.rb_product:
                         crowdType = 1;
                         break;
@@ -208,6 +212,7 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
             @Override
             public void onClick(View v) {
                 submit();
+                ComfirmDialog.dismiss();
             }
         });
         iv_comfirm_dialog_cancel.setOnClickListener(new View.OnClickListener() {
@@ -217,7 +222,8 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
             }
         });
     }
-    private void submit(){
+
+    private void submit() {
 
         Map<String, String> formData = new HashMap<String, String>(0);
 
@@ -225,30 +231,34 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
         String objective = etObjective.getText().toString().trim();
         String capital = etCapital.getText().toString().trim();
         String days = etDays.getText().toString().trim();
-        if (file==null){
-            T.showLong(AddCrowdFundingActivity.this,"请选择封面图");
+        if (file == null) {
+            T.showLong(AddCrowdFundingActivity.this, "请选择封面图");
             return;
         }
-        if (title.equals("")){
-            T.showLong(AddCrowdFundingActivity.this,"请输入项目标题");
+        if (title.equals("")) {
+            T.showLong(AddCrowdFundingActivity.this, "请输入项目标题");
             return;
         }
-        if (objective.equals("")){
-            T.showLong(AddCrowdFundingActivity.this,"请输入众筹目的");
+        if (objective.equals("")) {
+            T.showLong(AddCrowdFundingActivity.this, "请输入众筹目的");
             return;
         }
-        if (capital.equals("")){
-            T.showLong(AddCrowdFundingActivity.this,"请输入众筹金额");
+        if (capital.equals("")) {
+            T.showLong(AddCrowdFundingActivity.this, "请输入众筹金额");
             return;
         }
-        if (days.equals("")){
-            T.showLong(AddCrowdFundingActivity.this,"请输入众筹天数");
+        if (days.equals("")) {
+            T.showLong(AddCrowdFundingActivity.this, "请输入众筹天数");
             return;
         }
-        if(listBean.size()==0){
-            T.showLong(AddCrowdFundingActivity.this,"请输入商品");
+        if (listBean.size() == 0) {
+            T.showLong(AddCrowdFundingActivity.this, "请输入商品");
             return;
         }
+        pd = new ProgressDialog(AddCrowdFundingActivity.this);
+        pd.setTitle("提示");
+        pd.setMessage("正在添加众筹、、、");
+        pd.show();
         formData.put("userId", userId);
         formData.put("title", title);
         formData.put("capital", capital);
@@ -258,8 +268,8 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
         formData.put("type", crowdType + "");
 
         Gson gson = new Gson();
-        List<ProductRewardBean> list = new ArrayList<ProductRewardBean>(listBean.values());
-        Type type = new TypeToken<List<ProductRewardBean>>() {
+        List<RewardBean> list = new ArrayList<RewardBean>(listBean.values());
+        Type type = new TypeToken<List<RewardBean>>() {
         }.getType();
         String productReward = gson.toJson(list, type);
         formData.put("productReward", productReward);
@@ -286,12 +296,16 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
 
     @Override
     public void showError(String errorString) {
+        pd.dismiss();
+        T.showLong(AddCrowdFundingActivity.this,errorString);
 
     }
 
     @Override
     public void productCollectView(String data) {
-
+        pd.dismiss();
+        T.showLong(AddCrowdFundingActivity.this,data);
+        AddCrowdFundingActivity.this.finish();
     }
 
     @OnClick({R.id.lt_main_title_left, R.id.tv_imgage, R.id.ll_product_content, R.id.iv_add_commodity, R.id.tv_submit})
@@ -305,7 +319,7 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
                 break;
             case R.id.ll_product_content:
                 Intent intent = new Intent(AddCrowdFundingActivity.this, GraphicDetailsActivity.class);
-                intent.putExtra("userId",userId);
+                intent.putExtra("userId", userId);
                 startActivityForResult(intent, REQUEST_CONTENT);
                 break;
             case R.id.iv_add_commodity:
@@ -322,9 +336,9 @@ public class AddCrowdFundingActivity extends BaseMvpActivity<IAddCrowdFundingVie
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == REQUEST_CODE) {
-            listBean.put(requestCode, (ProductRewardBean) data.getSerializableExtra("ProductReward"));
-         }else if (resultCode==REQUEST_CONTENT){
-            content=data.getStringExtra("productReward");
+            listBean.put(requestCode, (RewardBean) data.getSerializableExtra("ProductReward"));
+        } else if (resultCode == REQUEST_CONTENT) {
+            content = data.getStringExtra("productReward");
         }
     }
 }
