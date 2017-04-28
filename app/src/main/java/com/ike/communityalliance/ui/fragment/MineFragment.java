@@ -19,12 +19,14 @@ import com.ike.communityalliance.interfaces.IMineFragmentView;
 import com.ike.communityalliance.presenter.MineFragmentPresenter;
 import com.ike.communityalliance.ui.activity.FeedBackActivity;
 import com.ike.communityalliance.ui.activity.MineCardActivity;
+import com.ike.communityalliance.ui.activity.MineRecomendActivity;
 import com.ike.communityalliance.ui.activity.PersonalInformationActivity;
 import com.ike.communityalliance.ui.activity.RecommendActivity;
 import com.ike.communityalliance.ui.activity.RelationMapActivity;
 import com.ike.communityalliance.ui.activity.SettingActivity;
 import com.ike.communityalliance.ui.activity.SignPickerActivity;
 import com.ike.communityalliance.wedget.XCRoundRectImageView;
+import com.jrmf360.rylib.JrmfClient;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -68,8 +70,12 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     TextView tv_mine_creditScore;
     @BindView(R.id.ll_mine_recommend)
     LinearLayout llMineRecommend;
+    @BindView(R.id.ll_mine_wasRecomend)
+    LinearLayout ll_mine_wasRecomend;
     @BindView(R.id.ll_mine_contacts)
     LinearLayout llMineContacts;
+    @BindView(R.id.ll_mine_wallet)
+    LinearLayout ll_mine_wallet;
     @BindView(R.id.ll_mine_feedback)
     LinearLayout llMineFeedback;
     @BindView(R.id.ll_mine_setting)
@@ -151,8 +157,8 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     public void showError(String errorString) {
     }
 
-    @OnClick({R.id.iv_mine_card, R.id.ll_mine_recommend, R.id.ll_mine_contacts,
-            R.id.ll_mine_feedback, R.id.ll_mine_setting,R.id.tv_mine_sign,R.id.iv_mine_edit})
+    @OnClick({R.id.iv_mine_card, R.id.ll_mine_recommend, R.id.ll_mine_contacts,R.id.ll_mine_wasRecomend,
+            R.id.ll_mine_feedback, R.id.ll_mine_setting,R.id.tv_mine_sign,R.id.iv_mine_edit,R.id.ll_mine_wallet})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_mine_sign:
@@ -166,6 +172,12 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
                 break;
             case R.id.ll_mine_recommend:
                 startActivity(new Intent(getContext(), RecommendActivity.class));
+                break;
+            case R.id.ll_mine_wasRecomend:
+                startActivity(new Intent(getContext(), MineRecomendActivity.class));
+                break;
+            case R.id.ll_mine_wallet:
+                JrmfClient.intentWallet(getActivity());
                 break;
             case R.id.ll_mine_contacts:
                startActivity(new Intent(getContext(), RelationMapActivity.class));

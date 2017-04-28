@@ -17,8 +17,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import com.bigkoo.pickerview.TimePickerView;
-import com.kyleduo.switchbutton.SwitchButton;
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseMvpActivity;
 import com.ike.communityalliance.bean.CityBean;
@@ -27,6 +25,8 @@ import com.ike.communityalliance.bean.ProvinceBean;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
+import com.ike.mylibrary.util.T;
+import com.kyleduo.switchbutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

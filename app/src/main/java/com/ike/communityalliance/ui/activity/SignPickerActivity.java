@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ike.communityalliance.constant.Const;
 import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseMvpActivity;
@@ -45,16 +47,20 @@ public class SignPickerActivity extends BaseMvpActivity<ISignPickerView,SignPick
     private List<Date> tmp=new ArrayList<>();
     private Calendar cal;
     private String text="连续签到3天,奖励3贡献值";
+    private SharedPreferences sp;
+    private String userId;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_picker);
         ButterKnife.bind(this);
+        sp = getSharedPreferences("config",MODE_PRIVATE);
+        userId=sp.getString(Const.LOGIN_ID,"");
         cal = Calendar.getInstance();
         year= cal.get(Calendar.YEAR);
         month = cal.get(Calendar.MONTH) + 1;
         day= cal.get(Calendar.DATE);
-        presenter.getSignPickerData("111");
+        presenter.getSignPickerData(userId);
     }
 
     private void initDate() {
@@ -111,7 +117,7 @@ public class SignPickerActivity extends BaseMvpActivity<ISignPickerView,SignPick
     }
 
     private void signIn() {
-        presenter.sign("111");
+        presenter.sign(userId);
     }
 
     private void setWasSigned() {
