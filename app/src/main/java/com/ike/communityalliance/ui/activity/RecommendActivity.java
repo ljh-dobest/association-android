@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -145,7 +146,10 @@ private String sex="1";
 
     @Override
     public void succeedToRecommed(String recommendId) {
-        T.showShort(this,"推荐成功:推荐码："+recommendId);
+        Intent intent=new Intent(this,RecomendCardActivity.class);
+        intent.putExtra("recommendId",recommendId);
+        startActivity(intent);
+        finish();
     }
 
     @Override
@@ -240,7 +244,7 @@ private String sex="1";
                 if(checkedId == R.id.rb_recom_man){
                     sex="1";
                 }else{
-                    sex="0";
+                    sex="2";
                 }
                 break;
             case R.id.rg_recom_marriage://婚姻选项

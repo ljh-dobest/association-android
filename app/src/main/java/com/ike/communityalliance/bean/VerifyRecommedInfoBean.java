@@ -12,7 +12,7 @@ public class VerifyRecommedInfoBean {
     private String mobile;
     private String SfullName;
     private String sex;
-    private ArrayList<String> hobby;
+    private String hobby;
     private ArrayList<String> address;
     private String birthday;
     private String homeplace;
@@ -24,7 +24,7 @@ public class VerifyRecommedInfoBean {
     private String QQ;
     private String wechat;
 
-    public VerifyRecommedInfoBean(String userId, String fullName, String mobile, String sfullName, String sex, ArrayList<String> hobby, ArrayList<String> address, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat) {
+    public VerifyRecommedInfoBean(String userId, String fullName, String mobile, String sfullName, String sex, String hobby, ArrayList<String> address, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat) {
         this.userId = userId;
         this.fullName = fullName;
         this.mobile = mobile;
@@ -83,11 +83,11 @@ public class VerifyRecommedInfoBean {
         this.sex = sex;
     }
 
-    public ArrayList<String> getHobby() {
+    public String getHobby() {
         return hobby;
     }
 
-    public void setHobby(ArrayList<String> hobby) {
+    public void setHobby(String hobby) {
         this.hobby = hobby;
     }
 

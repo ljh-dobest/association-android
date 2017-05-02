@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseMvpFragment;
 import com.ike.communityalliance.bean.Groups;
@@ -24,6 +22,8 @@ import com.ike.communityalliance.interfaces.ILoginView;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.presenter.LoginPresenterImpl;
 import com.ike.communityalliance.ui.activity.LogoActivity;
+import com.ike.communityalliance.ui.activity.VerifyRecommedInfoActivity;
+import com.ike.mylibrary.util.T;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,28 +74,35 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
     public void loginOnClick(View view) {
         userName = et_userName.getText().toString().trim();
         pwd = et_pw.getText().toString().trim();
-        LoadDialog.show(getContext());
         presenter.verifyLoginInfo(userName, pwd);
     }
 
     @Override
     public void showUserNameOrPassWordEmpty(String errorString) {
         T.showShort(getContext(),errorString);
-        LoadDialog.dismiss(getContext());
     }
     @Override
     public void showFailedLogin(String errorString) {
         T.showShort(getContext(),errorString);
-        LoadDialog.dismiss(getContext());
     }
 
     @Override
     public void succeedToLogin(UserInfo userInfo) {
         saveData(userInfo);
-        Intent intent=new Intent(getActivity(),LogoActivity.class);
-        startActivity(intent);
+        String status=userInfo.getStatus();
+        if(status==null){
+            status="1";
+        }
+        if(status.equals("0")){
+            Intent intent=new Intent(getActivity(),VerifyRecommedInfoActivity.class);
+            intent.putExtra("useId",userInfo.getUserId());
+            intent.putExtra("fromLogin",true);
+            startActivity(intent);
+        }else{
+            Intent intent=new Intent(getActivity(),LogoActivity.class);
+            startActivity(intent);
+        }
         T.showShort(getContext(),"登录成功~~");
-        LoadDialog.dismiss(getContext());
         getActivity().finish();
     }
 

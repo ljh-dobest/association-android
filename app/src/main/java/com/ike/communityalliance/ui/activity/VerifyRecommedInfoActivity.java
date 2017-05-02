@@ -2,6 +2,7 @@ package com.ike.communityalliance.ui.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
@@ -22,9 +24,11 @@ import com.ike.communityalliance.base.BaseMvpActivity;
 import com.ike.communityalliance.bean.CityBean;
 import com.ike.communityalliance.bean.CountyBean;
 import com.ike.communityalliance.bean.ProvinceBean;
+import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
+import com.ike.communityalliance.ui.Main2Activity;
 import com.ike.mylibrary.util.T;
 import com.kyleduo.switchbutton.SwitchButton;
 
@@ -84,7 +88,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     private String mobile;
     private String SfullName="0";
     private String sex="1";
-    private ArrayList<String> hobby=new ArrayList<>();
+    private String hobby;
     private ArrayList<String> address=new ArrayList<>();
     private String birthday;
     private String homeplace;
@@ -106,12 +110,17 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     private ArrayList<CityBean> citys;
     private VerifyRecommedInfoBean verifyRecommedInfo;
     private String curDegreeCode="0";
-
+      private boolean isFromLogin=false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_recommed_info);
         ButterKnife.bind(this);
+        userId=getIntent().getStringExtra("useId");
+        isFromLogin=getIntent().getBooleanExtra("fromLogin",false);
+        if(userId!=null){
+            getVerifyInfo(userId);
+        }
         presenter.parserData(this,"data.txt");
         initView();
     }
@@ -156,9 +165,14 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
 
     @Override
     public void succeedVerifyInfo() {
+        if(isFromLogin){
+            startActivity(new Intent(this,Main2Activity.class));
+            finish();
+        }else{
+            setResult(RESULT_OK);
+            finish();
+        }
         T.showShort(this,"信息确认完成");
-        setResult(RESULT_OK);
-        finish();
     }
 
     @Override
@@ -186,7 +200,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     }
 
     @Override
-    public void setHobby(ArrayList<String> hobbys) {
+    public void setHobby(String hobbys) {
         this.hobby=hobbys;
     }
 
@@ -216,6 +230,27 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     }
 
     @Override
+    public void getVerifyInfo(String userId) {
+         presenter.getVerifyRecommendInfo(userId);
+    }
+
+    @Override
+    public void setVerifyInfo(VerifyRecommedInfo verifyInfo) {
+          et_verifyInfo_username.setText(verifyInfo.getFullName());
+        if(verifyInfo.getSex().equals("1")){
+           RadioButton radioButton = (RadioButton) rg_verifyInfo_sex.getChildAt(0);
+            radioButton.setChecked(true);
+        }else {
+            RadioButton radioButton = (RadioButton) rg_verifyInfo_sex.getChildAt(1);
+            radioButton.setChecked(true);
+        }
+        et_verifyInfo_birthday.setText(verifyInfo.getBirthday());
+        et_verifyInfo_mobile.setText(verifyInfo.getMobile());
+        et_verifyInfo_company.setText(verifyInfo.getCompany());
+        et_verifyInfo_finishSchool.setText(verifyInfo.getFinishSchool());
+    }
+
+    @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (group.getId()) {
             case R.id.rg_verifyInfo_sex://性别选项
@@ -231,7 +266,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ll_verifyInfo_birthday:
+            case R.id.et_verifyInfo_birthday:
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
@@ -271,12 +306,19 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         getHobby(rg_verifyInfo_like);
         address.add(sp_verifyInfo_province.getSelectedItem().toString());
         address.add(sp_verifyInfo_citys.getSelectedItem().toString());
-        String county=(sp_verifyInfo_countys.getSelectedItem().toString());
-        address.add(county);
+        try {
+            address.add(sp_verifyInfo_countys.getSelectedItem().toString());
+        }catch (Exception e){
+            address.add("");
+        }
+        address.add("");
         birthday=et_verifyInfo_birthday.getText().toString();
-        homeplace=sp_verifyInfo_jgprovince.getSelectedItem().toString()
-                +sp_verifyInfo_jgcitys.getSelectedItem().toString()
-                +sp_verifyInfo_jgcountys.getSelectedItem().toString();
+        homeplace=sp_verifyInfo_jgprovince.getSelectedItem().toString()+
+                sp_verifyInfo_jgcitys.getSelectedItem().toString();
+        try {
+            homeplace=homeplace+sp_verifyInfo_jgcountys.getSelectedItem().toString();
+        }catch (Exception e){
+        }
         finishSchool=et_verifyInfo_finishSchool.getText().toString();
         company=et_verifyInfo_company.getText().toString();
         position=et_verifyInfo_position.getText().toString();
