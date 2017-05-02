@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -80,7 +81,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         friendInfoDAO = new FriendInfoDAOImpl(mContext);
         groupMemberDAO = new GroupMemberDAOImpl(mContext);
 
-        sharedPreferences = getSharedPreferences("config", this.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
         editor = sharedPreferences.edit();
         initView();
         initPermissions();

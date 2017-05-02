@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -69,7 +70,7 @@ private HomePageLVAdapter adapter;
         homepage_banner= (Banner) homepage_lv_header.findViewById(R.id.homepage_banner);
         homepage_gv= (GridView) home_lv_header2.findViewById(R.id.homepage_gv);
         ButterKnife.bind(this,containerView);
-        sp =getContext().getSharedPreferences("config",getContext().MODE_PRIVATE);
+        sp =getContext().getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
         useId=sp.getString(Const.LOGIN_ID,"");
         initView();
         getHomePageData(useId);

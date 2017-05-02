@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
-        isDebug = getSharedPreferences("config", MODE_PRIVATE).getBoolean("isDebug", false);
+        isDebug = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE).getBoolean("isDebug", false);
         if (RongIM.getInstance() != null &&
                 RongIM.getInstance().getCurrentConnectionStatus()
                         .equals(RongIMClient.ConnectionStatusListener.ConnectionStatus.DISCONNECTED)) {
@@ -120,7 +120,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         BroadcastManager.getInstance(mContext).addAction(EXIT, new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                SharedPreferences.Editor editor = getSharedPreferences("config", MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE).edit();
                 editor.putBoolean("exit", true);
                 editor.putString("loginToken", "");
                 editor.putString("loginid", "");
@@ -169,7 +169,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         if (intent != null && intent.getData() != null && intent.getData().getScheme().equals("rong")) {
             String path = intent.getData().getPath();
             if (path.contains("push_message")) {
-                SharedPreferences sharedPreferences = getSharedPreferences("config", MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
                 String cacheToken = sharedPreferences.getString("loginToken", "");
                 if (TextUtils.isEmpty(cacheToken)) {
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -199,7 +199,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void reconnect() {
-        SharedPreferences sp = getSharedPreferences("config", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
         String token = sp.getString(Const.LOGIN_TOKEN, "");
         RongIM.connect(token, new RongIMClient.ConnectCallback() {
             @Override
