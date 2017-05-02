@@ -18,7 +18,7 @@ public final class R {
         public static final int stackFromEnd = 0x7f01014c;
     }
     public static final class dimen {
-        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f0900c9;
+        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f0900ca;
     }
     public static final class drawable {
         public static final int xrefresh_ok = 0x7f020082;
@@ -40,8 +40,8 @@ public final class R {
         public static final int xrefreshview_header_time = 0x7f0e0158;
     }
     public static final class layout {
-        public static final int xrefreshview_footer = 0x7f040064;
-        public static final int xrefreshview_header = 0x7f040065;
+        public static final int xrefreshview_footer = 0x7f040065;
+        public static final int xrefreshview_header = 0x7f040066;
     }
     public static final class string {
         public static final int app_name = 0x7f080029;

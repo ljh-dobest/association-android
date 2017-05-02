@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 
 import com.ike.communityalliance.base.BasePersenter;
 import com.ike.communityalliance.bean.ProvinceBean;
+import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.listener.OnVerifyRecommedInfoFinishListener;
@@ -20,6 +21,9 @@ public class VerifyRecommedInfoPresenter extends BasePersenter<IVerifyRecommedIn
     private VerifyRecommedInfoMoudle verifyRecommedInfoMoudle;
     public VerifyRecommedInfoPresenter() {
         verifyRecommedInfoMoudle=new VerifyRecommedInfoMoudle();
+    }
+    public  void getVerifyRecommendInfo(String userId){
+           verifyRecommedInfoMoudle.getVerifyRecommedInfo(userId,this);
     }
     public void postVerifyRecommedInfo(VerifyRecommedInfoBean verifyRecommedInfoBean){
               verifyRecommedInfoMoudle.verifyRecommedInfo(verifyRecommedInfoBean,this);
@@ -59,9 +63,16 @@ public class VerifyRecommedInfoPresenter extends BasePersenter<IVerifyRecommedIn
     }
 
     @Override
-    public void returnHobby(ArrayList<String> hobbys) {
+    public void returnHobby(String hobbys) {
         if (mView!=null){
             mView.setHobby(hobbys);
+        }
+    }
+
+    @Override
+    public void returnVerifyInfo(VerifyRecommedInfo verifyRecommedInfoBean) {
+        if (mView!=null){
+            mView.setVerifyInfo(verifyRecommedInfoBean);
         }
     }
 }

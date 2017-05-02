@@ -110,6 +110,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="color_12">#121212</color>
     <color name="color_33">#333333</color>
     <color name="color_66">#666666</color>
     <color name="color_99">#999999</color>
@@ -638,6 +639,7 @@
     <dimen name="border_40">40px</dimen>
     <dimen name="border_400">400px</dimen>
     <dimen name="border_42">42px</dimen>
+    <dimen name="border_460">460px</dimen>
     <dimen name="border_50">50px</dimen>
     <dimen name="border_6">6px</dimen>
     <dimen name="border_60">60px</dimen>

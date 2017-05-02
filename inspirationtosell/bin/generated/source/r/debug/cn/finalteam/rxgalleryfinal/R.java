@@ -713,8 +713,8 @@ public final class R {
         public static final int ll_empty_view = 0x7f0e00f3;
         public static final int ll_toolbar = 0x7f0e00fb;
         public static final int media_actions = 0x7f0e0121;
-        public static final int menu_crop = 0x7f0e015d;
-        public static final int menu_loader = 0x7f0e015e;
+        public static final int menu_crop = 0x7f0e015e;
+        public static final int menu_loader = 0x7f0e015f;
         public static final int middle = 0x7f0e0055;
         public static final int multiply = 0x7f0e0030;
         public static final int never = 0x7f0e0059;

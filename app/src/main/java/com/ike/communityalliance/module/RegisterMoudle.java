@@ -41,17 +41,16 @@ public class RegisterMoudle {
                     Code<Object> code = JsonParser.parserRegisterRespon(response);
                     switch (code.getCode()) {
                         case 200:
-                           listener.succeedToRegiset();
+                            listener.succeedToRegiset();
                             break;
                         case 0:
-                           listener.failedToRegister("账号已注册");
+                            listener.failedToRegister("账号已注册");
                             break;
                         case 1000:
-                          listener.failedToRegister("推荐码不正确");
+                            listener.failedToRegister("推荐码不正确");
                             break;
 
                     }
-
                 }
             });
         }

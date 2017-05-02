@@ -7,6 +7,7 @@ import android.widget.RadioButton;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.mylibrary.util.AMUtils;
 import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.bean.ProvinceBean;
@@ -26,9 +27,32 @@ import okhttp3.Call;
  */
 
 public class VerifyRecommedInfoMoudle {
+    public  void getVerifyRecommedInfo(String useId, final OnVerifyRecommedInfoFinishListener listener){
+            HttpUtils.getRecommedInfo("/selectRecommendInfo", useId, new StringCallback() {
+                @Override
+                public void onError(Call call, Exception e, int id) {
+                    listener.failedToVerifyInfo(e.toString());
+                }
+
+                @Override
+                public void onResponse(String response, int id) {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code<VerifyRecommedInfo>>() {
+                    }.getType();
+                    Code<VerifyRecommedInfo> code = gson.fromJson(response, type);
+                    if (code.getCode()==200){
+                             listener.returnVerifyInfo(code.getData());
+                    }else{
+                        listener.failedToVerifyInfo("无推荐信息");
+                    }
+                }
+            });
+    }
+
+
     public void verifyRecommedInfo(VerifyRecommedInfoBean verifyRecommedInfoBean, final OnVerifyRecommedInfoFinishListener listener) {
       if(verifyRecommedInfoBean.getUserId().equals("")||verifyRecommedInfoBean.getFullName().equals("")||verifyRecommedInfoBean.getMobile().equals("")||verifyRecommedInfoBean.getSex().equals("")
-              ||verifyRecommedInfoBean.getHobby().size()==0||verifyRecommedInfoBean.getAddress().size()==0){
+              ||verifyRecommedInfoBean.getHobby().equals("")||verifyRecommedInfoBean.getAddress().size()==0){
           listener.showTextEmpty();
           return;
       }else if(!AMUtils.isMobile(verifyRecommedInfoBean.getMobile())){
@@ -76,18 +100,26 @@ public class VerifyRecommedInfoMoudle {
                 }).start();
      }
 
+
+    private boolean isFirstHobby=true;
     //获取选择的爱好
     public void getHobby(ViewGroup group, OnVerifyRecommedInfoFinishListener listener) {
-        ArrayList<String> hobbys=new ArrayList<>();
+        String hobbys="";
         for (int i = 0; i < group.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) group.getChildAt(i);
             for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
                 RadioButton rb= (RadioButton) ll.getChildAt(j);
-                if (rb.isChecked()){
-                    hobbys.add(rb.getText().toString());
+                if (rb.isChecked()) {
+                    if (isFirstHobby) {
+                        hobbys = rb.getText().toString();
+                        isFirstHobby = false;
+                    } else {
+                        hobbys = hobbys + "," + rb.getText().toString();
+                    }
                 }
             }
         }
+        isFirstHobby=true;
         listener.returnHobby(hobbys);
     }
 

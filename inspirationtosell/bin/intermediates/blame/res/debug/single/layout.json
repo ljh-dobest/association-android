@@ -236,12 +236,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\layout\\notification_action.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_deal_buy_confirm_order.xml",
         "source": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\src\\main\\res\\layout\\activity_deal_buy_confirm_order.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\layout\\notification_action.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\banner.xml",
@@ -294,6 +294,10 @@
     {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_view.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\c255aaa2976bdebe47be0a0c30e0da7339f57846\\output\\res\\layout\\gallery_ucrop_view.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\view_banner.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\src\\main\\res\\layout\\view_banner.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\inspirationtosell\\bin\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",

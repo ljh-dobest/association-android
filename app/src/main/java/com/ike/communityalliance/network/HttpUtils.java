@@ -25,8 +25,15 @@ import okhttp3.OkHttpClient;
  */
 public class HttpUtils {
     public static final String CACHE_PATH= Environment.getExternalStorageDirectory().getAbsolutePath()+"/SmallTalk/";
+<<<<<<< HEAD
       public static final String IMAGE_RUL ="https://sq.bjike.com";
       public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
+=======
+  //    public static final String IMAGE_RUL ="https://sq.bjike.com";
+  //  public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
+      public static final String IMAGE_RUL ="http://192.168.0.104:90";
+      public static final String BASE_RUL ="http://192.168.0.104:90/appapi/app";
+>>>>>>> ljh
 
     /**
      * post请求

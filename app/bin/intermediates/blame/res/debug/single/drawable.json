@@ -36,6 +36,10 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_btn_public_service_enter_selector.xml"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_platform_cell_back.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\ssdk_oks_classic_platform_cell_back.xml"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\tab_indicator.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\tab_indicator.png"
     },
@@ -530,6 +534,10 @@
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_bg_menu.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_bg_menu.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_progressbar.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\ssdk_oks_classic_progressbar.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_ratingbar.xml",

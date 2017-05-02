@@ -106,14 +106,15 @@ public class RegisterFragment extends BaseMvpFragment<IRegisterView,RegisterPres
 
     @Override
     public void succeedToRegister() {
+        LoadDialog.dismiss(getContext());
           T.showShort(getContext(),"注册成功~~");
         Intent intent=new Intent(getActivity(), VerifyRecommedInfoActivity.class);
+        intent.putExtra("useId",et_re_ph.getText().toString());
         startActivityForResult(intent,102);
         et_re_ph.setText("");
         et_re_nickname.setText("");
         et_re_pw.setText("");
         et_re_invite_code.setText("");
-        LoadDialog.dismiss(getContext());
      }
 
     @Override
