@@ -50,6 +50,7 @@
     <dimen name="border_260">260px</dimen>
     <dimen name="border_330">330px</dimen>
     <dimen name="border_400">400px</dimen>
+    <dimen name="border_460">460px</dimen>
 
 
 </resources>

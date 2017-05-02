@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
+import com.issp.inspiration.adapter.BannerImageLoader;
 import com.issp.inspiration.adapter.IndexPageAdapter;
 import com.issp.inspiration.adapter.SimpleAdapter;
 import com.issp.inspiration.base.view.BaseMvpActivity;
@@ -31,6 +32,7 @@ import com.issp.inspiration.utils.PreferenceService;
 import com.issp.inspiration.utils.T;
 import com.issp.inspiration.view.BannerViewPager;
 import com.issp.inspiration.view.CustomGifHeader;
+import com.youth.banner.Banner;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -77,9 +79,12 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     private int page = 1;
 
     private String userId;
-
-    private BannerViewPager mBannerViewPager;
-    private int[] mImageIds = new int[]{R.mipmap.banner, R.mipmap.banner02};// 测试图片id
+    Banner homepage_banner;
+    private ArrayList<String> imgList;
+    private String[] mImageIds = new String[]{"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
+            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
+            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};// 测试图片id
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -102,13 +107,11 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 //		xRefreshView1.setSilenceLoadMore();
         layoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(layoutManager);
-        headerView = adapter.setHeaderView(R.layout.bannerview, recyclerView);
-//        LayoutInflater.from(this).inflate(R.layout.bannerview, rootview);
-        mBannerViewPager = (BannerViewPager) headerView.findViewById(R.id.index_viewpager);
+        headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
-//        adHeader = new AdHeader(this);
-//        mBannerViewPager = (LoopViewPager) adHeader.findViewById(R.id.index_viewpager);
-        initViewPager();
+        homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
+        initBanner();
+
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
         recyclerView.setAdapter(adapter);
@@ -186,10 +189,24 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     }
 
 
-    private void initViewPager() {
+   /* private void initViewPager() {
         IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
         mBannerViewPager.setAdapter(pageAdapter);
         mBannerViewPager.setParent(recyclerView);
+    }*/
+    private void initBanner() {
+        imgList = new ArrayList<>();
+        for (int i = 0; i < mImageIds.length; i++) {
+            imgList.add(mImageIds[i]);
+        }
+        //设置图片加载器
+        homepage_banner.setImageLoader(new BannerImageLoader());
+        //设置图片集合
+        homepage_banner.setImages(imgList);
+        //设置滚动时间
+        homepage_banner.setDelayTime(5000);
+        //banner设置方法全部调用完毕时最后调用
+        homepage_banner.start();
     }
 
     @Override

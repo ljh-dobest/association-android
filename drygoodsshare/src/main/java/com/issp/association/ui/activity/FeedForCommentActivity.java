@@ -51,12 +51,14 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     RecyclerView recyclerView;
     @BindView(R.id.xrefreshview)
     XRefreshView xRefreshView;
+    @BindView(R.id.tv_comment)
+    TextView tvComment;
 
 
     private View headerView;
 
     private boolean isRefresh = true;
-    private boolean isComment=false;
+    private boolean isComment = false;
 
     List<CommentsBean> personList = new ArrayList<CommentsBean>();
     LinearLayoutManager layoutManager;
@@ -84,8 +86,9 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     private void initView() {
         ltMainTitle.setText("评论列表");
         Intent intent = getIntent();
-        userId=intent.getStringExtra("userId");
+        userId = intent.getStringExtra("userId");
         bean = (ShareBean) intent.getSerializableExtra("bean");
+        tvComment.setText("评论（"+bean.getCommentNumber()+"）");
 
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -138,8 +141,8 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("articleId", bean.getId());
-        formData.put("userId",userId);
-        formData.put("type","3");
+        formData.put("userId", userId);
+        formData.put("type", "3");
         presenter.FeedCommentInfo(formData);
     }
 
@@ -150,7 +153,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
 
     @OnClick(R.id.editText)
     void commentClick() {
-        isComment=false;
+        isComment = false;
         tvSubmitComment.setVisibility(View.VISIBLE);
     }
 
@@ -159,26 +162,28 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         if (checkInputInfo()) {
             isRefresh = false;
             Map<String, String> formData = new HashMap<String, String>(0);
-            if (isComment){
-                formData.put("commentId",commentsBean.getId());
+            if (isComment) {
+                formData.put("commentId", commentsBean.getId());
             }
             formData.put("articleId", bean.getId());
             formData.put("userId", userId);
-            formData.put("type","3");
+            formData.put("type", "3");
             formData.put("content", editText.getText().toString().trim());
             presenter.addFeedCommentInfo(formData);
         }
     }
+
     FeedForCommentListAdapter.AdapterViewHolder viewHolder;
     CommentsBean commentsBean;
-    void initItemClick(){
+
+    void initItemClick() {
         adapter.setOnItemClickListener(new FeedForCommentListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean bean) {
-                isComment=true;
+                isComment = true;
                 editText.requestFocus();
                 tvSubmitComment.setVisibility(View.VISIBLE);
-                editText.setHint("回复"+bean.getNickname());
+                editText.setHint("回复" + bean.getNickname());
             }
 
             @Override
@@ -186,11 +191,11 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
                 isRefresh = false;
                 Map<String, String> formData = new HashMap<String, String>(0);
                 formData.put("userId", userId);
-                formData.put("commentId",bean.getId());
-                formData.put("status", bean.getLikesStatus()==0?"1":"0");
+                formData.put("commentId", bean.getId());
+                formData.put("status", bean.getLikesStatus() == 0 ? "1" : "0");
                 presenter.addCommentLikes(formData);
-                FeedForCommentActivity.this.viewHolder=viewHolder;
-                FeedForCommentActivity.this.commentsBean=bean;
+                FeedForCommentActivity.this.viewHolder = viewHolder;
+                FeedForCommentActivity.this.commentsBean = bean;
             }
         });
     }
@@ -235,12 +240,12 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     public void commentLikes(String data) {
         if (commentsBean.getLikesStatus() == 0) {
             viewHolder.ivLikeBtn.setImageResource(R.mipmap.img_comments_have_thumb_up_btn);
-            viewHolder.tvLikeBtn.setText((commentsBean.getLikes()+1)+"");
-            T.showLong(FeedForCommentActivity.this,"点赞成功！");
+            viewHolder.tvLikeBtn.setText((commentsBean.getLikes() + 1) + "");
+            T.showLong(FeedForCommentActivity.this, "点赞成功！");
         } else {
             viewHolder.ivLikeBtn.setImageResource(R.mipmap.img_like_btn_no);
-            viewHolder.tvLikeBtn.setText((commentsBean.getLikes()-1)+"");
-            T.showLong(FeedForCommentActivity.this,"取消点赞！");
+            viewHolder.tvLikeBtn.setText((commentsBean.getLikes() - 1) + "");
+            T.showLong(FeedForCommentActivity.this, "取消点赞！");
         }
     }
 

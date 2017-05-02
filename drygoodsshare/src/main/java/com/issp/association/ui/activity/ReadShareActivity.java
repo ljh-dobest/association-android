@@ -78,8 +78,8 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
     LinearLayout llCollect;
     @BindView(R.id.iv_image)
     ImageView ivImage;
-    @BindView(R.id.wv_cynopsis)
-    WebView wvCynopsis;
+   /* @BindView(R.id.wv_cynopsis)
+    WebView wvCynopsis;*/
 
 
     ShareBean bean;
@@ -162,7 +162,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         if (null != data.getImage())
             Picasso.with(ReadShareActivity.this).load(HttpUtils.IMAGE_RUL + data.getImage())
                     .into(ivImage);
-        wvCynopsis.loadData(data.getSynopsis(), "text/html; charset=UTF-8", null);
+      //  wvCynopsis.loadData(data.getSynopsis(), "text/html; charset=UTF-8", null);
         wvContent.loadData(data.getContent(), "text/html; charset=UTF-8", null);
         tvLikeBtn.setText(data.getLikes() + "");
 
@@ -183,6 +183,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         }
 
         data.setUserId(userId);
+        data.setId(activesId);
         bean=data;
     }
 

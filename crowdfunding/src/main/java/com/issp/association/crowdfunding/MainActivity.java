@@ -353,16 +353,25 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
         homepage_banner.stopAutoPlay();
     }
 
-    @OnClick(R.id.tv_add_product)
-    public void onViewClicked() {
-        if (isIDCard) {
-            Intent intent = new Intent(MainActivity.this, AddCrowdFundingActivity.class);
-            intent.putExtra("userId",userId);
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(MainActivity.this, ProductIDCardActivity.class);
-            intent.putExtra("userId",userId);
-            startActivity(intent);
+    @OnClick({R.id.lt_main_title_left, R.id.tv_add_product})
+    public void onViewClicked(View v) {
+        switch (v.getId()) {
+            case R.id.lt_main_title_left:
+                this.finish();
+                break;
+            case R.id.tv_add_product:
+                if (isIDCard) {
+                    Intent intent = new Intent(MainActivity.this, AddCrowdFundingActivity.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(MainActivity.this, ProductIDCardActivity.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                }
+                break;
         }
     }
+
+
 }

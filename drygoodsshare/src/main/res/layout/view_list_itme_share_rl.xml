@@ -3,30 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_item"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/border_20"
+    android:layout_height="@dimen/border_260"
+    android:layout_marginTop="@dimen/border_10"
+    android:layout_marginBottom="@dimen/border_10"
     android:background="@android:color/white"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/border_20">
+    android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:layout_marginLeft="@dimen/border_40"
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="50px"
                 android:id="@+id/tv_share_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="fdsafewffsadfsafasfsdfsdf"
-                android:textColor="@color/color_33"
-                android:textSize="@dimen/font_32" />
+                android:textColor="@color/color_12"
+                android:textSize="@dimen/font_34" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,7 +86,7 @@
                         android:layout_weight="1"
                         android:layout_marginLeft="@dimen/border_10"
                         android:padding="@dimen/border_10"
-                        android:text="2017-03-16"
+                        android:text="30分钟前"
                         android:textColor="@color/color_99"
                         android:textSize="@dimen/font_24" />
 
@@ -98,13 +95,10 @@
 
         <ImageView
             android:id="@+id/iv_share_img"
-            android:layout_width="0dp"
+            android:layout_width="330px"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitStart"
+            android:scaleType="fitXY"
             android:src="@mipmap/banner02" />
-
-    </LinearLayout>
 
 </LinearLayout>

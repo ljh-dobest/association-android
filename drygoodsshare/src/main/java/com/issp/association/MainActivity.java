@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
+import com.issp.association.adapter.BannerImageLoader;
 import com.issp.association.adapter.IndexPageAdapter;
 import com.issp.association.adapter.SimpleAdapter;
 import com.issp.association.base.view.BaseMvpActivity;
@@ -33,6 +34,7 @@ import com.issp.association.utils.PreferenceService;
 import com.issp.association.utils.T;
 import com.issp.association.view.BannerViewPager;
 import com.issp.association.view.CustomGifHeader;
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,8 +79,13 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     private int limit = 20;
     private int page = 1;
 
+    Banner homepage_banner;
     private BannerViewPager mBannerViewPager;
-    private int[] mImageIds = new int[]{R.mipmap.banner, R.mipmap.banner02};// 测试图片id
+    private ArrayList<String> imgList;
+    private String[] mImageIds = new String[]{"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
+            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
+            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};// 测试图片id
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,9 +96,9 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     }
 
     private void initView() {
-        PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId=ps.getPreferences("loginid");
-        Log.e("userId",userId);
+        PreferenceService ps = new PreferenceService(MainActivity.this);
+        userId = ps.getPreferences("loginid");
+        Log.e("userId", userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -102,13 +109,13 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 //		xRefreshView1.setSilenceLoadMore();
         layoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(layoutManager);
-        headerView = adapter.setHeaderView(R.layout.bannerview, recyclerView);
+       // headerView = adapter.setHeaderView(R.layout.bannerview, recyclerView);
 //        LayoutInflater.from(this).inflate(R.layout.bannerview, rootview);
-        mBannerViewPager = (BannerViewPager) headerView.findViewById(R.id.index_viewpager);
+        headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
-//        adHeader = new AdHeader(this);
-//        mBannerViewPager = (LoopViewPager) adHeader.findViewById(R.id.index_viewpager);
-        initViewPager();
+        homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
+        initBanner();
+
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
         recyclerView.setAdapter(adapter);
@@ -144,8 +151,8 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             @Override
             public void onItemClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
-                intent.putExtra("userId",userId);
-                intent.putExtra("activesId",bean.getId());
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", bean.getId());
                 startActivity(intent);
             }
 
@@ -166,7 +173,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             @Override
             public void onCommentClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
-                intent.putExtra("userId",userId);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -185,12 +192,27 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     }
 
-
+/*
     private void initViewPager() {
         IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
         mBannerViewPager.setAdapter(pageAdapter);
         mBannerViewPager.setParent(recyclerView);
+    }   */
+    private void initBanner() {
+        imgList = new ArrayList<>();
+        for (int i = 0; i < mImageIds.length; i++) {
+            imgList.add(mImageIds[i]);
+        }
+        //设置图片加载器
+        homepage_banner.setImageLoader(new BannerImageLoader());
+        //设置图片集合
+        homepage_banner.setImages(imgList);
+        //设置滚动时间
+        homepage_banner.setDelayTime(5000);
+        //banner设置方法全部调用完毕时最后调用
+        homepage_banner.start();
     }
+
 
     @Override
     public ShareInfoPresenter initPresenter() {
@@ -227,7 +249,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MinShareActivity.class);
-                    intent.putExtra("userId",userId);
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }
@@ -274,11 +296,17 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
         T.showShort(MainActivity.this, data);
     }
 
-    @OnClick(R.id.tv_add_share)
-    public void onViewClicked() {
-
-        Intent intent=new Intent(MainActivity.this, AddArticleActivity.class);
-        intent.putExtra("userId",userId);
-        startActivity(intent);
+    @OnClick({R.id.lt_main_title_left, R.id.tv_add_share})
+    public void onViewClicked(View v) {
+        switch (v.getId()) {
+            case R.id.lt_main_title_left:
+                this.finish();
+                break;
+            case R.id.tv_add_share:
+                Intent intent = new Intent(MainActivity.this, AddArticleActivity.class);
+                intent.putExtra("userId", userId);
+                startActivity(intent);
+                break;
+        }
     }
 }
