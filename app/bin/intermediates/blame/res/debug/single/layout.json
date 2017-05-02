@@ -1016,6 +1016,10 @@
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_recharge.xml"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_recomend_card.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_recomend_card.xml"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_browsers.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_browsers.xml"
     },

@@ -278,6 +278,8 @@
                     android:layout_marginLeft="31px"
                     android:id="@+id/et_verifyInfo_degree"
                     style="@style/claimInfo_et_styles"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
                     />
             </com.zhy.autolayout.AutoLinearLayout>
             <com.zhy.autolayout.AutoLinearLayout

@@ -56,9 +56,9 @@ public final class R {
         public static final int week = 0x7f1000a8;
     }
     public static final class string {
-        public static final int calendar = 0x7f0901e0;
-        public static final int next = 0x7f09026e;
-        public static final int previous = 0x7f090298;
+        public static final int calendar = 0x7f090238;
+        public static final int next = 0x7f0902c6;
+        public static final int previous = 0x7f0902f0;
     }
     public static final class style {
         public static final int TextAppearance_MaterialCalendarWidget_Date = 0x7f0c011b;

@@ -3,6 +3,7 @@ package com.ike.communityalliance.interfaces;
 import android.view.ViewGroup;
 
 import com.ike.communityalliance.bean.ProvinceBean;
+import com.ike.communityalliance.bean.VerifyRecommedInfo;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,9 @@ public interface IVerifyRecommedInfoView {
     void showVerifyInfoError(String string);
     void succeedVerifyInfo();
     void showComfirmDialog();
-    void setHobby(ArrayList<String> hobbys);
+    void setHobby(String hobbys);
     void setProvinceData(ArrayList<ProvinceBean> provinceData);
     void getHobby(ViewGroup group);
+    void getVerifyInfo(String userId);
+    void setVerifyInfo(VerifyRecommedInfo verifyInfo);
 }

@@ -61,6 +61,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+
     <!-- android:authorities="cn.rongcloud.im.FileProvider" -->
     <application
         android:name=".App"
@@ -236,8 +237,8 @@
                 <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".ui.activity.MineRecomendActivity"></activity>
+        <activity android:name=".ui.activity.MineRecomendActivity" />
+        <activity android:name=".ui.activity.RecomendCardActivity"></activity>
     </application>
 
 </manifest>

@@ -21,28 +21,60 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.issp.association.crowdfunding.MainActivity" >
+        <activity
+            android:name="com.issp.association.crowdfunding.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.AddShippingAddressActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.AddSupportProjectActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.ManagementShippingAddressActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.MessageActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.MinProductActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.OrderDetailActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.ProductCommentActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.SupportProductActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.FeedForCommentActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.AddCrowdFundingActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.ProductIDCardActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.AddCommodityActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.TextDetailsActivity" />
-        <activity android:name="com.issp.association.crowdfunding.ui.activity.GraphicDetailsActivity" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.AddShippingAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.AddSupportProjectActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.ManagementShippingAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.MessageActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.MinProductActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.OrderDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.ProductCommentActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.SupportProductActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.FeedForCommentActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.AddCrowdFundingActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.ProductIDCardActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.AddCommodityActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.TextDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.association.crowdfunding.ui.activity.GraphicDetailsActivity"
+            android:exported="true" />
 
         <!-- 选择图片 -->
         <activity

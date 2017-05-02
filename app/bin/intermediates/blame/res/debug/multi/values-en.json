@@ -8470,6 +8470,1678 @@
                         "endOffset": 4136
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 689,
+                    "startColumn": 4,
+                    "startOffset": 50005,
+                    "endColumn": 46,
+                    "endOffset": 50047
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 65,
+                        "startColumn": 4,
+                        "startOffset": 4168,
+                        "endColumn": 46,
+                        "endOffset": 4210
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 690,
+                    "startColumn": 4,
+                    "startOffset": 50052,
+                    "endColumn": 109,
+                    "endOffset": 50157
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1501,
+                        "endColumn": 109,
+                        "endOffset": 1606
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 691,
+                    "startColumn": 4,
+                    "startOffset": 50162,
+                    "endColumn": 61,
+                    "endOffset": 50219
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 66,
+                        "startColumn": 4,
+                        "startOffset": 4216,
+                        "endColumn": 61,
+                        "endOffset": 4273
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 692,
+                    "startColumn": 4,
+                    "startOffset": 50224,
+                    "endColumn": 52,
+                    "endOffset": 50272
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 1,
+                        "startOffset": 3449,
+                        "endColumn": 49,
+                        "endOffset": 3497
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 693,
+                    "startColumn": 4,
+                    "startOffset": 50277,
+                    "endColumn": 50,
+                    "endOffset": 50323
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 68,
+                        "startColumn": 4,
+                        "startOffset": 4325,
+                        "endColumn": 50,
+                        "endOffset": 4371
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 694,
+                    "startColumn": 4,
+                    "startOffset": 50328,
+                    "endColumn": 46,
+                    "endOffset": 50370
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 1,
+                        "startOffset": 2482,
+                        "endColumn": 43,
+                        "endOffset": 2524
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 695,
+                    "startColumn": 4,
+                    "startOffset": 50375,
+                    "endColumn": 48,
+                    "endOffset": 50419
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 1,
+                        "startOffset": 3014,
+                        "endColumn": 45,
+                        "endOffset": 3058
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 696,
+                    "startColumn": 4,
+                    "startOffset": 50424,
+                    "endColumn": 44,
+                    "endOffset": 50464
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 1,
+                        "startOffset": 2255,
+                        "endColumn": 41,
+                        "endOffset": 2295
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 697,
+                    "startColumn": 4,
+                    "startOffset": 50469,
+                    "endColumn": 50,
+                    "endOffset": 50515
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 1,
+                        "startOffset": 2572,
+                        "endColumn": 47,
+                        "endOffset": 2618
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 698,
+                    "startColumn": 4,
+                    "startOffset": 50520,
+                    "endColumn": 50,
+                    "endOffset": 50566
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 1,
+                        "startOffset": 2069,
+                        "endColumn": 47,
+                        "endOffset": 2115
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 699,
+                    "startColumn": 4,
+                    "startOffset": 50571,
+                    "endColumn": 69,
+                    "endOffset": 50636
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 3982,
+                        "endColumn": 69,
+                        "endOffset": 4047
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 700,
+                    "startColumn": 4,
+                    "startOffset": 50641,
+                    "endColumn": 131,
+                    "endOffset": 50768
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1612,
+                        "endColumn": 131,
+                        "endOffset": 1739
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 701,
+                    "startColumn": 4,
+                    "startOffset": 50773,
+                    "endColumn": 46,
+                    "endOffset": 50815
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 1,
+                        "startOffset": 2924,
+                        "endColumn": 43,
+                        "endOffset": 2966
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 702,
+                    "startColumn": 4,
+                    "startOffset": 50820,
+                    "endColumn": 54,
+                    "endOffset": 50870
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 1,
+                        "startOffset": 2721,
+                        "endColumn": 51,
+                        "endOffset": 2771
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 703,
+                    "startColumn": 4,
+                    "startOffset": 50875,
+                    "endColumn": 115,
+                    "endOffset": 50986
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 359,
+                        "endColumn": 115,
+                        "endOffset": 470
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 704,
+                    "startColumn": 4,
+                    "startOffset": 50991,
+                    "endColumn": 51,
+                    "endOffset": 51038
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 37,
+                        "startColumn": 1,
+                        "startOffset": 2671,
+                        "endColumn": 48,
+                        "endOffset": 2718
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 705,
+                    "startColumn": 4,
+                    "startOffset": 51043,
+                    "endColumn": 52,
+                    "endOffset": 51091
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 1,
+                        "startOffset": 3105,
+                        "endColumn": 49,
+                        "endOffset": 3153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 706,
+                    "startColumn": 4,
+                    "startOffset": 51096,
+                    "endColumn": 115,
+                    "endOffset": 51207
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 703,
+                        "endColumn": 115,
+                        "endOffset": 814
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 707,
+                    "startColumn": 4,
+                    "startOffset": 51212,
+                    "endColumn": 99,
+                    "endOffset": 51307
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 61,
+                        "startColumn": 1,
+                        "startOffset": 3881,
+                        "endColumn": 96,
+                        "endOffset": 3976
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 708,
+                    "startColumn": 4,
+                    "startOffset": 51312,
+                    "endColumn": 54,
+                    "endOffset": 51362
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 3600,
+                        "endColumn": 54,
+                        "endOffset": 3650
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 709,
+                    "startColumn": 4,
+                    "startOffset": 51367,
+                    "endColumn": 55,
+                    "endOffset": 51418
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 57,
+                        "startColumn": 1,
+                        "startOffset": 3653,
+                        "endColumn": 52,
+                        "endOffset": 3704
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 710,
+                    "startColumn": 4,
+                    "startOffset": 51423,
+                    "endColumn": 57,
+                    "endOffset": 51476
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 1,
+                        "startOffset": 3762,
+                        "endColumn": 54,
+                        "endOffset": 3815
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 711,
+                    "startColumn": 4,
+                    "startOffset": 51481,
+                    "endColumn": 61,
+                    "endOffset": 51538
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 60,
+                        "startColumn": 4,
+                        "startOffset": 3821,
+                        "endColumn": 61,
+                        "endOffset": 3878
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 712,
+                    "startColumn": 4,
+                    "startOffset": 51543,
+                    "endColumn": 56,
+                    "endOffset": 51595
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 58,
+                        "startColumn": 1,
+                        "startOffset": 3707,
+                        "endColumn": 53,
+                        "endOffset": 3759
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 713,
+                    "startColumn": 4,
+                    "startOffset": 51600,
+                    "endColumn": 46,
+                    "endOffset": 51642
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 1,
+                        "startOffset": 2210,
+                        "endColumn": 43,
+                        "endOffset": 2252
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 714,
+                    "startColumn": 4,
+                    "startOffset": 51647,
+                    "endColumn": 54,
+                    "endOffset": 51697
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 1,
+                        "startOffset": 3355,
+                        "endColumn": 51,
+                        "endOffset": 3405
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 715,
+                    "startColumn": 4,
+                    "startOffset": 51702,
+                    "endColumn": 117,
+                    "endOffset": 51815
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1153,
+                        "endColumn": 117,
+                        "endOffset": 1266
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 716,
+                    "startColumn": 4,
+                    "startOffset": 51820,
+                    "endColumn": 52,
+                    "endOffset": 51868
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 1,
+                        "startOffset": 3304,
+                        "endColumn": 49,
+                        "endOffset": 3352
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 717,
+                    "startColumn": 4,
+                    "startOffset": 51873,
+                    "endColumn": 115,
+                    "endOffset": 51984
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1036,
+                        "endColumn": 115,
+                        "endOffset": 1147
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 718,
+                    "startColumn": 4,
+                    "startOffset": 51989,
+                    "endColumn": 48,
+                    "endOffset": 52033
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 63,
+                        "startColumn": 4,
+                        "startOffset": 4053,
+                        "endColumn": 48,
+                        "endOffset": 4097
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 719,
+                    "startColumn": 4,
+                    "startOffset": 52038,
+                    "endColumn": 112,
+                    "endOffset": 52146
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1387,
+                        "endColumn": 112,
+                        "endOffset": 1495
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 720,
+                    "startColumn": 4,
+                    "startOffset": 52151,
+                    "endColumn": 63,
+                    "endOffset": 52210
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 64,
+                        "startColumn": 4,
+                        "startOffset": 4103,
+                        "endColumn": 63,
+                        "endOffset": 4162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 721,
+                    "startColumn": 4,
+                    "startOffset": 52215,
+                    "endColumn": 42,
+                    "endOffset": 52253
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 1,
+                        "startOffset": 3408,
+                        "endColumn": 39,
+                        "endOffset": 3446
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 722,
+                    "startColumn": 4,
+                    "startOffset": 52258,
+                    "endColumn": 105,
+                    "endOffset": 52359
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 929,
+                        "endColumn": 105,
+                        "endOffset": 1030
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 723,
+                    "startColumn": 4,
+                    "startOffset": 52364,
+                    "endColumn": 51,
+                    "endOffset": 52411
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 36,
+                        "startColumn": 1,
+                        "startOffset": 2621,
+                        "endColumn": 48,
+                        "endOffset": 2668
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 724,
+                    "startColumn": 4,
+                    "startOffset": 52416,
+                    "endColumn": 46,
+                    "endOffset": 52458
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 1,
+                        "startOffset": 4374,
+                        "endColumn": 43,
+                        "endOffset": 4416
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 725,
+                    "startColumn": 4,
+                    "startOffset": 52463,
+                    "endColumn": 48,
+                    "endOffset": 52507
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 1,
+                        "startOffset": 3257,
+                        "endColumn": 45,
+                        "endOffset": 3301
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 726,
+                    "startColumn": 4,
+                    "startOffset": 52512,
+                    "endColumn": 68,
+                    "endOffset": 52576
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 76,
+                        "startColumn": 1,
+                        "startOffset": 4719,
+                        "endColumn": 65,
+                        "endOffset": 4783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 727,
+                    "startColumn": 4,
+                    "startOffset": 52581,
+                    "endColumn": 67,
+                    "endOffset": 52644
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 1,
+                        "startOffset": 2416,
+                        "endColumn": 64,
+                        "endOffset": 2479
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 728,
+                    "startColumn": 4,
+                    "startOffset": 52649,
+                    "endColumn": 50,
+                    "endOffset": 52695
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 415,
+                        "endColumn": 50,
+                        "endOffset": 461
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 729,
+                    "startColumn": 4,
+                    "startOffset": 52700,
+                    "endColumn": 52,
+                    "endOffset": 52748
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 531,
+                        "endColumn": 52,
+                        "endOffset": 579
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 730,
+                    "startColumn": 4,
+                    "startOffset": 52753,
+                    "endColumn": 54,
+                    "endOffset": 52803
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 585,
+                        "endColumn": 54,
+                        "endOffset": 635
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 731,
+                    "startColumn": 4,
+                    "startOffset": 52808,
+                    "endColumn": 62,
+                    "endOffset": 52866
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 467,
+                        "endColumn": 62,
+                        "endOffset": 525
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 732,
+                    "startColumn": 4,
+                    "startOffset": 52871,
+                    "endColumn": 73,
+                    "endOffset": 52940
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 641,
+                        "endColumn": 73,
+                        "endOffset": 710
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 733,
+                    "startColumn": 4,
+                    "startOffset": 52945,
+                    "endColumn": 59,
+                    "endOffset": 53000
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 1,
+                        "startOffset": 786,
+                        "endColumn": 56,
+                        "endOffset": 841
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 734,
+                    "startColumn": 4,
+                    "startOffset": 53005,
+                    "endColumn": 74,
+                    "endOffset": 53075
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 1,
+                        "startOffset": 713,
+                        "endColumn": 71,
+                        "endOffset": 783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 735,
+                    "startColumn": 4,
+                    "startOffset": 53080,
+                    "endColumn": 48,
+                    "endOffset": 53124
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 48,
+                        "endOffset": 101
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 736,
+                    "startColumn": 4,
+                    "startOffset": 53129,
+                    "endColumn": 70,
+                    "endOffset": 53195
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 343,
+                        "endColumn": 70,
+                        "endOffset": 409
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 737,
+                    "startColumn": 4,
+                    "startOffset": 53200,
+                    "endColumn": 72,
+                    "endOffset": 53268
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 269,
+                        "endColumn": 72,
+                        "endOffset": 337
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 738,
+                    "startColumn": 4,
+                    "startOffset": 53273,
+                    "endColumn": 66,
+                    "endOffset": 53335
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 201,
+                        "endColumn": 66,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 739,
+                    "startColumn": 4,
+                    "startOffset": 53340,
+                    "endColumn": 92,
+                    "endOffset": 53428
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_oks_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 107,
+                        "endColumn": 92,
+                        "endOffset": 195
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 740,
+                    "startColumn": 4,
+                    "startOffset": 53433,
+                    "endColumn": 52,
+                    "endOffset": 53481
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 41,
+                        "startColumn": 1,
+                        "startOffset": 2873,
+                        "endColumn": 49,
+                        "endOffset": 2921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 741,
+                    "startColumn": 4,
+                    "startOffset": 53486,
+                    "endColumn": 115,
+                    "endOffset": 53597
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 586,
+                        "endColumn": 115,
+                        "endOffset": 697
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 742,
+                    "startColumn": 4,
+                    "startOffset": 53602,
+                    "endColumn": 44,
+                    "endOffset": 53642
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 4279,
+                        "endColumn": 44,
+                        "endOffset": 4319
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 743,
+                    "startColumn": 4,
+                    "startOffset": 53647,
+                    "endColumn": 46,
+                    "endOffset": 53689
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 55,
+                        "startColumn": 4,
+                        "startOffset": 3552,
+                        "endColumn": 46,
+                        "endOffset": 3594
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 744,
+                    "startColumn": 4,
+                    "startOffset": 53694,
+                    "endColumn": 38,
+                    "endOffset": 53728
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 1,
+                        "startOffset": 2774,
+                        "endColumn": 35,
+                        "endOffset": 2808
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 745,
+                    "startColumn": 4,
+                    "startOffset": 53733,
+                    "endColumn": 108,
+                    "endOffset": 53837
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 476,
+                        "endColumn": 108,
+                        "endOffset": 580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 746,
+                    "startColumn": 4,
+                    "startOffset": 53842,
+                    "endColumn": 44,
+                    "endOffset": 53882
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 1,
+                        "startOffset": 1858,
+                        "endColumn": 41,
+                        "endOffset": 1898
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 747,
+                    "startColumn": 4,
+                    "startOffset": 53887,
+                    "endColumn": 46,
+                    "endOffset": 53929
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 1,
+                        "startOffset": 2165,
+                        "endColumn": 43,
+                        "endOffset": 2207
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 748,
+                    "startColumn": 4,
+                    "startOffset": 53934,
+                    "endColumn": 68,
+                    "endOffset": 53998
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 75,
+                        "startColumn": 1,
+                        "startOffset": 4652,
+                        "endColumn": 65,
+                        "endOffset": 4716
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 749,
+                    "startColumn": 4,
+                    "startOffset": 54003,
+                    "endColumn": 69,
+                    "endOffset": 54068
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 1,
+                        "startOffset": 4584,
+                        "endColumn": 66,
+                        "endOffset": 4649
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 750,
+                    "startColumn": 4,
+                    "startOffset": 54073,
+                    "endColumn": 66,
+                    "endOffset": 54135
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 1,
+                        "startOffset": 4786,
+                        "endColumn": 63,
+                        "endOffset": 4848
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 751,
+                    "startColumn": 4,
+                    "startOffset": 54140,
+                    "endColumn": 56,
+                    "endOffset": 54192
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 73,
+                        "startColumn": 1,
+                        "startOffset": 4529,
+                        "endColumn": 53,
+                        "endOffset": 4581
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 752,
+                    "startColumn": 4,
+                    "startOffset": 54197,
+                    "endColumn": 62,
+                    "endOffset": 54255
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 72,
+                        "startColumn": 1,
+                        "startOffset": 4468,
+                        "endColumn": 59,
+                        "endOffset": 4526
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 753,
+                    "startColumn": 4,
+                    "startOffset": 54260,
+                    "endColumn": 70,
+                    "endOffset": 54326
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 78,
+                        "startColumn": 1,
+                        "startOffset": 4851,
+                        "endColumn": 67,
+                        "endOffset": 4917
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 754,
+                    "startColumn": 4,
+                    "startOffset": 54331,
+                    "endColumn": 59,
+                    "endOffset": 54386
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 1,
+                        "startOffset": 2298,
+                        "endColumn": 56,
+                        "endOffset": 2353
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 755,
+                    "startColumn": 4,
+                    "startOffset": 54391,
+                    "endColumn": 53,
+                    "endOffset": 54440
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 1,
+                        "startOffset": 1748,
+                        "endColumn": 50,
+                        "endOffset": 1797
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 756,
+                    "startColumn": 4,
+                    "startOffset": 54445,
+                    "endColumn": 61,
+                    "endOffset": 54502
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 1,
+                        "startOffset": 2356,
+                        "endColumn": 58,
+                        "endOffset": 2413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 757,
+                    "startColumn": 4,
+                    "startOffset": 54507,
+                    "endColumn": 63,
+                    "endOffset": 54566
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 1,
+                        "startOffset": 2811,
+                        "endColumn": 60,
+                        "endOffset": 2870
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 758,
+                    "startColumn": 4,
+                    "startOffset": 54571,
+                    "endColumn": 59,
+                    "endOffset": 54626
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 1,
+                        "startOffset": 1800,
+                        "endColumn": 56,
+                        "endOffset": 1855
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 759,
+                    "startColumn": 4,
+                    "startOffset": 54631,
+                    "endColumn": 46,
+                    "endOffset": 54673
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 1,
+                        "startOffset": 2969,
+                        "endColumn": 43,
+                        "endOffset": 3011
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 760,
+                    "startColumn": 4,
+                    "startOffset": 54678,
+                    "endColumn": 48,
+                    "endOffset": 54722
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 1,
+                        "startOffset": 2118,
+                        "endColumn": 45,
+                        "endOffset": 2162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 761,
+                    "startColumn": 4,
+                    "startOffset": 54727,
+                    "endColumn": 74,
+                    "endOffset": 54797
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 1,
+                        "startOffset": 4920,
+                        "endColumn": 71,
+                        "endOffset": 4990
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 762,
+                    "startColumn": 4,
+                    "startOffset": 54802,
+                    "endColumn": 45,
+                    "endOffset": 54843
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 1,
+                        "startOffset": 3061,
+                        "endColumn": 42,
+                        "endOffset": 3102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 763,
+                    "startColumn": 4,
+                    "startOffset": 54848,
+                    "endColumn": 59,
+                    "endOffset": 54903
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 127,
+                        "endColumn": 59,
+                        "endOffset": 182
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 764,
+                    "startColumn": 4,
+                    "startOffset": 54908,
+                    "endColumn": 46,
+                    "endOffset": 54950
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 1,
+                        "startOffset": 1901,
+                        "endColumn": 43,
+                        "endOffset": 1943
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 765,
+                    "startColumn": 4,
+                    "startOffset": 54955,
+                    "endColumn": 109,
+                    "endOffset": 55060
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 248,
+                        "endColumn": 109,
+                        "endOffset": 353
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 766,
+                    "startColumn": 4,
+                    "startOffset": 55065,
+                    "endColumn": 64,
+                    "endOffset": 55125
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 1,
+                        "startOffset": 2006,
+                        "endColumn": 61,
+                        "endOffset": 2066
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 767,
+                    "startColumn": 4,
+                    "startOffset": 55130,
+                    "endColumn": 61,
+                    "endOffset": 55187
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 1,
+                        "startOffset": 1946,
+                        "endColumn": 58,
+                        "endOffset": 2003
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 768,
+                    "startColumn": 4,
+                    "startOffset": 55192,
+                    "endColumn": 68,
+                    "endOffset": 55256
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 68,
+                        "endOffset": 121
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 769,
+                    "startColumn": 4,
+                    "startOffset": 55261,
+                    "endColumn": 58,
+                    "endOffset": 55315
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 58,
+                        "endOffset": 242
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 770,
+                    "startColumn": 4,
+                    "startOffset": 55320,
+                    "endColumn": 50,
+                    "endOffset": 55366
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 1,
+                        "startOffset": 3500,
+                        "endColumn": 47,
+                        "endOffset": 3546
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 771,
+                    "startColumn": 4,
+                    "startOffset": 55371,
+                    "endColumn": 113,
+                    "endOffset": 55480
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1272,
+                        "endColumn": 113,
+                        "endOffset": 1381
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 772,
+                    "startColumn": 4,
+                    "startOffset": 55485,
+                    "endColumn": 44,
+                    "endOffset": 55525
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 1,
+                        "startOffset": 3156,
+                        "endColumn": 41,
+                        "endOffset": 3196
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 773,
+                    "startColumn": 4,
+                    "startOffset": 55530,
+                    "endColumn": 107,
+                    "endOffset": 55633
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 820,
+                        "endColumn": 107,
+                        "endOffset": 923
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 774,
+                    "startColumn": 4,
+                    "startOffset": 55638,
+                    "endColumn": 59,
+                    "endOffset": 55693
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 1,
+                        "startOffset": 3199,
+                        "endColumn": 56,
+                        "endOffset": 3254
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 775,
+                    "startColumn": 4,
+                    "startOffset": 55698,
+                    "endColumn": 46,
+                    "endOffset": 55740
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 1,
+                        "startOffset": 2527,
+                        "endColumn": 43,
+                        "endOffset": 2569
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 776,
+                    "startColumn": 4,
+                    "startOffset": 55745,
+                    "endColumn": 48,
+                    "endOffset": 55789
+                },
+                "from": {
+                    "file": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\values-en\\ssdk_strings.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 1,
+                        "startOffset": 4419,
+                        "endColumn": 45,
+                        "endOffset": 4463
+                    }
+                }
             }
         ]
     }

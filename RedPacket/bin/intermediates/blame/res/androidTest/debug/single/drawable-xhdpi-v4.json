@@ -88,6 +88,10 @@
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\_ic_wx.png"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\_btn_white.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\_btn_white.9.png"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\_top_back.png",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\_top_back.png"
     },
@@ -98,10 +102,6 @@
     {
         "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\round_spinner_fade_00.png",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\round_spinner_fade_00.png"
-    },
-    {
-        "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\_btn_white.9.png",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\_btn_white.9.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\open_rp_top.png",

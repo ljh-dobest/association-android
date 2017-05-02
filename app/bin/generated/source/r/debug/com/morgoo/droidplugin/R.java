@@ -7,18 +7,4 @@
 package com.morgoo.droidplugin;
 
 public final class R {
-    public static final class drawable {
-        public static final int plugin_activity_loading = 0x7f0200f7;
-        public static final int plugin_activity_loading_bitmap = 0x7f0200f8;
-    }
-    public static final class string {
-        public static final int service_name_plugin_manager_service = 0x7f0902d1;
-        public static final int stub_name_activity = 0x7f0902e0;
-        public static final int stub_name_povider = 0x7f0902e1;
-        public static final int stub_name_service = 0x7f0902e2;
-    }
-    public static final class style {
-        public static final int DroidPluginTheme = 0x7f0c001b;
-        public static final int DroidPluginThemeDialog = 0x7f0c001c;
-    }
 }

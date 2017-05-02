@@ -1,7 +1,7 @@
 package com.ike.communityalliance.listener;
 
 import com.ike.communityalliance.bean.ProvinceBean;
-
+import com.ike.communityalliance.bean.VerifyRecommedInfo;
 
 import java.util.ArrayList;
 
@@ -14,5 +14,6 @@ public interface OnVerifyRecommedInfoFinishListener {
     void succeedToVerifyInfo();
     void failedToVerifyInfo(String string);
     void returnParserData(ArrayList<ProvinceBean> data);
-    void returnHobby(ArrayList<String> hobbys);
+    void returnHobby(String hobbys);
+    void returnVerifyInfo(VerifyRecommedInfo verifyRecommedInfoBean);
 }

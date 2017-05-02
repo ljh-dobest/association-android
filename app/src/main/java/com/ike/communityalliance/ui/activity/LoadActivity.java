@@ -24,7 +24,7 @@ public class LoadActivity extends BaseActivity {
     private List<View> list = new ArrayList<View>();
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-
+    private ImageView iv_load_go;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,18 +42,16 @@ public class LoadActivity extends BaseActivity {
     }
 
     private void ViewPagerView() {
+        iv_load_go= (ImageView) findViewById(R.id.iv_load_go);
         pager = (ViewPager) findViewById(R.id.vp_load);
         List<View> list = new ArrayList<View>();
         list.add(getLayoutInflater().inflate(R.layout.load_image_1, null));
         list.add(getLayoutInflater().inflate(R.layout.load_image_2, null));
         list.add(getLayoutInflater().inflate(R.layout.load_image_3, null));
-        View view4 = getLayoutInflater().inflate(R.layout.load_image_4, null);
-        list.add(view4);
-        view4.setOnClickListener(onClickListener);
         adapter = new LoadViewPagerAdapter(list);
         pager.setAdapter(adapter);
         pager.addOnPageChangeListener(listener);
-
+       iv_load_go.setOnClickListener(onClickListener);
     }
 
     private ViewPager.OnPageChangeListener listener = new ViewPager.OnPageChangeListener() {
@@ -65,6 +63,11 @@ public class LoadActivity extends BaseActivity {
         @Override
         public void onPageSelected(int position) {
             setImage(position);
+            if(position==2){
+               iv_load_go.setVisibility(View.VISIBLE);
+            }else{
+                iv_load_go.setVisibility(View.GONE);
+            }
         }
 
         @Override
