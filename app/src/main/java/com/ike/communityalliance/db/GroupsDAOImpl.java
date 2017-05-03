@@ -63,7 +63,6 @@ public class GroupsDAOImpl {
             groups.setGroupName(cursor.getString(cursor.getColumnIndex("groupName")));
             groups.setGroupPortraitUrl(cursor.getString(cursor.getColumnIndex("groupPortraitUri")));
             groups.setRole(cursor.getString(cursor.getColumnIndex("role")));
-
         }
         db.close();
         return groups;

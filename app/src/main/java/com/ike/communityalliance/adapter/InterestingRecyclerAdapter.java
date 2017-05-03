@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.bean.BaseBean;
 import com.ike.communityalliance.bean.Code;
@@ -22,6 +20,8 @@ import com.ike.communityalliance.bean.InterestGroupBean;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
@@ -43,7 +43,6 @@ public class InterestingRecyclerAdapter extends RecyclerView.Adapter<Interesting
     private Context mContext;
     private LayoutInflater inflater;
     private int CurPosition=0;
-
     public InterestingRecyclerAdapter(Context context){
         this. mContext=context;
         inflater= LayoutInflater. from(mContext);
@@ -119,7 +118,7 @@ public class InterestingRecyclerAdapter extends RecyclerView.Adapter<Interesting
             @Override
             public void onError(Call call, Exception e, int id) {
                 T.showShort(mContext, "/addfriendRequest-----"+e);
-                return;
+                LoadDialog.dismiss(mContext);
             }
 
             @Override

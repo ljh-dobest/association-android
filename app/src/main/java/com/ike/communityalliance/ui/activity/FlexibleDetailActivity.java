@@ -56,6 +56,8 @@ public class FlexibleDetailActivity extends BaseActivity {
     TextView tv_activity_detail_moreJoinUsers;
     @BindView(R.id.tv_activity_detail_applyFlexible)
     TextView tv_activity_detail_applyFlexible;
+    @BindView(R.id.tv_activity_detail_wasapply)
+    TextView tv_activity_detail_wasapply;
     @BindView(R.id.ll_activity_detail_up)
     LinearLayout ll_activity_detail_up;
     @BindView(R.id.ll_activity_detail_down)
@@ -123,6 +125,7 @@ public class FlexibleDetailActivity extends BaseActivity {
             tv_activity_detail_address.setText(flexible.getActivesAddress());
             tv_activity_detail_content.setText(flexible.getActivesContent());
               tv_activity_detail_publisher.setText(flexible.getPublisher());
+            tv_activity_detail_wasapply.setText("已报名("+flexible.getJoinUsers().size()+")");
             if(checkJoin()){
              tv_activity_detail_applyFlexible.setText("已报名");
            tv_activity_detail_applyFlexible.setBackgroundResource(R.mipmap.applyed_bg);

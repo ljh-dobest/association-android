@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ike.communityalliance.bean.BaseBean;
 import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
@@ -151,7 +152,8 @@ public class UserDetailActivity extends BaseActivity {
                 builder.show();
                 break;
             case R.id.ll_send_sms:   //发短信
-                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + userPhone));
+                Uri smsToUri = Uri.parse("smsto:"+userPhone);
+                Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
                 intent.putExtra("sms_body", "");
                 startActivity(intent);
                 break;
@@ -251,9 +253,9 @@ public class UserDetailActivity extends BaseActivity {
             @Override
             public void onResponse(String response, int id) {
                 Gson gson = new Gson();
-                Type type = new TypeToken<Code<Integer>>() {
+                Type type = new TypeToken<Code<BaseBean>>() {
                 }.getType();
-                Code<Integer> code = gson.fromJson(response, type);
+                Code<BaseBean> code = gson.fromJson(response, type);
                 if (code.getCode() == 200) {
                     tvUsername.setText(string);
                     RongIM.getInstance().refreshUserInfoCache(new UserInfo(userId,string,Uri.parse(userPort)));

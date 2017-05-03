@@ -12,10 +12,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.ike.communityalliance.R;
-import com.ike.communityalliance.ui.activity.VoteDetailActivity;
 import com.ike.communityalliance.bean.GroupVote;
 import com.ike.communityalliance.bean.OptionBean;
 import com.ike.communityalliance.network.HttpUtils;
+import com.ike.communityalliance.ui.activity.VoteDetailActivity;
 import com.ike.communityalliance.wedget.XCRoundRectImageView;
 import com.squareup.picasso.Picasso;
 
@@ -98,14 +98,13 @@ public class GroupVoteRvAdapter extends RecyclerView.Adapter<GroupVoteRvAdapter.
         }
         List<OptionBean> options=groupVote.getOption();
         for (int i = 0; i < options.size(); i++) {
-            if(i>2){
-                return;
+            if(i<options.size()){
+                RadioButton rb= (RadioButton) holder.rg_groupVote.getChildAt(i);
+                rb.setText(options.get(i).getContent());
+                rb.setEnabled(false);
+                rb.setFocusableInTouchMode(false);
+                rb.setVisibility(View.VISIBLE);
             }
-            RadioButton rb= (RadioButton) holder.rg_groupVote.getChildAt(i);
-            rb.setText(options.get(i).getContent());
-            rb.setEnabled(false);
-            rb.setFocusableInTouchMode(false);
-            rb.setVisibility(View.VISIBLE);
         }
         holder.btn_groupVote_vote.setOnClickListener(new View.OnClickListener() {
             @Override

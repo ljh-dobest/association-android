@@ -36,7 +36,7 @@ public class GroupVotePlugin implements IPluginModule {
 
     @Override
     public String obtainTitle(Context context) {
-        return context.getString(R.string.vedio);
+        return context.getString(R.string.vote);
     }
 
     @Override

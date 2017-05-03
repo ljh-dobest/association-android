@@ -143,6 +143,10 @@ private HomePageLVAdapter adapter;
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+      if(totalItemCount<4){
+          homepage_iv_top.setVisibility(View.GONE);
+          return;
+      }
         if (visibleItemCount + firstVisibleItem == totalItemCount) {
             homepage_iv_top.setVisibility(View.VISIBLE);
         }else{

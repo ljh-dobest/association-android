@@ -34,7 +34,7 @@
         android:gravity="left"
         android:layout_below="@id/iv_inteset_rv_item_groupName"
         android:text="群人数:20人"
-        android:textSize="@dimen/font_24"
+        android:textSize="12sp"
         android:id="@+id/iv_inteset_rv_item_groupNum" />
 </com.zhy.autolayout.AutoRelativeLayout>
 <Button

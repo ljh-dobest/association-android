@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     >
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="530px"
+        android:layout_width="480px"
         android:layout_height="wrap_content">
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_marginTop="30px"

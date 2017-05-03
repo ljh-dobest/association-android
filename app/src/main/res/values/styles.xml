@@ -133,6 +133,11 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/font_18</item>
     </style>
+
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground"> @android:color/transparent </item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
     <string-array name="childvalues">
         <item>棋牌</item>
         <item>游戏</item>

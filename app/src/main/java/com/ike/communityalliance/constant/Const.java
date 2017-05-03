@@ -9,7 +9,7 @@ public class Const {
     public static final String CHANGEINFO = "CHANGEINFO";
 
     public static final String LOGIN_ID ="loginid";
-    public static final String LOGIN_ACCOUNT="loginid";
+    public static final String LOGIN_ACCOUNT="loginaccount";
     public static final String LOGIN_USERNAME="loginUsername";
     public static final String LOGIN_TOKEN ="loginToken";
     public static final String LOGIN_NICKNAME ="loginnickname";

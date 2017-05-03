@@ -40,7 +40,7 @@ public class ChessAndCardsModule {
                     case 200:
                        List<InterestGroupBean> groupData=code.getData();
                         List<InterestGroupBean> unJoinGroupData=getUnJoinGroupData(groupData);
-                        listener.returnInterestGroupData(groupData);
+                        listener.returnInterestGroupData(unJoinGroupData);
                         break;
                     case 0:
                         listener.showErrorString("服务器繁忙");

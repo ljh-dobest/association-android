@@ -3,6 +3,7 @@ package com.ike.communityalliance.ui.activity;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -157,6 +158,7 @@ public class SignPickerActivity extends BaseMvpActivity<ISignPickerView,SignPick
         final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
         ComfirmDialog.show();
         Window window = ComfirmDialog.getWindow();
+        window.setGravity(Gravity.CENTER);
         window.setContentView(R.layout.comfirm_dialog_layout);
         Button btn_comfirm_dialog_comfirm = (Button) window.findViewById(R.id.btn_comfirm_dialog_comfirm);
         TextView tv_comfirm_dialog_title1= (TextView) window.findViewById(R.id.tv_comfirm_dialog_title1);

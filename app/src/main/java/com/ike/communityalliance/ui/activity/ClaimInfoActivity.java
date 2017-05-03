@@ -210,7 +210,7 @@ TextView tv_claim_back;
                 if(checkedId == R.id.rg_claimInfo_sex){
                     sex="1";
                 }else{
-                    sex="0";
+                    sex="2";
                 }
                 break;
         }

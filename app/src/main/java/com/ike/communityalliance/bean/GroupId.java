@@ -6,11 +6,11 @@ package com.ike.communityalliance.bean;
 
 public class GroupId {
     private String groupId;
-    private String groupPortraitUri;
+    private String groupPortraitUrl;
 
-    public GroupId(String groupId, String groupPortraitUri) {
+    public GroupId(String groupId, String groupPortraitUrl) {
         this.groupId = groupId;
-        this.groupPortraitUri = groupPortraitUri;
+        this.groupPortraitUrl = groupPortraitUrl;
     }
 
     public String getGroupId() {
@@ -21,11 +21,11 @@ public class GroupId {
         this.groupId = groupId;
     }
 
-    public String getGroupPortraitUri() {
-        return groupPortraitUri;
+    public String getGroupPortraitUrl() {
+        return groupPortraitUrl;
     }
 
-    public void setGroupPortraitUri(String groupPortraitUri) {
-        this.groupPortraitUri = groupPortraitUri;
+    public void setGroupPortraitUrl(String groupPortraitUrl) {
+        this.groupPortraitUrl = groupPortraitUrl;
     }
 }

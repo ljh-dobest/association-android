@@ -154,9 +154,8 @@ public class CreateGroupActivity extends BaseActivity {
                         groups.setUserId(userid);
                         groups.setGroupId(groupId);  //groupId
                         groups.setGroupName(groupName);  //groupName
-                        String imgUrl= code.getData().getGroupPortraitUri();
+                        String imgUrl= code.getData().getGroupPortraitUrl();
                          String Url =HttpUtils.IMAGE_RUL + imgUrl;
-
                         groups.setGroupPortraitUrl(Url);
                         groups.setRole("1");
                         sqLiteDAO.save(groups);
@@ -225,7 +224,7 @@ public class CreateGroupActivity extends BaseActivity {
                         groups.setUserId(userid);
                         groups.setGroupId(groupId);  //groupId
                         groups.setGroupName(groupName);  //groupName
-                        String imgUrl= code.getData().getGroupPortraitUri();
+                        String imgUrl= code.getData().getGroupPortraitUrl();
                         String Url =HttpUtils.IMAGE_RUL + imgUrl;
 
                         groups.setGroupPortraitUrl(Url);

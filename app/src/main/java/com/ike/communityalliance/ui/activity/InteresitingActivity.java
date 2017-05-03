@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
+import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.ui.fragment.ChessAndCardsFragment;
 import com.ike.communityalliance.ui.fragment.InterestMoreFragment;
 
@@ -32,11 +33,13 @@ TabLayout tl_interesting;
     @BindView(R.id.ll_interest_back)
     LinearLayout ll_interest_back;
     private List<String> mTitle;
+    private  String userId;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intersiting);
         ButterKnife.bind(this);
+        userId = getSharedPreferences("config",MODE_PRIVATE).getString(Const.LOGIN_ID,"");
         init();
     }
 

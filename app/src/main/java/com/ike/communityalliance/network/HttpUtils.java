@@ -24,17 +24,11 @@ import okhttp3.OkHttpClient;
  * Created by Min on 2016/9/10.
  */
 public class HttpUtils {
-    public static final String CACHE_PATH= Environment.getExternalStorageDirectory().getAbsolutePath()+"/SmallTalk/";
-<<<<<<< HEAD
+    public static final String CACHE_PATH= Environment.getExternalStorageDirectory().getAbsolutePath();
       public static final String IMAGE_RUL ="https://sq.bjike.com";
-      public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
-=======
-  //    public static final String IMAGE_RUL ="https://sq.bjike.com";
-  //  public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
-      public static final String IMAGE_RUL ="http://192.168.0.104:90";
-      public static final String BASE_RUL ="http://192.168.0.104:90/appapi/app";
->>>>>>> ljh
-
+    public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
+//      public static final String IMAGE_RUL ="http://192.168.0.104:90";
+//      public static final String BASE_RUL ="http://192.168.0.104:90/appapi/app";
     /**
      * post请求
      * @param url 请求路径
@@ -311,8 +305,8 @@ public class HttpUtils {
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
-                .addParams("f_userid",f_userId)
-                .addParams("displayName",nickname)
+                .addParams("friendUserid",f_userId)
+                .addParams("displayname",nickname)
                 .build().execute(callback);
     }
 

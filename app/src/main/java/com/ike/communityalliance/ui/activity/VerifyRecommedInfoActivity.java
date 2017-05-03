@@ -28,10 +28,7 @@ import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
-<<<<<<< HEAD
-=======
 import com.ike.communityalliance.ui.Main2Activity;
->>>>>>> ljh
 import com.ike.mylibrary.util.T;
 import com.kyleduo.switchbutton.SwitchButton;
 
@@ -180,7 +177,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
 
     @Override
     public void showComfirmDialog() {
-        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
+        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this,R.style.DialogStyle).create();
         ComfirmDialog.show();
         Window window = ComfirmDialog.getWindow();
         window.setContentView(R.layout.comfirm_dialog_layout);
@@ -260,7 +257,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 if(checkedId ==R.id.rb_verifyInfo_man){
                     sex="1";
                 }else{
-                    sex="0";
+                    sex="2";
                 }
                 break;
         }
@@ -303,7 +300,6 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
 
     private void getViewData() {
         address.clear();
-        userId="110";
         fullName=et_verifyInfo_username.getText().toString();
         mobile=et_verifyInfo_mobile.getText().toString();
         getHobby(rg_verifyInfo_like);

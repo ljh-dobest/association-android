@@ -25,6 +25,7 @@ import com.ike.communityalliance.presenter.LoginPresenterImpl;
 import com.ike.communityalliance.ui.activity.LogoActivity;
 import com.ike.communityalliance.ui.activity.VerifyRecommedInfoActivity;
 import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,7 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
 
     @OnClick(R.id.sign_in_btn)
     public void loginOnClick(View view) {
+        LoadDialog.show(getContext());
         userName = et_userName.getText().toString().trim();
         pwd = et_pw.getText().toString().trim();
         presenter.verifyLoginInfo(userName, pwd);
@@ -86,11 +88,13 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
     }
     @Override
     public void showFailedLogin(String errorString) {
+        LoadDialog.dismiss(getContext());
         T.showShort(getContext(),errorString);
     }
 
     @Override
     public void succeedToLogin(UserInfo userInfo) {
+        LoadDialog.dismiss(getContext());
         saveData(userInfo);
         String status=userInfo.getStatus();
         if(status==null){

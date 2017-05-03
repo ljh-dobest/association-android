@@ -176,6 +176,7 @@ public class GroupAddFlexibleActivity extends BaseActivity {
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         T.showShort(GroupAddFlexibleActivity.this,e.toString());
+                        LoadDialog.dismiss(mContext);
                     }
 
                     @Override

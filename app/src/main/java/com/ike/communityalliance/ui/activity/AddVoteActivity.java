@@ -265,7 +265,7 @@ public class  AddVoteActivity extends BaseActivity {
     }
    //发送自定义消息
     private void sendMessage() {
-        String string="有人发起了投票活动，请点击右上角进入该活动进行投票";
+        String string="有人发起了投票活动，请在输入拓展栏进入该活动进行投票";
         if(!TextUtils.isEmpty(string)){
             TextMessage textMessage=TextMessage.obtain(RongContext.getInstance().getString(
                     R.string.group_notice_prefix)+string);
