@@ -1,10 +1,9 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.content.DialogInterface;
-<<<<<<< HEAD
-=======
+
 import android.content.Intent;
->>>>>>> ljh
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;

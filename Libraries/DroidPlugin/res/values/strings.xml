@@ -22,7 +22,9 @@
 **
 **/
 -->
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
     <string name="stub_name_activity">启动插件ing...</string>
     <string name="stub_name_povider">插件代理服务</string>
     <string name="stub_name_service">插件代理服务</string>
