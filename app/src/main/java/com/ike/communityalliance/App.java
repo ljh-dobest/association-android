@@ -50,7 +50,6 @@ public class App extends PluginApplication {
         super.onCreate();
         sInstance=this;
         FileDownloader.init(getApplicationContext());
-        PluginHelper.getInstance().applicationOnCreate(getBaseContext());
         //
         Stetho.initialize(new Stetho.Initializer(this) {
             @Override
@@ -133,6 +132,7 @@ public class App extends PluginApplication {
             //Initialize ImageLoader with configuration.
             ImageLoader.getInstance().init(config);
         }
+        PluginHelper.getInstance().applicationOnCreate(getBaseContext());
     }
 
     public static  DisplayImageOptions getOptions(){
@@ -155,7 +155,7 @@ public class App extends PluginApplication {
      * 获取当前进程的名字
      */
     public static String getCurProcessName(Context context){
-        ActivityManager activityManager= (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
         for(ActivityManager.RunningAppProcessInfo appProcessInfo : activityManager.getRunningAppProcesses()){
             if(appProcessInfo.pid==android.os.Process.myPid()){
                 return appProcessInfo.processName;
