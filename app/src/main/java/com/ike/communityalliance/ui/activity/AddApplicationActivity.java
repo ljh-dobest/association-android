@@ -8,6 +8,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,6 +64,7 @@ public class AddApplicationActivity extends BaseActivity {
     private static String pageName = "app";
     FileUtils fileUtils;
     File f;
+    ArrayList<ApkItem> apkFromInstall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class AddApplicationActivity extends BaseActivity {
         ButterKnife.bind(this);
         fileUtils = new FileUtils(AddApplicationActivity.this);
 
-            f = fileUtils.redFile("");
+        f = fileUtils.redFile("");
 
         initData();
 
@@ -88,25 +90,24 @@ public class AddApplicationActivity extends BaseActivity {
 
     private void initData() {
         list = new ArrayList<ApplyListItem>(0);
-        list.add(new ApplyListItem("shareApp", "干货分享", R.mipmap.ganhuo, 1, "com.issp.association", f.getPath()+"/drygoodsshare.apk"
+        list.add(new ApplyListItem("shareApp", "干货分享", R.mipmap.ganhuo, 1, "com.issp.association", f.getPath() + "/drygoodsshare.apk"
                 , "http://7xlet1.com1.z0.glb.clouddn.com/drygoodsshare.apk", 0));
-        list.add(new ApplyListItem("", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration", f.getPath()+"/inspirationtosell.apk"
+        list.add(new ApplyListItem("", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration", f.getPath() + "/inspirationtosell.apk"
                 , "http://7xlet1.com1.z0.glb.clouddn.com/inspirationtosell.apk", 0));
         list.add(new ApplyListItem("", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "直播中心", R.mipmap.zhibo, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "联盟打车", R.mipmap.dache, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "求助中心", R.mipmap.qiuzhu, 1, "", "", "", 0));
-        list.add(new ApplyListItem("","平台活动",R.mipmap.lingyang,1,"com.ike.coalition.platform",f.getPath()+"","/platform.apk",0));
-        list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.qiuzhu, 1, "com.issp.association.crowdfunding", f.getPath()+"/crowdfunding.apk",
+        list.add(new ApplyListItem("", "平台活动", R.mipmap.lingyang, 1, "com.ike.coalition.platform", f.getPath() + "", "/platform.apk", 0));
+        list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.qiuzhu, 1, "com.issp.association.crowdfunding", f.getPath() + "/crowdfunding.apk",
                 "", 0));
         adapter = new AddApplicationAdapter(list, AddApplicationActivity.this);
         gvApplication.setAdapter(adapter);
     }
 
-
     @OnItemClick(R.id.gv_application)
     void itemClick(View view, int position) {
-        ArrayList<ApkItem> apkFromInstall = getApkFromInstall();
+         apkFromInstall = getApkFromInstall();
         boolean boo = true;
         for (int i = 0; i < apkFromInstall.size(); i++) {
             if (apkFromInstall.get(i).packageInfo.packageName.equals(list.get(position).getPackageName())) {
@@ -122,6 +123,7 @@ public class AddApplicationActivity extends BaseActivity {
             Toast.makeText(AddApplicationActivity.this, "亲还没有添加哦", Toast.LENGTH_LONG).show();
             // T.showLong(AddApplicationActivity.this, "亲还没有添加哦");
             taskPb = (ArcProgress) view.findViewById(R.id.pb_schedule);
+            taskPb.setVisibility(View.VISIBLE);
             ApplyListItem model = list.get(position);
             BaseDownloadTask task = FileDownloader.getImpl().create(model.getUrl())
                     .setPath(model.getPath())
@@ -326,6 +328,7 @@ public class AddApplicationActivity extends BaseActivity {
         }
     };
     private ArcProgress taskPb;
+    private ImageView iv_download;
 
     /**
      * 下载停止状态
@@ -399,5 +402,6 @@ public class AddApplicationActivity extends BaseActivity {
         taskPb.setMax(1);
         taskPb.setProgress(1);
         apkTask();
+        taskPb.setVisibility(View.GONE);
     }
 }

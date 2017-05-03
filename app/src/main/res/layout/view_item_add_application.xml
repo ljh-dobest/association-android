@@ -23,6 +23,7 @@
             android:layout_centerHorizontal="true" />
 
         <com.czp.library.ArcProgress
+            android:visibility="gone"
             android:id="@+id/pb_schedule"
             android:layout_width="80dp"
             android:layout_height="80dp"
