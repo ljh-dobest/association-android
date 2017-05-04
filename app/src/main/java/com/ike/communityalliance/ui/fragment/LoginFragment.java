@@ -109,7 +109,6 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
             Intent intent=new Intent(getActivity(),LogoActivity.class);
             startActivity(intent);
         }
-        T.showShort(getContext(),"登录成功~~");
         getActivity().finish();
     }
 

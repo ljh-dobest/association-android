@@ -18,7 +18,7 @@ import java.util.List;
  * 广告页面
  */
 public class LoadActivity extends BaseActivity {
-    private ImageView[] imageViews = new ImageView[4];
+    private ImageView[] imageViews = new ImageView[3];
     private ViewPager pager;
     private LoadViewPagerAdapter adapter;
     private List<View> list = new ArrayList<View>();
@@ -91,28 +91,19 @@ public class LoadActivity extends BaseActivity {
     private void setImage(int index) {
         switch (index) {
             case 0:
-                imageViews[0].setImageResource(R.mipmap.load_round);
-                imageViews[1].setImageResource(R.mipmap.load_round_2);
-                imageViews[2].setImageResource(R.mipmap.load_round_2);
-                imageViews[3].setImageResource(R.mipmap.load_round_2);
+                imageViews[0].setImageResource(R.mipmap.load_checked);
+                imageViews[1].setImageResource(R.mipmap.load_unchecked);
+                imageViews[2].setImageResource(R.mipmap.load_unchecked);
                 break;
             case 1:
-                imageViews[0].setImageResource(R.mipmap.load_round_2);
-                imageViews[1].setImageResource(R.mipmap.load_round);
-                imageViews[2].setImageResource(R.mipmap.load_round_2);
-                imageViews[3].setImageResource(R.mipmap.load_round_2);
+                imageViews[0].setImageResource(R.mipmap.load_unchecked);
+                imageViews[1].setImageResource(R.mipmap.load_checked);
+                imageViews[2].setImageResource(R.mipmap.load_unchecked);
                 break;
             case 2:
-                imageViews[0].setImageResource(R.mipmap.load_round_2);
-                imageViews[1].setImageResource(R.mipmap.load_round_2);
-                imageViews[2].setImageResource(R.mipmap.load_round);
-                imageViews[3].setImageResource(R.mipmap.load_round_2);
-                break;
-            case 3:
-                imageViews[0].setImageResource(R.mipmap.load_round_2);
-                imageViews[1].setImageResource(R.mipmap.load_round_2);
-                imageViews[2].setImageResource(R.mipmap.load_round_2);
-                imageViews[3].setImageResource(R.mipmap.load_round);
+                imageViews[0].setImageResource(R.mipmap.load_unchecked);
+                imageViews[1].setImageResource(R.mipmap.load_unchecked);
+                imageViews[2].setImageResource(R.mipmap.load_checked);
                 break;
             default:
                 break;
@@ -123,6 +114,5 @@ public class LoadActivity extends BaseActivity {
         imageViews[0] = (ImageView) findViewById(R.id.load_image_round1);
         imageViews[1] = (ImageView) findViewById(R.id.load_image_round2);
         imageViews[2] = (ImageView) findViewById(R.id.load_image_round3);
-        imageViews[3] = (ImageView) findViewById(R.id.load_image_round4);
     }
 }

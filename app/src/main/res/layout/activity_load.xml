@@ -24,28 +24,22 @@
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_margin="5dp"
-            android:background="@mipmap/load_round" />
+            android:background="@mipmap/load_checked" />
 
         <ImageView
             android:id="@+id/load_image_round2"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_margin="5dp"
-            android:background="@mipmap/load_round" />
+            android:background="@mipmap/load_unchecked" />
 
         <ImageView
             android:id="@+id/load_image_round3"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_margin="5dp"
-            android:background="@mipmap/load_round" />
+            android:background="@mipmap/load_unchecked" />
 
-        <ImageView
-            android:id="@+id/load_image_round4"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_margin="5dp"
-            android:background="@mipmap/load_round" />
     </LinearLayout>
     <ImageView
         android:id="@+id/iv_load_go"
@@ -53,6 +47,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="90dp"
         android:src="@mipmap/load_go"/>
 </FrameLayout>

@@ -65,7 +65,7 @@ public class ClaimInfoPresenter extends BasePersenter<IClaimInfoView> implements
     }
 
     @Override
-    public void retturnHobbys(ArrayList<String> hobbys) {
+    public void retturnHobbys(String hobbys) {
         if(mView!=null){
             mView.setHobbys(hobbys);
         }

@@ -9,16 +9,15 @@ import android.view.View;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.L;
-import com.ike.communityalliance.ui.activity.AMAPLocationActivity;
-import com.ike.communityalliance.ui.activity.GroupVoteActivity;
-import com.ike.communityalliance.ui.activity.NewFriendListActivity;
 import com.ike.communityalliance.bean.ContactNotificationMessageData;
 import com.ike.communityalliance.bean.FriendInfo;
 import com.ike.communityalliance.bean.TalkTalkBean;
 import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.message.module.GroupTalkExtensionModule;
 import com.ike.communityalliance.message.module.TalkExtensionModule;
+import com.ike.communityalliance.ui.activity.AMAPLocationActivity;
+import com.ike.communityalliance.ui.activity.GroupVoteActivity;
+import com.ike.communityalliance.ui.activity.NewFriendListActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -329,7 +328,6 @@ public class AppContext extends RongIMClient.ResultCallback<Boolean> implements 
          //   BroadcastManager.getInstance(mContext).sendBroadcast(UPDATE_RED_DOT);
         } else if (messageContent instanceof GroupNotificationMessage) {
             GroupNotificationMessage groupNotificationMessage = (GroupNotificationMessage) messageContent;
-            L.e("" + groupNotificationMessage.getMessage());
             if (groupNotificationMessage.getOperation().equals("Kicked")) {
             } else if (groupNotificationMessage.getOperation().equals("Add")) {
             } else if (groupNotificationMessage.getOperation().equals("Quit")) {
@@ -338,7 +336,6 @@ public class AppContext extends RongIMClient.ResultCallback<Boolean> implements 
 
         } else if (messageContent instanceof ImageMessage) {
             ImageMessage imageMessage = (ImageMessage) messageContent;
-            Log.e("imageMessage", imageMessage.getRemoteUri().toString());
         }
 
         return false;

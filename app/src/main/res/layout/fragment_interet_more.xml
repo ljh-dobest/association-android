@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <ScrollView
+        android:id="@+id/sv_interestMore"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:scrollbars="none">
     <RadioGroup
         android:id="@+id/rg_interestMore"
         android:layout_width="wrap_content"
@@ -74,9 +80,10 @@
             style="@style/inteseting_rg_btn_style"
             android:text="娱乐八卦"/>
     </RadioGroup>
+    </ScrollView>
     <android.support.v7.widget.RecyclerView
-        android:layout_toRightOf="@id/rg_interestMore"
+        android:layout_toRightOf="@id/sv_interestMore"
         android:id="@+id/rv_interestGroupMore"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-</com.zhy.autolayout.AutoRelativeLayout>
+</RelativeLayout>

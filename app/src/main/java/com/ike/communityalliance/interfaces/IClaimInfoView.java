@@ -15,6 +15,6 @@ public interface IClaimInfoView extends BaseView {
     void showTextEmpty();
     void showSucceedClaim();
     void getHobbys(ViewGroup group);
-    void setHobbys(ArrayList<String> hobbys);
+    void setHobbys(String hobbys);
     void setprovinceData(ArrayList<ProvinceBean> data);
 }

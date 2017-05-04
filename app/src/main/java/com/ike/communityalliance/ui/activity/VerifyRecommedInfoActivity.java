@@ -293,7 +293,6 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                     }
                 });
                 dialog_creditScore.create().show();
-
                 break;
         }
     }

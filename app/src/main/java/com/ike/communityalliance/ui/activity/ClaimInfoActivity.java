@@ -1,6 +1,8 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bigkoo.pickerview.TimePickerView;
-import com.makeramen.roundedimageview.RoundedImageView;
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseMvpActivity;
 import com.ike.communityalliance.bean.CityBean;
@@ -24,9 +23,13 @@ import com.ike.communityalliance.bean.ClaimInfoBean;
 import com.ike.communityalliance.bean.ClaimPeopleBean;
 import com.ike.communityalliance.bean.CountyBean;
 import com.ike.communityalliance.bean.ProvinceBean;
+import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IClaimInfoView;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.presenter.ClaimInfoPresenter;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -37,8 +40,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoPresenter> implements IClaimInfoView, RadioGroup.OnCheckedChangeListener, View.OnClickListener, AdapterView.OnItemSelectedListener {
-@BindView(R.id.tv_claim_back)
-TextView tv_claim_back;
+    private final String[] relationships=new String[]{"亲人","情侣","同事","校友","老乡"};
+    private final String[] creditScores= new String[]{"100", "90", "80","70","60","50","40","30","20","10"};
+    @BindView(R.id.tv_claim_back)
+    TextView tv_claim_back;
     @BindView(R.id.iv_claim_userHeader)
     RoundedImageView iv_claim_userHeader;
     @BindView(R.id.tv_claiminfo_othername)
@@ -90,9 +95,9 @@ TextView tv_claim_back;
     private String fullName;
     private String mobile;
     private String sex="1";
-    private ArrayList<String> hobby=new ArrayList<>();
+    private String hobby;
     private ArrayList<String> address=new ArrayList<>();
-    private ArrayList<String> relationship=new ArrayList<>();
+    private String relationship;
     private String creditScore;
     private String birthday;
     private String homeplace;
@@ -113,6 +118,7 @@ TextView tv_claim_back;
     private ArrayList<CityBean> citys;
     private ClaimInfoBean claimInfo;
     private ClaimPeopleBean claimPeopleBean;
+    private SharedPreferences sp;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,6 +126,8 @@ TextView tv_claim_back;
         ButterKnife.bind(this);
         Intent intent=getIntent();
         claimPeopleBean=intent.getParcelableExtra("claimPeopleBean");
+        sp =getSharedPreferences("config",MODE_PRIVATE);
+        userId=sp.getString(Const.LOGIN_ID,"");
         presenter.getParserData(this,"data.txt");
         initView();
         initData();
@@ -138,8 +146,9 @@ TextView tv_claim_back;
         sp_claimInfo_jgprovince.setOnItemSelectedListener(this);
         sp_claimInfo_citys.setOnItemSelectedListener(this);
         sp_claimInfo_jgcitys.setOnItemSelectedListener(this);
-        ll_claiminfo_birthday.setOnClickListener(this);
         tv_claim_back.setOnClickListener(this);
+        et_claiminfo_relationship.setOnClickListener(this);
+        et_claiminfo_creditScore.setOnClickListener(this);
     }
 
 
@@ -164,7 +173,7 @@ TextView tv_claim_back;
     }
 
     @Override
-    public void setHobbys(ArrayList<String> hobbys) {
+    public void setHobbys(String hobbys) {
         hobby=hobbys;
     }
 
@@ -219,7 +228,7 @@ TextView tv_claim_back;
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ll_claiminfo_birthday:
+            case R.id.et_claiminfo_birthday:
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
@@ -229,6 +238,33 @@ TextView tv_claim_back;
                     }
                 }).build();
                 pvTime.show();
+                break;
+            case R.id.et_claiminfo_relationship:
+                //弹出关系选择框
+                android.app.AlertDialog.Builder dialog_relationship = new android.app.AlertDialog.Builder(this);
+                dialog_relationship.setTitle("选择关系");
+                dialog_relationship.setSingleChoiceItems(relationships, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        et_claiminfo_relationship.setText(relationships[i]);
+                        relationship=i+"";
+                        dialogInterface.dismiss();
+                    }
+                });
+                dialog_relationship.create().show();
+                break;
+            case R.id.et_claiminfo_creditScore:
+                //弹出信誉分选择框
+                android.app.AlertDialog.Builder dialog_creditScore = new android.app.AlertDialog.Builder(this);
+                dialog_creditScore.setTitle("选择信誉分");
+                dialog_creditScore.setSingleChoiceItems(creditScores, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        et_claiminfo_creditScore.setText(creditScores[i]);
+                        dialogInterface.dismiss();
+                    }
+                });
+                dialog_creditScore.create().show();
                 break;
             case R.id.btn_verifyclaim:
                 getViewData();
@@ -242,21 +278,26 @@ TextView tv_claim_back;
 
     private void getViewData() {
         address.clear();
-        relationship.clear();
-        userId="110";
+        claimUserId=claimPeopleBean.getRecommendId();
         fullName=et_claiminfo_username.getText().toString();
         mobile=et_claiminfo_mobile.getText().toString();
         getHobbys(rg_claimInfo_like);
         address.add(sp_claimInfo_province.getSelectedItem().toString());
         address.add(sp_claimInfo_citys.getSelectedItem().toString());
-        String county=(sp_claimInfo_countys.getSelectedItem().toString());
-        address.add(county);
+        try {
+            address.add(sp_claimInfo_countys.getSelectedItem().toString());
+        }catch (Exception e){
+            address.add("");
+        }
+        address.add("");
         creditScore=et_claiminfo_creditScore.getText().toString();
-        relationship.add(et_claiminfo_relationship.getText().toString());
         birthday=et_claiminfo_birthday.getText().toString();
-        homeplace=sp_claimInfo_jgprovince.getSelectedItem().toString()
-                  +sp_claimInfo_jgcitys.getSelectedItem().toString()
-                  +sp_claimInfo_jgcountys.getSelectedItem().toString();
+        homeplace=sp_claimInfo_jgprovince.getSelectedItem().toString()+
+                sp_claimInfo_jgcitys.getSelectedItem().toString();
+        try {
+            homeplace=homeplace+sp_claimInfo_jgcountys.getSelectedItem().toString();
+        }catch (Exception e){
+        }
         finishSchool=et_claiminfo_finishSchool.getText().toString();
         degree="1";
         company=et_claiminfo_company.getText().toString();

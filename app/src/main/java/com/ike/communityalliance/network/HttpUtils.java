@@ -649,9 +649,7 @@ public class HttpUtils {
     //提交认领信息
     public static void postClaimInfo(String url, ClaimInfoBean claimInfo, StringCallback callback){
         Gson gson=new Gson();
-        String hobbys = gson.toJson(claimInfo.getHobby());
         String address = gson.toJson(claimInfo.getAddress());
-        String relationship=gson.toJson(claimInfo.getRelationship());
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",claimInfo.getUserId())
@@ -659,9 +657,9 @@ public class HttpUtils {
                 .addParams("fullName",claimInfo.getFullName())
                 .addParams("mobile",claimInfo.getMobile())
                 .addParams("sex",claimInfo.getSex())
-                .addParams("hobby",hobbys)
+                .addParams("hobby",claimInfo.getHobby())
                 .addParams("address",address)
-                .addParams("relationship",relationship)
+                .addParams("relationship",claimInfo.getRelationship())
                 .addParams("creditScore",claimInfo.getCreditScore())
                 .addParams("birthday",claimInfo.getBirthday())
                 .addParams("homeplace",claimInfo.getHomeplace())
@@ -722,6 +720,13 @@ public class HttpUtils {
     }
     //获取首页数据
     public static void getHomePageData(String url,String userId,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .build().execute(callback);
+    }
+    //获取个人更多资料
+    public static void getMorePersonalInfo(String url,String userId,StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)

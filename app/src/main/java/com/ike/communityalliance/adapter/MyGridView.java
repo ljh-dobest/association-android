@@ -144,7 +144,7 @@ public class MyGridView extends BaseAdapter {
                         return;
                     }
                     UserInfo userInfo = new UserInfo(bean.getUserId(), bean.getUserName(),
-                            Uri.parse(TextUtils.isEmpty(bean.getUserPortraitUrl()) ? Generate.generateDefaultAvatar(bean.getUserName(), bean.getUserId()) : bean.getGroupPortraitUrl()));
+                            Uri.parse(TextUtils.isEmpty(bean.getUserPortraitUrl()) ? Generate.generateDefaultAvatar(bean.getUserName(), bean.getUserId()) : bean.getUserPortraitUrl()));
                     Intent intent = new Intent(context, UserDetailActivity.class);
                     FriendInfo friend = CharacterParser.getInstance().generateFriendFromUserInfo(userInfo);
                     intent.putExtra("friends", friend);

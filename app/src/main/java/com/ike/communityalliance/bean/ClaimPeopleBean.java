@@ -28,9 +28,11 @@ public class ClaimPeopleBean implements Parcelable {
         this.claimFullName = claimFullName;
     }
 
-    public ClaimPeopleBean(String nickname, String userPortraitUrl) {
-        this.nickname = nickname;
+    public ClaimPeopleBean(String recommendId, String fullName, String userPortraitUrl, String nickname) {
+        this.recommendId = recommendId;
+        this.fullName = fullName;
         this.userPortraitUrl = userPortraitUrl;
+        this.nickname = nickname;
     }
 
     public String getRecommendId() {

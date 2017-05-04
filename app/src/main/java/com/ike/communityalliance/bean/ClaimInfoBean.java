@@ -12,10 +12,10 @@ public class ClaimInfoBean {
     private String fullName;
     private String mobile;
     private String sex;
-    private ArrayList<String> hobby;
+    private String hobby;
     private ArrayList<String> address;
     private String creditScore;
-    private ArrayList<String> relationship;
+    private String relationship;
     private String birthday;
     private String homeplace;
     private String finishSchool;
@@ -26,10 +26,7 @@ public class ClaimInfoBean {
     private String QQ;
     private String wechat;
 
-    public ClaimInfoBean(String userId, String claimUserId, String fullName, String mobile, String sex,
-                         ArrayList<String> hobby, ArrayList<String> address, String creditScore,
-                         ArrayList<String> relationship, String birthday, String homeplace, String finishSchool,
-                         String degree, String company, String position, String email, String QQ, String wechat) {
+    public ClaimInfoBean(String userId, String claimUserId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String creditScore, String relationship, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat) {
         this.userId = userId;
         this.claimUserId = claimUserId;
         this.fullName = fullName;
@@ -90,11 +87,11 @@ public class ClaimInfoBean {
         this.sex = sex;
     }
 
-    public ArrayList<String> getHobby() {
+    public String getHobby() {
         return hobby;
     }
 
-    public void setHobby(ArrayList<String> hobby) {
+    public void setHobby(String hobby) {
         this.hobby = hobby;
     }
 
@@ -114,11 +111,11 @@ public class ClaimInfoBean {
         this.creditScore = creditScore;
     }
 
-    public ArrayList<String> getRelationship() {
+    public String getRelationship() {
         return relationship;
     }
 
-    public void setRelationship(ArrayList<String> relationship) {
+    public void setRelationship(String relationship) {
         this.relationship = relationship;
     }
 
