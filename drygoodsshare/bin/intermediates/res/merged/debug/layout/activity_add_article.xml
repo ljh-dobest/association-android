@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ask"
     android:layout_width="match_parent"
+    android:background="@android:color/white"
     android:layout_height="match_parent">
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -47,7 +48,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginRight="20px"
                 android:padding="@dimen/border_10"
-                android:text="发布灵感"
+                android:text="发布干货"
                 android:textSize="16sp" />
 
             <TextView
@@ -107,6 +108,7 @@
                     android:inputType="textMultiLine"
                     android:maxLines="2"
                     android:maxLength="30"
+                    android:padding="@dimen/border_30"
                     android:scrollbars="vertical" />
 
                 <View
@@ -114,16 +116,12 @@
                     android:layout_height="2px"
                     android:background="@color/aam_item_border" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="请输入简介（40字~140字以内）" />
-
                 <jp.wasabeef.richeditor.RichEditor
                     android:id="@+id/et_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="@dimen/border_228"
+                    android:padding="@dimen/border_30"
                     android:textSize="@dimen/font_28" />
 
                 <View
@@ -131,14 +129,12 @@
                     android:layout_height="2px"
                     android:background="@color/aam_item_border" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="输入正文" />
+
                 <jp.wasabeef.richeditor.RichEditor
                     android:id="@+id/et_deal_content"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:padding="@dimen/border_30"
                     android:textSize="@dimen/font_28"
                     android:minHeight="@dimen/border_200"/>
             </LinearLayout>

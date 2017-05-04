@@ -21,19 +21,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.issp.inspiration.MainActivity" >
+        <activity
+            android:name="com.issp.inspiration.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.issp.inspiration.ui.activity.ReadDealBuyActivity" />
-        <activity android:name="com.issp.inspiration.ui.activity.DealBuyConfirmOrderActivity" />
-        <activity android:name="com.issp.inspiration.ui.activity.CommentMessageActivity" />
-        <activity android:name="com.issp.inspiration.ui.activity.FeedForCommentActivity" />
-        <activity android:name="com.issp.inspiration.ui.activity.AddArticleActivity" />
-        <activity android:name="com.issp.inspiration.ui.activity.PreviewActivity" />
+        <activity
+            android:name="com.issp.inspiration.ui.activity.ReadDealBuyActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.inspiration.ui.activity.DealBuyConfirmOrderActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.inspiration.ui.activity.CommentMessageActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.inspiration.ui.activity.FeedForCommentActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.inspiration.ui.activity.AddArticleActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.issp.inspiration.ui.activity.PreviewActivity"
+            android:exported="true" />
 
         <!-- 选择图片 -->
         <activity

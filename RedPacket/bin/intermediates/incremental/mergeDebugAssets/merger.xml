@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\project\xiangmu\association-android\RedPacket\src\main\assets"/><source path="E:\project\xiangmu\association-android\RedPacket\bin\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\project\xiangmu\association-android\RedPacket\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="F:\NB\association-android\RedPacket\src\main\assets"/><source path="F:\NB\association-android\RedPacket\bin\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\NB\association-android\RedPacket\src\debug\assets"/></dataSet></merger>

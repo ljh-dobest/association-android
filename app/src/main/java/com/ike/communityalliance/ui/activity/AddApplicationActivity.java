@@ -90,17 +90,18 @@ public class AddApplicationActivity extends BaseActivity {
 
     private void initData() {
         list = new ArrayList<ApplyListItem>(0);
-        list.add(new ApplyListItem("shareApp", "干货分享", R.mipmap.ganhuo, 1, "com.issp.association", f.getPath() + "/drygoodsshare.apk"
-                , "http://7xlet1.com1.z0.glb.clouddn.com/drygoodsshare.apk", 0));
-        list.add(new ApplyListItem("", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration", f.getPath() + "/inspirationtosell.apk"
-                , "http://7xlet1.com1.z0.glb.clouddn.com/inspirationtosell.apk", 0));
+        list.add(new ApplyListItem("shareApp", "干货分享", R.mipmap.ganhuo, 1, "com.issp.association",
+                f.getPath() + "/drygoodsshare.apk", "http://7xlet1.com1.z0.glb.clouddn.com/drygoodsshare.apk", 0));
+        list.add(new ApplyListItem("", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration",
+                f.getPath() + "/inspirationtosell.apk", "http://7xlet1.com1.z0.glb.clouddn.com/inspirationtosell.apk", 0));
+        list.add(new ApplyListItem("", "平台活动", R.mipmap.rest, 1, "com.ike.coalition.platform", f.getPath() + "/platform.apk",
+                "http://7xlet1.com1.z0.glb.clouddn.com//platform.apk", 0));
+        list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.qiuzhu, 1, "com.issp.association.crowdfunding",
+                f.getPath() + "/crowdfunding.apk", "http://7xlet1.com1.z0.glb.clouddn.com//crowdfunding.apk", 0));
         list.add(new ApplyListItem("", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "直播中心", R.mipmap.zhibo, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "联盟打车", R.mipmap.dache, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "求助中心", R.mipmap.qiuzhu, 1, "", "", "", 0));
-        list.add(new ApplyListItem("", "平台活动", R.mipmap.lingyang, 1, "com.ike.coalition.platform", f.getPath() + "", "/platform.apk", 0));
-        list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.qiuzhu, 1, "com.issp.association.crowdfunding", f.getPath() + "/crowdfunding.apk",
-                "", 0));
         adapter = new AddApplicationAdapter(list, AddApplicationActivity.this);
         gvApplication.setAdapter(adapter);
     }
@@ -180,7 +181,7 @@ public class AddApplicationActivity extends BaseActivity {
 
     // 在安装中获取Apk
 
-    private ArrayList<ApkItem> getApkFromInstall() {
+    public ArrayList<ApkItem> getApkFromInstall() {
         ArrayList<ApkItem> apkItems = new ArrayList<>(0);
         try {
             final List<PackageInfo> infos = PluginManager.getInstance().getInstalledPackages(0);

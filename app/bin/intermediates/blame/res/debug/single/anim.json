@@ -1,134 +1,134 @@
 [
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\actionsheet_dialog_out.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\actionsheet_dialog_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\open_rp.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\open_rp.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\slide_out_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\anim\\slide_out_bottom.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\894ae96e2676d18f207405df12ff35e5d8f314c2\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_left_in.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_left_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_push_bottom_out.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_push_bottom_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\gallery_ucrop_loader_circle_path.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\b1e7408a49ebde2e417437f2fd23253da4bf42ab\\output\\res\\anim\\gallery_ucrop_loader_circle_path.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\actionsheet_dialog_in.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\actionsheet_dialog_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_left_out.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_left_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_right_out.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_right_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\pop_push_up_in.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\anim\\pop_push_up_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_left_out.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_left_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\894ae96e2676d18f207405df12ff35e5d8f314c2\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_right_in.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_right_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_push_bottom_out.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_push_bottom_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_left_in.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_left_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\slide_out_bottom.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\bc0a2c8451fe4d48d363c9b90f3bc7e0da54b499\\output\\res\\anim\\slide_out_bottom.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\pop_push_up_in.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\anim\\pop_push_up_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_scale_little_out.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_scale_little_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\slide_in_bottom.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\bc0a2c8451fe4d48d363c9b90f3bc7e0da54b499\\output\\res\\anim\\slide_in_bottom.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_push_bottom_in.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_push_bottom_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\gallery_ucrop_loader_circle_path.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\anim\\gallery_ucrop_loader_circle_path.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\gallery_ucrop_loader_circle_scale.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\anim\\gallery_ucrop_loader_circle_scale.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\gallery_ucrop_loader_circle_scale.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\b1e7408a49ebde2e417437f2fd23253da4bf42ab\\output\\res\\anim\\gallery_ucrop_loader_circle_scale.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_right_out.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_right_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_push_bottom_in.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_push_bottom_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\open_rp.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\open_rp.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\894ae96e2676d18f207405df12ff35e5d8f314c2\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\894ae96e2676d18f207405df12ff35e5d8f314c2\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_scale_big_in.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_scale_big_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_slide_right_in.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_slide_right_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\slide_in_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\anim\\slide_in_bottom.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\pop_push_down_out.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\anim\\pop_push_down_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_scale_big_in.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_scale_big_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\_scale_little_out.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\_scale_little_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\894ae96e2676d18f207405df12ff35e5d8f314c2\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\actionsheet_dialog_in.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\actionsheet_dialog_in.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\actionsheet_dialog_out.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\anim\\actionsheet_dialog_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\894ae96e2676d18f207405df12ff35e5d8f314c2\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\pop_push_down_out.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\anim\\pop_push_down_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\128577908ad3af9b1e7aa1f2c15e516e1b4564a9\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\anim\\abc_popup_enter.xml"
     }
 ]

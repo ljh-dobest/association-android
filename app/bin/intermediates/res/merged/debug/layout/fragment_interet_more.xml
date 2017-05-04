@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
     <RadioGroup
         android:id="@+id/rg_interestMore"
         android:layout_width="wrap_content"
@@ -74,7 +73,6 @@
             android:id="@+id/interet_rb16"
             style="@style/inteseting_rg_btn_style"
             android:text="娱乐八卦"/>
-
     </RadioGroup>
     <android.support.v7.widget.RecyclerView
         android:layout_toRightOf="@id/rg_interestMore"
