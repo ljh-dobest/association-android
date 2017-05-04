@@ -28,7 +28,9 @@ import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
+
 import com.ike.communityalliance.ui.Main2Activity;
+
 import com.ike.mylibrary.util.T;
 import com.kyleduo.switchbutton.SwitchButton;
 
