@@ -61,7 +61,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <!-- android:authorities="cn.rongcloud.im.FileProvider" -->
     <application
         android:name=".App"
@@ -71,8 +70,8 @@
 
         android:label="@string/app_name"
         android:supportsRtl="true"
-        tools:replace="Android:icon,android:theme"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="Android:icon,android:theme">
 
         <!-- 融云 -->
         <!--
@@ -126,7 +125,7 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.AddApplicationActivity"/>
+        <activity android:name=".ui.activity.AddApplicationActivity" />
         <activity
             android:name=".ui.activity.ConversationActivity"
             android:launchMode="singleTop"
@@ -240,8 +239,10 @@
                 <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
             </intent-filter>
         </receiver>
+
         <activity android:name=".ui.activity.MineRecomendActivity" />
-        <activity android:name=".ui.activity.RecomendCardActivity"></activity>
+        <activity android:name=".ui.activity.RecomendCardActivity" />
+        <activity android:name=".ui.activity.MorePersonalInfoActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -95,6 +97,8 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
     TextView tvPersonalInfoMoreInfo;
     @BindView(R.id.et_personal_info_email)
     EditText et_personal_info_email;
+    @BindView(R.id.ll_personal_info_moreInfo)
+    RelativeLayout ll_personal_info_moreInfo;
     private ArrayList<String> options1Items=new ArrayList<>();
     private ArrayList<String> options2Items=new ArrayList<>();
     private ArrayList<String> options3Items=new ArrayList<>();
@@ -195,7 +199,8 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
     }
 
 
-    @OnClick({R.id.et_personal_info_back, R.id.et_personal_info_save,R.id.et_personal_info_birthday,R.id.iv_personal_info_userIcon})
+    @OnClick({R.id.et_personal_info_back, R.id.et_personal_info_save,R.id.et_personal_info_birthday,
+            R.id.iv_personal_info_userIcon,R.id.ll_personal_info_moreInfo})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_personal_info_userIcon:
@@ -218,6 +223,9 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
             case R.id.et_personal_info_back:
                 finish();
                 setResult(RESULT_OK);
+                break;
+            case R.id.ll_personal_info_moreInfo:
+            startActivity(new Intent(this,MorePersonalInfoActivity.class));
                 break;
             case R.id.et_personal_info_birthday:
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {

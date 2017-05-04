@@ -30,6 +30,7 @@ import com.ike.communityalliance.ui.activity.AddApplicationActivity;
 import com.ike.communityalliance.ui.activity.ClaimActiviy;
 import com.ike.mylibrary.util.T;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ import butterknife.OnClick;
  * Created by just on 2017/3/1.
  */
 
-public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
+public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener, OnBannerListener {
     LinearLayout homepage_lv_header;
     RelativeLayout home_lv_header2;
     Banner homepage_banner;
@@ -83,6 +84,7 @@ private HomePageLVAdapter adapter;
     }
 
     private void initView() {
+        homepage_banner.setOnBannerListener(this);
         initGridView();
         initListView();
     }
@@ -119,6 +121,7 @@ private HomePageLVAdapter adapter;
         homepage_banner.setImageLoader(new BannerImageLoader());
         //设置图片集合
         homepage_banner.setImages(imgList);
+        homepage_banner.setViewPagerIsScroll(true);
         //banner设置方法全部调用完毕时最后调用
         homepage_banner.start();
     }
@@ -143,7 +146,7 @@ private HomePageLVAdapter adapter;
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-      if(totalItemCount<4){
+      if(totalItemCount<6){
           homepage_iv_top.setVisibility(View.GONE);
           return;
       }
@@ -182,22 +185,25 @@ private HomePageLVAdapter adapter;
 
     @Override
     public void setHomePageData(HomePageBean homePageData) {
-        initBanner(homePageData.getAdvs());
+        advsBeanList=homePageData.getAdvs();
+        initBanner(advsBeanList);
         adapter.setData(homePageData);
     }
 
     @Override
-    public void showLoading() {
-
-    }
+    public void showLoading() {}
 
     @Override
-    public void hideLoading() {
-
-    }
+    public void hideLoading() {}
 
     @Override
     public void showError(String errorString) {
+          T.showShort(getContext(),errorString);
+    }
 
+    @Override
+    public void OnBannerClick(int position) {
+      AdvsBean advsBean=advsBeanList.get(position);
+        T.showShort(getContext(),position+"");
     }
 }

@@ -29,7 +29,7 @@ import okhttp3.Call;
 public class ClaimInfoMoudle {
  public void postClaimInfo(ClaimInfoBean claimInfo, final OnClaimFinishListener listener){
        if (claimInfo.getFullName().equals("")||claimInfo.getMobile().equals("")||claimInfo.getSex().equals("")
-           ||claimInfo.getHobby().size()==0||claimInfo.getAddress().size()==0||claimInfo.getRelationship().equals("")
+           ||claimInfo.getHobby().equals("")||claimInfo.getAddress().size()==0||claimInfo.getRelationship().equals("")
            ||claimInfo.getCreditScore().equals("")){
        listener.showTextEmpty();
         return;
@@ -85,15 +85,22 @@ if(!CommonUtils.isEmail(claimInfo.getEmail())){
    }
   }).start();
  }
+
+ private boolean isFirstHobby=true;
  //获取选择的爱好
  public void getHobby(ViewGroup group, OnClaimFinishListener listener) {
-  ArrayList<String> hobbys=new ArrayList<>();
+  String hobbys="";
   for (int i = 0; i < group.getChildCount(); i++) {
    LinearLayout ll= (LinearLayout) group.getChildAt(i);
    for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
     RadioButton rb= (RadioButton) ll.getChildAt(j);
-    if (rb.isChecked()){
-     hobbys.add(rb.getText().toString());
+    if (rb.isChecked()) {
+     if (isFirstHobby) {
+      hobbys = rb.getText().toString();
+      isFirstHobby = false;
+     } else {
+      hobbys = hobbys + "," + rb.getText().toString();
+     }
     }
    }
   }

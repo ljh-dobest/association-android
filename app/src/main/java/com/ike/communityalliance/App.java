@@ -3,7 +3,6 @@ package com.ike.communityalliance;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
 import com.facebook.stetho.Stetho;
@@ -95,6 +94,7 @@ public class App extends PluginApplication {
             RongIM.init(this);
             //自定义功能
             AppContext.init(this);
+            RongIM.getInstance().setMessageAttachedUserInfo(true);
             SharedPreferencesContext.init(this);
             Thread.setDefaultUncaughtExceptionHandler(new RongExceptionHandler(this));
 
