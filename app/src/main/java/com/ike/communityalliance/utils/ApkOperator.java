@@ -16,6 +16,8 @@ import com.morgoo.droidplugin.pm.PluginManager;
 import com.morgoo.helper.compat.PackageManagerCompat;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -185,4 +187,53 @@ public class ApkOperator {
     public interface RemoveCallback {
         void removeItem(ApkItem apkItem);
     }
+
+    // 从下载文件夹获取Apk
+    private ArrayList<ApkItem> getApkFromDownload() {
+        // for (int i = 0; i <listApk.size() ; i++) {
+        // File files = fileUtils.redFile(pageName);
+        // }
+        FileUtils fileUtils = new FileUtils(mActivity);
+
+        File f = fileUtils.redFile("");
+        PackageManager pm = mActivity.getPackageManager();
+        ArrayList<ApkItem> apkItems = new ArrayList<>(0);
+
+        try {
+            if (null != f.listFiles()) {
+                for (File file : f.listFiles()) {
+                    if (file.exists() && file.getPath().toLowerCase().endsWith(".apk")) {
+                        final PackageInfo info = pm.getPackageArchiveInfo(file.getPath(), 0);
+                        apkItems.add(new ApkItem(pm, info, file.getPath()));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            Log.e("eeeee", e.toString());
+        }
+
+        return apkItems;
+    }
+
+    // 在安装中获取Apk
+
+    public ArrayList<ApkItem> getApkFromInstall() {
+        ArrayList<ApkItem> apkItems = new ArrayList<>(0);
+        try {
+            final List<PackageInfo> infos = PluginManager.getInstance().getInstalledPackages(0);
+            if (infos == null) {
+                return apkItems;
+            }
+            final PackageManager pm = mActivity.getPackageManager();
+            // noinspection all
+            for (final PackageInfo info : infos) {
+                apkItems.add(new ApkItem(pm, info, info.applicationInfo.publicSourceDir));
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        return apkItems;
+    }
+
 }

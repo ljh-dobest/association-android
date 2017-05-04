@@ -24,6 +24,10 @@ public class ApkItem {
     public String apkFile; // Apk路径
     public PackageInfo packageInfo; // 包信息
 
+    public ApkItem(String title) {
+        this.title = title;
+    }
+
     public ApkItem(PackageManager pm, PackageInfo pi, String path) {
 
         // 必须设置, 否则title无法获取
