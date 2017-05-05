@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">公益活动</string>
+    <string name="str_title">公益</string>
+
+    <string name="str_add_register_title">填写报名信息</string>
+    <string name="str_user_name">姓名：</string>
+    <string name="str_user_phone">手机：</string>
+    <string name="str_user_weixin">微信：</string>
+    <string name="str_user_company">公司：</string>
+    <string name="str_confirm">确认报名</string>
+</resources>

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 121
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 30,
                         "startColumn": 4,
-                        "startOffset": 1070,
+                        "startOffset": 1161,
                         "endColumn": 70,
-                        "endOffset": 1136
+                        "endOffset": 1227
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 179
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 25,
+                        "startLine": 27,
                         "startColumn": 4,
-                        "startOffset": 903,
+                        "startOffset": 994,
                         "endColumn": 57,
-                        "endOffset": 956
+                        "endOffset": 1047
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 232
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 26,
+                        "startLine": 28,
                         "startColumn": 4,
-                        "startOffset": 962,
+                        "startOffset": 1053,
                         "endColumn": 52,
-                        "endOffset": 1010
+                        "endOffset": 1101
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 285
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 27,
+                        "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 1016,
+                        "startOffset": 1107,
                         "endColumn": 52,
-                        "endOffset": 1064
+                        "endOffset": 1155
                     }
                 }
             },
@@ -88,7 +88,7 @@
                     "endOffset": 461
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values\\styles.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 4,
@@ -109,7 +109,7 @@
                     "endOffset": 633
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values\\styles.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,

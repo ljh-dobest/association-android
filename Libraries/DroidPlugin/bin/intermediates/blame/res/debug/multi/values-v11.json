@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+        "outputFile": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 232
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values-v11\\styles.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values-v11\\styles.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 415
                 },
                 "from": {
-                    "file": "E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\res\\values-v11\\styles.xml",
+                    "file": "F:\\NB\\association-android\\Libraries\\DroidPlugin\\res\\values-v11\\styles.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,

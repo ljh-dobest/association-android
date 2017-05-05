@@ -37,21 +37,21 @@
                    android:layout_height="wrap_content"
                    android:textSize="26px"
                    android:text="运动装"
-                   android:focusableInTouchMode="false"
+                   android:visibility="gone"
                    />
                <RadioButton
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:textSize="26px"
                    android:text="吊带装"
-                   android:focusableInTouchMode="false"
+                   android:visibility="gone"
                    />
                <RadioButton
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:textSize="26px"
                    android:text="起码装"
-                   android:focusableInTouchMode="false"
+                   android:visibility="gone"
                    />
            </RadioGroup>
        </com.zhy.autolayout.AutoLinearLayout>

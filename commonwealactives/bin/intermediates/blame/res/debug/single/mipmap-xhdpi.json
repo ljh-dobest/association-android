@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\header.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-xhdpi\\header.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\more.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-xhdpi\\more.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\back.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-xhdpi\\back.png"
+    }
+]

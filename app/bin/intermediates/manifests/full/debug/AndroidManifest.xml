@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="25" />
 
     <!-- //定位包、导航包需要的额外权限（注：基础权限也需要） -->
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
@@ -190,7 +190,7 @@
     <application
         android:name="com.ike.communityalliance.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
@@ -247,6 +247,7 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
+        <activity android:name="com.ike.communityalliance.ui.activity.AddApplicationActivity" />
         <activity
             android:name="com.ike.communityalliance.ui.activity.ConversationActivity"
             android:launchMode="singleTop"
@@ -362,6 +363,7 @@
         </receiver>
 
         <activity android:name="com.ike.communityalliance.ui.activity.MineRecomendActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.RecomendCardActivity" />
         <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapLocationActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapPreviewActivity" />
