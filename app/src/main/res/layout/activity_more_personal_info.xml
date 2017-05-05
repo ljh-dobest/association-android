@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_claim_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -235,6 +234,11 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="毕业学校:"/>
                 <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_personal_more_info_school"
+                    style="@style/claimInfo_tv_styles"
+                    android:text=""/>
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -259,6 +263,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="星座:"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_personal_more_info_constellation"
+                    style="@style/claimInfo_tv_styles"
+                    android:text=""/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -285,6 +294,11 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="血型:"/>
                 <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_personal_more_info_bloodtype"
+                    style="@style/claimInfo_tv_styles"
+                    android:text=""/>
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -309,6 +323,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="公司:"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_personal_more_info_company"
+                    style="@style/claimInfo_tv_styles"
+                    android:text=""/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -335,6 +354,11 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="公司职位:"/>
                 <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_personal_more_info_position"
+                    style="@style/claimInfo_tv_styles"
+                    android:text=""/>
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -359,6 +383,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="婚姻状况:"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tv_personal_more_info_marriage"
+                    style="@style/claimInfo_tv_styles"
+                    android:text=""/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

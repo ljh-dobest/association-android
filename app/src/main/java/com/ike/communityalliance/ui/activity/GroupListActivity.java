@@ -80,22 +80,23 @@ public class GroupListActivity extends BaseActivity implements SwipeRefreshLayou
         ivTitleRight.setImageResource(R.mipmap.add_more);
         swipeRefresh.setOnRefreshListener(this);
         LoadDialog.show(mContext);
+        initAdapter();
         initData();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        initGroups(userId);
-
-        initData();
+       // initGroups(userId);
+       // initData();
     }
 
     private void initData() {
         userId = getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_ID, "");
         list = sqLiteDAO.findAll(userId);
         if (list.size() > 0) {
-            initAdapter();
+           adapter.setList(list);
+            LoadDialog.dismiss(mContext);
         } else {
             rvGroupList.setVisibility(View.GONE);
             tvNoGroup.setVisibility(View.VISIBLE);
@@ -105,14 +106,12 @@ public class GroupListActivity extends BaseActivity implements SwipeRefreshLayou
     }
 
     private void initAdapter() {
-        adapter = new GroupListAdapter(mContext,list);
+        adapter = new GroupListAdapter(mContext);
         rvGroupList.setAdapter(adapter);
         LinearLayoutManager lm = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
         rvGroupList.setLayoutManager(lm);
         rvGroupList.addItemDecoration(new ItemDivider(this, ItemDivider.VERTICAL_LIST));
-        adapter.notifyDataSetChanged();
         initListItemClick();
-        LoadDialog.dismiss(mContext);
     }
 
     private void initListItemClick() {
@@ -170,8 +169,6 @@ public class GroupListActivity extends BaseActivity implements SwipeRefreshLayou
     @Override
     public void onRefresh() {
         initGroups(userId);
-        initData();
-        swipeRefresh.setRefreshing(false);
     }
 
     /**
@@ -212,9 +209,10 @@ public class GroupListActivity extends BaseActivity implements SwipeRefreshLayou
                             L.e("-------------==-=-", "群组列表插入成功");// 用日志记录一个我们自定义的输出。可以在LogCat窗口中查看，
                         }
                     }
-                    LoadDialog.dismiss(mContext);
+                    initData();
+                    swipeRefresh.setRefreshing(false);
                 } else {
-                    LoadDialog.dismiss(mContext);
+                    swipeRefresh.setRefreshing(false);
                 }
             }
         });

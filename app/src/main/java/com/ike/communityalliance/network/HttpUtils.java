@@ -5,6 +5,7 @@ import android.os.Environment;
 
 import com.google.gson.Gson;
 import com.ike.communityalliance.bean.ClaimInfoBean;
+import com.ike.communityalliance.bean.EditMorePersonalInfo;
 import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.bean.UserInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
@@ -732,6 +733,33 @@ public class HttpUtils {
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
+                .build().execute(callback);
+    }
+    //提交个人更多资料
+    public static void postMorePersonalInfo(String url, EditMorePersonalInfo info, StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",info.getUserId())
+                .addParams("fullName",info.getFullName())
+                .addParams("SfullName",info.getSfullName())
+                .addParams("QQ",info.getQQ())
+                .addParams("SQQ",info.getSQQ())
+                .addParams("wechat", info.getWechat())
+                .addParams("Swechat",info.getSwechat())
+                .addParams("favour",info.getFavour())
+                .addParams("Sfavour",info.getSfavour())
+                .addParams("finishSchool",info.getFinishSchool())
+                .addParams("SfinishSchool",info.getSfinishSchool())
+                .addParams("constellation",info.getConstellation())
+                .addParams("Sconstellation",info.getSconstellation())
+                .addParams("bloodType",info.getBloodType())
+                .addParams("SbloodType",info.getSbloodType())
+                .addParams("marriage",info.getMarriage())
+                .addParams("Smarriage",info.getSmarriage())
+                .addParams("company",info.getCompany())
+                .addParams("Scompany",info.getScompany())
+                .addParams("position",info.getPosition())
+                .addParams("Sposition",info.getSposition())
                 .build().execute(callback);
     }
 }
