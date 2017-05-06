@@ -37,15 +37,19 @@
     <dimen name="border_40">40px</dimen>
     <dimen name="border_42">42px</dimen>
     <dimen name="border_50">50px</dimen>
+    <dimen name="border_58">58px</dimen>
     <dimen name="border_60">60px</dimen>
     <dimen name="border_70">70px</dimen>
+    <dimen name="border_73">73px</dimen>
     <dimen name="border_80">80px</dimen>
     <dimen name="border_88">88px</dimen>
     <dimen name="border_98">98px</dimen>
     <dimen name="border_102">102px</dimen>
     <dimen name="border_114">114px</dimen>
+    <dimen name="border_130">130px</dimen>
     <dimen name="border_140">140px</dimen>
     <dimen name="border_210">210px</dimen>
+    <dimen name="border_389">389px</dimen>
     <dimen name="border_400">400px</dimen>
     <dimen name="border_466">466px</dimen>
 

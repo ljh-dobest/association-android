@@ -14,6 +14,7 @@
     <color name="color_fe">#FEFEFE</color>
     <color name="color_10">#10DB9F</color>
     <color name="color_44">#444343</color>
+    <color name="color_ab">#ababab</color>
 
     <color name="nsdk_color_version">#ff3235</color>
     <color name="nsdk_color_suspend">#FF0FDAA8</color>

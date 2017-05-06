@@ -45,11 +45,8 @@ import butterknife.OnClick;
  * Created by just on 2017/3/1.
  */
 
-<<<<<<< HEAD
 public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener, OnBannerListener {
-=======
-public class HomeFragment extends BaseMvpFragment<IHomePageView, HomePageFragmentPresenter> implements IHomePageView, AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
->>>>>>> bxh
+
     LinearLayout homepage_lv_header;
     RelativeLayout home_lv_header2;
     Banner homepage_banner;
@@ -160,17 +157,12 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView, HomePageFragmen
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-<<<<<<< HEAD
+
       if(totalItemCount<6){
           homepage_iv_top.setVisibility(View.GONE);
           return;
       }
-=======
-        if (totalItemCount < 4) {
-            homepage_iv_top.setVisibility(View.GONE);
-            return;
-        }
->>>>>>> bxh
+
         if (visibleItemCount + firstVisibleItem == totalItemCount) {
             homepage_iv_top.setVisibility(View.VISIBLE);
         } else {

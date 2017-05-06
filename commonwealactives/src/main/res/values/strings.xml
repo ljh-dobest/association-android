@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">公益活动</string>
     <string name="str_title">公益</string>
+    <string name="str_platform_title">公益活动</string>
+    <string name="str_title_left">返回</string>
+    <string name="str_information">消息</string>
+    <string name="str_inspiration_my_deal_buy">我的</string>
 
     <string name="str_add_register_title">填写报名信息</string>
     <string name="str_user_name">姓名：</string>
