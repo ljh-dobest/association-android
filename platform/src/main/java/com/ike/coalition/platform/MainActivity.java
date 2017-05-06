@@ -109,8 +109,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     ImageView iv_like_btn;
 
     private void initView() {
-        PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId=ps.getPreferences("loginid");
+        // PreferenceService ps=new PreferenceService(MainActivity.this);
+        userId = getIntent().getStringExtra("loginid");
 
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -170,7 +170,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
         formData.put("type", "6");
-      //  formData.put("limit", limit + "");
+        //  formData.put("limit", limit + "");
         formData.put("page", page + "");
         presenter.ShareInfoPresenter(formData);
 
@@ -181,8 +181,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
             @Override
             public void onItemClick(View view, PlatformBean data) {
                 Intent intent = new Intent(MainActivity.this, PlatformParticularsActivity.class);
-                intent.putExtra("userId",userId);
-                intent.putExtra("activesId",data.getId());
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", data.getId());
                 startActivity(intent);
             }
         });
@@ -251,7 +251,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
                 public void onClick(View v) {
 
                     Intent intent = new Intent(MainActivity.this, MInPlatformActivity.class);
-                    intent.putExtra("userId",userId);
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

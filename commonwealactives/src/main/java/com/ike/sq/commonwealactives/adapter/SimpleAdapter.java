@@ -53,9 +53,28 @@ public class SimpleAdapter extends BaseRecyclerViewAdapter<SimpleAdapter.Product
             holder.llItem.setTag(bean);
             holder.llLikes.setTag(bean);
             holder.llComment.setTag(bean);
+            if (null!=bean.getUserPortraitUrl())
             Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
                     .transform(new CircleTransform()).into(holder.ivUserPortraitUrl);
 
+            holder.tvNickname.setText(bean.getNickname());
+            holder.tvTitle.setText(bean.getTitle());
+            holder.tvContent.setText(bean.getContent());
+          //  holder.tvShare.setText(bean.gets);
+            holder.tvLikes.setText(bean.getLikes()+"");
+            holder.tvComment.setText(bean.getCommentNumber()+"");
+            holder.tvAddress.setText(bean.getAddress());
+            switch (bean.getStatus()) {
+                case 0:
+                    holder.tvStatus.setText("进行中");
+                    break;
+                case 1:
+                    holder.tvStatus.setText("已结束");
+                    break;
+                case 2:
+                    holder.tvStatus.setText("未开始");
+                    break;
+            }
             switch (bean.getLikesStatus()) {
                 case 0:
                     holder.ivLikes.setImageResource(R.mipmap.img_like_btn);

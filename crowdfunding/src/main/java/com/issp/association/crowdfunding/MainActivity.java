@@ -112,8 +112,8 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
     ImageView iv_like_btn;
 
     private void initView() {
-        PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = ps.getPreferences("loginid");
+       // PreferenceService ps = new PreferenceService(MainActivity.this);
+        userId = getIntent().getStringExtra("loginid");
         lt_main_title.setText(getString(R.string.str_title_main));
 
         xRefreshView.setPullLoadEnable(true);

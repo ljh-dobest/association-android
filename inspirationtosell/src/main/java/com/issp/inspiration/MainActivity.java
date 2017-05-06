@@ -95,8 +95,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     }
 
     private void initView() {
-        PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId=ps.getPreferences("loginid");
+        //PreferenceService ps=new PreferenceService(MainActivity.this);
+        userId = getIntent().getStringExtra("loginid");
         lt_main_title.setText("灵感贩卖");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -147,8 +147,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             @Override
             public void onItemClick(View view, DealBuyBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadDealBuyActivity.class);
-                intent.putExtra("userId",userId);
-                intent.putExtra("activesId",bean.getId());
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", bean.getId());
                 startActivity(intent);
             }
 
@@ -169,7 +169,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             @Override
             public void onCommentClick(View view, DealBuyBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
-                intent.putExtra("userId",userId);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -189,11 +189,11 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     }
 
 
-   /* private void initViewPager() {
-        IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
-        mBannerViewPager.setAdapter(pageAdapter);
-        mBannerViewPager.setParent(recyclerView);
-    }*/
+    /* private void initViewPager() {
+         IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
+         mBannerViewPager.setAdapter(pageAdapter);
+         mBannerViewPager.setParent(recyclerView);
+     }*/
     private void initBanner() {
         imgList = new ArrayList<>();
         for (int i = 0; i < mImageIds.length; i++) {
@@ -224,7 +224,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
                     .getSystemService(LAYOUT_INFLATER_SERVICE);
             View popwindow_more = mLayoutInflater.inflate(
                     R.layout.popwindow_more, null);
-           // AutoUtils.autoSize(popwindow_more, AutoAttr.BASE_HEIGHT);
+            // AutoUtils.autoSize(popwindow_more, AutoAttr.BASE_HEIGHT);
             mPopupWindow = new PopupWindow(popwindow_more, WidthPixels / 3, ViewGroup.LayoutParams.WRAP_CONTENT, true);
             mPopupWindow.setTouchable(true);
             mPopupWindow.setOutsideTouchable(true);
@@ -280,7 +280,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         } else {
             xRefreshView.stopLoadMore(true);
         }
-        if (null!=data &&data.size()>0) {
+        if (null != data && data.size() > 0) {
             adapter.setData(data, page);
         }
     }
@@ -295,8 +295,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     @OnClick(R.id.tv_add_article)
     public void onViewClicked() {
-        Intent intent=new Intent(MainActivity.this, AddArticleActivity.class);
-        intent.putExtra("userId",userId);
+        Intent intent = new Intent(MainActivity.this, AddArticleActivity.class);
+        intent.putExtra("userId", userId);
         startActivity(intent);
     }
 }

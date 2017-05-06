@@ -1,6 +1,7 @@
 package com.ike.sq.commonwealactives.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by T-BayMax on 2017/5/5.
@@ -11,7 +12,7 @@ public class BenefitBean implements Serializable {
     private String userId;           //发起人id
     private String nickname;         //发起人昵称
     private String userPortraitUrl;     //发起人头像
-    private String status; //1活动报名进行中  0报名已结束  2还未开始
+    private int status; //1活动报名进行中  0报名已结束  2还未开始
 
     private String title;            //活动标题
     private String address;          //活动地点
@@ -22,7 +23,7 @@ public class BenefitBean implements Serializable {
     private String content;         //活动详情
     private int joinStatus;     //1当前用户已报名  0未报名
     private int joinUsersNumber;  //报名人数
-    private UserBean joinUsers;               //报名人员
+    private List<UserBean> joinUsers;               //报名人员
     private int commentNumber;     //评论数量
     private int likes;             //点赞数量
     private int likesStatus;     //0当前用户未点赞  1已点赞
@@ -59,11 +60,11 @@ public class BenefitBean implements Serializable {
         this.userPortraitUrl = userPortraitUrl;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -139,11 +140,11 @@ public class BenefitBean implements Serializable {
         this.joinUsersNumber = joinUsersNumber;
     }
 
-    public UserBean getJoinUsers() {
+    public List<UserBean> getJoinUsers() {
         return joinUsers;
     }
 
-    public void setJoinUsers(UserBean joinUsers) {
+    public void setJoinUsers(List<UserBean> joinUsers) {
         this.joinUsers = joinUsers;
     }
 

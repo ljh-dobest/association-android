@@ -21,6 +21,7 @@ import com.ike.communityalliance.bean.ApkItem;
 import com.ike.communityalliance.bean.ApplyListItem;
 import com.ike.communityalliance.utils.ApkOperator;
 import com.ike.communityalliance.utils.file.FileUtils;
+import com.ike.mylibrary.util.T;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloadSampleListener;
@@ -61,7 +62,6 @@ public class AddApplicationActivity extends BaseActivity {
 
     private ApkOperator mApkOperator; // Apk操作
     private List<String> listApk;
-    private static String pageName = "app";
     FileUtils fileUtils;
     File f;
     ArrayList<ApkItem> apkFromInstall;
@@ -113,7 +113,8 @@ public class AddApplicationActivity extends BaseActivity {
         boolean boo = true;
         for (int i = 0; i < apkFromInstall.size(); i++) {
             if (apkFromInstall.get(i).packageInfo.packageName.equals(list.get(position).getPackageName())) {
-                mApkOperator.openApk(apkFromInstall.get(i));
+               // mApkOperator.openApk(apkFromInstall.get(i));
+                T.showLong(AddApplicationActivity.this, "已经添加");
                 boo = false;
                 return;
             } else {
@@ -138,23 +139,6 @@ public class AddApplicationActivity extends BaseActivity {
 
     }
 
-    private void writeToSDFromInput() {
-        listApk = new ArrayList<String>(0);
-        String str[] = new String[0];
-        FileUtils fileUtils = new FileUtils(AddApplicationActivity.this);
-        try {
-            str = getAssets().list(pageName);
-            for (int i = 0; i < str.length; i++) {
-                String name = pageName + "/" + str[i];
-                InputStream is = getAssets().open(name);
-                fileUtils.deepFile(str[i], is);
-                listApk.add(str[i]);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     // 从下载文件夹获取Apk
     private ArrayList<ApkItem> getApkFromDownload() {

@@ -1,11 +1,16 @@
 package com.ike.sq.commonwealactives;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
@@ -16,11 +21,17 @@ import com.ike.sq.commonwealactives.base.view.BaseMvpActivity;
 import com.ike.sq.commonwealactives.bean.BenefitBean;
 import com.ike.sq.commonwealactives.interfaces.IBenefitListView;
 import com.ike.sq.commonwealactives.presenters.BenefitPresenter;
+import com.ike.sq.commonwealactives.ui.activity.BenefitParticularsActivity;
+import com.ike.sq.commonwealactives.ui.activity.FeedForCommentActivity;
+import com.ike.sq.commonwealactives.ui.activity.MessageActivity;
+import com.ike.sq.commonwealactives.utils.DisplayUtils;
 import com.ike.sq.commonwealactives.utils.PreferenceService;
 import com.ike.sq.commonwealactives.utils.T;
 import com.ike.sq.commonwealactives.view.BannerViewPager;
 import com.ike.sq.commonwealactives.view.CustomGifHeader;
 import com.youth.banner.Banner;
+import com.zhy.autolayout.attr.AutoAttr;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,8 +74,8 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
     private boolean isRefresh;
     Banner homepage_banner;
-    private boolean isIDCard;
 
+    private PopupWindow mPopupWindow;
 
     private String userId;
 
@@ -82,12 +93,13 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         ButterKnife.bind(this);
         initView();
     }
+
     TextView tv_like_btn;
     ImageView iv_like_btn;
 
     private void initView() {
-        PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = ps.getPreferences("loginid");
+        //  PreferenceService ps = new PreferenceService(MainActivity.this);
+        userId = getIntent().getStringExtra("loginid");
 
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
@@ -141,10 +153,10 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         adapter.setOnItemClickListener(new SimpleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, BenefitBean bean) {
-                /*Intent intent = new Intent(MainActivity.this, ProductParticularsActivity.class);
+                Intent intent = new Intent(MainActivity.this, BenefitParticularsActivity.class);
                 intent.putExtra("userId", userId);
-                intent.putExtra("bean", bean);
-                startActivity(intent);*/
+                intent.putExtra("activesId", bean.getId());
+                startActivity(intent);
             }
 
             @Override
@@ -163,10 +175,10 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
             @Override
             public void onCommentClick(View view, BenefitBean bean) {
-             /*   Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
+                Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
-                startActivity(intent);*/
+                startActivity(intent);
 
             }
         });
@@ -177,7 +189,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
-       // formData.put("type", "1");
+        // formData.put("type", "1");
         //formData.put("limit", limit + "");
         formData.put("page", page + "");
         presenter.getBenefitPresenter(formData);
@@ -195,6 +207,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         homepage_banner.setImages(imgList);
         //设置滚动时间
         homepage_banner.setDelayTime(5000);
+
         //banner设置方法全部调用完毕时最后调用
         homepage_banner.start();
     }
@@ -241,11 +254,60 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lt_main_title_left:
+                MainActivity.this.finish();
                 break;
             case R.id.lt_main_title_right:
+                initPopupWindow();
                 break;
             case R.id.iv_top:
+                recyclerViewTestRv.smoothScrollToPosition(0);
                 break;
         }
     }
+
+    /**
+     * 右上角弹出框
+     */
+    private void initPopupWindow() {
+        int width = ltMainTitleLeft.getWidth();
+        int WidthPixels = DisplayUtils.getScreenWidthPixels(MainActivity.this);
+        if (null == mPopupWindow || !mPopupWindow.isShowing()) {
+            LayoutInflater mLayoutInflater = (LayoutInflater) this
+                    .getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popwindow_more = mLayoutInflater.inflate(
+                    R.layout.popwindow_more, null);
+
+            AutoUtils.autoSize(popwindow_more, AutoAttr.BASE_HEIGHT);
+
+            mPopupWindow = new PopupWindow(popwindow_more, WidthPixels / 3, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+            mPopupWindow.setTouchable(true);
+            mPopupWindow.setOutsideTouchable(true);
+            mPopupWindow.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
+            mPopupWindow.showAsDropDown(ltMainTitleRight, -width, 0);
+            TextView tv_information = (TextView) popwindow_more.findViewById(R.id.tv_information);
+            TextView tv_my_share = (TextView) popwindow_more.findViewById(R.id.tv_my_share);
+
+            tv_information.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(MainActivity.this, MessageActivity.class);
+
+                    startActivity(intent);
+                    mPopupWindow.dismiss();
+                }
+            });
+            tv_my_share.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                   /* Intent intent = new Intent(MainActivity.this, MinProductActivity.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);*/
+                    mPopupWindow.dismiss();
+                }
+            });
+        }
+    }
+
 }

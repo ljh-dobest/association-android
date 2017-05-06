@@ -2,8 +2,10 @@ package com.ike.communityalliance.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.RemoteException;
@@ -29,7 +31,7 @@ import java.util.List;
 
  */
 public class ApkOperator {
-
+    public static final String PLUGIN_EXTRA_STRING = "loginid";
     public static final int TYPE_STORE = 0; // 存储Apk
     public static final int TYPE_START = 1; // 启动Apk
 
@@ -178,7 +180,8 @@ public class ApkOperator {
         PackageManager pm = mActivity.getPackageManager();
         Intent intent = pm.getLaunchIntentForPackage(item.packageInfo.packageName);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+        SharedPreferences sp=mActivity.getSharedPreferences("", Context.MODE_APPEND);
+        intent.putExtra(PLUGIN_EXTRA_STRING,sp.getString("loginid",""));
         mActivity.startActivity(intent);
 
     }
