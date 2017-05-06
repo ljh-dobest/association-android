@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,7 +10,6 @@ import android.widget.TextView;
 
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.network.HttpUtils;
-import com.xys.libzxing.zxing.encoding.EncodingUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,7 +46,8 @@ public class RecomendCardActivity extends AppCompatActivity {
 
     private void initData() {
         tvRecomendCardCode.setText(code);
-        Bitmap codeImg= EncodingUtils.createQRCode(code,222,222,null);
+//        Bitmap codeImg= EncodingUtils.createQRCode(code,222,222,null);
+      Bitmap codeImg= BitmapFactory.decodeResource(getResources(),R.drawable.load_apk);
         saveMyBitmap(codeImg,code);
         ivRecomendCardCode.setImageBitmap(codeImg);
     }
@@ -61,13 +62,14 @@ public class RecomendCardActivity extends AppCompatActivity {
                 OnekeyShare oks = new OnekeyShare();
                 oks.disableSSOWhenAuthorize();
                 oks.setTitle("推荐成功，马上注册!!!");
-                oks.setTitleUrl("http://sharesdk.cn");
-                oks.setText(tvRecomendCardCode.getText().toString());
-     oks.setImagePath(HttpUtils.CACHE_PATH+"/"+code+".jpg");
-                oks.setUrl("http://sharesdk.cn");
+                oks.setTitleUrl("http://shouji.baidu.com/software/11434300.html");
+                oks.setText("邀请码:"+tvRecomendCardCode.getText().toString());
+                oks.setImageUrl("http://c.hiphotos.bdimg.com/wisegame/pic/item/dd096b63f6246b60e61f7567e1f81a4c510fa295.jpg");
+                oks.setImagePath(HttpUtils.CACHE_PATH+"/"+code+".jpg");
+                oks.setUrl("http://shouji.baidu.com/software/11434300.html");
                 oks.setComment("评论文本");
                 oks.setSite(getString(R.string.app_name));
-                oks.setSiteUrl("http://sharesdk.cn");
+                oks.setSiteUrl("http://shouji.baidu.com/software/11434300.html");
                 oks.show(this);
                 break;
         }

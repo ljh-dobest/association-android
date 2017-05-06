@@ -40,7 +40,7 @@ import okhttp3.Call;
 /**
  * 群列表
  */
-public class GroupListActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class  GroupListActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.iv_title_back)
     ImageView ivTitleBack;

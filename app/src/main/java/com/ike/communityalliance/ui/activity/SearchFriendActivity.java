@@ -87,7 +87,7 @@ public class SearchFriendActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (charSequence.length() == 3||charSequence.length() == 11||charSequence.length()==6||charSequence.length()==7) {
+                if (charSequence.length() == 11||charSequence.length()==7) {
                     phone = charSequence.toString().trim();
 //                    if (!AMUtils.isMobile(phone)) {
 //                        T.showShort(mContext, "非手机号码");

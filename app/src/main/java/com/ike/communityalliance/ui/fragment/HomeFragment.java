@@ -32,7 +32,7 @@ import com.ike.communityalliance.ui.activity.ClaimActiviy;
 import com.ike.communityalliance.utils.ApkOperator;
 import com.ike.mylibrary.util.T;
 import com.youth.banner.Banner;
-import com.youth.banner.listener.OnBannerListener;
+import com.youth.banner.listener.OnBannerClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ import butterknife.OnClick;
  * Created by just on 2017/3/1.
  */
 
-public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener, OnBannerListener {
+public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener, OnBannerClickListener {
 
     LinearLayout homepage_lv_header;
     RelativeLayout home_lv_header2;
@@ -89,7 +89,8 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     }
 
     private void initView() {
-        homepage_banner.setOnBannerListener(this);
+        imgList = new ArrayList<>();
+        homepage_banner.setOnBannerClickListener(this);
         initGridView();
         initListView();
     }
@@ -122,17 +123,13 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     }
 
     private void initBanner(List<AdvsBean> advsBeanList) {
-        imgList = new ArrayList<>();
         for (int i = 0; i < advsBeanList.size(); i++) {
             imgList.add(HttpUtils.IMAGE_RUL + advsBeanList.get(i).getArticleImage());
         }
         //设置图片加载器
-        homepage_banner.setImageLoader(new BannerImageLoader());
-        //设置图片集合
-        homepage_banner.setImages(imgList);
-        homepage_banner.setViewPagerIsScroll(true);
-        //banner设置方法全部调用完毕时最后调用
-        homepage_banner.start();
+        homepage_banner.setImages(imgList)
+                .setImageLoader(new BannerImageLoader())
+                .start();
     }
 
     @OnClick(R.id.homepage_iv_top)
@@ -142,6 +139,12 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
                 homepage_lv.smoothScrollToPosition(0);
                 break;
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        homepage_banner.startAutoPlay();
     }
 
     @Override
@@ -215,7 +218,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
 
     @Override
     public void OnBannerClick(int position) {
-      AdvsBean advsBean=advsBeanList.get(position);
+      AdvsBean advsBean=advsBeanList.get(position-1);
         T.showShort(getContext(),position+"");
     }
 }
