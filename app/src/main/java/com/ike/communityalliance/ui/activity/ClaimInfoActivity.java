@@ -1,11 +1,13 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -187,7 +189,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
             @Override
             public void run() {
                 //适配器
-                province_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, android.R.layout.simple_spinner_item, options1Items);
+                province_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, options1Items);
                 //设置样式
                 province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //加载适配器
@@ -229,6 +231,12 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.et_claiminfo_birthday:
+                //隐藏软件盘，防止遮挡生日
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm.isActive()) {
+                    imm.hideSoftInputFromWindow(getCurrentFocus()
+                            .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                }
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
@@ -333,7 +341,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         for (int i = 0; i < citys.size(); i++) {
             options2Items.add(citys.get(i).getName());
         }
-        city_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, android.R.layout.simple_spinner_item, options2Items);
+        city_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, options2Items);
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
@@ -351,7 +359,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
                 options3Items.add(country.get(i).getName());
             }
         }
-        county_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, android.R.layout.simple_spinner_item, options3Items);
+        county_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, options3Items);
         county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(county_adapter);
     }

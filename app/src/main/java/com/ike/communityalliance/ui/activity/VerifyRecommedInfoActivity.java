@@ -1,12 +1,14 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -216,7 +218,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
             @Override
             public void run() {
                 //适配器
-                province_adapter = new ArrayAdapter<String>(VerifyRecommedInfoActivity.this, android.R.layout.simple_spinner_item, provinceList);
+                province_adapter = new ArrayAdapter<String>(VerifyRecommedInfoActivity.this,R.layout.simple_spanner_item, provinceList);
                 //设置样式
                 province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //加载适配器
@@ -269,6 +271,12 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.et_verifyInfo_birthday:
+                //隐藏软件盘，防止遮挡生日
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm.isActive()) {
+                    imm.hideSoftInputFromWindow(getCurrentFocus()
+                            .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                }
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
@@ -339,7 +347,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 for (int i = 0; i < citys.size(); i++) {
                     cityList.add(citys.get(i).getName());
                 }
-                city_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cityList);
+                city_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, cityList);
                 city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_citys.setAdapter(city_adapter);
                 break;
@@ -353,7 +361,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                         countyList.add(country.get(i).getName());
                     }
                 }
-                county_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countyList);
+                county_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, countyList);
                 county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_countys.setAdapter(county_adapter);
                 break;
@@ -363,7 +371,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 for (int i = 0; i < citys.size(); i++) {
                     jgcityList.add(citys.get(i).getName());
                 }
-                city_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, jgcityList);
+                city_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, jgcityList);
                 city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_jgcitys.setAdapter(city_adapter);
                 break;
@@ -377,7 +385,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                         jgcountyList.add(countrys.get(i).getName());
                     }
                 }
-                county_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, jgcountyList);
+                county_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, jgcountyList);
                 county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_jgcountys.setAdapter(county_adapter);
                 break;

@@ -1,13 +1,13 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
-
 import android.content.Intent;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -177,12 +177,11 @@ private String sex="1";
             address.add("");
         }
         address.add("");
-        homeplace=sp_recom_jgprovince.getSelectedItem().toString()+
+        homeplace=sp_recom_jgprovince.getSelectedItem().toString()+","+
                  sp_recom_jgcitys.getSelectedItem().toString();
         try {
-            homeplace=homeplace+sp_recom_jgcountys.getSelectedItem().toString();
+            homeplace=homeplace+","+sp_recom_jgcountys.getSelectedItem().toString();
         }catch (Exception e){
-            homeplace=homeplace+"";
         }
         getHobbys(rg_recom_like);
         getCharacters(rg_recom_character);
@@ -208,7 +207,7 @@ private String sex="1";
                 @Override
                 public void run() {
                     //适配器
-                    province_adapter = new ArrayAdapter<String>(RecommendActivity.this, android.R.layout.simple_spinner_item, options1Items);
+                    province_adapter = new ArrayAdapter<String>(RecommendActivity.this,R.layout.simple_spanner_item, options1Items);
                     //设置样式
                     province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     //加载适配器
@@ -270,7 +269,13 @@ private String sex="1";
                 finish();
                 break;
             case R.id.et_recom_birthday:
-             TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
+                //隐藏软件盘，防止遮挡生日
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm.isActive()) {
+                    imm.hideSoftInputFromWindow(getCurrentFocus()
+                            .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                }
+                TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
                         SimpleDateFormat dateFormat =new SimpleDateFormat("yyyy-MM-dd");
@@ -351,7 +356,7 @@ private String sex="1";
         for (int i = 0; i < citys.size(); i++) {
             options2Items.add(citys.get(i).getName());
         }
-        city_adapter = new ArrayAdapter<String>(RecommendActivity.this, android.R.layout.simple_spinner_item, options2Items);
+        city_adapter = new ArrayAdapter<String>(RecommendActivity.this,R.layout.simple_spanner_item, options2Items);
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
@@ -369,7 +374,7 @@ private String sex="1";
                 options3Items.add(country.get(i).getName());
             }
         }
-        county_adapter = new ArrayAdapter<String>(RecommendActivity.this, android.R.layout.simple_spinner_item, options3Items);
+        county_adapter = new ArrayAdapter<String>(RecommendActivity.this,R.layout.simple_spanner_item, options3Items);
         county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(county_adapter);
     }

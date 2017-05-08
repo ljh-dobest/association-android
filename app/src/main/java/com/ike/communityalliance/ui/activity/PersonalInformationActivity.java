@@ -1,10 +1,12 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -189,7 +191,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
             @Override
             public void run() {
                 //适配器
-                province_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this, android.R.layout.simple_spinner_item, options1Items);
+                province_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this,R.layout.simple_spanner_item, options1Items);
                 //设置样式
                 province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //加载适配器
@@ -228,6 +230,12 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
             startActivity(new Intent(this,MorePersonalInfoActivity.class));
                 break;
             case R.id.et_personal_info_birthday:
+                //隐藏软件盘，防止遮挡生日
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm.isActive()) {
+                    imm.hideSoftInputFromWindow(getCurrentFocus()
+                            .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                }
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
@@ -280,7 +288,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         for (int i = 0; i < citys.size(); i++) {
             options2Items.add(citys.get(i).getName());
         }
-        city_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this, android.R.layout.simple_spinner_item, options2Items);
+        city_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this,R.layout.simple_spanner_item, options2Items);
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
@@ -298,7 +306,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                 options3Items.add(country.get(i).getName());
             }
         }
-        county_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this, android.R.layout.simple_spinner_item, options3Items);
+        county_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this,R.layout.simple_spanner_item, options3Items);
         county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(county_adapter);
     }
