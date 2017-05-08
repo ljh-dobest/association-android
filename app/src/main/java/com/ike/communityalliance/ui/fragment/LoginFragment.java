@@ -51,7 +51,7 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
     private String userName;
     private String pwd;
 
-    public static int MODE = Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE;
+    public static int MODE = Context.MODE_PRIVATE;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

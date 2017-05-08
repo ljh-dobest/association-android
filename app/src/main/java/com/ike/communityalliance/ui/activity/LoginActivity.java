@@ -81,7 +81,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         friendInfoDAO = new FriendInfoDAOImpl(mContext);
         groupMemberDAO = new GroupMemberDAOImpl(mContext);
 
-        sharedPreferences = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
+        sharedPreferences = getSharedPreferences("config",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         initView();
         initPermissions();
