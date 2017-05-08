@@ -98,7 +98,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
 
     private void initView() {
         mContext=getContext();
-        sp = mContext.getSharedPreferences("config",Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
+        sp = mContext.getSharedPreferences("config",Context.MODE_PRIVATE);
         userPortraitUrl=sp.getString(Const.userPortraitUrl,"");
         nickName=sp.getString(Const.LOGIN_NICKNAME,"");
         age=sp.getString(Const.LOGIN_AGE,"");

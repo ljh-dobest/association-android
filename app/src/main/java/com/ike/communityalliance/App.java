@@ -68,7 +68,7 @@ public class App extends PluginApplication {
         crashHandler.init(this);
 //        CrashHandler.getInstance().init(this);
 
-        userid=getSharedPreferences("config",Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE).getString(Const.LOGIN_ID,"");
+        userid=getSharedPreferences("config",Context.MODE_PRIVATE).getString(Const.LOGIN_ID,"");
 
         groupsDAO=new GroupsDAOImpl(this);
         friendInfoDAO=new FriendInfoDAOImpl(this);
@@ -140,7 +140,7 @@ public class App extends PluginApplication {
     }
 
     private void openSealDBIfHasCachedToken() {
-        SharedPreferences sp = getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
+        SharedPreferences sp = getSharedPreferences("config",Context.MODE_PRIVATE);
         String cachedToken = sp.getString("loginToken", "");
         if (!TextUtils.isEmpty(cachedToken)) {
             String current = getCurProcessName(this);

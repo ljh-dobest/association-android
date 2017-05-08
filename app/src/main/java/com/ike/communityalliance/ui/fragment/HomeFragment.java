@@ -45,11 +45,8 @@ import butterknife.OnClick;
  * Created by just on 2017/3/1.
  */
 
-<<<<<<< HEAD
-public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener, OnBannerListener {
-=======
 public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragmentPresenter> implements IHomePageView,AbsListView.OnScrollListener, AdapterView.OnItemClickListener, OnBannerClickListener {
->>>>>>> ljh
+
 
     LinearLayout homepage_lv_header;
     RelativeLayout home_lv_header2;
@@ -80,11 +77,17 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
         homepage_banner = (Banner) homepage_lv_header.findViewById(R.id.homepage_banner);
         homepage_gv = (GridView) home_lv_header2.findViewById(R.id.homepage_gv);
         ButterKnife.bind(this, containerView);
-        sp = getContext().getSharedPreferences("config", Context.MODE_WORLD_READABLE + Context.MODE_WORLD_WRITEABLE);
+        sp = getContext().getSharedPreferences("config", Context.MODE_PRIVATE);
         useId = sp.getString(Const.LOGIN_ID, "");
         initView();
         getHomePageData(useId);
         return containerView;
+    }
+
+    @Override
+    public void onResume  () {
+        super.onResume();
+        initGridView();
     }
 
     @Override
@@ -95,7 +98,6 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     private void initView() {
         imgList = new ArrayList<>();
         homepage_banner.setOnBannerClickListener(this);
-        initGridView();
         initListView();
     }
 
@@ -164,22 +166,17 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-<<<<<<< HEAD
 
-=======
->>>>>>> ljh
       if(totalItemCount<6){
           homepage_iv_top.setVisibility(View.GONE);
           return;
       }
-<<<<<<< HEAD
 
-=======
         if (totalItemCount < 4) {
             homepage_iv_top.setVisibility(View.GONE);
             return;
         }
->>>>>>> ljh
+
         if (visibleItemCount + firstVisibleItem == totalItemCount) {
             homepage_iv_top.setVisibility(View.VISIBLE);
         } else {
