@@ -155,7 +155,7 @@ public class SignPickerActivity extends BaseMvpActivity<ISignPickerView,SignPick
 
 
     public void showComfirmDialog(String msg) {
-        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
+        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this,R.style.DialogStyle).create();
         ComfirmDialog.show();
         Window window = ComfirmDialog.getWindow();
         window.setGravity(Gravity.CENTER);

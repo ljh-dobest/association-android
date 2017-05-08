@@ -34,10 +34,14 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.MyVi
         this.mOnItemClickListener = listener;
     }
 
-    public GroupListAdapter(Context context,List<Groups> list) {
+    public GroupListAdapter(Context context) {
         this.context = context;
-        this.list = list;
         myBitmapUtils = new MyBitmapUtils();
+    }
+    public void setList(List<Groups> list){
+        this.list.clear();
+        this.list.addAll(list);
+        notifyDataSetChanged();
     }
 
     @Override

@@ -248,6 +248,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                 email=et_personal_info_email.getText().toString();
                 if (!CommonUtils.isEmail(email)) {
                     T.showShort(this, "邮箱格式不正确");
+                    LoadDialog.dismiss(this);
                     return;
                 }
                 if(imgPath.equals("")){
@@ -322,6 +323,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
 
     @Override
     public void succeedToEdit(String imgPath) {
+        LoadDialog.dismiss(this);
         editor.putString(Const.LOGIN_NICKNAME, nickName);
         editor.putString(Const.userPortraitUrl,HttpUtils.IMAGE_RUL+imgPath);
         editor.putString(Const.LOGIN_BIRTHDAY,birthday);
@@ -333,13 +335,12 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         editor.commit();
         initData();
         T.showShort(this,"修改成功");
-        LoadDialog.dismiss(this);
     }
 
     @Override
     public void showError(String errorString) {
         initData();
-        T.showShort(this,"修改失败");
+        T.showShort(this,errorString);
         LoadDialog.dismiss(this);
     }
     @Override
