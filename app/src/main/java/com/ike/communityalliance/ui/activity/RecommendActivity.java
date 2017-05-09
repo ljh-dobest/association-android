@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -38,9 +39,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class RecommendActivity extends BaseMvpActivity<IRecommedView,RecommendPresenterImpl> implements RadioGroup.OnCheckedChangeListener,IRecommedView,AdapterView.OnItemSelectedListener {
-   private final String[] creditScores= new String[]{"100", "90", "80","70","60","50","40","30","20","10"};
-    private final String[] relationships=new String[]{"亲人","情侣","同事","校友","老乡"};
+public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendPresenterImpl> implements RadioGroup.OnCheckedChangeListener, IRecommedView, AdapterView.OnItemSelectedListener {
+    private final String[] creditScores = new String[]{"100", "90", "80", "70", "60", "50", "40", "30", "20", "10"};
+    private final String[] relationships = new String[]{"亲人", "情侣", "同事", "校友", "老乡"};
     @BindView(R.id.et_recom_name)
     EditText et_recom_name;
     @BindView(R.id.et_recom_mobile)
@@ -65,7 +66,6 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView,RecommendPr
     EditText et_recom_childrenName;
     @BindView(R.id.et_recom_childrenSchool)
     EditText et_recom_childrenSchool;
-
     @BindView(R.id.rg_recom_sex)
     RadioGroup rg_recom_sex;
     @BindView(R.id.rg_recom_like)
@@ -96,12 +96,13 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView,RecommendPr
     Spinner sp_recom_jgcountys;
     @BindView(R.id.tv_recom_back)
     TextView tv_recom_back;
+
     private String userId;
     private String fullName;
     private String mobile;
-private String sex="1";
+    private String sex = "1";
     private String hobby;
-    private ArrayList<String> address=new ArrayList<>();
+    private ArrayList<String> address = new ArrayList<>();
     private String relationship;
     private String character;
     private String creditScore;
@@ -111,17 +112,17 @@ private String sex="1";
     private String company;
     private String fatherName;
     private String motherName;
-    private String marriage="0";
+    private String marriage = "0";
     private String spouseName;
     private String childrenName;
     private String childrenSchool;
-    private ArrayList<String> options1Items=new ArrayList<>();
-    private ArrayList<String> options2Items=new ArrayList<>();
-     private ArrayList<String> options3Items=new ArrayList<>();
+    private ArrayList<String> options1Items = new ArrayList<>();
+    private ArrayList<String> options2Items = new ArrayList<>();
+    private ArrayList<String> options3Items = new ArrayList<>();
     private ArrayAdapter province_adapter;
     private ArrayAdapter city_adapter;
     private ArrayAdapter county_adapter;
-     private ArrayList<ProvinceBean> data;
+    private ArrayList<ProvinceBean> data;
     private ArrayList<CityBean> citys;
     private SharedPreferences sp;
 
@@ -130,26 +131,26 @@ private String sex="1";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
         ButterKnife.bind(this);
-        sp =getSharedPreferences("config",MODE_PRIVATE);
-        userId=sp.getString(Const.LOGIN_ID,"");
-        presenter.getParserData(this,"data.txt");
+        sp = getSharedPreferences("config", MODE_PRIVATE);
+        userId = sp.getString(Const.LOGIN_ID, "");
+        presenter.getParserData(this, "data.txt");
         initView();
     }
 
     @Override
     public void showTextEmpty() {
-        T.showShort(this,"必填项不能为空！");
+        T.showShort(this, "必填项不能为空！");
     }
 
     @Override
     public void showRecommedError(String string) {
-       T.showShort(this,string);
+        T.showShort(this, string);
     }
 
     @Override
     public void succeedToRecommed(String recommendId) {
-        Intent intent=new Intent(this,RecomendCardActivity.class);
-        intent.putExtra("recommendId",recommendId);
+        Intent intent = new Intent(this, RecomendCardActivity.class);
+        intent.putExtra("recommendId", recommendId);
         startActivity(intent);
         finish();
     }
@@ -163,98 +164,99 @@ private String sex="1";
         sp_recom_jgprovince.setOnItemSelectedListener(this);
         sp_recom_jgcitys.setOnItemSelectedListener(this);
     }
-      //获取控件的信息
+
+    //获取控件的信息
     @Override
     public void getViewData() {
         address.clear();
-        fullName=et_recom_name.getText().toString().trim();
-        mobile=et_recom_mobile.getText().toString().trim();
-       address.add(sp_recom_province.getSelectedItem().toString());
-       address.add(sp_recom_city.getSelectedItem().toString());
+        fullName = et_recom_name.getText().toString().trim();
+        mobile = et_recom_mobile.getText().toString().trim();
+        address.add(sp_recom_province.getSelectedItem().toString());
+        address.add(sp_recom_city.getSelectedItem().toString());
         try {
             address.add(sp_recom_county.getSelectedItem().toString());
-        }catch (Exception e){
+        } catch (Exception e) {
             address.add("");
         }
         address.add("");
-        homeplace=sp_recom_jgprovince.getSelectedItem().toString()+","+
-                 sp_recom_jgcitys.getSelectedItem().toString();
+        homeplace = sp_recom_jgprovince.getSelectedItem().toString() + "," +
+                sp_recom_jgcitys.getSelectedItem().toString();
         try {
-            homeplace=homeplace+","+sp_recom_jgcountys.getSelectedItem().toString();
-        }catch (Exception e){
+            homeplace = homeplace + "," + sp_recom_jgcountys.getSelectedItem().toString();
+        } catch (Exception e) {
         }
         getHobbys(rg_recom_like);
         getCharacters(rg_recom_character);
-        creditScore=et_recom_creditScore.getText().toString().trim();
-        birthday=et_recom_birthday.getText().toString().trim();
-        finishSchool=et_recom_school.getText().toString().trim();
-        company=et_recom_company.getText().toString().trim();
-        fatherName=et_recom_dadName.getText().toString().trim();
-        motherName=et_recom_momName.getText().toString().trim();
-        spouseName=et_recom_spouseName.getText().toString().trim();
-        childrenName=et_recom_childrenName.getText().toString().trim();
-        childrenSchool=et_recom_childrenSchool.getText().toString().trim();
+        creditScore = et_recom_creditScore.getText().toString().trim();
+        birthday = et_recom_birthday.getText().toString().trim();
+        finishSchool = et_recom_school.getText().toString().trim();
+        company = et_recom_company.getText().toString().trim();
+        fatherName = et_recom_dadName.getText().toString().trim();
+        motherName = et_recom_momName.getText().toString().trim();
+        spouseName = et_recom_spouseName.getText().toString().trim();
+        childrenName = et_recom_childrenName.getText().toString().trim();
+        childrenSchool = et_recom_childrenSchool.getText().toString().trim();
     }
 
     //获得解析好的省市区数据
     @Override
     public void getparserData(ArrayList<ProvinceBean> province) {
-               data=province;
+        data = province;
         for (int i = 0; i < data.size(); i++) {
-                options1Items.add(province.get(i).getName());
+            options1Items.add(province.get(i).getName());
         }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    //适配器
-                    province_adapter = new ArrayAdapter<String>(RecommendActivity.this,R.layout.simple_spanner_item, options1Items);
-                    //设置样式
-                    province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    //加载适配器
-                    sp_recom_province.setAdapter(province_adapter);
-                   sp_recom_jgprovince.setAdapter(province_adapter);
-                }
-            });
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //适配器
+                province_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, options1Items);
+                //设置样式
+                province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                //加载适配器
+                sp_recom_province.setAdapter(province_adapter);
+                sp_recom_jgprovince.setAdapter(province_adapter);
+            }
+        });
 
     }
 
     @Override
     public void getHobbys(ViewGroup group) {
-       presenter.getHobby(group);
+        presenter.getHobby(group);
     }
 
     @Override
     public void setHobbys(String hobbys) {
-        this.hobby=  hobbys;
+        this.hobby = hobbys;
     }
 
     @Override
     public void getCharacters(ViewGroup group) {
-          presenter.getCharacters(group);
+        presenter.getCharacters(group);
     }
 
     @Override
     public void setCharacters(String characters) {
-      this.character= characters;
+        this.character = characters;
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (group.getId()) {
             case R.id.rg_recom_sex://性别选项
-                if(checkedId == R.id.rb_recom_man){
-                    sex="1";
-                }else{
-                    sex="2";
+                if (checkedId == R.id.rb_recom_man) {
+                    sex = "1";
+                } else {
+                    sex = "2";
                 }
                 break;
             case R.id.rg_recom_marriage://婚姻选项
-                if(checkedId == R.id.rb_recom_unmarriage){
-                    marriage="0";
-                  //不显示填写婚姻信息项
+                if (checkedId == R.id.rb_recom_unmarriage) {
+                    marriage = "0";
+                    //不显示填写婚姻信息项
                     ll_recomm_marriaged.setVisibility(View.GONE);
-                }else{
-                    marriage="1";
+                } else {
+                    marriage = "1";
                     //显示填写婚姻信息项
                     ll_recomm_marriaged.setVisibility(View.VISIBLE);
                 }
@@ -262,7 +264,7 @@ private String sex="1";
         }
     }
 
-    @OnClick({R.id.tv_recom_back,R.id.et_recom_birthday,R.id.btn_recommend,R.id.et_recom_relationship,R.id.et_recom_creditScore})
+    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend, R.id.et_recom_relationship, R.id.et_recom_creditScore})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_recom_back:
@@ -270,7 +272,7 @@ private String sex="1";
                 break;
             case R.id.et_recom_birthday:
                 //隐藏软件盘，防止遮挡生日
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm.isActive()) {
                     imm.hideSoftInputFromWindow(getCurrentFocus()
                             .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
@@ -278,7 +280,7 @@ private String sex="1";
                 TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {//选中事件回调
-                        SimpleDateFormat dateFormat =new SimpleDateFormat("yyyy-MM-dd");
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                         birthday = dateFormat.format(date);
                         et_recom_birthday.setText(birthday);
                     }
@@ -287,19 +289,19 @@ private String sex="1";
                 break;
             case R.id.btn_recommend:
                 getViewData();
-                    presenter.verifyRecommedInfo(new RecommendBean(userId,fullName,mobile,sex,hobby,address,relationship,character,
-                            creditScore,birthday,homeplace,finishSchool,company,fatherName, motherName,marriage,
-                            spouseName,childrenName,childrenSchool));
+                presenter.verifyRecommedInfo(new RecommendBean(userId, fullName, mobile, sex, hobby, address, relationship, character,
+                        creditScore, birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
+                        spouseName, childrenName, childrenSchool));
                 break;
             case R.id.et_recom_relationship:
                 //弹出关系选择框
-                android.app.AlertDialog.Builder dialog_relationship = new android.app.AlertDialog.Builder(this);
+                AlertDialog.Builder dialog_relationship = new AlertDialog.Builder(this);
                 dialog_relationship.setTitle("选择关系");
                 dialog_relationship.setSingleChoiceItems(relationships, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         et_recom_relationship.setText(relationships[i]);
-                        relationship=i+"";
+                        relationship = i + "";
                         dialogInterface.dismiss();
                     }
                 });
@@ -307,12 +309,12 @@ private String sex="1";
                 break;
             case R.id.et_recom_creditScore:
                 //弹出信誉分选择框
-                android.app.AlertDialog.Builder dialog_creditScore = new android.app.AlertDialog.Builder(this);
+                AlertDialog.Builder dialog_creditScore = new AlertDialog.Builder(this);
                 dialog_creditScore.setTitle("选择信誉分");
                 dialog_creditScore.setSingleChoiceItems(creditScores, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                          et_recom_creditScore.setText(creditScores[i]);
+                        et_recom_creditScore.setText(creditScores[i]);
                         dialogInterface.dismiss();
                     }
                 });
@@ -328,20 +330,20 @@ private String sex="1";
                 setSecondText(sp_recom_city, position);
                 break;
             case R.id.sp_recom_city: //设置三级联动
-                setThirdText(sp_recom_county,position);
+                setThirdText(sp_recom_county, position);
                 break;
             case R.id.sp_recom_jgprovince:     //设置二级联动
                 setSecondText(sp_recom_jgcitys, position);
                 break;
             case R.id.sp_recom_jgcitys: //设置三级联动
-                setThirdText(sp_recom_jgcountys,position);
+                setThirdText(sp_recom_jgcountys, position);
                 break;
         }
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {}
-
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
 
 
     @Override
@@ -356,10 +358,11 @@ private String sex="1";
         for (int i = 0; i < citys.size(); i++) {
             options2Items.add(citys.get(i).getName());
         }
-        city_adapter = new ArrayAdapter<String>(RecommendActivity.this,R.layout.simple_spanner_item, options2Items);
+        city_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, options2Items);
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
+
     //三级联动
     private void setThirdText(Spinner sp, int position) {
         options3Items.clear();
@@ -367,16 +370,18 @@ private String sex="1";
         if (country == null) {
             options3Items.add("");
         } else {
-            if(country.size()==0){
+            if (country.size() == 0) {
                 options3Items.add("");
             }
             for (int i = 0; i < country.size(); i++) {
                 options3Items.add(country.get(i).getName());
             }
         }
-        county_adapter = new ArrayAdapter<String>(RecommendActivity.this,R.layout.simple_spanner_item, options3Items);
+        county_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, options3Items);
         county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(county_adapter);
     }
+
+
 
 }

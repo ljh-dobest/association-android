@@ -343,6 +343,8 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         editor.commit();
         initData();
         T.showShort(this,"修改成功");
+        setResult(RESULT_OK);
+        finish();
     }
 
     @Override

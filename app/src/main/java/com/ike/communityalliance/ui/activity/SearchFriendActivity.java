@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,8 +18,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.bean.BaseBean;
@@ -27,6 +26,8 @@ import com.ike.communityalliance.bean.UserOrGroupBean;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -57,7 +58,7 @@ public class SearchFriendActivity extends BaseActivity {
     ImageView ivTitleBack;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    @BindView(R.id.iv_title_right)
+    @BindView(R.id.iv_searchFriend_scan_white)
     ImageView ivTitleRight;
 
     private String phone;
@@ -65,9 +66,9 @@ public class SearchFriendActivity extends BaseActivity {
     private String userName;
     private String f_userid;
     private String status;
-
     private SharedPreferences sp;
     private String myUserId,myNickname;
+    private KeyListener keyListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +78,8 @@ public class SearchFriendActivity extends BaseActivity {
         sp=getSharedPreferences("config",MODE_PRIVATE);
         myUserId=sp.getString(Const.LOGIN_ID,"");
         myNickname=sp.getString(Const.LOGIN_NICKNAME,"");
-        tvTitle.setText("添加好友/群");
-        ivTitleRight.setVisibility(View.VISIBLE);
-        ivTitleRight.setImageResource(R.mipmap.scan_white);
+        //ivTitleRight.setImageResource(R.mipmap.scan_white);
+
         etFriend.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -105,6 +105,8 @@ public class SearchFriendActivity extends BaseActivity {
             }
         });
     }
+
+
 
     private void searchFriends() {
         HttpUtils.PostSearchFriendRequest("/lookupUser", phone, new StringCallback() {
