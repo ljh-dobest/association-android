@@ -152,6 +152,7 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         }
         //私聊---群聊
         if(mConversationType== Conversation.ConversationType.PRIVATE){
+
           AppContext.setPersonInputProvider();//设置个人聊天时的输入拓展框
         }
         //群聊

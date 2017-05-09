@@ -55,7 +55,7 @@
                         android:layout_height="99px"
                         android:id="@+id/iv_claim_userHeader"
                         android:src="@drawable/test"
-                        android:scaleType="fitCenter"
+                        android:scaleType="fitXY"
                         app:riv_corner_radius="10px"
                         app:riv_tile_mode="repeat"
                         app:riv_oval="false" />

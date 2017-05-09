@@ -57,16 +57,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="姓名:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_name"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_name"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_name_status"
                     style="@style/claimInfo_tv_styles"
@@ -87,16 +82,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="QQ:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_QQ"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_QQ"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_QQ_status"
                     style="@style/claimInfo_tv_styles"
@@ -117,16 +107,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="微信:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_wechat"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_wechat"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_wechat_status"
                     style="@style/claimInfo_tv_styles"
@@ -141,7 +126,7 @@
                     android:layout_height="wrap_content" />
             </com.zhy.autolayout.AutoLinearLayout>
             <RadioGroup
-                android:id="@+id/rg_verifyInfo_like"
+                android:id="@+id/rg_morePersonalInfo_like"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -233,16 +218,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="毕业学校:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_school"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_school"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_school_status"
                     style="@style/claimInfo_tv_styles"
@@ -263,16 +243,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="星座:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_constellation"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_constellation"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_constellation_status"
                     style="@style/claimInfo_tv_styles"
@@ -293,16 +268,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="血型:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_bloodtype"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_bloodtype"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_bloodtype_status"
                     style="@style/claimInfo_tv_styles"
@@ -323,16 +293,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="公司:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_company"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_company"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_company_status"
                     style="@style/claimInfo_tv_styles"
@@ -353,16 +318,11 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="公司职位:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_position"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_position"
+                    style="@style/claimInfo_et_styles"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
                 <TextView
                     android:id="@+id/tv_personal_more_info_position_status"
                     style="@style/claimInfo_tv_styles"
@@ -383,16 +343,14 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="婚姻状况:"/>
-                <TextView
+                <EditText
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/tv_personal_more_info_marriage"
-                    style="@style/claimInfo_tv_styles"
+                    android:id="@+id/et_personal_more_info_marriage"
+                    style="@style/claimInfo_et_styles"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
                     android:text=""/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
+
                 <TextView
                     android:id="@+id/tv_personal_more_info_marriage_status"
                     style="@style/claimInfo_tv_styles"

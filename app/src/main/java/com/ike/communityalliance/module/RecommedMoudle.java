@@ -36,10 +36,18 @@ public class RecommedMoudle {
               ||recommendBean.getCreditScore().equals("")){
           listener.showTextEmpty();
           return;
-      }else if(!AMUtils.isMobile(recommendBean.getMobile())){
+      }
+      if(!AMUtils.isMobile(recommendBean.getMobile())){
                  listener.showRecommedError("请输入正确的手机号码");
           return;
       }
+        if(recommendBean.getAddress().get(0).equals("请选择")){
+            listener.showRecommedError("请输入具体地址信息");
+            return;
+        }
+        if(recommendBean.getHomeplace().equals("请选择,请选择,请选择")){
+            recommendBean.setHomeplace("");
+        }
           HttpUtils.postRecommend("/friendsRecommend",recommendBean, new StringCallback() {
                       @Override
                       public void onError(Call call, Exception e, int id) {

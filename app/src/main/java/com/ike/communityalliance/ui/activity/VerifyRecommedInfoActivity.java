@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,15 +31,15 @@ import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
-
 import com.ike.communityalliance.ui.Main2Activity;
-
 import com.ike.mylibrary.util.T;
 import com.kyleduo.switchbutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -114,6 +115,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     private ArrayList<CityBean> citys;
     private VerifyRecommedInfoBean verifyRecommedInfo;
     private String curDegreeCode="0";
+    private List<String> hobbyList;
       private boolean isFromLogin=false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -241,6 +243,8 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     @Override
     public void setVerifyInfo(VerifyRecommedInfo verifyInfo) {
           et_verifyInfo_username.setText(verifyInfo.getFullName());
+        hobbyList= Arrays.asList(verifyInfo.getHobby().split(","));
+        initHobby();
         if(verifyInfo.getSex().equals("1")){
            RadioButton radioButton = (RadioButton) rg_verifyInfo_sex.getChildAt(0);
             radioButton.setChecked(true);
@@ -252,6 +256,21 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         et_verifyInfo_mobile.setText(verifyInfo.getMobile());
         et_verifyInfo_company.setText(verifyInfo.getCompany());
         et_verifyInfo_finishSchool.setText(verifyInfo.getFinishSchool());
+    }
+
+    private void initHobby() {
+        if(hobbyList==null){
+            return;
+        }
+        for (int i = 0; i < rg_verifyInfo_like.getChildCount(); i++) {
+            LinearLayout ll= (LinearLayout) rg_verifyInfo_like.getChildAt(i);
+            for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
+                CheckBox rb= (CheckBox) ll.getChildAt(j);
+                if(hobbyList.contains(rb.getText().toString())){
+                    rb.setChecked(true);
+                }
+            }
+        }
     }
 
     @Override

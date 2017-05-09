@@ -291,6 +291,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         mobile=et_claiminfo_mobile.getText().toString();
         getHobbys(rg_claimInfo_like);
         address.add(sp_claimInfo_province.getSelectedItem().toString());
+        String s=sp_claimInfo_citys.getSelectedItem().toString();
         address.add(sp_claimInfo_citys.getSelectedItem().toString());
         try {
             address.add(sp_claimInfo_countys.getSelectedItem().toString());
@@ -300,10 +301,10 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         address.add("");
         creditScore=et_claiminfo_creditScore.getText().toString();
         birthday=et_claiminfo_birthday.getText().toString();
-        homeplace=sp_claimInfo_jgprovince.getSelectedItem().toString()+
+        homeplace=sp_claimInfo_jgprovince.getSelectedItem().toString()+","+
                 sp_claimInfo_jgcitys.getSelectedItem().toString();
         try {
-            homeplace=homeplace+sp_claimInfo_jgcountys.getSelectedItem().toString();
+            homeplace=homeplace+","+sp_claimInfo_jgcountys.getSelectedItem().toString();
         }catch (Exception e){
         }
         finishSchool=et_claiminfo_finishSchool.getText().toString();

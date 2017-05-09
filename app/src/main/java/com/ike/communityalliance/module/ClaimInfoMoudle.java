@@ -38,10 +38,17 @@ public class ClaimInfoMoudle {
    listener.failedToClaim("请输入正确的手机号码");
    return;
   }
-if(!CommonUtils.isEmail(claimInfo.getEmail())){
+  if(claimInfo.getAddress().get(0).equals("请选择")){
+   listener.failedToClaim("请输入具体地址信息");
+   return;
+  }
+if(!claimInfo.getEmail().equals("")&&!CommonUtils.isEmail(claimInfo.getEmail())){
  listener.failedToClaim("请输入正确的邮箱");
  return;
 }
+  if(claimInfo.getHomeplace().equals("请选择,请选择,请选择")){
+   claimInfo.setHomeplace("");
+  }
   HttpUtils.postClaimInfo("/claimUser", claimInfo, new StringCallback() {
    @Override
    public void onError(Call call, Exception e, int id) {
