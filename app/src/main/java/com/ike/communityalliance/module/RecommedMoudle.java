@@ -2,12 +2,11 @@ package com.ike.communityalliance.module;
 
 import android.content.Context;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.AMUtils;
 import com.ike.communityalliance.bean.CityBean;
 import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.bean.CountyBean;
@@ -17,6 +16,7 @@ import com.ike.communityalliance.bean.RecommendCode;
 import com.ike.communityalliance.listener.OnRecommedFinishListener;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.utils.DateUtils;
+import com.ike.mylibrary.util.AMUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
@@ -98,7 +98,7 @@ public class RecommedMoudle {
         for (int i = 0; i < group.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) group.getChildAt(i);
             for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
-                RadioButton rb= (RadioButton) ll.getChildAt(j);
+                CheckBox rb= (CheckBox) ll.getChildAt(j);
                 if (rb.isChecked()) {
                     if (isFirstHobby) {
                         hobbys = rb.getText().toString();
@@ -119,7 +119,7 @@ public class RecommedMoudle {
         for (int i = 0; i < group.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) group.getChildAt(i);
             for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
-                RadioButton rb= (RadioButton) ll.getChildAt(j);
+                CheckBox rb= (CheckBox) ll.getChildAt(j);
                 if (rb.isChecked()){
                     if (isFirstCharacter){
                         characters=rb.getText().toString();

@@ -114,19 +114,19 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="爱好:"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like1"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="舞蹈" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like2"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="音乐"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like3"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="画画"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like4"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="乐器"/>
@@ -141,20 +141,20 @@
                     android:text="爱好:"
                     android:visibility="invisible"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like5"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="游戏" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like6"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="影视"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like7"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="旅行"/>
-                <RadioButton
-                    android:id="@+id/rb_recom_like12"
+                <CheckBox
+                    android:id="@+id/rb_recom_like8"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="棋类"/>
             </com.zhy.autolayout.AutoLinearLayout>
@@ -169,20 +169,20 @@
                     android:textColor="@color/white"
                     android:visibility="invisible"
                     />
-                <RadioButton
-                    android:id="@+id/rb_recom_like8"
-                    style="@style/claimInfo_item_rb_styles"
-                    android:text="美食" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like9"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="社交"/>
-                <RadioButton
+                    android:text="美食" />
+                <CheckBox
                     android:id="@+id/rb_recom_like10"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="阅读"/>
-                <RadioButton
+                    android:text="社交"/>
+                <CheckBox
                     android:id="@+id/rb_recom_like11"
+                    style="@style/claimInfo_item_rb_styles"
+                    android:text="阅读"/>
+                <CheckBox
+                    android:id="@+id/rb_recom_like12"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="运动"/>
             </com.zhy.autolayout.AutoLinearLayout>
@@ -269,19 +269,19 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="性格:"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character1"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="死宅" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character2"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="幽默"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character3"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="漂亮"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character4"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="大方"/>
@@ -296,19 +296,19 @@
                     android:text="性格:"
                     android:visibility="invisible"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character5"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="急躁" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character6"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="轻浮"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character7"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="花心"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character12"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="逗比"/>
@@ -324,19 +324,19 @@
                     android:textColor="@color/white"
                     android:visibility="invisible"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character8"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="活泼" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character9"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="高冷"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character10"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="诚信"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character11"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="可爱"/>
