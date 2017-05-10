@@ -57,7 +57,6 @@
                         android:src="@drawable/test"
                         android:scaleType="fitXY"
                         app:riv_corner_radius="10px"
-                        app:riv_tile_mode="repeat"
                         app:riv_oval="false" />
                     <TextView
                         android:layout_toRightOf="@id/iv_claim_userHeader"

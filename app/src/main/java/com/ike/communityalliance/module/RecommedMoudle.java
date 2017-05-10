@@ -105,7 +105,7 @@ public class RecommedMoudle {
         String hobbys="";
         for (int i = 0; i < group.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) group.getChildAt(i);
-            for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
+            for (int j= 2; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
                 CheckBox rb= (CheckBox) ll.getChildAt(j);
                 if (rb.isChecked()) {
                     if (isFirstHobby) {
