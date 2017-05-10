@@ -65,7 +65,7 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_width">140px</item>
         <item name="android:layout_height">80px</item>
-        <item name="android:layout_marginLeft">25px</item>
+        <item name="android:layout_marginLeft">20px</item>
         <item name="android:paddingLeft">25px</item>
         <item name="android:paddingRight">25px</item>
         <item name="android:background">@drawable/claiminfo_item_rb_bg</item>

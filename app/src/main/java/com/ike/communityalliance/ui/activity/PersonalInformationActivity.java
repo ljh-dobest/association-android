@@ -254,6 +254,11 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                 birthday=etPersonalInfoBirthday.getText().toString();
                 age=etPersonalInfoAge.getText().toString();
                 email=et_personal_info_email.getText().toString();
+                if(address.equals("请选择请选择 ")){
+                    T.showShort(this, "请输入详细地址信息");
+                    LoadDialog.dismiss(this);
+                    return;
+                }
                 if (!CommonUtils.isEmail(email)) {
                     T.showShort(this, "邮箱格式不正确");
                     LoadDialog.dismiss(this);

@@ -43,9 +43,14 @@
                     android:id="@+id/tv_verifyInfo_name"
                     style="@style/claimInfo_tv_styles"
                     android:text="姓名:"/>
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <EditText
                     android:layout_toRightOf="@id/tv_verifyInfo_name"
-                    android:layout_marginLeft="31px"
                     android:id="@+id/et_verifyInfo_username"
                     style="@style/claimInfo_et_styles"
                     />
@@ -58,9 +63,15 @@
                 android:id="@+id/tv_verifyInfo_phone"
                 style="@style/claimInfo_tv_styles"
                 android:text="电话:"/>
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:src="@mipmap/redsure" />
             <EditText
                 android:layout_toRightOf="@id/tv_verifyInfo_phone"
-                android:layout_marginLeft="31px"
                 android:id="@+id/et_verifyInfo_mobile"
                 style="@style/claimInfo_et_styles"
                 />
@@ -85,6 +96,12 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="性别:" />
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <RadioGroup
                     android:id="@+id/rg_verifyInfo_sex"
                     android:layout_width="0dp"
@@ -116,6 +133,12 @@
                         style="@style/claimInfo_tv_styles"
                         android:text="爱好:"
                         />
+                    <ImageView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/redsure" />
                     <CheckBox
                         android:id="@+id/rb_verifyInfo_1"
                         style="@style/claimInfo_item_rb_styles"
@@ -143,6 +166,13 @@
                         android:text="爱好:"
                         android:visibility="invisible"
                         />
+                    <ImageView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@mipmap/redsure" />
                     <CheckBox
                         android:id="@+id/rb_verifyInfo_5"
                         style="@style/claimInfo_item_rb_styles"
@@ -171,6 +201,13 @@
                         android:textColor="@color/white"
                         android:visibility="invisible"
                         />
+                    <ImageView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@mipmap/redsure" />
                     <CheckBox
                         android:id="@+id/rb_verifyInfo_8"
                         style="@style/claimInfo_item_rb_styles"
@@ -194,6 +231,12 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="地址:" />
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <Spinner
                     style="@style/claimInfo_item_sp_styles"
                     android:id="@+id/sp_verifyInfo_province"
@@ -222,8 +265,13 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="生日:"/>
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <EditText
-                    android:layout_marginLeft="31px"
                     android:id="@+id/et_verifyInfo_birthday"
                     style="@style/claimInfo_et_styles"
                     android:focusableInTouchMode="false"
