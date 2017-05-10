@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.min.helpcenter.R;
+
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
-import com.min.helpcenter.R;
-import java.lang.IllegalStateException;
-import java.lang.Override;
 
 public class QuestionActivity_ViewBinding<T extends QuestionActivity> implements Unbinder {
   protected T target;

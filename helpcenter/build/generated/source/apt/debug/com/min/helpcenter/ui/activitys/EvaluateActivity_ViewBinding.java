@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.min.helpcenter.R;
+
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
-import com.min.helpcenter.R;
-import java.lang.IllegalStateException;
-import java.lang.Override;
 
 public class EvaluateActivity_ViewBinding<T extends EvaluateActivity> implements Unbinder {
   protected T target;

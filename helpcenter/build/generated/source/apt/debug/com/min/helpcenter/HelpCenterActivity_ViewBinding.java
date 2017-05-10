@@ -6,12 +6,12 @@ import android.support.annotation.UiThread;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.andview.refreshview.XRefreshView;
+
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
-import com.andview.refreshview.XRefreshView;
-import java.lang.IllegalStateException;
-import java.lang.Override;
 
 public class HelpCenterActivity_ViewBinding<T extends HelpCenterActivity> implements Unbinder {
   protected T target;

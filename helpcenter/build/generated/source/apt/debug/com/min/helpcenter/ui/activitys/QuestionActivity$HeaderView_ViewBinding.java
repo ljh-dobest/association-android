@@ -6,11 +6,11 @@ import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.min.helpcenter.R;
+
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
-import com.min.helpcenter.R;
-import java.lang.IllegalStateException;
-import java.lang.Override;
 import jp.wasabeef.richeditor.RichEditor;
 
 public class QuestionActivity$HeaderView_ViewBinding<T extends QuestionActivity.HeaderView> implements Unbinder {
