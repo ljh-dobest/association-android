@@ -140,7 +140,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("articleId", bean.getId());
         formData.put("userId",userId);
-        formData.put("type","3");
+        formData.put("type","7");
         presenter.FeedCommentInfo(formData);
     }
 
@@ -165,7 +165,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
             }
             formData.put("articleId", bean.getId());
             formData.put("userId", userId);
-            formData.put("type","3");
+            formData.put("type","7");
             formData.put("content", editText.getText().toString().trim());
             presenter.addFeedCommentInfo(formData);
         }

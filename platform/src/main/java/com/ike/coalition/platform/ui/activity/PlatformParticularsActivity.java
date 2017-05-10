@@ -118,9 +118,9 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
         window.setWindowAnimations(R.style.take_photo_anim);//设置弹出动画
         mDialog.show();
         final EditText etUserName = (EditText) mDialog.findViewById(R.id.et_userName);
-        EditText etMobile = (EditText) mDialog.findViewById(R.id.et_mobile);
-        EditText etWechat = (EditText) mDialog.findViewById(R.id.et_wechat);
-        EditText etCompany = (EditText) mDialog.findViewById(R.id.et_company);
+        final EditText etMobile = (EditText) mDialog.findViewById(R.id.et_mobile);
+        final EditText etWechat = (EditText) mDialog.findViewById(R.id.et_wechat);
+        final EditText etCompany = (EditText) mDialog.findViewById(R.id.et_company);
         mDialog.findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,9 +128,9 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
                 formData.put("userId", userId);
                 formData.put("activesId", activesId);
                 formData.put("userName", etUserName.getText().toString().trim());
-                formData.put("mobile", etUserName.getText().toString().trim());
-                formData.put("wechat", etUserName.getText().toString().trim());
-                formData.put("company", etUserName.getText().toString().trim());
+                formData.put("mobile", etMobile.getText().toString().trim());
+                formData.put("wechat", etWechat.getText().toString().trim());
+                formData.put("company", etCompany.getText().toString().trim());
                 presenter.platformActivesJoin(formData);
             }
         });

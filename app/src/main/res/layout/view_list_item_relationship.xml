@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/border_185"
+    android:layout_marginTop="@dimen/border_10"
+    android:paddingLeft="@dimen/border_20"
+    android:paddingTop="@dimen/border_16"
+    android:paddingRight="@dimen/border_20"
+    android:paddingBottom="@dimen/border_20"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/iv_userPortraitUrl"
+        android:layout_width="@dimen/border_149"
+        android:layout_height="@dimen/border_149"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/border_16"
+        app:srcCompat="@drawable/open_rp_header" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_userPortraitUrl"
+        android:layout_toEndOf="@+id/iv_userPortraitUrl"
+        android:layout_toRightOf="@+id/iv_userPortraitUrl"
+        android:layout_marginTop="@dimen/border_14"
+        android:textSize="@dimen/font_28"
+        android:text="昵&#160;&#160;&#160;&#160;称" />
+
+    <ImageView
+        android:id="@+id/iv_sex"
+        android:layout_width="@dimen/border_28"
+        android:layout_height="@dimen/border_28"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/tv_nickname"
+        android:layout_marginTop="@dimen/border_14"
+        android:layout_marginLeft="@dimen/border_20"
+        android:textSize="@dimen/font_28"
+        android:layout_toRightOf="@+id/tv_nickname"
+        app:srcCompat="@drawable/mine_man" />
+
+    <TextView
+        android:id="@+id/tv_userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nickname"
+        android:layout_marginTop="@dimen/border_20"
+        android:layout_toEndOf="@+id/iv_userPortraitUrl"
+        android:layout_toRightOf="@+id/iv_userPortraitUrl"
+        android:textSize="@dimen/font_28"
+        android:text="账&#160;&#160;&#160;&#160;号" />
+
+    <TextView
+        android:id="@+id/tv_recommend_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/iv_userPortraitUrl"
+        android:layout_toRightOf="@+id/iv_userPortraitUrl"
+        android:layout_below="@+id/tv_userId"
+        android:layout_marginTop="@dimen/border_20"
+        android:textSize="@dimen/font_28"
+        android:text="推荐人" />
+
+    <TextView
+        android:id="@+id/tv_add_friends"
+        android:layout_width="@dimen/border_129"
+        android:layout_height="@dimen/border_52"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/border_24"
+        android:text="+ 加好友" />
+
+
+</RelativeLayout>

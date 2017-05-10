@@ -24,6 +24,7 @@ import com.ike.sq.commonwealactives.presenters.BenefitPresenter;
 import com.ike.sq.commonwealactives.ui.activity.BenefitParticularsActivity;
 import com.ike.sq.commonwealactives.ui.activity.FeedForCommentActivity;
 import com.ike.sq.commonwealactives.ui.activity.MessageActivity;
+import com.ike.sq.commonwealactives.ui.activity.MineBenefitActivity;
 import com.ike.sq.commonwealactives.utils.DisplayUtils;
 import com.ike.sq.commonwealactives.utils.PreferenceService;
 import com.ike.sq.commonwealactives.utils.T;
@@ -100,7 +101,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
     private void initView() {
         //  PreferenceService ps = new PreferenceService(MainActivity.this);
         userId = getIntent().getStringExtra("loginid");
-
+       // userId = "13025304562";
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
 
@@ -162,15 +163,15 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
             @Override
             public void onLikeClick(View view, BenefitBean bean) {
                 isRefresh = false;
-              /*  Map<String, String> formData = new HashMap<String, String>(0);
+                Map<String, String> formData = new HashMap<String, String>(0);
                 formData.put("userId", userId);
                 formData.put("articleId", bean.getId());
-                formData.put("type", "1");
+                formData.put("type", "7");
                 formData.put("status", "1");
                 tv_like_btn = (TextView) view.findViewById(R.id.tv_like_btn);
                 iv_like_btn = (ImageView) view.findViewById(R.id.iv_like_btn);
 
-                presenter.postUserPraise(formData);*/
+                presenter.likeBenefitPresenter(formData);
             }
 
             @Override
@@ -250,6 +251,14 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         adapter.setData(data, page);
     }
 
+    @Override
+    public void likeBenefitView(String data) {
+        int likes = Integer.parseInt(tv_like_btn.getText().toString().trim());
+        tv_like_btn.setText((likes + 1) + "");
+        iv_like_btn.setImageResource(R.mipmap.img_have_thumb_up_btn);
+        T.showShort(MainActivity.this, data);
+    }
+
     @OnClick({R.id.lt_main_title_left, R.id.lt_main_title_right, R.id.iv_top})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -301,9 +310,9 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
                 @Override
                 public void onClick(View v) {
 
-                   /* Intent intent = new Intent(MainActivity.this, MinProductActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MineBenefitActivity.class);
                     intent.putExtra("userId", userId);
-                    startActivity(intent);*/
+                    startActivity(intent);
                     mPopupWindow.dismiss();
                 }
             });
