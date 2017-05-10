@@ -124,7 +124,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
         final EditText etUserName = (EditText) mDialog.findViewById(R.id.et_userName);
         EditText etMobile = (EditText) mDialog.findViewById(R.id.et_mobile);
         EditText etWechat = (EditText) mDialog.findViewById(R.id.et_wechat);
-        EditText etCompany = (EditText) mDialog.findViewById(R.id.et_company);
+        final EditText etCompany = (EditText) mDialog.findViewById(R.id.et_company);
         mDialog.findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,7 +134,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
                 formData.put("userName", etUserName.getText().toString().trim());
                 formData.put("mobile", etUserName.getText().toString().trim());
                 formData.put("wechat", etUserName.getText().toString().trim());
-                formData.put("company", etUserName.getText().toString().trim());
+                formData.put("company", etCompany.getText().toString().trim());
                 presenter.platformActivesJoin(formData);
             }
         });
@@ -146,15 +146,6 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
         });
     }
 
-    @OnClick(R.id.iv_like)
-    void onClick() {
-        Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", userId);
-        formData.put("articleId", activesId);
-        formData.put("type", "6");
-        formData.put("status", bean.getStatus() == 0 ? "1" : "0");
-        presenter.addUserPraise(formData);
-    }
 
     @Override
     public BenefitParticularsPresenter initPresenter() {
@@ -241,16 +232,16 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
                 BenefitParticularsActivity.this.finish();
                 break;
             case R.id.tv_more:
-                /*Intent intent = new Intent(BenefitParticularsActivity.this, PlatformRegisteredActivity.class);
+                Intent intent = new Intent(BenefitParticularsActivity.this, BenefitRegisteredActivity.class);
                 bean.setJoinUsersNumber(joinUsersNumber);
                 intent.putExtra("userId",userId);
                 intent.putExtra("bean", bean);
-                startActivity(intent);*/
+                startActivity(intent);
                 break;
             case R.id.iv_share:
                 break;
             case R.id.iv_like:
-
+                likeClick();
                 break;
             case R.id.iv_comment:
                 Intent feedIntent = new Intent(BenefitParticularsActivity.this, FeedForCommentActivity.class);
@@ -266,5 +257,15 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
                 }
                 break;
         }
+    }
+
+
+    private void likeClick() {
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("articleId", activesId);
+        formData.put("type", "7");
+        formData.put("status", bean.getStatus() == 0 ? "1" : "0");
+        presenter.addUserPraise(formData);
     }
 }

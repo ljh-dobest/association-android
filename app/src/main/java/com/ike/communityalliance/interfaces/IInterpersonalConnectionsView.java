@@ -1,5 +1,7 @@
 package com.ike.communityalliance.interfaces;
 
+import com.ike.communityalliance.bean.RelationshipBean;
+
 import java.util.List;
 
 /**
@@ -17,5 +19,5 @@ public interface IInterpersonalConnectionsView {
      * 请求成功
      * @param data
      */
-    void onConnectionsSucceed(List data);
+    void onConnectionsSucceed(List<RelationshipBean> data);
 }

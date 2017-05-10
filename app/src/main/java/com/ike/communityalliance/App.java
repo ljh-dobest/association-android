@@ -3,6 +3,7 @@ package com.ike.communityalliance;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.text.TextUtils;
 
 import com.facebook.stetho.Stetho;
@@ -17,9 +18,14 @@ import com.ike.communityalliance.exception.CrashHandler;
 import com.ike.communityalliance.message.TalkTalkMessage;
 import com.ike.communityalliance.wedget.RongDatabaseDriver;
 import com.ike.communityalliance.wedget.RongDatabaseFilesProvider;
+import com.jaredrummler.android.processes.AndroidProcesses;
+import com.jaredrummler.android.processes.ProcessManager;
+import com.jaredrummler.android.processes.models.AndroidAppProcess;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.morgoo.droidplugin.PluginApplication;
 import com.morgoo.droidplugin.PluginHelper;
+
+import java.util.List;
 
 import io.rong.imageloader.cache.disc.naming.Md5FileNameGenerator;
 import io.rong.imageloader.core.DisplayImageOptions;
@@ -47,7 +53,7 @@ public class App extends PluginApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        sInstance=this;
+        sInstance = this;
         FileDownloader.init(getApplicationContext());
         //
         Stetho.initialize(new Stetho.Initializer(this) {
@@ -64,21 +70,21 @@ public class App extends PluginApplication {
             }
         });
         //在这里为应用设置异常处理，然后程序才能获取未处理的异常
-        CrashHandler crashHandler=CrashHandler.getsInstance();
+        CrashHandler crashHandler = CrashHandler.getsInstance();
         crashHandler.init(this);
 //        CrashHandler.getInstance().init(this);
 
-        userid=getSharedPreferences("config",Context.MODE_PRIVATE).getString(Const.LOGIN_ID,"");
+        userid = getSharedPreferences("config", Context.MODE_PRIVATE).getString(Const.LOGIN_ID, "");
 
-        groupsDAO=new GroupsDAOImpl(this);
-        friendInfoDAO=new FriendInfoDAOImpl(this);
+        groupsDAO = new GroupsDAOImpl(this);
+        friendInfoDAO = new FriendInfoDAOImpl(this);
 
 
         /**
          * OnCreate 会被多个进程重入，这段保护代码，确保只有您需要使用 RongIM 的进程和 Push 进程执行了 init。
          * io.rong.push 为融云 push 进程名称，不可修改。
          */
-        if(getApplicationInfo().packageName.equals(getCurProcessName(getApplicationContext()))) {
+        if (getApplicationInfo().packageName.equals(getCurProcessName(getApplicationContext()))) {
             //LeakCanary.install(this);//内存泄露检测
             /*RongPushClient.registerHWPush(this);
             RongPushClient.registerMiPush(this, "2882303761517473625", "5451747338625");
@@ -132,15 +138,15 @@ public class App extends PluginApplication {
             //Initialize ImageLoader with configuration.
             ImageLoader.getInstance().init(config);
         }
-        PluginHelper.getInstance().applicationOnCreate(getBaseContext());
+       // PluginHelper.getInstance().applicationOnCreate(getBaseContext());
     }
 
-    public static  DisplayImageOptions getOptions(){
+    public static DisplayImageOptions getOptions() {
         return options;
     }
 
     private void openSealDBIfHasCachedToken() {
-        SharedPreferences sp = getSharedPreferences("config",Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("config", Context.MODE_PRIVATE);
         String cachedToken = sp.getString("loginToken", "");
         if (!TextUtils.isEmpty(cachedToken)) {
             String current = getCurProcessName(this);
@@ -154,14 +160,26 @@ public class App extends PluginApplication {
     /**
      * 获取当前进程的名字
      */
-    public static String getCurProcessName(Context context){
-        ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
-        for(ActivityManager.RunningAppProcessInfo appProcessInfo : activityManager.getRunningAppProcesses()){
-            if(appProcessInfo.pid==android.os.Process.myPid()){
-                return appProcessInfo.processName;
+    public static String getCurProcessName(Context context) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            List<AndroidAppProcess> runningAppInfos = AndroidProcesses.getRunningAppProcesses();
+            for (AndroidAppProcess appInfo : runningAppInfos) {
+                if (appInfo.pid == android.os.Process.myPid()) {
+                    return appInfo.getPackageName();
+                }
             }
+            return null;
+        } else {
+            ActivityManager activityManager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
+            for (ActivityManager.RunningAppProcessInfo appProcessInfo : activityManager.getRunningAppProcesses()) {
+                if (appProcessInfo.pid == android.os.Process.myPid()) {
+                    return appProcessInfo.processName;
+                }
+            }
+            return null;
         }
-        return null;
+        //return null;
     }
 
     @Override
@@ -170,9 +188,10 @@ public class App extends PluginApplication {
         groupsDAO.delete(userid);
         friendInfoDAO.delete(userid);
     }
-    @Override
+
+/*    @Override
     protected void attachBaseContext(Context base) {
         PluginHelper.getInstance().applicationAttachBaseContext(base);
         super.attachBaseContext(base);
-    }
+    }*/
 }
