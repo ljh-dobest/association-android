@@ -55,10 +55,19 @@ public class VerifyRecommedInfoMoudle {
               ||verifyRecommedInfoBean.getHobby().equals("")||verifyRecommedInfoBean.getAddress().size()==0){
           listener.showTextEmpty();
           return;
-      }else if(!AMUtils.isMobile(verifyRecommedInfoBean.getMobile())){
+      }
+
+      if(!AMUtils.isMobile(verifyRecommedInfoBean.getMobile())){
                  listener.failedToVerifyInfo("请输入正确的手机号码");
           return;
       }
+        if(verifyRecommedInfoBean.getAddress().get(0).equals("请选择")){
+            listener.failedToVerifyInfo("请输入具体地址信息");
+            return;
+        }
+        if(verifyRecommedInfoBean.getHomeplace().equals("请选择,请选择,请选择")){
+            verifyRecommedInfoBean.setHomeplace("");
+        }
           HttpUtils.postVerifyRecommedInfo("/editRecommendInfo",verifyRecommedInfoBean, new StringCallback() {
                       @Override
                       public void onError(Call call, Exception e, int id) {
