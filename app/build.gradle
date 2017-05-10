@@ -8,8 +8,8 @@ android {
         applicationId "com.ike.communityalliance"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         aaptOptions.cruncherEnabled = false
@@ -108,4 +108,5 @@ dependencies {
     compile project(':Libraries:DroidPlugin')
     compile 'com.liulishuo.filedownloader:library:1.4.2'
     compile 'com.czp.arcProgressBar:ArcProgressBar:1.0.1'
+    compile 'com.jaredrummler:android-processes:1.0.9'
 }

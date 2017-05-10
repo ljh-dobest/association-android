@@ -12,5 +12,7 @@ public interface OnBenefitListener {
 
     void getBenefitList(List<BenefitBean> data);
 
+    void likeBenefit(String data);
+
     void showError(String errorString);
 }

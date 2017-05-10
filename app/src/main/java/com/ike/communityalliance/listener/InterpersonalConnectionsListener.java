@@ -1,5 +1,7 @@
 package com.ike.communityalliance.listener;
 
+import com.ike.communityalliance.bean.RelationshipBean;
+
 import java.util.List;
 
 /**
@@ -17,5 +19,5 @@ public interface InterpersonalConnectionsListener {
      * 请求成功
      * @param data
      */
-    void onConnectionsSucceed(List data);
+    void onConnectionsSucceed(List<RelationshipBean> data);
 }

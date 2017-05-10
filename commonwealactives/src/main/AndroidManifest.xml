@@ -24,6 +24,8 @@
         <activity android:name=".ui.activity.FeedForCommentActivity"/>
         <activity android:name=".ui.activity.MessageActivity"/>
         <activity android:name=".ui.activity.BenefitParticularsActivity"/>
+        <activity android:name=".ui.activity.MineBenefitActivity"/>
+        <activity android:name=".ui.activity.BenefitRegisteredActivity"/>
 
         <meta-data
             android:name="design_width"

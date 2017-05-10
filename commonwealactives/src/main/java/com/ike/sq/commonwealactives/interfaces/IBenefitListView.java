@@ -11,4 +11,6 @@ import java.util.List;
 
 public interface IBenefitListView extends BaseView {
     void setBenefitListData(List<BenefitBean> data);
+
+    void likeBenefitView(String data);
 }

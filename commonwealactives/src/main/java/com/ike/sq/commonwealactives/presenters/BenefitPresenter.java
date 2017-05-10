@@ -24,11 +24,19 @@ public class BenefitPresenter extends BasePersenter<IBenefitListView> implements
     public void getBenefitPresenter(Map<String,String> formData){
         moudle.getBenefitList(formData,this);
     }
+    public void likeBenefitPresenter(Map<String,String> formData){
+        moudle.getBenefitPraise(formData,this);
+    }
 
 
     @Override
     public void getBenefitList(List<BenefitBean> data) {
         mView.setBenefitListData(data);
+    }
+
+    @Override
+    public void likeBenefit(String data) {
+        mView.likeBenefitView(data);
     }
 
     @Override

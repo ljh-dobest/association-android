@@ -32,6 +32,7 @@
     <dimen name="border_18">18px</dimen>
     <dimen name="border_20">20px</dimen>
     <dimen name="border_22">22px</dimen>
+    <dimen name="border_24">24px</dimen>
     <dimen name="border_26">26px</dimen>
     <dimen name="border_28">28px</dimen>
     <dimen name="border_30">30px</dimen>
@@ -41,6 +42,7 @@
     <dimen name="border_40">40px</dimen>
     <dimen name="border_42">42px</dimen>
     <dimen name="border_50">50px</dimen>
+    <dimen name="border_52">52px</dimen>
     <dimen name="border_60">60px</dimen>
     <dimen name="border_70">70px</dimen>
     <dimen name="border_80">80px</dimen>
@@ -48,7 +50,10 @@
     <dimen name="border_98">98px</dimen>
     <dimen name="border_102">102px</dimen>
     <dimen name="border_114">114px</dimen>
+    <dimen name="border_129">129px</dimen>
     <dimen name="border_140">140px</dimen>
+    <dimen name="border_149">149px</dimen>
+    <dimen name="border_185">185px</dimen>
     <dimen name="border_210">210px</dimen>
     <dimen name="border_400">400px</dimen>
     <dimen name="border_466">466px</dimen>
