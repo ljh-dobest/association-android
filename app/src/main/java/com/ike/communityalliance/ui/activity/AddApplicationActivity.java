@@ -98,6 +98,8 @@ public class AddApplicationActivity extends BaseActivity {
                 "http://7xlet1.com1.z0.glb.clouddn.com/platform.apk", 0));
         list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.qiuzhu, 1, "com.issp.association.crowdfunding",
                 f.getPath() + "/crowdfunding.apk", "http://7xlet1.com1.z0.glb.clouddn.com/crowdfunding.apk", 0));
+        list.add(new ApplyListItem("", "公益活动", R.mipmap.rest, 1, "com.ike.sq.commonwealactives",
+                "commonwealactives.apk", "http://7xlet1.com1.z0.glb.clouddn.com/commonwealactives.apk", 0));
         list.add(new ApplyListItem("", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "直播中心", R.mipmap.zhibo, 1, "", "", "", 0));
         list.add(new ApplyListItem("", "联盟打车", R.mipmap.dache, 1, "", "", "", 0));

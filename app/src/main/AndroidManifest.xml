@@ -175,6 +175,7 @@
         <activity android:name=".ui.activity.RecomendCardActivity" />
         <activity android:name=".ui.activity.RecommendActivity"/>
         <activity android:name=".ui.activity.RelationMapActivity" />
+        <activity android:name=".ui.activity.RelationShipActivity"/>
         <activity android:name=".ui.activity.FeedBackActivity" />
         <activity android:name=".ui.activity.SettingActivity" />
         <activity android:name=".ui.activity.VerifyRecommedInfoActivity" />

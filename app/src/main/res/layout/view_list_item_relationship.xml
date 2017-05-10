@@ -8,6 +8,7 @@
     android:paddingTop="@dimen/border_16"
     android:paddingRight="@dimen/border_20"
     android:paddingBottom="@dimen/border_20"
+    android:id="@+id/rl_item"
     android:background="@android:color/white">
 
     <ImageView

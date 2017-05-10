@@ -21,7 +21,7 @@ import okhttp3.Call;
 
 public class InterpersonalConnectionsModel {
     public void getConnectionData(Map<String,String> formData, final InterpersonalConnectionsListener listener){
-        HttpUtils.sendFormBodyPostRequest("/directNexusChart", formData, new StringCallback() {
+        HttpUtils.sendFormBodyPostRequest("/relationship", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
 
