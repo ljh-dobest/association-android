@@ -17,7 +17,7 @@ import okhttp3.Call;
  * Created by Min on 2017/4/1.
  */
 
-public class MineAnswerFragmentModule {
+public class MineAnswersFragmentModule {
     public void getMineAnswerData(String userId, String status,final OnGetMineAnswerFinishListener listener){
         HttpUtils.getMineHelpOrQuestions("/mySeekHelp", userId, status, new StringCallback() {
             @Override

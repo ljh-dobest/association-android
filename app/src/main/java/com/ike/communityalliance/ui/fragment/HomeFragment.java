@@ -64,7 +64,6 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     private HomePageLVAdapter adapter;
     ArrayList<ApkItem> list;
     private ImageView iv_home_appcenter;
-
     ApkOperator apkOperator;
 
     @Override
@@ -227,6 +226,20 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     @Override
     public void OnBannerClick(int position) {
       AdvsBean advsBean=advsBeanList.get(position-1);
-        T.showShort(getContext(),position+"");
+        switch (advsBean.getType()) {
+            case "1":
+                openAPK("众筹");
+                break;
+        }
+    }
+
+    private void openAPK(String type) {
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i).title.equals(type)){
+                apkOperator.openApk(list.get(i));
+                return;
+            }
+        }
+        T.showShort(getContext(),"您还没安装"+type+"喔`!赶紧去应用中心下载吧!!");
     }
 }
