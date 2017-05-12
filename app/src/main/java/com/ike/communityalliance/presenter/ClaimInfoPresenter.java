@@ -53,7 +53,15 @@ public class ClaimInfoPresenter extends BasePersenter<IClaimInfoView> implements
     public void failedToClaim(String string) {
         if(mView!=null){
             mView.hideLoading();
-            mView.showError(string);
+            mView.showFailClaim();
+        }
+    }
+
+    @Override
+    public void waitClaim() {
+        if(mView!=null){
+            mView.hideLoading();
+            mView.showWaitClaim();
         }
     }
 

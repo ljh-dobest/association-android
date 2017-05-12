@@ -13,6 +13,7 @@ public interface OnClaimFinishListener {
     void showTextEmpty();
     void succeedToClaim();
     void failedToClaim(String string);
+    void waitClaim();
     void returnParserData(ArrayList<ProvinceBean> provinces);
     void retturnHobbys(String hobbys);
 }

@@ -316,7 +316,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 dialog_creditScore.setSingleChoiceItems(degrees, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        curDegreeCode=i+"";
+                        curDegreeCode=i+1+"";
                         et_verifyInfo_degree.setText(degrees[i]);
                         dialogInterface.dismiss();
                     }

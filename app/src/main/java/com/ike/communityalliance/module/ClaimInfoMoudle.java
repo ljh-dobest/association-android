@@ -71,8 +71,11 @@ if(!claimInfo.getEmail().equals("")&&!CommonUtils.isEmail(claimInfo.getEmail()))
      case 100:
       listener.failedToClaim("已认领");
       break;
+     case 300:
+      listener.waitClaim();
+      break;
      case 101:
-      listener.failedToClaim("认领已回答");
+      listener.waitClaim();
       break;
     }
    }
@@ -111,6 +114,7 @@ if(!claimInfo.getEmail().equals("")&&!CommonUtils.isEmail(claimInfo.getEmail()))
     }
    }
   }
+     isFirstHobby=true;
      listener.retturnHobbys(hobbys);
  }
 }

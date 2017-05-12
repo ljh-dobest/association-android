@@ -20,7 +20,6 @@ public class ClaimCenterPresenter extends BasePersenter<IClaimCenterView> implem
           claimCenterMoudle=new ClaimCenterMoudle();
     }
      public void getClaimPeopleData(String userId){
-
          claimCenterMoudle.getClaimPeopleData(userId,this);
      }
 

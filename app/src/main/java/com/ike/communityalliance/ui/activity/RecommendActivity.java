@@ -301,7 +301,7 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         et_recom_relationship.setText(relationships[i]);
-                        relationship = i + "";
+                        relationship = i + 1+"";
                         dialogInterface.dismiss();
                     }
                 });

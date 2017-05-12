@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public interface IClaimInfoView extends BaseView {
     void showTextEmpty();
     void showSucceedClaim();
+    void showFailClaim();
+    void showWaitClaim();
     void getHobbys(ViewGroup group);
     void setHobbys(String hobbys);
     void setprovinceData(ArrayList<ProvinceBean> data);

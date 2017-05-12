@@ -28,9 +28,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions{
+    lintOptions {
         checkReleaseBuilds false
-        abortOnError false }
+        abortOnError false
+    }
     defaultConfig {
         multiDexEnabled true
     }
@@ -40,16 +41,16 @@ android {
 //        }
 //    }
 
-   signingConfigs {
-       //调试版的keystore
-       debug {
-           storeFile file("android.jks")
-           storePassword "ike123"
-           keyAlias "android.keystore"
-           keyPassword "ike123"
-       }
-   }
-         /*//发布版的keystore
+    signingConfigs {
+        //调试版的keystore
+        debug {
+            storeFile file("android.jks")
+            storePassword "ike123"
+            keyAlias "android.keystore"
+            keyPassword "ike123"
+        }
+    }
+    /*//发布版的keystore
         *//*release {
             storeFile file("keystore文件所用位置")
             storePassword "你规定的密码"
@@ -70,21 +71,24 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    apt 'com.zhy:mpermission-compiler:1.0.0'
-    compile 'com.zhy:mpermission-api:1.0.0'
     compile project(':mylibrary')
     compile name: 'SMSSDK-2.1.3', ext: 'aar'
     compile name: 'SMSSDKGUI-2.1.3', ext: 'aar'
     compile 'com.android.support:multidex:'
+    compile project(':libzxing')
+    compile files('libs/AMap3DMap_4.1.3_AMapNavi_1.9.4_AMapSearch_4.0.0_AMapLocation_3.3.0_20170118.jar')
+    compile project(':base-diskcache')
+    compile project(':IMKit')
+    compile project(':IMLib')
+    compile project(':RedPacket')
+    compile project(':Libraries:DroidPlugin')
+    compile 'com.zhy:mpermission-api:1.0.0'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
     compile 'cn.finalteam.rxgalleryfinal:library:0.0.8'
     compile 'com.squareup.okhttp3:okhttp:3.4.2'
     compile 'com.zhy:okhttputils:2.6.2'
     compile 'com.jakewharton:butterknife:8.4.0'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    testCompile 'junit:junit:4.12'
-    compile project(':libzxing')
     compile 'com.facebook.stetho:stetho:1.4.2'
     compile 'com.android.support:multidex:1.0.1'
     compile 'org.greenrobot:eventbus:3.0.0'
@@ -98,15 +102,13 @@ dependencies {
     compile 'com.bm.photoview:library:1.4.1'
     compile 'com.youth.banner:banner:1.4.5'
     compile 'com.contrarywind:Android-PickerView:3.0.7'
-    compile'com.prolificinteractive:material-calendarview:1.4.2'
+    compile 'com.prolificinteractive:material-calendarview:1.4.2'
     compile 'com.kyleduo.switchbutton:library:1.4.5'
-    compile files('libs/AMap3DMap_4.1.3_AMapNavi_1.9.4_AMapSearch_4.0.0_AMapLocation_3.3.0_20170118.jar')
-    compile project(':base-diskcache')
-    compile project(':IMKit')
-    compile project(':IMLib')
-    compile project(':RedPacket')
-    compile project(':Libraries:DroidPlugin')
     compile 'com.liulishuo.filedownloader:library:1.4.2'
     compile 'com.czp.arcProgressBar:ArcProgressBar:1.0.1'
     compile 'com.jaredrummler:android-processes:1.0.9'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+    testCompile 'junit:junit:4.12'
+    apt 'com.zhy:mpermission-compiler:1.0.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
 }

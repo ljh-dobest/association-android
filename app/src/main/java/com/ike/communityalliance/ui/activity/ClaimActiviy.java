@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.ClaimCenterRecyclerAdapter;
 import com.ike.communityalliance.base.BaseMvpActivity;
@@ -17,6 +15,9 @@ import com.ike.communityalliance.bean.ClaimPeopleBean;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IClaimCenterView;
 import com.ike.communityalliance.presenter.ClaimCenterPresenter;
+import com.ike.communityalliance.utils.DisplayUtils;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 
 import java.util.ArrayList;
 
@@ -67,7 +68,8 @@ RecyclerView rv_calim;
                finish();
                break;
            case R.id.iv_claim_more:
-               ClaimPopupWindow chatPopupWindow =new ClaimPopupWindow(this);
+               int WidthPixels = DisplayUtils.getScreenWidthPixels(this);
+               ClaimPopupWindow chatPopupWindow =new ClaimPopupWindow(this,WidthPixels/3);
                chatPopupWindow.showPopupWindow(iv_claim_more);
                break;
        }

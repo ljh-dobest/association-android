@@ -28,7 +28,7 @@ public abstract class BasePopup extends PopupWindow implements View.OnClickListe
     protected View view;//容纳弹窗的view
     protected PopupWindow mPopupWindow;//弹窗
     protected List<Object> list;
-    private Activity mActivity;
+    protected Activity mActivity;
 
     private View cancelButton;
     private View completeButton;
@@ -68,6 +68,26 @@ public abstract class BasePopup extends PopupWindow implements View.OnClickListe
             completeButton.setOnClickListener(this);
         mPopupWindow =
                 new PopupWindow(view, Width, Height);
+
+        mPopupWindow.setBackgroundDrawable(new ColorDrawable());
+        mPopupWindow.setFocusable(true);
+        mPopupWindow.setOutsideTouchable(true);
+        mPopupWindow.setAnimationStyle(0);
+        setTitleText();
+    }
+    public BasePopup(Activity activity,int Width) {
+        this.mActivity = activity;
+        view = getView();
+        view.setFocusableInTouchMode(true);
+
+        cancelButton=getCancelButton();
+        completeButton=getCompleteButton();
+        if (cancelButton!=null)
+            cancelButton.setOnClickListener(this);
+        if (completeButton!=null)
+            completeButton.setOnClickListener(this);
+        mPopupWindow =
+                new PopupWindow(view, Width,ViewGroup.LayoutParams.WRAP_CONTENT,true);
 
         mPopupWindow.setBackgroundDrawable(new ColorDrawable());
         mPopupWindow.setFocusable(true);

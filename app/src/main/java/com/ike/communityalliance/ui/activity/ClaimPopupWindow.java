@@ -1,14 +1,15 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.BitmapDrawable;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
+import android.view.animation.Animation;
+import android.widget.TextView;
 
 import com.ike.communityalliance.R;
+import com.ike.communityalliance.base.BasePopup;
 
 
 /**
@@ -16,63 +17,58 @@ import com.ike.communityalliance.R;
  *  认领中心下拉
  */
 
-public class ClaimPopupWindow extends PopupWindow implements View.OnClickListener {
-    private Context context;
-    private LinearLayout ll_claimPop_message,ll_claimPop_mineClaim;
+public class ClaimPopupWindow extends BasePopup implements View.OnClickListener {
+    private TextView tv_claim_mineClaim,tv_claim_msg;
 
-    public ClaimPopupWindow(Context context) {
-        this.context = context;
-        LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view=inflater.inflate(R.layout.popupwindow_claim,null);
-        //设置SelectPicPopupWindow的view
-        this.setContentView(view);
-        //
-        this.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-        this.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        this.setFocusable(true);
-        this.setBackgroundDrawable(new BitmapDrawable());
-        this.setOutsideTouchable(true);  //点击外面去取消
-        this.update(); //刷新
-
-     //   ll_pop_addgroup= (LinearLayout) view.findViewById(R.id.ll_pop_addgroups);
-        ll_claimPop_message= (LinearLayout) view.findViewById(R.id.ll_claimPop_message);
-        ll_claimPop_mineClaim= (LinearLayout) view.findViewById(R.id.ll_claimPop_mineClaim);
-//        ll_pop_chat.setOnClickListener(this);
-        ll_claimPop_message.setOnClickListener(this);
-        ll_claimPop_mineClaim.setOnClickListener(this);
-    //    ll_pop_addgroup.setOnClickListener(this);
+    public ClaimPopupWindow(Activity activity, int Width) {
+        super(activity, Width);
     }
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            /*case R.id.ll_pop_chat:
-                context.startActivity(new Intent(context, MainActivity.class));
-                ChatPopupWindow.this.dismiss();
-                break;*/
-            case R.id.ll_claimPop_message:    //查看认领消息
-//                Intent intent=new Intent(context,SelectFriendsActivity.class);
-//                intent.putExtra("createGroup",true);
-//                context.startActivity(intent);
+            case R.id.tv_claim_msg:    //查看认领消息
+                Intent intent1=new Intent(mActivity,MineClaimMsgActivity.class);
+                mActivity.startActivity(intent1);
+                this.dismiss();
                 break;
-            case R.id.ll_claimPop_mineClaim:   //添加好友
-//                context.startActivity(new Intent(context,SearchFriendActivity.class));
-//                ChatPopupWindow.this.dismiss();
-                break;
-//            case R.id.ll_pop_addgroups:   //申请入群
-//                context.startActivity(new Intent(context,SearchFriendActivity.class));
-//                ChatPopupWindow.this.dismiss();
-//                break;
-            default:
+            case R.id.tv_claim_mineClaim:   //我的认领
+                Intent intent=new Intent(mActivity,MineClaimActivity.class);
+                mActivity.startActivity(intent);
+                this.dismiss();
                 break;
         }
     }
-    public void showPopupWindow(View view){
-        if(!this.isShowing()){
-            //以下拉的方式显示
-            this.showAsDropDown(view,0,0);
-        }else {
-            this.dismiss();
-        }
+
+    @Override
+    public void setTitleText() {
+
+    }
+
+    @Override
+    public View getView() {
+        LayoutInflater inflater= (LayoutInflater) mActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view=inflater.inflate(R.layout.popupwindow_claim,null);
+        tv_claim_mineClaim= (TextView) view.findViewById(R.id.tv_claim_mineClaim);
+        tv_claim_msg= (TextView) view.findViewById(R.id.tv_claim_msg);
+        tv_claim_mineClaim.setOnClickListener(this);
+        tv_claim_msg.setOnClickListener(this);
+        return view;
+    }
+
+    @Override
+    public Animation setAnima() {
+        return null;
+    }
+
+    @Override
+    public View getCancelButton() {
+        return null;
+    }
+
+    @Override
+    public View getCompleteButton() {
+        return null;
     }
 }

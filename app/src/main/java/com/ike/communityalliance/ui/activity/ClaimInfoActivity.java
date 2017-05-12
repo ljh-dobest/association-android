@@ -1,17 +1,21 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -44,6 +48,7 @@ import butterknife.ButterKnife;
 public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoPresenter> implements IClaimInfoView, RadioGroup.OnCheckedChangeListener, View.OnClickListener, AdapterView.OnItemSelectedListener {
     private final String[] relationships=new String[]{"亲人","情侣","同事","校友","老乡"};
     private final String[] creditScores= new String[]{"100", "90", "80","70","60","50","40","30","20","10"};
+    private final String[] degrees={"初中","高中","中技","中专","大专","本科","硕士","博士","MBA","EMBA","其他"};
     @BindView(R.id.tv_claim_back)
     TextView tv_claim_back;
     @BindView(R.id.iv_claim_userHeader)
@@ -92,6 +97,8 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     Button btn_verifyclaim;
     @BindView(R.id.ll_claiminfo_birthday)
     LinearLayout ll_claiminfo_birthday;
+    @BindView(R.id.et_claiminfo_degree)
+    EditText et_claiminfo_degree;
     private String userId;
     private String claimUserId;
     private String fullName;
@@ -99,7 +106,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     private String sex="1";
     private String hobby;
     private ArrayList<String> address=new ArrayList<>();
-    private String relationship;
+    private String relationship="1";
     private String creditScore;
     private String birthday;
     private String homeplace;
@@ -151,6 +158,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         tv_claim_back.setOnClickListener(this);
         et_claiminfo_relationship.setOnClickListener(this);
         et_claiminfo_creditScore.setOnClickListener(this);
+        et_claiminfo_degree.setOnClickListener(this);
     }
 
 
@@ -166,7 +174,17 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
 
     @Override
     public void showSucceedClaim() {
-    T.showShort(this,"认领成功");
+        showComfirmDialog("认领成功");
+    }
+
+    @Override
+    public void showFailClaim() {
+        showComfirmDialog("认领失败");
+    }
+
+    @Override
+    public void showWaitClaim() {
+        showComfirmDialog("认领消息已发送，等待对方审核~");
     }
 
     @Override
@@ -255,7 +273,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         et_claiminfo_relationship.setText(relationships[i]);
-                        relationship=i+"";
+                        relationship=i+1+"";
                         dialogInterface.dismiss();
                     }
                 });
@@ -274,6 +292,20 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
                 });
                 dialog_creditScore.create().show();
                 break;
+            case R.id.et_claiminfo_degree:
+                //选择学历
+                android.app.AlertDialog.Builder dialog_degree = new android.app.AlertDialog.Builder(this);
+                dialog_degree.setTitle("选择学历");
+                dialog_degree.setSingleChoiceItems(degrees, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        degree=i+1+"";
+                        et_claiminfo_degree.setText(degrees[i]);
+                        dialogInterface.dismiss();
+                    }
+                });
+                dialog_degree.create().show();
+                break;
             case R.id.btn_verifyclaim:
                 getViewData();
                 presenter.postClaimPeopleInfo(claimInfo);
@@ -286,7 +318,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
 
     private void getViewData() {
         address.clear();
-        claimUserId=claimPeopleBean.getRecommendId();
+        claimUserId=claimPeopleBean.getUserId();
         fullName=et_claiminfo_username.getText().toString();
         mobile=et_claiminfo_mobile.getText().toString();
         getHobbys(rg_claimInfo_like);
@@ -298,7 +330,6 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         }catch (Exception e){
             address.add("");
         }
-        address.add("");
         creditScore=et_claiminfo_creditScore.getText().toString();
         birthday=et_claiminfo_birthday.getText().toString();
         homeplace=sp_claimInfo_jgprovince.getSelectedItem().toString()+","+
@@ -308,7 +339,6 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         }catch (Exception e){
         }
         finishSchool=et_claiminfo_finishSchool.getText().toString();
-        degree="1";
         company=et_claiminfo_company.getText().toString();
         position=et_claiminfo_position.getText().toString();
         email=et_claiminfo_email.getText().toString();
@@ -368,5 +398,30 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+    public void showComfirmDialog(String msg) {
+        final AlertDialog ComfirmDialog = new AlertDialog.Builder(this,R.style.DialogStyle).create();
+        ComfirmDialog.show();
+        Window window = ComfirmDialog.getWindow();
+        window.setGravity(Gravity.CENTER);
+        window.setContentView(R.layout.comfirm_dialog_layout);
+        Button btn_comfirm_dialog_comfirm = (Button) window.findViewById(R.id.btn_comfirm_dialog_comfirm);
+        TextView tv_comfirm_dialog_title1= (TextView) window.findViewById(R.id.tv_comfirm_dialog_title1);
+        TextView tv_comfirm_dialog_title2= (TextView) window.findViewById(R.id.tv_comfirm_dialog_title2);
+        tv_comfirm_dialog_title1.setText(msg);
+        tv_comfirm_dialog_title2.setVisibility(View.GONE);
+        ImageView iv_comfirm_dialog_cancel= (ImageView) window.findViewById(R.id.iv_comfirm_dialog_cancel);
+        btn_comfirm_dialog_comfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ComfirmDialog.dismiss();
+            }
+        });
+        iv_comfirm_dialog_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ComfirmDialog.dismiss();
+            }
+        });
     }
     }

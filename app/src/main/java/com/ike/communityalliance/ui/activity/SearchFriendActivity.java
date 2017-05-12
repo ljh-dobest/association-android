@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.text.method.KeyListener;
 import android.view.View;
 import android.widget.Button;
@@ -54,12 +52,13 @@ public class SearchFriendActivity extends BaseActivity {
     Button btn_newFriendsOrGroup_join;
     @BindView(R.id.rl_newfriendOrGroup)
     RelativeLayout rl_newfriendOrGroup;
-    @BindView(R.id.iv_title_back)
-    ImageView ivTitleBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
+    @BindView(R.id.iv_searchFriend_back)
+    ImageView iv_searchFriend_back;
     @BindView(R.id.iv_searchFriend_scan_white)
-    ImageView ivTitleRight;
+    ImageView iv_searchFriend_scan_white;
+    @BindView(R.id.btn_seach_seacher)
+    Button btn_seach_seacher;
+
 
     private String phone;
     private String headUri;
@@ -75,38 +74,10 @@ public class SearchFriendActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_friend);
         ButterKnife.bind(this);
-        sp=getSharedPreferences("config",MODE_PRIVATE);
-        myUserId=sp.getString(Const.LOGIN_ID,"");
-        myNickname=sp.getString(Const.LOGIN_NICKNAME,"");
-        //ivTitleRight.setImageResource(R.mipmap.scan_white);
-
-        etFriend.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (charSequence.length() == 11||charSequence.length()==7) {
-                    phone = charSequence.toString().trim();
-//                    if (!AMUtils.isMobile(phone)) {
-//                        T.showShort(mContext, "非手机号码");
-//                        return;
-//                    }
-                    LoadDialog.show(mContext);
-                    searchFriends();
-                } else {
-                    rl_newfriendOrGroup.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
+        sp = getSharedPreferences("config", MODE_PRIVATE);
+        myUserId = sp.getString(Const.LOGIN_ID, "");
+        myNickname = sp.getString(Const.LOGIN_NICKNAME, "");
     }
-
-
 
     private void searchFriends() {
         HttpUtils.PostSearchFriendRequest("/lookupUser", phone, new StringCallback() {
@@ -262,14 +233,19 @@ public class SearchFriendActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.iv_title_back, R.id.iv_title_right})
+    @OnClick({R.id.iv_searchFriend_back, R.id.iv_searchFriend_scan_white,R.id.btn_seach_seacher})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.iv_title_back:
+            case R.id.iv_searchFriend_back:
                 finish();
                 break;
-            case R.id.iv_title_right:
+            case R.id.iv_searchFriend_scan_white:
                 startActivityForResult(new Intent(mContext, CaptureActivity.class),0);
+                break;
+            case R.id.btn_seach_seacher:
+                phone=etFriend.getText().toString();
+                LoadDialog.show(mContext);
+                searchFriends();
                 break;
         }
     }

@@ -371,6 +371,19 @@
                         style="@style/claimInfo_et_styles"
                         />
                 </com.zhy.autolayout.AutoLinearLayout>
+            <com.zhy.autolayout.AutoLinearLayout
+                style="@style/claimInfo_item_ll_styles">
+                <TextView
+                    style="@style/claimInfo_tv_styles"
+                    android:text="学历:"/>
+                <EditText
+                    android:layout_marginLeft="31px"
+                    android:id="@+id/et_claiminfo_degree"
+                    style="@style/claimInfo_et_styles"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    />
+            </com.zhy.autolayout.AutoLinearLayout>
                 <com.zhy.autolayout.AutoLinearLayout
                     style="@style/claimInfo_item_ll_styles">
                     <TextView

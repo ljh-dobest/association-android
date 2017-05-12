@@ -641,7 +641,7 @@ public class HttpUtils {
                 .addParams("userId",userId)
                 .build().execute(callback);
     }
-    //获取已推荐列表
+    //获取未认领的人
     public static void getClaimPeopleInfo(String url,String userId,StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
@@ -649,6 +649,32 @@ public class HttpUtils {
                 .addParams("status","0")
                 .build().execute(callback);
     }
+    //获取已认领的人
+    public static void getWasClaimPeopleInfo(String url,String userId,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("status","1")
+                .build().execute(callback);
+    }
+    //获取认领消息
+    public static void getMineClaimMsgInfo(String url,String userId,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("type","1")
+                .build().execute(callback);
+    }
+    //提交认领确认消息
+    public static void postClaimMsg(String url,String userId,String claimUserId,String status,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("claimUserId",claimUserId)
+                .addParams("status",status)
+                .build().execute(callback);
+    }
+
     //提交认领信息
     public static void postClaimInfo(String url, ClaimInfoBean claimInfo, StringCallback callback){
         Gson gson=new Gson();
