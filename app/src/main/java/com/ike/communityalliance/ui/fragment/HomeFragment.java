@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.fragment;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -228,15 +229,28 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
       AdvsBean advsBean=advsBeanList.get(position-1);
         switch (advsBean.getType()) {
             case "1":
-                openAPK("众筹");
+                openAPK("众筹",advsBean.getArticleId());
                 break;
         }
     }
 
-    private void openAPK(String type) {
+    private void openAPK(String type,String articleId) {
         for (int i = 0; i < list.size(); i++) {
             if(list.get(i).title.equals(type)){
-                apkOperator.openApk(list.get(i));
+               // apkOperator.openApk(list.get(i));
+                ComponentName componentName = new ComponentName("com.issp.association.crowdfunding",
+                        "com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity");
+                Intent intent = new Intent("com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity");
+                Bundle bundle = new Bundle();
+
+                SharedPreferences sp=getActivity().getSharedPreferences("config", Context.MODE_APPEND);
+                intent.putExtra("userId",sp.getString(Const.LOGIN_ID,""));
+                intent.putExtra("articleId",articleId);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);//设置category
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//设置singleTask启动模式
+               // intent.putExtras(bundle);
+                intent.setComponent(componentName);
+                startActivity(intent);
                 return;
             }
         }

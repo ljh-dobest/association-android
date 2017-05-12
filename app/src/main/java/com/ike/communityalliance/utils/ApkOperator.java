@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.ike.communityalliance.bean.ApkItem;
+import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.utils.file.FileUtils;
 import com.morgoo.droidplugin.pm.PluginManager;
 import com.morgoo.helper.compat.PackageManagerCompat;
@@ -180,8 +181,8 @@ public class ApkOperator {
         PackageManager pm = mActivity.getPackageManager();
         Intent intent = pm.getLaunchIntentForPackage(item.packageInfo.packageName);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        SharedPreferences sp=mActivity.getSharedPreferences("", Context.MODE_APPEND);
-        intent.putExtra(PLUGIN_EXTRA_STRING,sp.getString("loginid",""));
+        SharedPreferences sp=mActivity.getSharedPreferences("config", Context.MODE_APPEND);
+        intent.putExtra(PLUGIN_EXTRA_STRING,sp.getString(Const.LOGIN_ID,""));
         mActivity.startActivity(intent);
 
     }

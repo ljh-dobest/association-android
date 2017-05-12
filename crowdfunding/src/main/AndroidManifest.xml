@@ -6,15 +6,17 @@
     <!-- if you want to load images from a file OR from the internet -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.issp.association.crowdfunding.App"
         android:allowBackup="true"
         android:icon="@mipmap/rest"
-        android:label="@string/app_name"
+        android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,35 +25,55 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activity.AddShippingAddressActivity"
+        <activity
+            android:name=".ui.activity.AddShippingAddressActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.AddSupportProjectActivity"
+        <activity
+            android:name=".ui.activity.AddSupportProjectActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.ManagementShippingAddressActivity"
+        <activity
+            android:name=".ui.activity.ManagementShippingAddressActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.MessageActivity"
+        <activity
+            android:name=".ui.activity.MessageActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.MinProductActivity"
+        <activity
+            android:name=".ui.activity.MinProductActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.OrderDetailActivity"
+        <activity
+            android:name=".ui.activity.OrderDetailActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.ProductCommentActivity"
+        <activity
+            android:name=".ui.activity.ProductCommentActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.ProductParticularsActivity"
+        <activity
+            android:name=".ui.activity.ProductParticularsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.SupportProductActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.SupportProductActivity"
+        <activity
+            android:name=".ui.activity.FeedForCommentActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.FeedForCommentActivity"
+        <activity
+            android:name=".ui.activity.AddCrowdFundingActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.AddCrowdFundingActivity"
+        <activity
+            android:name=".ui.activity.ProductIDCardActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.ProductIDCardActivity"
+        <activity
+            android:name=".ui.activity.AddCommodityActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.AddCommodityActivity"
+        <activity
+            android:name=".ui.activity.TextDetailsActivity"
             android:exported="true" />
-        <activity android:name=".ui.activity.TextDetailsActivity"
-            android:exported="true" />
-        <activity android:name=".ui.activity.GraphicDetailsActivity"
+        <activity
+            android:name=".ui.activity.GraphicDetailsActivity"
             android:exported="true" />
 
         <!--选择图片-->

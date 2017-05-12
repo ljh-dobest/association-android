@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rl_relation_colleague"
         android:layout_width="match_parent"
         android:padding="@dimen/lv_foot_ml_10"
         android:layout_height="wrap_content">
@@ -37,9 +38,10 @@
         android:background="@color/aam_item_border" />
 
     <RelativeLayout
+        android:id="@+id/rl_relation_schoolfellow"
         android:layout_width="match_parent"
-        android:padding="@dimen/lv_foot_ml_10"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/lv_foot_ml_10">
 
         <TextView
             android:id="@+id/tv_relation_schoolfellow"
@@ -67,6 +69,7 @@
         android:background="@color/aam_item_border" />
 
     <RelativeLayout
+        android:id="@+id/rl_relation_countrymen"
         android:layout_width="match_parent"
         android:padding="@dimen/lv_foot_ml_10"
         android:layout_height="wrap_content">
@@ -97,6 +100,7 @@
         android:background="@color/aam_item_border" />
 
     <RelativeLayout
+        android:id="@+id/rl_relation_relative"
         android:layout_width="match_parent"
         android:padding="@dimen/lv_foot_ml_10"
         android:layout_height="wrap_content">

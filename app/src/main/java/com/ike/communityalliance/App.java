@@ -24,6 +24,7 @@ import com.jaredrummler.android.processes.models.AndroidAppProcess;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.morgoo.droidplugin.PluginApplication;
 import com.morgoo.droidplugin.PluginHelper;
+import com.zhy.autolayout.config.AutoLayoutConifg;
 
 import java.util.List;
 
@@ -54,6 +55,7 @@ public class App extends PluginApplication {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
+        AutoLayoutConifg.getInstance().useDeviceSize().init(this);
         FileDownloader.init(getApplicationContext());
         //
         Stetho.initialize(new Stetho.Initializer(this) {

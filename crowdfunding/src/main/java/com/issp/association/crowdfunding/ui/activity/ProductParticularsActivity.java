@@ -55,6 +55,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
 
     private ProductCollectBean bean;
     private String userId;
+    private String articleId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,12 +66,12 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
     }
 
     void initData() {
-        Intent intent=getIntent();
-        userId=intent.getStringExtra("userId");
-        bean = (ProductCollectBean) intent.getSerializableExtra("bean");
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
+        articleId = intent.getStringExtra("articleId");
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
-        formData.put("articleId", bean.getId());
+        formData.put("articleId", articleId);
         formData.put("type", "1");
         presenter.productCommentInfoPresenter(formData);
     }
@@ -83,7 +84,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
     @OnClick(R.id.tv_check_indent)
     void checkIndentClick() {
         Intent intent = new Intent(ProductParticularsActivity.this, SupportProductActivity.class);
-        intent.putExtra("userId",userId);
+        intent.putExtra("userId", userId);
         intent.putExtra("bean", bean);
         startActivity(intent);
     }
@@ -105,7 +106,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
 
     @Override
     public void showError(String errorString) {
-        T.showLong(ProductParticularsActivity.this,errorString);
+        T.showLong(ProductParticularsActivity.this, errorString);
     }
 
     @Override
@@ -129,16 +130,17 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
         }
       /*  Picasso.with(ProductParticularsActivity.this).load(HttpUtils.IMAGE_RUL + bean.getImage())
                 .into(iv);*/
-
+        data.setId(articleId);
+        bean = data;
     }
 
     @Override
     public void userPraise(String data) {
         ivLikeBtn.setImageResource(R.mipmap.img_have_thumb_up_btn);
-        T.showLong(ProductParticularsActivity.this,data);
+        T.showLong(ProductParticularsActivity.this, data);
     }
 
-    @OnClick({R.id.iv_share_btn, R.id.iv_like_btn, R.id.iv_comment_btn,R.id.tv_check_indent})
+    @OnClick({R.id.iv_share_btn, R.id.iv_like_btn, R.id.iv_comment_btn, R.id.tv_check_indent})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_share_btn:
@@ -146,14 +148,14 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
             case R.id.iv_like_btn:
                 Map<String, String> formData = new HashMap<String, String>(0);
                 formData.put("userId", userId);
-                formData.put("articleId", bean.getId());
+                formData.put("articleId", articleId);
                 formData.put("type", "1");
-                formData.put("status","1");
+                formData.put("status", "1");
                 presenter.postUserPraise(formData);
                 break;
             case R.id.iv_comment_btn:
                 Intent intent = new Intent(ProductParticularsActivity.this, FeedForCommentActivity.class);
-                intent.putExtra("userId",userId);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
                 break;

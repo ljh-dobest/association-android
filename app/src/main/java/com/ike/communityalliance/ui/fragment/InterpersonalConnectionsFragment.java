@@ -1,18 +1,15 @@
 package com.ike.communityalliance.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import com.ike.communityalliance.R;
-import com.ike.communityalliance.base.BaseMvpFragment;
-import com.ike.communityalliance.bean.RelationshipBean;
-import com.ike.communityalliance.interfaces.IInterpersonalConnectionsView;
-import com.ike.communityalliance.presenter.InterpersonalConnectionsPresenter;
-
-import java.util.List;
+import com.ike.communityalliance.ui.activity.RelationShipActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,16 +20,17 @@ import butterknife.OnClick;
  * Created by T-BayMax on 2017/3/14.
  */
 
-public class InterpersonalConnectionsFragment extends BaseMvpFragment<IInterpersonalConnectionsView, InterpersonalConnectionsPresenter> implements IInterpersonalConnectionsView {
+public class InterpersonalConnectionsFragment extends Fragment {
 
-    @BindView(R.id.tv_relation_colleague)
-    TextView tvRelationColleague;
-    @BindView(R.id.tv_relation_schoolfellow)
-    TextView tvRelationSchoolfellow;
-    @BindView(R.id.tv_relation_countrymen)
-    TextView tvRelationCountrymen;
-    @BindView(R.id.tv_relation_relative)
-    TextView tvRelationRelative;
+
+    @BindView(R.id.rl_relation_colleague)
+    RelativeLayout rlRelationColleague;
+    @BindView(R.id.rl_relation_schoolfellow)
+    RelativeLayout rlRelationSchoolfellow;
+    @BindView(R.id.rl_relation_countrymen)
+    RelativeLayout rlRelationCountrymen;
+    @BindView(R.id.rl_relation_relative)
+    RelativeLayout rlRelationRelative;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,37 +39,31 @@ public class InterpersonalConnectionsFragment extends BaseMvpFragment<IInterpers
         return containerView;
     }
 
-    @Override
-    public InterpersonalConnectionsPresenter initPresenter() {
-        return new InterpersonalConnectionsPresenter();
-    }
 
-    @Override
-    public void onConnectionsError(String string) {
-
-    }
-
-    @Override
-    public void onConnectionsSucceed(List<RelationshipBean> data) {
-
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-    @OnClick({R.id.tv_relation_colleague, R.id.tv_relation_schoolfellow, R.id.tv_relation_countrymen, R.id.tv_relation_relative})
+    @OnClick({R.id.rl_relation_colleague, R.id.rl_relation_schoolfellow, R.id.rl_relation_countrymen, R.id.rl_relation_relative})
     public void onViewClicked(View view) {
+        Intent intent=new Intent(getContext(),RelationShipActivity.class);
+        String title="";
         switch (view.getId()) {
-            case R.id.tv_relation_colleague:
+            case R.id.rl_relation_colleague:
+                intent.putExtra("type",2);
+                title="同事";
                 break;
-            case R.id.tv_relation_schoolfellow:
+            case R.id.rl_relation_schoolfellow:
+                intent.putExtra("type",3);
+                title="校友";
                 break;
-            case R.id.tv_relation_countrymen:
+            case R.id.rl_relation_countrymen:
+                intent.putExtra("type",2);
+                title="同乡";
                 break;
-            case R.id.tv_relation_relative:
+            case R.id.rl_relation_relative:
+                intent.putExtra("type",1);
+                title="亲人";
                 break;
         }
+
+        intent.putExtra("title",title);
+        startActivity(intent);
     }
 }

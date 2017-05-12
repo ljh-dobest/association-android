@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">众筹</string>
+    <string name="name">众筹</string>
 
     <string name="str_title_main">众筹</string>
     <string name="str_title_comment">评论列表</string>
