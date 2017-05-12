@@ -14,6 +14,8 @@ import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.bean.RelationBean;
 import com.ike.communityalliance.bean.RelationshipBean;
+import com.ike.communityalliance.network.HttpUtils;
+import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -61,6 +63,10 @@ public class RelationShipAdapter extends BaseRecyclerAdapter<RelationShipAdapter
             holder.tvNickname.setText("昵    称：" + bean.getNickname());
             holder.tvUserId.setText("账    号：" + bean.getUserId());
             holder.tvRecommendUser.setText("推荐人：" + bean.getRecommendUser());
+            if (null!=bean.getUserPortraitUrl()){
+                Picasso.with(mContext).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
+                        .into(holder.ivUserPortraitUrl);
+            }
             if (bean.getSex() == 2) {
                 holder.ivSex.setImageResource(R.drawable.mine_women);
             } else {
