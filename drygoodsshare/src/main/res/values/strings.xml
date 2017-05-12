@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">干货分享</string>
+    <string name="name">干货分享</string>
 
     <string name="str_share_title">标题</string>
     <string name="str_information">消息</string>

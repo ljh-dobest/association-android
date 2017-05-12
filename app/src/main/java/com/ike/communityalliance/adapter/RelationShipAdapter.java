@@ -103,7 +103,7 @@ public class RelationShipAdapter extends BaseRecyclerAdapter<RelationShipAdapter
         notifyDataSetChanged();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_userPortraitUrl)
         ImageView ivUserPortraitUrl;
         @BindView(R.id.tv_nickname)

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">公益活动</string>
+    <string name="name">公益活动</string>
     <string name="str_title">公益</string>
     <string name="str_platform_title">公益活动</string>
     <string name="str_title_left">返回</string>

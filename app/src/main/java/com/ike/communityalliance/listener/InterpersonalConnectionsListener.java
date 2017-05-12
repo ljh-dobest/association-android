@@ -20,4 +20,5 @@ public interface InterpersonalConnectionsListener {
      * @param data
      */
     void onConnectionsSucceed(List<RelationshipBean> data);
+    void addFriends(String data);
 }

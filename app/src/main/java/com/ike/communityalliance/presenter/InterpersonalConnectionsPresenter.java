@@ -26,12 +26,20 @@ public class InterpersonalConnectionsPresenter extends BasePersenter<IInterperso
             mView.onConnectionsError(string);
         }
     }
+    public void addFriendsPresenter(Map<String,String> formData){
+        model.sendAddFriendRequest(formData,this);
+    }
 
     @Override
     public void onConnectionsSucceed(List<RelationshipBean> data) {
         if (mView!=null){
             mView.onConnectionsSucceed(data);
         }
+    }
+
+    @Override
+    public void addFriends(String data) {
+        mView.addFriends(data);
     }
 
     @Override
