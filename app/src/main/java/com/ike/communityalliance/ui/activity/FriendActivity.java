@@ -97,7 +97,7 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
     private View mHeadView;
 
     private TextView tvUnread, tvMe;
-    private RelativeLayout rlNewfriends, rlGroup, rl_interestList, rlMeItem,rl_shareFriends;
+    private RelativeLayout rl_phoneContast,rlGroup, rl_interestList, rlMeItem,rl_shareFriends;
     private SelectableRoundedImageView sivMe;
     private ImageView iv_shareFriend_redPoint;
 
@@ -146,9 +146,8 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
         //自己信息
         LayoutInflater inflater = LayoutInflater.from(this);
         mHeadView = inflater.inflate(R.layout.item_friend_list_header, null);
-        tvUnread = (TextView) mHeadView.findViewById(R.id.tv_unread);
-        rlNewfriends = (RelativeLayout) mHeadView.findViewById(R.id.rl_newfriends);
         rlGroup = (RelativeLayout) mHeadView.findViewById(R.id.rl_group);
+        rl_phoneContast= (RelativeLayout) mHeadView.findViewById(R.id.rl_phoneContast);
         rl_interestList = (RelativeLayout) mHeadView.findViewById(R.id.rl_interestList);
         rlMeItem = (RelativeLayout) mHeadView.findViewById(R.id.rl_me_item);
         sivMe = (SelectableRoundedImageView) mHeadView.findViewById(R.id.siv_me);
@@ -156,9 +155,8 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
         rl_shareFriends= (RelativeLayout) mHeadView.findViewById(R.id.rl_shareFriends);
         iv_shareFriend_redPoint= (ImageView) mHeadView.findViewById(R.id.iv_shareFriend_redPoint);
         mListView.addHeaderView(mHeadView);
-
-        rlMeItem.setOnClickListener(this);  //me
-        rlNewfriends.setOnClickListener(this);
+        rl_phoneContast.setOnClickListener(this);
+        rlMeItem.setOnClickListener(this);
         rlGroup.setOnClickListener(this);
         rl_interestList.setOnClickListener(this);
         rl_shareFriends.setOnClickListener(this);
@@ -411,10 +409,8 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.rl_newfriends:
-                tvUnread.setVisibility(View.GONE);
-                Intent intent = new Intent(this, NewFriendListActivity.class);
-                startActivityForResult(intent, 20);
+            case R.id.rl_phoneContast:
+                startActivity(new Intent(this, PhoneContactActivity.class));
                 break;
             case R.id.rl_group:
                 startActivity(new Intent(this, GroupListActivity.class));

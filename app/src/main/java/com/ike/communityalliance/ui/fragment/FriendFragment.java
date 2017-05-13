@@ -22,16 +22,9 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.L;
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.App;
 import com.ike.communityalliance.AppContext;
 import com.ike.communityalliance.R;
-import com.ike.communityalliance.ui.activity.GroupListActivity;
-import com.ike.communityalliance.ui.activity.InteresitingActivity;
-import com.ike.communityalliance.ui.activity.NewFriendListActivity;
-import com.ike.communityalliance.ui.activity.ShareFriendsActivity;
-import com.ike.communityalliance.ui.activity.UserDetailActivity;
 import com.ike.communityalliance.adapter.FriendListAdapter;
 import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.bean.FriendInfo;
@@ -40,11 +33,17 @@ import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.server.broadcast.BroadcastManager;
+import com.ike.communityalliance.ui.activity.GroupListActivity;
+import com.ike.communityalliance.ui.activity.InteresitingActivity;
+import com.ike.communityalliance.ui.activity.ShareFriendsActivity;
+import com.ike.communityalliance.ui.activity.UserDetailActivity;
 import com.ike.communityalliance.wedget.CharacterParser;
 import com.ike.communityalliance.wedget.Generate;
 import com.ike.communityalliance.wedget.PinyinComparator;
 import com.ike.communityalliance.wedget.SideBar;
 import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
+import com.ike.mylibrary.util.L;
+import com.ike.mylibrary.util.T;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.greenrobot.eventbus.EventBus;
@@ -99,7 +98,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     private View mHeadView;
 
     private TextView tvUnread, tvMe;
-    private RelativeLayout rlNewfriends, rlGroup, rl_interestList, rlMeItem,rl_shareFriends;
+    private RelativeLayout  rlGroup, rl_interestList, rlMeItem,rl_shareFriends;
     private SelectableRoundedImageView sivMe;
     private ImageView iv_shareFriend_redPoint;
 
@@ -149,8 +148,6 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
         //自己信息
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         mHeadView = inflater.inflate(R.layout.item_friend_list_header, null);
-        tvUnread = (TextView) mHeadView.findViewById(R.id.tv_unread);
-        rlNewfriends = (RelativeLayout) mHeadView.findViewById(R.id.rl_newfriends);
         rlGroup = (RelativeLayout) mHeadView.findViewById(R.id.rl_group);
         rl_interestList = (RelativeLayout) mHeadView.findViewById(R.id.rl_interestList);
         rlMeItem = (RelativeLayout) mHeadView.findViewById(R.id.rl_me_item);
@@ -161,7 +158,6 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
         mListView.addHeaderView(mHeadView);
 
         rlMeItem.setOnClickListener(this);  //me
-        rlNewfriends.setOnClickListener(this);
         rlGroup.setOnClickListener(this);
         rl_interestList.setOnClickListener(this);
         rl_shareFriends.setOnClickListener(this);
@@ -420,11 +416,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.rl_newfriends:
-                tvUnread.setVisibility(View.GONE);
-                Intent intent = new Intent(getActivity(), NewFriendListActivity.class);
-                startActivityForResult(intent, 20);
-                break;
+
             case R.id.rl_group:
                 startActivity(new Intent(getActivity(), GroupListActivity.class));
                 break;

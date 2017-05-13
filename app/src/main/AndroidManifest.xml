@@ -275,7 +275,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".ui.activity.MineClaimActivity" />
-        <activity android:name=".ui.activity.MineClaimMsgActivity"></activity>
+        <activity android:name=".ui.activity.MineClaimMsgActivity" />
+        <activity android:name=".ui.activity.PhoneContactActivity"></activity>
     </application>
 
 </manifest>
