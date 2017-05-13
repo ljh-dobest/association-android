@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.SendShareFriendsGVAdapter;
 import com.ike.communityalliance.base.BaseActivity;
@@ -21,6 +19,8 @@ import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.utils.DateUtils;
 import com.ike.communityalliance.wedget.DemoGridView;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.File;
@@ -32,10 +32,12 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.finalteam.rxgalleryfinal.utils.ModelUtils;
 import okhttp3.Call;
 import okhttp3.MediaType;
 
 public class SendShareFriendsActivity extends BaseActivity {
+    private static final int REQUECT_CODE_CAMERA =1002 ;
 @BindView(R.id.gv_sendshareFriend)
     DemoGridView gv_sendshareFriend;
     @BindView(R.id.ll_sendshareFriend_back)
@@ -61,6 +63,7 @@ public class SendShareFriendsActivity extends BaseActivity {
         userId = sp.getString(Const.LOGIN_ID, "");
          userName=sp.getString(Const.LOGIN_NICKNAME,"");
         userPortraitUrl=sp.getString(Const.userPortraitUrl,"");
+        ModelUtils.setDebugModel(true);
         initView();
     }
 
@@ -130,4 +133,5 @@ public class SendShareFriendsActivity extends BaseActivity {
         }
          return map;
     }
+
 }

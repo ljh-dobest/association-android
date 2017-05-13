@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,9 +22,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.L;
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.AppContext;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
@@ -39,6 +37,10 @@ import com.ike.communityalliance.db.GroupsDAOImpl;
 import com.ike.communityalliance.message.provider.MyGroupInfoProvider;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.ui.MainActivity;
+import com.ike.communityalliance.utils.file.PermissionsUtil;
+import com.ike.mylibrary.util.L;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
@@ -67,7 +69,6 @@ import okhttp3.Call;
  * 会话页面
  */
 public class ConversationActivity extends BaseActivity implements View.OnClickListener, RongIM.UserInfoProvider, RongIMClient.TypingStatusListener {
-
     private static final int SET_TEXT_TYPING_TITLE =101;
     private static final int SET_VOICE_TYPING_TITLE =102 ;
     private static final int SET_TARGETID_TITLE =100 ;
@@ -123,10 +124,9 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         ivTitleBack = (ImageView) findViewById(R.id.iv_title_back);
         ivTitleRight = (ImageView) findViewById(R.id.iv_title_right);
         tvTitle = (TextView) findViewById(R.id.tv_title);
-
         ivTitleBack.setOnClickListener(this);
         ivTitleRight.setOnClickListener(this);
-
+        PermissionsUtil.initPermissions(this, Manifest.permission.RECORD_AUDIO);
         sp = getSharedPreferences("config", MODE_PRIVATE);
 
         Intent intent = getIntent();

@@ -1,16 +1,18 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.ui.fragment.LoginFragment;
 import com.ike.communityalliance.ui.fragment.RegisterFragment;
+import com.ike.communityalliance.utils.file.PermissionsUtil;
+import com.ike.mylibrary.util.T;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,7 @@ public class Login2Activity extends BaseActivity implements TabLayout.OnTabSelec
     }
 
     private void init() {
+        PermissionsUtil.initPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         initTitle();
         initFragments();
     }

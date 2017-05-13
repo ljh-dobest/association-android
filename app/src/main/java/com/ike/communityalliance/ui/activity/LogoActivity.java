@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 
-import com.ike.mylibrary.util.CommonUtils;
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.UserInfoManager;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.ui.Main2Activity;
+import com.ike.mylibrary.util.CommonUtils;
+import com.ike.mylibrary.util.T;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;

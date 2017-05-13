@@ -20,6 +20,7 @@ import com.ike.communityalliance.AppContext;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.bean.LocationEntity;
 import com.ike.communityalliance.listener.OnLocationGetListener;
+import com.ike.communityalliance.utils.file.PermissionsUtil;
 import com.ike.communityalliance.wedget.location.LocationTask;
 import com.ike.communityalliance.wedget.location.RegeocodeTask;
 import com.zhy.m.permission.MPermissions;
@@ -115,10 +116,10 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
 
     //android6.0 打开位置权限
     private void initPermission() {
-        MPermissions.requestPermissions(AMAPLocationActivity.this, REQUECT_CODE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION);
-        MPermissions.requestPermissions(AMAPLocationActivity.this, REQUECT_CODE_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION);
-        MPermissions.requestPermissions(AMAPLocationActivity.this, REQUECT_CODE_READ_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE);
-        MPermissions.requestPermissions(AMAPLocationActivity.this, REQUECT_CODE_READ_PHONE_STATE,Manifest.permission.READ_PHONE_STATE);
+        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS);
+        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_WIFI_STATE);
     }
 
     @Override
