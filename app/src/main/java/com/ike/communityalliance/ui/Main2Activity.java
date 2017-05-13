@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -39,6 +40,10 @@ import com.ike.communityalliance.ui.activity.RecommendActivity;
 import com.ike.communityalliance.ui.fragment.HomeFragment;
 import com.ike.communityalliance.ui.fragment.MineFragment;
 import com.ike.communityalliance.utils.DateUtils;
+import com.ike.communityalliance.utils.file.PermissionsUtil;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -92,6 +97,7 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
         ButterKnife.bind(this);
+        PermissionsUtil.initPermissions(this, Manifest.permission.CAMERA);
         mContext = this;
         isDebug = getSharedPreferences("config", MODE_PRIVATE).getBoolean("isDebug", false);
        getLocationParserData(this,"data.txt");
@@ -382,5 +388,24 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
                 chatPopupWindow.showPopupWindow(iv_main_chat_more);
                 break;
         }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        MPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+
+    @PermissionGrant(1001)
+    public void requestCameraSuccess()
+    {
+        //Toast.makeText(this, "成功获取相机权限", Toast.LENGTH_SHORT).show();
+    }
+
+    @PermissionDenied(1001)
+    public void requestCameraFailed()
+    {
+        Toast.makeText(this, "获取相机权限失败", Toast.LENGTH_SHORT).show();
     }
 }

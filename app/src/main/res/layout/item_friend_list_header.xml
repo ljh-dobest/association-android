@@ -7,58 +7,6 @@
     android:background="#ffffff">
 
     <RelativeLayout
-        android:id="@+id/rl_newfriends"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:clickable="true">
-
-        <com.ike.communityalliance.wedget.image.SelectableRoundedImageView
-            android:id="@+id/siv_avatar"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:src="@mipmap/default_fmessage"
-            app:sriv_left_bottom_corner_radius="3dip"
-            app:sriv_left_top_corner_radius="3dip"
-            app:sriv_right_bottom_corner_radius="3dip"
-            app:sriv_right_top_corner_radius="3dip" />
-
-        <TextView
-            android:id="@+id/tv_newfriends"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/siv_avatar"
-            android:text="@string/new_friends"
-            android:textColor="#353535"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_unread"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/unread_count_bg"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="#ffffff"
-            android:textSize="12sp"
-            android:visibility="gone" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:background="#d9d9d9" />
-
-    <RelativeLayout
         android:id="@+id/rl_group"
         android:layout_width="match_parent"
         android:layout_height="52dp"
@@ -174,7 +122,42 @@
             android:visibility="gone"
             android:src="@drawable/redpoint"/>
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_phoneContast"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:clickable="true">
 
+        <com.ike.communityalliance.wedget.image.SelectableRoundedImageView
+            android:id="@+id/siv_phone_contast"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/default_servicebrand_contact"
+            app:sriv_left_bottom_corner_radius="3dip"
+            app:sriv_left_top_corner_radius="3dip"
+            app:sriv_right_bottom_corner_radius="3dip"
+            app:sriv_right_top_corner_radius="3dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/siv_phone_contast"
+            android:text="手机联系人"
+            android:textColor="#353535"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#d9d9d9" />
 
     <View
         android:layout_width="match_parent"

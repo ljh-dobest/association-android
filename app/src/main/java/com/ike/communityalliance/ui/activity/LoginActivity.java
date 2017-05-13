@@ -1,6 +1,5 @@
 package com.ike.communityalliance.ui.activity;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,10 +16,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.ike.mylibrary.util.CommonUtils;
-import com.ike.mylibrary.util.L;
-import com.ike.mylibrary.util.T;
-import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.ike.communityalliance.App;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
@@ -34,10 +29,11 @@ import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.db.GroupMemberDAOImpl;
 import com.ike.communityalliance.db.GroupsDAOImpl;
 import com.ike.communityalliance.network.HttpUtils;
+import com.ike.mylibrary.util.CommonUtils;
+import com.ike.mylibrary.util.L;
+import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.zhy.http.okhttp.callback.StringCallback;
-import com.zhy.m.permission.MPermissions;
-import com.zhy.m.permission.PermissionDenied;
-import com.zhy.m.permission.PermissionGrant;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -52,7 +48,6 @@ import okhttp3.Call;
  * 登录
  */
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
-    private static final int REQUECT_CODE_CAMERA =1001 ;
     private AutoCompleteTextView et_user;
     private EditText et_pwd;
     private TextView tv_register;
@@ -84,12 +79,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         sharedPreferences = getSharedPreferences("config",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         initView();
-        initPermissions();
     }
 
-    private void initPermissions() {
-        MPermissions.requestPermissions(LoginActivity.this, REQUECT_CODE_CAMERA, Manifest.permission.CAMERA);
-    }
+
 
     private void initView() {
         et_user = (AutoCompleteTextView) findViewById(R.id.user);
@@ -323,26 +315,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         return super.onKeyDown(keyCode, event);
     }
 
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
-    {
-        MPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
-
-    @PermissionGrant(REQUECT_CODE_CAMERA)
-    public void requestSdcardSuccess()
-    {
-        //Toast.makeText(this, "成功获取相机权限", Toast.LENGTH_SHORT).show();
-    }
-
-    @PermissionDenied(REQUECT_CODE_CAMERA)
-    public void requestSdcardFailed()
-    {
-        Toast.makeText(this, "获取相机权限失败", Toast.LENGTH_SHORT).show();
-    }
 }
 
 
