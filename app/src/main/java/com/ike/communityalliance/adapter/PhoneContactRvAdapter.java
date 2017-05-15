@@ -5,13 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.bean.ContastsInfo;
-import com.ike.communityalliance.wedget.XCRoundRectImageView;
+import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +26,6 @@ public class PhoneContactRvAdapter extends RecyclerView.Adapter<PhoneContactRvAd
     private List<ContastsInfo> mDatas=new ArrayList<>();
     private Context mContext;
     private LayoutInflater inflater;
-    private String groupId;
-    public void setGroupId(String groupId){
-        this.groupId=groupId;
-    }
-
     public interface OnItemClickLitener
     {
         void onItemClick(View view, int position);
@@ -51,8 +44,8 @@ public class PhoneContactRvAdapter extends RecyclerView.Adapter<PhoneContactRvAd
     }
     public void setmDatas(List<ContastsInfo> data){
         mDatas.clear();
-        mDatas=data;
-        notifyDataSetChanged();
+        mDatas.addAll(data);
+        notifyItemInserted(getItemCount());
     }
     public void clearData(){
         mDatas.clear();
@@ -75,26 +68,26 @@ public class PhoneContactRvAdapter extends RecyclerView.Adapter<PhoneContactRvAd
                 }
             });
         }
-
+         ContastsInfo contastsInfo=mDatas.get(position);
+        holder.tv_contast_person_item_name.setText(contastsInfo.getName());
+        holder.tv_contast_person_item_phone.setText(contastsInfo.getNumber());
     }
 
     //重写onCreateViewHolder方法，返回一个自定义的ViewHolder
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.item_group_vote,parent, false);
+        View view = inflater.inflate(R.layout.contast_person_item,parent, false);
         MyViewHolder holder= new MyViewHolder(view);
         return holder;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.iv_groupVote_image)
-        XCRoundRectImageView iv_groupVote_image;
-        @BindView(R.id.tv_groupVote_title)
-        TextView tv_groupVote_title;
-        @BindView(R.id.rg_groupVote)
-        RadioGroup rg_groupVote;
-        @BindView(R.id.btn_groupVote_vote)
-        Button btn_groupVote_vote;
+        @BindView(R.id.iv_contast_person_item_image)
+        SelectableRoundedImageView iv_contast_person_item_image;
+        @BindView(R.id.tv_contast_person_item_name)
+        TextView tv_contast_person_item_name;
+        @BindView(R.id.tv_contast_person_item_phone)
+        TextView tv_contast_person_item_phone;
 
         public MyViewHolder(View view) {
             super(view);

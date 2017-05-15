@@ -304,12 +304,21 @@ public class HttpUtils {
     }
 
     //修改好友备注名
-    public static void postChangeFriendName(String url,String userId,String f_userId, String nickname,StringCallback callback){
+    public static void postChangeFriendName(String url,String userId,String friendUserId, String nickname,StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
-                .addParams("friendUserid",f_userId)
+                .addParams("friendUserid",friendUserId)
                 .addParams("displayname",nickname)
+                .build().execute(callback);
+    }
+    //查询对方信息
+    public static void checkUserInfo(String url, String userId, String otherUserId,String status,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("otherUserId",otherUserId)
+                .addParams("status",status)
                 .build().execute(callback);
     }
 

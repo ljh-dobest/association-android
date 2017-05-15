@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ike.communityalliance.bean.Friend;
 import com.ike.mylibrary.util.L;
 import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.App;
@@ -41,6 +42,7 @@ import com.ike.communityalliance.wedget.Generate;
 import com.ike.communityalliance.wedget.PinyinComparator;
 import com.ike.communityalliance.wedget.SideBar;
 import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
+import com.squareup.picasso.Picasso;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.greenrobot.eventbus.EventBus;
@@ -132,7 +134,7 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
 
         tvMe.setText(mCacheName);
         if (!TextUtils.isEmpty(header)) {
-            ImageLoader.getInstance().displayImage(header, sivMe);
+            Picasso.with(this).load(header).into(sivMe);
         } else {
             sivMe.setImageResource(R.mipmap.default_portrait);
         }
@@ -236,11 +238,16 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
         super.onResume();
         initData2();
     }
+    //有新的朋友圈发布
     @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
     public void onEventMessage(TalkTalkBean event){
         iv_shareFriend_redPoint.setVisibility(View.VISIBLE);
     }
-
+  //有更改备注名
+  @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+  public void onEventChangeNameMessage(Friend event){
+     onRefresh();
+  }
     private void initData2() {
         mSourceFriendList.clear();
         mFriendList.clear();
@@ -426,8 +433,6 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.rl_me_item:
                 T.showShort(this,"不能和自己聊天喔！");
-//                startActivity(new Intent(getActivity(), PersonSettingActivity.class));
-//                RongIM.getInstance().startPrivateChat(getActivity(), mId, mCacheName);
                 break;
             case R.id.ll_friend_activity_back:
                 finish();
@@ -437,7 +442,7 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onRefresh() {
-        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 1000);
+        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE,0);
     }
 
     private Handler mHandler=new Handler(){
@@ -447,13 +452,9 @@ public class FriendActivity extends BaseActivity implements View.OnClickListener
                 case REFRESH_COMPLETE:
                     mSourceFriendList.clear();
                     mFriendList.clear();
-//                    initView();
                     initText();
                     friendInfoDAO.delete(mId);
                     initData();
-                    /*mSourceFriendList=friendInfoDAO.findAll(mId);
-                    initList();
-                    mFriendListAdapter.notifyDataSetChanged();*/
                     mSwipeRefresh.setRefreshing(false);
             }
         }
