@@ -110,5 +110,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     apt 'com.zhy:mpermission-compiler:1.0.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile files('src/main/jniLibs/AMap3DMap_5.0.0_AMapNavi_5.0.1_AMapSearch_5.0.0_AMapLocation_3.4.0_20170427.jar')
+    compile files('src/main/jniLibs/AMap3DMap_5.0.0_AMapSearch_5.0.0_AMapLocation_3.4.0_20170427.jar')
 }

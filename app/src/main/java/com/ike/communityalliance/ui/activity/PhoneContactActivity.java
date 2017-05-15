@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -8,12 +9,16 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.ike.communityalliance.R;
+import com.ike.communityalliance.adapter.PhoneContactRvAdapter;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.bean.ContastsInfo;
-import com.zhy.autolayout.AutoLinearLayout;
+import com.ike.communityalliance.wedget.ItemDivider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +27,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class PhoneContactActivity extends BaseActivity {
+public class PhoneContactActivity extends BaseActivity implements PhoneContactRvAdapter.OnItemClickLitener {
     @BindView(R.id.ll_phone_contasts_back)
-    AutoLinearLayout llPhoneContastsBack;
+    LinearLayout llPhoneContastsBack;
     @BindView(R.id.rv_phone_contacts)
     RecyclerView rvPhoneContacts;
     private List<ContastsInfo> list = new ArrayList<ContastsInfo>();
-
+    private PhoneContactRvAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +47,7 @@ public class PhoneContactActivity extends BaseActivity {
     private void InitPermisson() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.READ_CONTACTS},
-                    1);
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS}, 1);
         }
     }
 
@@ -57,7 +60,8 @@ public class PhoneContactActivity extends BaseActivity {
             while (cursor.moveToNext()) {
                 contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                ContastsInfo contactsInfo = new ContastsInfo(contactName, contactNumber);
+               String myContactNumber=contactNumber.replace("+","").replace(" ","");
+                ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
                 if (contactName != null)
                     list.add(contactsInfo);
             }
@@ -67,11 +71,27 @@ public class PhoneContactActivity extends BaseActivity {
         }
     }
     private void initRv() {
-
+        adapter=new PhoneContactRvAdapter(this);
+        adapter.setmDatas(list);
+        adapter.setOnItemClickLitener(this);
+        rvPhoneContacts.setAdapter(adapter);
+        LinearLayoutManager lm = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
+        rvPhoneContacts.setLayoutManager(lm);
+        rvPhoneContacts.setHasFixedSize(true);
+        rvPhoneContacts.addItemDecoration(new ItemDivider(mContext, ItemDivider.VERTICAL_LIST));
     }
 
     @OnClick(R.id.ll_phone_contasts_back)
     public void onViewClicked() {
         finish();
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        ContastsInfo contastsInfo=list.get(position);
+        Intent intent=new Intent(this,UserDetailActivity.class);
+        intent.putExtra("contastsInfo",contastsInfo);
+        intent.putExtra("isPhoneContact",true);
+        startActivity(intent);
     }
 }

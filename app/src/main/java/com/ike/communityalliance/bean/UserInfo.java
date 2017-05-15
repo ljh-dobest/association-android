@@ -9,6 +9,7 @@ public class UserInfo  {
     private String userId;
     private String numberId;
     private String nickname;
+    private String friendNickname;
     private String token;
     private String userPortraitUrl;
     private String sex;
@@ -23,10 +24,12 @@ public class UserInfo  {
     private String recommendUserId;
     private String claimUserId;
 
-    public UserInfo(String userId, String numberId, String nickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId) {
+    public UserInfo(String status, String userId, String numberId, String nickname, String friendNickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId) {
+        this.status = status;
         this.userId = userId;
         this.numberId = numberId;
         this.nickname = nickname;
+        this.friendNickname = friendNickname;
         this.token = token;
         this.userPortraitUrl = userPortraitUrl;
         this.sex = sex;
@@ -40,6 +43,13 @@ public class UserInfo  {
         this.contributionScore = contributionScore;
         this.recommendUserId = recommendUserId;
         this.claimUserId = claimUserId;
+    }
+
+    public UserInfo(String status, String nickname, String userPortraitUrl, String mobile) {
+        this.status = status;
+        this.nickname = nickname;
+        this.userPortraitUrl = userPortraitUrl;
+        this.mobile = mobile;
     }
 
     public UserInfo(String status, String userId, String numberId, String nickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId) {
@@ -83,6 +93,14 @@ public class UserInfo  {
         this.address = address;
         this.email = email;
         this.age = age;
+    }
+
+    public String getFriendNickname() {
+        return friendNickname;
+    }
+
+    public void setFriendNickname(String friendNickname) {
+        this.friendNickname = friendNickname;
     }
 
     public String getUserId() {

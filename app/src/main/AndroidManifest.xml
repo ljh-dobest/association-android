@@ -276,7 +276,9 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".ui.activity.MineClaimActivity" />
         <activity android:name=".ui.activity.MineClaimMsgActivity" />
-        <activity android:name=".ui.activity.PhoneContactActivity"></activity>
+        <activity android:name=".ui.activity.PhoneContactActivity" />
+        <activity android:name=".ui.activity.SetDisplayNameActivity" />
+        <activity android:name=".ui.activity.MoreUserDetailInfoActivity"></activity>
     </application>
 
 </manifest>
