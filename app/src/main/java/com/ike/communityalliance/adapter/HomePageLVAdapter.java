@@ -95,7 +95,7 @@ public class HomePageLVAdapter extends BaseAdapter {
              @Override
              public void onClick(View v) {
                  Intent intent=new Intent(mContent, ClaimInfoActivity.class);
-                 ClaimPeopleBean claimPeopleBean=new ClaimPeopleBean(claimUsers.getId(),claimUsers.getRecommendId(),claimUsers.getNickname(),claimUsers.getUserPortraitUrl());
+                 ClaimPeopleBean claimPeopleBean=new ClaimPeopleBean(claimUsers.getUserId(),claimUsers.getRecommendId(),claimUsers.getNickname(),claimUsers.getUserPortraitUrl());
                  intent.putExtra("claimPeopleBean",claimPeopleBean);
                  mContent.startActivity(intent);
              }

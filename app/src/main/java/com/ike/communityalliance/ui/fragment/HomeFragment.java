@@ -240,6 +240,6 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
                 return;
             }
         }
-        T.showShort(getContext(),"您还没安装"+type+"喔`!赶紧去应用中心下载吧!!");
+        T.showShort(getContext(),"您还没安装"+type+"喔!赶紧去应用中心下载吧!!");
     }
 }

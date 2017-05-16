@@ -797,4 +797,12 @@ public class HttpUtils {
                 .addParams("Sposition",info.getSposition())
                 .build().execute(callback);
     }
+    //提交平台反馈
+    public static void postFeedBack(String url,String userId,String content,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("content",content)
+                .build().execute(callback);
+    }
 }
