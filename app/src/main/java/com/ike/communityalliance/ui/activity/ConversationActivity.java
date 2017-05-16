@@ -641,7 +641,7 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
                             L.e("-------------==-=-", "群组列表插入成功");// 用日志记录一个我们自定义的输出。可以在LogCat窗口中查看，
                         }
                     }
-                     Groups mGroup= sqLiteDAO.find(mTargetId);
+                    Groups mGroup= sqLiteDAO.find(mTargetId);
                     title=mGroup.getGroupName();
                     tvTitle.setText(title);
                     RongIM.getInstance().refreshGroupInfoCache(new Group(mTargetId,title,Uri.parse(mGroup.getGroupPortraitUrl())));

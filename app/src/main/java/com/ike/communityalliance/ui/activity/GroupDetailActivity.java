@@ -450,9 +450,9 @@ public class GroupDetailActivity extends BaseActivity implements CompoundButton.
             @Override
             public void onResponse(String response, int id) {
                 Gson gson = new Gson();
-                Type type = new TypeToken<Code<Integer>>() {
+                Type type = new TypeToken<Code<Object>>() {
                 }.getType();
-                Code<Integer> code = gson.fromJson(response, type);
+                Code<Object> code = gson.fromJson(response, type);
                 if (code.getCode() == 100) {
                     RongIM.getInstance().getConversation(Conversation.ConversationType.GROUP, groupId,
                             new RongIMClient.ResultCallback<Conversation>() {
@@ -501,9 +501,9 @@ public class GroupDetailActivity extends BaseActivity implements CompoundButton.
             @Override
             public void onResponse(String response, int id) {
                 Gson gson = new Gson();
-                Type type = new TypeToken<Code<Integer>>() {
+                Type type = new TypeToken<Code<Object>>() {
                 }.getType();
-                Code<Integer> code = gson.fromJson(response, type);
+                Code<Object> code = gson.fromJson(response, type);
                 if (code.getCode() == 200) {
                     RongIM.getInstance().getConversation(Conversation.ConversationType.GROUP, groupId,
                             new RongIMClient.ResultCallback<Conversation>() {

@@ -12,22 +12,35 @@
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
-        <TextView
-            android:id="@+id/location"
-            android:text="@string/fetching"
-            android:drawableLeft="@mipmap/location2"
-            android:ellipsize="end"
-            android:background="@color/white"
-            android:textColor="@android:color/secondary_text_light"
-            android:textSize="15sp"
-            android:drawablePadding="8dp"
+        <LinearLayout
+            android:id="@+id/ll_seacher_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:padding="10dp"
             android:layout_margin="20dp"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"/>
+            android:gravity="center"
+            android:layout_gravity="center_horizontal">
+            <EditText
+                android:id="@+id/location"
+                android:drawableLeft="@mipmap/location2"
+                android:ellipsize="end"
+                android:background="@color/white"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="15sp"
+                android:drawablePadding="8dp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/btn_seach_location"
+                android:layout_marginLeft="10dp"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/interest_join"
+                android:text="搜索"/>
+        </LinearLayout>
+
 
         <ImageView
             android:id="@+id/myLocation"
