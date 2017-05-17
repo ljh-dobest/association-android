@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 
 public class VerifyRecommedInfoBean {
+    private String recommendId;
     private String userId;
     private String fullName;
     private String mobile;
@@ -24,7 +25,8 @@ public class VerifyRecommedInfoBean {
     private String QQ;
     private String wechat;
 
-    public VerifyRecommedInfoBean(String userId, String fullName, String mobile, String sfullName, String sex, String hobby, ArrayList<String> address, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat) {
+    public VerifyRecommedInfoBean(String recommendId, String userId, String fullName, String mobile, String sfullName, String sex, String hobby, ArrayList<String> address, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat) {
+        this.recommendId = recommendId;
         this.userId = userId;
         this.fullName = fullName;
         this.mobile = mobile;
@@ -41,6 +43,14 @@ public class VerifyRecommedInfoBean {
         this.email = email;
         this.QQ = QQ;
         this.wechat = wechat;
+    }
+
+    public String getRecommendId() {
+        return recommendId;
+    }
+
+    public void setRecommendId(String recommendId) {
+        this.recommendId = recommendId;
     }
 
     public String getUserId() {

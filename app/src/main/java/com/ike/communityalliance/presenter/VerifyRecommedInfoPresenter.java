@@ -22,8 +22,8 @@ public class VerifyRecommedInfoPresenter extends BasePersenter<IVerifyRecommedIn
     public VerifyRecommedInfoPresenter() {
         verifyRecommedInfoMoudle=new VerifyRecommedInfoMoudle();
     }
-    public  void getVerifyRecommendInfo(String userId){
-           verifyRecommedInfoMoudle.getVerifyRecommedInfo(userId,this);
+    public  void getVerifyRecommendInfo(String userId,String recommendId){
+           verifyRecommedInfoMoudle.getVerifyRecommedInfo(userId,recommendId,this);
     }
     public void postVerifyRecommedInfo(VerifyRecommedInfoBean verifyRecommedInfoBean){
               verifyRecommedInfoMoudle.verifyRecommedInfo(verifyRecommedInfoBean,this);

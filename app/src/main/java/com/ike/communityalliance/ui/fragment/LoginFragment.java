@@ -103,6 +103,7 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
         if(status.equals("0")){
             Intent intent=new Intent(getActivity(),VerifyRecommedInfoActivity.class);
             intent.putExtra("useId",userInfo.getUserId());
+            intent.putExtra("recommendId",userInfo.getNumberId());
             intent.putExtra("fromLogin",true);
             startActivity(intent);
         }else{
@@ -114,6 +115,7 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
 
     private void saveData(UserInfo userInfo) {
         String useId=userInfo.getUserId();
+        String recommedId=userInfo.getNumberId();
         String token = userInfo.getToken();
         String nickName = userInfo.getNickname();
         String userPortraitUrl=HttpUtils.IMAGE_RUL+userInfo.getUserPortraitUrl();
@@ -130,6 +132,7 @@ public class LoginFragment extends BaseMvpFragment<ILoginView,LoginPresenterImpl
         String recommendUserId=userInfo.getRecommendUserId();
         String claimUserId=userInfo.getClaimUserId();
         editor.putString(Const.LOGIN_USERNAME, userName);
+        editor.putString(Const.LOGIN_RECOMMEDID,recommedId);
         editor.putString(Const.LOGIN_PASSWORD, pwd);
         editor.putBoolean("login_message", true);
         editor.putString(Const.LOGIN_ID, useId);

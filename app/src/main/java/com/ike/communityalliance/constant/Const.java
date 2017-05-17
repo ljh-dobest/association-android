@@ -7,7 +7,7 @@ package com.ike.communityalliance.constant;
 public class Const {
 
     public static final String CHANGEINFO = "CHANGEINFO";
-
+    public static final String LOGIN_RECOMMEDID = "loginRecommedId";
     public static final String LOGIN_ID ="loginid";
     public static final String LOGIN_ACCOUNT="loginaccount";
     public static final String LOGIN_USERNAME="loginUsername";
