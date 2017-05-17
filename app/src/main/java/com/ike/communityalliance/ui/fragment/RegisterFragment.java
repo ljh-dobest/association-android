@@ -110,6 +110,7 @@ public class RegisterFragment extends BaseMvpFragment<IRegisterView,RegisterPres
           T.showShort(getContext(),"注册成功~~");
         Intent intent=new Intent(getActivity(), VerifyRecommedInfoActivity.class);
         intent.putExtra("useId",et_re_ph.getText().toString());
+        intent.putExtra("recommendId",et_re_invite_code.getText().toString());
         startActivityForResult(intent,102);
         et_re_ph.setText("");
         et_re_nickname.setText("");

@@ -1,10 +1,12 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -28,7 +30,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
 
-public class MineRecomendActivity extends BaseActivity {
+public class MineRecomendActivity extends BaseActivity implements WasRecommendRvAdapter.OnItemClickLitener {
 
     @BindView(R.id.ll_mine_wasRecomend_back)
     AutoLinearLayout llMineWasRecomendBack;
@@ -52,7 +54,7 @@ public class MineRecomendActivity extends BaseActivity {
     }
 
     private void initData() {
-        HttpUtils.getRecommedInfo("/allRecommendsUsers", userId, new StringCallback() {
+        HttpUtils.getWasRecommedInfo("/allRecommendsUsers", userId, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
                 T.showShort(MineRecomendActivity.this,e.toString());
@@ -76,6 +78,7 @@ public class MineRecomendActivity extends BaseActivity {
 
     private void initView() {
         adapter=new WasRecommendRvAdapter(this);
+        adapter.setOnItemClickLitener(this);
         LinearLayoutManager lm = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
         rvMineWasRecomend.setLayoutManager(lm);
         rvMineWasRecomend.setAdapter(adapter);
@@ -86,5 +89,13 @@ public class MineRecomendActivity extends BaseActivity {
     @OnClick(R.id.ll_mine_wasRecomend_back)
     public void onViewClicked() {
         finish();
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        String recommendId=recommendInfoList.get(position).getRecommendId();
+        Intent intent = new Intent(this, RecomendCardActivity.class);
+        intent.putExtra("recommendId", recommendId);
+        startActivity(intent);
     }
 }

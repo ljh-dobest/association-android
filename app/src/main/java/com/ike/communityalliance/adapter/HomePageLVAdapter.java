@@ -88,8 +88,8 @@ public class HomePageLVAdapter extends BaseAdapter {
          final ClaimUsers claimUsers=claimUsersList.get(position);
          Picasso.with(mContent).load(HttpUtils.IMAGE_RUL+claimUsers.getUserPortraitUrl()).into(holder.iv_home_item_userIcon);
          holder.tv_home_item_name.setText(claimUsers.getNickname());
-         holder.tv_home_item_userNum.setText(claimUsers.getFullName());
-         holder.tv_home_item_recommenderId.setText(claimUsers.getRecommendId());
+         holder.tv_home_item_userNum.setText(claimUsers.getRecommendId());
+         holder.tv_home_item_recommenderId.setText(claimUsers.getClaimUsersId());
          holder.tv_home_item_recommenderName.setText(claimUsers.getClaimUsersName());
          holder.tv_home_item_toClaim.setOnClickListener(new View.OnClickListener() {
              @Override

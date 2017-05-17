@@ -19,6 +19,6 @@ public interface IVerifyRecommedInfoView {
     void setHobby(String hobbys);
     void setProvinceData(ArrayList<ProvinceBean> provinceData);
     void getHobby(ViewGroup group);
-    void getVerifyInfo(String userId);
+    void getVerifyInfo(String userId,String recommendId);
     void setVerifyInfo(VerifyRecommedInfo verifyInfo);
 }

@@ -127,7 +127,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         tvMineEmail.setText(email);
         tvMineBirthday.setText(birthday);
         tvMinePhone.setText(mobile);
-        tvMineAddress.setText(address);
+        tvMineAddress.setText(address.replace(",",""));
         tvMineRecommenerName.setText(recommendUserId);
         tvMineClaimerName.setText(claimUserId);
         tvMineContributionNum.setText(contributionScore);

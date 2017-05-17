@@ -47,7 +47,7 @@ public class FeedBackActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_feedback_comfirm:
-                String content=tvFeedbackComfirm.getText().toString();
+                String content=etFeedbackContent.getText().toString();
                 if(content.equals("")){
                     T.showShort(this,"反馈内容不为空！");
                     return;
