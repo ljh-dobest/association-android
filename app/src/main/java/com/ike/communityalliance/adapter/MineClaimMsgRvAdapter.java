@@ -213,6 +213,7 @@ import okhttp3.Call;
 public class MineClaimMsgRvAdapter extends BaseAdapter{
     public static final int ONE_ITEM = 1;
     public static final int TWO_ITEM = 2;
+    public static final int THREE_ITEM = 3;
     private List<MineCliamMsgBean> mData=new ArrayList<>();
     private  Context mContent;
     private String userId;
@@ -258,6 +259,7 @@ public class MineClaimMsgRvAdapter extends BaseAdapter{
         if (convertView == null) {
             switch (type) {
                 case ONE_ITEM:
+                case THREE_ITEM:
                     convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.mine_claim_msg_item1, parent, false);
                     holder = new MyViewHolder(convertView);
                     convertView.setTag(holder);
@@ -273,8 +275,18 @@ public class MineClaimMsgRvAdapter extends BaseAdapter{
             MyViewHolder holder1= (MyViewHolder)convertView.getTag();
             MineCliamMsgBean mineCliamMsgBean=mData.get(position);
             Picasso.with(mContent).load(HttpUtils.IMAGE_RUL+mineCliamMsgBean.getUserPortraitUrl()).into(holder1.iv_mine_claim_msg_userHeader);
+            holder1.tv_mine_claim_front.setVisibility(View.GONE);
             holder1.tv_mine_claim_msg_name.setText(mineCliamMsgBean.getNickname());
             holder1.tv_mine_claim_msg_time.setText(mineCliamMsgBean.getClaimTime());
+            holder1.tv_mine_claim_msg_content.setVisibility(View.VISIBLE);
+        }else if(type==THREE_ITEM){
+            MyViewHolder holder1= (MyViewHolder)convertView.getTag();
+            MineCliamMsgBean mineCliamMsgBean=mData.get(position);
+            holder1.iv_mine_claim_msg_userHeader.setVisibility(View.GONE);
+            holder1.tv_mine_claim_front.setVisibility(View.VISIBLE);
+            holder1.tv_mine_claim_msg_name.setText(mineCliamMsgBean.getNickname());
+            holder1.tv_mine_claim_msg_time.setText(mineCliamMsgBean.getClaimTime());
+            holder1.tv_mine_claim_msg_content.setVisibility(View.GONE);
         }else{
             final MyViewHolder2 holder2= (MyViewHolder2)convertView.getTag();
             final MineCliamMsgBean mineCliamMsgBean=mData.get(position);
@@ -342,8 +354,12 @@ public class MineClaimMsgRvAdapter extends BaseAdapter{
         class MyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_mine_claim_msg_userHeader)
         RoundedImageView iv_mine_claim_msg_userHeader;
+        @BindView(R.id.tv_mine_claim_front)
+        TextView tv_mine_claim_front;
         @BindView(R.id.tv_mine_claim_msg_name)
         TextView tv_mine_claim_msg_name;
+        @BindView(R.id.tv_mine_claim_msg_content)
+        TextView tv_mine_claim_msg_content;
         @BindView(R.id.tv_mine_claim_msg_time)
         TextView tv_mine_claim_msg_time;
         public MyViewHolder(View view) {
@@ -376,6 +392,9 @@ public class MineClaimMsgRvAdapter extends BaseAdapter{
     @Override
     public int getItemViewType(int position) {
         MineCliamMsgBean mineCliamMsgBean=mData.get(position);
+        if(mineCliamMsgBean.getStatus()==null){
+            return THREE_ITEM;
+        }
        if(mineCliamMsgBean.getStatus().equals("0")){
            return TWO_ITEM;
        }else{
@@ -385,6 +404,6 @@ public class MineClaimMsgRvAdapter extends BaseAdapter{
 
     @Override
     public int getViewTypeCount() {
-        return 3;
+        return 4;
     }
 }

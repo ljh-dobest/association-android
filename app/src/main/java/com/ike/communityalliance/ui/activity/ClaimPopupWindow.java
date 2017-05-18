@@ -40,12 +40,9 @@ public class ClaimPopupWindow extends BasePopup implements View.OnClickListener 
                 break;
         }
     }
-
     @Override
     public void setTitleText() {
-
     }
-
     @Override
     public View getView() {
         LayoutInflater inflater= (LayoutInflater) mActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

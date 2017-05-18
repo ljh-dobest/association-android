@@ -167,6 +167,8 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         pbPersonalInfoCreditScore.setProgress(Integer.valueOf(creditScore));
         pbPersonalInfoExperience.setProgress( Integer.valueOf(experience));
         tvPersonalInfoContributionScore.setText(contributionScore);
+        tvPersonalInfoCreditScore.setText(creditScore);
+        tvPersonalInfoExperience.setText(experience);
     }
 
     @Override

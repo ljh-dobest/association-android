@@ -12,6 +12,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.MineClaimMsgRvAdapter;
+import com.ike.communityalliance.bean.ClaimMsg;
 import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.bean.MineCliamMsgBean;
 import com.ike.communityalliance.constant.Const;
@@ -62,12 +63,13 @@ public class MineClaimMsgActivity extends AppCompatActivity implements MineClaim
             @Override
             public void onResponse(String response, int id) {
                 Gson gson = new Gson();
-                Type type = new TypeToken<Code<List<MineCliamMsgBean>>>() {
+                Type type = new TypeToken<Code<ClaimMsg>>() {
                 }.getType();
-                Code<List<MineCliamMsgBean>> code = gson.fromJson(response, type);
+                Code<ClaimMsg> code = gson.fromJson(response, type);
                 switch (code.getCode()) {
                     case 200:
-                        mineCliamMsgList = code.getData();
+                        mineCliamMsgList = code.getData().getClaimMsg();
+                        mineCliamMsgList.addAll(0,code.getData().getBeClaim());
                         initRv();
                         break;
                     case 0:

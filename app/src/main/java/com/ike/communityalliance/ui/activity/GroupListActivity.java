@@ -71,7 +71,7 @@ public class  GroupListActivity extends BaseActivity implements SwipeRefreshLayo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_list);
         ButterKnife.bind(this);
-
+        userId = getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_ID, "");
         sqLiteDAO = new GroupsDAOImpl(mContext);
         groupMemberDAO = new GroupMemberDAOImpl(mContext);
 
@@ -81,18 +81,15 @@ public class  GroupListActivity extends BaseActivity implements SwipeRefreshLayo
         swipeRefresh.setOnRefreshListener(this);
         LoadDialog.show(mContext);
         initAdapter();
-        initData();
+       initGroups(userId);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-       // initGroups(userId);
-       // initData();
     }
 
     private void initData() {
-        userId = getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_ID, "");
         list = sqLiteDAO.findAll(userId);
         if (list.size() > 0) {
            adapter.setList(list);
@@ -110,6 +107,7 @@ public class  GroupListActivity extends BaseActivity implements SwipeRefreshLayo
         rvGroupList.setAdapter(adapter);
         LinearLayoutManager lm = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
         rvGroupList.setLayoutManager(lm);
+        rvGroupList.setHasFixedSize(true);
         rvGroupList.addItemDecoration(new ItemDivider(this, ItemDivider.VERTICAL_LIST));
         initListItemClick();
     }

@@ -28,7 +28,8 @@
     <ListView
         android:id="@+id/rv_mine_claim_msg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/col_ECEEF0"
         android:dividerHeight="1dp">
     </ListView>
     <TextView

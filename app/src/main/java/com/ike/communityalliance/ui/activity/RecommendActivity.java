@@ -116,9 +116,11 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     private String spouseName;
     private String childrenName;
     private String childrenSchool;
-    private ArrayList<String> options1Items = new ArrayList<>();
-    private ArrayList<String> options2Items = new ArrayList<>();
-    private ArrayList<String> options3Items = new ArrayList<>();
+    private ArrayList<String> provinceItems = new ArrayList<>();
+    private ArrayList<String> citysItems = new ArrayList<>();
+    private ArrayList<String> countryItems = new ArrayList<>();
+    private ArrayList<String> jgCitysItems = new ArrayList<>();
+    private ArrayList<String> jgCountryItems = new ArrayList<>();
     private ArrayAdapter province_adapter;
     private ArrayAdapter city_adapter;
     private ArrayAdapter county_adapter;
@@ -203,13 +205,13 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     public void getparserData(ArrayList<ProvinceBean> province) {
         data = province;
         for (int i = 0; i < data.size(); i++) {
-            options1Items.add(province.get(i).getName());
+            provinceItems.add(province.get(i).getName());
         }
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //适配器
-                province_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, options1Items);
+                province_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, provinceItems);
                 //设置样式
                 province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //加载适配器
@@ -333,10 +335,10 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
                 setThirdText(sp_recom_county, position);
                 break;
             case R.id.sp_recom_jgprovince:     //设置二级联动
-                setSecondText(sp_recom_jgcitys, position);
+                setJGSecondText(sp_recom_jgcitys, position);
                 break;
             case R.id.sp_recom_jgcitys: //设置三级联动
-                setThirdText(sp_recom_jgcountys, position);
+                setJGThirdText(sp_recom_jgcountys, position);
                 break;
         }
     }
@@ -351,37 +353,65 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         return new RecommendPresenterImpl();
     }
 
-    //二级联动
+    //城市二级联动
     private void setSecondText(Spinner sp, int position) {
-        options2Items.clear();
+        citysItems.clear();
         citys = (ArrayList<CityBean>) data.get(position).getSub();
         for (int i = 0; i < citys.size(); i++) {
-            options2Items.add(citys.get(i).getName());
+            citysItems.add(citys.get(i).getName());
         }
-        city_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, options2Items);
+        city_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, citysItems);
+        city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(city_adapter);
+    }
+    //籍贯城市二级联动
+    private void setJGSecondText(Spinner sp, int position) {
+        jgCitysItems.clear();
+        citys = (ArrayList<CityBean>) data.get(position).getSub();
+        for (int i = 0; i < citys.size(); i++) {
+            jgCitysItems.add(citys.get(i).getName());
+        }
+        city_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, jgCitysItems);
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
 
-    //三级联动
+    //县区三级联动
     private void setThirdText(Spinner sp, int position) {
-        options3Items.clear();
+        countryItems.clear();
         ArrayList<CountyBean> country = (ArrayList<CountyBean>) citys.get(position).getSub();
         if (country == null) {
-            options3Items.add("");
+            countryItems.add("");
         } else {
             if (country.size() == 0) {
-                options3Items.add("");
+                countryItems.add("");
             }
             for (int i = 0; i < country.size(); i++) {
-                options3Items.add(country.get(i).getName());
+                countryItems.add(country.get(i).getName());
             }
         }
-        county_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, options3Items);
+        county_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, countryItems);
         county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(county_adapter);
     }
 
-
+    //籍贯县区三级联动
+    private void setJGThirdText(Spinner sp, int position) {
+        jgCountryItems.clear();
+        ArrayList<CountyBean> country = (ArrayList<CountyBean>) citys.get(position).getSub();
+        if (country == null) {
+            jgCountryItems.add("");
+        } else {
+            if (country.size() == 0) {
+                jgCountryItems.add("");
+            }
+            for (int i = 0; i < country.size(); i++) {
+                jgCountryItems.add(country.get(i).getName());
+            }
+        }
+        county_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, jgCountryItems);
+        county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(county_adapter);
+    }
 
 }

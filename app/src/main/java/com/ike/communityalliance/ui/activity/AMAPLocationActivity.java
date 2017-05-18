@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.Manifest;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocationClientOption;
@@ -19,18 +22,20 @@ import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
-import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
 import com.ike.communityalliance.AppContext;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.bean.LocationEntity;
+import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.listener.OnLocationGetListener;
 import com.ike.communityalliance.utils.file.PermissionsUtil;
+import com.ike.communityalliance.wedget.CircleImageView;
 import com.ike.communityalliance.wedget.location.LocationTask;
 import com.ike.communityalliance.wedget.location.RegeocodeTask;
-import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.util.L;
+import com.squareup.picasso.Picasso;
 import com.zhy.m.permission.MPermissions;
 import com.zhy.m.permission.PermissionDenied;
 import com.zhy.m.permission.PermissionGrant;
@@ -56,6 +61,22 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     Button btnSeachLocation;
     @BindView(R.id.ll_seacher_location)
     LinearLayout llSeacherLocation;
+    @BindView(R.id.ll_location_back)
+    LinearLayout llLocationBack;
+    @BindView(R.id.iv_location_userHeader)
+    CircleImageView ivLocationUserHeader;
+    @BindView(R.id.tv_location_userName)
+    TextView tvLocationUserName;
+    @BindView(R.id.ll_location)
+    RelativeLayout llLocation;
+    @BindView(R.id.activity_amaplocation)
+    RelativeLayout activityAmaplocation;
+    @BindView(R.id.ll_location_header_back)
+    LinearLayout llLocationHeaderBack;
+    @BindView(R.id.tv_location_header_send)
+    TextView tvLocationHeaderSend;
+    @BindView(R.id.ll_location_header)
+    RelativeLayout llLocationHeader;
 
     private AMap aMap;
     private LatLng myLocation = null;
@@ -73,33 +94,56 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     private double latitude;
     //经度
     private double longitude;
+    private boolean isMyAddress = false;
+    private SharedPreferences sp;
+    private String userName, userHeader;
+    private String city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amaplocation);
         ButterKnife.bind(this);
+        sp = getSharedPreferences("config", MODE_PRIVATE);
+        userHeader = sp.getString(Const.LOGIN_PORTRAIT, "");
+        userName = sp.getString(Const.LOGIN_NICKNAME, "");
+        isMyAddress = getIntent().getBooleanExtra("myAddress", false);
+        if (isMyAddress) {
+            llLocationHeader.setVisibility(View.GONE);
+            llSeacherLocation.setVisibility(View.GONE);
+            initHeaderView();
+        } else {
+            llLocationHeader.setVisibility(View.VISIBLE);
+            llSeacherLocation.setVisibility(View.VISIBLE);
+            llLocation.setVisibility(View.GONE);
+            iv_enter.setVisibility(View.GONE);
+        }
         mapView.onCreate(savedInstanceState);
         //android6.0 打开位置权限
         initPermission();
     }
 
+    private void initHeaderView() {
+        Picasso.with(this).load(userHeader).into(ivLocationUserHeader);
+        tvLocationUserName.setText(userName);
+    }
+
 
     //位置检索
     public void doSearchQuery(String content) {
-        query = new PoiSearch.Query(content,"汽车维修|修车服务", "");
+        query = new PoiSearch.Query(content, "",city);
         query.setPageSize(10);//设置每页返回多少条条poiitem
-        query.setPageNum(0);//设置查第一页
+        query.setPageNum(1);//设置查第一页
         poiSearch = new PoiSearch(this, query);
         //如果不为空值
-        if (latitude != 0.0 && longitude != 0.0) {
-            poiSearch.setBound(new PoiSearch.SearchBound(new LatLonPoint(latitude,
-                    latitude), 6000));// 设置周边搜索的中心点以及区域
-            poiSearch.setOnPoiSearchListener(this);// 设置数据返回的监听器
-            poiSearch.searchPOIAsyn();// 开始搜索
-        } else {
-            T.showShort(this, "定位失败");
-        }
+//        if (latitude != 0.0 && longitude != 0.0) {
+//            poiSearch.setBound(new PoiSearch.SearchBound(new LatLonPoint(latitude,
+//                    latitude), 6000));// 设置周边搜索的中心点以及区域
+        poiSearch.setOnPoiSearchListener(this);// 设置数据返回的监听器
+        poiSearch.searchPOIAsyn();// 开始搜索
+//        } else {
+//            T.showShort(this, "定位失败");
+//        }
 
     }
 
@@ -115,6 +159,9 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
             mMsg = getIntent().getParcelableExtra("location");
             llSeacherLocation.setVisibility(View.GONE);
             iv_enter.setVisibility(View.GONE);
+            llLocationHeader.setVisibility(View.GONE);
+            llSeacherLocation.setVisibility(View.GONE);
+            llLocation.setVisibility(View.GONE);
             aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mMsg.getLat(), mMsg.getLng()), 15));
             aMap.addMarker(new MarkerOptions().anchor(0.5f, 0.5f)
                     .position(new LatLng(mMsg.getLat(), mMsg.getLng())).title(mMsg.getPoi())
@@ -153,6 +200,7 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
 //        tv_location.setText(entity.address);
         latitude = entity.getLatitue();
         longitude = entity.getLongitude();
+        city=entity.getCity();
         mMsg = LocationMessage.obtain(latitude, longitude, entity.address, getMapUrl(latitude, longitude));
     }
 
@@ -215,17 +263,27 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
 
     @Override
     public void onPoiSearched(PoiResult poiResult, int i) {
-        T.showShort(this, poiResult.getPois().get(0).getAdName());
+        for (PoiItem poiItem : poiResult.getPois()) {
+            L.d("周边",poiItem.getAdName());
+        }
     }
 
     @Override
     public void onPoiItemSearched(PoiItem poiItem, int i) {
-        T.showShort(this, poiItem.getAdName());
+
     }
 
-    @OnClick({R.id.btn_seach_location, R.id.myLocation})
+    @OnClick({R.id.btn_seach_location, R.id.myLocation, R.id.ll_location_back,
+            R.id.ll_location_header_back, R.id.tv_location_header_send})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.ll_location_header_back:
+                break;
+            case R.id.tv_location_header_send:
+                break;
+            case R.id.ll_location_back:
+                finish();
+                break;
             case R.id.btn_seach_location:
                 doSearchQuery(et_location.getText().toString());
                 break;
@@ -241,4 +299,6 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
                 break;
         }
     }
+
+
 }

@@ -166,8 +166,8 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
             }else{
                 title= groups.getGroupName();
                 RongIM.getInstance().refreshGroupInfoCache(new Group(mTargetId,title,Uri.parse(groups.getGroupPortraitUrl())));
+                MyGroupInfoProvider.init(this);        //初始化群组信息提供者
             }
-            MyGroupInfoProvider.init(this);        //初始化群组信息提供者
         }
         tvTitle.setText(title);
 
@@ -219,10 +219,6 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
                 }
             }
         });
-        /*if (mTargetId != null && mTargetId.equals("10000")) {
-            startActivity(new Intent(ConversationActivity.this, NewFriendListActivity.class));
-            return;
-        }*/
     }
 
     /**
@@ -385,20 +381,7 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         Uri uri = Uri.parse("rong://" + getApplicationInfo().packageName).buildUpon()
                 .appendPath("conversation").appendPath(mConversationType.getName().toLowerCase())
                 .appendQueryParameter("targetId", mTargetId).build();
-
         fragment.setUri(uri);
-        /*fragment.setInputBoardListener(new InputView.IInputBoardListener() {
-            @Override
-            public void onBoardExpanded(int height) {
-                L.e(TAG, "onBoardExpanded h : " + height);
-            }
-
-            @Override
-            public void onBoardCollapsed() {
-                L.e(TAG, "onBoardCollapsed");
-            }
-        });*/
-
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         //xxx 为你要加载的 id
         transaction.add(R.id.rong_content, fragment);
@@ -611,6 +594,7 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
             @Override
             public void onError(Call call, Exception e, int id) {
                 T.showShort(mContext, "/groupData-----" + e);
+                LoadDialog.dismiss(mContext);
                 return;
             }
 
@@ -638,13 +622,13 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
                             groups2.setGroupPortraitUrl(groupPort);
                             groups2.setRole(role);
                             sqLiteDAO.save(groups2);
-                            L.e("-------------==-=-", "群组列表插入成功");// 用日志记录一个我们自定义的输出。可以在LogCat窗口中查看，
                         }
                     }
                     Groups mGroup= sqLiteDAO.find(mTargetId);
                     title=mGroup.getGroupName();
                     tvTitle.setText(title);
                     RongIM.getInstance().refreshGroupInfoCache(new Group(mTargetId,title,Uri.parse(mGroup.getGroupPortraitUrl())));
+                    MyGroupInfoProvider.init(ConversationActivity.this);        //初始化群组信息提供者
                     LoadDialog.dismiss(mContext);
                 } else {
                     LoadDialog.dismiss(mContext);

@@ -78,7 +78,7 @@ public class WasMineClaimRvAdapter extends RecyclerView.Adapter<WasMineClaimRvAd
         ClaimPeopleBean claimPeopleBean=mDatas.get(position);
         Picasso.with(mContext).load(HttpUtils.IMAGE_RUL+claimPeopleBean.getUserPortraitUrl()).into(holder.iv_mine_claim_userHeader);
         holder.tv_mine_claim_name.setText(claimPeopleBean.getNickname());
-        holder.tv_mine_claim_time.setText(claimPeopleBean.getClaimFullName());
+        holder.tv_mine_claim_time.setText(claimPeopleBean.getClaimTime());
 
     }
 

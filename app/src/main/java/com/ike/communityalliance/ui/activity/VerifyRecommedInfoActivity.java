@@ -247,6 +247,8 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     @Override
     public void setVerifyInfo(VerifyRecommedInfo verifyInfo) {
         this.verifyInfo=verifyInfo;
+        int position=provinceList.indexOf(verifyInfo.getAddress().getFirstStage());
+        sp_verifyInfo_province.setSelection(position);
         et_verifyInfo_username.setText(verifyInfo.getFullName());
         hobbyList= Arrays.asList(verifyInfo.getHobby().split(","));
         initHobby();
@@ -261,8 +263,6 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         et_verifyInfo_mobile.setText(verifyInfo.getMobile());
         et_verifyInfo_company.setText(verifyInfo.getCompany());
         et_verifyInfo_finishSchool.setText(verifyInfo.getFinishSchool());
-        int position=provinceList.indexOf(verifyInfo.getAddress().getFirstStage());
-        sp_verifyInfo_province.setSelection(position);
         jgAddressList=Arrays.asList(verifyInfo.getHomeplace().split(","));
         if(jgAddressList.size()>0){
             int index=provinceList.indexOf(jgAddressList.get(0));
@@ -352,10 +352,10 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         }
         address.add("");
         birthday=et_verifyInfo_birthday.getText().toString();
-        homeplace=sp_verifyInfo_jgprovince.getSelectedItem().toString()+
+        homeplace=sp_verifyInfo_jgprovince.getSelectedItem().toString()+ "," +
                 sp_verifyInfo_jgcitys.getSelectedItem().toString();
         try {
-            homeplace=homeplace+sp_verifyInfo_jgcountys.getSelectedItem().toString();
+            homeplace= homeplace + "," + sp_verifyInfo_jgcountys.getSelectedItem().toString();
         }catch (Exception e){
         }
         finishSchool=et_verifyInfo_finishSchool.getText().toString();

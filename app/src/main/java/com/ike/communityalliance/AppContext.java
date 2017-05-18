@@ -349,10 +349,6 @@ public class AppContext extends RongIMClient.ResultCallback<Boolean> implements 
     @Override
     public void onStartLocation(Context context, LocationCallback locationCallback) {
         AppContext.getInstance().setLastLocationCallback(locationCallback);
-        Intent intent = new Intent(context, AMAPLocationActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-
     }
     public RongIM.LocationProvider.LocationCallback getLastLocationCallback() {
         return mLastLocationCallback;
