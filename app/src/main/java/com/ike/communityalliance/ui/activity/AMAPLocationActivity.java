@@ -1,13 +1,14 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,10 +20,14 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.MapView;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
+import com.amap.api.maps.model.MyLocationStyle;
+import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
+import com.amap.api.services.help.Tip;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
 import com.ike.communityalliance.AppContext;
@@ -30,22 +35,24 @@ import com.ike.communityalliance.R;
 import com.ike.communityalliance.bean.LocationEntity;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.listener.OnLocationGetListener;
+import com.ike.communityalliance.utils.DisplayUtils;
 import com.ike.communityalliance.utils.file.PermissionsUtil;
 import com.ike.communityalliance.wedget.CircleImageView;
 import com.ike.communityalliance.wedget.location.LocationTask;
 import com.ike.communityalliance.wedget.location.RegeocodeTask;
-import com.ike.mylibrary.util.L;
 import com.squareup.picasso.Picasso;
 import com.zhy.m.permission.MPermissions;
 import com.zhy.m.permission.PermissionDenied;
 import com.zhy.m.permission.PermissionGrant;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.rong.message.LocationMessage;
 
-public class AMAPLocationActivity extends ActionBarActivity implements OnLocationGetListener, PoiSearch.OnPoiSearchListener {
+public class AMAPLocationActivity extends ActionBarActivity implements OnLocationGetListener, PoiSearch.OnPoiSearchListener, AMap.OnMarkerClickListener {
 
     private static final int REQUECT_CODE_LOCATION = 1002;
     private static final int REQUECT_CODE_COARSE_LOCATION = 1003;
@@ -57,8 +64,6 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     EditText et_location;
     @BindView(R.id.myLocation)
     ImageView iv_enter;
-    @BindView(R.id.btn_seach_location)
-    Button btnSeachLocation;
     @BindView(R.id.ll_seacher_location)
     LinearLayout llSeacherLocation;
     @BindView(R.id.ll_location_back)
@@ -79,8 +84,8 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     RelativeLayout llLocationHeader;
 
     private AMap aMap;
-    private LatLng myLocation = null;
-    private Marker centerMarker;
+  private MyLocationStyle myLocationStyle;
+    private MarkerOptions markerOption;
     static public final int REQUEST_CODE_ASK_PERMISSIONS = 101;
     private LocationMessage mMsg;
     private LocationTask mLocationTask;
@@ -98,6 +103,8 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     private SharedPreferences sp;
     private String userName, userHeader;
     private String city;
+    private Tip tip;
+    private ArrayList<MarkerOptions> markerOptionsList = new ArrayList<>();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,7 +140,7 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     public void doSearchQuery(String content) {
         query = new PoiSearch.Query(content, "",city);
         query.setPageSize(10);//设置每页返回多少条条poiitem
-        query.setPageNum(1);//设置查第一页
+        query.setPageNum(0);//设置查第一页
         poiSearch = new PoiSearch(this, query);
         //如果不为空值
 //        if (latitude != 0.0 && longitude != 0.0) {
@@ -174,13 +181,20 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
         mLocationTask.setOnLocationGetListener(this);
         mRegeocodeTask = new RegeocodeTask(this);
         mRegeocodeTask.setOnLocationGetListener(this);
-
         //显示定位按钮
         aMap.setLocationSource(mLocationTask);
         /*aMap.getUiSettings().setMyLocationButtonEnabled(true);*/
         aMap.setMyLocationEnabled(true);
-        aMap.setMyLocationType(AMap.LOCATION_TYPE_MAP_FOLLOW);
-
+        myLocationStyle=new MyLocationStyle();
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_SHOW);
+        if(isMyAddress){
+            myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_FOLLOW);
+            aMap.setMyLocationStyle(myLocationStyle);
+        }else{
+            myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_SHOW);
+            aMap.setMyLocationStyle(myLocationStyle);
+            aMap.setOnMarkerClickListener(this);
+        }
         //比例尺
         aMap.getUiSettings().setScaleControlsEnabled(true);
         aMap.moveCamera(new CameraUpdateFactory().zoomTo(50));
@@ -263,9 +277,20 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
 
     @Override
     public void onPoiSearched(PoiResult poiResult, int i) {
+        this.poiResult=poiResult;
         for (PoiItem poiItem : poiResult.getPois()) {
-            L.d("周边",poiItem.getAdName());
+           markerOption=new MarkerOptions();
+            markerOption.position(new LatLng(poiItem.getLatLonPoint().getLatitude(),poiItem.getLatLonPoint().getLongitude()));
+            markerOption.title(poiItem.toString()).snippet(poiItem.getDirection());
+            markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                    .decodeResource(getResources(),R.mipmap.location_icon)));
+          markerOptionsList.add(markerOption);
         }
+        if(markerOptionsList.size()>0){
+           aMap.clear();
+            aMap.addMarkers(markerOptionsList,true);
+        }
+            showAddressPopWindow(poiResult);
     }
 
     @Override
@@ -273,19 +298,34 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
 
     }
 
-    @OnClick({R.id.btn_seach_location, R.id.myLocation, R.id.ll_location_back,
+    @OnClick({R.id.location, R.id.myLocation, R.id.ll_location_back,
             R.id.ll_location_header_back, R.id.tv_location_header_send})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.location:
+                Intent intent=new Intent(this,LocationSeacherActivity.class);
+                intent.putExtra("city",city);
+                startActivityForResult(intent,101);
+                break;
             case R.id.ll_location_header_back:
+                finish();
                 break;
             case R.id.tv_location_header_send:
+                if(poiResult!=null&&poiResult.getPois()!=null&&poiResult.getPois().size()>0){
+                    LatLonPoint latlonPoint=poiResult.getPois().get(0).getLatLonPoint();
+                    PoiItem poiItem=poiResult.getPois().get(0);
+                    String address=poiItem.getProvinceName()+poiItem.getCityName()+poiItem.getTitle()+poiItem.getDirection();
+                    mMsg = LocationMessage.obtain(latlonPoint.getLatitude(), latlonPoint.getLongitude(),address, getMapUrl(latlonPoint.getLatitude(), latlonPoint.getLongitude()));
+                }
+                if (mMsg != null) {
+                    AppContext.getInstance().getLastLocationCallback().onSuccess(mMsg);
+                    finish();
+                } else {
+                    AppContext.getInstance().getLastLocationCallback().onFailure("定位失败");
+                }
                 break;
             case R.id.ll_location_back:
                 finish();
-                break;
-            case R.id.btn_seach_location:
-                doSearchQuery(et_location.getText().toString());
                 break;
             case R.id.myLocation:
                 if (mMsg != null) {
@@ -300,5 +340,27 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==101&&resultCode==RESULT_OK){
+            if(data!=null){
+                tip=data.getParcelableExtra("tip");
+                doSearchQuery(tip.getName());
+            }
+        }
+    }
 
+    private void showAddressPopWindow(PoiResult poiResult) {
+        int WidthPixels = DisplayUtils.getScreenWidthPixels(this);
+        int heightPixels = DisplayUtils.getScreenHeightPixels(this);
+        AddressPopupWindow addressPopuWindow =new AddressPopupWindow(this,WidthPixels,heightPixels/3);
+        addressPopuWindow.setAddressList(poiResult);
+        addressPopuWindow.showPopupWindowAtButton(R.id.activity_amaplocation);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        doSearchQuery(marker.getTitle());
+        return false;
+    }
 }

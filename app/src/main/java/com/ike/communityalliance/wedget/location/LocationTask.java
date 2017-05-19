@@ -56,7 +56,6 @@ public class LocationTask implements AMapLocationListener,OnLocationGetListener,
                 entity.address=aMapLocation.getAddress();
                 entity.city=aMapLocation.getCity();
                 mOnLocationGetlisGetListener.onLocationGet(entity);
-
             }
         }
     }
