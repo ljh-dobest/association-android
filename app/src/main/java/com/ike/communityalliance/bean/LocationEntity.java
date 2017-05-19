@@ -8,14 +8,24 @@ public class LocationEntity {
     public double latitue;
     public double longitude;
     public String address;
+    public String city;
 
     public LocationEntity() {
     }
 
-    public LocationEntity(double latitue, double longitude, String address) {
+    public LocationEntity(double latitue, double longitude, String address, String city) {
         this.latitue = latitue;
         this.longitude = longitude;
         this.address = address;
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public double getLatitue() {

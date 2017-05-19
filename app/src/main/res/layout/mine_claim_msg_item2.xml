@@ -22,7 +22,7 @@
             android:id="@+id/tv_mine_claim_msg_item2_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/font_30"
+            android:textSize="16sp"
             android:textColor="@color/col_121212"
             android:text="王博文儿"/>
         <TextView
@@ -32,7 +32,7 @@
             android:id="@+id/tv_mine_claim_msg_item2_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/font_30"
+            android:textSize="16sp"
             android:textColor="@color/col_999999"
             android:text="尝试认领你,是否让王博文认领成功?"
             />

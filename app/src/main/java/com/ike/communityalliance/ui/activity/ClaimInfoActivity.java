@@ -117,9 +117,11 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     private String email;
     private String QQ;
     private String wechat;
-    private ArrayList<String> options1Items=new ArrayList<>();
-    private ArrayList<String> options2Items=new ArrayList<>();
-    private ArrayList<String> options3Items=new ArrayList<>();
+    private ArrayList<String> provinceItems = new ArrayList<>();
+    private ArrayList<String> citysItems = new ArrayList<>();
+    private ArrayList<String> countryItems = new ArrayList<>();
+    private ArrayList<String> jgCitysItems = new ArrayList<>();
+    private ArrayList<String> jgCountryItems = new ArrayList<>();
     private ArrayAdapter province_adapter;
     private ArrayAdapter city_adapter;
     private ArrayAdapter county_adapter;
@@ -201,13 +203,13 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     public void setprovinceData(ArrayList<ProvinceBean> data) {
         this.data=data;
         for (int i = 0; i < data.size(); i++) {
-            options1Items.add(data.get(i).getName());
+            provinceItems.add(data.get(i).getName());
         }
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //适配器
-                province_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, options1Items);
+                province_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, provinceItems);
                 //设置样式
                 province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //加载适配器
@@ -323,7 +325,6 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
         mobile=et_claiminfo_mobile.getText().toString();
         getHobbys(rg_claimInfo_like);
         address.add(sp_claimInfo_province.getSelectedItem().toString());
-        String s=sp_claimInfo_citys.getSelectedItem().toString();
         address.add(sp_claimInfo_citys.getSelectedItem().toString());
         try {
             address.add(sp_claimInfo_countys.getSelectedItem().toString());
@@ -359,38 +360,70 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
                 setThirdText(sp_claimInfo_countys,position);
                 break;
             case R.id.sp_claimInfo_jgprovince:     //设置二级联动
-                setSecondText(sp_claimInfo_jgcitys, position);
+                setJGSecondText(sp_claimInfo_jgcitys, position);
                 break;
             case R.id.sp_claimInfo_jgcitys: //设置三级联动
-                setThirdText(sp_claimInfo_jgcountys,position);
+                setJGThirdText(sp_claimInfo_jgcountys,position);
                 break;
         }
     }
+    //城市二级联动
     private void setSecondText(Spinner sp, int position) {
-        options2Items.clear();
+        citysItems.clear();
         citys = (ArrayList<CityBean>) data.get(position).getSub();
         for (int i = 0; i < citys.size(); i++) {
-            options2Items.add(citys.get(i).getName());
+            citysItems.add(citys.get(i).getName());
         }
-        city_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, options2Items);
+        city_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, R.layout.simple_spanner_item, citysItems);
+        city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(city_adapter);
+    }
+    //籍贯城市二级联动
+    private void setJGSecondText(Spinner sp, int position) {
+        jgCitysItems.clear();
+        citys = (ArrayList<CityBean>) data.get(position).getSub();
+        for (int i = 0; i < citys.size(); i++) {
+            jgCitysItems.add(citys.get(i).getName());
+        }
+        city_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, R.layout.simple_spanner_item, jgCitysItems);
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
 
+    //县区三级联动
     private void setThirdText(Spinner sp, int position) {
-        options3Items.clear();
+        countryItems.clear();
         ArrayList<CountyBean> country = (ArrayList<CountyBean>) citys.get(position).getSub();
         if (country == null) {
-            options3Items.add(" ");
+            countryItems.add("");
         } else {
-            if(country.size()==0){
-                options3Items.add("");
+            if (country.size() == 0) {
+                countryItems.add("");
             }
             for (int i = 0; i < country.size(); i++) {
-                options3Items.add(country.get(i).getName());
+                countryItems.add(country.get(i).getName());
             }
         }
-        county_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this,R.layout.simple_spanner_item, options3Items);
+        county_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, R.layout.simple_spanner_item, countryItems);
+        county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(county_adapter);
+    }
+
+    //籍贯县区三级联动
+    private void setJGThirdText(Spinner sp, int position) {
+        jgCountryItems.clear();
+        ArrayList<CountyBean> country = (ArrayList<CountyBean>) citys.get(position).getSub();
+        if (country == null) {
+            jgCountryItems.add("");
+        } else {
+            if (country.size() == 0) {
+                jgCountryItems.add("");
+            }
+            for (int i = 0; i < country.size(); i++) {
+                jgCountryItems.add(country.get(i).getName());
+            }
+        }
+        county_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, R.layout.simple_spanner_item, jgCountryItems);
         county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(county_adapter);
     }

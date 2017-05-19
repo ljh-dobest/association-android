@@ -1,7 +1,6 @@
 package com.ike.communityalliance.wedget.location;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -54,15 +53,9 @@ public class LocationTask implements AMapLocationListener,OnLocationGetListener,
                 LocationEntity entity=new LocationEntity();
                 entity.latitue=aMapLocation.getLatitude();
                 entity.longitude=aMapLocation.getLongitude();
-                entity.address=aMapLocation.getAoiName();
+                entity.address=aMapLocation.getAddress();
+                entity.city=aMapLocation.getCity();
                 mOnLocationGetlisGetListener.onLocationGet(entity);
-//                et_start.setText(aMapLocation.getAoiName());
-                Log.e("-----=-=-=-=","开始定位："+entity.latitue+","+entity.longitude+" "+entity.address);
-
-//                Toast.makeText(getActivity(),startLatitude+","+startLongitude,Toast.LENGTH_SHORT).show();
-            }else {
-                /*Toast.makeText(context,"定位失败："+aMapLocation.getErrorCode(),
-                        Toast.LENGTH_SHORT).show();*/
             }
         }
     }
@@ -77,6 +70,8 @@ public class LocationTask implements AMapLocationListener,OnLocationGetListener,
             //设置定位监听
             mLocationClient.setLocationListener(this);
             mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+            // 设置是否返回地址信息（默认返回地址信息）
+            mLocationOption.setNeedAddress(true);
             mLocationOption.setInterval(5000);
             mLocationClient.setLocationOption(mLocationOption);
             mLocationClient.startLocation();
@@ -96,6 +91,7 @@ public class LocationTask implements AMapLocationListener,OnLocationGetListener,
 
     @Override
     public void onLocationGet(LocationEntity entity) {
+
     }
     @Override
     public void onRegecodeGet(LocationEntity entity) {

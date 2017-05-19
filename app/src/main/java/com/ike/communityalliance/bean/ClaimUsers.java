@@ -5,7 +5,7 @@ package com.ike.communityalliance.bean;
  */
 
 public class ClaimUsers {
-    private String id;
+    private String userId;
     private String nickname;
     private String userPortraitUrl;
     private String fullName;
@@ -13,8 +13,8 @@ public class ClaimUsers {
     private String claimUsersId;
     private String claimUsersName;
 
-    public ClaimUsers(String id, String nickname, String userPortraitUrl, String fullName, String recommendId, String claimUsersId, String claimUsersName) {
-        this.id = id;
+    public ClaimUsers(String userId, String nickname, String userPortraitUrl, String fullName, String recommendId, String claimUsersId, String claimUsersName) {
+        this.userId = userId;
         this.nickname = nickname;
         this.userPortraitUrl = userPortraitUrl;
         this.fullName = fullName;
@@ -23,12 +23,12 @@ public class ClaimUsers {
         this.claimUsersName = claimUsersName;
     }
 
-    public String getId() {
-        return id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getNickname() {

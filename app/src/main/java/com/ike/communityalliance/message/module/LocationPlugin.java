@@ -1,5 +1,6 @@
 package com.ike.communityalliance.message.module;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -7,13 +8,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 
 import com.ike.communityalliance.R;
+import com.ike.communityalliance.ui.activity.LocationPopupWindow;
+import com.ike.communityalliance.utils.DisplayUtils;
 
-import io.rong.imkit.RongContext;
 import io.rong.imkit.RongExtension;
-import io.rong.imkit.RongIM;
 import io.rong.imkit.plugin.IPluginModule;
-import io.rong.imlib.model.Message;
-import io.rong.message.LocationMessage;
 
 /**
  * Created by Min on 2016/12/21.
@@ -21,7 +20,6 @@ import io.rong.message.LocationMessage;
 
 public class LocationPlugin implements IPluginModule {
     private Context context;
-
     /**
      * 初始化语音识别实例
      *
@@ -44,17 +42,24 @@ public class LocationPlugin implements IPluginModule {
 
     @Override
     public void onClick(Fragment currentFragment, final RongExtension extension) {
-        if(RongContext.getInstance() != null && RongContext.getInstance().getLocationProvider() != null) {
-            RongContext.getInstance().getLocationProvider().onStartLocation(context, new RongIM.LocationProvider.LocationCallback() {
-                public void onSuccess(LocationMessage locationMessage) {
-                    Message message = Message.obtain(extension.getTargetId(), extension.getConversationType(), locationMessage);
-                    RongIM.getInstance().sendLocationMessage(message, null, null, null);
-                }
 
-                public void onFailure(String msg) {
-                }
-            });
-        }
+        int WidthPixels = DisplayUtils.getScreenWidthPixels((Activity) context);
+        int height=DisplayUtils.getScreenHeightPixels((Activity) context);
+        LocationPopupWindow locationPopupWindow =new LocationPopupWindow((Activity) context,WidthPixels,height);
+       locationPopupWindow.setTargetIdAndConversationType(extension.getTargetId(),extension.getConversationType());
+        locationPopupWindow.showPopupWindow(R.id.fr_converstaion);
+
+//        if(RongContext.getInstance() != null && RongContext.getInstance().getLocationProvider() != null) {
+//            RongContext.getInstance().getLocationProvider().onStartLocation(context, new RongIM.LocationProvider.LocationCallback() {
+//                public void onSuccess(LocationMessage locationMessage) {
+//                    Message message = Message.obtain(extension.getTargetId(), extension.getConversationType(), locationMessage);
+//                    RongIM.getInstance().sendLocationMessage(message, null, null, null);
+//                }
+//
+//                public void onFailure(String msg) {
+//                }
+//            });
+//        }
     }
 
 

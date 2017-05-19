@@ -114,18 +114,22 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     private ArrayList<ProvinceBean> data;
     private ArrayList<CityBean> citys;
     private VerifyRecommedInfoBean verifyRecommedInfo;
+    private VerifyRecommedInfo verifyInfo;
     private String curDegreeCode="0";
     private List<String> hobbyList;
-      private boolean isFromLogin=false;
+    private List<String> jgAddressList=new ArrayList<>();
+    private boolean isFromLogin=false;
+    private  String recommendId;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_recommed_info);
         ButterKnife.bind(this);
         userId=getIntent().getStringExtra("useId");
+        recommendId=getIntent().getStringExtra("recommendId");
         isFromLogin=getIntent().getBooleanExtra("fromLogin",false);
         if(userId!=null){
-            getVerifyInfo(userId);
+            getVerifyInfo(userId,recommendId);
         }
         presenter.parserData(this,"data.txt");
         initView();
@@ -236,13 +240,16 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     }
 
     @Override
-    public void getVerifyInfo(String userId) {
-         presenter.getVerifyRecommendInfo(userId);
+    public void getVerifyInfo(String userId,String recommendId) {
+         presenter.getVerifyRecommendInfo(userId,recommendId);
     }
 
     @Override
     public void setVerifyInfo(VerifyRecommedInfo verifyInfo) {
-          et_verifyInfo_username.setText(verifyInfo.getFullName());
+        this.verifyInfo=verifyInfo;
+        int position=provinceList.indexOf(verifyInfo.getAddress().getFirstStage());
+        sp_verifyInfo_province.setSelection(position);
+        et_verifyInfo_username.setText(verifyInfo.getFullName());
         hobbyList= Arrays.asList(verifyInfo.getHobby().split(","));
         initHobby();
         if(verifyInfo.getSex().equals("1")){
@@ -256,6 +263,11 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         et_verifyInfo_mobile.setText(verifyInfo.getMobile());
         et_verifyInfo_company.setText(verifyInfo.getCompany());
         et_verifyInfo_finishSchool.setText(verifyInfo.getFinishSchool());
+        jgAddressList=Arrays.asList(verifyInfo.getHomeplace().split(","));
+        if(jgAddressList.size()>0){
+            int index=provinceList.indexOf(jgAddressList.get(0));
+            sp_verifyInfo_jgprovince.setSelection(index);
+        }
     }
 
     private void initHobby() {
@@ -264,7 +276,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         }
         for (int i = 0; i < rg_verifyInfo_like.getChildCount(); i++) {
             LinearLayout ll= (LinearLayout) rg_verifyInfo_like.getChildAt(i);
-            for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
+            for (int j= 2; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
                 CheckBox rb= (CheckBox) ll.getChildAt(j);
                 if(hobbyList.contains(rb.getText().toString())){
                     rb.setChecked(true);
@@ -340,10 +352,10 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         }
         address.add("");
         birthday=et_verifyInfo_birthday.getText().toString();
-        homeplace=sp_verifyInfo_jgprovince.getSelectedItem().toString()+
+        homeplace=sp_verifyInfo_jgprovince.getSelectedItem().toString()+ "," +
                 sp_verifyInfo_jgcitys.getSelectedItem().toString();
         try {
-            homeplace=homeplace+sp_verifyInfo_jgcountys.getSelectedItem().toString();
+            homeplace= homeplace + "," + sp_verifyInfo_jgcountys.getSelectedItem().toString();
         }catch (Exception e){
         }
         finishSchool=et_verifyInfo_finishSchool.getText().toString();
@@ -352,7 +364,7 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
         email=et_verifyInfo_email.getText().toString();
         QQ=et_verifyInfo_QQ.getText().toString();
         wechat=et_verifyInfo_wechat.getText().toString();
-        verifyRecommedInfo=new VerifyRecommedInfoBean(userId,fullName,mobile,SfullName,sex,
+        verifyRecommedInfo=new VerifyRecommedInfoBean(recommendId,userId,fullName,mobile,SfullName,sex,
                 hobby, address,birthday,homeplace,finishSchool,
                 curDegreeCode, company, position,email,QQ,wechat);
     }
@@ -369,6 +381,14 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 city_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, cityList);
                 city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_citys.setAdapter(city_adapter);
+                if(verifyInfo==null){
+                    return;
+                }
+                if(verifyInfo.getAddress().getSecondStage()!=null){
+                    int index=cityList.indexOf(verifyInfo.getAddress().getSecondStage());
+                    sp_verifyInfo_citys.setSelection(index);
+                }
+
                 break;
             case R.id.sp_verifyInfo_citys: //设置县区三级联动
                 countyList.clear();
@@ -383,6 +403,13 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 county_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, countyList);
                 county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_countys.setAdapter(county_adapter);
+                if(verifyInfo==null){
+                    return;
+                }
+                if(verifyInfo.getAddress().getThirdStage()!=null){
+                    int index=countyList.indexOf(verifyInfo.getAddress().getThirdStage());
+                    sp_verifyInfo_countys.setSelection(index);
+                }
                 break;
             case R.id.sp_verifyInfo_jgprovince:     //设置二级联动
                 jgcityList.clear();
@@ -393,6 +420,10 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 city_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, jgcityList);
                 city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_jgcitys.setAdapter(city_adapter);
+                if(jgAddressList.size()>1){
+                    int index=jgcityList.indexOf(jgAddressList.get(1));
+                    sp_verifyInfo_jgcitys.setSelection(index);
+                }
                 break;
             case R.id.sp_verifyInfo_jgcitys: //设置三级联动
                 jgcountyList.clear();
@@ -407,6 +438,10 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 county_adapter = new ArrayAdapter<String>(this,R.layout.simple_spanner_item, jgcountyList);
                 county_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sp_verifyInfo_jgcountys.setAdapter(county_adapter);
+                if(jgAddressList.size()>2){
+                    int index=jgcountyList.indexOf(jgAddressList.get(2));
+                    sp_verifyInfo_jgcountys.setSelection(index);
+                }
                 break;
         }
     }

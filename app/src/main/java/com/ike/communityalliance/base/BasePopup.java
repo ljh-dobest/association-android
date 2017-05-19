@@ -116,7 +116,7 @@ public abstract class BasePopup extends PopupWindow implements View.OnClickListe
     public void showPopupWindow(int resource) {
         try {
             mPopupWindow.showAtLocation(mActivity.findViewById(resource),
-                    Gravity.RIGHT | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    Gravity.CENTER_HORIZONTAL, 0, 0);
             if (setAnima()!=null&&view!=null){
                 view.findViewById(R.id.popup_base).startAnimation(setAnima());
             }
@@ -124,7 +124,17 @@ public abstract class BasePopup extends PopupWindow implements View.OnClickListe
             Log.e(TAG, "Show Popup Error2");
         }
     }
-
+    public void showPopupWindowAtButton(int resource) {
+        try {
+            mPopupWindow.showAtLocation(mActivity.findViewById(resource),
+                    Gravity.BOTTOM, 0, 0);
+            if (setAnima()!=null&&view!=null){
+                view.findViewById(R.id.popup_base).startAnimation(setAnima());
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Show Popup Error2");
+        }
+    }
     public void showPopupWindow(View view) {
         try {
             mPopupWindow.showAsDropDown(view);

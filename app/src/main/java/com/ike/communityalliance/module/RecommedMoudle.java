@@ -70,7 +70,7 @@ public class RecommedMoudle {
                                   listener.showRecommedError("推荐失败");
                                   break;
                               case 100:
-                                  listener.showRecommedError("有信息为空");
+                                  listener.showRecommedError("用户已注册");
                                   break;
                               case 101:
                                   listener.showRecommedError("数据插入失败");

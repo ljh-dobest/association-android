@@ -27,8 +27,8 @@ import okhttp3.Call;
  */
 
 public class VerifyRecommedInfoMoudle {
-    public  void getVerifyRecommedInfo(String useId, final OnVerifyRecommedInfoFinishListener listener){
-            HttpUtils.getRecommedInfo("/selectRecommendInfo", useId, new StringCallback() {
+    public  void getVerifyRecommedInfo(String useId, String recommendId,final OnVerifyRecommedInfoFinishListener listener){
+            HttpUtils.getRecommedInfo("/selectRecommendInfo", useId,recommendId, new StringCallback() {
                 @Override
                 public void onError(Call call, Exception e, int id) {
                     listener.failedToVerifyInfo(e.toString());

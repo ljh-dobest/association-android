@@ -77,10 +77,10 @@
             android:name="RONG_CLOUD_APP_KEY"
             android:value="x18ywvqf8xf0c" />
         -->
-        <!-- 融云测试 -->
+        <!-- 融云 -->
         <meta-data
             android:name="RONG_CLOUD_APP_KEY"
-            android:value="tdrvipkstdnk5" />
+            android:value="x4vkb1qpx0tmk" />
 
         <!-- 高德 -->
         <meta-data
@@ -173,7 +173,7 @@
         <activity android:name=".ui.activity.RecomendCardActivity" />
         <activity android:name=".ui.activity.RecommendActivity" />
         <activity android:name=".ui.activity.RelationMapActivity" />
-        <activity android:name=".ui.activity.RelationShipActivity"/>
+        <activity android:name=".ui.activity.RelationShipActivity" />
         <activity android:name=".ui.activity.FeedBackActivity" />
         <activity android:name=".ui.activity.SettingActivity" />
         <activity android:name=".ui.activity.VerifyRecommedInfoActivity" />
@@ -278,7 +278,8 @@
         <activity android:name=".ui.activity.MineClaimMsgActivity" />
         <activity android:name=".ui.activity.PhoneContactActivity" />
         <activity android:name=".ui.activity.SetDisplayNameActivity" />
-        <activity android:name=".ui.activity.MoreUserDetailInfoActivity"></activity>
+        <activity android:name=".ui.activity.MoreUserDetailInfoActivity" />
+        <activity android:name=".ui.activity.LocationSeacherActivity"></activity>
     </application>
 
 </manifest>

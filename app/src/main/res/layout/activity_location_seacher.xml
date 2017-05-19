@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal">
+   <EditText
+       android:id="@+id/et_location_search"
+       android:layout_marginBottom="3dp"
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:lines="1"
+       android:hint="搜索具体位置"
+       android:background="@color/col_ECEEF0"
+       android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/tv_location_search_cancel"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/col_121212"
+        android:text="取消"
+        android:textSize="14sp"/>
+</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_location_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/tv_search_address_none"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/col_999999"
+        android:text="暂无搜到具体位置"
+        />
+</LinearLayout>

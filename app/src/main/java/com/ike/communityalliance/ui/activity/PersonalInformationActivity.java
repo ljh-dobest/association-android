@@ -38,7 +38,9 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -114,6 +116,7 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
     private  String userId;
+    private List<String> addressList;
     private String userPortraitUrl,account,nickName,age,sex,useId,email,recommendUserId,
             birthday,address,mobile,experience,creditScore,contributionScore,claimUserId;
     @Override
@@ -164,6 +167,8 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         pbPersonalInfoCreditScore.setProgress(Integer.valueOf(creditScore));
         pbPersonalInfoExperience.setProgress( Integer.valueOf(experience));
         tvPersonalInfoContributionScore.setText(contributionScore);
+        tvPersonalInfoCreditScore.setText(creditScore);
+        tvPersonalInfoExperience.setText(experience);
     }
 
     @Override
@@ -196,8 +201,17 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                 province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 //加载适配器
                 spPersonalInfoProvince.setAdapter(province_adapter);
+                initAddress();
             }
         });
+    }
+    //初始化地址
+    private void initAddress() {
+        addressList= Arrays.asList(address.split(","));
+        if(addressList.size()>0){
+            int position=options1Items.indexOf(addressList.get(0));
+            spPersonalInfoProvince.setSelection(position);
+        }
     }
 
 
@@ -250,11 +264,11 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                  LoadDialog.show(this);
                 nickName=etPersonalInfoNickName.getText().toString();
                 mobile=etPersonalInfoMobile.getText().toString();
-                address=spPersonalInfoProvince.getSelectedItem().toString()+spPersonalInfoCitys.getSelectedItem().toString()+spPersonalInfoCountys.getSelectedItem().toString();
+                address=spPersonalInfoProvince.getSelectedItem().toString()+","+spPersonalInfoCitys.getSelectedItem().toString()+","+spPersonalInfoCountys.getSelectedItem().toString();
                 birthday=etPersonalInfoBirthday.getText().toString();
                 age=etPersonalInfoAge.getText().toString();
                 email=et_personal_info_email.getText().toString();
-                if(address.equals("请选择请选择 ")){
+                if(address.equals("请选择,请选择, ")){
                     T.showShort(this, "请输入详细地址信息");
                     LoadDialog.dismiss(this);
                     return;
@@ -281,9 +295,17 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         switch (parent.getId()) {
             case R.id.sp_personal_info_province:     //设置二级联动
                 setSecondText(spPersonalInfoCitys, position);
+                if(addressList.size()>1){
+                    int index=options2Items.indexOf(addressList.get(1));
+                    spPersonalInfoCitys.setSelection(index);
+                }
                 break;
             case sp_personal_info_citys: //设置三级联动
                 setThirdText(spPersonalInfoCountys,position);
+                if(addressList.size()>2){
+                    int index=options3Items.indexOf(addressList.get(2));
+                    spPersonalInfoCountys.setSelection(index);
+                }
                 break;
         }
     }
@@ -354,7 +376,6 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
 
     @Override
     public void showError(String errorString) {
-        initData();
         T.showShort(this,errorString);
         LoadDialog.dismiss(this);
     }

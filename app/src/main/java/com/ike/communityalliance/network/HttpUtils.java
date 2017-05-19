@@ -643,8 +643,16 @@ public class HttpUtils {
                 .build().execute(callback);
     }
 
-    //获取已推荐列表
-    public static void getRecommedInfo(String url,String userId,StringCallback callback){
+    //获取已推荐的信息
+    public static void getRecommedInfo(String url,String userId,String recommendId,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("recommendId",recommendId)
+                .build().execute(callback);
+    }
+    //获取已推荐的信息
+    public static void getWasRecommedInfo(String url,String userId,StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
@@ -717,6 +725,7 @@ public class HttpUtils {
         String address = gson.toJson(verifyRecommedInfo.getAddress());
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
+                .addParams("recommendId",verifyRecommedInfo.getRecommendId())
                 .addParams("userId",verifyRecommedInfo.getUserId())
                 .addParams("fullName",verifyRecommedInfo.getFullName())
                 .addParams("SfullName",verifyRecommedInfo.getSfullName())
@@ -795,6 +804,14 @@ public class HttpUtils {
                 .addParams("Scompany",info.getScompany())
                 .addParams("position",info.getPosition())
                 .addParams("Sposition",info.getSposition())
+                .build().execute(callback);
+    }
+    //提交平台反馈
+    public static void postFeedBack(String url,String userId,String content,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
+                .addParams("content",content)
                 .build().execute(callback);
     }
 }

@@ -15,6 +15,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="18dp"
         android:layout_marginBottom="18dp"
+        android:src="@mipmap/mine"
         android:id="@+id/civ_icon" />
 
     <TextView
@@ -30,11 +31,11 @@
         android:id="@+id/tv_nickname" />
 
     <TextView
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="@string/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/civ_icon"
+        android:layout_below="@id/tv_nickname"
         android:layout_alignLeft="@+id/tv_nickname"
         android:layout_alignStart="@+id/tv_nickname"
         android:id="@+id/tv_message" />
@@ -83,6 +84,4 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="90dp" />
-
-
 </RelativeLayout>

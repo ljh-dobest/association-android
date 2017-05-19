@@ -81,6 +81,7 @@ dependencies {
     compile project(':IMLib')
     compile project(':RedPacket')
     compile project(':Libraries:DroidPlugin')
+    compile files('src/main/jniLibs/AMap3DMap_5.0.0_AMapSearch_5.0.0_AMapLocation_3.4.0_20170427.jar')
     compile 'com.zhy:mpermission-api:1.0.0'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
@@ -110,5 +111,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     apt 'com.zhy:mpermission-compiler:1.0.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile files('src/main/jniLibs/AMap3DMap_5.0.0_AMapSearch_5.0.0_AMapLocation_3.4.0_20170427.jar')
 }
