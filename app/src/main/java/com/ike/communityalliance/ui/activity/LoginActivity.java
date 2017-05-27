@@ -5,55 +5,50 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Message;
-import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.ike.communityalliance.App;
 import com.ike.communityalliance.R;
-import com.ike.communityalliance.base.BaseActivity;
-import com.ike.communityalliance.bean.Code;
-import com.ike.communityalliance.bean.GroupMember;
+import com.ike.communityalliance.base.BaseMvpActivity;
 import com.ike.communityalliance.bean.Groups;
-import com.ike.communityalliance.bean.LoginBean;
+import com.ike.communityalliance.bean.UserInfo;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.db.DBOpenHelper;
 import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.db.GroupMemberDAOImpl;
 import com.ike.communityalliance.db.GroupsDAOImpl;
+import com.ike.communityalliance.interfaces.ILoginView;
 import com.ike.communityalliance.network.HttpUtils;
-import com.ike.mylibrary.util.CommonUtils;
-import com.ike.mylibrary.util.L;
+import com.ike.communityalliance.presenter.LoginPresenterImpl;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
-import com.zhy.http.okhttp.callback.StringCallback;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.rong.imkit.RongIM;
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.UserInfo;
-import okhttp3.Call;
 
 /**
  * 登录
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
-    private AutoCompleteTextView et_user;
-    private EditText et_pwd;
-    private TextView tv_register;
-    private Button btn_login;
-    private String user;
-    private String password;
+public class LoginActivity extends BaseMvpActivity<ILoginView,LoginPresenterImpl> implements ILoginView {
+
+
+    @BindView(R.id.et_login_phone)
+    EditText etLoginPhone;
+    @BindView(R.id.et_login_pwd)
+    EditText etLoginPwd;
+    @BindView(R.id.btn_login)
+    Button btnLogin;
+    @BindView(R.id.tv_normal_register)
+    TextView tvNormalRegister;
+    @BindView(R.id.tv_vip_register)
+    TextView tvVipRegister;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private List<Groups> list = new ArrayList<>();
@@ -61,260 +56,141 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private GroupsDAOImpl groupsDAO;
     private FriendInfoDAOImpl friendInfoDAO;
     private GroupMemberDAOImpl groupMemberDAO;
-    private Groups mGroup;
-    private List<GroupMember> mGroupMember;
-    private String uid;
+    private String userName;
+    private String pwd;
 
+    public static int MODE = Context.MODE_PRIVATE;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        dbOpenHelper = new DBOpenHelper(mContext, "talk.db", null, 2);// 创建数据库文件
-        dbOpenHelper.getWritableDatabase();
-        groupsDAO = new GroupsDAOImpl(mContext);
-        friendInfoDAO = new FriendInfoDAOImpl(mContext);
-        groupMemberDAO = new GroupMemberDAOImpl(mContext);
-
-        sharedPreferences = getSharedPreferences("config",Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+        ButterKnife.bind(this);
         initView();
     }
 
+    @Override
+    public LoginPresenterImpl initPresenter() {
+        return new LoginPresenterImpl();
+    }
 
 
     private void initView() {
-        et_user = (AutoCompleteTextView) findViewById(R.id.user);
-        et_pwd = (EditText) findViewById(R.id.password);
-        tv_register = (TextView) findViewById(R.id.tv_register);
-        btn_login = (Button) findViewById(R.id.sign_in_button);
-        tv_register.setOnClickListener(this);
-        btn_login.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_register:
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivityForResult(intent, 0);
-                break;
-            case R.id.sign_in_button:
-                if (!CommonUtils.isNetConnect(mContext)) {
-                    T.showShort(mContext, R.string.no_network);
-                    LoadDialog.dismiss(mContext);
-                    return;
-                }
-                user = et_user.getText().toString().trim();
-                password = et_pwd.getText().toString().trim();
-                login(user, password);
-//                String token = sharedPreferences.getString(Const.LOGIN_TOKEN,"");
-//                connect("tP4VqBo3VC6JYDHzpwckImu1eBnVvHicknDcpKKoK6cJhh9DWt8ZFQk0u9jwUUPlfO/lHiUGajaWcjWW9EhqA+bGduDaQtP8");
-                break;
-            default:
-                break;
-        }
+        dbOpenHelper = new DBOpenHelper(this, "talk.db", null, 2);// 创建数据库文件
+        dbOpenHelper.getWritableDatabase();
+        groupsDAO = new GroupsDAOImpl(this);
+        friendInfoDAO = new FriendInfoDAOImpl(this);
+        groupMemberDAO = new GroupMemberDAOImpl(this);
+        sharedPreferences =getSharedPreferences("config", MODE);
+        editor = sharedPreferences.edit();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 0) {
-            if (resultCode == RESULT_OK) {
-                Bundle bundle = data.getExtras();
-                String phone = bundle.getString("phone");
-                String password = bundle.getString("password");
-                et_user.setText(phone);
-                et_pwd.setText(password);
-            }
-        }
+       if(resultCode==RESULT_OK){
+           switch (requestCode) {
+               case 100:
+                  etLoginPhone.setText(data.getStringExtra("mobile"));
+                  etLoginPwd.setText(data.getStringExtra("pwd"));
+                   break;
+               case 101:
+
+                   break;
+           }
+       }
     }
 
-    /**
-     * 登录
-     * @param user
-     * @param password
-     */
-    private void login(final String user, final String password) {
-        if ("".equals(user) || "".equals(password)) {
-            Toast.makeText(LoginActivity.this, "用户名和密码不能为空", Toast.LENGTH_SHORT).show();
-        } else if (user != null && password != null) {   ///?phone=18819493906&password=123456
-            LoadDialog.show(mContext);
-            HttpUtils.postLoginRequest("/login", user, password, new StringCallback() {
-                @Override
-                public void onError(Call call, Exception e, int id) {
-                    T.showShort(mContext, "/login----" + e);
-                    LoadDialog.dismiss(mContext);
-                    return;
-                }
-
-                @Override
-                public void onResponse(String response, int id) {
-                    L.e("responeUserInfo","用户信息"+response);
-                    HttpUtils.setCookie(LoginActivity.this);
-                    Gson gson = new Gson();
-                    Type type = new TypeToken<Code<LoginBean>>() {
-                    }.getType();
-                    Code<LoginBean> code =gson.fromJson(response,type);
-                    int code1 = code.getCode();
-                    if (code1 == 200) {
-                        LoginBean bean = code.getData();
-                        uid = bean.getUserId();
-                        String token = bean.getToken();
-                        String nickName = bean.getNickname();
-                        String portraitUri =HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl();
-                        String userPortraitUrl=bean.getUserPortraitUrl();
-                        String sex =bean.getSex();
-                        String phone = bean.getMobile();
-                        String address = bean.getAddress();
-                        String birthday = bean.getBirthday();
-                        String email=bean.getEmail();
-                        String age =bean.getAge();
-                        L.e("-----------", "LoginActivity---connecting");
-                        editor.putString("user", user);
-                        editor.putString(Const.LOGIN_PASSWORD, password);
-                        editor.putBoolean("login_message", true);
-                        editor.putString(Const.LOGIN_ID, uid);
-                        editor.putString(Const.LOGIN_TOKEN, token);
-                        editor.putString(Const.LOGIN_NICKNAME, nickName);
-                        editor.putString(Const.LOGIN_PORTRAIT, portraitUri);
-                        editor.putString(Const.userPortraitUrl,userPortraitUrl);
-                        editor.putString(Const.LOGIN_BIRTHDAY,birthday);
-                        editor.putString(Const.LOGIN_SEX,sex);
-                        editor.putString(Const.LOGIN_ADDRESS,address);
-                        editor.putString(Const.LOGIN_AGE,age);
-                        editor.putString(Const.LOGIN_PHONE,phone);
-                        editor.putString(Const.LOGIN_EMAIL,email);
-                        editor.commit();
-                        RongIM.getInstance().refreshUserInfoCache(new UserInfo(uid, nickName, Uri.parse(portraitUri)));
-                        startActivity(new Intent(mContext, LogoActivity.class));
-                        LoadDialog.dismiss(mContext);
-                        T.showLong(mContext, "登录成功请稍等...");
-                        initGroups(uid);
-                        finish();
-                    } else if (code1 == 0) {
-                        Toast.makeText(LoginActivity.this, "账号不存在！", Toast.LENGTH_SHORT).show();
-                        LoadDialog.dismiss(mContext);
-                    } else if (code1 == 1001) {
-                        T.showShort(mContext, "密码错误");
-                        LoadDialog.dismiss(mContext);
-                    } else if (code1 == 1000) {
-                        T.showShort(mContext, "账号禁止登录");
-                        LoadDialog.dismiss(mContext);
-                    }
-                }
-            });
-        } else {
-            Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private String groupId;
-//    private String userId = getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_ID, "");
-
-    /**
-     * 获取群组列表
-     */
-    private void initGroups(final String userId) {
-        HttpUtils.postGroupListRequest("/groupData", userId, new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                T.showShort(mContext, "/groupData" + e);
-                return;
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                L.e("gounps","群组列表"+response);
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code<List<Groups>>>() {
-                }.getType();
-                Code<List<Groups>> code = gson.fromJson(response,type);
-                if (code.getCode() == 200) {
-                    List<Groups> groups = code.getData();
-                    if(groups!=null) {
-                        for (Groups groups1 : groups) {
-                            groupId = groups1.getGroupId();
-                            String groupName = groups1.getGroupName();
-                            String groupPort = HttpUtils.IMAGE_RUL + groups1.getGroupPortraitUrl();
-                            String role = groups1.getRole();
-//                        list.add(new Groups(groupid, groupName, groupPort));
-                            Groups groups2 = new Groups();
-                            groups2.setUserId(userId);
-                            groups2.setGroupId(groupId);  //groupId
-                            groups2.setGroupName(groupName);  //groupName
-                            groups2.setGroupPortraitUrl(groupPort);
-                            groups2.setRole(role);
-                            groupsDAO.save(groups2);
-                            L.e("-------------==-=-", "群组列表插入成功");// 用日志记录一个我们自定义的输出。可以在LogCat窗口中查看，
-                        }
-                    }
-                    LoadDialog.dismiss(mContext);
-                } else {
-                    LoadDialog.dismiss(mContext);
-                }
-            }
-        });
-    }
-
-
-    private void connect(String token) {
-        LoadDialog.show(mContext);
-        final Message message = new Message();
-        if (getApplicationInfo().packageName.equals(App.getCurProcessName(getApplicationContext()))) {
-            /**
-             * IMKit SDK调用第二步,建立与服务器的连接
-             */
-            RongIM.connect(token, new RongIMClient.ConnectCallback() {
-                //Token 错误，在线上环境下主要是因为 Token 已经过期，您需要向 App Server 重新请求一个新的 Token
-                @Override
-                public void onTokenIncorrect() {
-                    /*message.what=0;
-                    handler.sendMessage(message);*/
-                    T.showShort(mContext, "Token 错误，Token 已经过期");
-                    return;
-                }
-
-                //连接融云成功
-                @Override
-                public void onSuccess(String s) {
-                    /*message.what=1;
-                    message.obj=s;
-                    handler.sendMessage(message);*/
-                    T.showLong(mContext, "登录成功!第一次登录有点久，请稍等一下");
-                    /*startActivity(new Intent(mContext, LogoActivity.class));
-                    L.e("-----------","LoginActivity---connected");
-                    LoadDialog.dismiss(mContext);
-                    initGroups(uid);*/
-//                    finish();
-                }
-
-                /**
-                 * 连接融云失败
-                 * @param errorCode 错误码，可到官网 查看错误码对应的注释
-                 * http://www.rongcloud.cn/docs/android.html#常见错误码
-                 */
-                @Override
-                public void onError(RongIMClient.ErrorCode errorCode) {
-                    T.showShort(mContext, "--网络异常....."+errorCode);
-                    return;
-                    /*message.what=2;
-                    message.obj=errorCode;
-                    handler.sendMessage(message);*/
-                }
-            });
+    @OnClick({R.id.btn_login, R.id.tv_normal_register, R.id.tv_vip_register})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_login:
+                LoadDialog.show(this);
+                userName = etLoginPhone.getText().toString().trim();
+                pwd = etLoginPwd.getText().toString().trim();
+                presenter.verifyLoginInfo(userName, pwd);
+                break;
+            case R.id.tv_normal_register:
+                startActivityForResult(new Intent(this,CommonRegisterActivity.class),100);
+                break;
+            case R.id.tv_vip_register:
+                startActivityForResult(new Intent(this,VipRegisterActivity.class),101);
+                break;
         }
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {  //按下的如果是BACK，同时没有重复
-            LoginActivity.this.finish();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
+    public void showUserNameOrPassWordEmpty(String errorString) {
+        T.showShort(this,errorString);
+
     }
 
+    @Override
+    public void showFailedLogin(String errorString) {
+        LoadDialog.dismiss(this);
+        T.showShort(this,errorString);
+    }
+
+    @Override
+    public void succeedToLogin(UserInfo userInfo) {
+        LoadDialog.dismiss(this);
+        saveData(userInfo);
+        String status=userInfo.getStatus();
+        if(status==null){
+            status="1";
+        }
+        if(status.equals("0")){
+            Intent intent=new Intent(this,VerifyRecommedInfoActivity.class);
+            intent.putExtra("useId",userInfo.getUserId());
+            intent.putExtra("recommendId",userInfo.getNumberId());
+            intent.putExtra("fromLogin",true);
+            startActivity(intent);
+        }else{
+            Intent intent=new Intent(this,LogoActivity.class);
+            startActivity(intent);
+        }
+        finish();
+    }
+    private void saveData(UserInfo userInfo) {
+        String useId=userInfo.getUserId();
+        String recommedId=userInfo.getNumberId();
+        String token = userInfo.getToken();
+        String nickName = userInfo.getNickname();
+        String userPortraitUrl= HttpUtils.IMAGE_RUL+userInfo.getUserPortraitUrl();
+        String account=userInfo.getNumberId();
+        String sex =userInfo.getSex();
+        String phone = userInfo.getMobile();
+        String address = userInfo.getAddress();
+        String birthday = userInfo.getBirthday();
+        String email=userInfo.getEmail();
+        String age =userInfo.getAge();
+        String experience=userInfo.getExperience();
+        String creditScore=userInfo.getCreditScore();
+        String contributionScore=userInfo.getContributionScore();
+        String recommendUserId=userInfo.getRecommendUserId();
+        String claimUserId=userInfo.getClaimUserId();
+        editor.putString(Const.LOGIN_USERNAME, userName);
+        editor.putString(Const.LOGIN_RECOMMEDID,recommedId);
+        editor.putString(Const.LOGIN_PASSWORD, pwd);
+        editor.putBoolean("login_message", true);
+        editor.putString(Const.LOGIN_ID, useId);
+        editor.putString(Const.LOGIN_TOKEN, token);
+        editor.putString(Const.LOGIN_NICKNAME, nickName);
+        editor.putString(Const.LOGIN_PORTRAIT, userPortraitUrl);
+        editor.putString(Const.LOGIN_ACCOUNT, account);
+        editor.putString(Const.userPortraitUrl,userPortraitUrl);
+        editor.putString(Const.LOGIN_BIRTHDAY,birthday);
+        editor.putString(Const.LOGIN_SEX,sex);
+        editor.putString(Const.LOGIN_ADDRESS,address);
+        editor.putString(Const.LOGIN_AGE,age);
+        editor.putString(Const.LOGIN_PHONE,phone);
+        editor.putString(Const.LOGIN_EMAIL,email);
+        editor.putString(Const.LOGIN_EXPERIENCE,experience);
+        editor.putString(Const.LOGIN_CREDITSCORE,creditScore);
+        editor.putString(Const.LOGIN_CONTRIBUTIONSCORE,contributionScore);
+        editor.putString(Const.LOGIN_RECOMMENDUSERID,recommendUserId);
+        editor.putString(Const.LOGIN_CLAIMUSERID,claimUserId);
+        editor.commit();
+        RongIM.getInstance().refreshUserInfoCache(new io.rong.imlib.model.UserInfo(useId, nickName, Uri.parse(userPortraitUrl)));
+    }
 }
 
 

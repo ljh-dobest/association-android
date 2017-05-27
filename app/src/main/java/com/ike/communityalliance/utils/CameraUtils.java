@@ -11,11 +11,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
-
-import com.ike.communityalliance.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -97,25 +92,25 @@ public class CameraUtils {
         }
     }
 
-    /**
-     * 图片裁剪
-     * fragment
-     */
-    public static void cropPhotos(Context context,Fragment fragment, Uri imgUri) {
-
-        View view = LayoutInflater.from(context).inflate(R.layout.fragment_personal, null);
-        final ImageView imageView = (ImageView) view.findViewById(R.id.civ_icon);
-        //呼叫裁剪应用程序
-        Intent i = new Intent("com.android.camera.action.CROP");
-        i.setDataAndType(imgUri, "image/*");
-        i.putExtra("scale", true);
-        i.putExtra("aspectX", 4);
-        i.putExtra("aspectY", 4);
-        i.putExtra("outputX",100);
-        i.putExtra("outputY",100);
-        i.putExtra(MediaStore.EXTRA_OUTPUT, CameraUtils.imgUri);//裁剪后重新保存
-        fragment.startActivityForResult(i, PHOTO_CROP);
-    }
+//    /**
+//     * 图片裁剪
+//     * fragment
+//     */
+//    public static void cropPhotos(Context context,Fragment fragment, Uri imgUri) {
+//
+//        View view = LayoutInflater.from(context).inflate(R.layout.fragment_personal, null);
+//        final ImageView imageView = (ImageView) view.findViewById(R.id.civ_icon);
+//        //呼叫裁剪应用程序
+//        Intent i = new Intent("com.android.camera.action.CROP");
+//        i.setDataAndType(imgUri, "image/*");
+//        i.putExtra("scale", true);
+//        i.putExtra("aspectX", 4);
+//        i.putExtra("aspectY", 4);
+//        i.putExtra("outputX",100);
+//        i.putExtra("outputY",100);
+//        i.putExtra(MediaStore.EXTRA_OUTPUT, CameraUtils.imgUri);//裁剪后重新保存
+//        fragment.startActivityForResult(i, PHOTO_CROP);
+//    }
 
     /**
      * 存储图片路径

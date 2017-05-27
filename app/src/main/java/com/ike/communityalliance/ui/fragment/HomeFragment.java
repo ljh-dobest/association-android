@@ -85,7 +85,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     }
 
     @Override
-    public void onResume  () {
+    public void onResume() {
         super.onResume();
         initGridView();
     }

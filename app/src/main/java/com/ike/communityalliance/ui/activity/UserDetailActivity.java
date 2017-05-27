@@ -75,6 +75,8 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
     TextView tvUserDetailContributionNum;
     @BindView(R.id.tv_user_detail_creditScore)
     TextView tvUserDetailCreditScore;
+    @BindView(R.id.tv_user_detail_intimacy)
+    TextView tvUserDetailIntimacy;
     @BindView(R.id.btn_send_message)
     Button btnSendMessage;
     @BindView(R.id.btn_delete_friend)
@@ -252,6 +254,7 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
         tvUserDetailClaimerName.setText(userInfo.getClaimUserId());
         tvUserDetailContributionNum.setText(userInfo.getContributionScore());
         tvUserDetailCreditScore.setText(userInfo.getCreditScore());
+        tvUserDetailIntimacy.setText(userInfo.getIntimacy());
         initButtonVisable(userInfo.getStatus());
     }
 

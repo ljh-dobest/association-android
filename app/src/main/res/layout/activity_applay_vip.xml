@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ike.communityalliance.ui.activity.ApplayVIPActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="45dp">
+        <ImageView
+            android:id="@+id/iv_applay_vip_back"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/btn_back"
+            />
+        <TextView
+            android:layout_centerInParent="true"
+            style="@style/recommend_item_tv_styles"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="申请VIP"
+            />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/col_ECEEF0"/>
+
+    <TextView
+        android:layout_marginTop="55dp"
+        android:id="@+id/tv_apply_enterpriseVIP"
+        style="@style/tv_apply_vip_styles"
+        android:background="@mipmap/enterprise_vip"
+        android:text="企业VIP" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:id="@+id/tv_apply_news_enterpriseVIP"
+        style="@style/tv_apply_vip_styles"
+        android:background="@mipmap/news_enterorse_vip"
+        android:text="新企业VIP" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:id="@+id/tv_apply_personalVIP"
+        style="@style/tv_apply_vip_styles"
+        android:background="@mipmap/personal_vip"
+        android:text="个人VIP" />
+</LinearLayout>

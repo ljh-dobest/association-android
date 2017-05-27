@@ -125,9 +125,9 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
             llLocation.setVisibility(View.GONE);
             iv_enter.setVisibility(View.GONE);
         }
-        mapView.onCreate(savedInstanceState);
         //android6.0 打开位置权限
         initPermission();
+        mapView.onCreate(savedInstanceState);
     }
 
     private void initHeaderView() {

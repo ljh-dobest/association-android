@@ -37,7 +37,9 @@ import com.ike.communityalliance.ui.activity.ChatPopupWindow;
 import com.ike.communityalliance.ui.activity.LoginActivity;
 import com.ike.communityalliance.ui.activity.NewFriendListActivity;
 import com.ike.communityalliance.ui.activity.RecommendActivity;
+import com.ike.communityalliance.ui.fragment.ContactFragment;
 import com.ike.communityalliance.ui.fragment.HomeFragment;
+import com.ike.communityalliance.ui.fragment.InterestGroupFragment;
 import com.ike.communityalliance.ui.fragment.MineFragment;
 import com.ike.communityalliance.utils.DateUtils;
 import com.ike.communityalliance.utils.file.PermissionsUtil;
@@ -72,7 +74,6 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
     ViewPager main_vp;
     @BindView(R.id.rl_main_header)
     RelativeLayout rl_main_header;
-    private int checkedcolor = 0xffff3300;
     private RadioButton radioButtons[];
     private List<Fragment> fragments;
     @BindView(R.id.iv_main_recommed)
@@ -90,8 +91,8 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
     private Context mContext;
     public static final String EXIT = "EXIT";
     private Conversation.ConversationType[] mConversationsTypes = null;
-    private Integer[] images={R.drawable.main_home_bg,R.drawable.main_chat_bg,R.drawable.main_mine_bg};
-    private String[] names={"首页","聊天","我的"};
+    private Integer[] images={R.drawable.main_home_bg,R.drawable.main_chat_bg,R.drawable.main_interest_bg,R.drawable.main_contact_bg,R.drawable.main_mine_bg};
+    private String[] names={"首页","聊天","兴趣联盟","通讯录","我的"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +126,8 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         fragments = new ArrayList<Fragment>();
         fragments.add(new HomeFragment());
         fragments.add(conversationList);
+        fragments.add(new InterestGroupFragment());
+        fragments.add(new ContactFragment());
         fragments.add(new MineFragment());
         adapter=new MainPageAdapter(getSupportFragmentManager(),fragments);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
@@ -148,7 +151,6 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         }
     }
     protected void initData() {
-
         final Conversation.ConversationType[] conversationTypes = {
                 Conversation.ConversationType.PRIVATE,
                 Conversation.ConversationType.GROUP, Conversation.ConversationType.SYSTEM,
@@ -352,7 +354,7 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
                 tv_main_title.setText("聊天");
                 rl_main_header.setVisibility(View.VISIBLE);
                 break;
-            case 2:
+            default:
                 rl_main_header.setVisibility(View.GONE);
                 break;
         }

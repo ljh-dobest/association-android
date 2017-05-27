@@ -80,7 +80,7 @@
         <!-- 融云 -->
         <meta-data
             android:name="RONG_CLOUD_APP_KEY"
-            android:value="x4vkb1qpx0tmk" />
+            android:value="tdrvipkstdnk5" />
 
         <!-- 高德 -->
         <meta-data
@@ -90,7 +90,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name=".ui.activity.LoadActivity">
+        <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -157,7 +157,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.ShareFriendsActivity" />
-        <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".ui.activity.LoadActivity" />
         <activity
             android:name=".ui.activity.Login2Activity"
             android:windowSoftInputMode="adjustPan" />
@@ -241,7 +241,6 @@
         </receiver>
 
         <activity android:name=".ui.activity.MineRecomendActivity" />
-        <activity android:name=".ui.activity.RecomendCardActivity" />
         <activity android:name=".ui.activity.MorePersonalInfoActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -279,7 +278,12 @@
         <activity android:name=".ui.activity.PhoneContactActivity" />
         <activity android:name=".ui.activity.SetDisplayNameActivity" />
         <activity android:name=".ui.activity.MoreUserDetailInfoActivity" />
-        <activity android:name=".ui.activity.LocationSeacherActivity"></activity>
+        <activity android:name=".ui.activity.LocationSeacherActivity" />
+        <activity android:name=".ui.activity.DiscoveryActivity" />
+        <activity android:name=".ui.activity.CommonRegisterActivity" />
+        <activity android:name=".ui.activity.VipRegisterActivity" />
+        <activity android:name=".ui.activity.MineQRCodeActivity" />
+        <activity android:name=".ui.activity.ApplayVIPActivity"></activity>
     </application>
 
 </manifest>

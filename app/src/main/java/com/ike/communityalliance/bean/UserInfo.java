@@ -23,8 +23,9 @@ public class UserInfo  {
     private String contributionScore;
     private String recommendUserId;
     private String claimUserId;
+    private String intimacy;
 
-    public UserInfo(String status, String userId, String numberId, String nickname, String friendNickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId) {
+    public UserInfo(String status, String userId, String numberId, String nickname, String friendNickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId, String intimacy) {
         this.status = status;
         this.userId = userId;
         this.numberId = numberId;
@@ -43,6 +44,7 @@ public class UserInfo  {
         this.contributionScore = contributionScore;
         this.recommendUserId = recommendUserId;
         this.claimUserId = claimUserId;
+        this.intimacy = intimacy;
     }
 
     public UserInfo(String status, String nickname, String userPortraitUrl, String mobile) {
@@ -93,6 +95,14 @@ public class UserInfo  {
         this.address = address;
         this.email = email;
         this.age = age;
+    }
+
+    public String getIntimacy() {
+        return intimacy;
+    }
+
+    public void setIntimacy(String intimacy) {
+        this.intimacy = intimacy;
     }
 
     public String getFriendNickname() {

@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp">
         <com.zhy.autolayout.AutoLinearLayout
+            android:visibility="gone"
             android:layout_centerVertical="true"
             android:id="@+id/ll_friend_activity_back"
             android:layout_width="wrap_content"
@@ -41,6 +42,15 @@
             android:textSize="16sp"
             android:text="通讯录"
             />
+        <ImageView
+            android:paddingLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/iv_add_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/add_friend"/>
     </com.zhy.autolayout.AutoRelativeLayout>
    <View
        android:layout_width="match_parent"

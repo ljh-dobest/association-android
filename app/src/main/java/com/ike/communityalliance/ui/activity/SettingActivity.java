@@ -85,7 +85,7 @@ public class SettingActivity extends BaseActivity {
                                 friendInfoDAO.delete(userId);
                                 groupMemberDAO.delete(userId);
                                 ImageLoader.getInstance().clearDiskCache();
-                                startActivity(new Intent(SettingActivity.this, Login2Activity.class));
+                                startActivity(new Intent(SettingActivity.this, LoginActivity.class));
                                 T.showShort(SettingActivity.this, "退出成功");
                                 finish();
                             }

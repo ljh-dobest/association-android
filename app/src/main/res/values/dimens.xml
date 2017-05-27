@@ -11,6 +11,7 @@
     <dimen name="font_28">28px</dimen>
     <dimen name="font_30">30px</dimen>
     <dimen name="font_32">32px</dimen>
+    <dimen name="font_38">19sp</dimen>
     <dimen name="font_40">40px</dimen>
     <dimen name="font_16">16px</dimen>
     <dimen name="font_26">26px</dimen>

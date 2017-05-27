@@ -11,8 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
+import com.ike.mylibrary.util.T;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
@@ -24,7 +24,7 @@ import io.rong.imlib.RongIMClient;
 
 public class ChatPopupWindow extends PopupWindow implements View.OnClickListener {
     private Context context;
-    private LinearLayout ll_pop_talkworld,ll_pop_addressbook,ll_pop_grout,ll_pop_addfriend;
+    private LinearLayout ll_pop_talkworld,ll_pop_grout;
     private RelativeLayout rl_pop_discover,rl_pop_message;
     private ImageView iv_pop_disc_item,iv_pop_message_item;
     public ChatPopupWindow(Context context) {
@@ -40,18 +40,18 @@ public class ChatPopupWindow extends PopupWindow implements View.OnClickListener
         this.setOutsideTouchable(true);  //点击外面去取消
         this.update(); //刷新
         ll_pop_grout= (LinearLayout) view.findViewById(R.id.ll_pop_group);
-        ll_pop_addfriend= (LinearLayout) view.findViewById(R.id.ll_pop_add);
+
         ll_pop_talkworld= (LinearLayout) view.findViewById(R.id.ll_pop_talkworld);
-        ll_pop_addressbook= (LinearLayout) view.findViewById(R.id.ll_pop_addressbook);
+
         rl_pop_discover= (RelativeLayout) view.findViewById(R.id.rl_pop_discover);
         rl_pop_message= (RelativeLayout) view.findViewById(R.id.rl_pop_message);
         iv_pop_disc_item= (ImageView) view.findViewById(R.id.iv_pop_disc_item);
         iv_pop_message_item= (ImageView) view.findViewById(R.id.iv_pop_message_item);
 
         ll_pop_grout.setOnClickListener(this);
-        ll_pop_addfriend.setOnClickListener(this);
+
         ll_pop_talkworld.setOnClickListener(this);
-        ll_pop_addressbook.setOnClickListener(this);
+
         rl_pop_discover.setOnClickListener(this);
         rl_pop_message.setOnClickListener(this);
     }
@@ -73,12 +73,9 @@ public class ChatPopupWindow extends PopupWindow implements View.OnClickListener
                 });
                 ChatPopupWindow.this.dismiss();
                 break;
-            case R.id.ll_pop_addressbook://通讯录
-                context.startActivity( new Intent(context,FriendActivity.class));
-                ChatPopupWindow.this.dismiss();
-                break;
+
             case R.id.rl_pop_discover: //发现
-                context.startActivity( new Intent(context,ShareFriendsActivity.class));
+                context.startActivity( new Intent(context,DiscoveryActivity.class));
                 iv_pop_disc_item.setVisibility(View.GONE);
                 ChatPopupWindow.this.dismiss();
                 break;
@@ -86,10 +83,6 @@ public class ChatPopupWindow extends PopupWindow implements View.OnClickListener
                 Intent intent=new Intent(context,SelectFriendsActivity.class);
                 intent.putExtra("createGroup",true);
                 context.startActivity(intent);
-                ChatPopupWindow.this.dismiss();
-                break;
-            case R.id.ll_pop_add:   //添加好友
-                context.startActivity(new Intent(context,SearchFriendActivity.class));
                 ChatPopupWindow.this.dismiss();
                 break;
             case R.id.rl_pop_message:   //消息

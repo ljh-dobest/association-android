@@ -15,10 +15,11 @@
         android:src="@drawable/main_home_bg" />
 
     <TextView
+        android:layout_marginTop="4dp"
         android:id="@+id/tv_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:text="首页"
         android:textColor="@drawable/mian_rb_text_selector" />
 </LinearLayout>

@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,15 +28,15 @@ import com.ike.communityalliance.AppContext;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.FriendListAdapter;
 import com.ike.communityalliance.bean.Code;
+import com.ike.communityalliance.bean.Friend;
 import com.ike.communityalliance.bean.FriendInfo;
-import com.ike.communityalliance.bean.TalkTalkBean;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.server.broadcast.BroadcastManager;
 import com.ike.communityalliance.ui.activity.GroupListActivity;
-import com.ike.communityalliance.ui.activity.InteresitingActivity;
-import com.ike.communityalliance.ui.activity.ShareFriendsActivity;
+import com.ike.communityalliance.ui.activity.PhoneContactActivity;
+import com.ike.communityalliance.ui.activity.SearchFriendActivity;
 import com.ike.communityalliance.ui.activity.UserDetailActivity;
 import com.ike.communityalliance.wedget.CharacterParser;
 import com.ike.communityalliance.wedget.Generate;
@@ -44,9 +45,9 @@ import com.ike.communityalliance.wedget.SideBar;
 import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
 import com.ike.mylibrary.util.L;
 import com.ike.mylibrary.util.T;
+import com.squareup.picasso.Picasso;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -60,7 +61,11 @@ import butterknife.ButterKnife;
 import io.rong.imageloader.core.ImageLoader;
 import okhttp3.Call;
 
-public class FriendFragment extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+/**
+ * Created by just on 2017/3/1.
+ */
+
+public class ContactFragment extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.et_search)
     EditText etSearch;
@@ -74,6 +79,10 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     TextView tvShowNoFriend;
     @BindView(R.id.swipeRefresh)
     SwipeRefreshLayout mSwipeRefresh;
+    @BindView(R.id.ll_friend_activity_back)
+    LinearLayout ll_friend_activity_back;
+    @BindView(R.id.iv_add_friends)
+    ImageView ivAddFriends;
     private PinyinComparator mPinyinComparator;
     private List<FriendInfo> mSourceFriendList;
     private List<FriendInfo> mFriendList = new ArrayList<>(0);
@@ -98,12 +107,11 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     private View mHeadView;
 
     private TextView tvUnread, tvMe;
-    private RelativeLayout  rlGroup, rl_interestList, rlMeItem,rl_shareFriends;
+    private RelativeLayout rl_phoneContast, rlGroup, rlMeItem;
     private SelectableRoundedImageView sivMe;
-    private ImageView iv_shareFriend_redPoint;
 
     private static final int CLICK_CONTACT_FRAGMENT_FRIEND = 2;
-    private static final int REFRESH_COMPLETE=0;
+    private static final int REFRESH_COMPLETE = 0;
 
     private FriendInfoDAOImpl friendInfoDAO;
 
@@ -112,7 +120,6 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_friend, container, false);
         ButterKnife.bind(this, view);
-        EventBus.getDefault().register(this);
         friendInfoDAO = new FriendInfoDAOImpl(getActivity());
         mSourceFriendList = new ArrayList<>();
         mFriendList = new ArrayList<>();
@@ -125,16 +132,16 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
         return view;
     }
 
-    private void initText(){
+    private void initText() {
         sb.setTextView(tvGroupDialog);
-        sp = getActivity().getSharedPreferences("config", Context.MODE_PRIVATE);
+        sp = getContext().getSharedPreferences("config", Context.MODE_PRIVATE);
         mId = sp.getString(Const.LOGIN_ID, "");
         mCacheName = sp.getString(Const.LOGIN_NICKNAME, "");
         header = sp.getString(Const.LOGIN_PORTRAIT, "");
 
         tvMe.setText(mCacheName);
         if (!TextUtils.isEmpty(header)) {
-            ImageLoader.getInstance().displayImage(header, sivMe);
+            Picasso.with(getContext()).load(header).into(sivMe);
         } else {
             sivMe.setImageResource(R.mipmap.default_portrait);
         }
@@ -144,24 +151,20 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     private void initView() {
         //刷新
         mSwipeRefresh.setOnRefreshListener(this);
-
+        ivAddFriends.setOnClickListener(this);
         //自己信息
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        LayoutInflater inflater = LayoutInflater.from(getContext());
         mHeadView = inflater.inflate(R.layout.item_friend_list_header, null);
         rlGroup = (RelativeLayout) mHeadView.findViewById(R.id.rl_group);
-        rl_interestList = (RelativeLayout) mHeadView.findViewById(R.id.rl_interestList);
+        rl_phoneContast = (RelativeLayout) mHeadView.findViewById(R.id.rl_phoneContast);
         rlMeItem = (RelativeLayout) mHeadView.findViewById(R.id.rl_me_item);
         sivMe = (SelectableRoundedImageView) mHeadView.findViewById(R.id.siv_me);
         tvMe = (TextView) mHeadView.findViewById(R.id.tv_me);
-        rl_shareFriends= (RelativeLayout) mHeadView.findViewById(R.id.rl_shareFriends);
-        iv_shareFriend_redPoint= (ImageView) mHeadView.findViewById(R.id.iv_shareFriend_redPoint);
         mListView.addHeaderView(mHeadView);
-
-        rlMeItem.setOnClickListener(this);  //me
+        rl_phoneContast.setOnClickListener(this);
+        rlMeItem.setOnClickListener(this);
         rlGroup.setOnClickListener(this);
-        rl_interestList.setOnClickListener(this);
-        rl_shareFriends.setOnClickListener(this);
-
+        ll_friend_activity_back.setOnClickListener(this);
         //设置右侧触摸监听
         sb.setOnTouchingLetterChangedListener(new SideBar.OnTouchingLetterChangedListener() {
 
@@ -184,7 +187,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
         HttpUtils.postRequest("/friends", mId, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                T.showShort(getActivity(), "friends-----" + e);
+                T.showShort(getContext(), "friends-----" + e);
                 return;
             }
 
@@ -193,7 +196,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
                 Gson gson = new Gson();
                 Type type = new TypeToken<Code<List<FriendInfo>>>() {
                 }.getType();
-              Code<List<FriendInfo>> code =gson.fromJson(response,type);
+                Code<List<FriendInfo>> code = gson.fromJson(response, type);
                 if (code.getCode() == 200) {
                     List<FriendInfo> list = code.getData();
                     for (FriendInfo friend : list) {
@@ -224,7 +227,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
                     initList();
 
                 } else {
-                    mFriendListAdapter = new FriendListAdapter(getActivity(), mFriendList);
+                    mFriendListAdapter = new FriendListAdapter(getContext(), mFriendList);
                     mListView.setAdapter(mFriendListAdapter);
                     tvShowNoFriend.setVisibility(View.VISIBLE);
                 }
@@ -237,9 +240,11 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
         super.onResume();
         initData2();
     }
-    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
-    public void onEventMessage(TalkTalkBean event){
-        iv_shareFriend_redPoint.setVisibility(View.VISIBLE);
+
+    //有更改备注名
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void onEventChangeNameMessage(Friend event) {
+        onRefresh();
     }
 
     private void initData2() {
@@ -273,7 +278,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
         // 根据a-z进行排序源数据
         Collections.sort(mFriendList, mPinyinComparator);
 
-        mFriendListAdapter = new FriendListAdapter(getActivity(), mFriendList);
+        mFriendListAdapter = new FriendListAdapter(getContext(), mFriendList);
         mListView.setAdapter(mFriendListAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -288,13 +293,6 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
 
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (tvGroupDialog != null) {
-            tvGroupDialog.setVisibility(View.INVISIBLE);
-        }
-    }
 
     /**
      * 为ListView填充数据
@@ -362,14 +360,14 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
      * @param friend
      */
     private void startFriendDetailsPage(FriendInfo friend) {
-        Intent intent = new Intent(getActivity(), UserDetailActivity.class);
+        Intent intent = new Intent(getContext(), UserDetailActivity.class);
         intent.putExtra("type", CLICK_CONTACT_FRAGMENT_FRIEND);
         intent.putExtra("friends", friend);
         startActivity(intent);
     }
 
     private void refreshUIListener() {
-        BroadcastManager.getInstance(getActivity()).addAction(AppContext.UPDATE_FRIEND, new BroadcastReceiver() {
+        BroadcastManager.getInstance(getContext()).addAction(AppContext.UPDATE_FRIEND, new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String command = intent.getAction();
@@ -378,7 +376,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
                 }
             }
         });
-        BroadcastManager.getInstance(getActivity()).addAction(AppContext.UPDATE_RED_DOT, new BroadcastReceiver() {
+        BroadcastManager.getInstance(getContext()).addAction(AppContext.UPDATE_RED_DOT, new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String command = intent.getAction();
@@ -387,7 +385,7 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
                 }
             }
         });
-        BroadcastManager.getInstance(getActivity()).addAction(Const.CHANGEINFO, new BroadcastReceiver() {
+        BroadcastManager.getInstance(getContext()).addAction(Const.CHANGEINFO, new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 SharedPreferences sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
@@ -405,9 +403,9 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     public void onDestroy() {
         super.onDestroy();
         try {
-            BroadcastManager.getInstance(getActivity()).destroy(AppContext.UPDATE_FRIEND);
-            BroadcastManager.getInstance(getActivity()).destroy(AppContext.UPDATE_RED_DOT);
-            BroadcastManager.getInstance(getActivity()).destroy(Const.CHANGEINFO);
+            BroadcastManager.getInstance(getContext()).destroy(AppContext.UPDATE_FRIEND);
+            BroadcastManager.getInstance(getContext()).destroy(AppContext.UPDATE_RED_DOT);
+            BroadcastManager.getInstance(getContext()).destroy(Const.CHANGEINFO);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
@@ -416,46 +414,36 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case R.id.rl_phoneContast:
+                startActivity(new Intent(getContext(), PhoneContactActivity.class));
+                break;
             case R.id.rl_group:
-                startActivity(new Intent(getActivity(), GroupListActivity.class));
-                break;
-            case R.id.rl_interestList:   //兴趣联盟
-                Intent intent1 = new Intent(getActivity(), InteresitingActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.rl_shareFriends:   //朋友圈
-                Intent intent2 = new Intent(getActivity(), ShareFriendsActivity.class);
-                iv_shareFriend_redPoint.setVisibility(View.GONE);
-                startActivity(intent2);
+                startActivity(new Intent(getContext(), GroupListActivity.class));
                 break;
             case R.id.rl_me_item:
-                T.showShort(getActivity(),"不能和自己聊天喔！");
-//                startActivity(new Intent(getActivity(), PersonSettingActivity.class));
-//                RongIM.getInstance().startPrivateChat(getActivity(), mId, mCacheName);
+                T.showShort(getContext(), "不能和自己聊天喔！");
+                break;
+            case R.id.iv_add_friends:
+                startActivity(new Intent(getContext(), SearchFriendActivity.class));
                 break;
         }
     }
 
     @Override
     public void onRefresh() {
-        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 1000);
+        mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 0);
     }
 
-    private Handler mHandler=new Handler(){
+    private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what){
+            switch (msg.what) {
                 case REFRESH_COMPLETE:
                     mSourceFriendList.clear();
                     mFriendList.clear();
-//                    initView();
                     initText();
                     friendInfoDAO.delete(mId);
                     initData();
-                    /*mSourceFriendList=friendInfoDAO.findAll(mId);
-                    initList();
-                    mFriendListAdapter.notifyDataSetChanged();*/
                     mSwipeRefresh.setRefreshing(false);
             }
         }
@@ -464,6 +452,5 @@ public class FriendFragment extends Fragment implements View.OnClickListener, Sw
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        EventBus.getDefault().unregister(this);
     }
 }
