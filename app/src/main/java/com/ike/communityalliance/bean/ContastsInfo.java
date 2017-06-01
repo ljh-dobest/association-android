@@ -3,34 +3,35 @@ package com.ike.communityalliance.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import static io.rong.imlib.statistics.UserData.name;
+
 /**
  * Created by Min on 2017/5/12.
  */
 
 public class ContastsInfo implements Parcelable {
-    private String name;
-    private String number;
+    private String nickname;
+    private String mobile;
 
-
-    public ContastsInfo(String name, String number) {
-        this.name = name;
-        this.number = number;
+    public ContastsInfo(String nickname, String mobile) {
+        this.nickname = nickname;
+        this.mobile = mobile;
     }
 
-    public String getName() {
-        return name;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getNumber() {
-        return number;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     @Override
@@ -40,16 +41,16 @@ public class ContastsInfo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.name);
-        dest.writeString(this.number);
+        dest.writeString(this.nickname);
+        dest.writeString(this.mobile);
     }
 
     protected ContastsInfo(Parcel in) {
-        this.name = in.readString();
-        this.number = in.readString();
+        this.nickname = in.readString();
+        this.mobile = in.readString();
     }
 
-    public static final Parcelable.Creator<ContastsInfo> CREATOR = new Parcelable.Creator<ContastsInfo>() {
+    public static final Creator<ContastsInfo> CREATOR = new Creator<ContastsInfo>() {
         @Override
         public ContastsInfo createFromParcel(Parcel source) {
             return new ContastsInfo(source);

@@ -6,6 +6,7 @@ import android.os.Environment;
 import com.google.gson.Gson;
 import com.ike.communityalliance.bean.ClaimInfoBean;
 import com.ike.communityalliance.bean.EditMorePersonalInfo;
+import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.bean.UserInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
@@ -113,7 +114,14 @@ public class HttpUtils {
     public static void sendPostStringRequest(String url,Object object,StringCallback callback){
         OkHttpUtils.postString().url(BASE_RUL +url).content(object.toString()).build().execute(callback);
     }
-
+    //提交通讯录
+    public static void PostMobile(String url, String string,String mobile, StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL + url)
+                .addHeader("Connection", "close")
+                .addParams("userId",string)
+                .addParams("mobile",mobile)
+                .build().execute(callback);
+    }
 
     //搜索好友或群
     public static void PostSearchFriendRequest(String url, String string, StringCallback callback){
@@ -616,6 +624,33 @@ public class HttpUtils {
                 .addParams("spouseName",recommendBean.getSpouseName())
                 .addParams("childrenName",recommendBean.getChildrenName())
                 .addParams("childrenSchool",recommendBean.getChildrenSchool())
+                .build().execute(callback);
+    }
+    //提交申请VIP信息
+    public static void postPersonalVip(String url, PersonalVipBean personalVipBean, StringCallback callback){
+        Gson gson = new Gson();
+        String addressList = gson.toJson(personalVipBean.getAddress());
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",personalVipBean.getUserId())
+                .addParams("fullName",personalVipBean.getFullName())
+                .addParams("mobile",personalVipBean.getMobile())
+                .addParams("sex",personalVipBean.getSex())
+                .addParams("hobby",personalVipBean.getHobby())
+                .addParams("address",addressList)
+                .addParams("relationship",personalVipBean.getRelationship())
+                .addParams("character",personalVipBean.getCharacter())
+                .addParams("creditScore",personalVipBean.getCreditScore())
+                .addParams("birthday",personalVipBean.getBirthday())
+                .addParams("homeplace",personalVipBean.getHomeplace())
+                .addParams("finishSchool",personalVipBean.getFinishSchool())
+                .addParams("company",personalVipBean.getCompany())
+                .addParams("fatherName",personalVipBean.getFatherName())
+                .addParams("motherName",personalVipBean.getMotherName())
+                .addParams("marriage",personalVipBean.getMarriage())
+                .addParams("spouseName",personalVipBean.getSpouseName())
+                .addParams("childrenName",personalVipBean.getChildrenName())
+                .addParams("childrenSchool",personalVipBean.getChildrenSchool())
                 .build().execute(callback);
     }
     //提交推荐信息

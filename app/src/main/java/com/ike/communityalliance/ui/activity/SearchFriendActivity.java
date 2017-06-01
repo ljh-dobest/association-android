@@ -30,6 +30,7 @@ import com.xys.libzxing.zxing.activity.CaptureActivity;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -91,31 +92,32 @@ public class SearchFriendActivity extends BaseActivity {
             @Override
             public void onResponse(String response, int id) {
                 Gson gson = new Gson();
-               Type type=new TypeToken<Code<UserOrGroupBean>>(){}.getType();
-                Code<UserOrGroupBean> beanCode = gson.fromJson(response,type);
+               Type type=new TypeToken<Code<List<UserOrGroupBean>>>(){}.getType();
+                Code<List<UserOrGroupBean>> beanCode = gson.fromJson(response,type);
                 int code=beanCode.getCode();
                 if (code == 200) {
-                    UserOrGroupBean userOrGroupBean=beanCode.getData();
-                    if(userOrGroupBean==null){
+                    List<UserOrGroupBean> userOrGroupBeanList=beanCode.getData();
+                    if(userOrGroupBeanList==null){
                         T.showShort(mContext, "用户不存在");
                         LoadDialog.dismiss(mContext);
                         return;
                     }
-                    status=userOrGroupBean.getStatus();
+                    status=userOrGroupBeanList.get(0).getStatus();
+                    UserOrGroupBean userOrGroupBean=userOrGroupBeanList.get(0);
                     if(status.equals("0")){
-                        f_userid=beanCode.getData().getUserId();
-                        headUri = HttpUtils.IMAGE_RUL+beanCode.getData().getUserPortraitUrl();
-                        userName = beanCode.getData().getNickname();
+                        f_userid=userOrGroupBean.getUserId();
+                        headUri = HttpUtils.IMAGE_RUL+userOrGroupBean.getUserPortraitUrl();
+                        userName = userOrGroupBean.getNickname();
                         btn_newFriendsOrGroup_join.setText("添加好友");
                     }else{
-                        f_userid=beanCode.getData().getGroupId();
-                        headUri = HttpUtils.IMAGE_RUL+beanCode.getData().getGroupPortraitUrl();
-                        userName = beanCode.getData().getGroupName();
+                        f_userid=userOrGroupBean.getGroupId();
+                        headUri = HttpUtils.IMAGE_RUL+userOrGroupBean.getGroupPortraitUrl();
+                        userName = userOrGroupBean.getGroupName();
                         btn_newFriendsOrGroup_join.setText("申请加入");
                     }
                     LoadDialog.dismiss(mContext);
                     rl_newfriendOrGroup.setVisibility(View.VISIBLE);
-                    String image=beanCode.getData().getUserPortraitUrl();
+                    String image=userOrGroupBean.getUserPortraitUrl();
                     if(!TextUtils.isEmpty(image)) {
                         ImageLoader.getInstance().displayImage(headUri, iv_newFriendsOrGroup_item_header);
                     }else {

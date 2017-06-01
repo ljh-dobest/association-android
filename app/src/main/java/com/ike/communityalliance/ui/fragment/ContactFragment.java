@@ -1,5 +1,6 @@
 package com.ike.communityalliance.ui.fragment;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -60,11 +61,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.rong.imageloader.core.ImageLoader;
 import okhttp3.Call;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
 /**
  * Created by just on 2017/3/1.
  */
-
+@RuntimePermissions
 public class ContactFragment extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.et_search)
@@ -415,7 +418,7 @@ public class ContactFragment extends Fragment implements View.OnClickListener, S
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_phoneContast:
-                startActivity(new Intent(getContext(), PhoneContactActivity.class));
+                toPhoneContacts();
                 break;
             case R.id.rl_group:
                 startActivity(new Intent(getContext(), GroupListActivity.class));
@@ -427,6 +430,11 @@ public class ContactFragment extends Fragment implements View.OnClickListener, S
                 startActivity(new Intent(getContext(), SearchFriendActivity.class));
                 break;
         }
+    }
+
+    @NeedsPermission(Manifest.permission.READ_CONTACTS)
+    void toPhoneContacts() {
+        startActivity(new Intent(getContext(), PhoneContactActivity.class));
     }
 
     @Override

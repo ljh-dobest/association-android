@@ -36,9 +36,8 @@ import io.rong.imkit.RongIM;
 /**
  * 登录
  */
+
 public class LoginActivity extends BaseMvpActivity<ILoginView,LoginPresenterImpl> implements ILoginView {
-
-
     @BindView(R.id.et_login_phone)
     EditText etLoginPhone;
     @BindView(R.id.et_login_pwd)

@@ -111,7 +111,7 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
         isPhoneContact=getIntent().getBooleanExtra("isPhoneContact",false);
         if (isPhoneContact) {
             contastsInfo=getIntent().getParcelableExtra("contastsInfo");
-           checkPhoneConact(mId,contastsInfo.getNumber());
+           checkPhoneConact(mId,contastsInfo.getMobile());
         } else {
             friendInfo = getIntent().getParcelableExtra("friends");
             checkPhoneConact(mId,friendInfo.getUserId());
@@ -279,8 +279,8 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
     @Override
     public void mobileUnRegister() {
        btnUserDetailRecommed.setVisibility(View.VISIBLE);
-        tvUserDetailName.setText(contastsInfo.getName());
-        tvUserDetailPhone.setText(contastsInfo.getNumber());
+        tvUserDetailName.setText(contastsInfo.getNickname());
+        tvUserDetailPhone.setText(contastsInfo.getMobile());
     }
 
 }

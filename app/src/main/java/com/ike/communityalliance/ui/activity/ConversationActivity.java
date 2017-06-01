@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -37,7 +39,6 @@ import com.ike.communityalliance.db.GroupsDAOImpl;
 import com.ike.communityalliance.message.provider.MyGroupInfoProvider;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.ui.MainActivity;
-import com.ike.communityalliance.utils.file.PermissionsUtil;
 import com.ike.mylibrary.util.L;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
@@ -64,11 +65,16 @@ import io.rong.imlib.model.UserInfo;
 import io.rong.message.TextMessage;
 import io.rong.message.VoiceMessage;
 import okhttp3.Call;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
 /**
  * 会话页面
  */
+@RuntimePermissions
 public class ConversationActivity extends BaseActivity implements View.OnClickListener, RongIM.UserInfoProvider, RongIMClient.TypingStatusListener {
+    //需要请求的权限名称
+    private static final String[] PERMISSION_DORECORDAUDIOPERMISSION = new String[] {"android.permission.RECORD_AUDIO","android.permission.CAMERA"};
     private static final int SET_TEXT_TYPING_TITLE =101;
     private static final int SET_VOICE_TYPING_TITLE =102 ;
     private static final int SET_TARGETID_TITLE =100 ;
@@ -126,7 +132,10 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         tvTitle = (TextView) findViewById(R.id.tv_title);
         ivTitleBack.setOnClickListener(this);
         ivTitleRight.setOnClickListener(this);
-        PermissionsUtil.initPermissions(this, Manifest.permission.RECORD_AUDIO);
+       // PermissionsUtil.initPermissions(this, Manifest.permission.RECORD_AUDIO);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED||ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSION_DORECORDAUDIOPERMISSION, 1002);
+        }
         sp = getSharedPreferences("config", MODE_PRIVATE);
 
         Intent intent = getIntent();
@@ -190,7 +199,9 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         });
 
     }
-
+    //授予权限后提交手机联系人数据
+    @NeedsPermission({Manifest.permission.RECORD_AUDIO,Manifest.permission.CAMERA})
+    public void initRecoedAudioPermission() {}
     private void newFriend() {
         final String userid = sp.getString(Const.LOGIN_ID, "");
         HttpUtils.postAddFriender("/allUnreadFriends", userid, new StringCallback() {

@@ -4,7 +4,7 @@
     package="com.ike.communityalliance">
 
     <!-- //定位包、导航包需要的额外权限（注：基础权限也需要） -->
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
     <!-- 用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 用于访问GPS定位 -->
@@ -162,6 +162,7 @@
             android:name=".ui.activity.Login2Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.activity.InteresitingActivity" />
+        <activity android:name=".ui.activity.PersonalApplayVipActivity" />
         <activity android:name=".ui.activity.SearchFriendActivity" />
         <activity android:name=".ui.activity.SelectFriendsActivity" />
         <activity android:name=".ui.activity.CreateGroupActivity" />

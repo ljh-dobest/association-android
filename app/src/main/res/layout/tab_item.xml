@@ -10,16 +10,15 @@
         android:id="@+id/iv_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         android:src="@drawable/main_home_bg" />
 
     <TextView
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:id="@+id/tv_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
+        android:textSize="12sp"
         android:text="首页"
         android:textColor="@drawable/mian_rb_text_selector" />
 </LinearLayout>

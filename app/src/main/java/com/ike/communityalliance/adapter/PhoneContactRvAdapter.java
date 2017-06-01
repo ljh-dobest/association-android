@@ -69,8 +69,8 @@ public class PhoneContactRvAdapter extends RecyclerView.Adapter<PhoneContactRvAd
             });
         }
          ContastsInfo contastsInfo=mDatas.get(position);
-        holder.tv_contast_person_item_name.setText(contastsInfo.getName());
-        holder.tv_contast_person_item_phone.setText(contastsInfo.getNumber());
+        holder.tv_contast_person_item_name.setText(contastsInfo.getNickname());
+        holder.tv_contast_person_item_phone.setText(contastsInfo.getMobile());
     }
 
     //重写onCreateViewHolder方法，返回一个自定义的ViewHolder

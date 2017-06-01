@@ -177,12 +177,12 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
     public void succeedVerifyInfo() {
         if(isFromLogin){
             startActivity(new Intent(this,Main2Activity.class));
+            T.showShort(this,"信息确认完成");
             finish();
         }else{
-            setResult(RESULT_OK);
+            startActivity(new Intent(this,Main2Activity.class));
             finish();
         }
-        T.showShort(this,"信息确认完成");
     }
 
     @Override
@@ -268,6 +268,11 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
             int index=provinceList.indexOf(jgAddressList.get(0));
             sp_verifyInfo_jgprovince.setSelection(index);
         }
+    }
+
+    @Override
+    public void succeedToVip() {
+
     }
 
     private void initHobby() {
