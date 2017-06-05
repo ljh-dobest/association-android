@@ -54,6 +54,7 @@ import com.ike.communityalliance.ui.fragment.InterestGroupFragment;
 import com.ike.communityalliance.ui.fragment.MineFragment;
 import com.ike.communityalliance.utils.DateUtils;
 import com.ike.communityalliance.utils.DoACacheNeedsPermissionPermissionRequest;
+import com.ike.mylibrary.util.AMUtils;
 import com.ike.mylibrary.util.T;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -152,7 +153,7 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         HttpUtils.PostMobile("/inputMobile", useId, contactList, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                T.showShort(Main2Activity.this,"联系人上传失败");
+                T.showShort(Main2Activity.this,"获取联系人失败");
             }
 
             @Override
@@ -162,9 +163,9 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
                 }.getType();
                 Code<Object> code = gson.fromJson(response,type);
                 if(code.getCode()==200){
-                    T.showShort(Main2Activity.this,"联系人上传成功");
+                    T.showShort(Main2Activity.this,"获取联系人传成功");
                 }else{
-                    T.showShort(Main2Activity.this,"联系人上传失败。。");
+                    T.showShort(Main2Activity.this,"获取联系人失败。。");
                 }
             }
         });
@@ -500,9 +501,11 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
                 contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 String myContactNumber=contactNumber.replace("+","").replace(" ","");
-                ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
-                if (contactName != null)
-                    list.add(contactsInfo);
+                if(AMUtils.isMobile(myContactNumber)){
+                    ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
+                    if (contactName != null)
+                        list.add(contactsInfo);
+                }
             }
             cursor.close();//使用完后一定要将cursor关闭，不然会造成内存泄露等问题
         } catch (Exception e) {

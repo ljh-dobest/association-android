@@ -43,10 +43,10 @@ public class LoginMoudle {
                         case 0:
                             listener.failedToLogin("账号不存在！");
                             break;
-                        case 1000:
+                        case 1002:
                             listener.failedToLogin("账号禁止登陆，请联系管理员");
                             break;
-                        case 1001:
+                        case 1003:
                             listener.failedToLogin("密码错误，请重新输入！");
                             break;
                     }

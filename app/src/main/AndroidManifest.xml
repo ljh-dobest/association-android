@@ -4,7 +4,7 @@
     package="com.ike.communityalliance">
 
     <!-- //定位包、导航包需要的额外权限（注：基础权限也需要） -->
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <!-- 用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 用于访问GPS定位 -->
@@ -90,7 +90,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name=".ui.activity.LoginActivity">
+        <activity android:name=".ui.activity.LogoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -213,7 +213,7 @@
             android:value="1334" />
 
         <activity android:name=".ui.activity.CreateInterestGroupActivity" />
-        <activity android:name=".ui.activity.LogoActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.SendShareFriendsActivity" />
         <activity
             android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
@@ -280,11 +280,11 @@
         <activity android:name=".ui.activity.SetDisplayNameActivity" />
         <activity android:name=".ui.activity.MoreUserDetailInfoActivity" />
         <activity android:name=".ui.activity.LocationSeacherActivity" />
-        <activity android:name=".ui.activity.DiscoveryActivity" />
         <activity android:name=".ui.activity.CommonRegisterActivity" />
         <activity android:name=".ui.activity.VipRegisterActivity" />
         <activity android:name=".ui.activity.MineQRCodeActivity" />
-        <activity android:name=".ui.activity.ApplayVIPActivity"></activity>
+        <activity android:name=".ui.activity.ApplayVIPActivity" />
+        <activity android:name=".ui.activity.PossibleUnderstandActivity"></activity>
     </application>
 
 </manifest>

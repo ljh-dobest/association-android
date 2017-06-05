@@ -8,19 +8,39 @@ public class UserOrGroupBean {
     private String groupId;
     private String groupName;
     private String groupPortraitUrl;
+    private String groupUserNumber;
     private String userId;
+    private String numberId;
     private String nickname;
     private String userPortraitUrl;
     private String status;
+    private String count;
+    private String relationship;
+    private String sex;
+    private String checkFriends;
 
-    public UserOrGroupBean(String groupId, String groupName, String groupPortraitUrl, String userId, String nickname, String userPortraitUrl, String status) {
+    public UserOrGroupBean(String groupId, String groupName, String groupPortraitUrl, String groupUserNumber, String userId, String numberId, String nickname, String userPortraitUrl, String status, String count, String relationship, String sex, String checkFriends) {
         this.groupId = groupId;
         this.groupName = groupName;
         this.groupPortraitUrl = groupPortraitUrl;
+        this.groupUserNumber = groupUserNumber;
         this.userId = userId;
+        this.numberId = numberId;
         this.nickname = nickname;
         this.userPortraitUrl = userPortraitUrl;
         this.status = status;
+        this.count = count;
+        this.relationship = relationship;
+        this.sex = sex;
+        this.checkFriends = checkFriends;
+    }
+
+    public String getNumberId() {
+        return numberId;
+    }
+
+    public void setNumberId(String numberId) {
+        this.numberId = numberId;
     }
 
     public String getGroupId() {
@@ -45,6 +65,14 @@ public class UserOrGroupBean {
 
     public void setGroupPortraitUrl(String groupPortraitUrl) {
         this.groupPortraitUrl = groupPortraitUrl;
+    }
+
+    public String getGroupUserNumber() {
+        return groupUserNumber;
+    }
+
+    public void setGroupUserNumber(String groupUserNumber) {
+        this.groupUserNumber = groupUserNumber;
     }
 
     public String getUserId() {
@@ -77,5 +105,37 @@ public class UserOrGroupBean {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getCheckFriends() {
+        return checkFriends;
+    }
+
+    public void setCheckFriends(String checkFriends) {
+        this.checkFriends = checkFriends;
     }
 }

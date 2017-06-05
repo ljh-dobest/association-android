@@ -18,8 +18,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.mob.MobSDK.getContext;
-
 public class VipRegisterActivity extends BaseMvpActivity<IRegisterView,RegisterPresenterImpl> implements IRegisterView{
 
     @BindView(R.id.iv_vip_rg_back)
@@ -54,7 +52,7 @@ public class VipRegisterActivity extends BaseMvpActivity<IRegisterView,RegisterP
                 finish();
                 break;
             case R.id.btn_vip_register:
-                LoadDialog.show(getContext());
+                LoadDialog.show(this);
                 String password = etVipRgPwd.getText().toString();
                 String mobile = etVipRgPhone.getText().toString();
                 String nikeName=etVipRgUsername.getText().toString();
@@ -66,34 +64,30 @@ public class VipRegisterActivity extends BaseMvpActivity<IRegisterView,RegisterP
 
     @Override
     public void showTextEmpty() {
-        T.showShort(getContext(),"用户名、手机号码、密码、推荐码不能为空！");
-        LoadDialog.dismiss(getContext());
+        T.showShort(this,"用户名、手机号码、密码、推荐码不能为空！");
+        LoadDialog.dismiss(this);
     }
 
     @Override
     public void showRegisterError(String string) {
-        T.showShort(getContext(),string);
-        LoadDialog.dismiss(getContext());
+        T.showShort(this,string);
+        LoadDialog.dismiss(this);
     }
 
     @Override
     public void showPwdError() {
-        T.showShort(getContext(),"密码不能少于4位");
-        LoadDialog.dismiss(getContext());
+        T.showShort(this,"密码不能少于4位");
+        LoadDialog.dismiss(this);
     }
 
     @Override
     public void succeedToRegister() {
-        LoadDialog.dismiss(getContext());
-        T.showShort(getContext(),"注册成功~~");
+        LoadDialog.dismiss(this);
+        T.showShort(this,"注册成功~~");
 //        Intent intent=new Intent(this, VerifyRecommedInfoActivity.class);
 //        intent.putExtra("useId",etVipRgPhone.getText().toString());
 //        intent.putExtra("recommendId",etVipRgInviteCode.getText().toString());
 //        startActivity(intent);
-        etVipRgPhone.setText("");
-        etVipRgUsername.setText("");
-        etVipRgPwd.setText("");
-        etVipRgInviteCode.setText("");
         Intent intent=new Intent();
         intent.putExtra("mobile",etVipRgPhone.getText().toString().trim());
         intent.putExtra("pwd",etVipRgPwd.getText().toString().trim());

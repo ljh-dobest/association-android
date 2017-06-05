@@ -18,7 +18,7 @@
   android:layout_centerVertical="true"
     android:layout_toRightOf="@+id/iv_inteset_rv_item_header">
     <TextView
-        android:text="象棋总动员"
+        android:text="我们都是刘谦的关门弟子"
         android:gravity="left"
         android:id="@+id/iv_inteset_rv_item_groupName"
         android:layout_width="wrap_content"
@@ -28,6 +28,8 @@
         />
 
     <TextView
+        android:layout_marginTop="10dp"
+        android:paddingBottom="20dp"
         android:textColor="@color/col_999999"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -3,7 +3,6 @@ package com.ike.communityalliance.ui.activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -41,14 +40,12 @@ import butterknife.OnClick;
 
 public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayView, PersonalApplayPresenter> implements RadioGroup.OnCheckedChangeListener, IPersonalApplayView, AdapterView.OnItemSelectedListener {
     private final String[] creditScores = new String[]{"100", "90", "80", "70", "60", "50", "40", "30", "20", "10"};
-    private final String[] relationships = new String[]{"亲人", "情侣", "同事", "校友", "老乡"};
+    private final String[] relationships = new String[]{"亲人","同事", "校友", "同乡"};
     private final String[] degrees={"初中","高中","中技","中专","大专","本科","硕士","博士","MBA","EMBA","其他"};
     @BindView(R.id.et_recom_name)
     EditText et_recom_name;
     @BindView(R.id.et_recom_mobile)
     EditText et_recom_mobile;
-    @BindView(R.id.et_recom_creditScore)
-    EditText et_recom_creditScore;
     @BindView(R.id.et_recom_relationship)
     EditText et_recom_relationship;
     @BindView(R.id.et_recom_birthday)
@@ -93,8 +90,6 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     Button btn_recommend;
     @BindView(R.id.ll_recomm_marriaged)
     LinearLayout ll_recomm_marriaged;
-    @BindView(R.id.ll_recom_creditScore)
-    LinearLayout ll_recom_creditScore;
     @BindView(R.id.sp_recom_province)
     Spinner sp_recom_province;
     @BindView(R.id.sp_recom_city)
@@ -118,7 +113,6 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     private ArrayList<String> address = new ArrayList<>();
     private String relationship;
     private String character;
-    private String creditScore;
     private String birthday;
     private String homeplace;
     private String finishSchool;
@@ -174,9 +168,7 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
 
     @Override
     public void succeedToRecommed(String recommendId) {
-        Intent intent = new Intent(this, RecomendCardActivity.class);
-        intent.putExtra("recommendId", recommendId);
-        startActivity(intent);
+     T.showShort(this,"恭喜您！已成为VIP用户！");
         finish();
     }
 
@@ -212,7 +204,6 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
         }
         getHobbys(rg_recom_like);
         getCharacters(rg_recom_character);
-        creditScore = et_recom_creditScore.getText().toString().trim();
         birthday = et_recom_birthday.getText().toString().trim();
         finishSchool = et_recom_school.getText().toString().trim();
         company = et_recom_company.getText().toString().trim();
@@ -294,8 +285,7 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
         }
     }
 
-    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend, R.id.et_recom_relationship,
-            R.id.et_recom_creditScore,R.id.et_verifyInfo_degree})
+    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend, R.id.et_recom_relationship,R.id.et_verifyInfo_degree})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_recom_back:
@@ -320,8 +310,8 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
                 break;
             case R.id.btn_recommend:
                 getViewData();
-                presenter.postVipInfo(new PersonalVipBean(userId, fullName, mobile, sex, hobby, address, relationship, character,
-                        creditScore, birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
+                presenter.postVipInfo(new PersonalVipBean(userId, fullName, mobile, sex, hobby, address, relationship, character
+                        ,birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
                         spouseName, childrenName, childrenSchool,curDegreeCode,position,industry,email,QQ,wechat));
                 break;
             case R.id.et_recom_relationship:
@@ -337,19 +327,6 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
                     }
                 });
                 dialog_relationship.create().show();
-                break;
-            case R.id.et_recom_creditScore:
-                //弹出信誉分选择框
-                AlertDialog.Builder dialog_creditScore = new AlertDialog.Builder(this);
-                dialog_creditScore.setTitle("选择信誉分");
-                dialog_creditScore.setSingleChoiceItems(creditScores, 0, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        et_recom_creditScore.setText(creditScores[i]);
-                        dialogInterface.dismiss();
-                    }
-                });
-                dialog_creditScore.create().show();
                 break;
             case R.id.et_verifyInfo_degree:
                 //选择学历

@@ -281,25 +281,6 @@
                 />
         </com.zhy.autolayout.AutoLinearLayout>
         <com.zhy.autolayout.AutoLinearLayout
-            android:id="@+id/ll_recom_creditScore"
-            style="@style/claimInfo_item_ll_styles">
-            <TextView
-                style="@style/claimInfo_tv_styles"
-                android:text="信誉分:"/>
-            <ImageView
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/redsure" />
-            <EditText
-                android:id="@+id/et_recom_creditScore"
-                android:focusableInTouchMode="false"
-                android:focusable="false"
-                style="@style/claimInfo_et_styles"
-                />
-        </com.zhy.autolayout.AutoLinearLayout>
-        <com.zhy.autolayout.AutoLinearLayout
             android:id="@+id/ll_claiminfo_birthday"
             style="@style/claimInfo_item_ll_styles">
             <TextView
@@ -442,10 +423,80 @@
             style="@style/claimInfo_item_ll_styles">
             <TextView
                 style="@style/claimInfo_tv_styles"
+                android:text="学历:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recomd_degree"
+                style="@style/claimInfo_et_styles"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="行业:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_industry"
+                style="@style/claimInfo_et_styles"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
                 android:text="公司:"/>
             <EditText
                 android:layout_marginLeft="31px"
                 android:id="@+id/et_recom_company"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="公司职位:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_company_position"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="邮箱:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_email"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="QQ:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_QQ"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="微信:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_wechat"
                 style="@style/claimInfo_et_styles"
                 />
         </com.zhy.autolayout.AutoLinearLayout>

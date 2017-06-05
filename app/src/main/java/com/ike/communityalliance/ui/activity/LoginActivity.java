@@ -119,7 +119,7 @@ public class LoginActivity extends BaseMvpActivity<ILoginView,LoginPresenterImpl
     @Override
     public void showUserNameOrPassWordEmpty(String errorString) {
         T.showShort(this,errorString);
-
+        LoadDialog.dismiss(this);
     }
 
     @Override

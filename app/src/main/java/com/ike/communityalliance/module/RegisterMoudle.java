@@ -43,13 +43,15 @@ public class RegisterMoudle {
                         case 200:
                             listener.succeedToRegiset();
                             break;
-                        case 0:
+                        case 100:
                             listener.failedToRegister("账号已注册");
                             break;
                         case 1000:
                             listener.failedToRegister("推荐码不正确");
                             break;
-
+                          default:
+                              listener.failedToRegister("未知错误");
+                              break;
                     }
                 }
             });

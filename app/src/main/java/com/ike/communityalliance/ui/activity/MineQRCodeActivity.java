@@ -48,7 +48,7 @@ private String userPortraitUrl;
         sex=getIntent().getStringExtra("sex");
         age=getIntent().getStringExtra("age");
         userPortraitUrl=getIntent().getStringExtra("userPortraitUrl");
-        Bitmap codeImg= EncodingUtils.createQRCode(userId,400,400,null);
+        Bitmap codeImg= EncodingUtils.createQRCode("BJIKE-"+userId,400,400,null);
         Picasso.with(this).load(userPortraitUrl).into(ivMineQRUserIcon);
         tvMineQRName.setText(userName);
         tvMineQRAge.setText(age);

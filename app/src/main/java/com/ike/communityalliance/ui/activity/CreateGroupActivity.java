@@ -236,9 +236,12 @@ public class CreateGroupActivity extends BaseActivity {
                         RongIM.getInstance().startConversation(mContext, Conversation.ConversationType.GROUP,groupId, groupName);
                         T.showShort(mContext,"创建成功");
                         finish();
-                    }else {
+                    }else if(code.getCode()==1004){
                         LoadDialog.dismiss(mContext);
-                        T.showShort(mContext,"创建失败,请检查网络是否完好或重新创建一个群");
+                        T.showShort(mContext,"创建失败,信誉值不足！");
+                    }else{
+                        LoadDialog.dismiss(mContext);
+                        T.showShort(mContext,"创建失败");
                     }
                 }
             });

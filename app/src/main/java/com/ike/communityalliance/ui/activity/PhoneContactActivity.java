@@ -15,6 +15,7 @@ import com.ike.communityalliance.adapter.PhoneContactRvAdapter;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.bean.ContastsInfo;
 import com.ike.communityalliance.wedget.ItemDivider;
+import com.ike.mylibrary.util.AMUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,6 @@ public class PhoneContactActivity extends BaseActivity implements PhoneContactRv
         initRv();
     }
 
-
     private void getContasts() {
         try {
             Uri contactUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
@@ -50,9 +50,11 @@ public class PhoneContactActivity extends BaseActivity implements PhoneContactRv
                 contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                String myContactNumber=contactNumber.replace("+","").replace(" ","");
-                ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
-                if (contactName != null)
-                    list.add(contactsInfo);
+                if(AMUtils.isMobile(myContactNumber)){
+                    ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
+                    if (contactName != null)
+                        list.add(contactsInfo);
+                }
             }
             cursor.close();//使用完后一定要将cursor关闭，不然会造成内存泄露等问题
         } catch (Exception e) {

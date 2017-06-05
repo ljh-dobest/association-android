@@ -15,7 +15,6 @@ public class PersonalVipBean {
     private ArrayList<String> address;
     private String relationship;
     private String character;
-    private String creditScore;
     private String birthday;
     private String homeplace;
     private String finishSchool;
@@ -33,7 +32,7 @@ public class PersonalVipBean {
     private String QQ;
     private String wechat;
 
-    public PersonalVipBean(String userId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String relationship, String character, String creditScore, String birthday, String homeplace, String finishSchool, String company, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool, String degree, String position, String industry, String email, String QQ, String wechat) {
+    public PersonalVipBean(String userId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String relationship, String character, String birthday, String homeplace, String finishSchool, String company, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool, String degree, String position, String industry, String email, String QQ, String wechat) {
         this.userId = userId;
         this.fullName = fullName;
         this.mobile = mobile;
@@ -42,7 +41,6 @@ public class PersonalVipBean {
         this.address = address;
         this.relationship = relationship;
         this.character = character;
-        this.creditScore = creditScore;
         this.birthday = birthday;
         this.homeplace = homeplace;
         this.finishSchool = finishSchool;
@@ -60,6 +58,7 @@ public class PersonalVipBean {
         this.QQ = QQ;
         this.wechat = wechat;
     }
+
 
     public String getUserId() {
         return userId;
@@ -123,14 +122,6 @@ public class PersonalVipBean {
 
     public void setCharacter(String character) {
         this.character = character;
-    }
-
-    public String getCreditScore() {
-        return creditScore;
-    }
-
-    public void setCreditScore(String creditScore) {
-        this.creditScore = creditScore;
     }
 
     public String getBirthday() {

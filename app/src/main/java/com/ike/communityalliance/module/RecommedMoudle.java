@@ -10,8 +10,8 @@ import com.google.gson.reflect.TypeToken;
 import com.ike.communityalliance.bean.CityBean;
 import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.bean.CountyBean;
+import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.ProvinceBean;
-import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.bean.RecommendCode;
 import com.ike.communityalliance.listener.OnRecommedFinishListener;
 import com.ike.communityalliance.network.HttpUtils;
@@ -30,10 +30,10 @@ import okhttp3.Call;
  */
 
 public class RecommedMoudle {
-    public void recommed(RecommendBean recommendBean, final OnRecommedFinishListener listener) {
+    public void recommed(PersonalVipBean recommendBean, final OnRecommedFinishListener listener) {
       if(recommendBean.getUserId().equals("")||recommendBean.getFullName().equals("")||recommendBean.getMobile().equals("")||recommendBean.getSex().equals("")
               ||recommendBean.getHobby().equals("")||recommendBean.getAddress().size()==0||recommendBean.getRelationship().equals("")
-              ||recommendBean.getCreditScore().equals("")){
+            ){
           listener.showTextEmpty();
           return;
       }

@@ -75,7 +75,7 @@ public class ChatPopupWindow extends PopupWindow implements View.OnClickListener
                 break;
 
             case R.id.rl_pop_discover: //发现
-                context.startActivity( new Intent(context,DiscoveryActivity.class));
+                context.startActivity( new Intent(context,ShareFriendsActivity.class));
                 iv_pop_disc_item.setVisibility(View.GONE);
                 ChatPopupWindow.this.dismiss();
                 break;

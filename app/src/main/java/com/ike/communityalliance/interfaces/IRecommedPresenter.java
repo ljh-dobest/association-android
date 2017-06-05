@@ -3,7 +3,7 @@ package com.ike.communityalliance.interfaces;
 import android.content.Context;
 import android.view.ViewGroup;
 
-import com.ike.communityalliance.bean.RecommendBean;
+import com.ike.communityalliance.bean.PersonalVipBean;
 
 
 /**
@@ -11,7 +11,7 @@ import com.ike.communityalliance.bean.RecommendBean;
  */
 
 public interface IRecommedPresenter {
-    void verifyRecommedInfo(RecommendBean recommendBean);
+    void verifyRecommedInfo(PersonalVipBean recommendBean);
    void getParserData(Context context, String fileName);
     void getHobby(ViewGroup group);
     void getCharacters(ViewGroup group);

@@ -157,8 +157,6 @@
                         android:text="爱好:"
                         />
                     <ImageView
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@mipmap/redsure" />
@@ -190,8 +188,6 @@
                  android:visibility="invisible"
                     />
                 <ImageView
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
@@ -225,8 +221,6 @@
                         android:visibility="invisible"
                         />
                     <ImageView
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="invisible"

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.view.ViewGroup;
 
 import com.ike.communityalliance.base.BasePersenter;
+import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.ProvinceBean;
-import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.interfaces.IRecommedPresenter;
 import com.ike.communityalliance.interfaces.IRecommedView;
 import com.ike.communityalliance.listener.OnRecommedFinishListener;
@@ -25,7 +25,7 @@ public class RecommendPresenterImpl extends BasePersenter<IRecommedView> impleme
 
 
     @Override
-    public void verifyRecommedInfo(RecommendBean recommendBean) {
+    public void verifyRecommedInfo(PersonalVipBean recommendBean) {
             recommedMoudle.recommed(recommendBean,this);
     }
 
