@@ -12,12 +12,12 @@
         "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\img_comment_btn.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\more.png",
-        "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\more.png"
-    },
-    {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\residue.png",
         "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\residue.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\more.png",
+        "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\more.png"
     },
     {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\checked.png",
@@ -34,6 +34,10 @@
     {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
         "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\rest.png",
+        "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\rest.png"
     },
     {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\close.png",
@@ -100,12 +104,12 @@
         "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\img_collect_btn_no.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\header.png",
-        "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\header.png"
-    },
-    {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\img_camera_btn.png",
         "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\img_camera_btn.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\header.png",
+        "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-xhdpi\\header.png"
     },
     {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\add_association.png",

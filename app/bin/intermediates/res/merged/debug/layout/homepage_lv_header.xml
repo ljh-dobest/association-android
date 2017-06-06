@@ -10,31 +10,28 @@
         android:layout_height="400px"
         app:indicator_width="10dp"
         app:indicator_height="10dp"
-        app:delay_time="2000"
+        app:indicator_drawable_selected="@drawable/banner_selected"
+        app:indicator_drawable_unselected="@drawable/banner_unseleted"
         />
     <RelativeLayout
-       android:padding="8dp"
         android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:layout_height="50dp">
         <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/font_24"
+            android:textSize="16sp"
             android:text="@string/application_center"/>
         <ImageView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
             android:id="@+id/iv_home_appcenter"
             android:layout_alignParentRight="true"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/rp_arrow"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/arrow_more"/>
     </RelativeLayout>
-    <!--<GridView-->
-        <!--android:id="@+id/homepage_gv"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:numColumns="4"-->
-        <!--android:verticalSpacing="3dp"-->
-        <!--android:horizontalSpacing="3dp"-->
-        <!--&gt;</GridView>-->
 </com.zhy.autolayout.AutoLinearLayout>

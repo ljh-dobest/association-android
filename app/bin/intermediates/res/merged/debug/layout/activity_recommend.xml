@@ -46,22 +46,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="100px"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/tv_claiminfo_name"
                 style="@style/claimInfo_tv_styles"
-                android:text="姓名:"/>
+                android:text="姓名:" />
+
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/redsure" />
+
             <EditText
-                android:layout_toRightOf="@id/tv_claiminfo_name"
-                android:layout_marginLeft="31px"
                 android:id="@+id/et_recom_name"
                 style="@style/claimInfo_et_styles"
-                android:text=""/>
+                android:text="" />
         </com.zhy.autolayout.AutoLinearLayout>
-    <com.zhy.autolayout.AutoLinearLayout
+
+        <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:gravity="center_vertical">
@@ -69,9 +79,14 @@
             android:id="@+id/tv_claiminfo_phone"
             style="@style/claimInfo_tv_styles"
             android:text="电话:"/>
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/redsure" />
         <EditText
             android:layout_toRightOf="@id/tv_claiminfo_phone"
-            android:layout_marginLeft="31px"
             android:id="@+id/et_recom_mobile"
             style="@style/claimInfo_et_styles"
             android:text=""
@@ -82,6 +97,12 @@
             <TextView
                 style="@style/claimInfo_tv_styles"
                 android:text="性别:" />
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/redsure" />
             <RadioGroup
                 android:id="@+id/rg_recom_sex"
                 android:layout_width="0dp"
@@ -114,19 +135,25 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="爱好:"
                     />
-                <RadioButton
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
+                <CheckBox
                     android:id="@+id/rb_recom_like1"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="舞蹈" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like2"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="音乐"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like3"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="画画"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like4"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="乐器"/>
@@ -141,20 +168,27 @@
                     android:text="爱好:"
                     android:visibility="invisible"
                     />
-                <RadioButton
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:src="@mipmap/redsure" />
+                <CheckBox
                     android:id="@+id/rb_recom_like5"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="游戏" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like6"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="影视"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_like7"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="旅行"/>
-                <RadioButton
-                    android:id="@+id/rb_recom_like12"
+                <CheckBox
+                    android:id="@+id/rb_recom_like8"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="棋类"/>
             </com.zhy.autolayout.AutoLinearLayout>
@@ -169,20 +203,27 @@
                     android:textColor="@color/white"
                     android:visibility="invisible"
                     />
-                <RadioButton
-                    android:id="@+id/rb_recom_like8"
-                    style="@style/claimInfo_item_rb_styles"
-                    android:text="美食" />
-                <RadioButton
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:src="@mipmap/redsure" />
+                <CheckBox
                     android:id="@+id/rb_recom_like9"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="社交"/>
-                <RadioButton
+                    android:text="美食" />
+                <CheckBox
                     android:id="@+id/rb_recom_like10"
                     style="@style/claimInfo_item_rb_styles"
-                    android:text="阅读"/>
-                <RadioButton
+                    android:text="社交"/>
+                <CheckBox
                     android:id="@+id/rb_recom_like11"
+                    style="@style/claimInfo_item_rb_styles"
+                    android:text="阅读"/>
+                <CheckBox
+                    android:id="@+id/rb_recom_like12"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="运动"/>
             </com.zhy.autolayout.AutoLinearLayout>
@@ -192,6 +233,12 @@
             <TextView
                 style="@style/claimInfo_tv_styles"
                 android:text="地址:" />
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/redsure" />
             <Spinner
                 style="@style/claimInfo_item_sp_styles"
                 android:id="@+id/sp_recom_province"
@@ -220,23 +267,14 @@
             <TextView
                 style="@style/claimInfo_tv_styles"
                 android:text="关系:"/>
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/redsure" />
             <EditText
-                android:layout_marginLeft="31px"
                 android:id="@+id/et_recom_relationship"
-                android:focusableInTouchMode="false"
-                android:focusable="false"
-                style="@style/claimInfo_et_styles"
-                />
-        </com.zhy.autolayout.AutoLinearLayout>
-        <com.zhy.autolayout.AutoLinearLayout
-            android:id="@+id/ll_recom_creditScore"
-            style="@style/claimInfo_item_ll_styles">
-            <TextView
-                style="@style/claimInfo_tv_styles"
-                android:text="信誉分:"/>
-            <EditText
-                android:layout_marginLeft="31px"
-                android:id="@+id/et_recom_creditScore"
                 android:focusableInTouchMode="false"
                 android:focusable="false"
                 style="@style/claimInfo_et_styles"
@@ -269,19 +307,19 @@
                     style="@style/claimInfo_tv_styles"
                     android:text="性格:"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character1"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="死宅" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character2"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="幽默"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character3"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="漂亮"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character4"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="大方"/>
@@ -296,19 +334,19 @@
                     android:text="性格:"
                     android:visibility="invisible"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character5"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="急躁" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character6"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="轻浮"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character7"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="花心"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character12"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="逗比"/>
@@ -324,19 +362,19 @@
                     android:textColor="@color/white"
                     android:visibility="invisible"
                     />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character8"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="活泼" />
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character9"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="高冷"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character10"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="诚信"/>
-                <RadioButton
+                <CheckBox
                     android:id="@+id/rb_recom_character11"
                     style="@style/claimInfo_item_rb_styles"
                     android:text="可爱"/>
@@ -385,10 +423,80 @@
             style="@style/claimInfo_item_ll_styles">
             <TextView
                 style="@style/claimInfo_tv_styles"
+                android:text="学历:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recomd_degree"
+                style="@style/claimInfo_et_styles"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="行业:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_industry"
+                style="@style/claimInfo_et_styles"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
                 android:text="公司:"/>
             <EditText
                 android:layout_marginLeft="31px"
                 android:id="@+id/et_recom_company"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="公司职位:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_company_position"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="邮箱:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_email"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="QQ:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_QQ"
+                style="@style/claimInfo_et_styles"
+                />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/claimInfo_item_ll_styles">
+            <TextView
+                style="@style/claimInfo_tv_styles"
+                android:text="微信:"/>
+            <EditText
+                android:layout_marginLeft="31px"
+                android:id="@+id/et_recom_wechat"
                 style="@style/claimInfo_et_styles"
                 />
         </com.zhy.autolayout.AutoLinearLayout>

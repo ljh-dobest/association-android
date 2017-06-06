@@ -21,4 +21,5 @@ public interface IVerifyRecommedInfoView {
     void getHobby(ViewGroup group);
     void getVerifyInfo(String userId,String recommendId);
     void setVerifyInfo(VerifyRecommedInfo verifyInfo);
+    void succeedToVip();
 }

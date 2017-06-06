@@ -39,12 +39,12 @@ public class ChessAndCardsModule {
                 switch (code.getCode()) {
                     case 200:
                        List<InterestGroupBean> groupData=code.getData();
-                        List<InterestGroupBean> unJoinGroupData=getUnJoinGroupData(groupData);
-                        listener.returnInterestGroupData(unJoinGroupData);
+
+                        listener.returnInterestGroupData(groupData);
                         break;
-                    case 0:
-                        listener.showErrorString("服务器繁忙");
-                        break;
+//                    case 0:
+//                        listener.showErrorString("服务器繁忙");
+//                        break;
                 }
             }
         });

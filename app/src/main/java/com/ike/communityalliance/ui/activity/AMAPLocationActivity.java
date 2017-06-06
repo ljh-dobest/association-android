@@ -3,9 +3,12 @@ package com.ike.communityalliance.ui.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.maps.AMap;
@@ -36,14 +38,10 @@ import com.ike.communityalliance.bean.LocationEntity;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.listener.OnLocationGetListener;
 import com.ike.communityalliance.utils.DisplayUtils;
-import com.ike.communityalliance.utils.file.PermissionsUtil;
 import com.ike.communityalliance.wedget.CircleImageView;
 import com.ike.communityalliance.wedget.location.LocationTask;
 import com.ike.communityalliance.wedget.location.RegeocodeTask;
 import com.squareup.picasso.Picasso;
-import com.zhy.m.permission.MPermissions;
-import com.zhy.m.permission.PermissionDenied;
-import com.zhy.m.permission.PermissionGrant;
 
 import java.util.ArrayList;
 
@@ -51,13 +49,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.rong.message.LocationMessage;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
+@RuntimePermissions
 public class AMAPLocationActivity extends ActionBarActivity implements OnLocationGetListener, PoiSearch.OnPoiSearchListener, AMap.OnMarkerClickListener {
 
-    private static final int REQUECT_CODE_LOCATION = 1002;
-    private static final int REQUECT_CODE_COARSE_LOCATION = 1003;
-    private static final int REQUECT_CODE_READ_EXTERNAL_STORAGE = 1004;
-    private static final int REQUECT_CODE_READ_PHONE_STATE = 1005;
     @BindView(R.id.map)
     MapView mapView;
     @BindView(R.id.location)
@@ -104,7 +101,8 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
     private String userName, userHeader;
     private String city;
     private Tip tip;
-    private ArrayList<MarkerOptions> markerOptionsList = new ArrayList<>();;
+    private ArrayList<MarkerOptions> markerOptionsList = new ArrayList<>();
+    private String[] PERMISSION_DOLOCATIONPERMISSION= new String[] {"android.permission.ACCESS_LOCATION_EXTRA_COMMANDS","android.permission.ACCESS_COARSE_LOCATION"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,9 +123,12 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
             llLocation.setVisibility(View.GONE);
             iv_enter.setVisibility(View.GONE);
         }
-        mapView.onCreate(savedInstanceState);
         //android6.0 打开位置权限
-        initPermission();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS) != PackageManager.PERMISSION_GRANTED
+        ||ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSION_DOLOCATIONPERMISSION, 1004);
+        }
+        mapView.onCreate(savedInstanceState);
     }
 
     private void initHeaderView() {
@@ -143,14 +144,8 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
         query.setPageNum(0);//设置查第一页
         poiSearch = new PoiSearch(this, query);
         //如果不为空值
-//        if (latitude != 0.0 && longitude != 0.0) {
-//            poiSearch.setBound(new PoiSearch.SearchBound(new LatLonPoint(latitude,
-//                    latitude), 6000));// 设置周边搜索的中心点以及区域
         poiSearch.setOnPoiSearchListener(this);// 设置数据返回的监听器
         poiSearch.searchPOIAsyn();// 开始搜索
-//        } else {
-//            T.showShort(this, "定位失败");
-//        }
 
     }
 
@@ -200,13 +195,14 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
         aMap.moveCamera(new CameraUpdateFactory().zoomTo(50));
     }
 
-
+    @NeedsPermission({Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,Manifest.permission.ACCESS_COARSE_LOCATION})
+    public void initLocationPermission() {}
     //android6.0 打开位置权限
     private void initPermission() {
-        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS);
-        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_COARSE_LOCATION);
-        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_WIFI_STATE);
+//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS);
+//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION);
+//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_WIFI_STATE);
     }
 
     @Override
@@ -258,22 +254,10 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
         mapView.onSaveInstanceState(outState);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        MPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
 
 
-    @PermissionGrant(REQUECT_CODE_READ_PHONE_STATE)
-    public void requestSdcardSuccess() {
-        Toast.makeText(this, "GRANT ACCESS PHONE_STATE!", Toast.LENGTH_SHORT).show();
-    }
 
-    @PermissionDenied(REQUECT_CODE_READ_PHONE_STATE)
-    public void requestSdcardFailed() {
-        Toast.makeText(this, "DENY ACCESS PHONE_STATE!", Toast.LENGTH_SHORT).show();
-    }
+
 
     @Override
     public void onPoiSearched(PoiResult poiResult, int i) {

@@ -1,22 +1,30 @@
 package com.ike.communityalliance.ui;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Process;
+import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -28,22 +36,27 @@ import com.google.gson.reflect.TypeToken;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.MainPageAdapter;
 import com.ike.communityalliance.base.BaseActivity;
+import com.ike.communityalliance.bean.Code;
+import com.ike.communityalliance.bean.ContastsInfo;
 import com.ike.communityalliance.bean.FriendInfo;
 import com.ike.communityalliance.bean.ProvinceBean;
 import com.ike.communityalliance.bean.TalkTalkBean;
 import com.ike.communityalliance.constant.Const;
+import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.server.broadcast.BroadcastManager;
 import com.ike.communityalliance.ui.activity.ChatPopupWindow;
 import com.ike.communityalliance.ui.activity.LoginActivity;
 import com.ike.communityalliance.ui.activity.NewFriendListActivity;
 import com.ike.communityalliance.ui.activity.RecommendActivity;
+import com.ike.communityalliance.ui.fragment.ContactFragment;
 import com.ike.communityalliance.ui.fragment.HomeFragment;
+import com.ike.communityalliance.ui.fragment.InterestGroupFragment;
 import com.ike.communityalliance.ui.fragment.MineFragment;
 import com.ike.communityalliance.utils.DateUtils;
-import com.ike.communityalliance.utils.file.PermissionsUtil;
-import com.zhy.m.permission.MPermissions;
-import com.zhy.m.permission.PermissionDenied;
-import com.zhy.m.permission.PermissionGrant;
+import com.ike.communityalliance.utils.DoACacheNeedsPermissionPermissionRequest;
+import com.ike.mylibrary.util.AMUtils;
+import com.ike.mylibrary.util.T;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -61,10 +74,16 @@ import io.rong.imkit.fragment.ConversationListFragment;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.message.ContactNotificationMessage;
+import okhttp3.Call;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
 
 import static com.ike.mylibrary.util.L.isDebug;
 
-
+@RuntimePermissions
 public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChangeListener {
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
@@ -72,7 +91,6 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
     ViewPager main_vp;
     @BindView(R.id.rl_main_header)
     RelativeLayout rl_main_header;
-    private int checkedcolor = 0xffff3300;
     private RadioButton radioButtons[];
     private List<Fragment> fragments;
     @BindView(R.id.iv_main_recommed)
@@ -90,14 +108,21 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
     private Context mContext;
     public static final String EXIT = "EXIT";
     private Conversation.ConversationType[] mConversationsTypes = null;
-    private Integer[] images={R.drawable.main_home_bg,R.drawable.main_chat_bg,R.drawable.main_mine_bg};
-    private String[] names={"首页","聊天","我的"};
+    private Integer[] images={R.drawable.main_home_bg,R.drawable.main_chat_bg,R.drawable.main_interest_bg,R.drawable.main_contact_bg,R.drawable.main_mine_bg};
+    private String[] names={"首页","聊天","兴趣联盟","通讯录","我的"};
+    private SharedPreferences sp;
+    private String useId;
+    private List<ContastsInfo> list = new ArrayList<ContastsInfo>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
         ButterKnife.bind(this);
-        PermissionsUtil.initPermissions(this, Manifest.permission.CAMERA);
+        sp = getSharedPreferences("config", Context.MODE_PRIVATE);
+        useId = sp.getString(Const.LOGIN_ID, "");
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+            showRationaleForContascts(new DoACacheNeedsPermissionPermissionRequest(this));
+      }
         mContext = this;
         isDebug = getSharedPreferences("config", MODE_PRIVATE).getBoolean("isDebug", false);
        getLocationParserData(this,"data.txt");
@@ -119,12 +144,41 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         EventBus.getDefault().register(this);
     }
 
+    //授予权限后提交手机联系人数据
+    @NeedsPermission(Manifest.permission.READ_CONTACTS)
+    public void initContactPermission() {
+        getContasts();
+        Gson gson = new Gson();
+        String contactList = gson.toJson(list);
+        HttpUtils.PostMobile("/inputMobile", useId, contactList, new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                T.showShort(Main2Activity.this,"获取联系人失败");
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Gson gson=new Gson();
+                Type type = new TypeToken<Code<Object>>() {
+                }.getType();
+                Code<Object> code = gson.fromJson(response,type);
+                if(code.getCode()==200){
+                    T.showShort(Main2Activity.this,"获取联系人传成功");
+                }else{
+                    T.showShort(Main2Activity.this,"获取联系人失败。。");
+                }
+            }
+        });
+    }
+
     private void init() {
         chatPopupWindow = new ChatPopupWindow(mContext);
         Fragment conversationList = initConversationList();
         fragments = new ArrayList<Fragment>();
         fragments.add(new HomeFragment());
         fragments.add(conversationList);
+        fragments.add(new InterestGroupFragment());
+        fragments.add(new ContactFragment());
         fragments.add(new MineFragment());
         adapter=new MainPageAdapter(getSupportFragmentManager(),fragments);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
@@ -148,7 +202,6 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         }
     }
     protected void initData() {
-
         final Conversation.ConversationType[] conversationTypes = {
                 Conversation.ConversationType.PRIVATE,
                 Conversation.ConversationType.GROUP, Conversation.ConversationType.SYSTEM,
@@ -352,7 +405,7 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
                 tv_main_title.setText("聊天");
                 rl_main_header.setVisibility(View.VISIBLE);
                 break;
-            case 2:
+            default:
                 rl_main_header.setVisibility(View.GONE);
                 break;
         }
@@ -389,23 +442,74 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
                 break;
         }
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
-    {
-        MPermissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+
+    @OnShowRationale(Manifest.permission.READ_CONTACTS)
+    void showRationaleForContascts(final PermissionRequest request){
+         final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
+        ComfirmDialog.setCancelable(false);
+        ComfirmDialog.show();
+        Window window = ComfirmDialog.getWindow();
+        window.setContentView(R.layout.permission_dialog_layout);
+        Button btn_permission_dialog_comfirm = (Button) window.findViewById(R.id.btn_permission_dialog_comfirm);
+        Button btn_permission_dialog_cancel= (Button) window.findViewById(R.id.btn_permission_dialog_cancel);
+        TextView tv_title_1= (TextView) window.findViewById(R.id.tv_permission_dialog_title1);
+        TextView tv_title_2= (TextView) window.findViewById(R.id.tv_permission_dialog_title2);
+        tv_title_1.setText("是否允许读取通讯录？");
+        tv_title_1.setTextSize(34);
+        tv_title_2.setText("读取通讯录让你获得更多的人脉");
+        tv_title_2.setTextSize(26);
+        btn_permission_dialog_comfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           request.proceed();
+                ComfirmDialog.dismiss();
+            }
+        });
+        btn_permission_dialog_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                request.cancel();
+                ComfirmDialog.dismiss();
+            }
+        });
+    }
+    /**
+     * 如果用户拒绝该权限执行的方法
+     */
+    @OnPermissionDenied(Manifest.permission.READ_CONTACTS)
+   public void ACacheOnPermissionDenied() {
+        Toast.makeText(this, "获取联系人权限失败，无法获取人脉数据！", Toast.LENGTH_SHORT).show();
+    }
+    /**
+     * 权限请求回调，提示用户之后，用户点击“允许”或者“拒绝”之后调用此方法
+     * @param requestCode  定义的权限编码
+     * @param permissions 权限名称
+     * @param grantResults 允许/拒绝
+     */
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        DoACacheNeedsPermissionPermissionRequest.onRequestPermissionsResult(this, requestCode, grantResults);
     }
 
-
-    @PermissionGrant(1001)
-    public void requestCameraSuccess()
-    {
-        //Toast.makeText(this, "成功获取相机权限", Toast.LENGTH_SHORT).show();
-    }
-
-    @PermissionDenied(1001)
-    public void requestCameraFailed()
-    {
-        Toast.makeText(this, "获取相机权限失败", Toast.LENGTH_SHORT).show();
+    private void getContasts() {
+        try {
+            Uri contactUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
+            Cursor cursor = getContentResolver().query(contactUri, null, null, null, null);
+            String contactName;
+            String contactNumber;
+            while (cursor.moveToNext()) {
+                contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                String myContactNumber=contactNumber.replace("+","").replace(" ","");
+                if(AMUtils.isMobile(myContactNumber)){
+                    ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
+                    if (contactName != null)
+                        list.add(contactsInfo);
+                }
+            }
+            cursor.close();//使用完后一定要将cursor关闭，不然会造成内存泄露等问题
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

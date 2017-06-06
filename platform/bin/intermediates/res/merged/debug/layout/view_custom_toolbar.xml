@@ -16,6 +16,7 @@
         android:padding="@dimen/border_20"
         android:drawableLeft="@mipmap/back"
         android:gravity="center"
+        android:drawablePadding="@dimen/border_10"
         android:textColor="@color/color_10"
         android:textSize="@dimen/font_30"
         android:visibility="visible" />

@@ -1,15 +1,7 @@
 [
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_friend_list_header.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_friend_list_header.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_lines_media.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_adapter_banklist_item.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_adapter_banklist_item.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
@@ -18,6 +10,766 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_dialog_popup_options.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_dialog_popup_options.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_mention_members.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_mention_members.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_person_setting.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_person_setting.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_dialog_popup_prompt.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_dialog_popup_prompt.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_setting_bank_cark_list.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_setting_bank_cark_list.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_single_choice_layout.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_single_choice_layout.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_send_group_peak.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_send_group_peak.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_conversation_notification_container.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_conversation_notification_container.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_input_edit_text.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_input_edit_text.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_send_share_friends.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_send_share_friends.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_voice_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_voice_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_evaluate.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_evaluate.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_applay_vip.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_applay_vip.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_gridview_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_gridview_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_public_service_search.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_public_service_search.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_limit_dialog.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_limit_dialog.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_trade_history.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_trade_history.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoji_grid_view.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoji_grid_view.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_add_vote.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_add_vote.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_add_card.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_add_card.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_grid_item.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_grid_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\unread_message_rv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\unread_message_rv_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_group_vote.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_group_vote.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_get_pwd.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_get_pwd.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_notification_realtime_location.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_notification_realtime_location.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_verification_code_dialog.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_verification_code_dialog.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_fragment_media_page.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_fragment_media_page.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\possible_understand_item2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\possible_understand_item2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_secure_setting.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_secure_setting.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_input_menu.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_input_menu.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_flexible.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_flexible.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_zxing.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_zxing.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_view_pager.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_view_pager.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_notice.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_notice.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_camera.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_camera.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_photo.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_photo.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_layout_line_959595.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_layout_line_959595.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_selected_freinds.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_selected_freinds.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_content_rv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_content_rv_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_title_bar.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_title_bar.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_voice_input.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_voice_input.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_plugin_location_activity.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_plugin_location_activity.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_preview_fragment.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_preview_fragment.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoticon_tab_container.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoticon_tab_container.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_group.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_group.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_image_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_image_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_dialog_bottom.xml",
+        "source": "F:\\NB\\association-android\\mylibrary\\bin\\intermediates\\bundles\\default\\res\\layout\\layout_dialog_bottom.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_activity_photobox.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_activity_photobox.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_extension_bar.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_extension_bar.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_amaplocation.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_amaplocation.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\tab_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\tab_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_more_personal_info.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_more_personal_info.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_conversation.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_conversation.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_recomend_card.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_recomend_card.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_lv_item3.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_lv_item3.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_divider.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_divider.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_rv_images_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_rv_images_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_possible_understand.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_possible_understand.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
+        "source": "F:\\NB\\association-android\\libzxing\\bin\\intermediates\\bundles\\default\\res\\layout\\activity_capture.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_rv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_rv_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\load_image_1.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\load_image_1.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_dialog_popup_options_item.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_dialog_popup_options_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoji_item.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoji_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_support_bank_card.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_support_bank_card.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_rich_content_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_rich_content_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_my_phone.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_my_phone.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_preview.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_preview.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_add_card_second.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_add_card_second.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_send_single_peak.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_send_single_peak.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_private_chat_detail.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_private_chat_detail.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\friend_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\friend_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_base.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_base.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_vote.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_vote.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_select_change.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_select_change.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_phone_contact.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_phone_contact.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_add_card_first.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_add_card_first.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_title_top.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\layout_title_top.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_share_location_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_share_location_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_indicator.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_indicator.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_lv_item2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_lv_item2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\send_friends_gv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\send_friends_gv_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_alert_human_evaluation.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_alert_human_evaluation.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_location_seacher.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_location_seacher.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_discussion_conversation.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_discussion_conversation.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_file_manager.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ac_file_manager.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_file_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_file_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_relationship.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_relationship.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_header_rp_detail.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_header_rp_detail.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\actionbar.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\actionbar.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_adapter_media_grid_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_adapter_media_grid_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_aspect_ratio.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_aspect_ratio.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_personal_applay_vip.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_personal_applay_vip.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_list.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_list.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_conversation_member.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_conversation_member.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_location_preview_activity.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_location_preview_activity.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_file_list.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ac_file_list.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_content_rv_item_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_content_rv_item_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\permission_dialog_layout.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\permission_dialog_layout.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_catalog_listview.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_catalog_listview.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_new_friends.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_new_friends.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\mine_fragment.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\mine_fragment.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\xrefreshview_header.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b1c56a9d983afe3720d6c59b281f48d0566e317\\output\\res\\layout\\xrefreshview_header.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_root_menu_item.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_root_menu_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_title_top2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\layout_title_top2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_selected_friends_iv.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_selected_friends_iv.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_select_sub_bank.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_select_sub_bank.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_load.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_load.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_layout_scale_wheel.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_layout_scale_wheel.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_input_pwd.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_input_pwd.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_basepickerview.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\layout_basepickerview.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\banner.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\ed80dd86daa54f6d4a4a6e8bcea90dfc415f9ecd\\output\\res\\layout\\banner.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popupwindow_select_time.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\popupwindow_select_time.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\vote_detail_lv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\vote_detail_lv_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_conversation.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_conversation.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\mine_claim_msg_item2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\mine_claim_msg_item2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_rich_content_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_rich_content_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_input_menus.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_input_menus.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_controls.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_controls.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_vo_popup.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_wi_vo_popup.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\contast_person_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\contast_person_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\pickerview_options.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\pickerview_options.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_sub_conversation_list_activtiy.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_sub_conversation_list_activtiy.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_search_friend.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_search_friend.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_sign_picker.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_sign_picker.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_open_packet.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_open_packet.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_open_rp.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_open_rp.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\view_item_add_application.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\view_item_add_application.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\main2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\main2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_file_download.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ac_file_download.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_fragment_media_preview.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_fragment_media_preview.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\load_image_2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\load_image_2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_adapter_bucket_item.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_adapter_bucket_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_mine_claim.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_mine_claim.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_gv_item2.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_gv_item2.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_add_bank_card.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_add_bank_card.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_new_card.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_new_card.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_add_application.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_add_application.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\pickerview_time.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\pickerview_time.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\claim_activiy.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\claim_activiy.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\mine_claim_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\mine_claim_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_loading_view_final_footer_default.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_loading_view_final_footer_default.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_set_pay_pwd.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_set_pay_pwd.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_connections.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\fragment_connections.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_public_service_sub_list.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_public_service_sub_list.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_location_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_location_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_find_pwd_by_info.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_find_pwd_by_info.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popup_base.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\popup_base.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_trade_history.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_trade_history.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_plugin_item.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_plugin_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_paytype.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_paytype.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_add_flexible.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_add_flexible.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\view_list_item_relationship.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\view_list_item_relationship.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_conversation.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_conversation.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_notice.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_wi_notice.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_bank_card_list.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_bank_card_list.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_bribery_item.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_bribery_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\include_pickerview_topbar.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\include_pickerview_topbar.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_sub_menu_item.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_sub_menu_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_search.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_search.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_vip_register.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_vip_register.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_discovery.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_discovery.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_textview.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_textview.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picprev_activity.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picprev_activity.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_intersiting.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_intersiting.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_information_notification_message.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_information_notification_message.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_add_card_first.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_add_card_first.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_paytype_old_card_item.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_paytype_old_card_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_conversationlist.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_conversationlist.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_mine_qrcode.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_mine_qrcode.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\address_list_popwindow.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\address_list_popwindow.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_activity.xml",
+        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_activity.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\intesest_rv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\intesest_rv_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_adapter_banklist_item.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_adapter_banklist_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_friend_list_header.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_friend_list_header.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_recommend.xml",
@@ -48,12 +800,8 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_media_image_preview_item.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_mention_members.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_mention_members.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_person_setting.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_person_setting.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_common_register.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_common_register.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
@@ -64,32 +812,12 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_setting_pswd.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_dialog_popup_prompt.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_dialog_popup_prompt.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_setting_bank_cark_list.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_setting_bank_cark_list.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_single_choice_layout.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_single_choice_layout.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_send_group_peak.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_send_group_peak.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
@@ -100,20 +828,8 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_vote_or_flexible_joinuser.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_conversation_notification_container.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_conversation_notification_container.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_vote_details.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_vote_details.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_input_edit_text.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_input_edit_text.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_send_share_friends.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_send_share_friends.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_amap.xml",
@@ -156,10 +872,6 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_sub_menu_container.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_voice_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_voice_message.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_list.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_list.xml"
     },
@@ -170,10 +882,6 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_personal_information.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_personal_information.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_evaluate.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_evaluate.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_dialog_popup_prompt_warning.xml",
@@ -188,8 +896,8 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\view_custom_toolbar.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_gridview_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_gridview_item.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\simple_spanner_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\simple_spanner_item.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_text_message_evaluate.xml",
@@ -208,72 +916,24 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_select_friends.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_public_service_search.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_public_service_search.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_navigation_item_separator.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_limit_dialog.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_limit_dialog.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_trade_history.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_trade_history.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_pay_type.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_pay_type.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoji_grid_view.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoji_grid_view.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_add_vote.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_add_vote.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_grid_item.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_grid_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_add_card.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_add_card.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_pwd_check.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_pwd_check.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\unread_message_rv_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\unread_message_rv_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_group_vote.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_group_vote.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_get_pwd.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_get_pwd.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_block_popup.xml",
@@ -288,24 +948,12 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_bank_cark_list.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_notification_realtime_location.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_notification_realtime_location.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_login1.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_login1.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_text_message.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_text_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_verification_code_dialog.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_verification_code_dialog.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_fragment_media_page.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_fragment_media_page.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_layout_rotate_wheel.xml",
@@ -324,40 +972,8 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_layout_line.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_secure_setting.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_secure_setting.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_input_menu.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_input_menu.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_flexible.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_flexible.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoticon_tab_item.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoticon_tab_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_zxing.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_zxing.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_view_pager.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_view_pager.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_notice.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_notice.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_camera.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_camera.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_photo.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_photo.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_fragment_trade_detail.xml",
@@ -384,18 +1000,6 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_groups_list.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_layout_line_959595.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_layout_line_959595.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_selected_freinds.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_selected_freinds.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_my_rp.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_my_rp.xml"
     },
@@ -412,36 +1016,12 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_leave_message.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_content_rv_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_content_rv_item.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_view.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_view.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_title_bar.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_title_bar.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_voice_input.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_voice_input.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_plugin_location_activity.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_plugin_location_activity.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_navigation_menu.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_menu_item_action_area.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_preview_fragment.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_preview_fragment.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_messagelist.xml",
@@ -456,24 +1036,8 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoticon_tab_container.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoticon_tab_container.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_layout_tab_text.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_dialog_bottom.xml",
-        "source": "F:\\NB\\association-android\\mylibrary\\bin\\intermediates\\bundles\\default\\res\\layout\\layout_dialog_bottom.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_image_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_image_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_group.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_group.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_dialog_alter.xml",
@@ -484,32 +1048,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_activity_photobox.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_activity_photobox.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_extension_bar.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_extension_bar.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_amaplocation.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_amaplocation.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\tab_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\tab_item.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_myedittext.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_myedittext.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_mine_card.xml",
@@ -520,16 +1064,8 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_icon_rt_location_marker.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_media.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_group_conversation.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_group_conversation.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_conversation.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_conversation.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_divider.xml",
@@ -544,92 +1080,32 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_new_friend_list.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_recomend_card.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_recomend_card.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_lv_item3.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_lv_item3.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_divider.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_divider.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_file_list_adapter.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_wi_file_list_adapter.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_rv_images_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_rv_images_item.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_browsers.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_browsers.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
-        "source": "F:\\NB\\association-android\\libzxing\\bin\\intermediates\\bundles\\default\\res\\layout\\activity_capture.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\multiline_radiogroup_child.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\multiline_radiogroup_child.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_rv_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_rv_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\load_image_1.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\load_image_1.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_header_receive_rp.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_header_receive_rp.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_dialog_popup_options_item.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_dialog_popup_options_item.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_my_wallet.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_my_wallet.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoji_item.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoji_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_support_bank_card.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_support_bank_card.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_more_user_detail_info.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_more_user_detail_info.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_image.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_image.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_rich_content_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_rich_content_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_my_phone.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_my_phone.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_preview.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_preview.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_add_card_second.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_add_card_second.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_paytype_balance_item.xml",
@@ -638,6 +1114,10 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_layout_titlebar.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_layout_titlebar.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_mine_claim_msg.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_mine_claim_msg.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_register.xml",
@@ -660,14 +1140,6 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\fragment_interet_more.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_send_single_peak.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_send_single_peak.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_private_chat_detail.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_private_chat_detail.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
@@ -684,6 +1156,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\location_pop.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\location_pop.xml"
+    },
+    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_icon_group.xml"
     },
@@ -696,6 +1172,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\possible_understand_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\possible_understand_item.xml"
+    },
+    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_base_activity_layout.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_base_activity_layout.xml"
     },
@@ -704,16 +1184,8 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\friend_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\friend_item.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_base_conversation.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_base_conversation.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_base.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_base.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_gridpasswordview.xml",
@@ -724,20 +1196,12 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_floating_label_text_view.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_vote.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_vote.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_message.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_message.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_select_change.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_select_change.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
@@ -756,40 +1220,12 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_user_detail.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_add_card_first.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_add_card_first.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_title_top.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\layout_title_top.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_share_location_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_share_location_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_public_service_inf.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_public_service_inf.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_indicator.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_indicator.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_lv_item2.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_lv_item2.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\send_friends_gv_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\send_friends_gv_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_alert_human_evaluation.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_alert_human_evaluation.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_group_information_notification_message.xml",
@@ -800,16 +1236,20 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_getdeposit.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\mine_claim_msg_item1.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\mine_claim_msg_item1.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_set_display_name.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_set_display_name.xml"
+    },
+    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_setting.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_discussion_conversation.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_discussion_conversation.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_verify_recommed_info.xml",
@@ -820,28 +1260,8 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_share_friends.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_file_manager.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ac_file_manager.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_relation_map.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\fragment_relation_map.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_file_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_file_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_header_rp_detail.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_header_rp_detail.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\actionbar.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\actionbar.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_adapter_media_grid_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_adapter_media_grid_item.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_red_envelope_invalid.xml",
@@ -852,36 +1272,8 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\comment_popuwindow.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_aspect_ratio.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_aspect_ratio.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_list.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_list.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_conversation_member.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_conversation_member.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_location_preview_activity.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_location_preview_activity.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_progress.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_progress.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_file_list.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ac_file_list.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\dialog.xml",
@@ -900,24 +1292,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_content_rv_item_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\share_friends_content_rv_item_item.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_webview.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_webview.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_header_send_rp.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_header_send_rp.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_catalog_listview.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_catalog_listview.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_new_friends.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_new_friends.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_login.xml",
@@ -932,16 +1312,8 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\mine_fragment.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\mine_fragment.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_text_input_password_icon.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\xrefreshview_header.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b1c56a9d983afe3720d6c59b281f48d0566e317\\output\\res\\layout\\xrefreshview_header.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
@@ -950,14 +1322,6 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_root_menu_item.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_root_menu_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_title_top2.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\layout_title_top2.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fragment_base_setting.xml",
@@ -976,10 +1340,6 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_selected_friends_iv.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_selected_friends_iv.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
@@ -996,14 +1356,6 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_fragment_red_packet_history.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_select_sub_bank.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_select_sub_bank.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_load.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_load.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_claim_info.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_claim_info.xml"
     },
@@ -1012,28 +1364,8 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_activity_media.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_layout_scale_wheel.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_layout_scale_wheel.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_input_pwd.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_input_pwd.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\layout_basepickerview.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\layout_basepickerview.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_my_rp.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_my_rp.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\banner.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\cbf2c0f19cd3a36677ea0d2928257971329433d1\\output\\res\\layout\\banner.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_select_pay_type.xml",
@@ -1044,60 +1376,24 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_conversation_list.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popupwindow_select_time.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\popupwindow_select_time.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_block.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_wi_block.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\vote_detail_lv_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\vote_detail_lv_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_conversation.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_conversation.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_layout_actionbar.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_layout_actionbar.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_rich_content_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_rich_content_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_friend.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\fragment_friend.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_input_menus.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_input_menus.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_group_member.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_group_member.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_controls.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_ucrop_controls.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_vo_popup.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_wi_vo_popup.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_emoji_pager.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_emoji_pager.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\pickerview_options.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\pickerview_options.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popupwindow_chat.xml",
@@ -1108,56 +1404,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_media_custom.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_sub_conversation_list_activtiy.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_sub_conversation_list_activtiy.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_search_friend.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_search_friend.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_discussion_notification_message.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_discussion_notification_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_sign_picker.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_sign_picker.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_open_packet.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_open_packet.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_open_rp.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_open_rp.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_list_buttom.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_list_buttom.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\view_item_add_application.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\view_item_add_application.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_mention_list_item.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_mention_list_item.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\main2.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\main2.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_rp_history.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_rp_history.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_file_download.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ac_file_download.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_input_pager_layout.xml",
@@ -1166,26 +1426,6 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_common_progress.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_common_progress.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_fragment_media_preview.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_fragment_media_preview.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\load_image_2.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\load_image_2.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_adapter_bucket_item.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_adapter_bucket_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_action_tombstone.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_gv_item2.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_gv_item2.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_trade_detail.xml",
@@ -1200,16 +1440,8 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_add_bank_card.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_add_bank_card.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_flexible_detail.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_flexible_detail.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_new_card.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_new_card.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_real_name.xml",
@@ -1224,32 +1456,12 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\fragment_chessandcards.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_add_application.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_add_application.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_bank_setting.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_bank_setting.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\pickerview_time.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\pickerview_time.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_member.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_member.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\claim_activiy.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\claim_activiy.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_loading_view_final_footer_default.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\layout\\gallery_loading_view_final_footer_default.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_set_pay_pwd.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_set_pay_pwd.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_lv_header.xml",
@@ -1260,24 +1472,8 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\claim_lv_item.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_connections.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\fragment_connections.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_public_service_sub_list.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_public_service_sub_list.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_lv_item.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\homepage_lv_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_location_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_location_message.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_find_pwd_by_info.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_find_pwd_by_info.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_feed_back.xml",
@@ -1288,30 +1484,6 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_conversation.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popup_base.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\popup_base.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_trade_history.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_trade_history.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_plugin_item.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_plugin_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_action_bar_up_container.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_paytype.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_paytype.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\load_image_4.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\load_image_4.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_location_real_time_activity.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_location_real_time_activity.xml"
     },
@@ -1320,12 +1492,12 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_logo.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_add_flexible.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_add_flexible.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\26fee44e985d9711e627310960480abe54c325b9\\output\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\search_address_rv_item.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\search_address_rv_item.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_conversation_member_list.xml",
@@ -1344,24 +1516,12 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_menu_container.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_conversation.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_conversation.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_message.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_message.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_wi_notice.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_wi_notice.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_textview.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_textview.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_base_dialog.xml",
@@ -1376,48 +1536,24 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_create_interest_group.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_bank_card_list.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_bank_card_list.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_alert_robot_evaluation.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_alert_robot_evaluation.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_dialog_progress.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_dialog_progress.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_unread_message_list.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_unread_message_list.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_bribery_item.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_bribery_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\include_pickerview_topbar.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\\output\\res\\layout\\include_pickerview_topbar.xml"
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_dialog_progress.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_dialog_progress.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_group_detail.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_group_detail.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ext_sub_menu_item.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_ext_sub_menu_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_search.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_search.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_mine_recomend.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_mine_recomend.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_textview.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_textview.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_account_info.xml",
@@ -1432,44 +1568,20 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\load_image_3.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picprev_activity.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picprev_activity.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_pwd_error.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_pwd_error.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_intersiting.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\activity_intersiting.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popupwindow_select_time2.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\popupwindow_select_time2.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_information_notification_message.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_information_notification_message.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\popupwindow_claim.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\popupwindow_claim.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_add_card_first.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_add_card_first.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_pic_popup_window.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_pic_popup_window.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_paytype_old_card_item.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_paytype_old_card_item.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_fr_conversationlist.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_fr_conversationlist.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_add_flexible_content.xml",
@@ -1488,16 +1600,8 @@
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\item_vote.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_picsel_activity.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_picsel_activity.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_identity_authen.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_identity_authen.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\intesest_rv_item.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\layout\\intesest_rv_item.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_rp_detail.xml",

@@ -23,8 +23,8 @@ import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseMvpActivity;
 import com.ike.communityalliance.bean.CityBean;
 import com.ike.communityalliance.bean.CountyBean;
+import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.ProvinceBean;
-import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IRecommedView;
 import com.ike.communityalliance.presenter.RecommendPresenterImpl;
@@ -40,14 +40,14 @@ import butterknife.OnClick;
 
 
 public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendPresenterImpl> implements RadioGroup.OnCheckedChangeListener, IRecommedView, AdapterView.OnItemSelectedListener {
-    private final String[] creditScores = new String[]{"100", "90", "80", "70", "60", "50", "40", "30", "20", "10"};
-    private final String[] relationships = new String[]{"亲人", "情侣", "同事", "校友", "老乡"};
+    private final String[] industrys = new String[]{"其它", "互联网", "服务业", "金融", "教育", "银行", "医疗", "房地产", "贸易", "物流"};
+    private final String[] relationships = new String[]{"亲人","同事", "校友", "同乡"};
+    private final String[] degrees={"初中","高中","中技","中专","大专","本科","硕士","博士","MBA","EMBA","其他"};
+
     @BindView(R.id.et_recom_name)
     EditText et_recom_name;
     @BindView(R.id.et_recom_mobile)
     EditText et_recom_mobile;
-    @BindView(R.id.et_recom_creditScore)
-    EditText et_recom_creditScore;
     @BindView(R.id.et_recom_relationship)
     EditText et_recom_relationship;
     @BindView(R.id.et_recom_birthday)
@@ -80,8 +80,6 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     Button btn_recommend;
     @BindView(R.id.ll_recomm_marriaged)
     LinearLayout ll_recomm_marriaged;
-    @BindView(R.id.ll_recom_creditScore)
-    LinearLayout ll_recom_creditScore;
     @BindView(R.id.sp_recom_province)
     Spinner sp_recom_province;
     @BindView(R.id.sp_recom_city)
@@ -96,6 +94,18 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     Spinner sp_recom_jgcountys;
     @BindView(R.id.tv_recom_back)
     TextView tv_recom_back;
+    @BindView(R.id.et_recomd_degree)
+    EditText etRecomdDegree;
+    @BindView(R.id.et_recom_industry)
+    EditText etRecomIndustry;
+    @BindView(R.id.et_recom_company_position)
+    EditText etRecomCompanyPosition;
+    @BindView(R.id.et_recom_email)
+    EditText etRecomEmail;
+    @BindView(R.id.et_recom_QQ)
+    EditText etRecomQQ;
+    @BindView(R.id.et_recom_wechat)
+    EditText etRecomWechat;
 
     private String userId;
     private String fullName;
@@ -105,7 +115,6 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     private ArrayList<String> address = new ArrayList<>();
     private String relationship;
     private String character;
-    private String creditScore;
     private String birthday;
     private String homeplace;
     private String finishSchool;
@@ -116,6 +125,12 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     private String spouseName;
     private String childrenName;
     private String childrenSchool;
+    private String curDegreeCode="0";
+    private String position;
+    private String industry;
+    private String email;
+    private String wechat;
+    private String QQ;
     private ArrayList<String> provinceItems = new ArrayList<>();
     private ArrayList<String> citysItems = new ArrayList<>();
     private ArrayList<String> countryItems = new ArrayList<>();
@@ -189,7 +204,6 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         }
         getHobbys(rg_recom_like);
         getCharacters(rg_recom_character);
-        creditScore = et_recom_creditScore.getText().toString().trim();
         birthday = et_recom_birthday.getText().toString().trim();
         finishSchool = et_recom_school.getText().toString().trim();
         company = et_recom_company.getText().toString().trim();
@@ -198,6 +212,10 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         spouseName = et_recom_spouseName.getText().toString().trim();
         childrenName = et_recom_childrenName.getText().toString().trim();
         childrenSchool = et_recom_childrenSchool.getText().toString().trim();
+        position = etRecomCompanyPosition.getText().toString().trim();
+        email = etRecomEmail.getText().toString().trim();
+        QQ = etRecomQQ.getText().toString().trim();
+        wechat = etRecomWechat.getText().toString().trim();
     }
 
     //获得解析好的省市区数据
@@ -266,7 +284,8 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         }
     }
 
-    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend, R.id.et_recom_relationship, R.id.et_recom_creditScore})
+    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend,
+            R.id.et_recom_relationship, R.id.et_recomd_degree,R.id.et_recom_industry})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_recom_back:
@@ -291,9 +310,9 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
                 break;
             case R.id.btn_recommend:
                 getViewData();
-                presenter.verifyRecommedInfo(new RecommendBean(userId, fullName, mobile, sex, hobby, address, relationship, character,
-                        creditScore, birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
-                        spouseName, childrenName, childrenSchool));
+                presenter.verifyRecommedInfo(new PersonalVipBean(userId, fullName, mobile, sex, hobby, address, relationship, character
+                        ,birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
+                        spouseName, childrenName, childrenSchool,curDegreeCode,position,industry,email,QQ,wechat));
                 break;
             case R.id.et_recom_relationship:
                 //弹出关系选择框
@@ -303,25 +322,41 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         et_recom_relationship.setText(relationships[i]);
-                        relationship = i + 1+"";
+                        relationship = i + 1 + "";
                         dialogInterface.dismiss();
                     }
                 });
                 dialog_relationship.create().show();
                 break;
-            case R.id.et_recom_creditScore:
-                //弹出信誉分选择框
-                AlertDialog.Builder dialog_creditScore = new AlertDialog.Builder(this);
-                dialog_creditScore.setTitle("选择信誉分");
-                dialog_creditScore.setSingleChoiceItems(creditScores, 0, new DialogInterface.OnClickListener() {
+            case R.id.et_recomd_degree:
+                //选择学历
+                android.app.AlertDialog.Builder dialog_degree= new android.app.AlertDialog.Builder(this);
+                dialog_degree.setTitle("选择学历");
+                dialog_degree.setSingleChoiceItems(degrees, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        et_recom_creditScore.setText(creditScores[i]);
+                        curDegreeCode=i+1+"";
+                        etRecomdDegree.setText(degrees[i]);
                         dialogInterface.dismiss();
                     }
                 });
-                dialog_creditScore.create().show();
+                dialog_degree.create().show();
                 break;
+            case R.id.et_recom_industry:
+                //选择学历
+                android.app.AlertDialog.Builder dialog_industry= new android.app.AlertDialog.Builder(this);
+                dialog_industry.setTitle("选择行业");
+                dialog_industry.setSingleChoiceItems(industrys, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        industry=i+1+"";
+                        etRecomIndustry.setText(industrys[i]);
+                        dialogInterface.dismiss();
+                    }
+                });
+                dialog_industry.create().show();
+                break;
+
         }
     }
 
@@ -364,6 +399,7 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         city_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(city_adapter);
     }
+
     //籍贯城市二级联动
     private void setJGSecondText(Spinner sp, int position) {
         jgCitysItems.clear();

@@ -176,12 +176,12 @@
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\_btn_white.9.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_rp.png",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_rp.png"
-    },
-    {
         "merged": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\open_rp_2.png",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\open_rp_2.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_rp.png",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_rp.png"
     },
     {
         "merged": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\_308.png",

@@ -93,9 +93,11 @@
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="forget_passwork">忘记密码</string>
-    <string name="prompt_user">账号</string>
+    <string name="prompt_user">请输入你的手机号码</string>
+    <string name="rg_username">用户昵称</string>
+    <string name="rg_code">发送验证码</string>
     <string name="prompt_password">密码</string>
-    <string name="action_sign_in_short">登录</string>
+    <string name="action_sign_in_short">请输入你的密码</string>
     <string name="login_tv">LOGIN</string>
     <string name="phone">手机号码</string>
     <string name="InviteCode">邀请码</string>

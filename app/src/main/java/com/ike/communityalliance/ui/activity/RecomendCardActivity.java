@@ -48,7 +48,7 @@ public class RecomendCardActivity extends AppCompatActivity {
         tvRecomendCardCode.setText(code);
 //        Bitmap codeImg= EncodingUtils.createQRCode(code,222,222,null);
       Bitmap codeImg= BitmapFactory.decodeResource(getResources(),R.drawable.load_apk);
-        saveMyBitmap(codeImg,code);
+      //  saveMyBitmap(codeImg,code);
         ivRecomendCardCode.setImageBitmap(codeImg);
     }
 

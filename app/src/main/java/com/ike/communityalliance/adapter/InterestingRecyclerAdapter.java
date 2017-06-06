@@ -22,13 +22,14 @@ import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.wedget.image.SelectableRoundedImageView;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
+import com.squareup.picasso.Picasso;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.rong.imageloader.core.ImageLoader;
+import io.rong.imkit.RongIM;
 import okhttp3.Call;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -69,13 +70,17 @@ public class InterestingRecyclerAdapter extends RecyclerView.Adapter<Interesting
         if(bean.getGroupPortraitUrl()==null){
             holder.iv_inteset_rv_item_header.setImageResource(R.mipmap.ic_launcher);
         }else{
-            ImageLoader.getInstance().displayImage(HttpUtils.IMAGE_RUL+bean.getGroupPortraitUrl(),holder.iv_inteset_rv_item_header);
-           // Picasso.with(mContext).load(bean.getGroupPortraitUri()).into(holder.iv_inteset_rv_item_header);
+            Picasso.with(mContext).load(HttpUtils.IMAGE_RUL+bean.getGroupPortraitUrl()).into(holder.iv_inteset_rv_item_header);
         }
         holder.iv_inteset_rv_item_groupName.setText(bean.getGroupName());
         holder.iv_inteset_rv_item_groupNum.setText("群人数:"+bean.getGroupUserNumber());
         holder.btn_inteset_join.setTag(position);
         holder.btn_inteset_join.setOnClickListener(this);
+        if(bean.getStatus()==0){
+            holder.btn_inteset_join.setText("申请加入");
+        }else{
+            holder.btn_inteset_join.setText("进入聊天");
+        }
     }
 
     //重写onCreateViewHolder方法，返回一个自定义的ViewHolder
@@ -91,7 +96,17 @@ public class InterestingRecyclerAdapter extends RecyclerView.Adapter<Interesting
 * */
     @Override
     public void onClick(View v) {
-        final String groupId=mDatas.get((Integer) v.getTag()).getGroupId();
+         final InterestGroupBean interestGroupBean=mDatas.get((Integer) v.getTag());
+        final String groupId=interestGroupBean.getGroupId();
+        int status=interestGroupBean.getStatus();
+        if(status==0){
+            joinGroup(groupId);
+        }else{
+            RongIM.getInstance().startGroupChat(mContext,groupId,interestGroupBean.getGroupName());
+        }
+    }
+
+    private void joinGroup(final String groupId) {
         final EditText editText = new EditText(mContext);
         new AlertDialog.Builder(mContext)
                 .setTitle("验证信息")
@@ -112,6 +127,7 @@ public class InterestingRecyclerAdapter extends RecyclerView.Adapter<Interesting
                 })
                 .show();
     }
+
     private void sendGroupRequest(String message, String groupId) {
         String myUserId=mContext.getSharedPreferences("config",MODE_PRIVATE).getString(Const.LOGIN_ID,"");
         HttpUtils.sendPostRequest("/addfriendRequest","1", myUserId,groupId, message, new StringCallback() {

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-247:12
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-290:12
 	package
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from F:\NB\association-android\app\src\main\AndroidManifest.xml
@@ -179,214 +179,226 @@ MERGED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\associ
 	android:name
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:59:22-63
 application
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:66:5-245:19
-MERGED from [com.zhy:mpermission-api:1.0.0] C:\Users\Administrator\.android\build-cache\e974e0bbf753d476f2365134d5a08792b408070b\output\AndroidManifest.xml:11:5-14:19
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:65:5-288:19
 MERGED from [association-android:mylibrary:unspecified] F:\NB\association-android\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
 MERGED from [:SMSSDK-2.1.3:] C:\Users\Administrator\.android\build-cache\6e716754f0d2927cc9507fce24c03895437b3a51\output\AndroidManifest.xml:11:5-12:19
 MERGED from [:SMSSDKGUI-2.1.3:] C:\Users\Administrator\.android\build-cache\08ba0381bc51943608dac82fd4d14b9c38c7d893\output\AndroidManifest.xml:11:5-12:19
-MERGED from [com.android.support:design:25.0.0] C:\Users\Administrator\.android\build-cache\26fee44e985d9711e627310960480abe54c325b9\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:transition:25.0.0] C:\Users\Administrator\.android\build-cache\2a805082b9fd1d17974599d723184bb2c7b7afcd\output\AndroidManifest.xml:22:5-20
 MERGED from [association-android:libzxing:unspecified] F:\NB\association-android\libzxing\bin\intermediates\bundles\default\AndroidManifest.xml:14:5-18:19
-MERGED from [com.facebook.stetho:stetho:1.4.2] C:\Users\Administrator\.android\build-cache\d3a85ee482bcfd153e6c6dd90f0c0150633e3f01\output\AndroidManifest.xml:11:5-20
-MERGED from [com.yydcdut.sdlv:sdlv:0.5.5] C:\Users\Administrator\.android\build-cache\c0abb5b43c2a7659b8757a5c3b6ba62f8ef35948\output\AndroidManifest.xml:12:5-13:19
-MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\Administrator\.android\build-cache\3aec7701f64601d5ce7dec93185374e3ca7949a1\output\AndroidManifest.xml:9:5-20
-MERGED from [com.bm.photoview:library:1.4.1] C:\Users\Administrator\.android\build-cache\86fdfc2be59dfa5fdb20319d6398e1860663acfc\output\AndroidManifest.xml:11:5-12:19
-MERGED from [com.prolificinteractive:material-calendarview:1.4.2] C:\Users\Administrator\.android\build-cache\460d4cc63297b23050b71b20d32364d8d6f39c7a\output\AndroidManifest.xml:12:5-20
 MERGED from [association-android:base-diskcache:unspecified] F:\NB\association-android\base-diskcache\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-16:19
 MERGED from [association-android:IMKit:unspecified] F:\NB\association-android\IMKit\bin\intermediates\bundles\default\AndroidManifest.xml:33:5-96:19
 MERGED from [association-android:IMLib:unspecified] F:\NB\association-android\IMLib\bin\intermediates\bundles\default\AndroidManifest.xml:24:5-95:19
 MERGED from [association-android:RedPacket:unspecified] F:\NB\association-android\RedPacket\bin\intermediates\bundles\default\AndroidManifest.xml:19:5-80:19
 MERGED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:180:5-5045:19
+MERGED from [com.android.support:design:25.0.0] C:\Users\Administrator\.android\build-cache\26fee44e985d9711e627310960480abe54c325b9\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.0.0] C:\Users\Administrator\.android\build-cache\2a805082b9fd1d17974599d723184bb2c7b7afcd\output\AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.stetho:stetho:1.4.2] C:\Users\Administrator\.android\build-cache\d3a85ee482bcfd153e6c6dd90f0c0150633e3f01\output\AndroidManifest.xml:11:5-20
+MERGED from [com.yydcdut.sdlv:sdlv:0.5.5] C:\Users\Administrator\.android\build-cache\c0abb5b43c2a7659b8757a5c3b6ba62f8ef35948\output\AndroidManifest.xml:12:5-13:19
+MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\Administrator\.android\build-cache\3aec7701f64601d5ce7dec93185374e3ca7949a1\output\AndroidManifest.xml:9:5-20
+MERGED from [com.bm.photoview:library:1.4.1] C:\Users\Administrator\.android\build-cache\86fdfc2be59dfa5fdb20319d6398e1860663acfc\output\AndroidManifest.xml:11:5-12:19
+MERGED from [com.prolificinteractive:material-calendarview:1.4.2] C:\Users\Administrator\.android\build-cache\460d4cc63297b23050b71b20d32364d8d6f39c7a\output\AndroidManifest.xml:12:5-20
 MERGED from [com.liulishuo.filedownloader:library:1.4.2] C:\Users\Administrator\.android\build-cache\c8d45c9fbd6abcd7ab385294ecf7a6779d25c2be\output\AndroidManifest.xml:11:5-16:19
 MERGED from [com.czp.arcProgressBar:ArcProgressBar:1.0.1] C:\Users\Administrator\.android\build-cache\63bbcea8f77f9124bd094d0ebfe52c23aef2a6e1\output\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Administrator\.android\build-cache\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\cc9642b9454130bba27e9b55a6471d2b1296c47f\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\36a62a0f9ba5a1bd2becd1c191fdff10f3d78e01\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\2c57585b2e8047809ff038d9621dfe00caf793dc\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Administrator\.android\build-cache\7b57a14d9dc8488f838095c5757ac155752dfd4d\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Administrator\.android\build-cache\71ddde2b6423fe963ff3189e155ce91fa6064eb0\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Administrator\.android\build-cache\3d33c050b61fc04e530b0cdf1a37fdfcc5cc08ec\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Administrator\.android\build-cache\8260cc115f8b7edb88730b49cea949b12548899f\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Administrator\.android\build-cache\9748d692957078a0ac6804bca2e3b0964fb017ab\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\cc9642b9454130bba27e9b55a6471d2b1296c47f\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\36a62a0f9ba5a1bd2becd1c191fdff10f3d78e01\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Administrator\.android\build-cache\0fcf0e687fb17f7138e68116c1d3a82e0f3ce8fd\output\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:72:9-41
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:69:9-41
 	android:supportsRtl
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:73:9-35
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:70:9-35
 	android:allowBackup
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:68:9-35
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:67:9-35
 	android:icon
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:70:9-41
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:68:9-41
 		REJECTED from [association-android:base-diskcache:unspecified] F:\NB\association-android\base-diskcache\bin\intermediates\bundles\default\AndroidManifest.xml:13:9-43
 	android:theme
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:75:9-40
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:71:9-40
 		REJECTED from [association-android:base-diskcache:unspecified] F:\NB\association-android\base-diskcache\bin\intermediates\bundles\default\AndroidManifest.xml:15:9-40
 	tools:replace
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:74:9-51
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:72:9-51
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:67:9-28
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:66:9-28
 meta-data#RONG_CLOUD_APP_KEY
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:84:9-86:45
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:81:9-83:45
 MERGED from [association-android:IMLib:unspecified] F:\NB\association-android\IMLib\bin\intermediates\bundles\default\AndroidManifest.xml:27:9-29:45
 	android:value
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:86:13-42
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:83:13-42
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:85:13-46
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:82:13-46
 meta-data#com.amap.api.v2.apikey
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:89:9-91:64
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:86:9-88:64
 	android:value
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:91:13-61
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:88:13-61
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:90:13-50
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:87:13-50
 service#com.amap.api.location.APSService
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:93:9-68
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:90:9-68
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:93:18-65
-activity#com.ike.communityalliance.ui.activity.LoadActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:96:9-102:20
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:90:18-65
+activity#com.ike.communityalliance.ui.activity.LogoActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:93:9-99:20
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:96:19-59
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:93:19-59
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:97:13-101:29
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:94:13-98:29
 action#android.intent.action.MAIN
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:98:17-69
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:95:17-69
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:98:25-66
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:95:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:100:17-77
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:97:17-77
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:100:27-74
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:97:27-74
 activity#com.ike.communityalliance.ui.MainActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:100:9-102:46
+	android:launchMode
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:102:13-43
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:101:13-44
+activity#com.ike.communityalliance.ui.Main2Activity
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:103:9-105:46
 	android:launchMode
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:105:13-43
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:104:13-44
-activity#com.ike.communityalliance.ui.Main2Activity
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:104:13-45
+activity#com.ike.communityalliance.ui.activity.RegisterActivity
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:106:9-108:46
 	android:launchMode
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:108:13-43
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:107:13-45
-activity#com.ike.communityalliance.ui.activity.RegisterActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:109:9-111:46
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:107:13-57
+activity#com.ike.communityalliance.ui.activity.ConversationListActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:109:9-125:20
+	android:screenOrientation
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:112:13-49
 	android:launchMode
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:111:13-43
-	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:110:13-57
-activity#com.ike.communityalliance.ui.activity.ConversationListActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:112:9-128:20
-	android:screenOrientation
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:115:13-49
-	android:launchMode
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:114:13-43
 	android:windowSoftInputMode
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:117:13-67
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:114:13-67
 	android:theme
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:116:13-55
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:113:13-55
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:113:13-65
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:110:13-65
 intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:118:13-127:29
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:115:13-124:29
 action#android.intent.action.VIEW
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:119:17-69
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:116:17-69
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:119:25-66
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:116:25-66
 category#android.intent.category.DEFAULT
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:121:17-76
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:118:17-76
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:121:27-73
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:118:27-73
 data
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:123:17-126:45
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:120:17-123:45
 	android:host
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:124:21-61
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:121:21-61
 	android:scheme
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:126:21-42
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:123:21-42
 	android:pathPrefix
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:125:21-59
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:122:21-59
 activity#com.ike.communityalliance.ui.activity.AddApplicationActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:129:9-71
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:126:9-72
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:129:19-69
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:126:19-69
 activity#com.ike.communityalliance.ui.activity.ConversationActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:130:9-145:20
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:127:9-142:20
 	android:screenOrientation
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:133:13-49
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:130:13-49
 	android:launchMode
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:132:13-43
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:129:13-43
 	android:windowSoftInputMode
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:134:13-67
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:131:13-67
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:131:13-61
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:128:13-61
 activity#com.ike.communityalliance.ui.activity.NewFriendListActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:146:9-71
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:143:9-71
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:146:19-68
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:143:19-68
 activity#com.ike.communityalliance.ui.activity.SubConversationListActivtiy
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:147:9-161:20
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:144:9-158:20
 	android:screenOrientation
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:149:13-49
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:146:13-49
 	android:windowSoftInputMode
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:150:13-67
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:147:13-67
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:148:13-68
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:145:13-68
 activity#com.ike.communityalliance.ui.activity.ShareFriendsActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:162:9-70
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:159:9-70
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:162:19-67
-activity#com.ike.communityalliance.ui.activity.LoginActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:163:9-63
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:159:19-67
+activity#com.ike.communityalliance.ui.activity.LoadActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:160:9-62
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:163:19-60
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:160:19-59
 activity#com.ike.communityalliance.ui.activity.Login2Activity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:164:9-166:55
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:161:9-163:55
 	android:windowSoftInputMode
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:166:13-52
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:163:13-52
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:165:13-55
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:162:13-55
 activity#com.ike.communityalliance.ui.activity.InteresitingActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:167:9-70
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:164:9-70
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:167:19-67
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:164:19-67
+activity#com.ike.communityalliance.ui.activity.PersonalApplayVipActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:165:9-75
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:165:19-72
 activity#com.ike.communityalliance.ui.activity.SearchFriendActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:168:9-70
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:166:9-70
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:168:19-67
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:166:19-67
 activity#com.ike.communityalliance.ui.activity.SelectFriendsActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:169:9-71
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:167:9-71
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:169:19-68
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:167:19-68
 activity#com.ike.communityalliance.ui.activity.CreateGroupActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:168:9-69
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:168:19-66
+activity#com.ike.communityalliance.ui.activity.GroupListActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:169:9-67
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:169:19-64
+activity#com.ike.communityalliance.ui.activity.GroupDetailActivity
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:170:9-69
 	android:name
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:170:19-66
-activity#com.ike.communityalliance.ui.activity.GroupListActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:171:9-67
-	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:171:19-64
-activity#com.ike.communityalliance.ui.activity.GroupDetailActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:172:9-69
-	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:172:19-66
 activity#com.ike.communityalliance.ui.activity.PrivateChatDetailActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:173:9-75
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:171:9-75
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:173:19-72
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:171:19-72
 activity#com.ike.communityalliance.ui.activity.SignPickerActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:174:9-68
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:172:9-68
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:174:19-65
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:172:19-65
 activity#com.ike.communityalliance.ui.activity.MineCardActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:175:9-66
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:173:9-66
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:175:19-63
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:173:19-63
+activity#com.ike.communityalliance.ui.activity.RecomendCardActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:174:9-70
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:174:19-67
 activity#com.ike.communityalliance.ui.activity.RecommendActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:176:9-67
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:175:9-67
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:176:19-64
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:175:19-64
 activity#com.ike.communityalliance.ui.activity.RelationMapActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:177:9-69
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:176:9-69
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:177:19-66
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:176:19-66
+activity#com.ike.communityalliance.ui.activity.RelationShipActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:177:9-70
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:177:19-67
 activity#com.ike.communityalliance.ui.activity.FeedBackActivity
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:178:9-66
 	android:name
@@ -495,10 +507,10 @@ activity#com.ike.communityalliance.ui.activity.CreateInterestGroupActivity
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:215:9-77
 	android:name
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:215:19-74
-activity#com.ike.communityalliance.ui.activity.LogoActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:216:9-62
+activity#com.ike.communityalliance.ui.activity.LoginActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:216:9-63
 	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:216:19-59
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:216:19-60
 activity#com.ike.communityalliance.ui.activity.SendShareFriendsActivity
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:217:9-74
 	android:name
@@ -564,26 +576,111 @@ ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:240:17-81
 	android:name
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:240:25-78
 activity#com.ike.communityalliance.ui.activity.MineRecomendActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:243:9-70
-	android:name
-		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:243:19-67
-activity#com.ike.communityalliance.ui.activity.RecomendCardActivity
-ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:244:9-79
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:244:9-70
 	android:name
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:244:19-67
+activity#com.ike.communityalliance.ui.activity.MorePersonalInfoActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:245:9-74
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:245:19-71
+activity#com.mob.tools.MobUIShell
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:246:9-269:20
+	android:screenOrientation
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:249:13-49
+	android:windowSoftInputMode
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:251:13-67
+	android:configChanges
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:248:13-74
+	android:theme
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:250:13-72
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:247:13-52
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:254:13-261:29
+category#android.intent.category.BROWSABLE
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:259:17-78
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:259:27-75
+intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:264:13-268:29
+action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:265:17-92
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:265:25-89
+activity#cn.sharesdk.demo.wxapi.WXEntryActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:271:9-276:75
+	android:screenOrientation
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:275:13-49
+	android:exported
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:274:13-36
+	android:configChanges
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:273:13-74
+	android:theme
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:276:13-72
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:272:13-66
+activity#com.ike.communityalliance.ui.activity.MineClaimActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:277:9-67
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:277:19-64
+activity#com.ike.communityalliance.ui.activity.MineClaimMsgActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:278:9-70
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:278:19-67
+activity#com.ike.communityalliance.ui.activity.PhoneContactActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:279:9-70
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:279:19-67
+activity#com.ike.communityalliance.ui.activity.SetDisplayNameActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:280:9-72
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:280:19-69
+activity#com.ike.communityalliance.ui.activity.MoreUserDetailInfoActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:281:9-76
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:281:19-73
+activity#com.ike.communityalliance.ui.activity.LocationSeacherActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:282:9-73
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:282:19-70
+activity#com.ike.communityalliance.ui.activity.CommonRegisterActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:283:9-72
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:283:19-69
+activity#com.ike.communityalliance.ui.activity.VipRegisterActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:284:9-69
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:284:19-66
+activity#com.ike.communityalliance.ui.activity.MineQRCodeActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:285:9-68
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:285:19-65
+activity#com.ike.communityalliance.ui.activity.ApplayVIPActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:286:9-67
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:286:19-64
+activity#com.ike.communityalliance.ui.activity.PossibleUnderstandActivity
+ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:287:9-85
+	android:name
+		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:287:19-73
 uses-sdk
 INJECTED from F:\NB\association-android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.zhy:mpermission-api:1.0.0] C:\Users\Administrator\.android\build-cache\e974e0bbf753d476f2365134d5a08792b408070b\output\AndroidManifest.xml:7:5-9:41
 MERGED from [association-android:mylibrary:unspecified] F:\NB\association-android\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [:SMSSDK-2.1.3:] C:\Users\Administrator\.android\build-cache\6e716754f0d2927cc9507fce24c03895437b3a51\output\AndroidManifest.xml:7:5-9:41
 MERGED from [:SMSSDKGUI-2.1.3:] C:\Users\Administrator\.android\build-cache\08ba0381bc51943608dac82fd4d14b9c38c7d893\output\AndroidManifest.xml:7:5-9:41
+MERGED from [association-android:libzxing:unspecified] F:\NB\association-android\libzxing\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [association-android:base-diskcache:unspecified] F:\NB\association-android\base-diskcache\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [association-android:IMKit:unspecified] F:\NB\association-android\IMKit\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [association-android:IMLib:unspecified] F:\NB\association-android\IMLib\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [association-android:RedPacket:unspecified] F:\NB\association-android\RedPacket\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:30:5-43
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.android\build-cache\35fb977d5dafbcd014a6947a8418908b444773e5\output\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:design:25.0.0] C:\Users\Administrator\.android\build-cache\26fee44e985d9711e627310960480abe54c325b9\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:transition:25.0.0] C:\Users\Administrator\.android\build-cache\2a805082b9fd1d17974599d723184bb2c7b7afcd\output\AndroidManifest.xml:20:5-44
 MERGED from [cn.finalteam.rxgalleryfinal:library:0.0.8] C:\Users\Administrator\.android\build-cache\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\output\AndroidManifest.xml:7:5-9:41
 MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Administrator\.android\build-cache\6351fe8b4d14688f3abb45a3d66df56c75bbc91f\output\AndroidManifest.xml:19:5-43
 MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\Administrator\.android\build-cache\4f36a58ddf48c72643ea7ee0ba527854fddb99bc\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\Administrator\.android\build-cache\083a30fba4198813428267b07b0d91a799b3fad6\output\AndroidManifest.xml:5:5-43
-MERGED from [association-android:libzxing:unspecified] F:\NB\association-android\libzxing\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.stetho:stetho:1.4.2] C:\Users\Administrator\.android\build-cache\d3a85ee482bcfd153e6c6dd90f0c0150633e3f01\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\Administrator\.android\build-cache\4b3e4251da45c69a770f197f856f1be9590a0c05\output\AndroidManifest.xml:7:5-43
 MERGED from [com.zhy:autolayout:1.4.5] C:\Users\Administrator\.android\build-cache\09501a7d11c9327dae519b1aaad79d156c473653\output\AndroidManifest.xml:8:5-10:41
@@ -593,26 +690,23 @@ MERGED from [com.ms-square:expandableTextView:0.1.4] C:\Users\Administrator\.and
 MERGED from [com.zhy:base-rvadapter:3.0.3] C:\Users\Administrator\.android\build-cache\3205eb92dc845f30d78d33e231a7118d0c1efff8\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\Administrator\.android\build-cache\5cdeeafc653e15e6d08ccd337fdf96310eac7b79\output\AndroidManifest.xml:20:5-43
 MERGED from [com.bm.photoview:library:1.4.1] C:\Users\Administrator\.android\build-cache\86fdfc2be59dfa5fdb20319d6398e1860663acfc\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.youth.banner:banner:1.4.9] C:\Users\Administrator\.android\build-cache\cbf2c0f19cd3a36677ea0d2928257971329433d1\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.youth.banner:banner:1.4.5] C:\Users\Administrator\.android\build-cache\ed80dd86daa54f6d4a4a6e8bcea90dfc415f9ecd\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.contrarywind:Android-PickerView:3.0.7] C:\Users\Administrator\.android\build-cache\f4ca9f7a2bd9c7dd5a936eb9edfb52d16ba91870\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.prolificinteractive:material-calendarview:1.4.2] C:\Users\Administrator\.android\build-cache\460d4cc63297b23050b71b20d32364d8d6f39c7a\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.kyleduo.switchbutton:library:1.4.5] C:\Users\Administrator\.android\build-cache\52a4c53298de85781b377577f3b5e6fd9d4669be\output\AndroidManifest.xml:8:5-10:41
-MERGED from [association-android:base-diskcache:unspecified] F:\NB\association-android\base-diskcache\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [association-android:IMKit:unspecified] F:\NB\association-android\IMKit\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [association-android:IMLib:unspecified] F:\NB\association-android\IMLib\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [association-android:RedPacket:unspecified] F:\NB\association-android\RedPacket\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:30:5-43
-MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.android\build-cache\35fb977d5dafbcd014a6947a8418908b444773e5\output\AndroidManifest.xml:18:5-42
 MERGED from [com.liulishuo.filedownloader:library:1.4.2] C:\Users\Administrator\.android\build-cache\c8d45c9fbd6abcd7ab385294ecf7a6779d25c2be\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.czp.arcProgressBar:ArcProgressBar:1.0.1] C:\Users\Administrator\.android\build-cache\63bbcea8f77f9124bd094d0ebfe52c23aef2a6e1\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Administrator\.android\build-cache\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\cc9642b9454130bba27e9b55a6471d2b1296c47f\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\36a62a0f9ba5a1bd2becd1c191fdff10f3d78e01\output\AndroidManifest.xml:21:5-43
+MERGED from [com.jaredrummler:android-processes:1.0.9] C:\Users\Administrator\.android\build-cache\49dd158b7c08e32c3b6c4f3c04ca98cf62164753\output\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.android\build-cache\2c57585b2e8047809ff038d9621dfe00caf793dc\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.hotchemi:permissionsdispatcher:2.1.3] C:\Users\Administrator\.android\build-cache\6b41f4588737cb4c213a263b4617e49f5939290e\output\AndroidManifest.xml:6:5-9:55
 MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Administrator\.android\build-cache\7b57a14d9dc8488f838095c5757ac155752dfd4d\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Administrator\.android\build-cache\71ddde2b6423fe963ff3189e155ce91fa6064eb0\output\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Administrator\.android\build-cache\3d33c050b61fc04e530b0cdf1a37fdfcc5cc08ec\output\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Administrator\.android\build-cache\8260cc115f8b7edb88730b49cea949b12548899f\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Administrator\.android\build-cache\9748d692957078a0ac6804bca2e3b0964fb017ab\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\cc9642b9454130bba27e9b55a6471d2b1296c47f\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Administrator\.android\build-cache\36a62a0f9ba5a1bd2becd1c191fdff10f3d78e01\output\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Administrator\.android\build-cache\0fcf0e687fb17f7138e68116c1d3a82e0f3ce8fd\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.0.0] C:\Users\Administrator\.android\build-cache\26fee44e985d9711e627310960480abe54c325b9\output\AndroidManifest.xml:23:9-59
@@ -1070,7 +1164,7 @@ ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\associa
 		ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:65:22-69
 uses-permission#android.permission.READ_CALL_LOG
 ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:66:5-72
-IMPLIED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-247:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested READ_CONTACTS
+IMPLIED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-290:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested READ_CONTACTS
 	android:name
 		ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:66:22-69
 uses-permission#android.permission.READ_CELL_BROADCASTS
@@ -1155,7 +1249,7 @@ ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\associa
 		ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:97:22-70
 uses-permission#android.permission.WRITE_CALL_LOG
 ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:98:5-73
-IMPLIED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-247:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested WRITE_CONTACTS
+IMPLIED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-290:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested WRITE_CONTACTS
 	android:name
 		ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:98:22-70
 uses-permission#android.permission.WRITE_CONTACTS

@@ -72,6 +72,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\main_interest_bg.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\main_interest_bg.xml"
+    },
+    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_progressbar.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\ssdk_oks_classic_progressbar.xml"
     },
@@ -172,10 +176,6 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\4e4b3b80b6a17269f51815f1afc9085c166f1ce2\\output\\res\\drawable\\gallery_ucrop_shadow_upside.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\load_image_4.jpg",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\load_image_4.jpg"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_group_dialog_cancel_selector.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_group_dialog_cancel_selector.xml"
     },
@@ -206,6 +206,10 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_send_toggle_selector.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_send_toggle_selector.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\relation.png",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\relation.png"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rs_select_btn_blue.xml",
@@ -325,7 +329,7 @@
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\gray_radius.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\cbf2c0f19cd3a36677ea0d2928257971329433d1\\output\\res\\drawable\\gray_radius.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\ed80dd86daa54f6d4a4a6e8bcea90dfc415f9ecd\\output\\res\\drawable\\gray_radius.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\mine_card.png",
@@ -397,7 +401,7 @@
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\white_radius.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\cbf2c0f19cd3a36677ea0d2928257971329433d1\\output\\res\\drawable\\white_radius.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\ed80dd86daa54f6d4a4a6e8bcea90dfc415f9ecd\\output\\res\\drawable\\white_radius.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\main_chat_bg.xml",
@@ -506,10 +510,6 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\shape_unbind.xml",
         "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\shape_unbind.xml"
-    },
-    {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\header1.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\header1.png"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\shape_click_round_btn_bg.xml",
@@ -744,12 +744,12 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_sp_grid_mask.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\selector_cursor.xml",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\selector_cursor.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\main_home_bg.xml",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\main_home_bg.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\selector_cursor.xml",
+        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\selector_cursor.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_corner_location_style.xml",
@@ -812,6 +812,10 @@
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_menu_text_selector.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\load_apk.png",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\load_apk.png"
+    },
+    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_read_receipt_request_button.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_read_receipt_request_button.xml"
     },
@@ -825,7 +829,7 @@
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\black_background.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\cbf2c0f19cd3a36677ea0d2928257971329433d1\\output\\res\\drawable\\black_background.xml"
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\ed80dd86daa54f6d4a4a6e8bcea90dfc415f9ecd\\output\\res\\drawable\\black_background.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_selector_grid_camera_mask.xml",
@@ -854,6 +858,10 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_ratingbar.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_ratingbar.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\banner_selected.png",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\banner_selected.png"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_bg_menu.xml",
@@ -890,6 +898,10 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\mine_edit.png",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\mine_edit.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\banner_unseleted.png",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\banner_unseleted.png"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\sidebar_background.xml",
@@ -938,6 +950,10 @@
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_btn_input.xml",
         "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_btn_input.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\main_contact_bg.xml",
+        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\drawable\\main_contact_bg.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\default_portrait.png",

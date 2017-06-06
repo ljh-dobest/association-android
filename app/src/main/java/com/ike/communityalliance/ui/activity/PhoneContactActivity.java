@@ -1,14 +1,10 @@
 package com.ike.communityalliance.ui.activity;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -19,6 +15,7 @@ import com.ike.communityalliance.adapter.PhoneContactRvAdapter;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.bean.ContastsInfo;
 import com.ike.communityalliance.wedget.ItemDivider;
+import com.ike.mylibrary.util.AMUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,16 +36,8 @@ public class PhoneContactActivity extends BaseActivity implements PhoneContactRv
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_contact);
         ButterKnife.bind(this);
-        InitPermisson();
         getContasts();
         initRv();
-    }
-
-    private void InitPermisson() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS}, 1);
-        }
     }
 
     private void getContasts() {
@@ -61,9 +50,11 @@ public class PhoneContactActivity extends BaseActivity implements PhoneContactRv
                 contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                String myContactNumber=contactNumber.replace("+","").replace(" ","");
-                ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
-                if (contactName != null)
-                    list.add(contactsInfo);
+                if(AMUtils.isMobile(myContactNumber)){
+                    ContastsInfo contactsInfo = new ContastsInfo(contactName, myContactNumber);
+                    if (contactName != null)
+                        list.add(contactsInfo);
+                }
             }
             cursor.close();//使用完后一定要将cursor关闭，不然会造成内存泄露等问题
         } catch (Exception e) {

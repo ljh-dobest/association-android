@@ -1,8 +1,12 @@
 package com.ike.communityalliance.ui.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
@@ -14,8 +18,6 @@ import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
-import com.ike.mylibrary.util.CommonUtils;
-import com.ike.mylibrary.util.T;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.DividerItemDecoration;
 import com.ike.communityalliance.adapter.SimpleAdapter;
@@ -26,6 +28,8 @@ import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IShareFriendsView;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.presenter.ShareFriendsPresenter;
+import com.ike.mylibrary.util.CommonUtils;
+import com.ike.mylibrary.util.T;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.base.cache.disk.DiskLruCacheHelper;
@@ -38,7 +42,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
+@RuntimePermissions
 public class ShareFriendsActivity extends BaseMvpActivity<IShareFriendsView, ShareFriendsPresenter> implements IShareFriendsView, XRefreshView.XRefreshViewListener, SimpleAdapter.OnItemClickLitener {
     @BindView(R.id.rv_share_Friends)
     RecyclerView rv_share_Friends;
@@ -65,7 +72,7 @@ public class ShareFriendsActivity extends BaseMvpActivity<IShareFriendsView, Sha
     private int firstPage = 1;
     private int curPage = 1;
     private int insertPosition = 0;
-
+    private static final String[] PERMISSION_DOCAMERAPERMISSION = new String[] {"android.permission.CAMERA"};
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +80,9 @@ public class ShareFriendsActivity extends BaseMvpActivity<IShareFriendsView, Sha
         sp = getSharedPreferences("config", MODE_PRIVATE);
         userId = sp.getString(Const.LOGIN_ID, "");
         ButterKnife.bind(this);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSION_DOCAMERAPERMISSION, 1002);
+        }
         try {
             helper = new DiskLruCacheHelper(this);
         } catch (IOException e) {
@@ -87,6 +97,8 @@ public class ShareFriendsActivity extends BaseMvpActivity<IShareFriendsView, Sha
         init();
     }
 
+    @NeedsPermission(Manifest.permission.CAMERA)
+    public void initCameraPermission() {}
     @Override
     public ShareFriendsPresenter initPresenter() {
         return new ShareFriendsPresenter();

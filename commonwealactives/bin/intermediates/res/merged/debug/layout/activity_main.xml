@@ -30,7 +30,13 @@
                 android:scrollbars="vertical" />
         </com.andview.refreshview.XRefreshView>
 
-
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/top" />
     </RelativeLayout>
 
 </LinearLayout>

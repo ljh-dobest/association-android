@@ -111,7 +111,7 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView,ClaimInfoP
     private String birthday;
     private String homeplace;
     private String finishSchool;
-    private String degree;
+    private String degree="1";
     private String company;
     private String position;
     private String email;

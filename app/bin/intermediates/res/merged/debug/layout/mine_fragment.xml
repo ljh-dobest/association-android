@@ -352,7 +352,36 @@
                 android:layout_height="40dp"
                 android:src="@drawable/rp_arrow"/>
         </LinearLayout>
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/col_ECEEF0"/>
+            <LinearLayout
+                android:id="@+id/ll_mine_QR_code"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/mine_qr_code"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/col_121212"
+                    android:textSize="15sp"
+                    android:text="二维码名片"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/rp_arrow"/>
+            </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:background="@color/col_ECEEF0"
@@ -413,6 +442,36 @@
                 android:layout_height="40dp"
                 android:src="@drawable/rp_arrow"/>
         </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/col_ECEEF0"/>
+            <LinearLayout
+                android:id="@+id/ll_mine_applay_vip"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/mine_apply_vip"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/col_121212"
+                    android:textSize="15sp"
+                    android:text="申请VIP"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/rp_arrow"/>
+            </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

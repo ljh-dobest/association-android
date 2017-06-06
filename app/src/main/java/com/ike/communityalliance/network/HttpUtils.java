@@ -6,6 +6,7 @@ import android.os.Environment;
 import com.google.gson.Gson;
 import com.ike.communityalliance.bean.ClaimInfoBean;
 import com.ike.communityalliance.bean.EditMorePersonalInfo;
+import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.bean.UserInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
@@ -27,10 +28,10 @@ import okhttp3.OkHttpClient;
 public class HttpUtils {
 
     public static final String CACHE_PATH= Environment.getExternalStorageDirectory().getAbsolutePath();
-      public static final String IMAGE_RUL ="https://sq.bjike.com";
-    public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
-//      public static final String IMAGE_RUL ="http://192.168.0.104:90";
-//      public static final String BASE_RUL ="http://192.168.0.104:90/appapi/app";
+//      public static final String IMAGE_RUL ="https://sq.bjike.com";
+//    public static final String BASE_RUL ="https://sq.bjike.com/appapi/app";
+      public static final String IMAGE_RUL ="http://192.168.0.104:90";
+      public static final String BASE_RUL ="http://192.168.0.104:90/appapi/app";
 
     /**
      * post请求
@@ -113,12 +114,20 @@ public class HttpUtils {
     public static void sendPostStringRequest(String url,Object object,StringCallback callback){
         OkHttpUtils.postString().url(BASE_RUL +url).content(object.toString()).build().execute(callback);
     }
-
-
-    //搜索好友或群
-    public static void PostSearchFriendRequest(String url, String string, StringCallback callback){
+    //提交通讯录
+    public static void PostMobile(String url, String string,String mobile, StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL + url)
                 .addHeader("Connection", "close")
+                .addParams("userId",string)
+                .addParams("mobile",mobile)
+                .build().execute(callback);
+    }
+
+    //搜索好友或群
+    public static void PostSearchFriendRequest(String url,String userId, String string, StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL + url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
                 .addParams("number",string)
                 .build().execute(callback);
     }
@@ -592,7 +601,7 @@ public class HttpUtils {
                 .build().execute(callback);
     }
     //提交推荐信息
-    public static void postRecommend(String url, RecommendBean recommendBean, StringCallback callback){
+    public static void postRecommend(String url, PersonalVipBean recommendBean, StringCallback callback){
         Gson gson = new Gson();
         String addressList = gson.toJson(recommendBean.getAddress());
         OkHttpUtils.post().url(BASE_RUL+url)
@@ -605,7 +614,6 @@ public class HttpUtils {
                 .addParams("address",addressList)
                 .addParams("relationship",recommendBean.getRelationship())
                 .addParams("character",recommendBean.getCharacter())
-                .addParams("creditScore",recommendBean.getCreditScore())
                 .addParams("birthday",recommendBean.getBirthday())
                 .addParams("homeplace",recommendBean.getHomeplace())
                 .addParams("finishSchool",recommendBean.getFinishSchool())
@@ -616,6 +624,44 @@ public class HttpUtils {
                 .addParams("spouseName",recommendBean.getSpouseName())
                 .addParams("childrenName",recommendBean.getChildrenName())
                 .addParams("childrenSchool",recommendBean.getChildrenSchool())
+                .addParams("degree",recommendBean.getDegree())
+                .addParams("position",recommendBean.getPosition())
+                .addParams("industry",recommendBean.getIndustry())
+                .addParams("email",recommendBean.getEmail())
+                .addParams("wechat",recommendBean.getEmail())
+                .addParams("QQ",recommendBean.getEmail())
+                .build().execute(callback);
+    }
+    //提交申请VIP信息
+    public static void postPersonalVip(String url, PersonalVipBean personalVipBean, StringCallback callback){
+        Gson gson = new Gson();
+        String addressList = gson.toJson(personalVipBean.getAddress());
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",personalVipBean.getUserId())
+                .addParams("fullName",personalVipBean.getFullName())
+                .addParams("mobile",personalVipBean.getMobile())
+                .addParams("sex",personalVipBean.getSex())
+                .addParams("hobby",personalVipBean.getHobby())
+                .addParams("address",addressList)
+                .addParams("relationship",personalVipBean.getRelationship())
+                .addParams("character",personalVipBean.getCharacter())
+                .addParams("birthday",personalVipBean.getBirthday())
+                .addParams("homeplace",personalVipBean.getHomeplace())
+                .addParams("finishSchool",personalVipBean.getFinishSchool())
+                .addParams("company",personalVipBean.getCompany())
+                .addParams("fatherName",personalVipBean.getFatherName())
+                .addParams("motherName",personalVipBean.getMotherName())
+                .addParams("marriage",personalVipBean.getMarriage())
+                .addParams("spouseName",personalVipBean.getSpouseName())
+                .addParams("childrenName",personalVipBean.getChildrenName())
+                .addParams("childrenSchool",personalVipBean.getChildrenSchool())
+                .addParams("degree",personalVipBean.getDegree())
+                .addParams("position",personalVipBean.getPosition())
+                .addParams("industry",personalVipBean.getIndustry())
+                .addParams("email",personalVipBean.getEmail())
+                .addParams("wechat",personalVipBean.getEmail())
+                .addParams("QQ",personalVipBean.getEmail ())
                 .build().execute(callback);
     }
     //提交推荐信息
@@ -812,6 +858,13 @@ public class HttpUtils {
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
                 .addParams("content",content)
+                .build().execute(callback);
+    }
+    //获取可能认识的人
+    public static void getPossibleUnderstandPeople(String url,String userId,StringCallback callback){
+        OkHttpUtils.post().url(BASE_RUL+url)
+                .addHeader("Connection", "close")
+                .addParams("userId",userId)
                 .build().execute(callback);
     }
 }

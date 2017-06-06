@@ -43,9 +43,14 @@
                     android:id="@+id/tv_verifyInfo_name"
                     style="@style/claimInfo_tv_styles"
                     android:text="姓名:"/>
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <EditText
                     android:layout_toRightOf="@id/tv_verifyInfo_name"
-                    android:layout_marginLeft="31px"
                     android:id="@+id/et_verifyInfo_username"
                     style="@style/claimInfo_et_styles"
                     />
@@ -58,9 +63,14 @@
                 android:id="@+id/tv_verifyInfo_phone"
                 style="@style/claimInfo_tv_styles"
                 android:text="电话:"/>
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
             <EditText
                 android:layout_toRightOf="@id/tv_verifyInfo_phone"
-                android:layout_marginLeft="31px"
                 android:id="@+id/et_verifyInfo_mobile"
                 style="@style/claimInfo_et_styles"
                 />
@@ -85,6 +95,12 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="性别:" />
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <RadioGroup
                     android:id="@+id/rg_verifyInfo_sex"
                     android:layout_width="0dp"
@@ -116,19 +132,25 @@
                         style="@style/claimInfo_tv_styles"
                         android:text="爱好:"
                         />
-                    <RadioButton
+                    <ImageView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/redsure" />
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_1"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="舞蹈" />
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_2"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="音乐"/>
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_3"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="画画"/>
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_4"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="乐器"/>
@@ -143,19 +165,26 @@
                         android:text="爱好:"
                         android:visibility="invisible"
                         />
-                    <RadioButton
+                    <ImageView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@mipmap/redsure" />
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_5"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="游戏" />
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_6"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="影视"/>
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_7"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="旅行"/>
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_12"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="棋类"/>
@@ -171,19 +200,26 @@
                         android:textColor="@color/white"
                         android:visibility="invisible"
                         />
-                    <RadioButton
+                    <ImageView
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        android:src="@mipmap/redsure" />
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_8"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="美食" />
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_9"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="社交"/>
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_10"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="阅读"/>
-                    <RadioButton
+                    <CheckBox
                         android:id="@+id/rb_verifyInfo_11"
                         style="@style/claimInfo_item_rb_styles"
                         android:text="运动"/>
@@ -194,6 +230,12 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="地址:" />
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <Spinner
                     style="@style/claimInfo_item_sp_styles"
                     android:id="@+id/sp_verifyInfo_province"
@@ -222,8 +264,13 @@
                 <TextView
                     style="@style/claimInfo_tv_styles"
                     android:text="生日:"/>
+                <ImageView
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/redsure" />
                 <EditText
-                    android:layout_marginLeft="31px"
                     android:id="@+id/et_verifyInfo_birthday"
                     style="@style/claimInfo_et_styles"
                     android:focusableInTouchMode="false"

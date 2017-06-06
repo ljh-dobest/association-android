@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ike.communityalliance"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="5"
+    android:versionName="1.0.4" >
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="25" />
+        android:targetSdkVersion="23" />
 
     <!-- //定位包、导航包需要的额外权限（注：基础权限也需要） -->
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
@@ -201,7 +201,7 @@
             android:name="RONG_CLOUD_APP_KEY"
             android:value="x18ywvqf8xf0c" />
         -->
-        <!-- 融云测试 -->
+        <!-- 融云 -->
         <meta-data
             android:name="RONG_CLOUD_APP_KEY"
             android:value="tdrvipkstdnk5" />
@@ -214,7 +214,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <!-- 入口 -->
-        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity" >
+        <activity android:name="com.ike.communityalliance.ui.activity.LogoActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -281,11 +281,12 @@
             </intent-filter>
         </activity>
         <activity android:name="com.ike.communityalliance.ui.activity.ShareFriendsActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.LoginActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.LoadActivity" />
         <activity
             android:name="com.ike.communityalliance.ui.activity.Login2Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.ike.communityalliance.ui.activity.InteresitingActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.PersonalApplayVipActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.SearchFriendActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.SelectFriendsActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.CreateGroupActivity" />
@@ -294,8 +295,10 @@
         <activity android:name="com.ike.communityalliance.ui.activity.PrivateChatDetailActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.SignPickerActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.MineCardActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.RecomendCardActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.RecommendActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.RelationMapActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.RelationShipActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.FeedBackActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.SettingActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.VerifyRecommedInfoActivity" />
@@ -334,7 +337,7 @@
             android:value="1334" />
 
         <activity android:name="com.ike.communityalliance.ui.activity.CreateInterestGroupActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.LogoActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.LoginActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.SendShareFriendsActivity" />
         <activity
             android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
@@ -363,7 +366,49 @@
         </receiver>
 
         <activity android:name="com.ike.communityalliance.ui.activity.MineRecomendActivity" />
-        <activity android:name="com.ike.communityalliance.ui.activity.RecomendCardActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.MorePersonalInfoActivity" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+            <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 新浪微博客户端分享回调必须配置 -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 微信分享回调 -->
+        <activity
+            android:name="cn.sharesdk.demo.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.ike.communityalliance.ui.activity.MineClaimActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.MineClaimMsgActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.PhoneContactActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.SetDisplayNameActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.MoreUserDetailInfoActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.LocationSeacherActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.CommonRegisterActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.VipRegisterActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.MineQRCodeActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.ApplayVIPActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.PossibleUnderstandActivity" />
         <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapLocationActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapPreviewActivity" />

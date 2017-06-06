@@ -22,7 +22,6 @@ import io.rong.imlib.RongIMClient;
 public class LogoActivity extends BaseActivity {
     private SharedPreferences sharedPreferences;
     private Handler handler=new Handler();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +108,7 @@ public class LogoActivity extends BaseActivity {
         finish();
     }
     private void toMain(){
+
         startActivity(new Intent(mContext,Main2Activity.class));
         finish();
     }

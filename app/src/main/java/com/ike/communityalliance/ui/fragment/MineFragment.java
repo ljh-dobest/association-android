@@ -17,8 +17,10 @@ import com.ike.communityalliance.bean.UserInfo;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IMineFragmentView;
 import com.ike.communityalliance.presenter.MineFragmentPresenter;
+import com.ike.communityalliance.ui.activity.ApplayVIPActivity;
 import com.ike.communityalliance.ui.activity.FeedBackActivity;
 import com.ike.communityalliance.ui.activity.MineCardActivity;
+import com.ike.communityalliance.ui.activity.MineQRCodeActivity;
 import com.ike.communityalliance.ui.activity.MineRecomendActivity;
 import com.ike.communityalliance.ui.activity.PersonalInformationActivity;
 import com.ike.communityalliance.ui.activity.RecommendActivity;
@@ -84,10 +86,15 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     TextView tvMineSign;
     @BindView(R.id.iv_mine_edit)
     ImageView iv_mine_edit;
-     private SharedPreferences sp;
+    @BindView(R.id.ll_mine_QR_code)
+    LinearLayout llMineQRCode;
+    @BindView(R.id.ll_mine_applay_vip)
+    LinearLayout llMineApplayVip;
+    private SharedPreferences sp;
     private Context mContext;
-    private String userPortraitUrl,userName,nickName,age,sex,useId,email,recommendUserId,
-            birthday,address,mobile,experience,creditScore,contributionScore,claimUserId;
+    private String userPortraitUrl, userName, nickName, age, sex, useId, email, recommendUserId,
+            birthday, address, mobile, experience, creditScore, contributionScore, claimUserId;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View containerView = inflater.inflate(R.layout.mine_fragment, container, false);
@@ -97,37 +104,37 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     }
 
     private void initView() {
-        mContext=getContext();
-        sp = mContext.getSharedPreferences("config",Context.MODE_PRIVATE);
-        userPortraitUrl=sp.getString(Const.userPortraitUrl,"");
-        nickName=sp.getString(Const.LOGIN_NICKNAME,"");
-        age=sp.getString(Const.LOGIN_AGE,"");
-        sex=sp.getString(Const.LOGIN_SEX,"");
-        useId=sp.getString(Const.LOGIN_ID,"");
-        email=sp.getString(Const.LOGIN_EMAIL,"");
-        birthday=sp.getString(Const.LOGIN_BIRTHDAY,"");
-        address=sp.getString(Const.LOGIN_ADDRESS,"");
-        mobile=sp.getString(Const.LOGIN_PHONE,"");
-        experience=sp.getString(Const.LOGIN_EXPERIENCE,"");
-        creditScore=sp.getString(Const.LOGIN_CREDITSCORE,"");
-        contributionScore=sp.getString(Const.LOGIN_CONTRIBUTIONSCORE,"");
-        recommendUserId=sp.getString(Const.LOGIN_RECOMMENDUSERID,"");
-        claimUserId=sp.getString(Const.LOGIN_CLAIMUSERID,"");
+        mContext = getContext();
+        sp = mContext.getSharedPreferences("config", Context.MODE_PRIVATE);
+        userPortraitUrl = sp.getString(Const.userPortraitUrl, "");
+        nickName = sp.getString(Const.LOGIN_NICKNAME, "");
+        age = sp.getString(Const.LOGIN_AGE, "");
+        sex = sp.getString(Const.LOGIN_SEX, "");
+        useId = sp.getString(Const.LOGIN_ID, "");
+        email = sp.getString(Const.LOGIN_EMAIL, "");
+        birthday = sp.getString(Const.LOGIN_BIRTHDAY, "");
+        address = sp.getString(Const.LOGIN_ADDRESS, "");
+        mobile = sp.getString(Const.LOGIN_PHONE, "");
+        experience = sp.getString(Const.LOGIN_EXPERIENCE, "");
+        creditScore = sp.getString(Const.LOGIN_CREDITSCORE, "");
+        contributionScore = sp.getString(Const.LOGIN_CONTRIBUTIONSCORE, "");
+        recommendUserId = sp.getString(Const.LOGIN_RECOMMENDUSERID, "");
+        claimUserId = sp.getString(Const.LOGIN_CLAIMUSERID, "");
         Picasso.with(mContext).load(userPortraitUrl).into(ivMineUserIcon);
         tvMineName.setText(nickName);
         tvMineAge.setText(age);
-        if(sex.equals("1")){
+        if (sex.equals("1")) {
             ivMineSex.setImageResource(R.drawable.mine_man);
-        }else if (sex.equals("2")){
+        } else if (sex.equals("2")) {
             ivMineSex.setImageResource(R.drawable.mine_women);
-        }else{
+        } else {
             ivMineSex.setVisibility(View.GONE);
         }
         tvMineAccount.setText(useId);
         tvMineEmail.setText(email);
         tvMineBirthday.setText(birthday);
         tvMinePhone.setText(mobile);
-        tvMineAddress.setText(address.replace(",",""));
+        tvMineAddress.setText(address.replace(",", ""));
         tvMineRecommenerName.setText(recommendUserId);
         tvMineClaimerName.setText(claimUserId);
         tvMineContributionNum.setText(contributionScore);
@@ -139,8 +146,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         return new MineFragmentPresenter();
     }
 
-    
-    
+
     @Override
     public void setData(ArrayList<UserInfo> data) {
     }
@@ -157,18 +163,19 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     public void showError(String errorString) {
     }
 
-    @OnClick({R.id.iv_mine_card, R.id.ll_mine_recommend, R.id.ll_mine_contacts,R.id.ll_mine_wasRecomend,
-            R.id.ll_mine_feedback, R.id.ll_mine_setting,R.id.tv_mine_sign,R.id.iv_mine_edit,R.id.ll_mine_wallet})
+    @OnClick({R.id.iv_mine_card, R.id.ll_mine_recommend, R.id.ll_mine_contacts, R.id.ll_mine_wasRecomend,
+            R.id.ll_mine_feedback, R.id.ll_mine_setting, R.id.tv_mine_sign, R.id.iv_mine_edit,
+            R.id.ll_mine_wallet,R.id.ll_mine_QR_code,R.id.ll_mine_applay_vip})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_mine_sign:
                 startActivity(new Intent(getContext(), SignPickerActivity.class));
                 break;
             case R.id.iv_mine_card:
-               startActivity(new Intent(getContext(), MineCardActivity.class));
+                startActivity(new Intent(getContext(), MineCardActivity.class));
                 break;
             case R.id.iv_mine_edit:
-                startActivityForResult( new Intent(getActivity(), PersonalInformationActivity.class),110);
+                startActivityForResult(new Intent(getActivity(), PersonalInformationActivity.class), 110);
                 break;
             case R.id.ll_mine_recommend:
                 startActivity(new Intent(getContext(), RecommendActivity.class));
@@ -180,10 +187,22 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
                 JrmfClient.intentWallet(getActivity());
                 break;
             case R.id.ll_mine_contacts:
-               startActivity(new Intent(getContext(), RelationMapActivity.class));
+                startActivity(new Intent(getContext(), RelationMapActivity.class));
+                break;
+            case R.id.ll_mine_QR_code:
+                Intent intent =new Intent(getContext(), MineQRCodeActivity.class);
+                intent.putExtra("userId",useId);
+                intent.putExtra("userPortraitUrl",userPortraitUrl);
+                intent.putExtra("userName",nickName);
+                intent.putExtra("sex",sex);
+                intent.putExtra("age",age);
+                startActivity(intent);
                 break;
             case R.id.ll_mine_feedback:
                 startActivity(new Intent(getContext(), FeedBackActivity.class));
+                break;
+            case R.id.ll_mine_applay_vip:
+                startActivity(new Intent(getContext(), ApplayVIPActivity.class));
                 break;
             case R.id.ll_mine_setting:
                 startActivity(new Intent(getContext(), SettingActivity.class));
@@ -193,9 +212,13 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-     if(requestCode==110){
-         initView();
-     }
+        if (requestCode == 110) {
+            initView();
+        }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
 }
