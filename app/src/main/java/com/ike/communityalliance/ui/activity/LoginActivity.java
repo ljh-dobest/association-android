@@ -169,6 +169,7 @@ public class LoginActivity extends BaseMvpActivity<ILoginView,LoginPresenterImpl
         editor.putString(Const.LOGIN_USERNAME, userName);
         editor.putString(Const.LOGIN_RECOMMEDID,recommedId);
         editor.putString(Const.LOGIN_PASSWORD, pwd);
+        editor.putString(Const.LOGIN_VIP, userInfo.getCheckVip());
         editor.putBoolean("login_message", true);
         editor.putString(Const.LOGIN_ID, useId);
         editor.putString(Const.LOGIN_TOKEN, token);

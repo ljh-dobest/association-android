@@ -520,12 +520,13 @@ public class HttpUtils {
                 .build().execute(callback);
     }
     //发布朋友圈
-    public static void publishShareFriends(String url, String userId, String content,Map<String,File> files,
+    public static void publishShareFriends(String url, String userId, String content,String whoSee,Map<String,File> files,
                                            StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
                 .addParams("content",content)
+                .addParams("status",whoSee)
                 .files("files[]",files)
                 .build().execute(callback);
     }
@@ -644,7 +645,6 @@ public class HttpUtils {
                 .addParams("sex",personalVipBean.getSex())
                 .addParams("hobby",personalVipBean.getHobby())
                 .addParams("address",addressList)
-                .addParams("relationship",personalVipBean.getRelationship())
                 .addParams("character",personalVipBean.getCharacter())
                 .addParams("birthday",personalVipBean.getBirthday())
                 .addParams("homeplace",personalVipBean.getHomeplace())

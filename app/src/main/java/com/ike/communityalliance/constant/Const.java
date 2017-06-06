@@ -26,6 +26,7 @@ public class Const {
     public static final String LOGIN_CONTRIBUTIONSCORE="contributionScore";
     public static final String LOGIN_RECOMMENDUSERID="recommendUserId";
     public static final String LOGIN_CLAIMUSERID="claimUserId";
+    public static final String LOGIN_VIP="checkVip";
     public static final String userPortraitUrl="userPortraitUrl";
 
     public static final String GROUP_LIST_UPDATE = "GROUP_LIST_UPDATE";

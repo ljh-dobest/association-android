@@ -284,7 +284,8 @@
         <activity android:name=".ui.activity.VipRegisterActivity" />
         <activity android:name=".ui.activity.MineQRCodeActivity" />
         <activity android:name=".ui.activity.ApplayVIPActivity" />
-        <activity android:name=".ui.activity.PossibleUnderstandActivity"></activity>
+        <activity android:name=".ui.activity.PossibleUnderstandActivity" />
+        <activity android:name=".ui.activity.WhoCanSeeActivity"></activity>
     </application>
 
 </manifest>
