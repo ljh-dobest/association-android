@@ -19,6 +19,7 @@ import com.issp.association.crowdfunding.adapter.IndexPageAdapter;
 import com.issp.association.crowdfunding.adapter.SimpleAdapter;
 import com.issp.association.crowdfunding.base.adpater.BannerImageLoader;
 import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
+import com.issp.association.crowdfunding.bean.ImageUrlBean;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.interfaces.IProductCollectListView;
 import com.issp.association.crowdfunding.presenters.ProductCollectPresenter;
@@ -75,9 +76,6 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
     GridLayoutManager layoutManager;
     private int mLoadCount = 0;
 
-    private BannerViewPager mBannerViewPager;
-    private int[] mImageIds = new int[]{R.mipmap.banner, R.mipmap.banner02};// 测试图片id
-
     private int limit = 20;
     private int page = 1;
 
@@ -88,11 +86,6 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
 
     private String userId;
 
-    private ArrayList<String> imgList;
-    String[] images = {"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,7 +105,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
     ImageView iv_like_btn;
 
     private void initView() {
-       // PreferenceService ps = new PreferenceService(MainActivity.this);
+        // PreferenceService ps = new PreferenceService(MainActivity.this);
         userId = getIntent().getStringExtra("loginid");
         lt_main_title.setText(getString(R.string.str_title_main));
 
@@ -129,7 +122,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
+        initImageData();
 
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
@@ -217,6 +210,14 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
         presenter.ShareInfoPresenter(formData);
 
     }
+
+    private void initImageData() {
+
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "1");
+        presenter.getImage(formData);
+    }
 /*
     private void initClick() {
         adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnRecyclerViewItemClickListener<ProductCollectBean>() {
@@ -228,18 +229,8 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
         });
     }*/
 
-    private void initViewPager() {
-        IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
-        mBannerViewPager.setAdapter(pageAdapter);
-        mBannerViewPager.setParent(recyclerView);
-    }
 
-
-    private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < images.length; i++) {
-            imgList.add(images[i]);
-        }
+    private void initBanner(List<String> imgList) {
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
         //设置图片集合
@@ -329,6 +320,12 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
             xRefreshView.stopLoadMore(true);
         }
         adapter.setData(data, page);
+    }
+
+    @Override
+    public void getImageUrlView(ImageUrlBean bean) {
+        if (null != bean)
+            initBanner(bean.getImages());
     }
 
     @Override

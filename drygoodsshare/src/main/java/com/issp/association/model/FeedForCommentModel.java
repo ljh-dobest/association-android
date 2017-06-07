@@ -6,6 +6,7 @@ import com.issp.association.bean.ArticleCommentBean;
 import com.issp.association.bean.Code;
 import com.issp.association.bean.CommentsBean;
 import com.issp.association.listeners.OnFeedForCommentListListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -51,6 +52,9 @@ public class FeedForCommentModel {
                         break;
                     case 0:
                         listener.showError("暂无评论");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

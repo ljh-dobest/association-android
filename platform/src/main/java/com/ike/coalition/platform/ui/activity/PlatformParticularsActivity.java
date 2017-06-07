@@ -202,7 +202,7 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
         }
         adapter=new PlatformRegisteredAdapter(data.getJoinUsers(),PlatformParticularsActivity.this);
         gvUser.setAdapter(adapter);
-        data.setId(bean.getId());
+        data.setId(userId);
         bean=data;
     }
 

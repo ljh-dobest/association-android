@@ -1,6 +1,7 @@
 package com.issp.association.crowdfunding.listeners;
 
 
+import com.issp.association.crowdfunding.bean.ImageUrlBean;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public interface OnProductCollectListener {
     void getProductCollectInfo(ArrayList<ProductCollectBean> data);
 
     void selectProductIdCard(String data);
-
+    void getImageUrl(ImageUrlBean bean);
     void userPraise(String data);
 
     void showError(String errorString);

@@ -1,6 +1,7 @@
 package com.issp.association.listeners;
 
 
+import com.issp.association.bean.ImageUrlBean;
 import com.issp.association.bean.ShareBean;
 
 import java.util.ArrayList;
@@ -14,6 +15,6 @@ public interface OnShareListener {
     void getShareInfo(ArrayList<ShareBean> data);
 
     void sharePraiseInfo(String data);
-
+    void getImageUrl(ImageUrlBean bean);
     void showError(String errorString);
 }

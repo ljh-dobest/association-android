@@ -3,9 +3,11 @@ package com.issp.association.crowdfunding.model;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.Code;
+import com.issp.association.crowdfunding.bean.ImageUrlBean;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.bean.UserBean;
 import com.issp.association.crowdfunding.listeners.OnProductCollectListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -47,6 +49,39 @@ public class ProductCollectModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
+                }
+            }
+        });
+    }
+
+    public void getImageUrl(Map<String ,String> formData, final OnProductCollectListener listener){
+
+        HttpUtils.sendGsonPostRequest("/selectAdv", formData, new StringCallback() {
+
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                listener.showError(e.toString());
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Gson gson=new Gson();
+                Type type = new TypeToken<Code<ImageUrlBean>>() {
+                }.getType();
+                Code<ImageUrlBean> code = gson.fromJson(response,type);
+                switch (code.getCode()) {
+                    case 200:
+                        listener.getImageUrl(code.getData());
+                        break;
+                    case 0:
+                        listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -73,11 +108,11 @@ public class ProductCollectModel {
                             listener.selectProductIdCard("已验证");
                         }
                         break;
-                    case 100:
-                        listener.showError(code.getMsgs());
-                        break;
                     case 0:
                         listener.showError("未验证");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

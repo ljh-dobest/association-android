@@ -6,6 +6,7 @@ import com.issp.association.crowdfunding.bean.ArticleCommentBean;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.CommentsBean;
 import com.issp.association.crowdfunding.listeners.OnFeedForCommentListListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -52,6 +53,9 @@ public class FeedForCommentModel {
                     case 0:
                         listener.showError("暂无评论");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -83,6 +87,9 @@ public class FeedForCommentModel {
                     case 0:
                         listener.showError("评论失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -113,6 +120,9 @@ public class FeedForCommentModel {
                         break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

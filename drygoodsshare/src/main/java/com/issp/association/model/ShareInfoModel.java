@@ -3,8 +3,10 @@ package com.issp.association.model;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.bean.Code;
+import com.issp.association.bean.ImageUrlBean;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.listeners.OnShareListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -43,11 +45,43 @@ public class ShareInfoModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
     }
 
+    public void getImageUrl(Map<String ,String> formData, final OnShareListener listener){
+
+        HttpUtils.sendGsonPostRequest("/selectAdv", formData, new StringCallback() {
+
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                listener.showError(e.toString());
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Gson gson=new Gson();
+                Type type = new TypeToken<Code<ImageUrlBean>>() {
+                }.getType();
+                Code<ImageUrlBean> code = gson.fromJson(response,type);
+                switch (code.getCode()) {
+                    case 200:
+                        listener.getImageUrl(code.getData());
+                        break;
+                    case 0:
+                        listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
+                }
+            }
+        });
+    }
     public void getSharePraiseInfo(Map<String, String> formData, final OnShareListener listener) {
 
         HttpUtils.sendGsonPostRequest("/userPraise", formData, new StringCallback() {
@@ -66,11 +100,11 @@ public class ShareInfoModel {
                     case 200:
                         listener.sharePraiseInfo("点赞成功");
                         break;
-                    case 100:
-                        listener.showError("已点赞");
-                        break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

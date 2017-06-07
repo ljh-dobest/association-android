@@ -6,6 +6,7 @@ import com.ike.sq.commonwealactives.bean.Code;
 import com.ike.sq.commonwealactives.bean.UserBean;
 import com.ike.sq.commonwealactives.listeners.OnBenefitParticularsListener;
 import com.ike.sq.commonwealactives.listeners.OnBenefitRegisteredListener;
+import com.ike.sq.commonwealactives.network.CoreErrorConstants;
 import com.ike.sq.commonwealactives.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -43,6 +44,9 @@ public class BenefitRegisteredModel {
                         break;
                     case 0:
                         listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

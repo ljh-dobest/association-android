@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.ike.sq.commonwealactives.bean.BenefitBean;
 import com.ike.sq.commonwealactives.bean.Code;
 import com.ike.sq.commonwealactives.listeners.OnBenefitParticularsListener;
+import com.ike.sq.commonwealactives.network.CoreErrorConstants;
 import com.ike.sq.commonwealactives.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -42,6 +43,9 @@ public class BenefitParticularsModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -67,11 +71,14 @@ public class BenefitParticularsModel {
                     case 0:
                         listener.showError("报名失败！！！");
                         break;
-                    case 100:
+                  /*  case 100:
                         listener.benefitActivesJoinSucceed("亲，你已经报过名了！");
                         break;
                     case 101:
                         listener.showError("报名失败！！！");
+                        break;*/
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }
@@ -95,11 +102,14 @@ public class BenefitParticularsModel {
                     case 200:
                         listener.userPraise("点赞成功");
                         break;
-                    case 100:
+                    /*case 100:
                         listener.showError(code.getMsgs());
-                        break;
+                        break;*/
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

@@ -7,6 +7,7 @@ import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.bean.DealBuyBean;
 import com.issp.inspiration.listeners.OnAddArticleListListener;
 import com.issp.inspiration.listeners.OnPreviewListener;
+import com.issp.inspiration.network.CoreErrorConstants;
 import com.issp.inspiration.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -52,6 +53,9 @@ public class AddArticleModel {
                     case 0:
                         listener.showError("上传失败！");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -84,11 +88,11 @@ public class AddArticleModel {
                         case 200:
                             listener.publishAnArticleListener("灵感贩卖发表成功");
                             break;
-                        case 100:
-                            listener.showError("");
-                            break;
                         case 0:
                             listener.showError("灵感贩卖发表失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                             break;
                     }
                 } catch (Exception e) {

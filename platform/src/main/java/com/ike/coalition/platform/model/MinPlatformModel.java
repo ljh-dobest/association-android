@@ -6,6 +6,7 @@ import com.ike.coalition.platform.bean.Code;
 import com.ike.coalition.platform.bean.PlatformBean;
 import com.ike.coalition.platform.listeners.OnMinPlatformListener;
 import com.ike.coalition.platform.listeners.OnPlatformListener;
+import com.ike.coalition.platform.network.CoreErrorConstants;
 import com.ike.coalition.platform.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -43,6 +44,9 @@ public class MinPlatformModel {
                         break;
                     case 0:
                         listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

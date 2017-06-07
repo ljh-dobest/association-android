@@ -21,6 +21,7 @@ import com.issp.inspiration.adapter.IndexPageAdapter;
 import com.issp.inspiration.adapter.SimpleAdapter;
 import com.issp.inspiration.base.view.BaseMvpActivity;
 import com.issp.inspiration.bean.DealBuyBean;
+import com.issp.inspiration.bean.ImageUrlBean;
 import com.issp.inspiration.interfaces.IDealBuyListView;
 import com.issp.inspiration.presenters.DealBuyInfoPresenter;
 import com.issp.inspiration.ui.activity.AddArticleActivity;
@@ -80,11 +81,6 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     private String userId;
     Banner homepage_banner;
-    private ArrayList<String> imgList;
-    private String[] mImageIds = new String[]{"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};// 测试图片id
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -110,7 +106,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
+        initImageData();
 
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
@@ -187,18 +183,16 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         presenter.ShareInfoPresenter(formData);
 
     }
+    private void initImageData(){
 
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "5");
+        presenter.getImage(formData);
+    }
 
-    /* private void initViewPager() {
-         IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
-         mBannerViewPager.setAdapter(pageAdapter);
-         mBannerViewPager.setParent(recyclerView);
-     }*/
-    private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < mImageIds.length; i++) {
-            imgList.add(mImageIds[i]);
-        }
+    private void initBanner(List<String> imgList) {
+
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
         //设置图片集合
@@ -283,6 +277,12 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         if (null != data && data.size() > 0) {
             adapter.setData(data, page);
         }
+    }
+
+    @Override
+    public void getImageUrlView(ImageUrlBean bean) {
+        if (null != bean)
+            initBanner(bean.getImages());
     }
 
     @Override

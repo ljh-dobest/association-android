@@ -3,6 +3,7 @@ package com.issp.inspiration.interfaces;
 
 import com.issp.inspiration.base.view.BaseView;
 import com.issp.inspiration.bean.DealBuyBean;
+import com.issp.inspiration.bean.ImageUrlBean;
 
 import java.util.ArrayList;
 
@@ -13,5 +14,6 @@ import java.util.ArrayList;
 public interface IDealBuyListView extends BaseView {
     void setDealBuyListData(ArrayList<DealBuyBean> data);
 
+    void getImageUrlView(ImageUrlBean bean);
     void dealBuyPraise(String data);
 }

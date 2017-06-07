@@ -1,6 +1,7 @@
 package com.ike.sq.commonwealactives.listeners;
 
 import com.ike.sq.commonwealactives.bean.BenefitBean;
+import com.ike.sq.commonwealactives.bean.ImageUrlBean;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public interface OnBenefitListener {
 
     void getBenefitList(List<BenefitBean> data);
 
+    void getImageUrl(ImageUrlBean bean);
     void likeBenefit(String data);
 
     void showError(String errorString);

@@ -2,6 +2,7 @@ package com.issp.association.crowdfunding.interfaces;
 
 
 import com.issp.association.crowdfunding.base.view.BaseView;
+import com.issp.association.crowdfunding.bean.ImageUrlBean;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public interface IProductCollectListView extends BaseView {
     void setProductCollectData(ArrayList<ProductCollectBean> data);
 
+    void getImageUrlView(ImageUrlBean bean);
     void selectProductIdCardView(String data);
 
     void userPraise(String data);

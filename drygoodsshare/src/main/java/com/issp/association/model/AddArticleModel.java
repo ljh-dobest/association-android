@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.issp.association.bean.Code;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.listeners.OnAddArticleListListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -51,6 +52,9 @@ public class AddArticleModel {
                     case 0:
                         listener.showError("上传失败！");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -83,11 +87,11 @@ public class AddArticleModel {
                         case 200:
                             listener.publishAnArticleListener("干货分享发表成功");
                             break;
-                        case 100:
-                            listener.showError("");
-                            break;
                         case 0:
                             listener.showError("干货分享发表失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                             break;
                     }
                 } catch (Exception e) {

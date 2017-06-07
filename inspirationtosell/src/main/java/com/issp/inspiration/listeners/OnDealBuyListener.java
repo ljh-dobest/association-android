@@ -1,8 +1,8 @@
 package com.issp.inspiration.listeners;
 
 
-
 import com.issp.inspiration.bean.DealBuyBean;
+import com.issp.inspiration.bean.ImageUrlBean;
 
 import java.util.ArrayList;
 
@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public interface OnDealBuyListener {
     void getDealBuyInfo(ArrayList<DealBuyBean> data);
+
+    void getImageUrl(ImageUrlBean bean);
 
     void DealBuyPraiseInfo(String data);
 

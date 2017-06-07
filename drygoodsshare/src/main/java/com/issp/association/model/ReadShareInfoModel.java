@@ -6,6 +6,7 @@ import com.issp.association.bean.Code;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.listeners.OnReadShareListener;
 import com.issp.association.listeners.OnShareListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -43,6 +44,9 @@ public class ReadShareInfoModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -66,11 +70,11 @@ public class ReadShareInfoModel {
                     case 200:
                         listener.sharePraiseInfo("点赞成功");
                         break;
-                    case 100:
-                        listener.showError("已点赞");
-                        break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

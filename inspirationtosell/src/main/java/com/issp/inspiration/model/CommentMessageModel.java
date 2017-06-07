@@ -6,6 +6,7 @@ import com.issp.inspiration.bean.ArticleCommentBean;
 import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.bean.CommentsBean;
 import com.issp.inspiration.listeners.OnCommentMessageListListener;
+import com.issp.inspiration.network.CoreErrorConstants;
 import com.issp.inspiration.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -42,6 +43,9 @@ public class CommentMessageModel {
                         break;
                     case 0:
                         listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

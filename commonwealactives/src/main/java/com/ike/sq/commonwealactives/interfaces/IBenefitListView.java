@@ -2,6 +2,7 @@ package com.ike.sq.commonwealactives.interfaces;
 
 import com.ike.sq.commonwealactives.base.view.BaseView;
 import com.ike.sq.commonwealactives.bean.BenefitBean;
+import com.ike.sq.commonwealactives.bean.ImageUrlBean;
 
 import java.util.List;
 
@@ -12,5 +13,6 @@ import java.util.List;
 public interface IBenefitListView extends BaseView {
     void setBenefitListData(List<BenefitBean> data);
 
+    void getImageUrlView(ImageUrlBean bean);
     void likeBenefitView(String data);
 }

@@ -22,6 +22,7 @@ import com.ike.coalition.platform.adapter.SimpleAdapter;
 import com.ike.coalition.platform.base.adpater.BannerImageLoader;
 import com.ike.coalition.platform.base.adpater.BaseRecyclerViewAdapter;
 import com.ike.coalition.platform.base.view.BaseMvpActivity;
+import com.ike.coalition.platform.bean.ImageUrlBean;
 import com.ike.coalition.platform.bean.PlatformBean;
 import com.ike.coalition.platform.interfaces.IPlatformListView;
 import com.ike.coalition.platform.presenters.MinPlatformPresenter;
@@ -84,12 +85,14 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     Banner homepage_banner;
 
     private String userId;
+/*
 
     private ArrayList<String> imgList;
     String[] images = {"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
             "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
             "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
             "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};
+*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -125,8 +128,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
 
+        initImageData();
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
         recyclerView.setAdapter(adapter);
@@ -173,7 +176,13 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         //  formData.put("limit", limit + "");
         formData.put("page", page + "");
         presenter.ShareInfoPresenter(formData);
+    }
+    private void initImageData(){
 
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "6");
+        presenter.getImage(formData);
     }
 
     private void initClick() {
@@ -195,11 +204,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     }
 
 
-    private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < images.length; i++) {
-            imgList.add(images[i]);
-        }
+    private void initBanner(List<String> imgList) {
+
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
         //设置图片集合
@@ -289,6 +295,12 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
             xRefreshView.stopLoadMore(true);
         }
         adapter.setData(data, page);
+    }
+
+    @Override
+    public void getImageUrlView(ImageUrlBean bean) {
+        if (null != bean)
+            initBanner(bean.getImages());
     }
 
     @Override
