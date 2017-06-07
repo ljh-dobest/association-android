@@ -6,6 +6,7 @@ import com.ike.sq.commonwealactives.bean.ArticleCommentBean;
 import com.ike.sq.commonwealactives.bean.Code;
 import com.ike.sq.commonwealactives.bean.CommentsBean;
 import com.ike.sq.commonwealactives.listeners.OnFeedForCommentListListener;
+import com.ike.sq.commonwealactives.network.CoreErrorConstants;
 import com.ike.sq.commonwealactives.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -52,6 +53,9 @@ public class FeedForCommentModel {
                     case 0:
                         listener.showError("暂无评论");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -83,6 +87,9 @@ public class FeedForCommentModel {
                     case 0:
                         listener.showError("评论失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -113,6 +120,9 @@ public class FeedForCommentModel {
                         break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

@@ -4,7 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.bean.DealBuyBean;
+import com.issp.inspiration.bean.ImageUrlBean;
 import com.issp.inspiration.listeners.OnDealBuyListener;
+import com.issp.inspiration.network.CoreErrorConstants;
 import com.issp.inspiration.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -42,6 +44,9 @@ public class DealBuyInfoModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -65,11 +70,41 @@ public class DealBuyInfoModel {
                     case 200:
                         listener.DealBuyPraiseInfo("点赞成功");
                         break;
-                    case 100:
-                        listener.showError("已点赞");
-                        break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
+                }
+            }
+        });
+    }
+
+    public void getImageUrl(Map<String ,String> formData, final OnDealBuyListener listener){
+
+        HttpUtils.sendGsonPostRequest("/selectAdv", formData, new StringCallback() {
+
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                listener.showError(e.toString());
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Gson gson=new Gson();
+                Type type = new TypeToken<Code<List<ImageUrlBean>>>() {
+                }.getType();
+                Code<List<ImageUrlBean>> code = gson.fromJson(response,type);
+                switch (code.getCode()) {
+                    case 200:
+                        listener.getImageUrl(code.getData());
+                        break;
+                    case 0:
+                        listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

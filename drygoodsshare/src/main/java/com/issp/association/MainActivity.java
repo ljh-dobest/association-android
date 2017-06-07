@@ -20,8 +20,10 @@ import com.issp.association.adapter.BannerImageLoader;
 import com.issp.association.adapter.IndexPageAdapter;
 import com.issp.association.adapter.SimpleAdapter;
 import com.issp.association.base.view.BaseMvpActivity;
+import com.issp.association.bean.ImageUrlBean;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.interfaces.IShareListView;
+import com.issp.association.network.HttpUtils;
 import com.issp.association.presenters.ShareInfoPresenter;
 import com.issp.association.ui.activity.AddArticleActivity;
 import com.issp.association.ui.activity.CommentMessageActivity;
@@ -35,6 +37,7 @@ import com.issp.association.utils.T;
 import com.issp.association.view.BannerViewPager;
 import com.issp.association.view.CustomGifHeader;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,7 +72,8 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     private boolean isRefresh;
 
     SimpleAdapter adapter;
-    List<ShareBean> personList = new ArrayList<ShareBean>();
+    List<ShareBean> personList = new ArrayList<ShareBean>(0);
+    List<ImageUrlBean> imageUrlBeanList;
     GridLayoutManager layoutManager;
     private int mLoadCount = 0;
 
@@ -81,11 +85,6 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     Banner homepage_banner;
     private BannerViewPager mBannerViewPager;
-    private ArrayList<String> imgList;
-    private String[] mImageIds = new String[]{"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};// 测试图片id
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,7 +95,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     }
 
     private void initView() {
-     //   PreferenceService ps = new PreferenceService(MainActivity.this);
+        //   PreferenceService ps = new PreferenceService(MainActivity.this);
         userId = getIntent().getStringExtra("loginid");
         Log.e("userId", userId);
         lt_main_title.setText("干货分享");
@@ -109,12 +108,12 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 //		xRefreshView1.setSilenceLoadMore();
         layoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(layoutManager);
-       // headerView = adapter.setHeaderView(R.layout.bannerview, recyclerView);
+        // headerView = adapter.setHeaderView(R.layout.bannerview, recyclerView);
 //        LayoutInflater.from(this).inflate(R.layout.bannerview, rootview);
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
+        initImageData();
 
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
@@ -192,16 +191,26 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     }
 
+    private void initImageData() {
+
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "3");
+        presenter.getImage(formData);
+    }
+
 /*
     private void initViewPager() {
         IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
         mBannerViewPager.setAdapter(pageAdapter);
         mBannerViewPager.setParent(recyclerView);
     }   */
+
     private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < mImageIds.length; i++) {
-            imgList.add(mImageIds[i]);
+
+        List<String> imgList = new ArrayList<String>(0);
+        for (ImageUrlBean url : imageUrlBeanList) {
+            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -211,6 +220,15 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
         homepage_banner.setDelayTime(5000);
         //banner设置方法全部调用完毕时最后调用
         homepage_banner.start();
+        homepage_banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -289,6 +307,14 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     }
 
     @Override
+    public void getImageUrlView(List<ImageUrlBean> bean) {
+
+        imageUrlBeanList = bean;
+        if (null != imageUrlBeanList && imageUrlBeanList.size() > 0)
+            initBanner();
+    }
+
+    @Override
     public void sharePraise(String data) {
         int likes = Integer.parseInt(tv_like_btn.getText().toString().trim());
         tv_like_btn.setText((likes + 1) + "");
@@ -300,7 +326,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.lt_main_title_left:
-                this.finish();
+                MainActivity.this.finish();
                 break;
             case R.id.tv_add_share:
                 Intent intent = new Intent(MainActivity.this, AddArticleActivity.class);

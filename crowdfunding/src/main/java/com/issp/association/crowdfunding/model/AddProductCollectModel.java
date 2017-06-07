@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.listeners.OnAddProductCollectListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -36,11 +37,11 @@ public class AddProductCollectModel {
                         case 200:
                             listener.productCollect("众筹添加成功");
                             break;
-                        case 100:
-                            listener.showError(code.getMsgs());
-                            break;
                         case 0:
                             listener.showError("众筹添加失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                             break;
                     }
                 } catch (Exception e) {

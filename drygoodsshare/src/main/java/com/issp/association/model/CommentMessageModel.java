@@ -7,6 +7,7 @@ import com.issp.association.bean.ShareBean;
 import com.issp.association.bean.ShareCommentBean;
 import com.issp.association.listeners.OnCommentMessageListListener;
 import com.issp.association.listeners.OnShareListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -44,6 +45,9 @@ public class CommentMessageModel {
                         break;
                     case 0:
                         listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

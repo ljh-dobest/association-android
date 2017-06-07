@@ -6,6 +6,7 @@ import com.issp.association.bean.Code;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.listeners.OnMinShareListener;
 import com.issp.association.listeners.OnShareListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -36,21 +37,19 @@ public class MinShareInfoModel {
                 Type type = new TypeToken<Code<List<ShareBean>>>() {
                 }.getType();
                 Code<List<ShareBean>> code = gson.fromJson(response, type);
-                if (code.getCode()==0){
-                    listener.showError("你还未发布任何干货！");
-                }else {
-                    ArrayList<ShareBean> data = (ArrayList<ShareBean>) code.getData();
-                    listener.getMinShareInfo(data);
-                }
-               /* switch (code.getCode()) {
-                    case 100:
+
+                switch (code.getCode()) {
+                    case 200:
                         ArrayList<ShareBean> data = (ArrayList<ShareBean>) code.getData();
                         listener.getMinShareInfo(data);
                         break;
                     case 0:
                         listener.showError("你还未发布任何干货！");
                         break;
-                }*/
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
+                }
             }
         });
     }
@@ -73,11 +72,11 @@ public class MinShareInfoModel {
                     case 200:
                         listener.sharePraiseInfo("点赞成功");
                         break;
-                    case 100:
-                        listener.showError("已点赞");
-                        break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

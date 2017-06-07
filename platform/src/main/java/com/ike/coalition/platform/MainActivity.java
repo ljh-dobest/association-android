@@ -22,8 +22,10 @@ import com.ike.coalition.platform.adapter.SimpleAdapter;
 import com.ike.coalition.platform.base.adpater.BannerImageLoader;
 import com.ike.coalition.platform.base.adpater.BaseRecyclerViewAdapter;
 import com.ike.coalition.platform.base.view.BaseMvpActivity;
+import com.ike.coalition.platform.bean.ImageUrlBean;
 import com.ike.coalition.platform.bean.PlatformBean;
 import com.ike.coalition.platform.interfaces.IPlatformListView;
+import com.ike.coalition.platform.network.HttpUtils;
 import com.ike.coalition.platform.presenters.MinPlatformPresenter;
 import com.ike.coalition.platform.presenters.PlatformPresenter;
 import com.ike.coalition.platform.ui.activity.CommentMessageActivity;
@@ -35,6 +37,7 @@ import com.ike.coalition.platform.utils.T;
 import com.ike.coalition.platform.view.BannerViewPager;
 import com.ike.coalition.platform.view.CustomGifHeader;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -71,11 +74,9 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
 
     SimpleAdapter adapter;
     List<PlatformBean> personList = new ArrayList<PlatformBean>();
+    List<ImageUrlBean> imageUrlBeanList;
     GridLayoutManager layoutManager;
     private int mLoadCount = 0;
-
-    private BannerViewPager mBannerViewPager;
-    private int[] mImageIds = new int[]{R.mipmap.banner, R.mipmap.banner02};// 测试图片id
 
     private int limit = 20;
     private int page = 1;
@@ -85,11 +86,6 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
 
     private String userId;
 
-    private ArrayList<String> imgList;
-    String[] images = {"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -110,7 +106,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
 
     private void initView() {
         // PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");
+        userId = "18878481054";
 
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -125,8 +121,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
 
+        initImageData();
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
         recyclerView.setAdapter(adapter);
@@ -173,7 +169,14 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         //  formData.put("limit", limit + "");
         formData.put("page", page + "");
         presenter.ShareInfoPresenter(formData);
+    }
 
+    private void initImageData() {
+
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "6");
+        presenter.getImage(formData);
     }
 
     private void initClick() {
@@ -188,17 +191,12 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         });
     }
 
-    private void initViewPager() {
-        IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
-        mBannerViewPager.setAdapter(pageAdapter);
-        mBannerViewPager.setParent(recyclerView);
-    }
-
 
     private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < images.length; i++) {
-            imgList.add(images[i]);
+        List<String> imgList = new ArrayList<String>(0);
+
+        for (ImageUrlBean url : imageUrlBeanList) {
+            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -208,6 +206,15 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         homepage_banner.setDelayTime(5000);
         //banner设置方法全部调用完毕时最后调用
         homepage_banner.start();
+        homepage_banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Intent intent = new Intent(MainActivity.this, PlatformParticularsActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -289,6 +296,14 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
             xRefreshView.stopLoadMore(true);
         }
         adapter.setData(data, page);
+    }
+
+    @Override
+    public void getImageUrlView(List<ImageUrlBean> bean) {
+        imageUrlBeanList = bean;
+        if (null != imageUrlBeanList && imageUrlBeanList.size() > 0)
+
+            initBanner();
     }
 
     @Override

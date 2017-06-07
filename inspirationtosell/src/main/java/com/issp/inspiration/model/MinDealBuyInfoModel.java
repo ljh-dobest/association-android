@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.bean.DealBuyBean;
 import com.issp.inspiration.listeners.OnMinDealBuyListener;
+import com.issp.inspiration.network.CoreErrorConstants;
 import com.issp.inspiration.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -35,21 +36,19 @@ public class MinDealBuyInfoModel {
                 Type type = new TypeToken<Code<List<DealBuyBean>>>() {
                 }.getType();
                 Code<List<DealBuyBean>> code = gson.fromJson(response, type);
-                if (code.getCode()==0){
-                    listener.showError("你还未发布任何灵感贩卖！");
-                }else {
-                    ArrayList<DealBuyBean> data = (ArrayList<DealBuyBean>) code.getData();
-                    listener.getMinDealBuyInfo(data);
-                }
-               /* switch (code.getCode()) {
-                    case 100:
-                        ArrayList<ShareBean> data = (ArrayList<ShareBean>) code.getData();
+
+                switch (code.getCode()) {
+                    case 200:
+                        ArrayList<DealBuyBean> data = (ArrayList<DealBuyBean>) code.getData();
                         listener.getMinDealBuyInfo(data);
                         break;
                     case 0:
                         listener.showError("你还未发布任何干货！");
                         break;
-                }*/
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
+                }
             }
         });
     }
@@ -72,11 +71,11 @@ public class MinDealBuyInfoModel {
                     case 200:
                         listener.dealBuyPraiseInfo("点赞成功");
                         break;
-                    case 100:
-                        listener.showError("已点赞");
-                        break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

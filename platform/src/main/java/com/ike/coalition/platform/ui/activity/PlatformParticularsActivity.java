@@ -202,7 +202,7 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
         }
         adapter=new PlatformRegisteredAdapter(data.getJoinUsers(),PlatformParticularsActivity.this);
         gvUser.setAdapter(adapter);
-        data.setId(bean.getId());
+        data.setId(activesId);
         bean=data;
     }
 
@@ -248,7 +248,7 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
 
                 break;
             case R.id.tv_add_register:
-                if (joinUsersNumber==0) {
+                if (bean.getJoinStatus()==0) {
                     TakePhotoPopWin();
                 }else {
                     T.showLong(PlatformParticularsActivity.this, "亲，你已经报过名了！");

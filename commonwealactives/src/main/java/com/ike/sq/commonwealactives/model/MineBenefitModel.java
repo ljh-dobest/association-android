@@ -6,6 +6,7 @@ import com.ike.sq.commonwealactives.bean.BenefitBean;
 import com.ike.sq.commonwealactives.bean.Code;
 import com.ike.sq.commonwealactives.listeners.OnBenefitListener;
 import com.ike.sq.commonwealactives.listeners.OnMineBenefitListener;
+import com.ike.sq.commonwealactives.network.CoreErrorConstants;
 import com.ike.sq.commonwealactives.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -44,6 +45,9 @@ public class MineBenefitModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -67,11 +71,14 @@ public class MineBenefitModel {
                     case 200:
                         listener.likeBenefit("点赞成功");
                         break;
-                    case 100:
+                   /* case 100:
                         listener.showError("已点赞");
-                        break;
+                        break;*/
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

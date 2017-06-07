@@ -19,7 +19,9 @@ import com.ike.sq.commonwealactives.adapter.SimpleAdapter;
 import com.ike.sq.commonwealactives.base.adpater.BannerImageLoader;
 import com.ike.sq.commonwealactives.base.view.BaseMvpActivity;
 import com.ike.sq.commonwealactives.bean.BenefitBean;
+import com.ike.sq.commonwealactives.bean.ImageUrlBean;
 import com.ike.sq.commonwealactives.interfaces.IBenefitListView;
+import com.ike.sq.commonwealactives.network.HttpUtils;
 import com.ike.sq.commonwealactives.presenters.BenefitPresenter;
 import com.ike.sq.commonwealactives.ui.activity.BenefitParticularsActivity;
 import com.ike.sq.commonwealactives.ui.activity.FeedForCommentActivity;
@@ -31,6 +33,7 @@ import com.ike.sq.commonwealactives.utils.T;
 import com.ike.sq.commonwealactives.view.BannerViewPager;
 import com.ike.sq.commonwealactives.view.CustomGifHeader;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -66,7 +69,8 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
     private View headerView;
 
     SimpleAdapter adapter;
-    List<BenefitBean> personList = new ArrayList<BenefitBean>();
+    List<BenefitBean> personList = new ArrayList<BenefitBean>(0);
+    List<ImageUrlBean> imageUrlBeanList;
     GridLayoutManager layoutManager;
     private int mLoadCount = 0;
 
@@ -79,12 +83,6 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
     private PopupWindow mPopupWindow;
 
     private String userId;
-
-    private ArrayList<String> imgList;
-    String[] images = {"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};
 
 
     @Override
@@ -101,7 +99,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
     private void initView() {
         //  PreferenceService ps = new PreferenceService(MainActivity.this);
         userId = getIntent().getStringExtra("loginid");
-       // userId = "13025304562";
+        // userId = "13025304562";
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
 
@@ -115,7 +113,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerViewTestRv);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
+        initImageData();
 
         CustomGifHeader header = new CustomGifHeader(this);
         xrefreshview.setCustomHeaderView(header);
@@ -168,8 +166,8 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
                 formData.put("articleId", bean.getId());
                 formData.put("type", "7");
                 formData.put("status", "1");
-                tv_like_btn = (TextView) view.findViewById(R.id.tv_like_btn);
-                iv_like_btn = (ImageView) view.findViewById(R.id.iv_like_btn);
+                tv_like_btn = (TextView) view.findViewById(R.id.tv_likes);
+                iv_like_btn = (ImageView) view.findViewById(R.id.iv_likes);
 
                 presenter.likeBenefitPresenter(formData);
             }
@@ -197,10 +195,19 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
     }
 
+    private void initImageData() {
+
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "7");
+        presenter.getImage(formData);
+    }
+
     private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < images.length; i++) {
-            imgList.add(images[i]);
+        List<String> imgList = new ArrayList<String>(0);
+
+        for (ImageUrlBean url : imageUrlBeanList) {
+            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -211,6 +218,15 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
         //banner设置方法全部调用完毕时最后调用
         homepage_banner.start();
+        homepage_banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Intent intent = new Intent(MainActivity.this, BenefitParticularsActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -249,6 +265,13 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
             xrefreshview.stopLoadMore(true);
         }
         adapter.setData(data, page);
+    }
+
+    @Override
+    public void getImageUrlView(List<ImageUrlBean> bean) {
+        imageUrlBeanList = bean;
+        if (null != imageUrlBeanList&&imageUrlBeanList.size()>0)
+            initBanner();
     }
 
     @Override

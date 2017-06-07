@@ -201,7 +201,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
         }
         adapter = new BenefitRegisteredAdapter(data.getJoinUsers(), BenefitParticularsActivity.this);
         gvUser.setAdapter(adapter);
-        data.setId(bean.getId());
+        data.setId(activesId);
         bean = data;
     }
 
