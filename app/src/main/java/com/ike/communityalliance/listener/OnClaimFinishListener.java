@@ -16,4 +16,5 @@ public interface OnClaimFinishListener {
     void waitClaim();
     void returnParserData(ArrayList<ProvinceBean> provinces);
     void retturnHobbys(String hobbys);
+    void returnCharacters(String characters);
 }

@@ -6,6 +6,8 @@ package com.ike.communityalliance.bean;
 
 public class MoreUserDetailInfo {
     private String fullName;
+    private String mobile;
+    private String birthday;
     private String QQ;
     private String wechat;
     private String favour;
@@ -15,9 +17,18 @@ public class MoreUserDetailInfo {
     private String marriage;
     private String company;
     private String position;
+    private String industry;
+    private String fatherName;
+    private String motherName;
+    private String spouseName;
+    private String childrenName;
+    private String childrenSchool;
+    private String homeplace;
 
-    public MoreUserDetailInfo(String fullName, String QQ, String wechat, String favour, String finishSchool, String constellation, String bloodType, String marriage, String company, String position) {
+    public MoreUserDetailInfo(String fullName, String mobile, String birthday, String QQ, String wechat, String favour, String finishSchool, String constellation, String bloodType, String marriage, String company, String position, String industry, String fatherName, String motherName, String spouseName, String childrenName, String childrenSchool, String homeplace) {
         this.fullName = fullName;
+        this.mobile = mobile;
+        this.birthday = birthday;
         this.QQ = QQ;
         this.wechat = wechat;
         this.favour = favour;
@@ -27,6 +38,13 @@ public class MoreUserDetailInfo {
         this.marriage = marriage;
         this.company = company;
         this.position = position;
+        this.industry = industry;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.spouseName = spouseName;
+        this.childrenName = childrenName;
+        this.childrenSchool = childrenSchool;
+        this.homeplace = homeplace;
     }
 
     public String getFullName() {
@@ -35,6 +53,22 @@ public class MoreUserDetailInfo {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public String getQQ() {
@@ -107,5 +141,61 @@ public class MoreUserDetailInfo {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public String getMotherName() {
+        return motherName;
+    }
+
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
+    }
+
+    public String getSpouseName() {
+        return spouseName;
+    }
+
+    public void setSpouseName(String spouseName) {
+        this.spouseName = spouseName;
+    }
+
+    public String getChildrenName() {
+        return childrenName;
+    }
+
+    public void setChildrenName(String childrenName) {
+        this.childrenName = childrenName;
+    }
+
+    public String getChildrenSchool() {
+        return childrenSchool;
+    }
+
+    public void setChildrenSchool(String childrenSchool) {
+        this.childrenSchool = childrenSchool;
+    }
+
+    public String getHomeplace() {
+        return homeplace;
+    }
+
+    public void setHomeplace(String homeplace) {
+        this.homeplace = homeplace;
     }
 }

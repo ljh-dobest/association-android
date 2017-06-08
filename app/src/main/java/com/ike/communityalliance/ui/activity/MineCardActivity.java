@@ -27,18 +27,12 @@ public class MineCardActivity extends BaseActivity {
     XCRoundRectImageView ivMineCardUserIcon;
     @BindView(R.id.tv_mine_card_name)
     TextView tvMineCardName;
-    @BindView(R.id.tv_mine_card_age)
-    TextView tvMineCardAge;
     @BindView(R.id.iv_mine_card_sex)
     ImageView ivMineCardSex;
     @BindView(R.id.tv_mine_card_account)
     TextView tvMineCardAccount;
     @BindView(R.id.tv_mine_card_email)
     TextView tvMineCardEmail;
-    @BindView(R.id.tv_mine_card_phone)
-    TextView tvMineCardPhone;
-    @BindView(R.id.tv_mine_card_birthday)
-    TextView tvMineCardBirthday;
     @BindView(R.id.tv_mine_card_address)
     TextView tvMineCardAddress;
     @BindView(R.id.tv_mine_card_recommenerName)
@@ -49,9 +43,12 @@ public class MineCardActivity extends BaseActivity {
     TextView tvMineCardContributionNum;
     @BindView(tv_mine_card_reputation)
     TextView tvMineCardReputation;
+    @BindView(R.id.tv_mine_card_favour)
+    TextView tvMineCardFavour;
     private SharedPreferences sp;
-    private String userPortraitUrl,userName,age,sex,useId,email,recommendUserId,
-            birthday,address,mobile,experience,creditScore,contributionScore,claimUserId;
+    private String userPortraitUrl, userName, sex, useId, email,favour, recommendUserId,
+            birthday, address, experience, creditScore, contributionScore, claimUserId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,36 +58,33 @@ public class MineCardActivity extends BaseActivity {
     }
 
     private void initData() {
-        sp = getSharedPreferences("config",mContext.MODE_PRIVATE);
-        userPortraitUrl=sp.getString(Const.userPortraitUrl,"");
-        userName=sp.getString(Const.LOGIN_USERNAME,"");
-        age=sp.getString(Const.LOGIN_AGE,"");
-        sex=sp.getString(Const.LOGIN_SEX,"");
-        useId=sp.getString(Const.LOGIN_ID,"");
-        email=sp.getString(Const.LOGIN_EMAIL,"");
-        birthday=sp.getString(Const.LOGIN_BIRTHDAY,"");
-        address=sp.getString(Const.LOGIN_ADDRESS,"");
-        mobile=sp.getString(Const.LOGIN_PHONE,"");
-        experience=sp.getString(Const.LOGIN_EXPERIENCE,"");
-        creditScore=sp.getString(Const.LOGIN_CREDITSCORE,"");
-        contributionScore=sp.getString(Const.LOGIN_CONTRIBUTIONSCORE,"");
-        recommendUserId=sp.getString(Const.LOGIN_RECOMMENDUSERID,"");
-        claimUserId=sp.getString(Const.LOGIN_CLAIMUSERID,"");
+        sp = getSharedPreferences("config", mContext.MODE_PRIVATE);
+        userPortraitUrl = sp.getString(Const.userPortraitUrl, "");
+        userName = sp.getString(Const.LOGIN_USERNAME, "");
+        favour = sp.getString(Const.LOGIN_FAVOUR, "");
+        sex = sp.getString(Const.LOGIN_SEX, "");
+        useId = sp.getString(Const.LOGIN_ID, "");
+        email = sp.getString(Const.LOGIN_EMAIL, "");
+        birthday = sp.getString(Const.LOGIN_BIRTHDAY, "");
+        address = sp.getString(Const.LOGIN_ADDRESS, "");
+        experience = sp.getString(Const.LOGIN_EXPERIENCE, "");
+        creditScore = sp.getString(Const.LOGIN_CREDITSCORE, "");
+        contributionScore = sp.getString(Const.LOGIN_CONTRIBUTIONSCORE, "");
+        recommendUserId = sp.getString(Const.LOGIN_RECOMMENDUSERID, "");
+        claimUserId = sp.getString(Const.LOGIN_CLAIMUSERID, "");
         Picasso.with(mContext).load(userPortraitUrl).into(ivMineCardUserIcon);
         tvMineCardName.setText(userName);
-        tvMineCardAge.setText(age);
-        if(sex.equals("1")){
+        if (sex.equals("1")) {
             ivMineCardSex.setImageResource(R.drawable.mine_man);
-        }else if (sex.equals("2")){
+        } else if (sex.equals("2")) {
             ivMineCardSex.setImageResource(R.drawable.mine_women);
-        }else{
+        } else {
             ivMineCardSex.setVisibility(View.GONE);
         }
         tvMineCardAccount.setText(useId);
         tvMineCardEmail.setText(email);
-        tvMineCardBirthday.setText(birthday);
-        tvMineCardPhone.setText(mobile);
-        tvMineCardAddress.setText(address);
+        tvMineCardFavour.setText(favour);
+        tvMineCardAddress.setText(address.replace(",",""));
         tvMineCardRecommenerName.setText(recommendUserId);
         tvMineCardClaimerName.setText(claimUserId);
         tvMineCardContributionNum.setText(contributionScore);

@@ -15,7 +15,6 @@ import com.ike.communityalliance.module.MorePersonalInfoMoudle;
 
 public class MorePersonalInfoPresenter extends BasePersenter<IMorePersonalInfoView> implements OnFinishGetMorePersonalInfoListener {
 private MorePersonalInfoMoudle morePersonalInfoMoudle;
-
     public MorePersonalInfoPresenter() {
         morePersonalInfoMoudle=new MorePersonalInfoMoudle();
     }

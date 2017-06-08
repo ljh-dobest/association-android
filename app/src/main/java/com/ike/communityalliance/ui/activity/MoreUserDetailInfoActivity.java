@@ -1,9 +1,6 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.os.Bundle;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -18,8 +15,6 @@ import com.ike.mylibrary.util.T;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
-import java.util.Arrays;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,8 +31,6 @@ public class MoreUserDetailInfoActivity extends BaseActivity {
     TextView tvUserDetailMoreInfoQQ;
     @BindView(R.id.tv_user_detail_more_wechat)
     TextView tvUserDetailMoreWechat;
-    @BindView(R.id.rg_user_detail_more_like)
-    RadioGroup rgUserDetailMoreLike;
     @BindView(R.id.tv_user_detail_more_info_school)
     TextView tvUserDetailMoreInfoSchool;
     @BindView(R.id.tv_user_detail_more_info_constellation)
@@ -50,24 +43,42 @@ public class MoreUserDetailInfoActivity extends BaseActivity {
     TextView tvUserDetailMoreInfoPosition;
     @BindView(R.id.tv_user_detail_more_info_marriage)
     TextView tvUserDetailMoreInfoMarriage;
-    private String userId,otherUserId;
-    private MoreUserDetailInfo moreUserDetailInfo;
-    private List<String> hobbyList;
+    @BindView(R.id.tv_user_detail_more_info_homeplace)
+    TextView tvUserDetailMoreInfoHomeplace;
+    @BindView(R.id.tv_user_detail_more_info_industry)
+    TextView tvUserDetailMoreInfoIndustry;
+    @BindView(R.id.tv_user_detail_more_info_fatherName)
+    TextView tvUserDetailMoreInfoFatherName;
+    @BindView(R.id.tv_user_detail_more_info_motherName)
+    TextView tvUserDetailMoreInfoMotherName;
+    @BindView(R.id.tv_user_detail_more_info_spouseName)
+    TextView tvUserDetailMoreInfoSpouseName;
+    @BindView(R.id.tv_user_detail_more_info_childrenName)
+    TextView tvUserDetailMoreInfoChildrenName;
+    @BindView(R.id.tv_user_detail_more_info_childrenSchool)
+    TextView tvUserDetailMoreInfoChildrenSchool;
+    @BindView(R.id.tv_user_detail_more_info_mobile)
+    TextView tvUserDetailMoreInfoMobile;
+    @BindView(R.id.tv_user_detail_more_info_birthday)
+    TextView tvUserDetailMoreInfoBirthday;
+    private String userId, otherUserId;
+    private MoreUserDetailInfo morePersonalInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_user_detail_info);
         ButterKnife.bind(this);
         userId = getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_ID, "");
-        otherUserId=getIntent().getStringExtra("friendId");
-        getMoreUserDetail(userId,otherUserId);
+        otherUserId = getIntent().getStringExtra("friendId");
+        getMoreUserDetail(userId, otherUserId);
     }
 
     private void getMoreUserDetail(String userId, String otherUserId) {
         HttpUtils.checkUserInfo("/selectUserInfo", userId, otherUserId, "0", new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                T.showShort(MoreUserDetailInfoActivity.this,e.toString());
+                T.showShort(MoreUserDetailInfoActivity.this, e.toString());
             }
 
             @Override
@@ -77,42 +88,42 @@ public class MoreUserDetailInfoActivity extends BaseActivity {
                 }.getType();
                 Code<MoreUserDetailInfo> code = gson.fromJson(response, type);
                 if (code.getCode() == 200) {
-                    moreUserDetailInfo=code.getData();
+                    morePersonalInfo = code.getData();
                     initData();
                 } else {
-                    T.showShort(MoreUserDetailInfoActivity.this,"服务器异常");
+                    T.showShort(MoreUserDetailInfoActivity.this, "服务器异常");
                 }
             }
         });
     }
 
     private void initData() {
-        tvUserDetailMoreInfoName.setText(moreUserDetailInfo.getFullName());
-        tvUserDetailMoreInfoQQ.setText(moreUserDetailInfo.getQQ());
-        tvUserDetailMoreWechat.setText(moreUserDetailInfo.getWechat());
-        hobbyList= Arrays.asList(moreUserDetailInfo.getFavour().split(","));
-        initHobby();
-        tvUserDetailMoreInfoSchool.setText(moreUserDetailInfo.getFinishSchool());
-        tvUserDetailMoreInfoConstellation.setText(moreUserDetailInfo.getConstellation());
-        tvUserDetailMoreInfoBloodtype.setText(moreUserDetailInfo.getBloodType());
-        tvUserDetailMoreInfoCompany.setText(moreUserDetailInfo.getCompany());
-        tvUserDetailMoreInfoPosition.setText(moreUserDetailInfo.getPosition());
-        tvUserDetailMoreInfoMarriage.setText(moreUserDetailInfo.getMarriage().equals("0")?"未婚":"已婚");
-    }
-    private void initHobby() {
-        if(hobbyList==null){
+        if (morePersonalInfo.getFullName() == null) {
             return;
         }
-        for (int i = 0; i < rgUserDetailMoreLike.getChildCount(); i++) {
-            LinearLayout ll= (LinearLayout) rgUserDetailMoreLike.getChildAt(i);
-            for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
-                CheckBox rb= (CheckBox) ll.getChildAt(j);
-                if(hobbyList.contains(rb.getText().toString())){
-                    rb.setChecked(true);
-                }
-            }
+        tvUserDetailMoreInfoName.setText(morePersonalInfo.getFullName());
+        tvUserDetailMoreInfoMobile.setText(morePersonalInfo.getMobile());
+        tvUserDetailMoreInfoBirthday.setText(morePersonalInfo.getBirthday());
+        tvUserDetailMoreInfoHomeplace.setText(morePersonalInfo.getHomeplace().replace(",",""));
+        tvUserDetailMoreInfoQQ.setText(morePersonalInfo.getQQ());
+        tvUserDetailMoreWechat.setText(morePersonalInfo.getWechat());
+        tvUserDetailMoreInfoSchool.setText(morePersonalInfo.getFinishSchool());
+        tvUserDetailMoreInfoConstellation.setText(morePersonalInfo.getConstellation());
+        tvUserDetailMoreInfoBloodtype.setText(morePersonalInfo.getBloodType());
+        tvUserDetailMoreInfoCompany.setText(morePersonalInfo.getCompany());
+        tvUserDetailMoreInfoPosition.setText(morePersonalInfo.getPosition());
+        if(morePersonalInfo.getMarriage()!=null){
+            tvUserDetailMoreInfoMarriage.setText(morePersonalInfo.getMarriage().equals("0")?"未婚" : "已婚");
         }
+        tvUserDetailMoreInfoIndustry.setText(morePersonalInfo.getIndustry());
+        tvUserDetailMoreInfoFatherName.setText(morePersonalInfo.getFatherName());
+        tvUserDetailMoreInfoName.setText(morePersonalInfo.getMotherName());
+        tvUserDetailMoreInfoSpouseName.setText(morePersonalInfo.getSpouseName());
+        tvUserDetailMoreInfoChildrenName.setText(morePersonalInfo.getChildrenName());
+        tvUserDetailMoreInfoChildrenSchool.setText(morePersonalInfo.getChildrenSchool());
     }
+
+
     @OnClick(R.id.tv_user_detail_more_info_back)
     public void onViewClicked() {
         finish();

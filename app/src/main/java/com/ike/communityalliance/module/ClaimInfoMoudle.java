@@ -117,4 +117,25 @@ if(!claimInfo.getEmail().equals("")&&!CommonUtils.isEmail(claimInfo.getEmail()))
      isFirstHobby=true;
      listener.retturnHobbys(hobbys);
  }
+ private boolean isFirstCharacter=true;
+ //获取选择的性格
+ public void getCharacters(ViewGroup group, OnClaimFinishListener listener) {
+  String characters="";
+  for (int i = 0; i < group.getChildCount(); i++) {
+   LinearLayout ll= (LinearLayout) group.getChildAt(i);
+   for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
+    CheckBox rb= (CheckBox) ll.getChildAt(j);
+    if (rb.isChecked()){
+     if (isFirstCharacter){
+      characters=rb.getText().toString();
+      isFirstCharacter=false;
+     }else{
+      characters=characters+","+rb.getText().toString();
+     }
+    }
+   }
+  }
+  isFirstCharacter=true;
+  listener.returnCharacters(characters);
+ }
 }

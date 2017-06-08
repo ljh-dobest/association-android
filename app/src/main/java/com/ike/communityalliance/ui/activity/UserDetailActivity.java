@@ -53,8 +53,6 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
     XCRoundRectImageView ivUserDetailUserIcon;
     @BindView(R.id.tv_user_detail_name)
     TextView tvUserDetailName;
-    @BindView(R.id.tv_user_detail_age)
-    TextView tvUserDetailAge;
     @BindView(R.id.iv_user_detail_sex)
     ImageView ivUserDetailSex;
     @BindView(R.id.tv_user_detail_account)
@@ -115,7 +113,6 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
         } else {
             friendInfo = getIntent().getParcelableExtra("friends");
             checkPhoneConact(mId,friendInfo.getUserId());
-
         }
     }
 
@@ -245,7 +242,6 @@ public class UserDetailActivity extends BaseMvpActivity<IUserDetailView, UserDet
             tvUserDetailName.setText(userInfo.getFriendNickname());
             tvUserDetailDisplayName.setText(userInfo.getFriendNickname());
         }
-        tvUserDetailAge.setText(userInfo.getAge());
         tvUserDetailAccount.setText(userInfo.getNumberId());
         tvUserDetailEmail.setText(userInfo.getEmail());
         tvUserDetailBirthday.setText(userInfo.getBirthday());

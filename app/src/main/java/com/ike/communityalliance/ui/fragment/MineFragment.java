@@ -48,18 +48,12 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     XCRoundRectImageView ivMineUserIcon;
     @BindView(R.id.tv_mine_name)
     TextView tvMineName;
-    @BindView(R.id.tv_mine_age)
-    TextView tvMineAge;
     @BindView(R.id.iv_mine_sex)
     ImageView ivMineSex;
     @BindView(R.id.tv_mine_account)
     TextView tvMineAccount;
     @BindView(R.id.tv_mine_email)
     TextView tvMineEmail;
-    @BindView(R.id.tv_mine_phone)
-    TextView tvMinePhone;
-    @BindView(R.id.tv_mine_birthday)
-    TextView tvMineBirthday;
     @BindView(R.id.tv_mine_address)
     TextView tvMineAddress;
     @BindView(R.id.tv_mine_recommenerName)
@@ -90,10 +84,12 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     LinearLayout llMineQRCode;
     @BindView(R.id.ll_mine_applay_vip)
     LinearLayout llMineApplayVip;
+    @BindView(R.id.tv_mine_favour)
+    TextView tvMineFavour;
     private SharedPreferences sp;
     private Context mContext;
     private String userPortraitUrl, userName, nickName, age, sex, useId, email, recommendUserId,
-            birthday, address, mobile, experience, creditScore, contributionScore, claimUserId;
+            address, experience, creditScore, contributionScore, claimUserId, favour;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -103,18 +99,16 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         return containerView;
     }
 
-    private void initView() {
+    private void initView(){
         mContext = getContext();
         sp = mContext.getSharedPreferences("config", Context.MODE_PRIVATE);
         userPortraitUrl = sp.getString(Const.userPortraitUrl, "");
         nickName = sp.getString(Const.LOGIN_NICKNAME, "");
-        age = sp.getString(Const.LOGIN_AGE, "");
         sex = sp.getString(Const.LOGIN_SEX, "");
         useId = sp.getString(Const.LOGIN_ID, "");
         email = sp.getString(Const.LOGIN_EMAIL, "");
-        birthday = sp.getString(Const.LOGIN_BIRTHDAY, "");
+        favour = sp.getString(Const.LOGIN_FAVOUR, "");
         address = sp.getString(Const.LOGIN_ADDRESS, "");
-        mobile = sp.getString(Const.LOGIN_PHONE, "");
         experience = sp.getString(Const.LOGIN_EXPERIENCE, "");
         creditScore = sp.getString(Const.LOGIN_CREDITSCORE, "");
         contributionScore = sp.getString(Const.LOGIN_CONTRIBUTIONSCORE, "");
@@ -122,7 +116,6 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         claimUserId = sp.getString(Const.LOGIN_CLAIMUSERID, "");
         Picasso.with(mContext).load(userPortraitUrl).into(ivMineUserIcon);
         tvMineName.setText(nickName);
-        tvMineAge.setText(age);
         if (sex.equals("1")) {
             ivMineSex.setImageResource(R.drawable.mine_man);
         } else if (sex.equals("2")) {
@@ -132,8 +125,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         }
         tvMineAccount.setText(useId);
         tvMineEmail.setText(email);
-        tvMineBirthday.setText(birthday);
-        tvMinePhone.setText(mobile);
+        tvMineFavour.setText(favour);
         tvMineAddress.setText(address.replace(",", ""));
         tvMineRecommenerName.setText(recommendUserId);
         tvMineClaimerName.setText(claimUserId);
@@ -165,7 +157,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
 
     @OnClick({R.id.iv_mine_card, R.id.ll_mine_recommend, R.id.ll_mine_contacts, R.id.ll_mine_wasRecomend,
             R.id.ll_mine_feedback, R.id.ll_mine_setting, R.id.tv_mine_sign, R.id.iv_mine_edit,
-            R.id.ll_mine_wallet,R.id.ll_mine_QR_code,R.id.ll_mine_applay_vip})
+            R.id.ll_mine_wallet, R.id.ll_mine_QR_code, R.id.ll_mine_applay_vip})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_mine_sign:
@@ -190,12 +182,12 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
                 startActivity(new Intent(getContext(), RelationMapActivity.class));
                 break;
             case R.id.ll_mine_QR_code:
-                Intent intent =new Intent(getContext(), MineQRCodeActivity.class);
-                intent.putExtra("userId",useId);
-                intent.putExtra("userPortraitUrl",userPortraitUrl);
-                intent.putExtra("userName",nickName);
-                intent.putExtra("sex",sex);
-                intent.putExtra("age",age);
+                Intent intent = new Intent(getContext(), MineQRCodeActivity.class);
+                intent.putExtra("userId", useId);
+                intent.putExtra("userPortraitUrl", userPortraitUrl);
+                intent.putExtra("userName", nickName);
+                intent.putExtra("sex", sex);
+                intent.putExtra("age", age);
                 startActivity(intent);
                 break;
             case R.id.ll_mine_feedback:
@@ -215,10 +207,6 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         if (requestCode == 110) {
             initView();
         }
-    }
+     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

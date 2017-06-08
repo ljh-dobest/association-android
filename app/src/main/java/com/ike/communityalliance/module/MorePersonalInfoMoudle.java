@@ -23,7 +23,7 @@ import okhttp3.Call;
 
 public class MorePersonalInfoMoudle {
  public  void getMorePersonalInfoData(String userId, final OnFinishGetMorePersonalInfoListener listener){
-     HttpUtils.getMorePersonalInfo("/selectMoreUserInfo", userId, new StringCallback() {
+     HttpUtils.getMorePersonalInfo("/selectUserInfo", userId,userId,"0",new StringCallback() {
          @Override
          public void onError(Call call, Exception e, int id) {
             listener.showError(e.toString());

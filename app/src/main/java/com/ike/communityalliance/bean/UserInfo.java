@@ -25,6 +25,7 @@ public class UserInfo  {
     private String claimUserId;
     private String intimacy;
     private String checkVip;
+    private String favour;
 
     public UserInfo(String status, String userId, String numberId, String nickname, String friendNickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId, String intimacy, String checkVip) {
         this.status = status;
@@ -49,13 +50,6 @@ public class UserInfo  {
         this.checkVip = checkVip;
     }
 
-    public UserInfo(String status, String nickname, String userPortraitUrl, String mobile) {
-        this.status = status;
-        this.nickname = nickname;
-        this.userPortraitUrl = userPortraitUrl;
-        this.mobile = mobile;
-    }
-
     public UserInfo(String status, String userId, String numberId, String nickname, String token, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age, String experience, String creditScore, String contributionScore, String recommendUserId, String claimUserId) {
         this.status = status;
         this.userId = userId;
@@ -76,51 +70,31 @@ public class UserInfo  {
         this.claimUserId = claimUserId;
     }
 
-    public UserInfo(String userId, String nickname, String userPortraitUrl, String sex, String mobile, String address, String birthday, String email, String age) {
+    public UserInfo(String userId, String nickname, String userPortraitUrl, String sex, String address, String email, String favour) {
         this.userId = userId;
         this.nickname = nickname;
         this.userPortraitUrl = userPortraitUrl;
         this.sex = sex;
-        this.mobile = mobile;
         this.address = address;
-        this.birthday = birthday;
         this.email = email;
-        this.age = age;
+        this.favour = favour;
     }
 
-    public UserInfo(String userId, String nickname, String sex, String mobile, String birthday, String address, String email, String age) {
+    public UserInfo(String userId, String nickname, String sex, String address, String email, String favour) {
         this.userId = userId;
         this.nickname = nickname;
         this.sex = sex;
-        this.mobile = mobile;
-        this.birthday = birthday;
         this.address = address;
         this.email = email;
-        this.age = age;
+        this.favour = favour;
     }
 
-    public String getCheckVip() {
-        return checkVip;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCheckVip(String checkVip) {
-        this.checkVip = checkVip;
-    }
-
-    public String getIntimacy() {
-        return intimacy;
-    }
-
-    public void setIntimacy(String intimacy) {
-        this.intimacy = intimacy;
-    }
-
-    public String getFriendNickname() {
-        return friendNickname;
-    }
-
-    public void setFriendNickname(String friendNickname) {
-        this.friendNickname = friendNickname;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getUserId() {
@@ -145,6 +119,14 @@ public class UserInfo  {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public String getFriendNickname() {
+        return friendNickname;
+    }
+
+    public void setFriendNickname(String friendNickname) {
+        this.friendNickname = friendNickname;
     }
 
     public String getToken() {
@@ -243,19 +225,35 @@ public class UserInfo  {
         this.recommendUserId = recommendUserId;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getClaimUserId() {
         return claimUserId;
     }
 
     public void setClaimUserId(String claimUserId) {
         this.claimUserId = claimUserId;
+    }
+
+    public String getIntimacy() {
+        return intimacy;
+    }
+
+    public void setIntimacy(String intimacy) {
+        this.intimacy = intimacy;
+    }
+
+    public String getCheckVip() {
+        return checkVip;
+    }
+
+    public void setCheckVip(String checkVip) {
+        this.checkVip = checkVip;
+    }
+
+    public String getFavour() {
+        return favour;
+    }
+
+    public void setFavour(String favour) {
+        this.favour = favour;
     }
 }

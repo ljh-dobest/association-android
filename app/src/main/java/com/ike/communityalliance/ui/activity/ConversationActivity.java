@@ -31,7 +31,6 @@ import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.bean.FriendInfo;
 import com.ike.communityalliance.bean.GroupMember;
 import com.ike.communityalliance.bean.Groups;
-import com.ike.communityalliance.bean.UserId;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.db.GroupMemberDAOImpl;
@@ -146,8 +145,6 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
         mTargetId = intent.getData().getQueryParameter("targetId");
         //10000 为 Demo Server 加好友的 id，若 targetId 为 10000，则为加好友消息，默认跳转到 NewFriendListActivity
         // Demo 逻辑
-        newFriend();  //好友请求
-
         setActionBarTitle(mConversationType, mTargetId);
         //展示如何从 Intent 中得到 融云会话页面传递的 Uri
 //        intent.getData().getLastPathSegment();//获得当前会话类型
@@ -202,35 +199,35 @@ public class ConversationActivity extends BaseActivity implements View.OnClickLi
     //授予权限后提交手机联系人数据
     @NeedsPermission({Manifest.permission.RECORD_AUDIO,Manifest.permission.CAMERA})
     public void initRecoedAudioPermission() {}
-    private void newFriend() {
-        final String userid = sp.getString(Const.LOGIN_ID, "");
-        HttpUtils.postAddFriender("/allUnreadFriends", userid, new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                T.showShort(mContext, "/all_unread_friends--------" + e);
-                return;
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code<List<UserId>>>() {
-                }.getType();
-                Code<List<UserId>> code =gson.fromJson(response,type);
-                if (code.getCode() == 200) {
-                    List<UserId> userIds = code.getData();
-                    for (int i = 0; i < userIds.size(); i++) {
-                        if (mTargetId != null && mTargetId.equals(userIds.get(i).getUserId())) {
-                            startActivity(new Intent(ConversationActivity.this, NewFriendListActivity.class));
-                            return;
-                        }
-                    }
-                }else{
-                    T.showShort(ConversationActivity.this,"网络异常```");
-                }
-            }
-        });
-    }
+//    private void newFriend() {
+//        final String userid = sp.getString(Const.LOGIN_ID, "");
+//        HttpUtils.postAddFriender("/allUnreadFriends", userid, new StringCallback() {
+//            @Override
+//            public void onError(Call call, Exception e, int id) {
+//                T.showShort(mContext, "/all_unread_friends--------" + e);
+//                return;
+//            }
+//
+//            @Override
+//            public void onResponse(String response, int id) {
+//                Gson gson = new Gson();
+//                Type type = new TypeToken<Code<List<UserId>>>() {
+//                }.getType();
+//                Code<List<UserId>> code =gson.fromJson(response,type);
+//                if (code.getCode() == 200) {
+//                    List<UserId> userIds = code.getData();
+//                    for (int i = 0; i < userIds.size(); i++) {
+//                        if (mTargetId != null && mTargetId.equals(userIds.get(i).getUserId())) {
+//                            startActivity(new Intent(ConversationActivity.this, NewFriendListActivity.class));
+//                            return;
+//                        }
+//                    }
+//                }else{
+//                    T.showShort(ConversationActivity.this,"网络异常```");
+//                }
+//            }
+//        });
+//    }
 
     /**
      * 用户头像

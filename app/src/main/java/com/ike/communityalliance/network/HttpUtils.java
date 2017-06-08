@@ -7,7 +7,6 @@ import com.google.gson.Gson;
 import com.ike.communityalliance.bean.ClaimInfoBean;
 import com.ike.communityalliance.bean.EditMorePersonalInfo;
 import com.ike.communityalliance.bean.PersonalVipBean;
-import com.ike.communityalliance.bean.RecommendBean;
 import com.ike.communityalliance.bean.UserInfo;
 import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -339,11 +338,8 @@ public class HttpUtils {
                 .addParams("nickname",userInfo.getNickname())
                 .addParams("sex",userInfo.getSex())
                 .addParams("email",userInfo.getEmail())
-                .addParams("mobile",userInfo.getMobile())
                 .addParams("address",userInfo.getAddress())
-                .addParams("birthDate",userInfo.getBirthday())
-                .addParams("age",userInfo.getAge())
-              //  .addFile("file","crop_file.jpg",file)
+                .addParams("favour",userInfo.getFavour())
                 .build().execute(callback);
     }
     //修改个人资料
@@ -353,10 +349,8 @@ public class HttpUtils {
                 .addParams("nickname",userInfo.getNickname())
                 .addParams("sex",userInfo.getSex())
                 .addParams("email",userInfo.getEmail())
-                .addParams("mobile",userInfo.getMobile())
                 .addParams("address",userInfo.getAddress())
-                .addParams("birthDate",userInfo.getBirthday())
-                .addParams("age",userInfo.getAge())
+                .addParams("favour",userInfo.getFavour())
                  .addFile("file","crop_file.jpg",new File(userInfo.getUserPortraitUrl()))
                 .build().execute(callback);
     }
@@ -664,30 +658,7 @@ public class HttpUtils {
                 .addParams("QQ",personalVipBean.getEmail ())
                 .build().execute(callback);
     }
-    //提交推荐信息
-    public static void postRecommend2(String url, RecommendBean recommendBean, StringCallback callback){
-        Gson gson = new Gson();
-        String addressList = gson.toJson(recommendBean.getAddress());
-        OkHttpUtils.post().url(BASE_RUL+url)
-                .addHeader("Connection", "close")
-                .addParams("userId",recommendBean.getUserId())
-                .addParams("fullName",recommendBean.getFullName())
-                .addParams("mobile",recommendBean.getMobile())
-                .addParams("sex",recommendBean.getSex())
-                .addParams("hobby",recommendBean.getHobby())
-                .addParams("address",addressList)
-                .addParams("relationship",recommendBean.getRelationship())
-                .addParams("creditScore",recommendBean.getCreditScore())
-                .addParams("birthday",recommendBean.getBirthday())
-                .addParams("homeplace",recommendBean.getHomeplace())
-                .addParams("character",recommendBean.getCharacter())
-                .addParams("finishSchool",recommendBean.getFinishSchool())
-                .addParams("company",recommendBean.getCompany())
-                .addParams("fatherName",recommendBean.getFatherName())
-                .addParams("motherName",recommendBean.getMotherName())
-                .addParams("marriage",recommendBean.getMarriage())
-                .build().execute(callback);
-    }
+
 
     //获取已推荐的信息
     public static void getRecommedInfo(String url,String userId,String recommendId,StringCallback callback){
@@ -762,6 +733,14 @@ public class HttpUtils {
                 .addParams("email",claimInfo.getEmail())
                 .addParams("QQ",claimInfo.getQQ())
                 .addParams("wechat",claimInfo.getWechat())
+                .addParams("character",claimInfo.getCharacter())
+                .addParams("industry",claimInfo.getIndustry())
+                .addParams("fatherName",claimInfo.getFatherName())
+                .addParams("motherName",claimInfo.getMotherName())
+                .addParams("marriage",claimInfo.getMarriage())
+                .addParams("spouseName",claimInfo.getSpouseName())
+                .addParams("childrenName",claimInfo.getChildrenName())
+                .addParams("childrenSchool",claimInfo.getChildrenSchool())
                 .build().execute(callback);
     }
     //提交确认个人信息
@@ -819,10 +798,12 @@ public class HttpUtils {
                 .build().execute(callback);
     }
     //获取个人更多资料
-    public static void getMorePersonalInfo(String url,String userId,StringCallback callback){
+    public static void getMorePersonalInfo(String url,String userId,String otherUserId,String status,StringCallback callback){
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("userId",userId)
+                .addParams("otherUserId",otherUserId)
+                .addParams("status",status)
                 .build().execute(callback);
     }
     //提交个人更多资料
@@ -832,24 +813,33 @@ public class HttpUtils {
                 .addParams("userId",info.getUserId())
                 .addParams("fullName",info.getFullName())
                 .addParams("SfullName",info.getSfullName())
+                .addParams("mobile",info.getMobile())
+                .addParams("Smobile",info.getSmobile())
+                .addParams("birthday",info.getBirthday())
+                .addParams("Sbirthday",info.getSbirthday())
                 .addParams("QQ",info.getQQ())
-                .addParams("SQQ",info.getSQQ())
                 .addParams("wechat", info.getWechat())
-                .addParams("Swechat",info.getSwechat())
-                .addParams("favour",info.getFavour())
-                .addParams("Sfavour",info.getSfavour())
+                .addParams("fatherName", info.getFatherName())
+                .addParams("SfatherName", info.getSfatherName())
+                .addParams("motherName", info.getMotherName())
+                .addParams("SmotherName", info.getSmotherName())
                 .addParams("finishSchool",info.getFinishSchool())
                 .addParams("SfinishSchool",info.getSfinishSchool())
                 .addParams("constellation",info.getConstellation())
-                .addParams("Sconstellation",info.getSconstellation())
                 .addParams("bloodType",info.getBloodType())
-                .addParams("SbloodType",info.getSbloodType())
                 .addParams("marriage",info.getMarriage())
                 .addParams("Smarriage",info.getSmarriage())
+                .addParams("spouseName",info.getSpouseName())
+                .addParams("SspouseName",info.getSspouseName())
+                .addParams("childrenName",info.getChildrenName())
+                .addParams("SchildrenName",info.getSchildrenName())
+                .addParams("childrenSchool",info.getChildrenSchool())
+                .addParams("SchildrenSchool",info.getChildrenSchool())
                 .addParams("company",info.getCompany())
-                .addParams("Scompany",info.getScompany())
                 .addParams("position",info.getPosition())
                 .addParams("Sposition",info.getSposition())
+                .addParams("industry",info.getIndustry())
+                .addParams("homeplace",info.getHomeplace())
                 .build().execute(callback);
     }
     //提交平台反馈
