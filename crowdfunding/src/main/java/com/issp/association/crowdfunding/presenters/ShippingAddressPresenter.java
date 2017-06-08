@@ -3,6 +3,7 @@ package com.issp.association.crowdfunding.presenters;
 
 import com.issp.association.crowdfunding.base.presenter.BasePersenter;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
+import com.issp.association.crowdfunding.bean.ShippingAddressBean;
 import com.issp.association.crowdfunding.interfaces.IOrderDetailListView;
 import com.issp.association.crowdfunding.interfaces.IShippingAddressListView;
 import com.issp.association.crowdfunding.listeners.OnOrderDetailListListener;
@@ -11,6 +12,7 @@ import com.issp.association.crowdfunding.model.OrderDetailModel;
 import com.issp.association.crowdfunding.model.ShippingAddressModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 收货地址管理
@@ -29,7 +31,7 @@ public class ShippingAddressPresenter extends BasePersenter<IShippingAddressList
     }
 
     @Override
-    public void getShippingAddressInfo(ArrayList<OrderDetailBean> data) {
+    public void getShippingAddressInfo(List<ShippingAddressBean> data) {
         mView.setShippingAddressListData(data);
     }
 

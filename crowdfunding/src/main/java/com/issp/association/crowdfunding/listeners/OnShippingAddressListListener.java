@@ -2,8 +2,10 @@ package com.issp.association.crowdfunding.listeners;
 
 
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
+import com.issp.association.crowdfunding.bean.ShippingAddressBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 收货地址管理
@@ -11,7 +13,7 @@ import java.util.ArrayList;
  */
 
 public interface OnShippingAddressListListener {
-    void getShippingAddressInfo(ArrayList<OrderDetailBean> data);
+    void getShippingAddressInfo(List<ShippingAddressBean> data);
 
     void showError(String errorString);
 }

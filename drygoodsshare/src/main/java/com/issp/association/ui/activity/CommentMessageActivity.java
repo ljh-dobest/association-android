@@ -15,16 +15,20 @@ import com.issp.association.adapter.IndexPageAdapter;
 import com.issp.association.adapter.ShareCommentListAdapter;
 import com.issp.association.adapter.SimpleAdapter;
 import com.issp.association.base.view.BaseMvpActivity;
+import com.issp.association.bean.CommentsBean;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.bean.ShareCommentBean;
 import com.issp.association.interfaces.ICommentMessageListView;
 import com.issp.association.presenters.CommentMessagePresenter;
+import com.issp.association.utils.T;
 import com.issp.association.view.BannerViewPager;
 import com.issp.association.view.CustomGifHeader;
 import com.issp.association.view.CustomerFooter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -49,9 +53,9 @@ public class CommentMessageActivity extends BaseMvpActivity<ICommentMessageListV
     RecyclerView recyclerView;
     @BindView(R.id.xrefreshview)
     XRefreshView xRefreshView;
-
-
-    List<ShareCommentBean> personList = new ArrayList<ShareCommentBean>();
+    private String userId;
+    private int page=1;
+    List<CommentsBean> personList = new ArrayList<CommentsBean>();
     LinearLayoutManager layoutManager;
     private int mLoadCount = 0;
     ShareCommentListAdapter adapter;
@@ -64,10 +68,10 @@ public class CommentMessageActivity extends BaseMvpActivity<ICommentMessageListV
         initView();
     }
 
-    private void initView(){
+    private void initView() {
         ltMainTitle.setText("消息");
         recyclerView.setHasFixedSize(true);
-
+        userId = getIntent().getStringExtra("userId");
         initData();
         adapter = new ShareCommentListAdapter(personList, this);
         // 设置静默加载模式
@@ -89,7 +93,7 @@ public class CommentMessageActivity extends BaseMvpActivity<ICommentMessageListV
         customerFooter.setRecyclerView(recyclerView);
        adapter.setCustomLoadMoreView(customerFooter);*/
         adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
-        xRefreshView.enableReleaseToLoadMore(true);
+        xRefreshView.enableReleaseToLoadMore(false);
         xRefreshView.enableRecyclerViewPullUp(true);
         xRefreshView.enablePullUpWhenLoadCompleted(true);
 
@@ -97,48 +101,28 @@ public class CommentMessageActivity extends BaseMvpActivity<ICommentMessageListV
 
             @Override
             public void onRefresh(boolean isPullDown) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //模拟数据加载失败的情况
-                        Random random = new Random();
-                        boolean success = random.nextBoolean();
-
-                        xRefreshView.stopRefresh(success);
-                    }
-                }, 2000);
+               initData();
             }
 
             @Override
             public void onLoadMore(boolean isSilence) {
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        for (int i = 0; i < 6; i++) {
-                            ShareCommentBean person = new ShareCommentBean();
-                            adapter.insert(person,
-                                    adapter.getAdapterItemCount());
-                        }
-                        mLoadCount++;
-                        if (mLoadCount >= 3) {
-                            xRefreshView.setLoadComplete(true);
-                        } else {
-                            // 刷新完成必须调用此方法停止加载
-                            xRefreshView.stopLoadMore();
-                        }
-                    }
-                }, 1000);
+
             }
         });
     }
 
     private void initData() {
-        for (int i = 0; i < 3; i++) {
-            ShareCommentBean person = new ShareCommentBean();
-            personList.add(person);
-        }
+        // isRefresh = true;
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "3");
+        //  formData.put("limit", limit + "");
+        // formData.put("page", page + "");
+        presenter.ShareInfoPresenter(formData);
     }
+
     @OnClick(R.id.lt_main_title_left)
-    void leftClick(){
+    void leftClick() {
         CommentMessageActivity.this.finish();
     }
 
@@ -160,11 +144,21 @@ public class CommentMessageActivity extends BaseMvpActivity<ICommentMessageListV
 
     @Override
     public void showError(String errorString) {
-
+        if (page == 1) {
+            xRefreshView.stopRefresh(false);
+        } else {
+            xRefreshView.stopLoadMore(false);
+        }
+        T.showLong(CommentMessageActivity.this,errorString);
     }
 
     @Override
-    public void setCommentMessageListData(ArrayList<ShareCommentBean> data) {
-
+    public void setCommentMessageListData(List<CommentsBean> data) {
+        adapter.setData(data);
+        if (page == 1) {
+            xRefreshView.stopRefresh(true);
+        } else {
+            xRefreshView.stopLoadMore(true);
+        }
     }
 }

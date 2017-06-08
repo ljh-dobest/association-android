@@ -198,7 +198,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     private void initBanner() {
         List<String> imgList = new ArrayList<String>(0);
         for (ImageUrlBean url : imageUrlBeanList) {
-            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
+            imgList.add(HttpUtils.IMAGE_RUL + url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -247,6 +247,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, CommentMessageActivity.class);
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

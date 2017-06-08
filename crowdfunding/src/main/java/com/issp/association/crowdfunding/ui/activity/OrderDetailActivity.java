@@ -10,6 +10,7 @@ import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.adapter.MessageListAdapter;
+import com.issp.association.crowdfunding.adapter.OrderDetailListAdapter;
 import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
 import com.issp.association.crowdfunding.bean.MessageBean;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
@@ -46,10 +47,10 @@ public class OrderDetailActivity extends BaseMvpActivity<IOrderDetailListView, O
     XRefreshView xRefreshView;
 
 
-    List<MessageBean> personList = new ArrayList<MessageBean>();
+    List<OrderDetailBean> personList = new ArrayList<OrderDetailBean>();
     LinearLayoutManager layoutManager;
     private int mLoadCount = 0;
-    MessageListAdapter adapter;
+    OrderDetailListAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,7 @@ public class OrderDetailActivity extends BaseMvpActivity<IOrderDetailListView, O
         recyclerView.setHasFixedSize(true);
 
         initData();
-        adapter = new MessageListAdapter(personList, this);
+        adapter = new OrderDetailListAdapter(personList, this);
         // 设置静默加载模式
 //		xRefreshView1.setSilenceLoadMore();
         layoutManager = new LinearLayoutManager(this);
@@ -91,45 +92,18 @@ public class OrderDetailActivity extends BaseMvpActivity<IOrderDetailListView, O
 
             @Override
             public void onRefresh(boolean isPullDown) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //模拟数据加载失败的情况
-                        Random random = new Random();
-                        boolean success = random.nextBoolean();
 
-                        xRefreshView.stopRefresh(success);
-                    }
-                }, 2000);
             }
 
             @Override
             public void onLoadMore(boolean isSilence) {
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        for (int i = 0; i < 6; i++) {
-                            MessageBean person = new MessageBean();
-                            adapter.insert(person,
-                                    adapter.getAdapterItemCount());
-                        }
-                        mLoadCount++;
-                        if (mLoadCount >= 3) {
-                            xRefreshView.setLoadComplete(true);
-                        } else {
-                            // 刷新完成必须调用此方法停止加载
-                            xRefreshView.stopLoadMore();
-                        }
-                    }
-                }, 1000);
+
             }
         });
     }
 
     private void initData() {
-        for (int i = 0; i < 3; i++) {
-            MessageBean person = new MessageBean();
-            personList.add(person);
-        }
+
     }
     @OnClick(R.id.lt_main_title_left)
     void leftClick(){
@@ -158,7 +132,7 @@ public class OrderDetailActivity extends BaseMvpActivity<IOrderDetailListView, O
     }
 
     @Override
-    public void setOrderDetailListData(ArrayList<OrderDetailBean> data) {
+    public void setOrderDetailListData(List<OrderDetailBean> data) {
 
     }
 }

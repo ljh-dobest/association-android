@@ -98,8 +98,8 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
     private void initView() {
         //  PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");
-        // userId = "13025304562";
+        //userId = getIntent().getStringExtra("loginid");
+         userId = "110";
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
 
@@ -324,7 +324,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
                 public void onClick(View v) {
 
                     Intent intent = new Intent(MainActivity.this, MessageActivity.class);
-
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

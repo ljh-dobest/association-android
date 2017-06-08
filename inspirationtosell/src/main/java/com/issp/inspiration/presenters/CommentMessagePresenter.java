@@ -9,6 +9,7 @@ import com.issp.inspiration.listeners.OnCommentMessageListListener;
 import com.issp.inspiration.model.CommentMessageModel;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  *Created by T-BayMax on 2017/3/20.
@@ -21,8 +22,8 @@ public class CommentMessagePresenter extends BasePersenter<ICommentMessageListVi
         recommendInfoMoudle = new CommentMessageModel();
     }
 
-    public void ShareInfoPresenter(String userId) {
-        recommendInfoMoudle.getCommentMessageInfo(userId, this);
+    public void ShareInfoPresenter(Map<String,String> formData) {
+        recommendInfoMoudle.getCommentMessageInfo(formData, this);
     }
 
     @Override

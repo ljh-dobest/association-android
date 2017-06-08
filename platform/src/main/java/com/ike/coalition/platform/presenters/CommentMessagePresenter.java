@@ -9,20 +9,21 @@ import com.ike.coalition.platform.model.CommentMessageModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  *Created by T-BayMax on 2017/3/20.
  */
 
 public class CommentMessagePresenter extends BasePersenter<ICommentMessageListView> implements OnCommentMessageListListener {
-    private CommentMessageModel recommendInfoMoudle;
+    private CommentMessageModel model;
 
     public CommentMessagePresenter() {
-        recommendInfoMoudle = new CommentMessageModel();
+        model = new CommentMessageModel();
     }
 
-    public void ShareInfoPresenter(String userId) {
-        recommendInfoMoudle.getCommentMessageInfo(userId, this);
+    public void ShareInfoPresenter(Map<String,String> formData) {
+        model.getCommentMessageInfo(formData, this);
     }
 
     @Override

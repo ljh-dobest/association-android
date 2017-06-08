@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.base.adpater.BaseRecyclerViewAdapter;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
+import com.issp.association.crowdfunding.bean.ShippingAddressBean;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -20,18 +21,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 订单详情item
+ * item
  * <p>
  * Created by T-BayMax on 2017/3/25.
  */
 
 public class ShippingAddressListAdapter extends BaseRecyclerViewAdapter<ShippingAddressListAdapter.ShippingAddressAdapterViewHolder, OrderDetailBean> {
 
-    private List<OrderDetailBean> list;
+    private List<ShippingAddressBean> list;
     private Context context;
     private int position;
 
-    public ShippingAddressListAdapter(List<OrderDetailBean> list, Context context) {
+    public ShippingAddressListAdapter(List<ShippingAddressBean> list, Context context) {
         this.list = list;
         this.context=context;
     }
@@ -67,7 +68,7 @@ public class ShippingAddressListAdapter extends BaseRecyclerViewAdapter<Shipping
         return new ShippingAddressAdapterViewHolder(view, false);
     }
 
-    public void setData(List<OrderDetailBean> list) {
+    public void setData(List<ShippingAddressBean> list) {
         this.list = list;
         notifyDataSetChanged();
     }
@@ -80,7 +81,7 @@ public class ShippingAddressListAdapter extends BaseRecyclerViewAdapter<Shipping
         return new ShippingAddressAdapterViewHolder(v, isItem);
     }
 
-    public void insert(OrderDetailBean person, int position) {
+    public void insert(ShippingAddressBean person, int position) {
         insert(list, person, position);
     }
 
@@ -113,7 +114,7 @@ public class ShippingAddressListAdapter extends BaseRecyclerViewAdapter<Shipping
         }
     }
 
-    public OrderDetailBean getItem(int position) {
+    public ShippingAddressBean getItem(int position) {
         if (position < list.size())
             return list.get(position);
         else

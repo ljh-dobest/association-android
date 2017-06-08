@@ -4,6 +4,7 @@ import com.issp.association.crowdfunding.base.view.BaseView;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 订单详情
@@ -11,5 +12,5 @@ import java.util.ArrayList;
  */
 
 public interface IOrderDetailListView  extends BaseView {
-    void setOrderDetailListData(ArrayList<OrderDetailBean> data);
+    void setOrderDetailListData(List<OrderDetailBean> data);
 }

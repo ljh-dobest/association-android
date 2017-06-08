@@ -8,6 +8,8 @@ import java.io.Serializable;
  */
 
 public class CommentsBean implements Serializable{
+
+    private String articleId;
     private String id;             //评论id
     private String  userId;          //评论用户id
     private String nickname;       //评论用户昵称
@@ -22,6 +24,13 @@ public class CommentsBean implements Serializable{
     private String fromPortraitUrl;     //被回复头像
     private String fromContent;      //被回复的内容
 
+    public String getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(String articleId) {
+        this.articleId = articleId;
+    }
 
     public String getId() {
         return id;

@@ -12,6 +12,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.Call;
 
@@ -20,11 +21,9 @@ import okhttp3.Call;
  */
 
 public class CommentMessageModel {
-    public void getCommentMessageInfo(String userId, final OnCommentMessageListListener listener){
-        if(userId==null){
-            return;
-        }
-        HttpUtils.sendGsonPostRequest("/selectArticleComment", userId, new StringCallback() {
+    public void getCommentMessageInfo(Map<String,String> formData, final OnCommentMessageListListener listener){
+
+        HttpUtils.sendGsonPostRequest("/allNews", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
               listener.showError(e.toString());
@@ -33,13 +32,12 @@ public class CommentMessageModel {
             @Override
             public void onResponse(String response, int id) {
                 Gson gson=new Gson();
-                Type type = new TypeToken<Code<ArticleCommentBean>>() {
+                Type type = new TypeToken<Code<List<CommentsBean>>>() {
                 }.getType();
-                Code<ArticleCommentBean> code = gson.fromJson(response,type);
+                Code<List<CommentsBean>> code = gson.fromJson(response,type);
                 switch (code.getCode()) {
                     case 200:
-                        List<CommentsBean> data= code.getData().getComments();
-                        listener.getCommentMessageInfo(data);
+                        listener.getCommentMessageInfo(code.getData());
                         break;
                     case 0:
                         listener.showError("查询失败");

@@ -2,8 +2,10 @@ package com.issp.association.crowdfunding.interfaces;
 
 import com.issp.association.crowdfunding.base.view.BaseView;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
+import com.issp.association.crowdfunding.bean.ShippingAddressBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 收货地址
@@ -11,5 +13,5 @@ import java.util.ArrayList;
  */
 
 public interface IShippingAddressListView extends BaseView {
-    void setShippingAddressListData(ArrayList<OrderDetailBean> data);
+    void setShippingAddressListData(List<ShippingAddressBean> data);
 }

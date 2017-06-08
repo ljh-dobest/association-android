@@ -106,7 +106,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
 
     private void initView() {
         // PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId = "18878481054";
+        userId = /*"18878481054";//*/getIntent().getStringExtra("loginid");
 
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -248,7 +248,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
                 public void onClick(View v) {
 
                     Intent intent = new Intent(MainActivity.this, CommentMessageActivity.class);
-
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

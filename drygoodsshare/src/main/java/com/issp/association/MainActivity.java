@@ -96,7 +96,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     private void initView() {
         //   PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");
+        userId = getIntent().getStringExtra("loginid");//"110";
         Log.e("userId", userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
@@ -259,6 +259,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, CommentMessageActivity.class);
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }

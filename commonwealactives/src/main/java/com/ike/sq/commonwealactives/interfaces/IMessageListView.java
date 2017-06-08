@@ -3,9 +3,11 @@ package com.ike.sq.commonwealactives.interfaces;
 
 
 import com.ike.sq.commonwealactives.base.view.BaseView;
+import com.ike.sq.commonwealactives.bean.CommentsBean;
 import com.ike.sq.commonwealactives.bean.MessageBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 消息
@@ -13,5 +15,5 @@ import java.util.ArrayList;
  */
 
 public interface IMessageListView extends BaseView {
-    void setCommentMessageListData(ArrayList<MessageBean> data);
+    void setCommentMessageListData(List<CommentsBean> data);
 }
