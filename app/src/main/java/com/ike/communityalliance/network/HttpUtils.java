@@ -8,7 +8,6 @@ import com.ike.communityalliance.bean.ClaimInfoBean;
 import com.ike.communityalliance.bean.EditMorePersonalInfo;
 import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.UserInfo;
-import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.Callback;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -744,29 +743,35 @@ public class HttpUtils {
                 .build().execute(callback);
     }
     //提交确认个人信息
-    public static void postVerifyRecommedInfo(String url, VerifyRecommedInfoBean verifyRecommedInfo, StringCallback callback){
+    public static void postVerifyRecommedInfo(String url, PersonalVipBean verifyRecommedInfo, StringCallback callback){
         Gson gson=new Gson();
-        String hobbys = gson.toJson(verifyRecommedInfo.getHobby());
         String address = gson.toJson(verifyRecommedInfo.getAddress());
         OkHttpUtils.post().url(BASE_RUL+url)
                 .addHeader("Connection", "close")
                 .addParams("recommendId",verifyRecommedInfo.getRecommendId())
                 .addParams("userId",verifyRecommedInfo.getUserId())
                 .addParams("fullName",verifyRecommedInfo.getFullName())
-                .addParams("SfullName",verifyRecommedInfo.getSfullName())
                 .addParams("mobile",verifyRecommedInfo.getMobile())
                 .addParams("sex",verifyRecommedInfo.getSex())
-                .addParams("hobby",hobbys)
+                .addParams("hobby",verifyRecommedInfo.getHobby())
                 .addParams("address",address)
                 .addParams("birthday",verifyRecommedInfo.getBirthday())
                 .addParams("homeplace",verifyRecommedInfo.getHomeplace())
+                .addParams("character",verifyRecommedInfo.getCharacter())
                 .addParams("finishSchool",verifyRecommedInfo.getFinishSchool())
                 .addParams("degree",verifyRecommedInfo.getDegree())
+                .addParams("industry",verifyRecommedInfo.getIndustry())
                 .addParams("company",verifyRecommedInfo.getCompany())
                 .addParams("position",verifyRecommedInfo.getPosition())
                 .addParams("email",verifyRecommedInfo.getEmail())
                 .addParams("QQ",verifyRecommedInfo.getQQ())
                 .addParams("wechat",verifyRecommedInfo.getWechat())
+                .addParams("fatherName",verifyRecommedInfo.getFatherName())
+                .addParams("motherName",verifyRecommedInfo.getMotherName())
+                .addParams("marriage",verifyRecommedInfo.getMarriage())
+                .addParams("spouseName",verifyRecommedInfo.getSpouseName())
+                .addParams("childrenName",verifyRecommedInfo.getChildrenName())
+                .addParams("childrenSchool",verifyRecommedInfo.getChildrenSchool())
                 .build().execute(callback);
     }
     //已签到日期

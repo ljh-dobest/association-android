@@ -16,4 +16,5 @@ public interface OnVerifyRecommedInfoFinishListener {
     void returnParserData(ArrayList<ProvinceBean> data);
     void returnHobby(String hobbys);
     void returnVerifyInfo(VerifyRecommedInfo verifyRecommedInfoBean);
+    void returnCharacters(String characters);
 }

@@ -22,4 +22,6 @@ public interface IVerifyRecommedInfoView {
     void getVerifyInfo(String userId,String recommendId);
     void setVerifyInfo(VerifyRecommedInfo verifyInfo);
     void succeedToVip();
+    void getCharacters(ViewGroup group);
+    void setCharacters(String characters);
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 
 public class PersonalVipBean {
+    private String recommendId;
     private String userId;
     private String fullName;
     private String mobile;
@@ -31,6 +32,34 @@ public class PersonalVipBean {
     private String email;
     private String QQ;
     private String wechat;
+
+    public PersonalVipBean(String recommendId, String userId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String relationship, String character, String birthday, String homeplace, String finishSchool, String company, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool, String degree, String position, String industry, String email, String QQ, String wechat) {
+        this.recommendId = recommendId;
+        this.userId = userId;
+        this.fullName = fullName;
+        this.mobile = mobile;
+        this.sex = sex;
+        this.hobby = hobby;
+        this.address = address;
+        this.relationship = relationship;
+        this.character = character;
+        this.birthday = birthday;
+        this.homeplace = homeplace;
+        this.finishSchool = finishSchool;
+        this.company = company;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.marriage = marriage;
+        this.spouseName = spouseName;
+        this.childrenName = childrenName;
+        this.childrenSchool = childrenSchool;
+        this.degree = degree;
+        this.position = position;
+        this.industry = industry;
+        this.email = email;
+        this.QQ = QQ;
+        this.wechat = wechat;
+    }
 
     public PersonalVipBean(String userId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String relationship, String character, String birthday, String homeplace, String finishSchool, String company, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool, String degree, String position, String industry, String email, String QQ, String wechat) {
         this.userId = userId;
@@ -59,6 +88,13 @@ public class PersonalVipBean {
         this.wechat = wechat;
     }
 
+    public String getRecommendId() {
+        return recommendId;
+    }
+
+    public void setRecommendId(String recommendId) {
+        this.recommendId = recommendId;
+    }
 
     public String getUserId() {
         return userId;
