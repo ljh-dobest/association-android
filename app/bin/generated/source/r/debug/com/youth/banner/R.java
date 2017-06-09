@@ -26,30 +26,30 @@ public final class R {
         public static final int title_textsize = 0x7f0100e4;
     }
     public static final class drawable {
-        public static final int black_background = 0x7f020090;
-        public static final int gray_radius = 0x7f0200c5;
-        public static final int white_radius = 0x7f020330;
+        public static final int black_background = 0x7f020092;
+        public static final int gray_radius = 0x7f0200c7;
+        public static final int white_radius = 0x7f020334;
     }
     public static final class id {
-        public static final int bannerContainer = 0x7f10036e;
-        public static final int bannerTitle = 0x7f100373;
-        public static final int bannerViewPager = 0x7f10036f;
+        public static final int bannerFrame = 0x7f100412;
+        public static final int bannerTitle = 0x7f100417;
         public static final int center = 0x7f100052;
         public static final int center_crop = 0x7f10008a;
         public static final int center_inside = 0x7f10008b;
-        public static final int circleIndicator = 0x7f100370;
         public static final int fit_center = 0x7f10008c;
         public static final int fit_end = 0x7f10008d;
         public static final int fit_start = 0x7f10008e;
         public static final int fit_xy = 0x7f10008f;
-        public static final int indicatorInside = 0x7f100375;
+        public static final int indicator = 0x7f100414;
+        public static final int indicatorInside = 0x7f100419;
         public static final int matrix = 0x7f100090;
-        public static final int numIndicator = 0x7f100371;
-        public static final int numIndicatorInside = 0x7f100374;
-        public static final int titleView = 0x7f100372;
+        public static final int numIndicator = 0x7f100415;
+        public static final int numIndicatorInside = 0x7f100418;
+        public static final int titleView = 0x7f100416;
+        public static final int viewpager = 0x7f100413;
     }
     public static final class layout {
-        public static final int banner = 0x7f04008d;
+        public static final int banner = 0x7f04009d;
     }
     public static final class styleable {
         public static final int[] Banner = { 0x7f0100df, 0x7f0100e0, 0x7f0100e1, 0x7f0100e2, 0x7f0100e3, 0x7f0100e4, 0x7f0100e5, 0x7f0100e6, 0x7f0100e7, 0x7f0100e8, 0x7f0100e9, 0x7f0100ea, 0x7f0100eb };

@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/bannerContainer"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bannerFrame"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipChildren="false">
+    android:layout_height="match_parent">
 
 
     <com.youth.banner.view.BannerViewPager
-        android:id="@+id/bannerViewPager"
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipChildren="false" />
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_gravity="bottom">
 
         <LinearLayout
-            android:id="@+id/circleIndicator"
+            android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -38,16 +36,14 @@
             android:text="1/1"
             android:textColor="#ffffff"
             android:visibility="gone" />
-
         <LinearLayout
             android:id="@+id/titleView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/circleIndicator"
-            android:background="#44000000"
+            android:layout_below="@+id/indicator"
             android:orientation="horizontal"
+            android:background="#44000000"
             android:visibility="gone">
-
             <TextView
                 android:id="@+id/bannerTitle"
                 android:layout_width="match_parent"
@@ -56,8 +52,8 @@
                 android:ellipsize="marquee"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:gravity="center_vertical"
                 android:paddingLeft="10dp"
+                android:gravity="center_vertical"
                 android:singleLine="true"
                 android:textColor="#ffffff"
                 android:visibility="gone" />
@@ -87,4 +83,4 @@
             </FrameLayout>
         </LinearLayout>
     </RelativeLayout>
-</RelativeLayout>
+</FrameLayout>

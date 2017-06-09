@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\NB\association-android\IMLib\src\main\assets"/><source path="F:\NB\association-android\IMLib\bin\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="F:\NB\association-android\IMLib\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\project\xiangmu\association-android\IMLib\src\main\assets"/><source path="E:\project\xiangmu\association-android\IMLib\bin\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="E:\project\xiangmu\association-android\IMLib\src\release\assets"/></dataSet></merger>

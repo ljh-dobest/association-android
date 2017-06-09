@@ -1,18 +1,18 @@
 [
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\remove_new.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\remove_new.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\remove_new.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\remove_new.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\add_new.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\add_new.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\add_new.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\add_new.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\enter.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\enter.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\enter.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\enter.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     }
 ]

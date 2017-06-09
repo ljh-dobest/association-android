@@ -49,7 +49,6 @@
                 android:text="确认"/>
         </com.zhy.autolayout.AutoLinearLayout>
         <ImageView
-            android:layout_marginLeft="20dp"
             android:layout_alignParentRight="true"
             android:id="@+id/iv_comfirm_dialog_cancel"
             android:layout_width="wrap_content"
