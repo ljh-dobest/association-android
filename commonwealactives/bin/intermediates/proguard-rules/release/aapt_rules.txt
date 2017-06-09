@@ -1,0 +1,202 @@
+# view res/layout/popwindow_add_register.xml #generated:2
+-keep class android.support.constraint.ConstraintLayout { <init>(...); }
+
+# view res/layout/design_bottom_navigation_item.xml #generated:26
+-keep class android.support.design.internal.BaselineLayout { <init>(...); }
+
+# view res/layout/design_navigation_item.xml #generated:17
+-keep class android.support.design.internal.NavigationMenuItemView { <init>(...); }
+
+# view res/layout/design_navigation_menu.xml #generated:17
+-keep class android.support.design.internal.NavigationMenuView { <init>(...); }
+
+# view res/layout/design_layout_snackbar_include.xml #generated:18
+-keep class android.support.design.internal.SnackbarContentLayout { <init>(...); }
+
+# view res/layout/design_text_input_password_icon.xml #generated:18
+-keep class android.support.design.widget.CheckableImageButton { <init>(...); }
+
+# view res/layout/design_bottom_sheet_dialog.xml #generated:17
+-keep class android.support.design.widget.CoordinatorLayout { <init>(...); }
+
+# view res/layout/design_layout_snackbar.xml #generated:18
+# view sw600dp-v13\res/layout-sw600dp-v13/design_layout_snackbar.xml #generated:18
+-keep class android.support.design.widget.Snackbar$SnackbarLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:41
+-keep class android.support.v4.widget.NestedScrollView { <init>(...); }
+
+# view res/layout/abc_alert_dialog_button_bar_material.xml #generated:43
+# view res/layout/abc_alert_dialog_material.xml #generated:52
+# view res/layout/abc_alert_dialog_material.xml #generated:66
+# view res/layout/abc_alert_dialog_title_material.xml #generated:56
+-keep class android.support.v4.widget.Space { <init>(...); }
+
+# view res/layout/abc_select_dialog_material.xml #generated:23
+-keep class android.support.v7.app.AlertController$RecycleListView { <init>(...); }
+
+# view res/layout/abc_action_menu_item_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ActionMenuItemView { <init>(...); }
+
+# view res/layout/abc_expanded_menu_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ExpandedMenuView { <init>(...); }
+
+# view res/layout/abc_list_menu_item_layout.xml #generated:17
+# view res/layout/abc_popup_menu_item_layout.xml #generated:17
+-keep class android.support.v7.view.menu.ListMenuItemView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:27
+-keep class android.support.v7.widget.ActionBarContainer { <init>(...); }
+
+# view res/layout/abc_action_mode_bar.xml #generated:19
+# view res/layout/abc_screen_toolbar.xml #generated:43
+-keep class android.support.v7.widget.ActionBarContextView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:17
+-keep class android.support.v7.widget.ActionBarOverlayLayout { <init>(...); }
+
+# view res/layout/abc_action_menu_layout.xml #generated:17
+-keep class android.support.v7.widget.ActionMenuView { <init>(...); }
+
+# view res/layout/abc_activity_chooser_view.xml #generated:19
+-keep class android.support.v7.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:18
+-keep class android.support.v7.widget.AlertDialogLayout { <init>(...); }
+
+# view res/layout/gallery_adapter_media_grid_item.xml #generated:32
+# view res/layout/gallery_fragment_media_page.xml #generated:21
+# view res/layout/gallery_fragment_media_preview.xml #generated:21
+-keep class android.support.v7.widget.AppCompatCheckBox { <init>(...); }
+
+# view res/layout/gallery_adapter_bucket_item.xml #generated:30
+-keep class android.support.v7.widget.AppCompatRadioButton { <init>(...); }
+
+# view res/layout/abc_alert_dialog_button_bar_material.xml #generated:26
+-keep class android.support.v7.widget.ButtonBarLayout { <init>(...); }
+
+# view res/layout/abc_screen_content_include.xml #generated:19
+-keep class android.support.v7.widget.ContentFrameLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_title_material.xml #generated:45
+-keep class android.support.v7.widget.DialogTitle { <init>(...); }
+
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:23
+-keep class android.support.v7.widget.FitWindowsFrameLayout { <init>(...); }
+
+# view res/layout/abc_dialog_title_material.xml #generated:22
+# view res/layout/abc_screen_simple.xml #generated:17
+-keep class android.support.v7.widget.FitWindowsLinearLayout { <init>(...); }
+
+# view res/layout/activity_feed_for_comments.xml #generated:86
+# view res/layout/activity_main.xml #generated:25
+# view res/layout/activity_message.xml #generated:15
+# view res/layout/gallery_fragment_media_grid.xml #generated:75
+-keep class android.support.v7.widget.RecyclerView { <init>(...); }
+
+# view res/layout/abc_search_view.xml #generated:75
+-keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:36
+# view res/layout/gallery_activity_media.xml #generated:7
+# view res/layout/gallery_ucrop_activity_photobox.xml #generated:14
+-keep class android.support.v7.widget.Toolbar { <init>(...); }
+
+# view res/layout/abc_screen_simple.xml #generated:25
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
+-keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
+
+# view res/layout/gallery_fragment_media_page.xml #generated:7
+# view res/layout/gallery_fragment_media_preview.xml #generated:7
+-keep class cn.finalteam.rxgalleryfinal.ui.widget.FixViewPager { <init>(...); }
+
+# view res/layout/gallery_adapter_media_grid_item.xml #generated:26
+-keep class cn.finalteam.rxgalleryfinal.ui.widget.RecyclerImageView { <init>(...); }
+
+# view res/layout/gallery_fragment_media_grid.xml #generated:8
+-keep class cn.finalteam.rxgalleryfinal.ui.widget.RecyclerViewFinal { <init>(...); }
+
+# view res/layout/gallery_adapter_bucket_item.xml #generated:10
+-keep class cn.finalteam.rxgalleryfinal.ui.widget.SquareImageView { <init>(...); }
+
+# view res/layout/gallery_adapter_media_grid_item.xml #generated:6
+-keep class cn.finalteam.rxgalleryfinal.ui.widget.SquareLinearLayout { <init>(...); }
+
+# view res/layout/gallery_adapter_media_grid_item.xml #generated:2
+-keep class cn.finalteam.rxgalleryfinal.ui.widget.SquareRelativeLayout { <init>(...); }
+
+# view res/layout/activity_feed_for_comments.xml #generated:79
+# view res/layout/activity_main.xml #generated:19
+# view res/layout/activity_message.xml #generated:9
+-keep class com.andview.refreshview.XRefreshView { <init>(...); }
+
+# view res/layout/pickerview_options.xml #generated:19
+# view res/layout/pickerview_options.xml #generated:26
+# view res/layout/pickerview_options.xml #generated:32
+# view res/layout/pickerview_time.xml #generated:19
+# view res/layout/pickerview_time.xml #generated:25
+# view res/layout/pickerview_time.xml #generated:32
+# view res/layout/pickerview_time.xml #generated:38
+# view res/layout/pickerview_time.xml #generated:44
+# view res/layout/pickerview_time.xml #generated:50
+-keep class com.bigkoo.pickerview.lib.WheelView { <init>(...); }
+
+# view AndroidManifest.xml #generated:22
+-keep class com.ike.sq.commonwealactives.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:31
+-keep class com.ike.sq.commonwealactives.ui.activity.BenefitParticularsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class com.ike.sq.commonwealactives.ui.activity.BenefitRegisteredActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+-keep class com.ike.sq.commonwealactives.ui.activity.FeedForCommentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:30
+-keep class com.ike.sq.commonwealactives.ui.activity.MessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:32
+-keep class com.ike.sq.commonwealactives.ui.activity.MineBenefitActivity { <init>(...); }
+
+# view res/layout/bannerview.xml #generated:1
+-keep class com.ike.sq.commonwealactives.view.BannerViewPager { <init>(...); }
+
+# view res/layout/view_custom_toolbar.xml #generated:2
+-keep class com.ike.sq.commonwealactives.view.CustomToolbar { <init>(...); }
+
+# view res/layout/gif_header.xml #generated:15
+# view res/layout/gif_header.xml #generated:8
+-keep class com.ike.sq.commonwealactives.view.GifView { <init>(...); }
+
+# view res/layout/gallery_ucrop_view.xml #generated:9
+-keep class com.yalantis.ucrop.view.GestureCropImageView { <init>(...); }
+
+# view res/layout/gallery_ucrop_view.xml #generated:15
+-keep class com.yalantis.ucrop.view.OverlayView { <init>(...); }
+
+# view res/layout/gallery_ucrop_activity_photobox.xml #generated:43
+-keep class com.yalantis.ucrop.view.UCropView { <init>(...); }
+
+# view res/layout/gallery_ucrop_aspect_ratio.xml #generated:4
+-keep class com.yalantis.ucrop.view.widget.AspectRatioTextView { <init>(...); }
+
+# view res/layout/gallery_ucrop_layout_rotate_wheel.xml #generated:15
+# view res/layout/gallery_ucrop_layout_scale_wheel.xml #generated:14
+-keep class com.yalantis.ucrop.view.widget.HorizontalProgressWheelView { <init>(...); }
+
+# view res/layout/view_banner.xml #generated:3
+-keep class com.youth.banner.Banner { <init>(...); }
+
+# view res/layout/banner.xml #generated:9
+-keep class com.youth.banner.view.BannerViewPager { <init>(...); }
+
+# view res/layout/gallery_media_image_preview_item.xml #generated:2
+-keep class uk.co.senab.photoview.PhotoView { <init>(...); }
+
+# onClick res/layout/activity_base.xml #generated:13
+-keepclassmembers class * { *** onHeadLeftButtonClick(...); }
+
+# onClick res/layout/activity_base.xml #generated:42
+-keepclassmembers class * { *** onHeadRightButtonClick(...); }
+
