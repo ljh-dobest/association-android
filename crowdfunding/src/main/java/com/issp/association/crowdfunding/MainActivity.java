@@ -109,7 +109,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
 
     private void initView() {
         // PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = /*getIntent().getStringExtra("loginid");*/"110";
+        userId = getIntent().getStringExtra("loginid");//"110";
         lt_main_title.setText(getString(R.string.str_title_main));
 
         xRefreshView.setPullLoadEnable(true);

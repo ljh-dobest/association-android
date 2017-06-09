@@ -13,6 +13,7 @@ import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.interfaces.IProductParticularsInfoView;
+import com.issp.association.crowdfunding.presenters.AddSupportProjectPresenter;
 import com.issp.association.crowdfunding.presenters.ProductParticularsPresenter;
 import com.issp.association.crowdfunding.utils.T;
 
@@ -160,6 +161,10 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
                 startActivity(intent);
                 break;
             case R.id.tv_check_indent:
+                Intent intentProject = new Intent(ProductParticularsActivity.this, AddSupportProjectActivity.class);
+                intentProject.putExtra("userId", userId);
+                intentProject.putExtra("bean", bean);
+                startActivity(intentProject);
                 break;
         }
     }
