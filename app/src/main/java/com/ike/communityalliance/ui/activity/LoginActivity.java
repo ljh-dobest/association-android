@@ -166,9 +166,11 @@ public class LoginActivity extends BaseMvpActivity<ILoginView,LoginPresenterImpl
         String contributionScore=userInfo.getContributionScore();
         String recommendUserId=userInfo.getRecommendUserId();
         String claimUserId=userInfo.getClaimUserId();
+        String favour=userInfo.getFavour();
         editor.putString(Const.LOGIN_USERNAME, userName);
         editor.putString(Const.LOGIN_RECOMMEDID,recommedId);
         editor.putString(Const.LOGIN_PASSWORD, pwd);
+        editor.putString(Const.LOGIN_VIP, userInfo.getCheckVip());
         editor.putBoolean("login_message", true);
         editor.putString(Const.LOGIN_ID, useId);
         editor.putString(Const.LOGIN_TOKEN, token);
@@ -187,6 +189,7 @@ public class LoginActivity extends BaseMvpActivity<ILoginView,LoginPresenterImpl
         editor.putString(Const.LOGIN_CONTRIBUTIONSCORE,contributionScore);
         editor.putString(Const.LOGIN_RECOMMENDUSERID,recommendUserId);
         editor.putString(Const.LOGIN_CLAIMUSERID,claimUserId);
+        editor.putString(Const.LOGIN_FAVOUR,favour);
         editor.commit();
         RongIM.getInstance().refreshUserInfoCache(new io.rong.imlib.model.UserInfo(useId, nickName, Uri.parse(userPortraitUrl)));
     }

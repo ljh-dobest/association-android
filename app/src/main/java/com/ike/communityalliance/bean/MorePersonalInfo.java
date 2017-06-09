@@ -6,27 +6,44 @@ package com.ike.communityalliance.bean;
 
 public class MorePersonalInfo {
     private MorePersonalInfoDetail fullName;
-    private MorePersonalInfoDetail QQ;
-    private MorePersonalInfoDetail wechat;
-    private MorePersonalInfoDetail favour;
+    private MorePersonalInfoDetail birthday;
+    private MorePersonalInfoDetail mobile;
+    private String QQ;
+    private String wechat;
     private MorePersonalInfoDetail finishSchool;
-    private MorePersonalInfoDetail constellation;
-    private MorePersonalInfoDetail bloodType;
+    private String constellation;
+    private String bloodType;
     private MorePersonalInfoDetail marriage;
-    private MorePersonalInfoDetail company;
+    private String company;
     private MorePersonalInfoDetail position;
+    private MorePersonalInfoDetail fatherName;
+    private MorePersonalInfoDetail motherName;
+    private MorePersonalInfoDetail spouseName;
+    private MorePersonalInfoDetail childrenName;
+    private MorePersonalInfoDetail childrenSchool;
+    private String industry;
+    private String homeplace;
 
-    public MorePersonalInfo(MorePersonalInfoDetail fullName, MorePersonalInfoDetail QQ, MorePersonalInfoDetail wechat, MorePersonalInfoDetail favour, MorePersonalInfoDetail finishSchool, MorePersonalInfoDetail constellation, MorePersonalInfoDetail bloodType, MorePersonalInfoDetail marriage, MorePersonalInfoDetail company, MorePersonalInfoDetail position) {
+
+    public MorePersonalInfo(MorePersonalInfoDetail fullName, MorePersonalInfoDetail birthday, MorePersonalInfoDetail mobile, String QQ, String wechat, MorePersonalInfoDetail finishSchool, String constellation, String bloodType, MorePersonalInfoDetail marriage, String company, MorePersonalInfoDetail position, MorePersonalInfoDetail fatherName, MorePersonalInfoDetail motherName, MorePersonalInfoDetail spouseName, MorePersonalInfoDetail childrenName, MorePersonalInfoDetail childrenSchool, String industry, String homeplace) {
         this.fullName = fullName;
+        this.birthday = birthday;
+        this.mobile = mobile;
         this.QQ = QQ;
         this.wechat = wechat;
-        this.favour = favour;
         this.finishSchool = finishSchool;
         this.constellation = constellation;
         this.bloodType = bloodType;
         this.marriage = marriage;
         this.company = company;
         this.position = position;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.spouseName = spouseName;
+        this.childrenName = childrenName;
+        this.childrenSchool = childrenSchool;
+        this.industry = industry;
+        this.homeplace = homeplace;
     }
 
     public MorePersonalInfoDetail getFullName() {
@@ -37,28 +54,36 @@ public class MorePersonalInfo {
         this.fullName = fullName;
     }
 
-    public MorePersonalInfoDetail getQQ() {
+    public MorePersonalInfoDetail getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(MorePersonalInfoDetail birthday) {
+        this.birthday = birthday;
+    }
+
+    public MorePersonalInfoDetail getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(MorePersonalInfoDetail mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getQQ() {
         return QQ;
     }
 
-    public void setQQ(MorePersonalInfoDetail QQ) {
+    public void setQQ(String QQ) {
         this.QQ = QQ;
     }
 
-    public MorePersonalInfoDetail getWechat() {
+    public String getWechat() {
         return wechat;
     }
 
-    public void setWechat(MorePersonalInfoDetail wechat) {
+    public void setWechat(String wechat) {
         this.wechat = wechat;
-    }
-
-    public MorePersonalInfoDetail getFavour() {
-        return favour;
-    }
-
-    public void setFavour(MorePersonalInfoDetail favour) {
-        this.favour = favour;
     }
 
     public MorePersonalInfoDetail getFinishSchool() {
@@ -69,19 +94,19 @@ public class MorePersonalInfo {
         this.finishSchool = finishSchool;
     }
 
-    public MorePersonalInfoDetail getConstellation() {
+    public String getConstellation() {
         return constellation;
     }
 
-    public void setConstellation(MorePersonalInfoDetail constellation) {
+    public void setConstellation(String constellation) {
         this.constellation = constellation;
     }
 
-    public MorePersonalInfoDetail getBloodType() {
+    public String getBloodType() {
         return bloodType;
     }
 
-    public void setBloodType(MorePersonalInfoDetail bloodType) {
+    public void setBloodType(String bloodType) {
         this.bloodType = bloodType;
     }
 
@@ -93,11 +118,11 @@ public class MorePersonalInfo {
         this.marriage = marriage;
     }
 
-    public MorePersonalInfoDetail getCompany() {
+    public String getCompany() {
         return company;
     }
 
-    public void setCompany(MorePersonalInfoDetail company) {
+    public void setCompany(String company) {
         this.company = company;
     }
 
@@ -107,5 +132,61 @@ public class MorePersonalInfo {
 
     public void setPosition(MorePersonalInfoDetail position) {
         this.position = position;
+    }
+
+    public MorePersonalInfoDetail getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(MorePersonalInfoDetail fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public MorePersonalInfoDetail getMotherName() {
+        return motherName;
+    }
+
+    public void setMotherName(MorePersonalInfoDetail motherName) {
+        this.motherName = motherName;
+    }
+
+    public MorePersonalInfoDetail getSpouseName() {
+        return spouseName;
+    }
+
+    public void setSpouseName(MorePersonalInfoDetail spouseName) {
+        this.spouseName = spouseName;
+    }
+
+    public MorePersonalInfoDetail getChildrenName() {
+        return childrenName;
+    }
+
+    public void setChildrenName(MorePersonalInfoDetail childrenName) {
+        this.childrenName = childrenName;
+    }
+
+    public MorePersonalInfoDetail getChildrenSchool() {
+        return childrenSchool;
+    }
+
+    public void setChildrenSchool(MorePersonalInfoDetail childrenSchool) {
+        this.childrenSchool = childrenSchool;
+    }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+
+    public String getHomeplace() {
+        return homeplace;
+    }
+
+    public void setHomeplace(String homeplace) {
+        this.homeplace = homeplace;
     }
 }

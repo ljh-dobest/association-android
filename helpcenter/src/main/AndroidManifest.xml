@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.min.helpcenter">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="求助中心"
+        android:supportsRtl="true"
+        tools:replace="Android:label"
+        android:theme="@style/AppTheme">
+        <activity android:name=".HelpCenterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="design_width"
+            android:value="750" />
+        <meta-data
+            android:name="design_height"
+            android:value="1334" />
+
+        <activity android:name=".ui.activitys.QuestionActivity" />
+        <activity android:name=".ui.activitys.AnswerActivity" />
+        <activity
+            android:name=".ui.activitys.AskActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activitys.MineMessageActivity" />
+        <activity android:name=".ui.activitys.EvaluateActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,6 +1,5 @@
 package com.ike.communityalliance.ui.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -39,15 +38,13 @@ import butterknife.OnClick;
 
 
 public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayView, PersonalApplayPresenter> implements RadioGroup.OnCheckedChangeListener, IPersonalApplayView, AdapterView.OnItemSelectedListener {
-    private final String[] creditScores = new String[]{"100", "90", "80", "70", "60", "50", "40", "30", "20", "10"};
     private final String[] relationships = new String[]{"亲人","同事", "校友", "同乡"};
     private final String[] degrees={"初中","高中","中技","中专","大专","本科","硕士","博士","MBA","EMBA","其他"};
+    private final String[] industrys = new String[]{"其它", "互联网", "服务业", "金融", "教育", "银行", "医疗", "房地产", "贸易", "物流"};
     @BindView(R.id.et_recom_name)
     EditText et_recom_name;
     @BindView(R.id.et_recom_mobile)
     EditText et_recom_mobile;
-    @BindView(R.id.et_recom_relationship)
-    EditText et_recom_relationship;
     @BindView(R.id.et_recom_birthday)
     TextView et_recom_birthday;
     @BindView(R.id.et_recom_school)
@@ -84,8 +81,7 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     RadioGroup rg_recom_character;
     @BindView(R.id.rg_recom_marriage)
     RadioGroup rg_recom_marriage;
-    @BindView(R.id.ll_recom_relationship)
-    LinearLayout ll_recom_relationship;
+
     @BindView(R.id.btn_recommend)
     Button btn_recommend;
     @BindView(R.id.ll_recomm_marriaged)
@@ -111,7 +107,6 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     private String sex = "1";
     private String hobby;
     private ArrayList<String> address = new ArrayList<>();
-    private String relationship;
     private String character;
     private String birthday;
     private String homeplace;
@@ -125,7 +120,7 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     private String childrenSchool;
     private String curDegreeCode="0";
     private String position;
-    private String industry;
+    private String industry="0";
     private String email;
     private String wechat;
     private String QQ;
@@ -140,12 +135,14 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     private ArrayList<ProvinceBean> data;
     private ArrayList<CityBean> citys;
     private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_applay_vip);
         ButterKnife.bind(this);
         sp = getSharedPreferences("config", MODE_PRIVATE);
+        editor = sp.edit();
         userId = sp.getString(Const.LOGIN_ID, "");
         presenter.getParserData(this, "data.txt");
         initView();
@@ -169,6 +166,8 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     @Override
     public void succeedToRecommed(String recommendId) {
      T.showShort(this,"恭喜您！已成为VIP用户！");
+        editor.putString(Const.LOGIN_VIP,"1");
+        editor.commit();
         finish();
     }
 
@@ -213,7 +212,6 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
         childrenName = et_recom_childrenName.getText().toString().trim();
         childrenSchool = et_recom_childrenSchool.getText().toString().trim();
         position = et_recom_company_position.getText().toString().trim();
-        industry = et_recom_industry.getText().toString().trim();
         email = et_recom_email.getText().toString().trim();
         QQ = et_recom_QQ.getText().toString().trim();
         wechat = et_recom_wechat.getText().toString().trim();
@@ -285,7 +283,7 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
         }
     }
 
-    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend, R.id.et_recom_relationship,R.id.et_verifyInfo_degree})
+    @OnClick({R.id.tv_recom_back, R.id.et_recom_birthday, R.id.btn_recommend,R.id.et_verifyInfo_degree,R.id.et_recom_industry})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_recom_back:
@@ -310,23 +308,9 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
                 break;
             case R.id.btn_recommend:
                 getViewData();
-                presenter.postVipInfo(new PersonalVipBean(userId, fullName, mobile, sex, hobby, address, relationship, character
-                        ,birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
+                presenter.postVipInfo(new PersonalVipBean(userId, fullName, mobile, sex, hobby, address,"", character
+                        ,birthday,homeplace,finishSchool, company, fatherName, motherName, marriage,
                         spouseName, childrenName, childrenSchool,curDegreeCode,position,industry,email,QQ,wechat));
-                break;
-            case R.id.et_recom_relationship:
-                //弹出关系选择框
-                AlertDialog.Builder dialog_relationship = new AlertDialog.Builder(this);
-                dialog_relationship.setTitle("选择关系");
-                dialog_relationship.setSingleChoiceItems(relationships, 0, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        et_recom_relationship.setText(relationships[i]);
-                        relationship = i + 1+"";
-                        dialogInterface.dismiss();
-                    }
-                });
-                dialog_relationship.create().show();
                 break;
             case R.id.et_verifyInfo_degree:
                 //选择学历
@@ -341,6 +325,20 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
                     }
                 });
                 dialog_degree.create().show();
+                break;
+            case R.id.et_recom_industry:
+                //选择行业
+                android.app.AlertDialog.Builder dialog_industry= new android.app.AlertDialog.Builder(this);
+                dialog_industry.setTitle("选择行业");
+                dialog_industry.setSingleChoiceItems(industrys, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        industry=i+1+"";
+                        et_recom_industry.setText(industrys[i]);
+                        dialogInterface.dismiss();
+                    }
+                });
+                dialog_industry.create().show();
                 break;
         }
     }

@@ -18,6 +18,7 @@ import com.ike.communityalliance.message.module.TalkExtensionModule;
 import com.ike.communityalliance.ui.activity.AMAPLocationActivity;
 import com.ike.communityalliance.ui.activity.GroupVoteActivity;
 import com.ike.communityalliance.ui.activity.NewFriendListActivity;
+import com.ike.communityalliance.ui.activity.UserDetailActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -171,10 +172,12 @@ public class AppContext extends RongIMClient.ResultCallback<Boolean> implements 
     //会话界面操作
     @Override
     public boolean onUserPortraitClick(Context context, Conversation.ConversationType conversationType, UserInfo userInfo) {
-        if (conversationType == Conversation.ConversationType.CUSTOMER_SERVICE || conversationType == Conversation.ConversationType.PUBLIC_SERVICE || conversationType == Conversation.ConversationType.APP_PUBLIC_SERVICE) {
-            return false;
-        }
-        return true;
+        //在这里处理你想要跳转的activity，示例代码为YourAcitivy
+        Intent in = new Intent(context, UserDetailActivity.class);
+        in.putExtra("friends",new FriendInfo(userInfo.getUserId(),userInfo.getName(),userInfo.getPortraitUri().toString()));
+        context.startActivity(in);
+        return false;
+
     }
 
     @Override

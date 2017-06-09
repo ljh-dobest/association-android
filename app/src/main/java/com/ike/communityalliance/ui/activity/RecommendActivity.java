@@ -29,6 +29,7 @@ import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IRecommedView;
 import com.ike.communityalliance.presenter.RecommendPresenterImpl;
 import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -310,6 +311,16 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
                 break;
             case R.id.btn_recommend:
                 getViewData();
+                if(hobby.split(",").length>3){
+                    T.showShort(this, "爱好最多只能选3项");
+                    LoadDialog.dismiss(this);
+                    return;
+                }
+                if(character.split(",").length>2){
+                    T.showShort(this, "性格最多只能选2项");
+                    LoadDialog.dismiss(this);
+                    return;
+                }
                 presenter.verifyRecommedInfo(new PersonalVipBean(userId, fullName, mobile, sex, hobby, address, relationship, character
                         ,birthday, homeplace, finishSchool, company, fatherName, motherName, marriage,
                         spouseName, childrenName, childrenSchool,curDegreeCode,position,industry,email,QQ,wechat));

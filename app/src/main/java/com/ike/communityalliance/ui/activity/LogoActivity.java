@@ -104,7 +104,7 @@ public class LogoActivity extends BaseActivity {
     }
 
     private void toLogin() {
-        startActivity(new Intent(mContext,Login2Activity.class));
+        startActivity(new Intent(mContext,LoginActivity.class));
         finish();
     }
     private void toMain(){

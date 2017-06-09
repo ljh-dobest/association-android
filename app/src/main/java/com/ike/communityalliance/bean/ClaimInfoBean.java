@@ -25,6 +25,43 @@ public class ClaimInfoBean {
     private String email;
     private String QQ;
     private String wechat;
+    private String industry;
+    private String character;
+    private String fatherName;
+    private String motherName;
+    private String marriage;
+    private String spouseName;
+    private String childrenName;
+    private String childrenSchool;
+
+    public ClaimInfoBean(String userId, String claimUserId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String creditScore, String relationship, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat, String industry, String character, String fatherName, String motherName, String marriage, String spouseName, String childrenName, String childrenSchool) {
+        this.userId = userId;
+        this.claimUserId = claimUserId;
+        this.fullName = fullName;
+        this.mobile = mobile;
+        this.sex = sex;
+        this.hobby = hobby;
+        this.address = address;
+        this.creditScore = creditScore;
+        this.relationship = relationship;
+        this.birthday = birthday;
+        this.homeplace = homeplace;
+        this.finishSchool = finishSchool;
+        this.degree = degree;
+        this.company = company;
+        this.position = position;
+        this.email = email;
+        this.QQ = QQ;
+        this.wechat = wechat;
+        this.industry = industry;
+        this.character = character;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.marriage = marriage;
+        this.spouseName = spouseName;
+        this.childrenName = childrenName;
+        this.childrenSchool = childrenSchool;
+    }
 
     public ClaimInfoBean(String userId, String claimUserId, String fullName, String mobile, String sex, String hobby, ArrayList<String> address, String creditScore, String relationship, String birthday, String homeplace, String finishSchool, String degree, String company, String position, String email, String QQ, String wechat) {
         this.userId = userId;
@@ -45,6 +82,70 @@ public class ClaimInfoBean {
         this.email = email;
         this.QQ = QQ;
         this.wechat = wechat;
+    }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+
+    public String getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(String character) {
+        this.character = character;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public String getMotherName() {
+        return motherName;
+    }
+
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
+    }
+
+    public String getMarriage() {
+        return marriage;
+    }
+
+    public void setMarriage(String marriage) {
+        this.marriage = marriage;
+    }
+
+    public String getSpouseName() {
+        return spouseName;
+    }
+
+    public void setSpouseName(String spouseName) {
+        this.spouseName = spouseName;
+    }
+
+    public String getChildrenName() {
+        return childrenName;
+    }
+
+    public void setChildrenName(String childrenName) {
+        this.childrenName = childrenName;
+    }
+
+    public String getChildrenSchool() {
+        return childrenSchool;
+    }
+
+    public void setChildrenSchool(String childrenSchool) {
+        this.childrenSchool = childrenSchool;
     }
 
     public String getUserId() {

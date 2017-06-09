@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.ui.activity.SelectFriendsActivity;
+import com.ike.mylibrary.util.T;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,13 +41,17 @@ public class InterestGroupFragment extends Fragment implements TabLayout.OnTabSe
     LinearLayout ll_interest_back;
     private List<String> mTitle;
     private  String userId;
+    private SharedPreferences sp;
+    private String checkVip;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View containerView=inflater.inflate(R.layout.activity_intersiting,container,false);
         ButterKnife.bind(this,containerView);
-        userId = getContext().getSharedPreferences("config",getContext().MODE_PRIVATE).getString(Const.LOGIN_ID,"");
+        sp=getContext().getSharedPreferences("config",getContext().MODE_PRIVATE);
+        userId = sp.getString(Const.LOGIN_ID,"");
+        checkVip=sp.getString(Const.LOGIN_VIP,"");
         init();
         return containerView;
     }
@@ -99,6 +105,10 @@ public class InterestGroupFragment extends Fragment implements TabLayout.OnTabSe
             case R.id.ll_interest_back:
                 break;
             case R.id.iv_interest_createGroup:
+                if(checkVip.equals("0")){
+                    T.showShort(getContext(),"只有VIP用户才能创建兴趣联盟");
+                    return;
+                }
                 Intent intent=new Intent(getContext(),SelectFriendsActivity.class);
                 intent.putExtra("createInterestGroup",true);
                 startActivity(intent);

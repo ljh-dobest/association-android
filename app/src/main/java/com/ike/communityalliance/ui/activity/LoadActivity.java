@@ -79,7 +79,7 @@ public class LoadActivity extends BaseActivity {
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(LoadActivity.this, Login2Activity.class);
+            Intent intent = new Intent(LoadActivity.this, LoginActivity.class);
             startActivity(intent);
             editor.putBoolean("boolean", true);
             editor.commit();

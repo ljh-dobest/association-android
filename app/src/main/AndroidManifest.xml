@@ -71,16 +71,13 @@
         android:theme="@style/AppTheme"
         tools:replace="Android:icon,android:theme">
 
-        <!-- 融云 -->
-        <!--
             <meta-data
             android:name="RONG_CLOUD_APP_KEY"
-            android:value="x18ywvqf8xf0c" />
-        -->
-        <!-- 融云 -->
-        <meta-data
-            android:name="RONG_CLOUD_APP_KEY"
-            android:value="tdrvipkstdnk5" />
+            android:value="x4vkb1qpx0tmk" />
+        <!--&lt;!&ndash; 融云 &ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="RONG_CLOUD_APP_KEY"-->
+            <!--android:value="tdrvipkstdnk5" />-->
 
         <!-- 高德 -->
         <meta-data
@@ -284,7 +281,8 @@
         <activity android:name=".ui.activity.VipRegisterActivity" />
         <activity android:name=".ui.activity.MineQRCodeActivity" />
         <activity android:name=".ui.activity.ApplayVIPActivity" />
-        <activity android:name=".ui.activity.PossibleUnderstandActivity"></activity>
+        <activity android:name=".ui.activity.PossibleUnderstandActivity" />
+        <activity android:name=".ui.activity.WhoCanSeeActivity"></activity>
     </application>
 
 </manifest>

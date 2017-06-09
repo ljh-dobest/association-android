@@ -232,9 +232,7 @@ public class ShareFriendsActivity extends BaseMvpActivity<IShareFriendsView, Sha
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 0 && resultCode == RESULT_OK) {
             if (data != null) {
-                TalkTalkBean talkTalkBean = (TalkTalkBean) data.getSerializableExtra("talkTalkBean");
-                adapter.insert(talkTalkBean, 0);
-                rv_share_Friends.scrollToPosition(0);
+               onRefresh();
             }
         }else if(requestCode==100&&resultCode==RESULT_OK){
                   getUnreadMessageData(userId);

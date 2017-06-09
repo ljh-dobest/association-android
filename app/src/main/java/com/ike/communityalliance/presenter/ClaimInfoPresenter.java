@@ -32,7 +32,9 @@ public class ClaimInfoPresenter extends BasePersenter<IClaimInfoView> implements
      public void getHobbys(ViewGroup group){
                 claimInfoMoudle.getHobby(group,this);
      }
-
+    public void getCharacters(ViewGroup group) {
+        claimInfoMoudle.getCharacters(group,this);
+    }
     @Override
     public void showTextEmpty() {
         if(mView!=null){
@@ -76,6 +78,13 @@ public class ClaimInfoPresenter extends BasePersenter<IClaimInfoView> implements
     public void retturnHobbys(String hobbys) {
         if(mView!=null){
             mView.setHobbys(hobbys);
+        }
+    }
+
+    @Override
+    public void returnCharacters(String characters) {
+        if(mView!=null){
+            mView.setCharacters(characters);
         }
     }
 }

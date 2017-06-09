@@ -1,6 +1,7 @@
 package com.ike.communityalliance.ui.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.ui.fragment.ChessAndCardsFragment;
 import com.ike.communityalliance.ui.fragment.InterestMoreFragment;
+import com.ike.mylibrary.util.T;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +36,16 @@ TabLayout tl_interesting;
     LinearLayout ll_interest_back;
     private List<String> mTitle;
     private  String userId;
+    private SharedPreferences sp;
+    private String checkVip;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intersiting);
         ButterKnife.bind(this);
-        userId = getSharedPreferences("config",MODE_PRIVATE).getString(Const.LOGIN_ID,"");
+        sp= getSharedPreferences("config",MODE_PRIVATE);
+        userId = sp.getString(Const.LOGIN_ID,"");
+        checkVip=sp.getString(Const.LOGIN_VIP,"");
         init();
     }
 
@@ -93,6 +99,10 @@ TabLayout tl_interesting;
                  finish();
                  break;
              case R.id.iv_interest_createGroup:
+                 if(checkVip=="0"){
+                     T.showShort(this,"只有VIP用户才能创建兴趣联盟");
+                     return;
+                 }
                  Intent intent=new Intent(this,SelectFriendsActivity.class);
                  intent.putExtra("createInterestGroup",true);
                  startActivity(intent);

@@ -73,4 +73,41 @@
         android:numColumns="4"
         android:paddingLeft="1dp"
         android:paddingRight="1dp" />
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/see"/>
+        <TextView
+            android:id="@+id/tv_sendshareFriend_whoSee"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="谁可以看"
+            android:textColor="@color/col_666666"
+            android:textSize="17sp"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_sendshareFriend_see"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公开"
+            android:textColor="@color/col_666666"
+            android:textSize="17sp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/rp_arrow"/>
+    </LinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

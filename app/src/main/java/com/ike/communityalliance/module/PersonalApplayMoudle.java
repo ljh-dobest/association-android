@@ -31,8 +31,7 @@ import okhttp3.Call;
 public class PersonalApplayMoudle {
     public void personalApplay(PersonalVipBean personalVipBean, final OnPersonalApplayFinishListener listener) {
       if(personalVipBean.getUserId().equals("")||personalVipBean.getFullName().equals("")||personalVipBean.getMobile().equals("")||personalVipBean.getSex().equals("")
-              ||personalVipBean.getHobby().equals("")||personalVipBean.getAddress().size()==0||personalVipBean.getRelationship().equals("")
-            ){
+              ||personalVipBean.getHobby().equals("")||personalVipBean.getAddress().size()==0){
           listener.showTextEmpty();
           return;
       }

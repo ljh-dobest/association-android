@@ -33,6 +33,7 @@ import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
 import com.ike.communityalliance.ui.Main2Activity;
 import com.ike.mylibrary.util.T;
+import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.kyleduo.switchbutton.SwitchButton;
 
 import java.text.SimpleDateFormat;
@@ -324,6 +325,11 @@ private final String[] degrees={"初中","高中","中技","中专","大专","�
                 pvTime.show();
                 break;
             case R.id.btn_verifyRecommedInfo:
+                if(hobby.split(",").length>3){
+                    T.showShort(this, "爱好最多只能选3项");
+                    LoadDialog.dismiss(this);
+                    return;
+                }
                     showComfirmDialog();
                 break;
             case R.id.et_verifyInfo_degree:

@@ -60,7 +60,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/default_portrait" />
-        <RelativeLayout
+        <LinearLayout
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/iv_user_detail_userIcon"
@@ -76,24 +76,13 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textSize="16sp" />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/tv_user_detail_name"
-                android:id="@+id/tv_user_detail_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text=""/>
             <ImageView
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/tv_user_detail_name"
-                android:layout_toRightOf="@id/tv_user_detail_age"
                 android:layout_marginLeft="8dp"
                 android:id="@+id/iv_user_detail_sex"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:src="@drawable/mine_man"/>
-        </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
     <LinearLayout
         android:layout_marginLeft="10dp"
