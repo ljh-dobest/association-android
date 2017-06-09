@@ -12,12 +12,21 @@ public final class R {
         public static final int slide_out_bottom = 0x7f050021;
     }
     public static final class attr {
+<<<<<<< HEAD
         public static final int pickerview_dividerColor = 0x7f010234;
         public static final int pickerview_gravity = 0x7f010230;
         public static final int pickerview_lineSpacingMultiplier = 0x7f010235;
         public static final int pickerview_textColorCenter = 0x7f010233;
         public static final int pickerview_textColorOut = 0x7f010232;
         public static final int pickerview_textSize = 0x7f010231;
+=======
+        public static final int pickerview_dividerColor = 0x7f010228;
+        public static final int pickerview_gravity = 0x7f010224;
+        public static final int pickerview_lineSpacingMultiplier = 0x7f010229;
+        public static final int pickerview_textColorCenter = 0x7f010227;
+        public static final int pickerview_textColorOut = 0x7f010226;
+        public static final int pickerview_textSize = 0x7f010225;
+>>>>>>> ljh
     }
     public static final class color {
         public static final int bgColor_default = 0x7f0f000f;
@@ -41,6 +50,7 @@ public final class R {
         public static final int selector_pickerview_btn = 0x7f02024c;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int btnCancel = 0x7f100487;
         public static final int btnSubmit = 0x7f100489;
         public static final int center = 0x7f100052;
@@ -61,15 +71,44 @@ public final class R {
         public static final int timepicker = 0x7f10051c;
         public static final int tvTitle = 0x7f100488;
         public static final int year = 0x7f10051d;
+=======
+        public static final int btnCancel = 0x7f1004bb;
+        public static final int btnSubmit = 0x7f1004bd;
+        public static final int center = 0x7f100052;
+        public static final int content_container = 0x7f1004eb;
+        public static final int day = 0x7f100551;
+        public static final int hour = 0x7f100552;
+        public static final int left = 0x7f10005b;
+        public static final int min = 0x7f100553;
+        public static final int month = 0x7f1000aa;
+        public static final int options1 = 0x7f10054c;
+        public static final int options2 = 0x7f10054d;
+        public static final int options3 = 0x7f10054e;
+        public static final int optionspicker = 0x7f10054b;
+        public static final int outmost_container = 0x7f1004ea;
+        public static final int right = 0x7f10005c;
+        public static final int rv_topbar = 0x7f1004ba;
+        public static final int second = 0x7f100554;
+        public static final int timepicker = 0x7f10054f;
+        public static final int tvTitle = 0x7f1004bc;
+        public static final int year = 0x7f100550;
+>>>>>>> ljh
     }
     public static final class integer {
         public static final int animation_default_duration = 0x7f0e0003;
     }
     public static final class layout {
+<<<<<<< HEAD
         public static final int include_pickerview_topbar = 0x7f0400d0;
         public static final int layout_basepickerview = 0x7f0400de;
         public static final int pickerview_options = 0x7f0400fe;
         public static final int pickerview_time = 0x7f0400ff;
+=======
+        public static final int include_pickerview_topbar = 0x7f0400d1;
+        public static final int layout_basepickerview = 0x7f0400df;
+        public static final int pickerview_options = 0x7f0400ff;
+        public static final int pickerview_time = 0x7f040100;
+>>>>>>> ljh
     }
     public static final class string {
         public static final int pickerview_cancel = 0x7f090016;
@@ -85,7 +124,11 @@ public final class R {
         public static final int custom_dialog2 = 0x7f0c01a5;
     }
     public static final class styleable {
+<<<<<<< HEAD
         public static final int[] pickerview = { 0x7f010230, 0x7f010231, 0x7f010232, 0x7f010233, 0x7f010234, 0x7f010235 };
+=======
+        public static final int[] pickerview = { 0x7f010224, 0x7f010225, 0x7f010226, 0x7f010227, 0x7f010228, 0x7f010229 };
+>>>>>>> ljh
         public static final int pickerview_pickerview_dividerColor = 4;
         public static final int pickerview_pickerview_gravity = 0;
         public static final int pickerview_pickerview_lineSpacingMultiplier = 5;

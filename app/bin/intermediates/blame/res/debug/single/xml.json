@@ -1,10 +1,10 @@
 [
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\xml\\iat_setting.xml",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\xml\\iat_setting.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\xml\\iat_setting.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\xml\\iat_setting.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\xml\\rc_file_path.xml",
-        "source": "F:\\NB\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\xml\\rc_file_path.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\xml\\rc_file_path.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\xml\\rc_file_path.xml"
     }
 ]

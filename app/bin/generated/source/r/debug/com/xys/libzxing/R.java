@@ -13,6 +13,7 @@ public final class R {
         public static final int shadow = 0x7f02024e;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int capture_container = 0x7f1001e9;
         public static final int capture_crop_view = 0x7f1001eb;
         public static final int capture_mask_bottom = 0x7f1001ed;
@@ -21,6 +22,16 @@ public final class R {
         public static final int capture_mask_top = 0x7f1001ea;
         public static final int capture_preview = 0x7f1001e8;
         public static final int capture_scan_line = 0x7f1001ec;
+=======
+        public static final int capture_container = 0x7f1001e3;
+        public static final int capture_crop_view = 0x7f1001e5;
+        public static final int capture_mask_bottom = 0x7f1001e7;
+        public static final int capture_mask_left = 0x7f1001e8;
+        public static final int capture_mask_right = 0x7f1001e9;
+        public static final int capture_mask_top = 0x7f1001e4;
+        public static final int capture_preview = 0x7f1001e2;
+        public static final int capture_scan_line = 0x7f1001e6;
+>>>>>>> ljh
         public static final int decode = 0x7f100004;
         public static final int decode_failed = 0x7f100005;
         public static final int decode_succeeded = 0x7f100006;

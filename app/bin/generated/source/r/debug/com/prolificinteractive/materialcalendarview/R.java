@@ -8,6 +8,7 @@ package com.prolificinteractive.materialcalendarview;
 
 public final class R {
     public static final class attr {
+<<<<<<< HEAD
         public static final int mcv_allowClickDaysOutsideCurrentMonth = 0x7f010161;
         public static final int mcv_arrowColor = 0x7f01015c;
         public static final int mcv_calendarMode = 0x7f010168;
@@ -25,6 +26,25 @@ public final class R {
         public static final int mcv_titleAnimationOrientation = 0x7f010169;
         public static final int mcv_weekDayLabels = 0x7f010162;
         public static final int mcv_weekDayTextAppearance = 0x7f01015a;
+=======
+        public static final int mcv_allowClickDaysOutsideCurrentMonth = 0x7f010155;
+        public static final int mcv_arrowColor = 0x7f010150;
+        public static final int mcv_calendarMode = 0x7f01015c;
+        public static final int mcv_dateTextAppearance = 0x7f01014d;
+        public static final int mcv_firstDayOfWeek = 0x7f01015b;
+        public static final int mcv_headerTextAppearance = 0x7f01014f;
+        public static final int mcv_leftArrowMask = 0x7f010151;
+        public static final int mcv_monthLabels = 0x7f010157;
+        public static final int mcv_rightArrowMask = 0x7f010152;
+        public static final int mcv_selectionColor = 0x7f010153;
+        public static final int mcv_showOtherDates = 0x7f010154;
+        public static final int mcv_tileHeight = 0x7f010159;
+        public static final int mcv_tileSize = 0x7f010158;
+        public static final int mcv_tileWidth = 0x7f01015a;
+        public static final int mcv_titleAnimationOrientation = 0x7f01015d;
+        public static final int mcv_weekDayLabels = 0x7f010156;
+        public static final int mcv_weekDayTextAppearance = 0x7f01014e;
+>>>>>>> ljh
     }
     public static final class color {
         public static final int mcv_text_date_dark = 0x7f0f0121;
@@ -35,6 +55,7 @@ public final class R {
         public static final int mcv_action_previous = 0x7f0200e7;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int all = 0x7f100064;
         public static final int decorated_disabled = 0x7f1000a4;
         public static final int defaults = 0x7f1000a5;
@@ -54,6 +75,27 @@ public final class R {
         public static final int vertical = 0x7f1000b3;
         public static final int wednesday = 0x7f1000af;
         public static final int week = 0x7f1000b1;
+=======
+        public static final int all = 0x7f100095;
+        public static final int decorated_disabled = 0x7f10009e;
+        public static final int defaults = 0x7f10009f;
+        public static final int friday = 0x7f1000a3;
+        public static final int horizontal = 0x7f1000ac;
+        public static final int match_parent = 0x7f1000a2;
+        public static final int mcv_pager = 0x7f10000e;
+        public static final int monday = 0x7f1000a4;
+        public static final int month = 0x7f1000aa;
+        public static final int none = 0x7f100064;
+        public static final int other_months = 0x7f1000a0;
+        public static final int out_of_range = 0x7f1000a1;
+        public static final int saturday = 0x7f1000a5;
+        public static final int sunday = 0x7f1000a6;
+        public static final int thursday = 0x7f1000a7;
+        public static final int tuesday = 0x7f1000a8;
+        public static final int vertical = 0x7f1000ad;
+        public static final int wednesday = 0x7f1000a9;
+        public static final int week = 0x7f1000ab;
+>>>>>>> ljh
     }
     public static final class string {
         public static final int calendar = 0x7f090238;
@@ -66,7 +108,11 @@ public final class R {
         public static final int TextAppearance_MaterialCalendarWidget_WeekDay = 0x7f0c012e;
     }
     public static final class styleable {
+<<<<<<< HEAD
         public static final int[] MaterialCalendarView = { 0x7f010159, 0x7f01015a, 0x7f01015b, 0x7f01015c, 0x7f01015d, 0x7f01015e, 0x7f01015f, 0x7f010160, 0x7f010161, 0x7f010162, 0x7f010163, 0x7f010164, 0x7f010165, 0x7f010166, 0x7f010167, 0x7f010168, 0x7f010169 };
+=======
+        public static final int[] MaterialCalendarView = { 0x7f01014d, 0x7f01014e, 0x7f01014f, 0x7f010150, 0x7f010151, 0x7f010152, 0x7f010153, 0x7f010154, 0x7f010155, 0x7f010156, 0x7f010157, 0x7f010158, 0x7f010159, 0x7f01015a, 0x7f01015b, 0x7f01015c, 0x7f01015d };
+>>>>>>> ljh
         public static final int MaterialCalendarView_mcv_allowClickDaysOutsideCurrentMonth = 8;
         public static final int MaterialCalendarView_mcv_arrowColor = 3;
         public static final int MaterialCalendarView_mcv_calendarMode = 15;

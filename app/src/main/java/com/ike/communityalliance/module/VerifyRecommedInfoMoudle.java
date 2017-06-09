@@ -8,9 +8,9 @@ import android.widget.LinearLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ike.communityalliance.bean.Code;
+import com.ike.communityalliance.bean.PersonalVipBean;
 import com.ike.communityalliance.bean.ProvinceBean;
 import com.ike.communityalliance.bean.VerifyRecommedInfo;
-import com.ike.communityalliance.bean.VerifyRecommedInfoBean;
 import com.ike.communityalliance.listener.OnVerifyRecommedInfoFinishListener;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.utils.DateUtils;
@@ -50,8 +50,8 @@ public class VerifyRecommedInfoMoudle {
     }
 
 
-    public void verifyRecommedInfo(VerifyRecommedInfoBean verifyRecommedInfoBean, final OnVerifyRecommedInfoFinishListener listener) {
-      if(verifyRecommedInfoBean.getUserId().equals("")||verifyRecommedInfoBean.getFullName().equals("")||verifyRecommedInfoBean.getMobile().equals("")||verifyRecommedInfoBean.getSex().equals("")
+    public void verifyRecommedInfo(PersonalVipBean verifyRecommedInfoBean, final OnVerifyRecommedInfoFinishListener listener) {
+      if(verifyRecommedInfoBean.getRecommendId().equals("")||verifyRecommedInfoBean.getUserId().equals("")||verifyRecommedInfoBean.getFullName().equals("")||verifyRecommedInfoBean.getMobile().equals("")||verifyRecommedInfoBean.getSex().equals("")
               ||verifyRecommedInfoBean.getHobby().equals("")||verifyRecommedInfoBean.getAddress().size()==0){
           listener.showTextEmpty();
           return;
@@ -131,5 +131,25 @@ public class VerifyRecommedInfoMoudle {
         isFirstHobby=true;
         listener.returnHobby(hobbys);
     }
-
+    private boolean isFirstCharacter=true;
+    //获取选择的性格
+    public void getCharacters(ViewGroup group, OnVerifyRecommedInfoFinishListener listener) {
+        String characters="";
+        for (int i = 0; i < group.getChildCount(); i++) {
+            LinearLayout ll= (LinearLayout) group.getChildAt(i);
+            for (int j= 1; j < ll.getChildCount(); j++) { //j从第一个开始，跳过Textview
+                CheckBox rb= (CheckBox) ll.getChildAt(j);
+                if (rb.isChecked()){
+                    if (isFirstCharacter){
+                        characters=rb.getText().toString();
+                        isFirstCharacter=false;
+                    }else{
+                        characters=characters+","+rb.getText().toString();
+                    }
+                }
+            }
+        }
+        isFirstCharacter=true;
+        listener.returnCharacters(characters);
+    }
 }

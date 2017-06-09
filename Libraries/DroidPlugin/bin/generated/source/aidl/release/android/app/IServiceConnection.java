@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: F:\\NB\\association-android\\Libraries\\DroidPlugin\\src\\android\\app\\IServiceConnection.aidl
+ * Original file: E:\\project\\xiangmu\\association-android\\Libraries\\DroidPlugin\\src\\android\\app\\IServiceConnection.aidl
  */
 package android.app;
 /** @hide */

@@ -8,6 +8,7 @@ package com.andview.refreshview;
 
 public final class R {
     public static final class attr {
+<<<<<<< HEAD
         public static final int autoLoadMore = 0x7f010217;
         public static final int autoRefresh = 0x7f010216;
         public static final int isHeightMatchParent = 0x7f010214;
@@ -16,6 +17,16 @@ public final class R {
         public static final int reverseLayout = 0x7f010182;
         public static final int spanCount = 0x7f010181;
         public static final int stackFromEnd = 0x7f010183;
+=======
+        public static final int autoLoadMore = 0x7f01020b;
+        public static final int autoRefresh = 0x7f01020a;
+        public static final int isHeightMatchParent = 0x7f010208;
+        public static final int isWidthMatchParent = 0x7f010209;
+        public static final int layoutManager = 0x7f010174;
+        public static final int reverseLayout = 0x7f010176;
+        public static final int spanCount = 0x7f010175;
+        public static final int stackFromEnd = 0x7f010177;
+>>>>>>> ljh
     }
     public static final class dimen {
         public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f0b00e5;
@@ -26,6 +37,7 @@ public final class R {
     }
     public static final class id {
         public static final int item_touch_helper_previous_elevation = 0x7f10000d;
+<<<<<<< HEAD
         public static final int left_images = 0x7f10066e;
         public static final int right_text = 0x7f100672;
         public static final int xrefreshview_footer_click_textview = 0x7f10066c;
@@ -42,6 +54,24 @@ public final class R {
     public static final class layout {
         public static final int xrefreshview_footer = 0x7f040192;
         public static final int xrefreshview_header = 0x7f040193;
+=======
+        public static final int left_images = 0x7f1006a1;
+        public static final int right_text = 0x7f1006a5;
+        public static final int xrefreshview_footer_click_textview = 0x7f10069f;
+        public static final int xrefreshview_footer_content = 0x7f10069c;
+        public static final int xrefreshview_footer_hint_textview = 0x7f10069e;
+        public static final int xrefreshview_footer_progressbar = 0x7f10069d;
+        public static final int xrefreshview_header_arrow = 0x7f1006a2;
+        public static final int xrefreshview_header_hint_textview = 0x7f1006a6;
+        public static final int xrefreshview_header_ok = 0x7f1006a4;
+        public static final int xrefreshview_header_progressbar = 0x7f1006a3;
+        public static final int xrefreshview_header_text = 0x7f1006a0;
+        public static final int xrefreshview_header_time = 0x7f1006a7;
+    }
+    public static final class layout {
+        public static final int xrefreshview_footer = 0x7f040193;
+        public static final int xrefreshview_header = 0x7f040194;
+>>>>>>> ljh
     }
     public static final class string {
         public static final int app_name = 0x7f090230;
@@ -66,13 +96,21 @@ public final class R {
         public static final int xrefreshview_refresh_minutes_ago = 0x7f090375;
     }
     public static final class styleable {
+<<<<<<< HEAD
         public static final int[] RecyclerView = { 0x010100c4, 0x010100f1, 0x7f010180, 0x7f010181, 0x7f010182, 0x7f010183 };
+=======
+        public static final int[] RecyclerView = { 0x010100c4, 0x010100f1, 0x7f010174, 0x7f010175, 0x7f010176, 0x7f010177 };
+>>>>>>> ljh
         public static final int RecyclerView_android_orientation = 0;
         public static final int RecyclerView_layoutManager = 2;
         public static final int RecyclerView_reverseLayout = 4;
         public static final int RecyclerView_spanCount = 3;
         public static final int RecyclerView_stackFromEnd = 5;
+<<<<<<< HEAD
         public static final int[] XRefreshView = { 0x7f010214, 0x7f010215, 0x7f010216, 0x7f010217 };
+=======
+        public static final int[] XRefreshView = { 0x7f010208, 0x7f010209, 0x7f01020a, 0x7f01020b };
+>>>>>>> ljh
         public static final int XRefreshView_autoLoadMore = 3;
         public static final int XRefreshView_autoRefresh = 2;
         public static final int XRefreshView_isHeightMatchParent = 0;

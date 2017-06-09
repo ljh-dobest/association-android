@@ -1,14 +1,14 @@
 [
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\raw\\smssdk_pydb",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\08ba0381bc51943608dac82fd4d14b9c38c7d893\\output\\res\\raw\\smssdk_pydb"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\raw\\jrmf360.crt",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\raw\\jrmf360.crt"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\raw\\jrmf360.crt",
-        "source": "F:\\NB\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\raw\\jrmf360.crt"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\raw\\smssdk_pydb",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\e6b8360f971e6b0eff0a90e2ce9a8d4b3c5dd57f\\output\\res\\raw\\smssdk_pydb"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
-        "source": "F:\\NB\\association-android\\libzxing\\bin\\intermediates\\bundles\\default\\res\\raw\\beep.ogg"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
+        "source": "E:\\project\\xiangmu\\association-android\\libzxing\\bin\\intermediates\\bundles\\default\\res\\raw\\beep.ogg"
     }
 ]

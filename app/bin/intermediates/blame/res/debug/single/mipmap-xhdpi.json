@@ -1,14 +1,14 @@
 [
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\vote_detail_status.9.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\vote_detail_status.9.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\over.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\over.9.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\in_progress.9.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\in_progress.9.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\in_progress.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\in_progress.9.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\over.9.png",
-        "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\over.9.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\vote_detail_status.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\vote_detail_status.9.png"
     }
 ]

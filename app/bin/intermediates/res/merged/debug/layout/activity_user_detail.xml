@@ -60,7 +60,11 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/default_portrait" />
+<<<<<<< HEAD
         <RelativeLayout
+=======
+        <LinearLayout
+>>>>>>> ljh
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/iv_user_detail_userIcon"
@@ -76,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textSize="16sp" />
+<<<<<<< HEAD
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_below="@id/tv_user_detail_name"
@@ -88,12 +93,19 @@
                 android:layout_marginTop="5dp"
                 android:layout_below="@id/tv_user_detail_name"
                 android:layout_toRightOf="@id/tv_user_detail_age"
+=======
+            <ImageView
+>>>>>>> ljh
                 android:layout_marginLeft="8dp"
                 android:id="@+id/iv_user_detail_sex"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:src="@drawable/mine_man"/>
+<<<<<<< HEAD
         </RelativeLayout>
+=======
+        </LinearLayout>
+>>>>>>> ljh
     </RelativeLayout>
     <LinearLayout
         android:layout_marginLeft="10dp"
@@ -122,6 +134,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dp"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -136,11 +149,30 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dp"
+=======
+>>>>>>> ljh
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
                     style="@style/mine_tv_styles"
+<<<<<<< HEAD
+=======
+                    android:text="邮箱:"/>
+                <TextView
+                    android:id="@+id/tv_user_detail_email"
+                    style="@style/mine_tv_styles"
+                    android:layout_marginLeft="10dp"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/mine_tv_styles"
+>>>>>>> ljh
                     android:text="电话:"/>
                 <TextView
                     android:id="@+id/tv_user_detail_phone"
@@ -199,6 +231,8 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dp"
+<<<<<<< HEAD
+=======
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -241,11 +275,57 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dp"
+>>>>>>> ljh
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
                     style="@style/mine_tv_styles"
+<<<<<<< HEAD
+                    android:text="认领:"/>
+                <TextView
+                    android:id="@+id/tv_user_detail_claimerName"
+                    style="@style/mine_tv_styles"
+                    android:layout_marginLeft="10dp"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/mine_tv_styles"
+                    android:text="贡献值:"/>
+                <TextView
+                    android:id="@+id/tv_user_detail_contributionNum"
+                    style="@style/mine_tv_styles"
+                    android:layout_marginLeft="10dp"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/mine_tv_styles"
+                    android:text="信誉值:"/>
+                <TextView
+                    android:id="@+id/tv_user_detail_creditScore"
+                    style="@style/mine_tv_styles"
+                    android:layout_marginLeft="10dp"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/mine_tv_styles"
+=======
+>>>>>>> ljh
                     android:text="亲密度:"/>
                 <TextView
                     android:id="@+id/tv_user_detail_intimacy"
