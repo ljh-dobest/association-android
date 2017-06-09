@@ -4,16 +4,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\white_radius.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\cbf2c0f19cd3a36677ea0d2928257971329433d1\\output\\res\\drawable\\white_radius.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\bg_initiator.xml",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\drawable\\bg_initiator.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
@@ -40,12 +44,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\bd2cd6d72e8ea3c623c7d364926b579717a46661\\output\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
@@ -116,12 +120,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\list_itme_img.xml",
@@ -168,10 +172,6 @@
         "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\drawable\\botm_connection_buttom.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\botm_platform_status.xml",
-        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\drawable\\botm_platform_status.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\bd2cd6d72e8ea3c623c7d364926b579717a46661\\output\\res\\drawable\\navigation_empty_icon.xml"
     },
@@ -192,16 +192,20 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\09d7e1b6465e62818e4efa452f6e820320694dfa\\output\\res\\drawable\\gallery_checkbox_selector.xml"
     },
     {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\botm_benefit_status.xml",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\drawable\\botm_benefit_status.xml"
+    },
+    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\gallery_default_image.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\09d7e1b6465e62818e4efa452f6e820320694dfa\\output\\res\\drawable\\gallery_default_image.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
@@ -212,12 +216,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\bd2cd6d72e8ea3c623c7d364926b579717a46661\\output\\res\\drawable\\design_fab_background.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\black_background.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\cbf2c0f19cd3a36677ea0d2928257971329433d1\\output\\res\\drawable\\black_background.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\bd2cd6d72e8ea3c623c7d364926b579717a46661\\output\\res\\drawable\\design_fab_background.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
@@ -228,12 +232,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",

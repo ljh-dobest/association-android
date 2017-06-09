@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\fad337aa3e2e079ffc0640b59c9f404240d1a0ca\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\ksw_md_back_color.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\52a4c53298de85781b377577f3b5e6fd9d4669be\\output\\res\\color\\ksw_md_back_color.xml"
-    },
-    {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\mcv_text_date_dark.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\460d4cc63297b23050b71b20d32364d8d6f39c7a\\output\\res\\color\\mcv_text_date_dark.xml"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\ksw_md_back_color.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\52a4c53298de85781b377577f3b5e6fd9d4669be\\output\\res\\color\\ksw_md_back_color.xml"
     },
     {
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\gallery_ucrop_scale_text_view_selector.xml",

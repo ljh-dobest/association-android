@@ -8,6 +8,7 @@ import com.issp.association.crowdfunding.bean.ProductCommentBean;
 import com.issp.association.crowdfunding.listeners.OnFeedForCommentListListener;
 import com.issp.association.crowdfunding.listeners.OnProductCommentListListener;
 import com.issp.association.crowdfunding.listeners.OnProductParticularsListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -45,6 +46,9 @@ public class ProductParticularsModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -72,11 +76,11 @@ public class ProductParticularsModel {
                     case 200:
                         listener.userPraise("点赞成功");
                         break;
-                    case 100:
-                        listener.showError(code.getMsgs());
-                        break;
                     case 0:
                         listener.showError("评论失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

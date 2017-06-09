@@ -1,6 +1,7 @@
 package com.ike.coalition.platform.listeners;
 
 
+import com.ike.coalition.platform.bean.ImageUrlBean;
 import com.ike.coalition.platform.bean.PlatformBean;
 
 import java.util.ArrayList;
@@ -13,5 +14,6 @@ import java.util.List;
 public interface OnPlatformListener {
     void getPlatformList(List<PlatformBean> data);
 
+    void getImageUrl(List<ImageUrlBean> bean);
     void showError(String errorString);
 }

@@ -27,6 +27,7 @@ public class ProductCollectBean implements Serializable {
     private String content;         //众筹内容
     private String time;            //发布时间
     private int totalPayNumber;    //已购买用户数量
+    private int commentNumber;   //评论数量
     private List<ProductRewardBean> productReward;
 
 
@@ -150,6 +151,14 @@ public class ProductCollectBean implements Serializable {
 
     public void setTotalPayNumber(int totalPayNumber) {
         this.totalPayNumber = totalPayNumber;
+    }
+
+    public int getCommentNumber() {
+        return commentNumber;
+    }
+
+    public void setCommentNumber(int commentNumber) {
+        this.commentNumber = commentNumber;
     }
 
     public List<ProductRewardBean> getProductReward() {

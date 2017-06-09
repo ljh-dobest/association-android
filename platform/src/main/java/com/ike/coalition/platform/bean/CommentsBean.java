@@ -9,7 +9,8 @@ import java.util.List;
  */
 
 public class CommentsBean implements Serializable{
-    private String id;             //评论id
+    private String id;
+    private String articleId;             //评论id
     private String  userId;          //评论用户id
     private String nickname;       //评论用户昵称
     private String userPortraitUrl;   //头像
@@ -23,13 +24,20 @@ public class CommentsBean implements Serializable{
     private String fromPortraitUrl;     //被回复头像
     private String fromContent;      //被回复的内容
 
-
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(String articleId) {
+        this.articleId = articleId;
     }
 
     public String getUserId() {

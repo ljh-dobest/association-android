@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\rest.png",
+        "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-hdpi\\rest.png"
+    },
+    {
         "merged": "F:\\NB\\association-android\\crowdfunding\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
         "source": "F:\\NB\\association-android\\crowdfunding\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },

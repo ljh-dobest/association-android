@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.bean.Code;
 import com.issp.association.listeners.OnPreviewListener;
+import com.issp.association.network.CoreErrorConstants;
 import com.issp.association.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -48,11 +49,11 @@ public class PreviewModel {
                         case 200:
                             listener.publishAnArticleListener("干货分享发表成功");
                             break;
-                        case 100:
-                            listener.showError("");
-                            break;
                         case 0:
                             listener.showError("干货分享发表失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                             break;
                     }
                 } catch (Exception e) {

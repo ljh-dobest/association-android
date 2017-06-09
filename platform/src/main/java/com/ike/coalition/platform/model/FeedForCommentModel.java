@@ -6,6 +6,7 @@ import com.ike.coalition.platform.bean.ArticleCommentBean;
 import com.ike.coalition.platform.bean.Code;
 import com.ike.coalition.platform.bean.CommentsBean;
 import com.ike.coalition.platform.listeners.OnFeedForCommentListListener;
+import com.ike.coalition.platform.network.CoreErrorConstants;
 import com.ike.coalition.platform.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -51,6 +52,10 @@ public class FeedForCommentModel {
                         break;
                     case 0:
                         listener.showError("暂无评论");
+                        break;
+
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

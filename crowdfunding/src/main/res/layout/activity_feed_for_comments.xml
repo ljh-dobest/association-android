@@ -12,12 +12,13 @@
         android:background="@color/aam_item_border" />
 
     <TextView
+        android:id="@+id/tv_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/border_10"
         android:background="@android:color/white"
         android:padding="@dimen/border_20"
-        android:text="评论（50）"
+        android:text="评论（0）"
         android:textColor="@color/color_33"
         android:textSize="@dimen/font_30" />
 

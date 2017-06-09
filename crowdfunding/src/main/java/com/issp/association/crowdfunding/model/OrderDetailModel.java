@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
 import com.issp.association.crowdfunding.listeners.OnOrderDetailListListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -43,6 +44,9 @@ public class OrderDetailModel {
                         break;
                     case 0:
                         listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

@@ -11,12 +11,16 @@ import com.andview.refreshview.XRefreshViewFooter;
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.adapter.MessageListAdapter;
 import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
+import com.issp.association.crowdfunding.bean.CommentsBean;
 import com.issp.association.crowdfunding.bean.MessageBean;
 import com.issp.association.crowdfunding.interfaces.IMessageListView;
 import com.issp.association.crowdfunding.presenters.MessagePresenter;
+import com.issp.association.crowdfunding.utils.T;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -42,8 +46,9 @@ public class MessageActivity extends BaseMvpActivity<IMessageListView, MessagePr
     @BindView(R.id.xrefreshview)
     XRefreshView xRefreshView;
 
-
-    List<MessageBean> personList = new ArrayList<MessageBean>();
+    private int page=1;
+    private String userId;
+    List<CommentsBean> personList = new ArrayList<CommentsBean>(0);
     LinearLayoutManager layoutManager;
     private int mLoadCount = 0;
     MessageListAdapter adapter;
@@ -56,13 +61,13 @@ public class MessageActivity extends BaseMvpActivity<IMessageListView, MessagePr
         initView();
     }
 
-    private void initView(){
+    private void initView() {
 
         ltMainTitle.setText(getString(R.string.str_information));
-
+        userId = getIntent().getStringExtra("userId");
         recyclerView.setHasFixedSize(true);
 
-        initData();
+      //  initData();
         adapter = new MessageListAdapter(personList, this);
         // 设置静默加载模式
 //		xRefreshView1.setSilenceLoadMore();
@@ -82,7 +87,7 @@ public class MessageActivity extends BaseMvpActivity<IMessageListView, MessagePr
         customerFooter.setRecyclerView(recyclerView);
        adapter.setCustomLoadMoreView(customerFooter);*/
         adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
-        xRefreshView.enableReleaseToLoadMore(true);
+        xRefreshView.enableReleaseToLoadMore(false);
         xRefreshView.enableRecyclerViewPullUp(true);
         xRefreshView.enablePullUpWhenLoadCompleted(true);
 
@@ -90,48 +95,27 @@ public class MessageActivity extends BaseMvpActivity<IMessageListView, MessagePr
 
             @Override
             public void onRefresh(boolean isPullDown) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //模拟数据加载失败的情况
-                        Random random = new Random();
-                        boolean success = random.nextBoolean();
-
-                        xRefreshView.stopRefresh(success);
-                    }
-                }, 2000);
+               //initData();
             }
 
             @Override
             public void onLoadMore(boolean isSilence) {
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        for (int i = 0; i < 6; i++) {
-                            MessageBean person = new MessageBean();
-                            adapter.insert(person,
-                                    adapter.getAdapterItemCount());
-                        }
-                        mLoadCount++;
-                        if (mLoadCount >= 3) {
-                            xRefreshView.setLoadComplete(true);
-                        } else {
-                            // 刷新完成必须调用此方法停止加载
-                            xRefreshView.stopLoadMore();
-                        }
-                    }
-                }, 1000);
+
             }
         });
     }
 
     private void initData() {
-        for (int i = 0; i < 3; i++) {
-            MessageBean person = new MessageBean();
-            personList.add(person);
-        }
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "1");
+        //  formData.put("limit", limit + "");
+        // formData.put("page", page + "");
+        presenter.ShareInfoPresenter(formData);
     }
+
     @OnClick(R.id.lt_main_title_left)
-    void leftClick(){
+    void leftClick() {
         MessageActivity.this.finish();
     }
 
@@ -153,11 +137,21 @@ public class MessageActivity extends BaseMvpActivity<IMessageListView, MessagePr
 
     @Override
     public void showError(String errorString) {
-
+        if (page == 1) {
+            xRefreshView.stopRefresh(false);
+        } else {
+            xRefreshView.stopLoadMore(false);
+        }
+        T.showLong(MessageActivity.this,errorString);
     }
 
     @Override
-    public void setCommentMessageListData(ArrayList<MessageBean> data) {
-
+    public void setCommentMessageListData(List<CommentsBean> data) {
+        adapter.setData(data);
+        if (page == 1) {
+            xRefreshView.stopRefresh(true);
+        } else {
+            xRefreshView.stopLoadMore(true);
+        }
     }
 }

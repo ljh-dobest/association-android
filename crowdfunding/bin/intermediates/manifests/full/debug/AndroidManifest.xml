@@ -16,9 +16,8 @@
     <application
         android:name="com.issp.association.crowdfunding.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/rest"
+        android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
@@ -53,7 +52,13 @@
             android:exported="true" />
         <activity
             android:name="com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.issp.association.crowdfunding.ui.activity.ProductParticularsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.issp.association.crowdfunding.ui.activity.SupportProductActivity"
             android:exported="true" />

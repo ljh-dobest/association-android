@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:orientation="vertical">
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -47,6 +38,16 @@
                 android:layout_width="match_parent"
                 android:background="@color/col_999999"
                 android:layout_height="1dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
            <RelativeLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
@@ -81,7 +82,7 @@
                            android:layout_height="13px"
                            android:minHeight="20dp"
                            android:progressDrawable="@drawable/progressbar_bg"
-                           android:max="100"
+                           android:max="300"
                            />
                        <TextView
                            android:layout_marginLeft="15px"
@@ -304,6 +305,7 @@
                 android:layout_height="30px"
                 android:background="@color/col_ECEEF0"/>
             <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/ll_personal_info_moreInfo"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 style="@style/claimInfo_item_ll_styles">
@@ -324,4 +326,4 @@
 
 
 
-</com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

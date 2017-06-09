@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\NB\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ganhuo.png",
+        "source": "F:\\NB\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xhdpi\\ganhuo.png"
+    },
+    {
         "merged": "F:\\NB\\association-android\\drygoodsshare\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\btn_login.png",
         "source": "F:\\NB\\association-android\\drygoodsshare\\src\\main\\res\\mipmap-xhdpi\\btn_login.png"
     },

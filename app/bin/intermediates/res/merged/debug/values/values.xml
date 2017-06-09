@@ -689,6 +689,7 @@
         <item>我的名字？</item>
         <item>我的手机号？</item>
     </string-array>
+    <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension|color" name="gallery_camera_bg"/>
     <attr format="dimension" name="gallery_camera_image"/>
@@ -767,6 +768,94 @@
     <attr format="dimension" name="gallery_ucrop_vector_ic_crop"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
+    <attr format="integer" name="layout_constraintBaseline_creator"/>
+    <attr format="reference|enum" name="layout_constraintBaseline_toBaselineOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="integer" name="layout_constraintBottom_creator"/>
+    <attr format="reference|enum" name="layout_constraintBottom_toBottomOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintBottom_toTopOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="string" name="layout_constraintDimensionRatio"/>
+    <attr format="reference|enum" name="layout_constraintEnd_toEndOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintEnd_toStartOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="dimension" name="layout_constraintGuide_begin"/>
+    <attr format="dimension" name="layout_constraintGuide_end"/>
+    <attr format="float" name="layout_constraintGuide_percent"/>
+    <attr name="layout_constraintHeight_default">
+        <enum name="spread" value="0"/>
+        <enum name="wrap" value="1"/>
+    </attr>
+    <attr format="dimension" name="layout_constraintHeight_max"/>
+    <attr format="dimension" name="layout_constraintHeight_min"/>
+    <attr format="float" name="layout_constraintHorizontal_bias"/>
+    <attr format="enum" name="layout_constraintHorizontal_chainStyle">
+        <enum name="spread" value="0"/>
+        <enum name="spread_inside" value="1"/>
+        <enum name="packed" value="2"/>
+    </attr>
+    <attr format="float" name="layout_constraintHorizontal_weight"/>
+    <attr format="integer" name="layout_constraintLeft_creator"/>
+    <attr format="reference|enum" name="layout_constraintLeft_toLeftOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintLeft_toRightOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="integer" name="layout_constraintRight_creator"/>
+    <attr format="reference|enum" name="layout_constraintRight_toLeftOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintRight_toRightOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintStart_toEndOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintStart_toStartOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="integer" name="layout_constraintTop_creator"/>
+    <attr format="reference|enum" name="layout_constraintTop_toBottomOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintTop_toTopOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="float" name="layout_constraintVertical_bias"/>
+    <attr format="enum" name="layout_constraintVertical_chainStyle">
+        <enum name="spread" value="0"/>
+        <enum name="spread_inside" value="1"/>
+        <enum name="packed" value="2"/>
+    </attr>
+    <attr format="float" name="layout_constraintVertical_weight"/>
+    <attr name="layout_constraintWidth_default">
+        <enum name="spread" value="0"/>
+        <enum name="wrap" value="1"/>
+    </attr>
+    <attr format="dimension" name="layout_constraintWidth_max"/>
+    <attr format="dimension" name="layout_constraintWidth_min"/>
+    <attr format="dimension" name="layout_editor_absoluteX"/>
+    <attr format="dimension" name="layout_editor_absoluteY"/>
+    <attr format="dimension" name="layout_goneMarginBottom"/>
+    <attr format="dimension" name="layout_goneMarginEnd"/>
+    <attr format="dimension" name="layout_goneMarginLeft"/>
+    <attr format="dimension" name="layout_goneMarginRight"/>
+    <attr format="dimension" name="layout_goneMarginStart"/>
+    <attr format="dimension" name="layout_goneMarginTop"/>
+    <attr name="layout_optimizationLevel">
+        <flag name="none" value="1"/>
+        <flag name="all" value="2"/>
+        <flag name="basic" value="4"/>
+        <flag name="chains" value="8"/>
+    </attr>
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_allow_stacked_button_bar">true</bool>
@@ -817,6 +906,7 @@
     <color name="calendar_top_bg">#F5A0B3</color>
     <color name="ccc">#444444</color>
     <color name="col_050505">#050505</color>
+    <color name="col_0fc28d">#0FC28D</color>
     <color name="col_10DB9F">#10DB9F</color>
     <color name="col_11624A">#11624A</color>
     <color name="col_121212">#121212</color>
@@ -829,6 +919,8 @@
     <color name="col_999999">#999</color>
     <color name="col_C0C0C0">#C0C0C0</color>
     <color name="col_DDD">#DDD</color>
+    <color name="col_E5E5E5">#E5E5E5</color>
+    <color name="col_E64242">#E64242</color>
     <color name="col_E71717">#E71717</color>
     <color name="col_ECEEF0">#eceef0</color>
     <color name="col_FEFEFE">#FEFEFE</color>
@@ -1193,6 +1285,8 @@
             
             <enum name="screen" value="15"/>
         </attr></declare-styleable>
+    <declare-styleable name="ConstraintLayout_Layout"><attr name="android:orientation"/><attr name="android:minWidth"/><attr name="android:minHeight"/><attr name="android:maxWidth"/><attr name="android:maxHeight"/><attr name="layout_optimizationLevel"/><attr name="constraintSet"/><attr name="layout_constraintGuide_begin"/><attr name="layout_constraintGuide_end"/><attr name="layout_constraintGuide_percent"/><attr name="layout_constraintLeft_toLeftOf"/><attr name="layout_constraintLeft_toRightOf"/><attr name="layout_constraintRight_toLeftOf"/><attr name="layout_constraintRight_toRightOf"/><attr name="layout_constraintTop_toTopOf"/><attr name="layout_constraintTop_toBottomOf"/><attr name="layout_constraintBottom_toTopOf"/><attr name="layout_constraintBottom_toBottomOf"/><attr name="layout_constraintBaseline_toBaselineOf"/><attr name="layout_constraintStart_toEndOf"/><attr name="layout_constraintStart_toStartOf"/><attr name="layout_constraintEnd_toStartOf"/><attr name="layout_constraintEnd_toEndOf"/><attr name="layout_goneMarginLeft"/><attr name="layout_goneMarginTop"/><attr name="layout_goneMarginRight"/><attr name="layout_goneMarginBottom"/><attr name="layout_goneMarginStart"/><attr name="layout_goneMarginEnd"/><attr name="layout_constraintHorizontal_bias"/><attr name="layout_constraintVertical_bias"/><attr name="layout_constraintWidth_default"/><attr name="layout_constraintHeight_default"/><attr name="layout_constraintWidth_min"/><attr name="layout_constraintWidth_max"/><attr name="layout_constraintHeight_min"/><attr name="layout_constraintHeight_max"/><attr name="layout_constraintLeft_creator"/><attr name="layout_constraintTop_creator"/><attr name="layout_constraintRight_creator"/><attr name="layout_constraintBottom_creator"/><attr name="layout_constraintBaseline_creator"/><attr name="layout_constraintDimensionRatio"/><attr name="layout_constraintHorizontal_weight"/><attr name="layout_constraintVertical_weight"/><attr name="layout_constraintHorizontal_chainStyle"/><attr name="layout_constraintVertical_chainStyle"/><attr name="layout_editor_absoluteX"/><attr name="layout_editor_absoluteY"/></declare-styleable>
+    <declare-styleable name="ConstraintSet"><attr name="android:orientation"/><attr name="android:id"/><attr name="android:visibility"/><attr name="android:alpha"/><attr name="android:elevation"/><attr name="android:rotationX"/><attr name="android:rotationY"/><attr name="android:scaleX"/><attr name="android:scaleY"/><attr name="android:transformPivotX"/><attr name="android:transformPivotY"/><attr name="android:translationX"/><attr name="android:translationY"/><attr name="android:translationZ"/><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_marginStart"/><attr name="android:layout_marginBottom"/><attr name="android:layout_marginTop"/><attr name="android:layout_marginEnd"/><attr name="android:layout_marginLeft"/><attr name="android:layout_marginRight"/><attr name="layout_constraintGuide_begin"/><attr name="layout_constraintGuide_end"/><attr name="layout_constraintGuide_percent"/><attr name="layout_constraintLeft_toLeftOf"/><attr name="layout_constraintLeft_toRightOf"/><attr name="layout_constraintRight_toLeftOf"/><attr name="layout_constraintRight_toRightOf"/><attr name="layout_constraintTop_toTopOf"/><attr name="layout_constraintTop_toBottomOf"/><attr name="layout_constraintBottom_toTopOf"/><attr name="layout_constraintBottom_toBottomOf"/><attr name="layout_constraintBaseline_toBaselineOf"/><attr name="layout_constraintStart_toEndOf"/><attr name="layout_constraintStart_toStartOf"/><attr name="layout_constraintEnd_toStartOf"/><attr name="layout_constraintEnd_toEndOf"/><attr name="layout_goneMarginLeft"/><attr name="layout_goneMarginTop"/><attr name="layout_goneMarginRight"/><attr name="layout_goneMarginBottom"/><attr name="layout_goneMarginStart"/><attr name="layout_goneMarginEnd"/><attr name="layout_constraintHorizontal_bias"/><attr name="layout_constraintVertical_bias"/><attr name="layout_constraintWidth_default"/><attr name="layout_constraintHeight_default"/><attr name="layout_constraintWidth_min"/><attr name="layout_constraintWidth_max"/><attr name="layout_constraintHeight_min"/><attr name="layout_constraintHeight_max"/><attr name="layout_constraintLeft_creator"/><attr name="layout_constraintTop_creator"/><attr name="layout_constraintRight_creator"/><attr name="layout_constraintBottom_creator"/><attr name="layout_constraintBaseline_creator"/><attr name="layout_constraintDimensionRatio"/><attr name="layout_constraintHorizontal_weight"/><attr name="layout_constraintVertical_weight"/><attr name="layout_constraintHorizontal_chainStyle"/><attr name="layout_constraintVertical_chainStyle"/><attr name="layout_editor_absoluteX"/><attr name="layout_editor_absoluteY"/></declare-styleable>
     <declare-styleable name="CoordinatorLayout"><attr format="reference" name="keylines"/><attr format="reference" name="statusBarBackground"/></declare-styleable>
     <declare-styleable name="CoordinatorLayout_Layout"><attr name="android:layout_gravity"/><attr format="string" name="layout_behavior"/><attr format="reference" name="layout_anchor"/><attr format="integer" name="layout_keyline"/><attr name="layout_anchorGravity">
             
@@ -1276,6 +1370,7 @@
             <enum name="phone" value="4"/>
         </attr><attr format="integer" name="textSize"/></declare-styleable>
     <declare-styleable name="ForegroundLinearLayout"><attr name="android:foreground"/><attr name="android:foregroundGravity"/><attr format="boolean" name="foregroundInsidePadding"/></declare-styleable>
+    <declare-styleable name="LinearConstraintLayout"><attr name="android:orientation"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers">
             <flag name="none" value="0"/>
             <flag name="beginning" value="1"/>
@@ -1534,14 +1629,18 @@
     <dimen name="border_10">10px</dimen>
     <dimen name="border_102">102px</dimen>
     <dimen name="border_114">114px</dimen>
+    <dimen name="border_129">129px</dimen>
     <dimen name="border_14">14px</dimen>
     <dimen name="border_140">140px</dimen>
+    <dimen name="border_149">149px</dimen>
     <dimen name="border_16">16px</dimen>
     <dimen name="border_18">18px</dimen>
+    <dimen name="border_185">185px</dimen>
     <dimen name="border_2">2px</dimen>
     <dimen name="border_20">20px</dimen>
     <dimen name="border_210">210px</dimen>
     <dimen name="border_22">22px</dimen>
+    <dimen name="border_24">24px</dimen>
     <dimen name="border_26">26px</dimen>
     <dimen name="border_28">28px</dimen>
     <dimen name="border_30">30px</dimen>
@@ -1554,6 +1653,7 @@
     <dimen name="border_42">42px</dimen>
     <dimen name="border_466">466px</dimen>
     <dimen name="border_50">50px</dimen>
+    <dimen name="border_52">52px</dimen>
     <dimen name="border_6">6px</dimen>
     <dimen name="border_60">60px</dimen>
     <dimen name="border_70">70px</dimen>
@@ -1624,8 +1724,9 @@
     <dimen name="font_28">28px</dimen>
     <dimen name="font_28px">28px</dimen>
     <dimen name="font_30">30px</dimen>
-    <dimen name="font_32">32px</dimen>
+    <dimen name="font_32">16sp</dimen>
     <dimen name="font_36">18sp</dimen>
+    <dimen name="font_38">19sp</dimen>
     <dimen name="font_40">40px</dimen>
     <dimen name="font_44">22sp</dimen>
     <dimen name="font_48">48sp</dimen>
@@ -1877,7 +1978,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="account_info_title">账户信息</string>
     <string name="account_net_error">当前网络不佳，获取账户信息失败</string>
-    <string name="action_sign_in_short">登录</string>
+    <string name="action_sign_in_short">请输入你的密码</string>
     <string name="actives_limit">活动限制人数</string>
     <string name="activity_content">活动介绍:</string>
     <string name="activity_member">活动人数:</string>
@@ -2096,7 +2197,7 @@
     <string name="pref_title_iat_show">显示听写界面</string>
     <string name="previous">Go to previous</string>
     <string name="prompt_password">密码</string>
-    <string name="prompt_user">账号</string>
+    <string name="prompt_user">请输入你的手机号码</string>
     <string name="public_service">公众号</string>
     <string name="pwd">密码</string>
     <string name="pwd_error">支付密码错误</string>
@@ -2378,6 +2479,8 @@
     <string name="renlingzhoingxin">认领中心</string>
     <string name="repassword">确认密码</string>
     <string name="req_code">请先获得验证码</string>
+    <string name="rg_code">发送验证码</string>
+    <string name="rg_username">用户昵称</string>
     <string name="rp_expire">该红包已超过24小时。如已领取,可在"我的红包"中查看</string>
     <string name="sanfenzhong">三分钟教学</string>
     <string name="search">搜索</string>
@@ -4514,9 +4617,9 @@ function login(form){
         <item name="android:gravity">center</item>
         <item name="android:layout_width">140px</item>
         <item name="android:layout_height">80px</item>
-        <item name="android:layout_marginLeft">25px</item>
-        <item name="android:paddingLeft">25px</item>
-        <item name="android:paddingRight">25px</item>
+        <item name="android:layout_marginLeft">18px</item>
+        <item name="android:paddingLeft">22px</item>
+        <item name="android:paddingRight">22px</item>
         <item name="android:background">@drawable/claiminfo_item_rb_bg</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/col_11624A</item>
@@ -4607,8 +4710,8 @@ function login(form){
     <style name="inteseting_rg_btn_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">35px</item>
-        <item name="android:textSize">30px</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/col_333333</item>
         <item name="android:gravity">center</item>
         <item name="android:button">@null</item>
@@ -4711,8 +4814,9 @@ function login(form){
         <item name="android:textColor">@color/col_909090</item>
     </style>
     <style name="relation_radio_button_styles">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/font_18</item>
@@ -4775,6 +4879,15 @@ function login(form){
     <style name="text_white_28">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">28dip</item>
+    </style>
+    <style name="tv_apply_vip_styles">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:layout_marginRight">32dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/font_38</item>
+        <item name="android:textColor">@color/white</item>
     </style>
     <style name="vertical_light_thin_divider">
         <item name="android:layout_height">match_parent</item>

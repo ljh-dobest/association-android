@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.bean.DealBuyBean;
 import com.issp.inspiration.listeners.OnReadDealBuyListener;
+import com.issp.inspiration.network.CoreErrorConstants;
 import com.issp.inspiration.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -40,6 +41,9 @@ public class ReadDealBuyInfoModel {
                     case 0:
                         listener.showError("查询失败");
                         break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
                 }
             }
         });
@@ -63,11 +67,11 @@ public class ReadDealBuyInfoModel {
                     case 200:
                         listener.dealBuyPraiseInfo("点赞成功");
                         break;
-                    case 100:
-                        listener.showError("已点赞");
-                        break;
                     case 0:
                         listener.showError("点赞失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

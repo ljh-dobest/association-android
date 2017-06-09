@@ -21,7 +21,9 @@ import com.issp.inspiration.adapter.IndexPageAdapter;
 import com.issp.inspiration.adapter.SimpleAdapter;
 import com.issp.inspiration.base.view.BaseMvpActivity;
 import com.issp.inspiration.bean.DealBuyBean;
+import com.issp.inspiration.bean.ImageUrlBean;
 import com.issp.inspiration.interfaces.IDealBuyListView;
+import com.issp.inspiration.network.HttpUtils;
 import com.issp.inspiration.presenters.DealBuyInfoPresenter;
 import com.issp.inspiration.ui.activity.AddArticleActivity;
 import com.issp.inspiration.ui.activity.CommentMessageActivity;
@@ -33,6 +35,7 @@ import com.issp.inspiration.utils.T;
 import com.issp.inspiration.view.BannerViewPager;
 import com.issp.inspiration.view.CustomGifHeader;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -71,6 +74,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     SimpleAdapter adapter;
     List<DealBuyBean> personList = new ArrayList<DealBuyBean>();
+    List<ImageUrlBean> imageUrlBeanList;
     GridLayoutManager layoutManager;
     private int mLoadCount = 0;
 
@@ -80,11 +84,6 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     private String userId;
     Banner homepage_banner;
-    private ArrayList<String> imgList;
-    private String[] mImageIds = new String[]{"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=699105693,866957547&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787324823,4149955059&fm=21&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2152422253,1846971893&fm=21&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3258213409,1470632782&fm=21&gp=0.jpg"};// 测试图片id
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -110,7 +109,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         headerView = adapter.setHeaderView(R.layout.view_banner, recyclerView);
 
         homepage_banner = (Banner) headerView.findViewById(R.id.homepage_banner);
-        initBanner();
+        initImageData();
 
         CustomGifHeader header = new CustomGifHeader(this);
         xRefreshView.setCustomHeaderView(header);
@@ -188,16 +187,18 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     }
 
+    private void initImageData() {
 
-    /* private void initViewPager() {
-         IndexPageAdapter pageAdapter = new IndexPageAdapter(this, mImageIds);
-         mBannerViewPager.setAdapter(pageAdapter);
-         mBannerViewPager.setParent(recyclerView);
-     }*/
+        Map<String, String> formData = new HashMap<String, String>(0);
+        formData.put("userId", userId);
+        formData.put("type", "5");
+        presenter.getImage(formData);
+    }
+
     private void initBanner() {
-        imgList = new ArrayList<>();
-        for (int i = 0; i < mImageIds.length; i++) {
-            imgList.add(mImageIds[i]);
+        List<String> imgList = new ArrayList<String>(0);
+        for (ImageUrlBean url : imageUrlBeanList) {
+            imgList.add(HttpUtils.IMAGE_RUL + url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -207,6 +208,15 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         homepage_banner.setDelayTime(5000);
         //banner设置方法全部调用完毕时最后调用
         homepage_banner.start();
+        homepage_banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Intent intent = new Intent(MainActivity.this, ReadDealBuyActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -237,6 +247,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, CommentMessageActivity.class);
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
                 }
@@ -283,6 +294,15 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         if (null != data && data.size() > 0) {
             adapter.setData(data, page);
         }
+    }
+
+    @Override
+    public void getImageUrlView(List<ImageUrlBean> bean) {
+
+        imageUrlBeanList = bean;
+        if (null != imageUrlBeanList && imageUrlBeanList.size() > 0)
+
+            initBanner();
     }
 
     @Override

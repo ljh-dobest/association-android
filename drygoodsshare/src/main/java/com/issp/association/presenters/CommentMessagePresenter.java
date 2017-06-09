@@ -1,6 +1,7 @@
 package com.issp.association.presenters;
 
 import com.issp.association.base.presenter.BasePersenter;
+import com.issp.association.bean.CommentsBean;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.bean.ShareCommentBean;
 import com.issp.association.interfaces.ICommentMessageListView;
@@ -11,6 +12,8 @@ import com.issp.association.model.CommentMessageModel;
 import com.issp.association.model.ShareInfoModel;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  *Created by T-BayMax on 2017/3/20.
@@ -23,12 +26,12 @@ public class CommentMessagePresenter extends BasePersenter<ICommentMessageListVi
         recommendInfoMoudle = new CommentMessageModel();
     }
 
-    public void ShareInfoPresenter(String userId) {
-        recommendInfoMoudle.getCommentMessageInfo(userId, this);
+    public void ShareInfoPresenter(Map<String, String> formData ) {
+        recommendInfoMoudle.getCommentMessageInfo(formData, this);
     }
 
     @Override
-    public void getCommentMessageInfo(ArrayList<ShareCommentBean> data) {
+    public void getCommentMessageInfo(List<CommentsBean> data) {
         mView.setCommentMessageListData(data);
     }
 

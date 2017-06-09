@@ -41,6 +41,8 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
     TextView ltMainTitle;
     @BindView(R.id.lt_main_title_right)
     TextView ltMainTitleRight;
+    @BindView(R.id.tv_comment_number)
+    TextView tvCommentNumber;
     @BindView(R.id.editText)
     EditText editText;
 
@@ -87,7 +89,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         Intent intent = getIntent();
         userId=intent.getStringExtra("userId");
         bean = (DealBuyBean) intent.getSerializableExtra("bean");
-
+        tvCommentNumber.setText("评论（"+bean.getCommentNumber()+"）");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
 

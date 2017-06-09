@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
 import com.issp.association.R;
+import com.issp.association.bean.CommentsBean;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.bean.ShareCommentBean;
 import com.issp.association.network.HttpUtils;
@@ -29,27 +30,26 @@ import butterknife.ButterKnife;
  */
 
 public class ShareCommentListAdapter extends BaseRecyclerAdapter<ShareCommentListAdapter.ShareCommentListAdapterViewHolder> {
-    private List<ShareCommentBean> list;
+    private List<CommentsBean> list;
     private Context context;
     private int position;
 
-    public ShareCommentListAdapter(List<ShareCommentBean> list, Context context) {
+    public ShareCommentListAdapter(List<CommentsBean> list, Context context) {
         this.context=context;
         this.list = list;
     }
 
     @Override
     public void onBindViewHolder(ShareCommentListAdapterViewHolder holder, int position, boolean isItem) {
-       /* if (isItem){
-        ShareCommentBean bean = list.get(position);
-        Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserId().getUserPortraitUrl())
+        if (isItem){
+            CommentsBean bean = list.get(position);
+        Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
                 .into(holder.ivShareIcon);
-        holder.tvShareUserName.setText(bean.getUserId().getNickname());
+        holder.tvShareUserName.setText(bean.getNickname());
         holder.tvOperation.setText(bean.getContent());
-        holder.tvShareTitle.setText(bean.getShareId().getArcTitle());
+        holder.tvShareTitle.setText(bean.getContent());
         holder.tvCommentTime.setText(bean.getCommentTime());
         }
-*/
 
     }
 
@@ -69,7 +69,7 @@ public class ShareCommentListAdapter extends BaseRecyclerAdapter<ShareCommentLis
         return new ShareCommentListAdapterViewHolder(view, false);
     }
 
-    public void setData(List<ShareCommentBean> list) {
+    public void setData(List<CommentsBean> list) {
         this.list = list;
         notifyDataSetChanged();
     }
@@ -83,7 +83,7 @@ public class ShareCommentListAdapter extends BaseRecyclerAdapter<ShareCommentLis
         return vh;
     }
 
-    public void insert(ShareCommentBean person, int position) {
+    public void insert(CommentsBean person, int position) {
         insert(list, person, position);
     }
 
@@ -118,7 +118,7 @@ public class ShareCommentListAdapter extends BaseRecyclerAdapter<ShareCommentLis
         }
     }
 
-    public ShareCommentBean getItem(int position) {
+    public CommentsBean getItem(int position) {
         if (position < list.size())
             return list.get(position);
         else

@@ -11,8 +11,11 @@ import android.widget.TextView;
 import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.base.adpater.BaseRecyclerViewAdapter;
+import com.issp.association.crowdfunding.bean.CommentsBean;
 import com.issp.association.crowdfunding.bean.MessageBean;
 
+import com.issp.association.crowdfunding.network.HttpUtils;
+import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -29,27 +32,26 @@ import butterknife.ButterKnife;
  */
 
 public class MessageListAdapter extends BaseRecyclerViewAdapter<MessageListAdapter.ShareCommentListAdapterViewHolder,MessageBean> {
-    private List<MessageBean> list;
+    private List<CommentsBean> list;
     private Context context;
     private int position;
 
-    public MessageListAdapter(List<MessageBean> list, Context context) {
+    public MessageListAdapter(List<CommentsBean> list, Context context) {
         this.list = list;
         this.context=context;
     }
 
     @Override
     public void onBindViewHolder(ShareCommentListAdapterViewHolder holder, int position, boolean isItem) {
-      /*  ShareCommentBean bean = list.get(position);
+        CommentsBean bean = list.get(position);
 
             holder.itemView.setTag(bean);
-        Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserId().getUserPortraitUrl())
+        Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
                 .into(holder.ivShareIcon);
-        holder.tvShareUserName.setText(bean.getUserId().getNickname());
-        holder.tvOperation.setText(bean.getContent());
-        holder.tvShareTitle.setText(bean.getShareId().getArcTitle());
+        holder.tvShareUserName.setText(bean.getNickname());
+       // holder.tvOperation.setText(bean.getContent());
+        holder.tvShareTitle.setText(bean.getContent());
         holder.tvCommentTime.setText(bean.getCommentTime());
-*/
 
     }
 
@@ -69,7 +71,7 @@ public class MessageListAdapter extends BaseRecyclerViewAdapter<MessageListAdapt
         return new ShareCommentListAdapterViewHolder(view, false);
     }
 
-    public void setData(List<MessageBean> list) {
+    public void setData(List<CommentsBean> list) {
         this.list = list;
         notifyDataSetChanged();
     }
@@ -83,7 +85,7 @@ public class MessageListAdapter extends BaseRecyclerViewAdapter<MessageListAdapt
         return vh;
     }
 
-    public void insert(MessageBean person, int position) {
+    public void insert(CommentsBean person, int position) {
         insert(list, person, position);
     }
 
@@ -120,7 +122,7 @@ public class MessageListAdapter extends BaseRecyclerViewAdapter<MessageListAdapt
         }
     }
 
-    public MessageBean getItem(int position) {
+    public CommentsBean getItem(int position) {
         if (position < list.size())
             return list.get(position);
         else

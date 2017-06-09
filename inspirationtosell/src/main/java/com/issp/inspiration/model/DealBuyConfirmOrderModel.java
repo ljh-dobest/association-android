@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.listeners.OnDealBuyConfirmOrderListener;
+import com.issp.inspiration.network.CoreErrorConstants;
 import com.issp.inspiration.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -39,6 +40,9 @@ public class DealBuyConfirmOrderModel {
                         break;
                     case 0:
                         listener.showError("sorry！你的贡献币不足");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

@@ -6,6 +6,7 @@ import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.CommentsBean;
 import com.issp.association.crowdfunding.bean.ProductCommentBean;
 import com.issp.association.crowdfunding.listeners.OnProductCommentListListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -44,6 +45,9 @@ public class ProductCommentModel {
                         break;
                     case 0:
                         listener.showError("还没有任何评论");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }

@@ -4,6 +4,10 @@
         "source": "F:\\NB\\association-android\\platform\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "F:\\NB\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\rest.png",
+        "source": "F:\\NB\\association-android\\platform\\src\\main\\res\\mipmap-xxhdpi\\rest.png"
+    },
+    {
         "merged": "F:\\NB\\association-android\\platform\\bin\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
         "source": "F:\\NB\\association-android\\platform\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     }

@@ -5,14 +5,14 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <com.ike.coalition.platform.view.GifView
+    <com.ike.sq.commonwealactives.view.GifView
         android:id="@+id/gif1"
         android:layout_width="15dp"
         android:layout_height="33dp"
         android:layout_marginTop="10dp"
         android:enabled="false" />
 
-    <com.ike.coalition.platform.view.GifView
+    <com.ike.sq.commonwealactives.view.GifView
         android:id="@+id/gif2"
         android:layout_width="24dp"
         android:layout_height="10dp"

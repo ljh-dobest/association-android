@@ -11,11 +11,12 @@
             android:lines="1"
             />
         <TextView
+            android:layout_marginLeft="5dp"
             android:id="@+id/tv_shareFriendContent_sendComment"
             android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/vote_now"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:background="@drawable/interest_join"
             android:text="发送"
             />
 </com.zhy.autolayout.AutoLinearLayout>

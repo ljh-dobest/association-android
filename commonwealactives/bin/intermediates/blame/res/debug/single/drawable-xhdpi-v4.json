@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png",
@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\design_ic_visibility_off.png",
@@ -204,12 +204,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\gallery_ucrop_ic_reset.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\09d7e1b6465e62818e4efa452f6e820320694dfa\\output\\res\\drawable-xhdpi-v4\\gallery_ucrop_ic_reset.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\gallery_ucrop_ic_next.png",

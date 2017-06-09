@@ -223,6 +223,8 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
             llBuy.setVisibility(View.GONE);
             llPlay.setVisibility(View.VISIBLE);
             wvPlay.loadData(data.getDealContent(), "text/html; charset=UTF-8", null);
+        }else {
+            llBuyAndPlay.setVisibility(View.GONE);
         }
         data.setUserId(userId);
         bean = data;

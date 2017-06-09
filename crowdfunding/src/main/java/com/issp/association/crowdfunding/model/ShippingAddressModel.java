@@ -4,8 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.OrderDetailBean;
+import com.issp.association.crowdfunding.bean.ShippingAddressBean;
 import com.issp.association.crowdfunding.listeners.OnOrderDetailListListener;
 import com.issp.association.crowdfunding.listeners.OnShippingAddressListListener;
+import com.issp.association.crowdfunding.network.CoreErrorConstants;
 import com.issp.association.crowdfunding.network.HttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -34,16 +36,18 @@ public class ShippingAddressModel {
             @Override
             public void onResponse(String response, int id) {
                 Gson gson=new Gson();
-                Type type = new TypeToken<Code<List<OrderDetailBean>>>() {
+                Type type = new TypeToken<Code<List<ShippingAddressBean>>>() {
                 }.getType();
-                Code<List<OrderDetailBean>> code = gson.fromJson(response,type);
+                Code<List<ShippingAddressBean>> code = gson.fromJson(response,type);
                 switch (code.getCode()) {
                     case 200:
-                        ArrayList<OrderDetailBean> data= (ArrayList<OrderDetailBean>) code.getData();
-                        listener.getShippingAddressInfo(data);
+                        listener.getShippingAddressInfo(code.getData());
                         break;
                     case 0:
                         listener.showError("查询失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                         break;
                 }
             }
