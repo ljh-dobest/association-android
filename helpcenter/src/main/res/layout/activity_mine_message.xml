@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_mine_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.min.helpcenter.ui.activitys.MineMessageActivity">
+<com.zhy.autolayout.AutoRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+  >
+ <ImageView
+     android:layout_marginLeft="20px"
+     android:layout_centerVertical="true"
+     android:id="@+id/iv_mineMessage_back"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:src="@mipmap/btn_back"/>
+   <RadioGroup
+       android:id="@+id/rg_mineMessage"
+       android:layout_centerInParent="true"
+       android:layout_centerHorizontal="true"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+       <RadioButton
+           android:id="@+id/rb_mineMessage_myHelp"
+           android:layout_width="150dp"
+           android:layout_height="45dp"
+           android:button="@null"
+           android:background="@drawable/my_help_bg"
+           android:gravity="center"
+           android:checked="true"
+           android:textColor="@color/black"
+           android:text="我的求助"/>
+       <RadioButton
+           android:id="@+id/rb_mineMessage_myAnswer"
+           android:layout_width="150dp"
+           android:layout_height="45dp"
+           android:button="@null"
+           android:gravity="center"
+           android:background="@drawable/my_answer_bg"
+           android:textColor="@color/col_10DB9F"
+           android:text="我的回答"/>
+   </RadioGroup>
+</com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/col_333333"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_mineMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+
+</com.zhy.autolayout.AutoLinearLayout>

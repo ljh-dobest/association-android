@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:id="@+id/iv_item1_image"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="170dp"
+        android:id="@+id/tv_item1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_34"
+        android:textColor="@color/col_121212"
+        android:textStyle="bold"
+        android:text="你们知道吗？公众号能赚钱！！"/>
+
+    <LinearLayout
+       android:layout_alignParentBottom="true"
+        android:layout_marginRight="170dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ungood"/>
+        <TextView
+            android:id="@+id/tv_item1_goodNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:textSize="@dimen/font_24"
+            android:textColor="@color/col_999999"
+            android:text="22"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/discusstion"/>
+        <TextView
+
+            android:id="@+id/tv_item1_discussNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:textSize="@dimen/font_24"
+            android:textColor="@color/col_999999"
+            android:text="111"/>
+        <TextView
+            android:id="@+id/tv_item1_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/font_24"
+            android:textColor="@color/col_999999"
+            android:text="40分钟前"/>
+
+    </LinearLayout>
+</RelativeLayout>

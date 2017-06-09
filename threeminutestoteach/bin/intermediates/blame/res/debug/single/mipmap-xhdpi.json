@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ungood.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\ungood.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\share.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\share.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\vedio_start.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\vedio_start.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\add.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\add.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\good.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\good.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\discusstion.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\discusstion.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\iask.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\iask.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\vedio_stop.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\vedio_stop.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\btn_back.png",
+        "source": "E:\\project\\xiangmu\\association-android\\threeminutestoteach\\src\\main\\res\\mipmap-xhdpi\\btn_back.png"
+    }
+]
