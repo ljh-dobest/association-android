@@ -43,10 +43,13 @@ public class MineCardActivity extends BaseActivity {
     TextView tvMineCardContributionNum;
     @BindView(tv_mine_card_reputation)
     TextView tvMineCardReputation;
-    @BindView(R.id.tv_mine_card_favour)
-    TextView tvMineCardFavour;
+    @BindView(R.id.tv_mine_card_phone)
+    TextView tvMineCardPhone;
+    @BindView(R.id.tv_mine_card_birthday)
+    TextView tvMineCardBirthday;
+
     private SharedPreferences sp;
-    private String userPortraitUrl, userName, sex, useId, email,favour, recommendUserId,
+    private String userPortraitUrl, userName, sex, mobile, useId, email, favour, recommendUserId,
             birthday, address, experience, creditScore, contributionScore, claimUserId;
 
     @Override
@@ -65,6 +68,7 @@ public class MineCardActivity extends BaseActivity {
         sex = sp.getString(Const.LOGIN_SEX, "");
         useId = sp.getString(Const.LOGIN_ID, "");
         email = sp.getString(Const.LOGIN_EMAIL, "");
+        mobile = sp.getString(Const.LOGIN_PHONE, "");
         birthday = sp.getString(Const.LOGIN_BIRTHDAY, "");
         address = sp.getString(Const.LOGIN_ADDRESS, "");
         experience = sp.getString(Const.LOGIN_EXPERIENCE, "");
@@ -83,8 +87,9 @@ public class MineCardActivity extends BaseActivity {
         }
         tvMineCardAccount.setText(useId);
         tvMineCardEmail.setText(email);
-        tvMineCardFavour.setText(favour);
-        tvMineCardAddress.setText(address.replace(",",""));
+        tvMineCardBirthday.setText(birthday);
+        tvMineCardPhone.setText(mobile);
+        tvMineCardAddress.setText(address.replace(",", ""));
         tvMineCardRecommenerName.setText(recommendUserId);
         tvMineCardClaimerName.setText(claimUserId);
         tvMineCardContributionNum.setText(contributionScore);

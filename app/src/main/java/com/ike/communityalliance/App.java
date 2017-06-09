@@ -19,14 +19,21 @@ import com.ike.communityalliance.message.TalkTalkMessage;
 import com.ike.communityalliance.wedget.RongDatabaseDriver;
 import com.ike.communityalliance.wedget.RongDatabaseFilesProvider;
 import com.jaredrummler.android.processes.AndroidProcesses;
-import com.jaredrummler.android.processes.ProcessManager;
 import com.jaredrummler.android.processes.models.AndroidAppProcess;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.morgoo.droidplugin.PluginApplication;
-import com.morgoo.droidplugin.PluginHelper;
 import com.zhy.autolayout.config.AutoLayoutConifg;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.https.HttpsUtils;
+import com.zhy.http.okhttp.log.LoggerInterceptor;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
 
 import io.rong.imageloader.cache.disc.naming.Md5FileNameGenerator;
 import io.rong.imageloader.core.DisplayImageOptions;
@@ -37,6 +44,7 @@ import io.rong.imkit.RongIM;
 import io.rong.imkit.widget.provider.RealTimeLocationMessageProvider;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.ipc.RongExceptionHandler;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by Min on 2016/11/23.
@@ -99,6 +107,7 @@ public class App extends PluginApplication {
             /**
              * 初始化
              */
+            initOkHttp();
             RongIM.init(this);
             //自定义功能
             AppContext.init(this);
@@ -117,7 +126,6 @@ public class App extends PluginApplication {
             }
 
             openSealDBIfHasCachedToken();
-
             options = new DisplayImageOptions.Builder()
                     .showImageForEmptyUri(R.mipmap.ic_launcher) //设置图片Uri为空或是错误的时候显示的图片
                     .showImageOnFail(R.mipmap.ic_launcher) //设置图片加载/解码过程中错误时候显示的图片
@@ -136,11 +144,34 @@ public class App extends PluginApplication {
                     .diskCacheFileNameGenerator(new Md5FileNameGenerator())
                     .defaultDisplayImageOptions(options)
                     .build();
-
-            //Initialize ImageLoader with configuration.
             ImageLoader.getInstance().init(config);
         }
-       // PluginHelper.getInstance().applicationOnCreate(getBaseContext());
+    }
+  //初始化OKHttp,
+    private void initOkHttp() {
+        InputStream is = null;
+        try {
+            is = getAssets().open("bjike.crt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, is, null);
+
+//        CookieJarImpl cookieJar1 = new CookieJarImpl(new MemoryCookieStore());
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(8, TimeUnit.SECONDS)
+                .readTimeout(8, TimeUnit.SECONDS)
+                .addInterceptor(new LoggerInterceptor("TAG"))
+                .hostnameVerifier(new HostnameVerifier() {
+                    @Override
+                    public boolean verify(String hostname, SSLSession session) {
+                        return true;
+                    }
+                })
+                .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+                .build();
+        OkHttpUtils.initClient(okHttpClient);
+
     }
 
     public static DisplayImageOptions getOptions() {
@@ -191,9 +222,4 @@ public class App extends PluginApplication {
         friendInfoDAO.delete(userid);
     }
 
-/*    @Override
-    protected void attachBaseContext(Context base) {
-        PluginHelper.getInstance().applicationAttachBaseContext(base);
-        super.attachBaseContext(base);
-    }*/
 }

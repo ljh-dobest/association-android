@@ -55,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:hint="@string/rg_username"
+            android:maxLength="6"
             android:inputType="text"
             android:maxLines="1"/>
 

@@ -135,12 +135,14 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     private ArrayList<ProvinceBean> data;
     private ArrayList<CityBean> citys;
     private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_applay_vip);
         ButterKnife.bind(this);
         sp = getSharedPreferences("config", MODE_PRIVATE);
+        editor = sp.edit();
         userId = sp.getString(Const.LOGIN_ID, "");
         presenter.getParserData(this, "data.txt");
         initView();
@@ -164,6 +166,8 @@ public class PersonalApplayVipActivity extends BaseMvpActivity<IPersonalApplayVi
     @Override
     public void succeedToRecommed(String recommendId) {
      T.showShort(this,"恭喜您！已成为VIP用户！");
+        editor.putString(Const.LOGIN_VIP,"1");
+        editor.commit();
         finish();
     }
 

@@ -23,8 +23,6 @@ public class MineQRCodeActivity extends BaseActivity {
     XCRoundRectImageView ivMineQRUserIcon;
     @BindView(R.id.tv_mine_QR_name)
     TextView tvMineQRName;
-    @BindView(R.id.tv_mine_QR_age)
-    TextView tvMineQRAge;
     @BindView(R.id.iv_mine_QR_sex)
     ImageView ivMineQRSex;
     @BindView(R.id.iv_mine_QR_code)
@@ -32,7 +30,6 @@ public class MineQRCodeActivity extends BaseActivity {
 private String userId;
 private String userName;
 private String sex;
-private String age;
 private String userPortraitUrl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +43,10 @@ private String userPortraitUrl;
         userId=getIntent().getStringExtra("userId");
         userName=getIntent().getStringExtra("userName");
         sex=getIntent().getStringExtra("sex");
-        age=getIntent().getStringExtra("age");
         userPortraitUrl=getIntent().getStringExtra("userPortraitUrl");
         Bitmap codeImg= EncodingUtils.createQRCode("BJIKE-"+userId,400,400,null);
         Picasso.with(this).load(userPortraitUrl).into(ivMineQRUserIcon);
         tvMineQRName.setText(userName);
-        tvMineQRAge.setText(age);
         ivMineQRSex.setImageResource(sex.equals("1")?R.drawable.mine_man:R.drawable.mine_women);
         ivMineQRCode.setImageBitmap(codeImg);
     }

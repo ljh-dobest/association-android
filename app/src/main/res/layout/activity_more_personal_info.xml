@@ -131,7 +131,7 @@
                 style="@style/claimInfo_item_ll_styles">
                 <TextView
                     style="@style/claimInfo_tv_styles"
-                    android:text="地址:" />
+                    android:text="籍贯:" />
                 <Spinner
                     style="@style/claimInfo_item_sp_styles"
                     android:id="@+id/sp_personal_more_province"

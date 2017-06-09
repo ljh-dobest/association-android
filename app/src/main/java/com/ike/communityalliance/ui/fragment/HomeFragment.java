@@ -60,6 +60,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     private ArrayList<String> imgList;
     private SharedPreferences sp;
     private String useId;
+    private String checkVip;
     private ArrayList<String> data;
     private List<AdvsBean> advsBeanList;
     private HomePageLVAdapter adapter;
@@ -79,6 +80,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
         ButterKnife.bind(this, containerView);
         sp = getContext().getSharedPreferences("config", Context.MODE_PRIVATE);
         useId = sp.getString(Const.LOGIN_ID, "");
+        checkVip=sp.getString(Const.LOGIN_VIP,"0");
         initView();
         getHomePageData(useId);
         return containerView;
@@ -104,7 +106,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     private void initListView() {
         homepage_lv.addHeaderView(homepage_lv_header);
         homepage_lv.addHeaderView(home_lv_header2);
-        adapter = new HomePageLVAdapter(getContext());
+        adapter = new HomePageLVAdapter(getContext(),checkVip);
         homepage_lv.setAdapter(adapter);
         homepage_lv.setOnScrollListener(this);
         homepage_lv.setOnItemClickListener(this);

@@ -150,13 +150,41 @@
                         android:orientation="horizontal">
                         <TextView
                             style="@style/mine_tv_styles"
-                            android:text="爱好:"/>
+                            android:text="电话:"/>
                         <TextView
-                            android:id="@+id/tv_mine_favour"
+                            android:id="@+id/tv_mine_phone"
                             style="@style/mine_tv_styles"
                             android:layout_marginLeft="10dp"
                             android:text=""/>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            style="@style/mine_tv_styles"
+                            android:text="生日:"/>
+                        <TextView
+                            android:id="@+id/tv_mine_birthday"
+                            style="@style/mine_tv_styles"
+                            android:layout_marginLeft="10dp"
+                            android:text=""/>
+                    </LinearLayout>
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--style="@style/mine_tv_styles"-->
+                            <!--android:text="爱好:"/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_mine_favour"-->
+                            <!--style="@style/mine_tv_styles"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:text=""/>-->
+                    <!--</LinearLayout>-->
                     <LinearLayout
                         android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"

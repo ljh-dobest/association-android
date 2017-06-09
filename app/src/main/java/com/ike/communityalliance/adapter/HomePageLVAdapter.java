@@ -17,6 +17,7 @@ import com.ike.communityalliance.bean.HomePageBean;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.ui.activity.ClaimInfoActivity;
 import com.ike.communityalliance.wedget.image.CircleImageView;
+import com.ike.mylibrary.util.T;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -33,7 +34,9 @@ public class HomePageLVAdapter extends BaseAdapter {
     private List<ClaimUsers> claimUsersList=new ArrayList<>();
     private List<ActivesBean> activesBeanList=new ArrayList<>();
      private  Context mContent;
-    public HomePageLVAdapter(Context context) {
+    private String checkVip;
+    public HomePageLVAdapter(Context context,String checkVip) {
+        this.checkVip=checkVip;
         this.mContent=context;
     }
   public void setData(HomePageBean homePageBean){
@@ -94,6 +97,10 @@ public class HomePageLVAdapter extends BaseAdapter {
          holder.tv_home_item_toClaim.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
+                 if(checkVip.equals("0")){
+                     T.showShort(mContent,"只有VIP才能认领用户");
+                     return;
+                 }
                  Intent intent=new Intent(mContent, ClaimInfoActivity.class);
                  ClaimPeopleBean claimPeopleBean=new ClaimPeopleBean(claimUsers.getUserId(),claimUsers.getRecommendId(),claimUsers.getNickname(),claimUsers.getUserPortraitUrl());
                  intent.putExtra("claimPeopleBean",claimPeopleBean);

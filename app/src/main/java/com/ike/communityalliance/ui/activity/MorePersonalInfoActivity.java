@@ -144,9 +144,10 @@ public class MorePersonalInfoActivity extends BaseMvpActivity<IMorePersonalInfoV
     private ArrayList<CityBean> citys;
     private List<String> addressList=new ArrayList<>();
     private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
     private String userId;
     private MorePersonalInfo morePersonalInfo;
-    private String fullName, mobile, birthday, QQ, wechat, fatherName, motherName, company, position, industry, homeplace,
+    private String fullName, mobile, birthday, QQ, wechat, fatherName, motherName, company, position, industry="1", homeplace,
             finishSchool, constellation, bloodType, marriage="0", spouseName, childrenName, childrenSchool;
     private String SfullName = "0", Smobile = "0", Sbirthday = "0", Sposition = "0", SfatherName = "0", SmotherName = "0", SfinishSchool = "0",
             Smarriage = "0", SspouseName = "0", SchildrenName = "0", SchildrenSchool = "0";
@@ -157,6 +158,7 @@ public class MorePersonalInfoActivity extends BaseMvpActivity<IMorePersonalInfoV
         setContentView(R.layout.activity_more_personal_info);
         ButterKnife.bind(this);
         sp = getSharedPreferences("config", MODE_PRIVATE);
+        editor = sp.edit();
         userId = sp.getString(Const.LOGIN_ID, "");
         getMorePersonalInfoData(userId);
         initView();
@@ -419,6 +421,9 @@ public class MorePersonalInfoActivity extends BaseMvpActivity<IMorePersonalInfoV
     @Override
     public void saveSucceed() {
         LoadDialog.dismiss(this);
+        editor.putString(Const.LOGIN_BIRTHDAY,birthday);
+        editor.putString(Const.LOGIN_PHONE,mobile);
+        editor.commit();
         T.showShort(this, "保存成功");
         finish();
     }

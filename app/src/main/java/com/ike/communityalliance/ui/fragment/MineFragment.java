@@ -84,11 +84,16 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     LinearLayout llMineQRCode;
     @BindView(R.id.ll_mine_applay_vip)
     LinearLayout llMineApplayVip;
-    @BindView(R.id.tv_mine_favour)
-    TextView tvMineFavour;
+    @BindView(R.id.tv_mine_phone)
+    TextView tvMinePhone;
+    @BindView(R.id.tv_mine_birthday)
+    TextView tvMineBirthday;
+
+    //    @BindView(R.id.tv_mine_favour)
+//    TextView tvMineFavour;
     private SharedPreferences sp;
     private Context mContext;
-    private String userPortraitUrl, userName, nickName, age, sex, useId, email, recommendUserId,
+    private String userPortraitUrl, mobile, birthday, nickName, sex, useId, email, recommendUserId,
             address, experience, creditScore, contributionScore, claimUserId, favour;
 
     @Override
@@ -99,13 +104,15 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         return containerView;
     }
 
-    private void initView(){
+    private void initView() {
         mContext = getContext();
         sp = mContext.getSharedPreferences("config", Context.MODE_PRIVATE);
         userPortraitUrl = sp.getString(Const.userPortraitUrl, "");
         nickName = sp.getString(Const.LOGIN_NICKNAME, "");
         sex = sp.getString(Const.LOGIN_SEX, "");
         useId = sp.getString(Const.LOGIN_ID, "");
+        mobile = sp.getString(Const.LOGIN_PHONE, "");
+        birthday = sp.getString(Const.LOGIN_BIRTHDAY, "");
         email = sp.getString(Const.LOGIN_EMAIL, "");
         favour = sp.getString(Const.LOGIN_FAVOUR, "");
         address = sp.getString(Const.LOGIN_ADDRESS, "");
@@ -125,10 +132,13 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         }
         tvMineAccount.setText(useId);
         tvMineEmail.setText(email);
-        tvMineFavour.setText(favour);
+
+//        tvMineFavour.setText(favour);
         tvMineAddress.setText(address.replace(",", ""));
         tvMineRecommenerName.setText(recommendUserId);
         tvMineClaimerName.setText(claimUserId);
+        tvMineBirthday.setText(birthday);
+        tvMinePhone.setText(mobile);
         tvMineContributionNum.setText(contributionScore);
         tv_mine_creditScore.setText(creditScore);
     }
@@ -187,7 +197,6 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
                 intent.putExtra("userPortraitUrl", userPortraitUrl);
                 intent.putExtra("userName", nickName);
                 intent.putExtra("sex", sex);
-                intent.putExtra("age", age);
                 startActivity(intent);
                 break;
             case R.id.ll_mine_feedback:
@@ -207,6 +216,10 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         if (requestCode == 110) {
             initView();
         }
-     }
+    }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
 }
