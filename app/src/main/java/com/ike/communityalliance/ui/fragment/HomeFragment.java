@@ -190,6 +190,10 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
         if (parent.getId() == R.id.homepage_gv) {
             switch (position) {
                 case 0:
+                    if(checkVip.equals("0")){
+                        T.showShort(getContext(),"只有VIP才能认领用户");
+                        return;
+                    }
                     startActivity(new Intent(getActivity(), ClaimActiviy.class));
                     break;
                 default:

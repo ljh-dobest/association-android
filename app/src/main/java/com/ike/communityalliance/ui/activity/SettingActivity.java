@@ -12,12 +12,15 @@ import android.widget.TextView;
 
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseActivity;
+import com.ike.communityalliance.bean.Code;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.db.FriendInfoDAOImpl;
 import com.ike.communityalliance.db.GroupMemberDAOImpl;
 import com.ike.communityalliance.db.GroupsDAOImpl;
 import com.kyleduo.switchbutton.SwitchButton;
 import com.zhy.autolayout.AutoLinearLayout;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -85,6 +88,7 @@ public class SettingActivity extends BaseActivity {
                                 groupMemberDAO.delete(userId);
                                 ImageLoader.getInstance().clearDiskCache();
                                 startActivity(new Intent(SettingActivity.this, LoginActivity.class));
+                                EventBus.getDefault().post(new Code<Object>());
                                 finish();
                             }
                         })
