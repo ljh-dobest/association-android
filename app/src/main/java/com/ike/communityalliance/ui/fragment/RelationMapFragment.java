@@ -65,8 +65,8 @@ public class RelationMapFragment extends BaseMvpFragment<IRelationMapView, Relat
     public void onRelationSucceed(RelationBean relation) {
         Picasso.with(getActivity()).load(HttpUtils.IMAGE_RUL+relation.getBeRecommender().getUserPortraitUrl())
                 .transform(new CircleTransform(relation.getBeRecommender().getNickname())).into(iv_recommender);
-        Picasso.with(getActivity()).load(HttpUtils.IMAGE_RUL+relation.getWasClaimed().getUserPortraitUrl())
-                .transform(new CircleTransform(relation.getWasClaimed().getNickname())).into(iv_was_claimed);
+       /* Picasso.with(getActivity()).load(HttpUtils.IMAGE_RUL+relation.getWasClaimed().getUserPortraitUrl())
+                .transform(new CircleTransform(relation.getWasClaimed().getNickname())).into(iv_was_claimed);*/
        /* tv_mender.setText();
         tv_claim*/
     }

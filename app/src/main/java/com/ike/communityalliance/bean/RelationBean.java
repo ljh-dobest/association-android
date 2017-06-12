@@ -12,7 +12,8 @@ public class RelationBean implements Serializable {
     private List<UserInfo> recommender;     //该用户推荐人列表
     private UserInfo beRecommender;         //其他用户推荐该用户
     private List<UserInfo> claimUser;       //该用户认领用户列表
-    private UserInfo wasClaimed;            //其他用户认领该用户
+    private List<UserInfo> wasClaimed;            //其他用户认领该用户
+
 
     public List<UserInfo> getRecommender() {
         return recommender;
@@ -38,11 +39,11 @@ public class RelationBean implements Serializable {
         this.claimUser = claimUser;
     }
 
-    public UserInfo getWasClaimed() {
+    public List<UserInfo> getWasClaimed() {
         return wasClaimed;
     }
 
-    public void setWasClaimed(UserInfo wasClaimed) {
+    public void setWasClaimed(List<UserInfo> wasClaimed) {
         this.wasClaimed = wasClaimed;
     }
 }
