@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "E:\\project\\xiangmu\\association-android\\commonwealactives\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\rest.png",
+        "source": "E:\\project\\xiangmu\\association-android\\commonwealactives\\src\\main\\res\\mipmap-hdpi\\rest.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "E:\\project\\xiangmu\\association-android\\commonwealactives\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    }
+]
