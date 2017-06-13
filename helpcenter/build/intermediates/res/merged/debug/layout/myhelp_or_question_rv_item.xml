@@ -37,15 +37,13 @@
             android:text="2个小时前"/>
     </com.zhy.autolayout.AutoLinearLayout>
 
-    <TextView
-        android:layout_marginTop="10px"
-        android:id="@+id/tv_mineMessage_item_content"
+    <jp.wasabeef.richeditor.RichEditor
+        android:id="@+id/et_mineMessage_item_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/col_333333"
-        android:lines="3"
-        android:textSize="24px"
-        android:text="瑟瑟发抖积分升级版水电费等所发生的" />
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_marginTop="10px"
         android:layout_marginBottom="20px"

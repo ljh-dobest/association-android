@@ -62,6 +62,7 @@
                 android:layout_width="34px"
                 android:layout_height="wrap_content"
                 android:src="@drawable/question_item_good_bg"
+                android:visibility="gone"
                 />
             <TextView
                 android:id="@+id/tv_answer_item_goodNum"
@@ -70,6 +71,7 @@
                 android:layout_marginLeft="9px"
                 android:textSize="24px"
                 android:textColor="@color/col_999999"
+                android:visibility="gone"
                 android:text="112"/>
     </com.zhy.autolayout.AutoLinearLayout>
 </com.zhy.autolayout.AutoLinearLayout>

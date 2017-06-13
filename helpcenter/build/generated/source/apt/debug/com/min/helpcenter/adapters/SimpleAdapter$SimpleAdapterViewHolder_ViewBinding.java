@@ -5,12 +5,12 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.TextView;
-
-import com.min.helpcenter.R;
-import com.min.helpcenter.views.CircleImageView;
-
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import com.min.helpcenter.R;
+import com.min.helpcenter.views.CircleImageView;
+import java.lang.IllegalStateException;
+import java.lang.Override;
 import jp.wasabeef.richeditor.RichEditor;
 
 public class SimpleAdapter$SimpleAdapterViewHolder_ViewBinding<T extends SimpleAdapter.SimpleAdapterViewHolder> implements Unbinder {

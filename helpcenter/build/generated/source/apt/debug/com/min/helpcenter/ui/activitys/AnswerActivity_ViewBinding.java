@@ -9,13 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.min.helpcenter.R;
-import com.min.helpcenter.views.CircleImageView;
-
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
+import com.min.helpcenter.R;
+import com.min.helpcenter.views.CircleImageView;
+import java.lang.IllegalStateException;
+import java.lang.Override;
 
 public class AnswerActivity_ViewBinding<T extends AnswerActivity> implements Unbinder {
   protected T target;

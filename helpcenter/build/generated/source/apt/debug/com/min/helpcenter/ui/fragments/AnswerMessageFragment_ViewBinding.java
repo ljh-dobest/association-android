@@ -5,11 +5,11 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import com.min.helpcenter.R;
-
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import com.min.helpcenter.R;
+import java.lang.IllegalStateException;
+import java.lang.Override;
 
 public class AnswerMessageFragment_ViewBinding<T extends AnswerMessageFragment> implements Unbinder {
   protected T target;

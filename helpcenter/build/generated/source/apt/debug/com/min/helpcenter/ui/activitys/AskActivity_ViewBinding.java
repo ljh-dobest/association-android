@@ -9,12 +9,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.min.helpcenter.R;
-
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
+import com.min.helpcenter.R;
+import java.lang.IllegalStateException;
+import java.lang.Override;
 import jp.wasabeef.richeditor.RichEditor;
 
 public class AskActivity_ViewBinding<T extends AskActivity> implements Unbinder {

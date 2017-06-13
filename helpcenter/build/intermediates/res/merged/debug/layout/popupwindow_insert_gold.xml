@@ -47,4 +47,14 @@
                 />
         </com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoRelativeLayout>
+    <Button
+        android:id="@+id/btn_ask_pop_insertgold"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/col_121212"
+        android:gravity="center"
+        android:background="@color/col_10DB9F"
+        android:text="确定"/>
 </com.zhy.autolayout.AutoLinearLayout>

@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-import com.min.helpcenter.R;
-
 import butterknife.Unbinder;
 import butterknife.internal.DebouncingOnClickListener;
 import butterknife.internal.Utils;
+import com.min.helpcenter.R;
+import java.lang.IllegalStateException;
+import java.lang.Override;
 
 public class MineMessageActivity_ViewBinding<T extends MineMessageActivity> implements Unbinder {
   protected T target;
