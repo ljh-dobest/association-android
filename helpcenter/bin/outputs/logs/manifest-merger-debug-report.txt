@@ -51,9 +51,15 @@ MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Min\.android\bu
 	android:icon
 		ADDED from E:\project\xiangmu\association-android\helpcenter\src\main\AndroidManifest.xml:13:9-40
 	android:theme
+<<<<<<< HEAD
 		ADDED from E:\project\xiangmu\association-android\helpcenter\src\main\AndroidManifest.xml:17:9-40
 	tools:replace
 		ADDED from E:\project\xiangmu\association-android\helpcenter\src\main\AndroidManifest.xml:16:9-38
+=======
+		ADDED from E:\project\xiangmu\association-android\helpcenter\src\main\AndroidManifest.xml:16:9-40
+	tools:replace
+		ADDED from E:\project\xiangmu\association-android\helpcenter\src\main\AndroidManifest.xml:17:9-38
+>>>>>>> ljh
 activity#com.min.helpcenter.HelpCenterActivity
 ADDED from E:\project\xiangmu\association-android\helpcenter\src\main\AndroidManifest.xml:18:9-24:20
 	android:name

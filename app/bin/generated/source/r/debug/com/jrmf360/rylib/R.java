@@ -7,6 +7,7 @@
 package com.jrmf360.rylib;
 
 public final class R {
+<<<<<<< HEAD
     public static final class anim {
         public static final int _push_bottom_in = 0x7f050000;
         public static final int _push_bottom_out = 0x7f050001;
@@ -1116,4 +1117,6 @@ public final class R {
         public static final int gridPasswordView_gpvTextColor = 0;
         public static final int gridPasswordView_gpvTextSize = 1;
     }
+=======
+>>>>>>> ljh
 }

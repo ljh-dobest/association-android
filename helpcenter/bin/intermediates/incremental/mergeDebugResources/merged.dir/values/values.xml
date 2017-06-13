@@ -701,9 +701,13 @@
     <dimen name="font_28px">28px</dimen>
     <dimen name="font_30">30px</dimen>
     <dimen name="font_32">32px</dimen>
+<<<<<<< HEAD
     <dimen name="font_34">17sp</dimen>
     <dimen name="font_36">18sp</dimen>
     <dimen name="font_38">19sp</dimen>
+=======
+    <dimen name="font_36">18sp</dimen>
+>>>>>>> ljh
     <dimen name="font_40">40px</dimen>
     <dimen name="font_44">22sp</dimen>
     <dimen name="font_48">48sp</dimen>
@@ -858,7 +862,11 @@
     <string name="address">地址</string>
     <string name="age">年龄</string>
     <string name="answer">认领答案</string>
+<<<<<<< HEAD
     <string name="app_name">autolayout</string>
+=======
+    <string name="app_name">HelpCenter</string>
+>>>>>>> ljh
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="birthday">生日</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -904,7 +912,10 @@
     <string name="group_activity_partake">参与人数</string>
     <string name="group_activity_place">群活动地点</string>
     <string name="group_activity_time">群活动时间</string>
+<<<<<<< HEAD
     <string name="help_center">求助中心</string>
+=======
+>>>>>>> ljh
     <string name="local_photo">本地图片</string>
     <string name="myself">我</string>
     <string name="new_friends">新的好友</string>

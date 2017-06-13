@@ -7,6 +7,7 @@
 package com.xys.libzxing;
 
 public final class R {
+<<<<<<< HEAD
     public static final class drawable {
         public static final int qr_code_bg = 0x7f02010e;
         public static final int scan_line = 0x7f02023f;
@@ -52,4 +53,6 @@ public final class R {
         public static final int AppBaseTheme = 0x7f0c000c;
         public static final int AppTheme = 0x7f0c00a8;
     }
+=======
+>>>>>>> ljh
 }

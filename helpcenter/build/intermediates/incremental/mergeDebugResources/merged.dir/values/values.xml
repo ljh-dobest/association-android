@@ -98,6 +98,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="base_title">#0195ff</color>
     <color name="black">#000000</color>
     <color name="black_2">#737373</color>
     <color name="blue">#FF3CB9FF</color>
@@ -191,6 +192,7 @@
     <color name="gray_normal">#666667</color>
     <color name="green">#73ec71</color>
     <color name="grey">#eeeeee</color>
+    <color name="group_list_gray">#999999</color>
     <color name="header_toast">#024ca1</color>
     <color name="header_toast_bg">#ccebfc</color>
     <color name="header_toast_line">#abdaf4</color>
@@ -218,6 +220,7 @@
     <color name="offline_down_title">#909090</color>
     <color name="offline_head_font">#FFFFFF</color>
     <color name="orange">#B8860B</color>
+    <color name="phone_bg">#f6f6f6</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -232,6 +235,7 @@
     <color name="ripple_material_light">#1f000000</color>
     <color name="sd">#990033</color>
     <color name="sddd">#eeeeee</color>
+    <color name="seal_bg">#f0f0f6</color>
     <color name="search">#c2c4c4</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
@@ -633,6 +637,14 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="calender_height">200dip</dimen>
+    <dimen name="calender_item_height">40dip</dimen>
+    <dimen name="calender_item_text_height">28dip</dimen>
+    <dimen name="city_name_size">20sp</dimen>
+    <dimen name="city_progress_size">11sp</dimen>
+    <dimen name="city_size_size">12sp</dimen>
+    <dimen name="content">14sp</dimen>
+    <dimen name="daily_con">12sp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -671,21 +683,31 @@
     <dimen name="design_tab_scrollable_min_width">72dp</dimen>
     <dimen name="design_tab_text_size">14sp</dimen>
     <dimen name="design_tab_text_size_2line">12sp</dimen>
+    <dimen name="dip90">90dip</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fiche_tile">18sp</dimen>
     <dimen name="font_12">12sp</dimen>
     <dimen name="font_14">14sp</dimen>
     <dimen name="font_16">16px</dimen>
+    <dimen name="font_170">85dp</dimen>
     <dimen name="font_18">18sp</dimen>
     <dimen name="font_20">20sp</dimen>
+    <dimen name="font_22">11sp</dimen>
     <dimen name="font_24">24sp</dimen>
     <dimen name="font_26">26px</dimen>
     <dimen name="font_28">28px</dimen>
+    <dimen name="font_28px">28px</dimen>
     <dimen name="font_30">30px</dimen>
     <dimen name="font_32">32px</dimen>
+    <dimen name="font_34">17sp</dimen>
+    <dimen name="font_36">18sp</dimen>
+    <dimen name="font_38">19sp</dimen>
     <dimen name="font_40">40px</dimen>
+    <dimen name="font_44">22sp</dimen>
     <dimen name="font_48">48sp</dimen>
+    <dimen name="font_58">29dp</dimen>
     <dimen name="gallery_bucket_margin">10dp</dimen>
     <dimen name="gallery_default_toolbar_bottom_margin">1dp</dimen>
     <dimen name="gallery_default_toolbar_divider_height">0.3dp</dimen>
@@ -720,6 +742,9 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+    <dimen name="huge">19sp</dimen>
+    <dimen name="interval">5dp</dimen>
+    <dimen name="interval_10">10dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
@@ -729,6 +754,10 @@
     <dimen name="lv_foot_ml_50">40dp</dimen>
     <dimen name="lv_item_header">50dp</dimen>
     <dimen name="lv_item_icon">40dp</dimen>
+    <dimen name="margin_left">15dp</dimen>
+    <dimen name="margin_right">15dp</dimen>
+    <dimen name="mindistance">10dip</dimen>
+    <dimen name="normal_margin">5dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -744,6 +773,15 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="offline_down_title_hight">25dp</dimen>
+    <dimen name="offset_title">5dp</dimen>
+    <dimen name="poi_field_size">14sp</dimen>
+    <dimen name="poi_title_size">14sp</dimen>
+    <dimen name="rest">13sp</dimen>
+    <dimen name="sliding_menu_width">80dp</dimen>
+    <dimen name="tile">16sp</dimen>
+    <dimen name="title_text_size">15sp</dimen>
+    <dimen name="width_title_leftImg">30dp</dimen>
     <drawable name="gallery_default_toolbar_close_image">@drawable/gallery_ucrop_ic_cross</drawable>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
@@ -779,6 +817,7 @@
     <integer name="hide_password_duration">320</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="QR_code">二维码</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -810,10 +849,32 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="actives_limit">活动限制人数</string>
+    <string name="activity_content">活动介绍:</string>
+    <string name="activity_member">活动人数:</string>
+    <string name="activity_name">活动名称:</string>
+    <string name="activity_place">活动地点:</string>
+    <string name="add_new">新增选项</string>
+    <string name="address">地址</string>
+    <string name="age">年龄</string>
+    <string name="answer">认领答案</string>
     <string name="app_name">HelpCenter</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="birthday">生日</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="call">拨打电话</string>
+    <string name="cancel">取消</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="chat">聊天</string>
+    <string name="claim_friends">好友认领</string>
+    <string name="code">验证码</string>
+    <string name="delete_friend">删除该好友</string>
+    <string name="dynamic">动态</string>
+    <string name="email">邮箱</string>
+    <string name="end_time">结束时间:</string>
+    <string name="enter">确定</string>
+    <string name="exit">退出</string>
+    <string name="friend">好友</string>
     <string name="gallery_all_image">所有图片</string>
     <string name="gallery_all_video">所有视频</string>
     <string name="gallery_default_media_empty_tips">空空如也</string>
@@ -836,14 +897,53 @@
     <string name="gallery_ucrop_label_original">原始比例</string>
     <string name="gallery_ucrop_menu_crop">裁剪</string>
     <string name="gallery_ucrop_mutate_exception_hint">Therefore, override color resource (ucrop_color_toolbar_widget) in your app to make it work on pre-L devices</string>
+    <string name="get_code">获取验证码</string>
+    <string name="group">群组</string>
+    <string name="group_activity_content">群活动内容</string>
+    <string name="group_activity_name">群活动名称</string>
+    <string name="group_activity_partake">参与人数</string>
+    <string name="group_activity_place">群活动地点</string>
+    <string name="group_activity_time">群活动时间</string>
+    <string name="local_photo">本地图片</string>
+    <string name="myself">我</string>
+    <string name="new_friends">新的好友</string>
+    <string name="nickname">昵称</string>
+    <string name="no_friend">暂无好友</string>
+    <string name="password">密码</string>
+    <string name="password_setting">密码设置</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="personal">个人信息</string>
+    <string name="phone">电话号码</string>
+    <string name="phoneOrgroups">电话号码/群ID</string>
+    <string name="photograph">拍照</string>
+    <string name="place">地点:</string>
+    <string name="pop_add_friend_or_group">添加好友/群</string>
+    <string name="pop_add_groups">申请入群</string>
+    <string name="pop_chat">发起聊天</string>
+    <string name="pop_create_group">创建群组</string>
+    <string name="pop_create_groupchat">新建群聊</string>
+    <string name="public_service">公众号</string>
+    <string name="pwd">密码</string>
+    <string name="question">认领问题</string>
+    <string name="register">注册</string>
+    <string name="repassword">确认密码</string>
+    <string name="search">搜索</string>
     <string name="search_menu_title">Search</string>
+    <string name="select_end_time">选择结束时间</string>
+    <string name="select_start_time">选择开始时间</string>
+    <string name="send_email">发送邮件</string>
+    <string name="send_message">发送信息</string>
+    <string name="send_sms">发送短信</string>
+    <string name="sex">性别</string>
+    <string name="start_time">开始时间:</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="time">时间:</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="user">用户名</string>
     <string name="xrefreshview_footer_hint_click">点击加载更多</string>
     <string name="xrefreshview_footer_hint_complete">已无更多数据</string>
     <string name="xrefreshview_footer_hint_fail">加载失败，请重试</string>
@@ -2065,6 +2165,12 @@
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">@dimen/font_32</item>
     </style>
@@ -2398,6 +2504,17 @@
         <item name="passwordToggleTint">@color/design_tint_password_toggle</item>
         <item name="passwordToggleContentDescription">@string/password_toggle_content_description</item>
     </style>
+    <style name="WinDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="dialogFullscreen">
+        <item name="android:windowFullscreen">true</item>
+    </style>
     <style name="gallery_ucrop_ImageViewWidgetIcon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -2433,6 +2550,19 @@
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
         <item name="android:clickable">true</item>
     </style>
+    <style name="tab_chat">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_36</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
     <style name="tv_helpcenten_main_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -2440,7 +2570,7 @@
         <item name="android:textColor">@color/col_333333</item>
     </style>
     <style name="tv_helpcenten_more_style">
-        <item name="android:padding">20sp</item>
+        <item name="android:padding">10dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">30px</item>

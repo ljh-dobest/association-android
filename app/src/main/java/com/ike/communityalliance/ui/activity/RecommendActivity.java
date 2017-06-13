@@ -128,7 +128,7 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     private String childrenSchool;
     private String curDegreeCode="0";
     private String position;
-    private String industry;
+    private String industry="0";
     private String email;
     private String wechat;
     private String QQ;

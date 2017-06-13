@@ -500,6 +500,7 @@ public final class R {
         public static final int abc_text_size_title_material_toolbar = 0x7f080004;
         public static final int disabled_alpha_material_dark = 0x7f08007f;
         public static final int disabled_alpha_material_light = 0x7f080080;
+<<<<<<< HEAD
         public static final int gallery_bucket_margin = 0x7f080097;
         public static final int gallery_default_toolbar_bottom_margin = 0x7f080098;
         public static final int gallery_default_toolbar_divider_height = 0x7f080099;
@@ -536,6 +537,44 @@ public final class R {
         public static final int notification_large_icon_height = 0x7f0800cc;
         public static final int notification_large_icon_width = 0x7f0800cd;
         public static final int notification_subtext_size = 0x7f0800d1;
+=======
+        public static final int gallery_bucket_margin = 0x7f080095;
+        public static final int gallery_default_toolbar_bottom_margin = 0x7f080096;
+        public static final int gallery_default_toolbar_divider_height = 0x7f080097;
+        public static final int gallery_default_toolbar_height = 0x7f080098;
+        public static final int gallery_default_toolbar_over_button_text_size = 0x7f080099;
+        public static final int gallery_default_toolbar_text_size = 0x7f08009a;
+        public static final int gallery_divider_decoration_height = 0x7f08009b;
+        public static final int gallery_grid_item_margin = 0x7f08009c;
+        public static final int gallery_margin = 0x7f08009d;
+        public static final int gallery_ucrop_default_crop_frame_stroke_width = 0x7f08009e;
+        public static final int gallery_ucrop_default_crop_grid_stroke_width = 0x7f08009f;
+        public static final int gallery_ucrop_default_crop_rect_corner_touch_area_line_length = 0x7f0800a0;
+        public static final int gallery_ucrop_default_crop_rect_corner_touch_threshold = 0x7f0800a1;
+        public static final int gallery_ucrop_default_crop_rect_min_size = 0x7f0800a2;
+        public static final int gallery_ucrop_height_crop_aspect_ratio_text = 0x7f0800a3;
+        public static final int gallery_ucrop_height_divider_shadow = 0x7f0800a4;
+        public static final int gallery_ucrop_height_horizontal_wheel_progress_line = 0x7f0800a5;
+        public static final int gallery_ucrop_height_wrapper_controls = 0x7f0800a6;
+        public static final int gallery_ucrop_height_wrapper_states = 0x7f0800a7;
+        public static final int gallery_ucrop_margin_horizontal_wheel_progress_line = 0x7f0800a8;
+        public static final int gallery_ucrop_margit_top_widget_text = 0x7f0800a9;
+        public static final int gallery_ucrop_padding_crop_frame = 0x7f0800aa;
+        public static final int gallery_ucrop_progress_size = 0x7f0800ab;
+        public static final int gallery_ucrop_size_dot_scale_text_view = 0x7f0800ac;
+        public static final int gallery_ucrop_size_wrapper_rotate_button = 0x7f0800ad;
+        public static final int gallery_ucrop_text_size_widget_text = 0x7f0800ae;
+        public static final int gallery_ucrop_width_horizontal_wheel_progress_line = 0x7f0800af;
+        public static final int highlight_alpha_material_colored = 0x7f0800b0;
+        public static final int highlight_alpha_material_dark = 0x7f0800b1;
+        public static final int highlight_alpha_material_light = 0x7f0800b2;
+        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f0800ba;
+        public static final int item_touch_helper_swipe_escape_max_velocity = 0x7f0800bb;
+        public static final int item_touch_helper_swipe_escape_velocity = 0x7f0800bc;
+        public static final int notification_large_icon_height = 0x7f0800ca;
+        public static final int notification_large_icon_width = 0x7f0800cb;
+        public static final int notification_subtext_size = 0x7f0800cf;
+>>>>>>> ljh
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha = 0x7f020000;
@@ -620,7 +659,11 @@ public final class R {
         public static final int gallery_button_selector = 0x7f020070;
         public static final int gallery_checkbox_selector = 0x7f020071;
         public static final int gallery_default_image = 0x7f020072;
+<<<<<<< HEAD
         public static final int gallery_default_toolbar_close_image = 0x7f0200b5;
+=======
+        public static final int gallery_default_toolbar_close_image = 0x7f0200be;
+>>>>>>> ljh
         public static final int gallery_ic_camera = 0x7f020073;
         public static final int gallery_ic_corner_gray = 0x7f020074;
         public static final int gallery_ic_corner_selector = 0x7f020075;
@@ -636,7 +679,11 @@ public final class R {
         public static final int gallery_ucrop_vector_ic_crop = 0x7f02007f;
         public static final int gallery_ucrop_vector_loader = 0x7f020080;
         public static final int gallery_ucrop_vector_loader_animated = 0x7f020081;
+<<<<<<< HEAD
         public static final int notification_template_icon_bg = 0x7f0200b6;
+=======
+        public static final int notification_template_icon_bg = 0x7f0200bf;
+>>>>>>> ljh
     }
     public static final class id {
         public static final int action0 = 0x7f0d0122;

@@ -424,6 +424,10 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
     public void onEventAllMessage(FriendInfo event) {
         chatPopupWindow.showMessageRedPoint();
     }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventAcrivityFinish(Code<Object> event){
+        finish();
+    }
 
     @Override
     protected void onDestroy() {
