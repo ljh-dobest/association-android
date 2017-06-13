@@ -6,12 +6,12 @@ import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import butterknife.Unbinder;
-import butterknife.internal.Utils;
+
 import com.min.helpcenter.R;
 import com.min.helpcenter.views.CircleImageView;
-import java.lang.IllegalStateException;
-import java.lang.Override;
+
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
 
 public class AnswerRvAdapter$MyViewHolder_ViewBinding<T extends AnswerRvAdapter.MyViewHolder> implements Unbinder {
   protected T target;

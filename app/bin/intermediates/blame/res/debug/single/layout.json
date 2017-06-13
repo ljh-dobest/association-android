@@ -124,16 +124,16 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\popupwindow_select_time2.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_login.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\fragment_login.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_phone_contact.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_phone_contact.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_plugin_location_activity.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_plugin_location_activity.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_phone_contact.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_phone_contact.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\fragment_login.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\fragment_login.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
@@ -144,12 +144,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\view_list_item_relationship.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_claim_info.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_claim_info.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\possible_understand_item2.xml",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\possible_understand_item2.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\activity_claim_info.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_claim_info.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\item_group.xml",
@@ -200,12 +200,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\47521d297dfc3012e3b73d533b1c22f4990baa64\\output\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_gridview_item.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\homepage_gridview_item.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\unread_message_rv_item.xml",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\unread_message_rv_item.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\homepage_gridview_item.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\homepage_gridview_item.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\share_friends_content_rv_item.xml",
@@ -308,16 +308,16 @@
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_dialog_progress.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_pwd_error.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_pwd_error.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_rp_history.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_rp_history.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_message.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_message.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_item_rp_history.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_item_rp_history.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_dialog_pwd_error.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_dialog_pwd_error.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_adapter_media_grid_item.xml",
@@ -384,32 +384,32 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\37e2d244699941d1fa32075a2346b9107c582029\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_alert_warning.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_alert_warning.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_webview.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_webview.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_camera.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_camera.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_cs_alert_warning.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_cs_alert_warning.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\banner.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\0ea18db81618f6118b75635959b6855f09f05060\\output\\res\\layout\\banner.xml"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_camera.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_camera.xml"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_ucrop_aspect_ratio.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\b1e7408a49ebde2e417437f2fd23253da4bf42ab\\output\\res\\layout\\gallery_ucrop_aspect_ratio.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_myedittext.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_myedittext.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_activity_add_card_first.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_activity_add_card_first.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_myedittext.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_myedittext.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_information_notification_message.xml",
@@ -536,12 +536,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\popupwindow_select_time.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_layout_line.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_layout_line.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\_activity_setting_pswd.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\_activity_setting_pswd.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\w_layout_line.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\layout\\w_layout_line.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_refresh_list_view.xml",
@@ -640,12 +640,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\47521d297dfc3012e3b73d533b1c22f4990baa64\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_fragment_media_preview.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\b1e7408a49ebde2e417437f2fd23253da4bf42ab\\output\\res\\layout\\gallery_fragment_media_preview.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\address_list_popwindow.xml",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\address_list_popwindow.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\gallery_fragment_media_preview.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\b1e7408a49ebde2e417437f2fd23253da4bf42ab\\output\\res\\layout\\gallery_fragment_media_preview.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\friend_item.xml",
@@ -736,12 +736,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\layout\\activity_verify_recommed_info.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_rich_content_message.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_rich_content_message.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\37e2d244699941d1fa32075a2346b9107c582029\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_item_public_service_rich_content_message.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\layout\\rc_item_public_service_rich_content_message.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\layout\\rc_ac_webview.xml",

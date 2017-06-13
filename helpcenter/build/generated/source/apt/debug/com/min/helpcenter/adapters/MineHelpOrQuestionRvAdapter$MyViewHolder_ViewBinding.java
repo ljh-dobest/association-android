@@ -5,11 +5,11 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.view.View;
 import android.widget.TextView;
+
+import com.min.helpcenter.R;
+
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
-import com.min.helpcenter.R;
-import java.lang.IllegalStateException;
-import java.lang.Override;
 import jp.wasabeef.richeditor.RichEditor;
 
 public class MineHelpOrQuestionRvAdapter$MyViewHolder_ViewBinding<T extends MineHelpOrQuestionRvAdapter.MyViewHolder> implements Unbinder {
