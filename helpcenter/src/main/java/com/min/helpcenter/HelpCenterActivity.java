@@ -52,8 +52,6 @@ RecyclerView rv_helpCenter;
         setContentView(R.layout.activity_help_center);
         ButterKnife.bind(this);
         userId= getIntent().getStringExtra("loginid");
-
-        userId="13025304562";
         initView();
         getHelpData(userId,1);
     }
