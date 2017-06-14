@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\add_association.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-mdpi\\add_association.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "F:\\NB\\association-android\\commonwealactives\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    }
+]
