@@ -10,6 +10,7 @@ import com.min.helpcenter.R;
 
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import jp.wasabeef.richeditor.RichEditor;
 
 public class MineHelpOrQuestionRvAdapter$MyViewHolder_ViewBinding<T extends MineHelpOrQuestionRvAdapter.MyViewHolder> implements Unbinder {
   protected T target;
@@ -20,7 +21,7 @@ public class MineHelpOrQuestionRvAdapter$MyViewHolder_ViewBinding<T extends Mine
 
     target.tv_mineMessage_item_title = Utils.findRequiredViewAsType(source, R.id.tv_mineMessage_item_title, "field 'tv_mineMessage_item_title'", TextView.class);
     target.tv_mineMessage_item_time = Utils.findRequiredViewAsType(source, R.id.tv_mineMessage_item_time, "field 'tv_mineMessage_item_time'", TextView.class);
-    target.tv_mineMessage_item_content = Utils.findRequiredViewAsType(source, R.id.tv_mineMessage_item_content, "field 'tv_mineMessage_item_content'", TextView.class);
+    target.et_mineMessage_item_content = Utils.findRequiredViewAsType(source, R.id.et_mineMessage_item_content, "field 'et_mineMessage_item_content'", RichEditor.class);
     target.tv_mineMessage_responseNum = Utils.findRequiredViewAsType(source, R.id.tv_mineMessage_responseNum, "field 'tv_mineMessage_responseNum'", TextView.class);
     target.tv_mineMessage_item_goldNum = Utils.findRequiredViewAsType(source, R.id.tv_mineMessage_item_goldNum, "field 'tv_mineMessage_item_goldNum'", TextView.class);
   }
@@ -33,7 +34,7 @@ public class MineHelpOrQuestionRvAdapter$MyViewHolder_ViewBinding<T extends Mine
 
     target.tv_mineMessage_item_title = null;
     target.tv_mineMessage_item_time = null;
-    target.tv_mineMessage_item_content = null;
+    target.et_mineMessage_item_content = null;
     target.tv_mineMessage_responseNum = null;
     target.tv_mineMessage_item_goldNum = null;
 

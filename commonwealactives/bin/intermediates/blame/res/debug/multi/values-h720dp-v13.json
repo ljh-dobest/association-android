@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+=======
+        "outputFile": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
         "map": [
             {
                 "to": {
@@ -11,7 +15,11 @@
                     "endOffset": 117
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

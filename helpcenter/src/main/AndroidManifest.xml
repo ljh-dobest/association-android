@@ -13,8 +13,13 @@
         android:icon="@mipmap/app_icon"
         android:label="求助中心"
         android:supportsRtl="true"
+<<<<<<< HEAD
         tools:replace="Android:label"
         android:theme="@style/AppTheme">
+=======
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+>>>>>>> ljh
         <activity android:name=".HelpCenterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

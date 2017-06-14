@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "F:\\NB\\association-android\\commonwealactives\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+=======
+        "outputFile": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
         "map": [
             {
                 "to": {
@@ -11,7 +15,11 @@
                     "endOffset": 207
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +38,11 @@
                     "endOffset": 342
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +61,11 @@
                     "endOffset": 411
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +84,11 @@
                     "endOffset": 475
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +107,11 @@
                     "endOffset": 544
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -106,7 +130,11 @@
                     "endOffset": 614
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Administrator\\.android\\build-cache\\de444d381dddf90fa4b9fc385bd723fdb46a5c22\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\values-v24\\values-v24.xml",
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

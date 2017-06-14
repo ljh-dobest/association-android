@@ -1,2 +1,2 @@
 include ':app', ':IMLib', ':IMKit', ':mylibrary', ':libzxing', ':base-diskcache', ':RedPacket', ':commonwealactives',
-        ':Libraries:DroidPlugin', ':drygoodsshare', ':crowdfunding', ':inspirationtosell', ':platform'
+        ':Libraries:DroidPlugin', ':drygoodsshare', ':crowdfunding', ':inspirationtosell', ':platform',':helpcenter'

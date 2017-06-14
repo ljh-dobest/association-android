@@ -7,6 +7,7 @@
 package io.rong.imkit;
 
 public final class R {
+<<<<<<< HEAD
     public static final class array {
         public static final int rc_audio_file_suffix = 0x7f0a0020;
         public static final int rc_emoji_code = 0x7f0a0021;
@@ -1551,4 +1552,6 @@ public final class R {
     public static final class xml {
         public static final int rc_file_path = 0x7f070001;
     }
+=======
+>>>>>>> ljh
 }

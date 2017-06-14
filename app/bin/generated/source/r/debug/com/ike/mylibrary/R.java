@@ -7,6 +7,7 @@
 package com.ike.mylibrary;
 
 public final class R {
+<<<<<<< HEAD
     public static final class anim {
         public static final int abc_fade_in = 0x7f050008;
         public static final int abc_fade_out = 0x7f050009;
@@ -1962,4 +1963,6 @@ public final class R {
         public static final int View_paddingStart = 2;
         public static final int View_theme = 4;
     }
+=======
+>>>>>>> ljh
 }

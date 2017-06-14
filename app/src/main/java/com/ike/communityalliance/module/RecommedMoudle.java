@@ -45,7 +45,7 @@ public class RecommedMoudle {
             listener.showRecommedError("请输入具体地址信息");
             return;
         }
-        if(recommendBean.getHomeplace().equals("请选择,请选择,请选择")){
+        if(recommendBean.getHomeplace().equals("请选择,请选择,")){
             recommendBean.setHomeplace("");
         }
           HttpUtils.postRecommend("/friendsRecommend",recommendBean, new StringCallback() {

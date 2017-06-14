@@ -12,13 +12,20 @@
         android:background="@color/aam_item_border" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/tv_comment_number"
+=======
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/border_10"
         android:background="@android:color/white"
         android:padding="@dimen/border_20"
+<<<<<<< HEAD
         android:text="评论（0）"
+=======
+        android:text="评论（50）"
+>>>>>>> 61d63cbfdb384d9b526a14851ccf2f7b3b18c528
         android:textColor="@color/color_33"
         android:textSize="@dimen/font_30" />
 

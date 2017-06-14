@@ -22,6 +22,8 @@ public class QuestionActivity_ViewBinding<T extends QuestionActivity> implements
 
   private View view2131558590;
 
+  private View view2131558589;
+
   @UiThread
   public QuestionActivity_ViewBinding(final T target, View source) {
     this.target = target;
@@ -46,7 +48,15 @@ public class QuestionActivity_ViewBinding<T extends QuestionActivity> implements
       }
     });
     target.iv_question_share = Utils.findRequiredViewAsType(source, R.id.iv_question_share, "field 'iv_question_share'", ImageView.class);
-    target.iv_question_good = Utils.findRequiredViewAsType(source, R.id.iv_question_good, "field 'iv_question_good'", ImageView.class);
+    view = Utils.findRequiredView(source, R.id.iv_question_good, "field 'iv_question_good' and method 'onQuestionViewClick'");
+    target.iv_question_good = Utils.castView(view, R.id.iv_question_good, "field 'iv_question_good'", ImageView.class);
+    view2131558589 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onQuestionViewClick(p0);
+      }
+    });
     target.rv_question = Utils.findRequiredViewAsType(source, R.id.rv_question, "field 'rv_question'", RecyclerView.class);
   }
 
@@ -66,6 +76,8 @@ public class QuestionActivity_ViewBinding<T extends QuestionActivity> implements
     view2131558585 = null;
     view2131558590.setOnClickListener(null);
     view2131558590 = null;
+    view2131558589.setOnClickListener(null);
+    view2131558589 = null;
 
     this.target = null;
   }

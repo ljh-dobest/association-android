@@ -1047,6 +1047,7 @@ MERGED from [association-android:IMKit:unspecified] E:\project\xiangmu\associati
 MERGED from [association-android:IMLib:unspecified] E:\project\xiangmu\association-android\IMLib\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [association-android:RedPacket:unspecified] E:\project\xiangmu\association-android\RedPacket\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [association-android.Libraries:DroidPlugin:unspecified] E:\project\xiangmu\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:30:5-43
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\Min\.android\build-cache\eda52a6e51195094894e893957971a2ec819c259\output\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:design:25.0.0] C:\Users\Min\.android\build-cache\47521d297dfc3012e3b73d533b1c22f4990baa64\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:transition:25.0.0] C:\Users\Min\.android\build-cache\978e29cf5a5a3d78103c635c2c1757cc56d73508\output\AndroidManifest.xml:20:5-44
 MERGED from [cn.finalteam.rxgalleryfinal:library:0.0.8] C:\Users\Min\.android\build-cache\b1e7408a49ebde2e417437f2fd23253da4bf42ab\output\AndroidManifest.xml:7:5-9:41
@@ -1054,7 +1055,6 @@ MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\Min\.android\build-cache\245
 MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\Min\.android\build-cache\34ba2dfa0a0f1a0ccda70609f417f2338ebcf69d\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\Min\.android\build-cache\15d3a68eee3e9799d0107e172d312253c8afc5e6\output\AndroidManifest.xml:5:5-43
 MERGED from [com.facebook.stetho:stetho:1.4.2] C:\Users\Min\.android\build-cache\4a5f6ba68ee456224fe5187db3a28854af58f5b8\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:multidex:1.0.1] C:\Users\Min\.android\build-cache\eda52a6e51195094894e893957971a2ec819c259\output\AndroidManifest.xml:18:5-42
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\Min\.android\build-cache\91d7d43b0d8fbf1f219b14ff13b5309b4d5601e1\output\AndroidManifest.xml:7:5-43
 MERGED from [com.zhy:autolayout:1.4.5] C:\Users\Min\.android\build-cache\e18438353def6764c8a7fff175e8bfe6e940971b\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.yydcdut.sdlv:sdlv:0.5.5] C:\Users\Min\.android\build-cache\ecc254760088b0d74e66225bbd3853b712264711\output\AndroidManifest.xml:8:5-10:41

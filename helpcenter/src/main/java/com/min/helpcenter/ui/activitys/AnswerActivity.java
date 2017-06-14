@@ -14,7 +14,10 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+<<<<<<< HEAD
 import com.ike.mylibrary.widget.dialog.LoadDialog;
+=======
+>>>>>>> ljh
 import com.min.helpcenter.R;
 import com.min.helpcenter.adapters.AnswerRvAdapter;
 import com.min.helpcenter.base.view.BaseMvpActivity;
@@ -129,13 +132,19 @@ public class AnswerActivity extends BaseMvpActivity<IAnswerView,AnswerPresenter>
 
     @Override
     public void showError(String errorString) {
+<<<<<<< HEAD
         LoadDialog.dismiss(this);
+=======
+>>>>>>> ljh
         T.showShort(this,errorString);
     }
 
     @Override
     public void showSucceedComment(String msg) {
+<<<<<<< HEAD
         LoadDialog.dismiss(this);
+=======
+>>>>>>> ljh
         et_answer_evaluate.setText("");
         getArticleCommentData();
         T.showShort(this,msg);
@@ -182,7 +191,10 @@ public class AnswerActivity extends BaseMvpActivity<IAnswerView,AnswerPresenter>
                  });
                 break;
             case R.id.btn_answer_sendEvaluate:
+<<<<<<< HEAD
                 LoadDialog.show(this);
+=======
+>>>>>>> ljh
                String content=et_answer_evaluate.getText().toString();
                 presenter.commentAnswer(answersBean.getId(),userId,content,"4");
                 break;

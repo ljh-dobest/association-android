@@ -66,6 +66,7 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\location_icon.png"
     },
     {
+<<<<<<< HEAD
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\send_sms.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\send_sms.png"
     },
@@ -82,8 +83,14 @@
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\close.png",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\close.png"
 =======
+=======
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\zhibo.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\zhibo.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\send_sms.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\send_sms.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon1_menu.png",
@@ -170,18 +177,21 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\phone.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\pop_add.png",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\pop_add.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\mine.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\mine.png"
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\personal_vip.png",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\personal_vip.png"
 =======
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\pop_add.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\pop_add.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\load_unchecked.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\load_unchecked.png"
 >>>>>>> ljh
@@ -215,15 +225,19 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\friends.png"
     },
     {
+<<<<<<< HEAD
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\news_enterorse_vip.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\news_enterorse_vip.png"
 >>>>>>> ljh
     },
     {
+=======
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\personal_vip.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\personal_vip.png"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\contacted.png",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\contacted.png"
@@ -232,6 +246,12 @@
         "merged": "F:\\NB\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\personal_password_setting.png",
         "source": "F:\\NB\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\personal_password_setting.png"
 =======
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\news_enterorse_vip.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\news_enterorse_vip.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\info_normal.png",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\mipmap-xhdpi\\info_normal.png"
 >>>>>>> ljh

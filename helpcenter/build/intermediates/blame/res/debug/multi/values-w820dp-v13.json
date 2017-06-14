@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\shequn\\CommunityAlliance\\helpcenter\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+        "outputFile": "E:\\project\\threeTeach\\helpcenter\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "E:\\shequn\\CommunityAlliance\\helpcenter\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "file": "E:\\project\\threeTeach\\helpcenter\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

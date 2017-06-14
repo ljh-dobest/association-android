@@ -56,14 +56,24 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\question_item_good_bg.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\6e0b95b87a3e3f25f8dc57e63fcf9e06fa645bd6\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
     {
+=======
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\chated.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\chated.png"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\6e0b95b87a3e3f25f8dc57e63fcf9e06fa645bd6\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
@@ -120,6 +130,13 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\wodehuida.9.png"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic1.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic1.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\default_portrait.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\default_portrait.png"
     },
@@ -128,6 +145,13 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\chat.png"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic7.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic7.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
@@ -136,6 +160,17 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\box_gray_solid.xml"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic8.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic8.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic2.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic2.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\btn_login.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\btn_login.png"
     },
@@ -244,6 +279,13 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic5.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic5.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
@@ -320,6 +362,13 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\my_answer_unseleted.png"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pci4.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pci4.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
@@ -404,6 +453,13 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic9.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\homed.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\homed.png"
     },
@@ -424,11 +480,25 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
+<<<<<<< HEAD
+=======
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic6.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic6.png"
+    },
+    {
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\main_chat_bg.xml",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\main_chat_bg.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+<<<<<<< HEAD
+=======
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\pic3.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\pic3.png"
+>>>>>>> ljh
     }
 ]
