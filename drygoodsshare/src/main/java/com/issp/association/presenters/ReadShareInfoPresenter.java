@@ -17,18 +17,21 @@ import java.util.Map;
  */
 
 public class ReadShareInfoPresenter extends BasePersenter<IReadShareView> implements OnReadShareListener {
-    private ReadShareInfoModel recommendInfoMoudle;
+    private ReadShareInfoModel model;
 
     public ReadShareInfoPresenter() {
-        recommendInfoMoudle = new ReadShareInfoModel();
+        model = new ReadShareInfoModel();
     }
 
     public void ReadShareInfoPresenter(Map<String, String> formData) {
-        recommendInfoMoudle.getReadShareInfo(formData, this);
+        model.getReadShareInfo(formData, this);
     }
 
     public void sharePraiseInfoPresenter(Map<String, String> formData) {
-        recommendInfoMoudle.getSharePraiseInfo(formData, this);
+        model.getSharePraiseInfo(formData, this);
+    }
+    public void collectPresenter(Map<String, String> formData){
+        model.getCollect(formData,this);
     }
 
     @Override
@@ -39,6 +42,11 @@ public class ReadShareInfoPresenter extends BasePersenter<IReadShareView> implem
     @Override
     public void sharePraiseInfo(String data) {
         mView.sharePraise(data);
+    }
+
+    @Override
+    public void collectListener(String data) {
+        mView.collect(data);
     }
 
     @Override

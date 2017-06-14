@@ -14,5 +14,6 @@ public interface OnReadShareListener {
 
     void sharePraiseInfo(String data);
 
+    void collectListener(String data);
     void showError(String errorString);
 }

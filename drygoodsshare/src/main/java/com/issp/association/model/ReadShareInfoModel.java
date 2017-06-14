@@ -80,4 +80,32 @@ public class ReadShareInfoModel {
             }
         });
     }
+    public void getCollect(Map<String, String> formData, final OnReadShareListener listener) {
+
+        HttpUtils.sendGsonPostRequest("/articleCollection", formData, new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                listener.showError(e.toString());
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Gson gson = new Gson();
+                Type type = new TypeToken<Code>() {
+                }.getType();
+                Code code = gson.fromJson(response, type);
+                switch (code.getCode()) {
+                    case 200:
+                        listener.sharePraiseInfo("收藏成功");
+                        break;
+                    case 0:
+                        listener.showError("收藏失败");
+                        break;
+                    default:
+                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                        break;
+                }
+            }
+        });
+    }
 }

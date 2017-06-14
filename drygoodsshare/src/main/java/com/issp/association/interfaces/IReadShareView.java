@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public interface IReadShareView extends BaseView {
     void setReadShareData(ShareBean data);
+    void collect(String data);
 
     void sharePraise(String data);
 }

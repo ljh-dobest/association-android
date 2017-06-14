@@ -2,6 +2,7 @@ package com.issp.association.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -99,8 +100,8 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         ltMainTitle.setText("");
         Intent intent = getIntent();
 
-        userId=intent.getStringExtra("userId");
-        activesId=intent.getStringExtra("activesId");
+        userId = intent.getStringExtra("userId");
+        activesId = intent.getStringExtra("activesId");
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
         formData.put("shareId", activesId);
@@ -123,27 +124,37 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
 
     }
 
-    @OnClick(R.id.lt_main_title_left)
-    void leftClick() {
-        ReadShareActivity.this.finish();
-    }
-
-    @OnClick(R.id.ll_like)
-    void likeClick() {
-        Map<String, String> formData = new HashMap<String, String>(0);
-        formData.put("userId", userId);
-        formData.put("articleId", bean.getId());
-        formData.put("type", "3");
-        formData.put("status", "1");
-        presenter.sharePraiseInfoPresenter(formData);
-    }
-
-    @OnClick(R.id.ll_comment)
-    void commentClick() {
-        Intent intent = new Intent(ReadShareActivity.this, FeedForCommentActivity.class);
-        intent.putExtra("userId",userId);
-        intent.putExtra("bean", bean);
-        startActivity(intent);
+    @OnClick({R.id.lt_main_title_left, R.id.ll_share, R.id.ll_like, R.id.ll_comment, R.id.ll_collect})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.lt_main_title_left:
+                ReadShareActivity.this.finish();
+                break;
+            case R.id.ll_share:
+                break;
+            case R.id.ll_like:
+                Map<String, String> formData = new HashMap<String, String>(0);
+                formData.put("userId", userId);
+                formData.put("articleId", bean.getId());
+                formData.put("type", "3");
+                formData.put("status", "1");
+                presenter.sharePraiseInfoPresenter(formData);
+                break;
+            case R.id.ll_comment:
+                Intent intent = new Intent(ReadShareActivity.this, FeedForCommentActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("bean", bean);
+                startActivity(intent);
+                break;
+            case R.id.ll_collect:
+                Map<String, String> data = new HashMap<String, String>(0);
+                data.put("userId", userId);
+                data.put("articleId", bean.getId());
+                data.put("type", "3");
+                data.put("status", "1");
+                presenter.sharePraiseInfoPresenter(data);
+                break;
+        }
     }
 
     @Override
@@ -162,7 +173,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         if (null != data.getImage())
             Picasso.with(ReadShareActivity.this).load(HttpUtils.IMAGE_RUL + data.getImage())
                     .into(ivImage);
-      //  wvCynopsis.loadData(data.getSynopsis(), "text/html; charset=UTF-8", null);
+        //  wvCynopsis.loadData(data.getSynopsis(), "text/html; charset=UTF-8", null);
         wvContent.loadData(data.getContent(), "text/html; charset=UTF-8", null);
         tvLikeBtn.setText(data.getLikes() + "");
 
@@ -184,7 +195,12 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
 
         data.setUserId(userId);
         data.setId(activesId);
-        bean=data;
+        bean = data;
+    }
+
+    @Override
+    public void collect(String data) {
+        ivCollectBtn.setImageResource(R.mipmap.img_collect_btn_);
     }
 
     @Override
@@ -194,4 +210,5 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         ivLikeBtn.setImageResource(R.mipmap.img_have_thumb_up_btn);
         T.showShort(ReadShareActivity.this, data);
     }
+
 }

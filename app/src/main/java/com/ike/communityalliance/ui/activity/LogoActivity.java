@@ -17,7 +17,7 @@ import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 
 /**
- * 加载页
+ * 加载页20380153346
  */
 public class LogoActivity extends BaseActivity {
     private SharedPreferences sharedPreferences;
