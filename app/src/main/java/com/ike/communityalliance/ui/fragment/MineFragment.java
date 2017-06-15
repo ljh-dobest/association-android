@@ -28,14 +28,15 @@ import com.ike.communityalliance.ui.activity.RelationMapActivity;
 import com.ike.communityalliance.ui.activity.SettingActivity;
 import com.ike.communityalliance.ui.activity.SignPickerActivity;
 import com.ike.communityalliance.wedget.XCRoundRectImageView;
+import com.ike.mylibrary.util.T;
 import com.jrmf360.rylib.JrmfClient;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by just on 2017/3/1.
@@ -88,20 +89,23 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
     TextView tvMinePhone;
     @BindView(R.id.tv_mine_birthday)
     TextView tvMineBirthday;
-
-    //    @BindView(R.id.tv_mine_favour)
-//    TextView tvMineFavour;
     private SharedPreferences sp;
     private Context mContext;
     private String userPortraitUrl, mobile, birthday, nickName, sex, useId, email, recommendUserId,
-            address, experience, creditScore, contributionScore, claimUserId, favour;
+            address, experience, creditScore, contributionScore, claimUserId, favour,checkVip;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+       super.onCreateView(inflater,container,savedInstanceState);
         View containerView = inflater.inflate(R.layout.mine_fragment, container, false);
         ButterKnife.bind(this, containerView);
         initView();
         return containerView;
+    }
+
+    @Override
+    public MineFragmentPresenter initPresenter() {
+        return new MineFragmentPresenter();
     }
 
     private void initView() {
@@ -121,6 +125,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         contributionScore = sp.getString(Const.LOGIN_CONTRIBUTIONSCORE, "");
         recommendUserId = sp.getString(Const.LOGIN_RECOMMENDUSERID, "");
         claimUserId = sp.getString(Const.LOGIN_CLAIMUSERID, "");
+        checkVip=sp.getString(Const.LOGIN_VIP,"0");
         Picasso.with(mContext).load(userPortraitUrl).into(ivMineUserIcon);
         tvMineName.setText(nickName);
         if (sex.equals("1")) {
@@ -132,8 +137,6 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         }
         tvMineAccount.setText(useId);
         tvMineEmail.setText(email);
-
-//        tvMineFavour.setText(favour);
         tvMineAddress.setText(address.replace(",", ""));
         tvMineRecommenerName.setText(recommendUserId);
         tvMineClaimerName.setText(claimUserId);
@@ -142,16 +145,14 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
         tvMineContributionNum.setText(contributionScore);
         tv_mine_creditScore.setText(creditScore);
     }
-
-    @Override
-    public MineFragmentPresenter initPresenter() {
-        return new MineFragmentPresenter();
+    private  void initcreditScore(UserInfo userInfo){
+     tv_mine_creditScore.setText(userInfo.getCreditScore());
     }
 
 
-    @Override
-    public void setData(ArrayList<UserInfo> data) {
-    }
+
+
+
 
     @Override
     public void showLoading() {
@@ -163,6 +164,17 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
 
     @Override
     public void showError(String errorString) {
+        T.showShort(getContext(),errorString);
+    }
+
+    @Override
+    public void getMineUserInfo(String userId) {
+           presenter.getMineUserInfoData(userId);
+    }
+
+    @Override
+    public void setData(UserInfo data) {
+        initcreditScore(data);
     }
 
     @OnClick({R.id.iv_mine_card, R.id.ll_mine_recommend, R.id.ll_mine_contacts, R.id.ll_mine_wasRecomend,
@@ -203,7 +215,7 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
                 startActivity(new Intent(getContext(), FeedBackActivity.class));
                 break;
             case R.id.ll_mine_applay_vip:
-                startActivity(new Intent(getContext(), ApplayVIPActivity.class));
+                startActivityForResult(new Intent(getContext(), ApplayVIPActivity.class),111);
                 break;
             case R.id.ll_mine_setting:
                 startActivity(new Intent(getContext(), SettingActivity.class));
@@ -213,8 +225,10 @@ public class MineFragment extends BaseMvpFragment<IMineFragmentView, MineFragmen
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 110) {
+        if (requestCode == 110&&resultCode==RESULT_OK) {
             initView();
+        }else if (requestCode==111&&resultCode==RESULT_OK){
+            getMineUserInfo(useId);
         }
     }
 

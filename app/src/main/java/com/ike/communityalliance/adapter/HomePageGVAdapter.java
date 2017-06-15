@@ -11,7 +11,6 @@ import com.ike.communityalliance.R;
 import com.ike.communityalliance.base.BaseAdapters;
 import com.ike.communityalliance.bean.ApkItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -26,6 +25,7 @@ public class HomePageGVAdapter extends BaseAdapters {
     public HomePageGVAdapter(Context context, List data) {
         super(context, data);
     }
+
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
