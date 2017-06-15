@@ -29,6 +29,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.zhy.http.okhttp.OkHttpUtils.METHOD.HEAD;
+
 
 public class HelpCenterActivity extends BaseMvpActivity<IHelpCenterView,HelpCenterPresenter> implements IHelpCenterView, SimpleAdapter.OnItemClickLitener, XRefreshView.XRefreshViewListener {
 @BindView(R.id.iv_helpCenter_back)
@@ -52,14 +54,6 @@ RecyclerView rv_helpCenter;
         setContentView(R.layout.activity_help_center);
         ButterKnife.bind(this);
         userId= getIntent().getStringExtra("loginid");
-<<<<<<< HEAD
-         if(userId==null){
-             userId="00001";
-         }
-=======
-
-        userId="13025304562";
->>>>>>> ljh
         initView();
         getHelpData(userId,1);
     }
@@ -121,10 +115,7 @@ RecyclerView rv_helpCenter;
     @Override
     public void showError(String errorString) {
         T.showShort(this,errorString);
-<<<<<<< HEAD
         xrefreshview_helpCenter.stopRefresh();
-=======
->>>>>>> ljh
     }
 
 
