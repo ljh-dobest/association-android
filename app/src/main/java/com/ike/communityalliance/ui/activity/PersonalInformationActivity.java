@@ -398,7 +398,9 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        setResult(RESULT_OK);
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            setResult(RESULT_OK);
+        }
         return super.onKeyDown(keyCode, event);
     }
 }

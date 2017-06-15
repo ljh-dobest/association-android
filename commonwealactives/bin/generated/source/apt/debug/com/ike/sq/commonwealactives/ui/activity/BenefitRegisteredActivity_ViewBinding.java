@@ -17,10 +17,14 @@ public class BenefitRegisteredActivity_ViewBinding implements Unbinder {
   private BenefitRegisteredActivity target;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   private View view2131624099;
 =======
   private View view2131624092;
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+  private View view2131624092;
+>>>>>>> ljh
 
   @UiThread
   public BenefitRegisteredActivity_ViewBinding(BenefitRegisteredActivity target) {
@@ -36,10 +40,14 @@ public class BenefitRegisteredActivity_ViewBinding implements Unbinder {
     view = Utils.findRequiredView(source, R.id.lt_main_title_left, "field 'ltMainTitleLeft' and method 'leftClick'");
     target.ltMainTitleLeft = Utils.castView(view, R.id.lt_main_title_left, "field 'ltMainTitleLeft'", TextView.class);
 <<<<<<< HEAD
+<<<<<<< HEAD
     view2131624099 = view;
 =======
     view2131624092 = view;
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+    view2131624092 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -64,11 +72,16 @@ public class BenefitRegisteredActivity_ViewBinding implements Unbinder {
     target.gvApply = null;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     view2131624099.setOnClickListener(null);
     view2131624099 = null;
 =======
     view2131624092.setOnClickListener(null);
     view2131624092 = null;
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+    view2131624092.setOnClickListener(null);
+    view2131624092 = null;
+>>>>>>> ljh
   }
 }

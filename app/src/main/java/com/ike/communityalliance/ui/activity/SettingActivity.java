@@ -26,6 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.rong.imageloader.core.ImageLoader;
+import io.rong.imkit.RongIM;
 
 import static com.jrmf360.rylib.wallet.ui.BaseActivity.userId;
 
@@ -88,6 +89,8 @@ public class SettingActivity extends BaseActivity {
                                 groupMemberDAO.delete(userId);
                                 ImageLoader.getInstance().clearDiskCache();
                                 startActivity(new Intent(SettingActivity.this, LoginActivity.class));
+                                RongIM.getInstance().disconnect();//断开连接
+                                RongIM.getInstance().logout();//注销登录，不接收push
                                 EventBus.getDefault().post(new Code<Object>());
                                 finish();
                             }

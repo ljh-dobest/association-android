@@ -19,18 +19,24 @@ public class MineBenefitActivity_ViewBinding implements Unbinder {
   private MineBenefitActivity target;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   private View view2131624099;
 
   private View view2131624248;
 
   private View view2131624097;
 =======
+=======
+>>>>>>> ljh
   private View view2131624092;
 
   private View view2131624241;
 
   private View view2131624090;
+<<<<<<< HEAD
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+>>>>>>> ljh
 
   @UiThread
   public MineBenefitActivity_ViewBinding(MineBenefitActivity target) {
@@ -45,10 +51,14 @@ public class MineBenefitActivity_ViewBinding implements Unbinder {
     view = Utils.findRequiredView(source, R.id.lt_main_title_left, "field 'ltMainTitleLeft' and method 'onViewClicked'");
     target.ltMainTitleLeft = Utils.castView(view, R.id.lt_main_title_left, "field 'ltMainTitleLeft'", TextView.class);
 <<<<<<< HEAD
+<<<<<<< HEAD
     view2131624099 = view;
 =======
     view2131624092 = view;
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+    view2131624092 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -59,10 +69,14 @@ public class MineBenefitActivity_ViewBinding implements Unbinder {
     view = Utils.findRequiredView(source, R.id.lt_main_title_right, "field 'ltMainTitleRight' and method 'onViewClicked'");
     target.ltMainTitleRight = Utils.castView(view, R.id.lt_main_title_right, "field 'ltMainTitleRight'", TextView.class);
 <<<<<<< HEAD
+<<<<<<< HEAD
     view2131624248 = view;
 =======
     view2131624241 = view;
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+    view2131624241 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -74,10 +88,14 @@ public class MineBenefitActivity_ViewBinding implements Unbinder {
     view = Utils.findRequiredView(source, R.id.iv_top, "field 'ivTop' and method 'onViewClicked'");
     target.ivTop = Utils.castView(view, R.id.iv_top, "field 'ivTop'", ImageView.class);
 <<<<<<< HEAD
+<<<<<<< HEAD
     view2131624097 = view;
 =======
     view2131624090 = view;
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+    view2131624090 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -101,6 +119,7 @@ public class MineBenefitActivity_ViewBinding implements Unbinder {
     target.ivTop = null;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     view2131624099.setOnClickListener(null);
     view2131624099 = null;
     view2131624248.setOnClickListener(null);
@@ -108,12 +127,17 @@ public class MineBenefitActivity_ViewBinding implements Unbinder {
     view2131624097.setOnClickListener(null);
     view2131624097 = null;
 =======
+=======
+>>>>>>> ljh
     view2131624092.setOnClickListener(null);
     view2131624092 = null;
     view2131624241.setOnClickListener(null);
     view2131624241 = null;
     view2131624090.setOnClickListener(null);
     view2131624090 = null;
+<<<<<<< HEAD
 >>>>>>> 23d16f3f07dab1d7ebb3306c7acfa1500b7a13d3
+=======
+>>>>>>> ljh
   }
 }

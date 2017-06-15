@@ -17,11 +17,19 @@ import java.lang.Override;
 public class MainActivity_ViewBinding implements Unbinder {
   private MainActivity target;
 
+<<<<<<< HEAD
   private View view2131624099;
 
   private View view2131624248;
 
   private View view2131624097;
+=======
+  private View view2131624092;
+
+  private View view2131624241;
+
+  private View view2131624090;
+>>>>>>> ljh
 
   @UiThread
   public MainActivity_ViewBinding(MainActivity target) {
@@ -35,7 +43,11 @@ public class MainActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.lt_main_title_left, "field 'ltMainTitleLeft' and method 'onViewClicked'");
     target.ltMainTitleLeft = Utils.castView(view, R.id.lt_main_title_left, "field 'ltMainTitleLeft'", TextView.class);
+<<<<<<< HEAD
     view2131624099 = view;
+=======
+    view2131624092 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -45,7 +57,11 @@ public class MainActivity_ViewBinding implements Unbinder {
     target.ltMainTitle = Utils.findRequiredViewAsType(source, R.id.lt_main_title, "field 'ltMainTitle'", TextView.class);
     view = Utils.findRequiredView(source, R.id.lt_main_title_right, "field 'ltMainTitleRight' and method 'onViewClicked'");
     target.ltMainTitleRight = Utils.castView(view, R.id.lt_main_title_right, "field 'ltMainTitleRight'", TextView.class);
+<<<<<<< HEAD
     view2131624248 = view;
+=======
+    view2131624241 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -56,7 +72,11 @@ public class MainActivity_ViewBinding implements Unbinder {
     target.xrefreshview = Utils.findRequiredViewAsType(source, R.id.xrefreshview, "field 'xrefreshview'", XRefreshView.class);
     view = Utils.findRequiredView(source, R.id.iv_top, "field 'ivTop' and method 'onViewClicked'");
     target.ivTop = Utils.castView(view, R.id.iv_top, "field 'ivTop'", ImageView.class);
+<<<<<<< HEAD
     view2131624097 = view;
+=======
+    view2131624090 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -79,11 +99,20 @@ public class MainActivity_ViewBinding implements Unbinder {
     target.xrefreshview = null;
     target.ivTop = null;
 
+<<<<<<< HEAD
     view2131624099.setOnClickListener(null);
     view2131624099 = null;
     view2131624248.setOnClickListener(null);
     view2131624248 = null;
     view2131624097.setOnClickListener(null);
     view2131624097 = null;
+=======
+    view2131624092.setOnClickListener(null);
+    view2131624092 = null;
+    view2131624241.setOnClickListener(null);
+    view2131624241 = null;
+    view2131624090.setOnClickListener(null);
+    view2131624090 = null;
+>>>>>>> ljh
   }
 }

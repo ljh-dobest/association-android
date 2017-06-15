@@ -2,6 +2,7 @@ package com.ike.communityalliance.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class ApplayVIPActivity extends BaseActivity {
     @BindView(R.id.tv_apply_personalVIP)
     TextView tvApplyPersonalVIP;
     private String userId;
+    private String checkVip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,10 @@ public class ApplayVIPActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_applay_vip_back:
+                checkVip=getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_VIP, "");
+                if(checkVip.equals("1")){
+                    setResult(RESULT_OK);
+                }
                 finish();
                 break;
             case R.id.tv_apply_enterpriseVIP:
@@ -52,5 +58,14 @@ public class ApplayVIPActivity extends BaseActivity {
                 break;
         }
     }
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            checkVip=getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_VIP, "");
+            if(checkVip.equals("1")){
+                setResult(RESULT_OK);
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

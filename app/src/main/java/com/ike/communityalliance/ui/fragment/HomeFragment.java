@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -31,6 +30,7 @@ import com.ike.communityalliance.presenter.HomePageFragmentPresenter;
 import com.ike.communityalliance.ui.activity.AddApplicationActivity;
 import com.ike.communityalliance.ui.activity.ClaimActiviy;
 import com.ike.communityalliance.utils.ApkOperator;
+import com.ike.communityalliance.wedget.DemoGridView;
 import com.ike.mylibrary.util.T;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
@@ -52,7 +52,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
     LinearLayout homepage_lv_header;
     RelativeLayout home_lv_header2;
     Banner homepage_banner;
-    GridView homepage_gv;
+    DemoGridView homepage_gv;
     @BindView(R.id.homepage_lv)
     ListView homepage_lv;
     @BindView(R.id.homepage_iv_top)
@@ -76,7 +76,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
         iv_home_appcenter = (ImageView) homepage_lv_header.findViewById(R.id.iv_home_appcenter);
         home_lv_header2 = (RelativeLayout) inflater.inflate(R.layout.home_lv_header2, null);
         homepage_banner = (Banner) homepage_lv_header.findViewById(R.id.homepage_banner);
-        homepage_gv = (GridView) home_lv_header2.findViewById(R.id.homepage_gv);
+        homepage_gv = (DemoGridView) home_lv_header2.findViewById(R.id.homepage_gv);
         ButterKnife.bind(this, containerView);
         sp = getContext().getSharedPreferences("config", Context.MODE_PRIVATE);
         useId = sp.getString(Const.LOGIN_ID, "");

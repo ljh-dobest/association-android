@@ -19,6 +19,7 @@ import java.lang.Override;
 public class BenefitParticularsActivity_ViewBinding implements Unbinder {
   private BenefitParticularsActivity target;
 
+<<<<<<< HEAD
   private View view2131624099;
 
   private View view2131624101;
@@ -30,6 +31,19 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
   private View view2131624104;
 
   private View view2131624115;
+=======
+  private View view2131624092;
+
+  private View view2131624094;
+
+  private View view2131624095;
+
+  private View view2131624096;
+
+  private View view2131624097;
+
+  private View view2131624108;
+>>>>>>> ljh
 
   @UiThread
   public BenefitParticularsActivity_ViewBinding(BenefitParticularsActivity target) {
@@ -44,7 +58,11 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.lt_main_title_left, "field 'ltMainTitleLeft' and method 'onViewClicked'");
     target.ltMainTitleLeft = Utils.castView(view, R.id.lt_main_title_left, "field 'ltMainTitleLeft'", TextView.class);
+<<<<<<< HEAD
     view2131624099 = view;
+=======
+    view2131624092 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -53,7 +71,11 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.iv_share, "field 'ivShare' and method 'onViewClicked'");
     target.ivShare = Utils.castView(view, R.id.iv_share, "field 'ivShare'", ImageView.class);
+<<<<<<< HEAD
     view2131624101 = view;
+=======
+    view2131624094 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -62,7 +84,11 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.iv_like, "field 'ivLike' and method 'onViewClicked'");
     target.ivLike = Utils.castView(view, R.id.iv_like, "field 'ivLike'", ImageView.class);
+<<<<<<< HEAD
     view2131624102 = view;
+=======
+    view2131624095 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -71,7 +97,11 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.iv_comment, "field 'ivComment' and method 'onViewClicked'");
     target.ivComment = Utils.castView(view, R.id.iv_comment, "field 'ivComment'", ImageView.class);
+<<<<<<< HEAD
     view2131624103 = view;
+=======
+    view2131624096 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -80,7 +110,11 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.tv_add_register, "field 'tvAddRegister' and method 'onViewClicked'");
     target.tvAddRegister = Utils.castView(view, R.id.tv_add_register, "field 'tvAddRegister'", TextView.class);
+<<<<<<< HEAD
     view2131624104 = view;
+=======
+    view2131624097 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -101,7 +135,11 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     target.tvJoinUsers = Utils.findRequiredViewAsType(source, R.id.tv_join_users, "field 'tvJoinUsers'", TextView.class);
     view = Utils.findRequiredView(source, R.id.tv_more, "field 'tvMore' and method 'onViewClicked'");
     target.tvMore = Utils.castView(view, R.id.tv_more, "field 'tvMore'", TextView.class);
+<<<<<<< HEAD
     view2131624115 = view;
+=======
+    view2131624108 = view;
+>>>>>>> ljh
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -140,6 +178,7 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     target.gvUser = null;
     target.wvContent = null;
 
+<<<<<<< HEAD
     view2131624099.setOnClickListener(null);
     view2131624099 = null;
     view2131624101.setOnClickListener(null);
@@ -152,5 +191,19 @@ public class BenefitParticularsActivity_ViewBinding implements Unbinder {
     view2131624104 = null;
     view2131624115.setOnClickListener(null);
     view2131624115 = null;
+=======
+    view2131624092.setOnClickListener(null);
+    view2131624092 = null;
+    view2131624094.setOnClickListener(null);
+    view2131624094 = null;
+    view2131624095.setOnClickListener(null);
+    view2131624095 = null;
+    view2131624096.setOnClickListener(null);
+    view2131624096 = null;
+    view2131624097.setOnClickListener(null);
+    view2131624097 = null;
+    view2131624108.setOnClickListener(null);
+    view2131624108 = null;
+>>>>>>> ljh
   }
 }
