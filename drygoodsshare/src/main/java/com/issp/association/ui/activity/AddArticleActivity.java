@@ -1,6 +1,7 @@
 package com.issp.association.ui.activity;
 
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -17,10 +19,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.issp.association.App;
+import com.issp.association.MainActivity;
 import com.issp.association.R;
 import com.issp.association.base.view.BaseMvpActivity;
 import com.issp.association.bean.ShareBean;
@@ -80,6 +85,10 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     AutoLinearLayout llAskInsert;
     @BindView(R.id.activity_ask)
     AutoRelativeLayout activityAsk;
+    @BindView(R.id.ll_open)
+    LinearLayout llOpen;
+    @BindView(R.id.tv_open)
+    TextView tvOpen;
     //屏幕高度
 
     private int screenHeight = 0;
@@ -94,6 +103,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     private ProgressDialog pd;
 
     private String userId;
+    private int status=0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -134,6 +144,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     @Override
     public void showError(String errorString) {
+
+        pd.dismiss();
         T.showShort(AddArticleActivity.this, errorString);
     }
 
@@ -156,7 +168,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         return new AddArticlePresenter();
     }
 
-    @OnClick({R.id.ll_ask_back, R.id.tv_image, R.id.et_title, R.id.et_content, R.id.et_deal_content, R.id.iv_ask_camera,
+    @OnClick({R.id.ll_ask_back, R.id.tv_image, R.id.et_title, R.id.et_content, R.id.ll_open, R.id.et_deal_content, R.id.iv_ask_camera,
             R.id.iv_ask_picture, R.id.tv_preview, R.id.tv_ask_release})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -201,6 +213,9 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                 break;
             case R.id.et_content:
                 break;
+            case R.id.ll_open:
+                initPopupWindow();
+                break;
             case R.id.et_deal_content:
                 break;
             case R.id.iv_ask_camera:
@@ -232,6 +247,39 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                 showComfirmDialog();
                 break;
         }
+    }
+
+    private AlertDialog mPopupWindow;
+
+    void initPopupWindow() {
+        mPopupWindow = new android.app.AlertDialog.Builder(this).create();
+        mPopupWindow.show();
+        Window window = mPopupWindow.getWindow();
+        WindowManager.LayoutParams lp = mPopupWindow.getWindow().getAttributes();
+        lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 300);//定义宽度
+        lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 200);//定义高度
+        mPopupWindow.getWindow().setAttributes(lp);
+        window.setContentView(R.layout.popwindow_more);
+        TextView tv_information = (TextView) mPopupWindow.findViewById(R.id.tv_information);
+        TextView tv_my_share = (TextView) mPopupWindow.findViewById(R.id.tv_my_share);
+        tv_information.setText("公开");
+        tv_my_share.setText("VIP可见");
+        tv_information.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                status=0;
+                tvOpen.setText("公开");
+                mPopupWindow.dismiss();
+            }
+        });
+        tv_my_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                status=1;
+                tvOpen.setText("VIP可见");
+                mPopupWindow.dismiss();
+            }
+        });
     }
 
     public void showComfirmDialog() {
@@ -284,7 +332,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             return;
         }
         if (isRelease) {
-            pd=new ProgressDialog(AddArticleActivity.this);
+            pd = new ProgressDialog(AddArticleActivity.this);
             pd.setTitle("提示");
             pd.setMessage("正在添加干货分享、、、");
             pd.show();
@@ -293,7 +341,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             formData.put("arctitle", title);
             formData.put("synopsis", content);
             formData.put("shareContent", dealContent);
-            Log.e("formData",formData.toString());
+            formData.put("status",status+"");
+            Log.e("formData", formData.toString());
             presenter.publishAnArticlePresenter(formData, file, "file");
         } else {
             ShareBean bean = new ShareBean();

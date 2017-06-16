@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ask"
     android:layout_width="match_parent"
-    android:background="@android:color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -76,67 +76,105 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2px"
+            android:layout_height="@dimen/border_2"
             android:background="@color/aam_item_border" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/border_20"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/border_20">
 
-                <TextView
-                    android:id="@+id/tv_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/border_400"
-                    android:gravity="center"
-                    android:text="添加背景图片"
-                    android:textSize="@dimen/font_30" />
 
-                <EditText
-                    android:id="@+id/et_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:enabled="true"
-                    android:gravity="top"
-                    android:hint="请输入标题"
-                    android:inputType="textMultiLine"
-                    android:maxLines="2"
-                    android:maxLength="30"
-                    android:padding="@dimen/border_30"
-                    android:scrollbars="vertical" />
+                    <TextView
+                        android:id="@+id/tv_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/border_400"
+                        android:gravity="center"
+                        android:text="添加背景图片"
+                        android:textSize="@dimen/font_30" />
+
+                    <EditText
+                        android:id="@+id/et_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:enabled="true"
+                        android:gravity="top"
+                        android:hint="请输入标题"
+                        android:inputType="textMultiLine"
+                        android:maxLength="30"
+                        android:maxLines="2"
+                        android:padding="@dimen/border_30"
+                        android:scrollbars="vertical" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/border_2"
+                        android:background="@color/aam_item_border" />
+
+                    <jp.wasabeef.richeditor.RichEditor
+                        android:id="@+id/et_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/border_228"
+                        android:padding="@dimen/border_30"
+                        android:textSize="@dimen/font_28" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:background="@color/aam_item_border" />
+
+
+                    <jp.wasabeef.richeditor.RichEditor
+                        android:id="@+id/et_deal_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/border_460"
+                        android:padding="@dimen/border_30"
+                        android:textSize="@dimen/font_28" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="2px"
+                    android:layout_height="@dimen/border_10"
                     android:background="@color/aam_item_border" />
 
-                <jp.wasabeef.richeditor.RichEditor
-                    android:id="@+id/et_content"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="@dimen/border_228"
-                    android:padding="@dimen/border_30"
-                    android:textSize="@dimen/font_28" />
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_open"
+                    android:padding="@dimen/border_20">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/img_open"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:drawablePadding="@dimen/border_20"
+                        android:text="谁可以看"/>
+                    <TextView
+                        android:id="@+id/tv_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="公开"
+                        android:drawablePadding="@dimen/border_20"
+                        android:drawableRight="@mipmap/arrow_more"
+                        android:gravity="right"/>
+                </LinearLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="2px"
+                    android:layout_height="@dimen/border_10"
+                    android:layout_marginBottom="@dimen/border_60"
                     android:background="@color/aam_item_border" />
 
-
-                <jp.wasabeef.richeditor.RichEditor
-                    android:id="@+id/et_deal_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="@dimen/border_30"
-                    android:textSize="@dimen/font_28"
-                    android:minHeight="@dimen/border_200"/>
             </LinearLayout>
         </ScrollView>
     </com.zhy.autolayout.AutoLinearLayout>

@@ -58,4 +58,6 @@ dependencies {
     compile 'com.huxq17.xrefreshview:xrefreshview:3.6.2'
     compile 'jp.wasabeef:richeditor-android:1.2.2'
     compile 'cn.finalteam.rxgalleryfinal:library:0.0.9'
+    compile 'com.liulishuo.filedownloader:library:1.4.2'
+    compile 'com.czp.arcProgressBar:ArcProgressBar:1.0.1'
 }

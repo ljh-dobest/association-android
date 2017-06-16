@@ -22,6 +22,9 @@ public class ShareBean implements Serializable{
     private int likesStatus;   //1当前用户已点赞 0未点赞
     private int commentNumber;   //评论数量
     private int collectionNumber; //收藏数量
+    private int status;        //0所有人显示  1只能vip显示
+    private String download;       //上传文件
+    private int isDownload;   //0所以人下载 1vip下载
 
     public String getUserId() {
         return userId;
@@ -125,5 +128,29 @@ public class ShareBean implements Serializable{
 
     public void setCollectionNumber(int collectionNumber) {
         this.collectionNumber = collectionNumber;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getDownload() {
+        return download;
+    }
+
+    public void setDownload(String download) {
+        this.download = download;
+    }
+
+    public int getIsDownload() {
+        return isDownload;
+    }
+
+    public void setIsDownload(int isDownload) {
+        this.isDownload = isDownload;
     }
 }
