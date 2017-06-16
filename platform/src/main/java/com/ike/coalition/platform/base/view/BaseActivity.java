@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 
 import com.ike.coalition.platform.R;
 import com.ike.coalition.platform.utils.DataUtils;
+import com.zhy.autolayout.AutoLayoutActivity;
 
 
 /**
@@ -18,7 +19,7 @@ import com.ike.coalition.platform.utils.DataUtils;
  * activity基类
  */
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AutoLayoutActivity {
 
     protected Context mContext;
 /*    protected LinearLayout mHeadLayout;

@@ -13,6 +13,8 @@
         android:icon="@mipmap/ganhuo"
         android:label="@string/name"
         android:supportsRtl="true"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:replace="android:label"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
             android:exported="true">

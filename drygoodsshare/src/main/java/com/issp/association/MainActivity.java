@@ -79,6 +79,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
 
     private String userId;
+    private int checkVip=0;
 
     private int limit = 20;
     private int page = 1;
@@ -96,7 +97,9 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     private void initView() {
         //   PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");//"110";
+        userId = /*getIntent().getStringExtra("loginid");//*/"13824692192";
+        checkVip=getIntent().getIntExtra("checkVip",0);
+        App.checkVip=checkVip;
         Log.e("userId", userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
@@ -151,6 +154,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             public void onItemClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
                 intent.putExtra("userId", userId);
+                intent.putExtra("checkVip",checkVip);
                 intent.putExtra("activesId", bean.getId());
                 startActivity(intent);
             }
@@ -173,6 +177,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             public void onCommentClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
                 intent.putExtra("userId", userId);
+                intent.putExtra("checkVip",checkVip);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -225,6 +230,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             public void OnBannerClick(int position) {
                 Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
                 intent.putExtra("userId", userId);
+                intent.putExtra("checkVip",checkVip);
                 intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
                 startActivity(intent);
             }

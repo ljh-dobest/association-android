@@ -14,6 +14,7 @@ import java.util.Map;
  */
 
 public class App extends Application {
+    public static int checkVip;
 
     public static Map<String, Activity> activityMap = new HashMap<String, Activity>(0);
     @Override

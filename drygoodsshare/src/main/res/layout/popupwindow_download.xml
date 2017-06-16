@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/submit_comment_bkg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/border_20"
+    android:padding="@dimen/border_20">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/close" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/border_2"
+        android:layout_marginBottom="@dimen/border_18"
+        android:layout_marginTop="@dimen/border_18"
+        android:background="@color/aam_item_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="点击标题下载"
+            android:textColor="@color/color_66"
+            android:textSize="@dimen/font_26" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="剩余12.5G"
+            android:textColor="@color/color_66"
+            android:textSize="@dimen/font_26" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/border_20"
+        android:background="@drawable/submit_comment_bkg"
+        android:orientation="horizontal"
+        android:padding="@dimen/border_20">
+
+        <TextView
+            android:id="@+id/tv_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:text="标题"
+            android:textColor="@color/color_33"
+            android:textSize="@dimen/font_30" />
+
+        <com.czp.library.ArcProgress
+            android:id="@+id/pb_schedule"
+            android:layout_width="@dimen/border_80"
+            android:layout_height="@dimen/border_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            app:borderWidth="2dp"
+            app:degree="0"
+            app:progressColor="@color/green"
+            app:progressStyle="arc"
+            app:radius="@dimen/border_40"
+            app:tickDensity="2" />
+    </RelativeLayout>
+<TextView
+    android:id="@+id/tv_file"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_download_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/border_40"
+        android:padding="@dimen/border_26"
+        android:text="管理下载"
+        android:gravity="center"
+        android:textColor="@color/nsdk_color_version"
+        android:textSize="@dimen/font_32" />
+</LinearLayout>

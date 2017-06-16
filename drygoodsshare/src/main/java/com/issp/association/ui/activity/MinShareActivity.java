@@ -137,7 +137,7 @@ public class MinShareActivity extends BaseMvpActivity<IMinShareListView, MinShar
         // isRefresh = true;
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
-        // formData.put("page", page + "");
+         formData.put("page", page + "");
         presenter.MinShareInfoPresenter(formData);
     }
 
