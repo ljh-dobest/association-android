@@ -35,6 +35,7 @@ import com.issp.association.crowdfunding.utils.PreferenceService;
 import com.issp.association.crowdfunding.utils.T;
 import com.issp.association.crowdfunding.view.BannerViewPager;
 import com.issp.association.crowdfunding.view.CustomGifHeader;
+import com.issp.association.crowdfunding.view.CustomerFooter;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.zhy.autolayout.attr.AutoAttr;
@@ -88,6 +89,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
 
 
     private String userId;
+    private int checkVip;
 
 
     @Override
@@ -109,7 +111,9 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
 
     private void initView() {
         // PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");//"110";
+        userId = getIntent().getStringExtra("loginid");//"18878481054";
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
         lt_main_title.setText(getString(R.string.str_title_main));
 
         xRefreshView.setPullLoadEnable(true);
@@ -133,8 +137,12 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
         xRefreshView.setAutoLoadMore(false);
         xRefreshView.setPinnedTime(1000);
         xRefreshView.setMoveForHorizontal(true);
-//        recyclerviewAdapter.setHeaderView(headerView, recyclerView);
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+        //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
+        //并注释掉第四行代码
+        CustomerFooter customerFooter = new CustomerFooter(this);
+        customerFooter.setRecyclerView(recyclerView);
+        adapter.setCustomLoadMoreView(customerFooter);
+       // adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
 //        xRefreshView1.setPullRefreshEnable(false);
         //设置在下拉刷新被禁用的情况下，是否允许界面被下拉,默认是true
 //        xRefreshView1.setMoveHeadWhenDisablePullRefresh(false);

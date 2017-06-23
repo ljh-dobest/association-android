@@ -19,6 +19,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.czp.library.ArcProgress;
+import com.issp.association.App;
 import com.issp.association.R;
 import com.issp.association.base.view.BaseMvpActivity;
 import com.issp.association.bean.ShareBean;
@@ -128,7 +129,9 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         Intent intent = getIntent();
 
         userId = intent.getStringExtra("userId");
-        checkVip=intent.getIntExtra("checkVip",0);
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+
         activesId = intent.getStringExtra("activesId");
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);

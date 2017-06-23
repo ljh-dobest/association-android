@@ -10,6 +10,7 @@ import com.zhy.autolayout.config.AutoLayoutConifg;
  */
 
 public class App extends Application {
+    public static int checkVip;
     @Override
     public void onCreate()
     {

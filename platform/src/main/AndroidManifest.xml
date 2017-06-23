@@ -37,7 +37,7 @@
             android:value="750" />
         <meta-data
             android:name="design_height"
-            android:value="1340" />
+            android:value="1280" />
     </application>
 
 </manifest>

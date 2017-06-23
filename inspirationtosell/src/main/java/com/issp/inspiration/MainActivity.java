@@ -34,6 +34,7 @@ import com.issp.inspiration.utils.PreferenceService;
 import com.issp.inspiration.utils.T;
 import com.issp.inspiration.view.BannerViewPager;
 import com.issp.inspiration.view.CustomGifHeader;
+import com.issp.inspiration.view.CustomerFooter;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.zhy.autolayout.attr.AutoAttr;
@@ -83,6 +84,8 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
     private int page = 1;
 
     private String userId;
+    private int checkVip;
+
     Banner homepage_banner;
 
     @Override
@@ -95,7 +98,9 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     private void initView() {
         //PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");
+        userId = getIntent().getStringExtra("loginid");//"110";
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
         lt_main_title.setText("灵感贩卖");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -118,7 +123,12 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
         xRefreshView.setPinnedTime(1500);
         xRefreshView.setMoveForHorizontal(true);
 //        recyclerviewAdapter.setHeaderView(headerView, recyclerView);
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+        //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
+        //并注释掉第四行代码
+        CustomerFooter customerFooter = new CustomerFooter(this);
+        customerFooter.setRecyclerView(recyclerView);
+        adapter.setCustomLoadMoreView(customerFooter);
+        //adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
 //        xRefreshView1.setPullRefreshEnable(false);
         //设置在下拉刷新被禁用的情况下，是否允许界面被下拉,默认是true
 //        xRefreshView1.setMoveHeadWhenDisablePullRefresh(false);

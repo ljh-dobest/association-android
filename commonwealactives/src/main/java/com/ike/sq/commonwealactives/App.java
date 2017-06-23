@@ -1,4 +1,4 @@
-package com.issp.association.crowdfunding;
+package com.ike.sq.commonwealactives;
 
 
 import android.app.Application;

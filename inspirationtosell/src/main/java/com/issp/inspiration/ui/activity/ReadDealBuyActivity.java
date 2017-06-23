@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.issp.inspiration.App;
 import com.issp.inspiration.R;
 import com.issp.inspiration.base.view.BaseMvpActivity;
 import com.issp.inspiration.bean.DealBuyBean;
@@ -92,6 +93,7 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     DealBuyBean bean;
     String userId;
     String activesId;
+    private int checkVip;
 
     private static final int REQUEST_CODE = 1;
 
@@ -109,6 +111,8 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
         Intent intent=getIntent();
         userId=intent.getStringExtra("userId");
         activesId=intent.getStringExtra("activesId");
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
         getDealBuy();
     }
 

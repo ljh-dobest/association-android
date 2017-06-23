@@ -142,6 +142,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("articleId", bean.getId());
         formData.put("userId", userId);
+        formData.put("page",page+"");
         formData.put("type", "6");
         presenter.FeedCommentInfo(formData);
     }

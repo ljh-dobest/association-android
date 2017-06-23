@@ -14,11 +14,16 @@ import android.widget.Toast;
 
 
 import com.czp.library.ArcProgress;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ike.communityalliance.R;
 import com.ike.communityalliance.adapter.AddApplicationAdapter;
 import com.ike.communityalliance.base.BaseActivity;
 import com.ike.communityalliance.bean.ApkItem;
 import com.ike.communityalliance.bean.ApplyListItem;
+import com.ike.communityalliance.bean.Code;
+import com.ike.communityalliance.bean.Version;
+import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.utils.ApkOperator;
 import com.ike.communityalliance.utils.file.FileUtils;
 import com.ike.mylibrary.util.T;
@@ -28,17 +33,22 @@ import com.liulishuo.filedownloader.FileDownloadSampleListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.liulishuo.filedownloader.model.FileDownloadStatus;
 import com.morgoo.droidplugin.pm.PluginManager;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
+import okhttp3.Call;
 
 
 /**
@@ -92,19 +102,26 @@ public class AddApplicationActivity extends BaseActivity {
         list = new ArrayList<ApplyListItem>(0);
         list.add(new ApplyListItem("shareApp", "干货分享", R.mipmap.ganhuo, 1, "com.issp.association",
                 f.getPath() + "/drygoodsshare.apk", "http://7xlet1.com1.z0.glb.clouddn.com/drygoodsshare.apk", 0));
-        list.add(new ApplyListItem("", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration",
+        list.add(new ApplyListItem("inspirationApp", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration",
                 f.getPath() + "/inspirationtosell.apk", "http://7xlet1.com1.z0.glb.clouddn.com/inspirationtosell.apk", 0));
-        list.add(new ApplyListItem("", "平台活动", R.mipmap.rest, 1, "com.ike.coalition.platform", f.getPath() + "/platform.apk",
-                "http://7xlet1.com1.z0.glb.clouddn.com/platform.apk", 0));
-        list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.qiuzhu, 1, "com.issp.association.crowdfunding",
+        list.add(new ApplyListItem("claimApp", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
+        list.add(new ApplyListItem("streamingApp", "直播中心", R.mipmap.zhibo, 1, "", "", "", 0));
+        list.add(new ApplyListItem("takingTaxiApp", "联盟打车", R.mipmap.dache, 1, "", "", "", 0));
+        list.add(new ApplyListItem("navigationApp", "导航", R.mipmap.daohang, 1, "", "", "", 0));
+        list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.zhongchou, 1, "com.issp.association.crowdfunding",
                 f.getPath() + "/crowdfunding.apk", "http://7xlet1.com1.z0.glb.clouddn.com/crowdfunding.apk", 0));
-        list.add(new ApplyListItem("", "公益活动", R.mipmap.rest, 1, "com.ike.sq.commonwealactives",
-                "commonwealactives.apk", "http://7xlet1.com1.z0.glb.clouddn.com/commonwealactives.apk", 0));
-        list.add(new ApplyListItem("", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
-        list.add(new ApplyListItem("", "直播中心", R.mipmap.zhibo, 1, "", "", "", 0));
-        list.add(new ApplyListItem("", "联盟打车", R.mipmap.dache, 1, "", "", "", 0));
-        list.add(new ApplyListItem("", "求助中心", R.mipmap.qiuzhu, 1, "com.min.helpcenter",
+
+        list.add(new ApplyListItem("threeMinutesApp", "三分钟教学", R.mipmap.sanfenzhong, 1, "com.min.threeminutestoteach",
+                f.getPath() + "/threeminutestoteach.apk", "http://7xlet1.com1.z0.glb.clouddn.com/threeminutestoteach.apk", 0));
+        list.add(new ApplyListItem("surveyResearchApp", "调研中心", R.mipmap.diaoyan, 1, "", "", "", 0));
+        list.add(new ApplyListItem("seekHelpApp", "求助中心", R.mipmap.qiuzhu, 1, "com.min.helpcenter",
                 f.getPath() + "/helpcenter.apk", "http://7xlet1.com1.z0.glb.clouddn.com/helpcenter.apk", 0));
+        list.add(new ApplyListItem("platformApp", "平台活动", R.mipmap.pingtai, 1, "com.ike.coalition.platform", f.getPath() + "/platform.apk",
+                "http://7xlet1.com1.z0.glb.clouddn.com/platform.apk", 0));
+        list.add(new ApplyListItem("commonwealApp", "公益活动", R.mipmap.gongyi, 1, "com.ike.sq.commonwealactives",
+                "commonwealactives.apk", "http://7xlet1.com1.z0.glb.clouddn.com/commonwealactives.apk", 0));
+        list.add(new ApplyListItem("driverApp", "联盟司机", R.mipmap.siji, 1, "", "", "", 0));
+        list.add(new ApplyListItem("lookForApp", "后台找人", R.mipmap.zhaoren, 1, "", "", "", 0));
         adapter = new AddApplicationAdapter(list, AddApplicationActivity.this);
         gvApplication.setAdapter(adapter);
     }
@@ -117,6 +134,7 @@ public class AddApplicationActivity extends BaseActivity {
             if (apkFromInstall.get(i).packageInfo.packageName.equals(list.get(position).getPackageName())) {
                // mApkOperator.openApk(apkFromInstall.get(i));
                 T.showLong(AddApplicationActivity.this, "已经添加");
+                getLastVersion(apkFromInstall.get(i),view,position);
                 boo = false;
                 return;
             } else {
@@ -125,21 +143,24 @@ public class AddApplicationActivity extends BaseActivity {
 
         }
         if (boo) {
-            Toast.makeText(AddApplicationActivity.this, "亲还没有添加哦", Toast.LENGTH_LONG).show();
-            // T.showLong(AddApplicationActivity.this, "亲还没有添加哦");
-            taskPb = (ArcProgress) view.findViewById(R.id.pb_schedule);
-            taskPb.setVisibility(View.VISIBLE);
-            ApplyListItem model = list.get(position);
-            BaseDownloadTask task = FileDownloader.getImpl().create(model.getUrl())
-                    .setPath(model.getPath())
-                    .setCallbackProgressTimes(100)
-                    .setListener(taskDownloadListener);
-            ((AddApplicationAdapter.ViewHolder) view.getTag()).addTaskForViewHolder(task);
-            task.start();
+            updateApk(view,position);
         }
 
 
     }
+    private void updateApk(View view, int position){
+        T.showLong(AddApplicationActivity.this, "亲还没有添加哦");
+        taskPb = (ArcProgress) view.findViewById(R.id.pb_schedule);
+        taskPb.setVisibility(View.VISIBLE);
+        ApplyListItem model = list.get(position);
+        BaseDownloadTask task = FileDownloader.getImpl().create(model.getUrl())
+                .setPath(model.getPath())
+                .setCallbackProgressTimes(100)
+                .setListener(taskDownloadListener);
+        ((AddApplicationAdapter.ViewHolder) view.getTag()).addTaskForViewHolder(task);
+        task.start();
+    }
+
 
 
     // 从下载文件夹获取Apk
@@ -222,6 +243,41 @@ public class AddApplicationActivity extends BaseActivity {
             return mApkOperator.installApk(mApkItem);
         }
 
+    }
+    private void getLastVersion(final ApkItem apkItem, final View view, final int position){
+        Map<String,String> formData=new HashMap<>(0);
+        HttpUtils.sendFormBodyPostRequest("", formData, new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+
+                try {
+                    Type jsonType = new TypeToken<Code<Version>>() {
+                    }.getType();
+                    Code<Version> rowsTable= new Gson().fromJson(response, jsonType);
+
+                    Version version = rowsTable.getData();
+                    if (null != version) {
+                        int ersionCode = Integer.parseInt(mApkOperator.versionCode(apkItem).replace(".", ""));
+                        int v = Integer.parseInt(version.getVersion().replace(".", ""));
+                        if (v > ersionCode) {
+                            if (apkTask() < 1) {
+                                updateApk(view,position);
+                            }
+
+                        }
+                    }
+                } catch (Exception e) {
+                    Log.e("AffairsFragment-handler", e.toString());
+                } finally {
+
+                }
+            }
+        });
     }
 
     private FileDownloadListener taskDownloadListener = new FileDownloadSampleListener() {

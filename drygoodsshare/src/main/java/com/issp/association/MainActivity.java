@@ -36,6 +36,7 @@ import com.issp.association.utils.PreferenceService;
 import com.issp.association.utils.T;
 import com.issp.association.view.BannerViewPager;
 import com.issp.association.view.CustomGifHeader;
+import com.issp.association.view.CustomerFooter;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 
@@ -97,9 +98,9 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     private void initView() {
         //   PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = /*getIntent().getStringExtra("loginid");//*/"13824692192";
-        checkVip=getIntent().getIntExtra("checkVip",0);
-        App.checkVip=checkVip;
+        userId = getIntent().getStringExtra("loginid");//"13824692192";
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
         Log.e("userId", userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
@@ -125,7 +126,12 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
         xRefreshView.setPinnedTime(1500);
         xRefreshView.setMoveForHorizontal(true);
 //        recyclerviewAdapter.setHeaderView(headerView, recyclerView);
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+        //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
+        //并注释掉第四行代码
+        CustomerFooter customerFooter = new CustomerFooter(this);
+        customerFooter.setRecyclerView(recyclerView);
+        adapter.setCustomLoadMoreView(customerFooter);
+        //adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
 //        xRefreshView1.setPullRefreshEnable(false);
         //设置在下拉刷新被禁用的情况下，是否允许界面被下拉,默认是true
 //        xRefreshView1.setMoveHeadWhenDisablePullRefresh(false);

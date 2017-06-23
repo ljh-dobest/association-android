@@ -19,6 +19,7 @@ import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.bean.ProductRewardBean;
 import com.issp.association.crowdfunding.interfaces.ISupportProductListView;
 import com.issp.association.crowdfunding.presenters.SupportProductPresenter;
+import com.issp.association.crowdfunding.view.CustomerFooter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,10 +82,11 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
     }
 
     private void initView() {
-        Intent intent=getIntent();
-        userId=intent.getStringExtra("userId");
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
         bean = (ProductCollectBean) intent.getSerializableExtra("bean");
-        personList.addAll(bean.getProductReward());
+        if (null != bean.getProductReward())
+            personList.addAll(bean.getProductReward());
         ltMainTitle.setText(getString(R.string.str_title_support));
 
         xrefreshview.setPullLoadEnable(true);
@@ -107,10 +109,10 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
 
         //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
         //并注释掉第四行代码
-      /*  CustomerFooter customerFooter = new CustomerFooter(this);
-        customerFooter.setRecyclerView(recyclerView);
-       adapter.setCustomLoadMoreView(customerFooter);*/
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+        CustomerFooter customerFooter = new CustomerFooter(this);
+        customerFooter.setRecyclerView(recyclerViewTestRv);
+        adapter.setCustomLoadMoreView(customerFooter);
+        //adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
         xrefreshview.enableReleaseToLoadMore(true);
         xrefreshview.enableRecyclerViewPullUp(true);
         xrefreshview.enablePullUpWhenLoadCompleted(true);
@@ -137,7 +139,7 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
             @Override
             public void onSupportClick(View view, ProductRewardBean bean) {
                 Intent intent = new Intent(SupportProductActivity.this, AddSupportProjectActivity.class);
-                intent.putExtra("userId",userId);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -145,7 +147,11 @@ public class SupportProductActivity extends BaseMvpActivity<ISupportProductListV
     }
 
     private void initData() {
-
+        tvConfessTotal.setText(bean.getContribution() + "");
+        tvAmountTotal.setText(bean.getCapital() + "");
+        int schedule = (int) (bean.getContribution() / bean.getCapital() * 100);
+        pbSchedule.setProgress(schedule);
+        tvSchedule.setText(schedule+"%");
     }
 
     @OnClick(R.id.lt_main_title_left)

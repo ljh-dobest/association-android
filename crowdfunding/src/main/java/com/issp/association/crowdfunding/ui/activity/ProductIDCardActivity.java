@@ -19,6 +19,7 @@ import com.issp.association.crowdfunding.interfaces.IProductIDCardView;
 import com.issp.association.crowdfunding.presenters.ProductIdCardPresenter;
 import com.issp.association.crowdfunding.utils.AMUtils;
 import com.issp.association.crowdfunding.utils.DisplayUtils;
+import com.issp.association.crowdfunding.utils.IDCardUtil;
 import com.issp.association.crowdfunding.utils.T;
 
 import java.util.HashMap;
@@ -53,9 +54,6 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
     @BindView(R.id.tv_submit)
     TextView tvSubmit;
 
-    private boolean isIDCard;
-    private boolean isCheckId;
-
     private String userId;
 
     @Override
@@ -72,35 +70,10 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("身份验证");
         ltMainTitleRight.setCompoundDrawables(null, null, null, null);
-        etIdcard.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 15 || s.length() == 18) {
-                    presenter.checkIdCardPresenter(s.toString());
-                    isCheckId = true;
-                }
-            }
-        });
     }
     public void showComfirmDialog() {
-        if (!isIDCard) {
-            T.showLong(ProductIDCardActivity.this, "身份证输出不正确");
-            return;
-        }
-        if (!AMUtils.isMobile(etMobile.getText().toString().trim())) {
-            T.showLong(ProductIDCardActivity.this, "手机号码不正确");
-            return;
-        }
+
         final AlertDialog ComfirmDialog = new AlertDialog.Builder(this).create();
         ComfirmDialog.show();
         Window window = ComfirmDialog.getWindow();
@@ -140,14 +113,9 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
 
     @Override
     public void showError(String errorString) {
-        if (isCheckId) {
-            if (etIdcard.getText().length() == 18) {
-                T.showLong(ProductIDCardActivity.this, errorString);
-            }
-            isIDCard = false;
-        }else {
+
             T.showLong(ProductIDCardActivity.this, errorString);
-        }
+
     }
 
     @Override
@@ -159,7 +127,7 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
 
     @Override
     public void checkIdCardView(String data) {
-        isIDCard = true;
+
     }
 
     @Override
@@ -180,16 +148,28 @@ public class ProductIDCardActivity extends BaseMvpActivity<IProductIDCardView, P
     }
 
     private void submit() {
+
         String userName = etUserName.getText().toString().trim();
         String idCard = etIdcard.getText().toString().trim();
         String mobile = etMobile.getText().toString().trim();
-
+        String info = IDCardUtil.IDCardValidate(idCard);
+        if (userName.equals("")){
+            T.showLong(ProductIDCardActivity.this,"请输入姓名");
+        }
+        if (!info.equals("YES")) {
+            T.showLong(ProductIDCardActivity.this, "身份证输出不正确");
+            return;
+        }
+        if (!AMUtils.isMobile(mobile)) {
+            T.showLong(ProductIDCardActivity.this, "手机号码不正确");
+            return;
+        }
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
         formData.put("userName", userName);
         formData.put("idcard", idCard);
         formData.put("mobile", mobile);
         presenter.addProductIdCard(formData);
-        isCheckId=false;
+
     }
 }

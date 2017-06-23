@@ -18,6 +18,7 @@ import com.issp.association.crowdfunding.bean.ProductCollectBean;
 import com.issp.association.crowdfunding.interfaces.IFeedForCommentListView;
 import com.issp.association.crowdfunding.presenters.FeedForCommentPresenter;
 import com.issp.association.crowdfunding.utils.T;
+import com.issp.association.crowdfunding.view.CustomerFooter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -109,10 +110,10 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
 
         //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
         //并注释掉第四行代码
-      /*  CustomerFooter customerFooter = new CustomerFooter(this);
+        CustomerFooter customerFooter = new CustomerFooter(this);
         customerFooter.setRecyclerView(recyclerView);
-       adapter.setCustomLoadMoreView(customerFooter);*/
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+       adapter.setCustomLoadMoreView(customerFooter);
+        //adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
         xRefreshView.enableReleaseToLoadMore(true);
         xRefreshView.enableRecyclerViewPullUp(true);
         xRefreshView.enablePullUpWhenLoadCompleted(true);
@@ -141,7 +142,8 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("articleId", bean.getId());
         formData.put("userId", userId);
-        formData.put("type", "3");
+        formData.put("page",page+"");
+        formData.put("type", "1");
         presenter.FeedCommentInfo(formData);
     }
 
@@ -166,7 +168,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
             }
             formData.put("articleId", bean.getId());
             formData.put("userId", userId);
-            formData.put("type", "3");
+            formData.put("type", "1");
             formData.put("content", editText.getText().toString().trim());
             presenter.addFeedCommentInfo(formData);
         }

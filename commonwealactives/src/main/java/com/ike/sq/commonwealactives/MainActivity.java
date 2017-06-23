@@ -32,6 +32,7 @@ import com.ike.sq.commonwealactives.utils.PreferenceService;
 import com.ike.sq.commonwealactives.utils.T;
 import com.ike.sq.commonwealactives.view.BannerViewPager;
 import com.ike.sq.commonwealactives.view.CustomGifHeader;
+import com.ike.sq.commonwealactives.view.CustomerFooter;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.zhy.autolayout.attr.AutoAttr;
@@ -98,8 +99,9 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
     private void initView() {
         //  PreferenceService ps = new PreferenceService(MainActivity.this);
-        //userId = getIntent().getStringExtra("loginid");
-         userId = "110";
+        userId = getIntent().getStringExtra("loginid");
+        App.checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+        //userId = "110";
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
 
@@ -122,7 +124,12 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         xrefreshview.setPinnedTime(1000);
         xrefreshview.setMoveForHorizontal(true);
 //        recyclerviewAdapter.setHeaderView(headerView, recyclerView);
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+        //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
+        //并注释掉第四行代码
+        CustomerFooter customerFooter = new CustomerFooter(this);
+        customerFooter.setRecyclerView(recyclerViewTestRv);
+        adapter.setCustomLoadMoreView(customerFooter);
+        //adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
 //        xRefreshView1.setPullRefreshEnable(false);
         //设置在下拉刷新被禁用的情况下，是否允许界面被下拉,默认是true
 //        xRefreshView1.setMoveHeadWhenDisablePullRefresh(false);
@@ -207,7 +214,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
         List<String> imgList = new ArrayList<String>(0);
 
         for (ImageUrlBean url : imageUrlBeanList) {
-            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
+            imgList.add(HttpUtils.IMAGE_RUL + url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -270,7 +277,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
     @Override
     public void getImageUrlView(List<ImageUrlBean> bean) {
         imageUrlBeanList = bean;
-        if (null != imageUrlBeanList&&imageUrlBeanList.size()>0)
+        if (null != imageUrlBeanList && imageUrlBeanList.size() > 0)
             initBanner();
     }
 

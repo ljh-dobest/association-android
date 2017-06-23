@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ike.coalition.platform.App;
 import com.ike.coalition.platform.R;
 import com.ike.coalition.platform.adapter.PlatformRegisteredAdapter;
 import com.ike.coalition.platform.base.view.BaseMvpActivity;
@@ -79,6 +80,7 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
     private PlatformBean bean;
     private String  userId;
     private String  activesId;
+    private int checkVip;
 
     PlatformRegisteredAdapter adapter;
 
@@ -96,6 +98,8 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
         Intent intent=getIntent();
         userId=intent.getStringExtra("userId");
         activesId=intent.getStringExtra("activesId");
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
        // bean = (PlatformBean) getIntent().getSerializableExtra("bean");
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);

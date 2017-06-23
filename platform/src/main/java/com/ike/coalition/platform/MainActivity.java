@@ -3,11 +3,9 @@ package com.ike.coalition.platform;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,24 +15,19 @@ import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
 import com.andview.refreshview.XRefreshViewFooter;
-import com.ike.coalition.platform.adapter.IndexPageAdapter;
 import com.ike.coalition.platform.adapter.SimpleAdapter;
 import com.ike.coalition.platform.base.adpater.BannerImageLoader;
-import com.ike.coalition.platform.base.adpater.BaseRecyclerViewAdapter;
 import com.ike.coalition.platform.base.view.BaseMvpActivity;
 import com.ike.coalition.platform.bean.ImageUrlBean;
 import com.ike.coalition.platform.bean.PlatformBean;
 import com.ike.coalition.platform.interfaces.IPlatformListView;
 import com.ike.coalition.platform.network.HttpUtils;
-import com.ike.coalition.platform.presenters.MinPlatformPresenter;
 import com.ike.coalition.platform.presenters.PlatformPresenter;
 import com.ike.coalition.platform.ui.activity.CommentMessageActivity;
 import com.ike.coalition.platform.ui.activity.MInPlatformActivity;
 import com.ike.coalition.platform.ui.activity.PlatformParticularsActivity;
 import com.ike.coalition.platform.utils.DisplayUtils;
-import com.ike.coalition.platform.utils.PreferenceService;
 import com.ike.coalition.platform.utils.T;
-import com.ike.coalition.platform.view.BannerViewPager;
 import com.ike.coalition.platform.view.CustomGifHeader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
@@ -69,6 +62,8 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     RecyclerView recyclerView;
     @BindView(R.id.xrefreshview)
     XRefreshView xRefreshView;
+    @BindView(R.id.iv_top)
+    ImageView ivTop;
 
     private View headerView;
 
@@ -85,6 +80,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     Banner homepage_banner;
 
     private String userId;
+    private int checkVip;
 
 
     @Override
@@ -108,6 +104,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         // PreferenceService ps=new PreferenceService(MainActivity.this);
         userId = /*"18878481054";//*/getIntent().getStringExtra("loginid");
 
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
 
@@ -196,7 +193,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         List<String> imgList = new ArrayList<String>(0);
 
         for (ImageUrlBean url : imageUrlBeanList) {
-            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
+            imgList.add(HttpUtils.IMAGE_RUL + url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -222,7 +219,10 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
     void leftClick() {
         MainActivity.this.finish();
     }
-
+    @OnClick(R.id.iv_top)
+    public void onViewClicked() {
+        recyclerView.smoothScrollToPosition(0);
+    }
     @OnClick(R.id.lt_main_title_right)
     void initPopupWindow() {
         int width = lt_main_title_right.getWidth();
@@ -317,5 +317,6 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         super.onStop();
         homepage_banner.stopAutoPlay();
     }
+
 
 }

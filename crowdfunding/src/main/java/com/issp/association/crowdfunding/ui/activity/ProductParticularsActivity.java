@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.issp.association.crowdfunding.App;
 import com.issp.association.crowdfunding.MainActivity;
 import com.issp.association.crowdfunding.R;
 import com.issp.association.crowdfunding.base.view.BaseMvpActivity;
@@ -57,6 +58,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
     private ProductCollectBean bean;
     private String userId;
     private String articleId;
+    private int checkVip;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,8 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
         Intent intent = getIntent();
         userId = intent.getStringExtra("userId");
         articleId = intent.getStringExtra("articleId");
+
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
         formData.put("articleId", articleId);
@@ -82,13 +86,13 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
         ProductParticularsActivity.this.finish();
     }
 
-    @OnClick(R.id.tv_check_indent)
+/*    @OnClick(R.id.tv_check_indent)
     void checkIndentClick() {
         Intent intent = new Intent(ProductParticularsActivity.this, SupportProductActivity.class);
         intent.putExtra("userId", userId);
         intent.putExtra("bean", bean);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public ProductParticularsPresenter initPresenter() {
@@ -161,7 +165,7 @@ public class ProductParticularsActivity extends BaseMvpActivity<IProductParticul
                 startActivity(intent);
                 break;
             case R.id.tv_check_indent:
-                Intent intentProject = new Intent(ProductParticularsActivity.this, AddSupportProjectActivity.class);
+                Intent intentProject = new Intent(ProductParticularsActivity.this, SupportProductActivity.class);
                 intentProject.putExtra("userId", userId);
                 intentProject.putExtra("bean", bean);
                 startActivity(intentProject);

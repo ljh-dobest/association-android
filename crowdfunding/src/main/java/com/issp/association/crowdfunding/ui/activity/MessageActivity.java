@@ -16,6 +16,7 @@ import com.issp.association.crowdfunding.bean.MessageBean;
 import com.issp.association.crowdfunding.interfaces.IMessageListView;
 import com.issp.association.crowdfunding.presenters.MessagePresenter;
 import com.issp.association.crowdfunding.utils.T;
+import com.issp.association.crowdfunding.view.CustomerFooter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,10 +84,10 @@ public class MessageActivity extends BaseMvpActivity<IMessageListView, MessagePr
 
         //当需要使用数据不满一屏时不显示点击加载更多的效果时，解注释下面的三行代码
         //并注释掉第四行代码
-      /*  CustomerFooter customerFooter = new CustomerFooter(this);
+        CustomerFooter customerFooter = new CustomerFooter(this);
         customerFooter.setRecyclerView(recyclerView);
-       adapter.setCustomLoadMoreView(customerFooter);*/
-        adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
+       adapter.setCustomLoadMoreView(customerFooter);
+        //adapter.setCustomLoadMoreView(new XRefreshViewFooter(this));
         xRefreshView.enableReleaseToLoadMore(false);
         xRefreshView.enableRecyclerViewPullUp(true);
         xRefreshView.enablePullUpWhenLoadCompleted(true);

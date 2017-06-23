@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ike.sq.commonwealactives.App;
 import com.ike.sq.commonwealactives.R;
 import com.ike.sq.commonwealactives.adapter.BenefitRegisteredAdapter;
 import com.ike.sq.commonwealactives.base.view.BaseMvpActivity;
@@ -85,7 +86,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
     private String activesId;
 
     BenefitRegisteredAdapter adapter;
-
+    int checkVip;
     int joinUsersNumber;
 
     @Override
@@ -100,6 +101,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
         Intent intent = getIntent();
         userId = intent.getStringExtra("userId");
         activesId = intent.getStringExtra("activesId");
+        App.checkVip = checkVip = Integer.parseInt(getIntent().getStringExtra("checkVip"));
         // bean = (PlatformBean) getIntent().getSerializableExtra("bean");
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);
@@ -171,12 +173,12 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
     @Override
     public void setBenefitParticularsData(BenefitBean data) {
         tvTitle.setText(data.getTitle());
-        tvAddress.setText("地点"+data.getAddress());
-        tvStartTime.setText("活动时间："+data.getStartTime() + "至" + data.getEndTime());
+        tvAddress.setText("地点" + data.getAddress());
+        tvStartTime.setText("活动时间：" + data.getStartTime() + "至" + data.getEndTime());
         tvAddress.setText(data.getAddress());
-        if (data.getCostMoney()==0) {
+        if (data.getCostMoney() == 0) {
             tvCostMoney.setText("报名费：免费");
-        }else {
+        } else {
             tvCostMoney.setText("报名费：￥" + data.getCostMoney() + "/人");
         }
         wvContent.loadData(data.getContent(), "text/html; charset=UTF-8", null);
@@ -225,7 +227,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
     }
 
 
-    @OnClick({R.id.lt_main_title_left, R.id.tv_more, R.id.iv_share, R.id.iv_like,R.id.iv_comment, R.id.tv_add_register})
+    @OnClick({R.id.lt_main_title_left, R.id.tv_more, R.id.iv_share, R.id.iv_like, R.id.iv_comment, R.id.tv_add_register})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lt_main_title_left:
@@ -234,7 +236,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
             case R.id.tv_more:
                 Intent intent = new Intent(BenefitParticularsActivity.this, BenefitRegisteredActivity.class);
                 bean.setJoinUsersNumber(joinUsersNumber);
-                intent.putExtra("userId",userId);
+                intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
                 break;

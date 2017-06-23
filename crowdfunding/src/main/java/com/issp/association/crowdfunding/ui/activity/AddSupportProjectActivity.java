@@ -57,7 +57,7 @@ public class AddSupportProjectActivity extends BaseMvpActivity<IAddSupportProjec
     LinearLayout llAddAddress;
 
     private String userId;
-    private ProductRewardBean bean;
+    private ProductCollectBean bean;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,7 @@ public class AddSupportProjectActivity extends BaseMvpActivity<IAddSupportProjec
         ltMainTitle.setText(getString(R.string.str_add_support_project));
         Intent intent=getIntent();
         userId=intent.getStringExtra("userId");
-        bean = (ProductRewardBean) intent.getSerializableExtra("bean");
+        bean = (ProductCollectBean) intent.getSerializableExtra("bean");
 
     }
 
