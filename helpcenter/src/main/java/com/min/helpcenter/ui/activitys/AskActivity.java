@@ -120,10 +120,6 @@ private void initDialog(){
                     T.showShort(this,"标题或问题描述不能为空");
                     return;
                 }
-                if(contributionCoin.equals("")||contributionCoin.equals("0")){
-                    T.showShort(this,"贡献币不能为0");
-                    return;
-                }
                 HttpUtils.postSeekHelp("/addSeekHelp", userId,title, explain,contributionCoin, new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {

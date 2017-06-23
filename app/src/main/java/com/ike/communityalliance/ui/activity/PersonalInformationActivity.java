@@ -182,9 +182,6 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
         for (int i = 0; i < data.size(); i++) {
             options1Items.add(data.get(i).getName());
         }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
                 //适配器
                 province_adapter = new ArrayAdapter<String>(PersonalInformationActivity.this, R.layout.simple_spanner_item, options1Items);
                 //设置样式
@@ -192,8 +189,6 @@ public class PersonalInformationActivity extends BaseMvpActivity<IPersonalInfoEd
                 //加载适配器
                 spPersonalInfoProvince.setAdapter(province_adapter);
                 initAddress();
-            }
-        });
     }
 
     //初始化地址

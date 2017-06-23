@@ -53,6 +53,11 @@ public class ApplayVIPActivity extends BaseActivity {
                 T.showShort(this,"暂不支持企业级VIP");
                 break;
             case R.id.tv_apply_personalVIP:
+                checkVip=getSharedPreferences("config", MODE_PRIVATE).getString(Const.LOGIN_VIP, "");
+                if(checkVip.equals("1")){
+                    T.showShort(this,"您已经是VIP用户了");
+                    return;
+                }
                 Intent intent=new Intent(this,PersonalApplayVipActivity.class);
                 startActivity(intent);
                 break;

@@ -112,6 +112,7 @@ public class SignPickerActivity extends BaseMvpActivity<ISignPickerView,SignPick
                 setWasSigned();
                 break;
             case R.id.tv_signpicker_back:
+                setResult(RESULT_OK);
                     finish();
                 break;
         }

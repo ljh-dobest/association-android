@@ -197,13 +197,7 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
 
     @NeedsPermission({Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,Manifest.permission.ACCESS_COARSE_LOCATION})
     public void initLocationPermission() {}
-    //android6.0 打开位置权限
-    private void initPermission() {
-//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS);
-//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_COARSE_LOCATION);
-//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION);
-//        PermissionsUtil.initPermissions(this, Manifest.permission.ACCESS_WIFI_STATE);
-    }
+
 
     @Override
     public void onLocationGet(LocationEntity entity) {
@@ -313,7 +307,6 @@ public class AMAPLocationActivity extends ActionBarActivity implements OnLocatio
                 break;
             case R.id.myLocation:
                 if (mMsg != null) {
-                    initPermission();
                     AppContext.getInstance().getLastLocationCallback().onSuccess(mMsg);
                     AppContext.getInstance().setLastLocationCallback(null);
                     finish();

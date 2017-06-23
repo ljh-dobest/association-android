@@ -175,6 +175,7 @@ public class SearchPossiblePeopleRvAdapter extends RecyclerView.Adapter<SearchPo
             @Override
             public void onError(Call call, Exception e, int id) {
                 T.showShort(mContext, "/addfriendRequest-----" + e);
+                LoadDialog.dismiss(mContext);
                 return;
             }
 

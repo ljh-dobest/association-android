@@ -297,6 +297,7 @@ public class AppContext extends RongIMClient.ResultCallback<Boolean> implements 
     public boolean onReceived(Message message, int i) {
         MessageContent messageContent = message.getContent();
         if(messageContent instanceof CommandNotificationMessage){
+            String msg=((CommandNotificationMessage) messageContent).getData();
             EventBus.getDefault().postSticky(new TalkTalkBean());
             return true;
         }

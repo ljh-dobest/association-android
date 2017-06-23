@@ -421,21 +421,6 @@ public class DateUtils {
         calendar.setTime(date);
         return sdf.format(calendar.getTime());
     }
-    // 本周的第一天
-    public static String currentWeekone() {
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");// 格式化对象
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        if (calendar.get(Calendar.DAY_OF_WEEK)==0){
-            calendar.add(Calendar.DATE,-6 );
-        }else {
-
-            calendar.add(Calendar.DATE,2-calendar.get(Calendar.DAY_OF_WEEK) );
-        }
-
-        return sdf.format(calendar.getTime());
-    }
 
 
     // 获取当前的时分
@@ -473,5 +458,15 @@ public static long lastClickTime=0;
         }
         return sb.toString().trim();
     }
+    public static final int WEEKDAYS = 7;
+    public static String DateToWeek(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int dayIndex = calendar.get(Calendar.DAY_OF_WEEK);
+        if (dayIndex < 1 || dayIndex > WEEKDAYS) {
+            return null;
+        }
 
+        return weekName[dayIndex - 1];
+    }
 }

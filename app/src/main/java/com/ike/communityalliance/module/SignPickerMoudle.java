@@ -66,7 +66,7 @@ public class SignPickerMoudle {
                   Code<SignBean> code = gson.fromJson(response,type);
                   switch (code.getCode()) {
                       case 200:
-                          String msg="连续签到"+code.getData().getDays()+"天,奖励"+code.getData().getExperience()+"贡献值";
+                          String msg="连续签到"+code.getData().getDays()+"天,奖励"+code.getData().getExperience()+"经验值";
                          listener.succeedToSign(msg);
                           break;
                       case 100:
