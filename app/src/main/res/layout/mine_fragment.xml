@@ -19,6 +19,14 @@
                 android:text="@string/qiandao"
                 android:textColor="@color/col_121212"
                 android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_mine_weather"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天气"
+                android:textColor="@color/col_121212"
+                android:textSize="14sp" />
 
             <View
                 android:layout_width="0dp"

@@ -252,6 +252,7 @@ public class HomeFragment extends BaseMvpFragment<IHomePageView,HomePageFragment
                 SharedPreferences sp=getActivity().getSharedPreferences("config", Context.MODE_APPEND);
                 intent.putExtra("userId",sp.getString(Const.LOGIN_ID,""));
                 intent.putExtra("articleId",articleId);
+                intent.putExtra("checkVip",checkVip);
                 intent.addCategory(Intent.CATEGORY_LAUNCHER);//设置category
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//设置singleTask启动模式
                // intent.putExtras(bundle);

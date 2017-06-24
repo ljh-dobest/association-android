@@ -141,6 +141,7 @@ public class Main2Activity extends BaseActivity implements  ViewPager.OnPageChan
         } else {
             init();
         }
+
         EventBus.getDefault().register(this);
     }
 

@@ -28,6 +28,7 @@ import com.ike.communityalliance.bean.ProvinceBean;
 import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IRecommedView;
 import com.ike.communityalliance.presenter.RecommendPresenterImpl;
+import com.ike.communityalliance.utils.DateUtils;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
 
@@ -151,7 +152,6 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         ButterKnife.bind(this);
         sp = getSharedPreferences("config", MODE_PRIVATE);
         userId = sp.getString(Const.LOGIN_ID, "");
-        presenter.getParserData(this, "data.txt");
         initView();
     }
 
@@ -181,6 +181,24 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
         sp_recom_city.setOnItemSelectedListener(this);
         sp_recom_jgprovince.setOnItemSelectedListener(this);
         sp_recom_jgcitys.setOnItemSelectedListener(this);
+        initProvinceData();
+    }
+
+    private void initProvinceData() {
+        if (DateUtils.provinceData.size() == 0) {
+            return;
+        }
+        data = DateUtils.provinceData;
+        for (int i = 0; i < data.size(); i++) {
+            provinceItems.add(data.get(i).getName());
+        }
+        //适配器
+        province_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, provinceItems);
+        //设置样式
+        province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //加载适配器
+        sp_recom_province.setAdapter(province_adapter);
+        sp_recom_jgprovince.setAdapter(province_adapter);
     }
 
     //获取控件的信息
@@ -222,23 +240,6 @@ public class RecommendActivity extends BaseMvpActivity<IRecommedView, RecommendP
     //获得解析好的省市区数据
     @Override
     public void getparserData(ArrayList<ProvinceBean> province) {
-        data = province;
-        for (int i = 0; i < data.size(); i++) {
-            provinceItems.add(province.get(i).getName());
-        }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                //适配器
-                province_adapter = new ArrayAdapter<String>(RecommendActivity.this, R.layout.simple_spanner_item, provinceItems);
-                //设置样式
-                province_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                //加载适配器
-                sp_recom_province.setAdapter(province_adapter);
-                sp_recom_jgprovince.setAdapter(province_adapter);
-            }
-        });
-
     }
 
     @Override

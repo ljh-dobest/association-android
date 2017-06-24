@@ -130,6 +130,7 @@ public class  GroupListActivity extends BaseActivity implements SwipeRefreshLayo
             @Override
             public void onError(Call call, Exception e, int id) {
                 T.showShort(mContext, "groupMember------" + e);
+                LoadDialog.dismiss(mContext);
                 return;
             }
 
@@ -177,6 +178,7 @@ public class  GroupListActivity extends BaseActivity implements SwipeRefreshLayo
             @Override
             public void onError(Call call, Exception e, int id) {
                 T.showShort(mContext, "/groupData-----" + e);
+                LoadDialog.dismiss(mContext);
                 return;
             }
 

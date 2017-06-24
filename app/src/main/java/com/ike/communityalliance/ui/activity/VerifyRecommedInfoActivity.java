@@ -31,6 +31,7 @@ import com.ike.communityalliance.bean.VerifyRecommedInfo;
 import com.ike.communityalliance.interfaces.IVerifyRecommedInfoView;
 import com.ike.communityalliance.presenter.VerifyRecommedInfoPresenter;
 import com.ike.communityalliance.ui.Main2Activity;
+import com.ike.communityalliance.utils.DateUtils;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -164,8 +165,8 @@ public class VerifyRecommedInfoActivity extends BaseMvpActivity<IVerifyRecommedI
 //        if(userId!=null){
 //            getVerifyInfo(userId,recommendId);
 //        }
-        presenter.parserData(this, "data.txt");
         initView();
+        setProvinceData(DateUtils.provinceData);
     }
 
     private void initView() {
@@ -240,13 +241,13 @@ public class VerifyRecommedInfoActivity extends BaseMvpActivity<IVerifyRecommedI
 
     @Override
     public void setProvinceData(ArrayList<ProvinceBean> provinceData) {
+        if (DateUtils.provinceData.size() == 0) {
+            return;
+        }
         this.data = provinceData;
         for (int i = 0; i < data.size(); i++) {
             provinceList.add(data.get(i).getName());
         }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
                 //适配器
                 province_adapter = new ArrayAdapter<String>(VerifyRecommedInfoActivity.this, R.layout.simple_spanner_item, provinceList);
                 //设置样式
@@ -254,8 +255,6 @@ public class VerifyRecommedInfoActivity extends BaseMvpActivity<IVerifyRecommedI
                 //加载适配器
                 sp_verifyInfo_province.setAdapter(province_adapter);
                 sp_verifyInfo_jgprovince.setAdapter(province_adapter);
-            }
-        });
     }
 
     @Override

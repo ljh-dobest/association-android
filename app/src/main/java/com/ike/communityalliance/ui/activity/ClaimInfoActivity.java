@@ -34,6 +34,7 @@ import com.ike.communityalliance.constant.Const;
 import com.ike.communityalliance.interfaces.IClaimInfoView;
 import com.ike.communityalliance.network.HttpUtils;
 import com.ike.communityalliance.presenter.ClaimInfoPresenter;
+import com.ike.communityalliance.utils.DateUtils;
 import com.ike.mylibrary.util.T;
 import com.ike.mylibrary.widget.dialog.LoadDialog;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -175,9 +176,9 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView, ClaimInfo
         claimPeopleBean = intent.getParcelableExtra("claimPeopleBean");
         sp = getSharedPreferences("config", MODE_PRIVATE);
         userId = sp.getString(Const.LOGIN_ID, "");
-        presenter.getParserData(this, "data.txt");
         initView();
         initData();
+        setprovinceData(DateUtils.provinceData);
     }
 
     private void initData() {
@@ -239,13 +240,13 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView, ClaimInfo
 
     @Override
     public void setprovinceData(ArrayList<ProvinceBean> data) {
+        if (DateUtils.provinceData.size() == 0) {
+            return;
+        }
         this.data = data;
         for (int i = 0; i < data.size(); i++) {
             provinceItems.add(data.get(i).getName());
         }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
                 //适配器
                 province_adapter = new ArrayAdapter<String>(ClaimInfoActivity.this, R.layout.simple_spanner_item, provinceItems);
                 //设置样式
@@ -253,8 +254,6 @@ public class ClaimInfoActivity extends BaseMvpActivity<IClaimInfoView, ClaimInfo
                 //加载适配器
                 sp_claimInfo_province.setAdapter(province_adapter);
                 sp_claimInfo_jgprovince.setAdapter(province_adapter);
-            }
-        });
     }
 
     @Override

@@ -862,4 +862,11 @@ public class HttpUtils {
                 .addParams("userId",userId)
                 .build().execute(callback);
     }
+    //获取天气信息
+    public static void getWeatherData(String url,String appkey,String city,StringCallback callback) {
+        OkHttpUtils.get().url(url)
+                .addParams("call_key",appkey)
+                .addParams("cityname",city)
+                .build().execute(callback);
+    }
 }

@@ -70,14 +70,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="Android:icon,android:theme">
-
-            <meta-data
+        <meta-data
             android:name="RONG_CLOUD_APP_KEY"
             android:value="x4vkb1qpx0tmk" />
-        <!--&lt;!&ndash; 融云 &ndash;&gt;-->
-        <!--<meta-data-->
-            <!--android:name="RONG_CLOUD_APP_KEY"-->
-            <!--android:value="tdrvipkstdnk5" />-->
+        <!-- &lt;!&ndash; 融云 &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="RONG_CLOUD_APP_KEY" -->
+        <!-- android:value="tdrvipkstdnk5" /> -->
+
 
         <!-- 高德 -->
         <meta-data
@@ -282,7 +282,9 @@
         <activity android:name=".ui.activity.MineQRCodeActivity" />
         <activity android:name=".ui.activity.ApplayVIPActivity" />
         <activity android:name=".ui.activity.PossibleUnderstandActivity" />
-        <activity android:name=".ui.activity.WhoCanSeeActivity"></activity>
+        <activity android:name=".ui.activity.WhoCanSeeActivity" />
+        <activity android:name=".ui.activity.WeatherForecastActivity" />
+        <activity android:name=".ui.activity.WeatherCityActivity"></activity>
     </application>
 
 </manifest>
