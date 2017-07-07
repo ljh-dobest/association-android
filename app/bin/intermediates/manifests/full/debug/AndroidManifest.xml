@@ -407,6 +407,8 @@
         <activity android:name="com.ike.communityalliance.ui.activity.ApplayVIPActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.PossibleUnderstandActivity" />
         <activity android:name="com.ike.communityalliance.ui.activity.WhoCanSeeActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.WeatherForecastActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.WeatherCityActivity" />
         <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapLocationActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapPreviewActivity" />

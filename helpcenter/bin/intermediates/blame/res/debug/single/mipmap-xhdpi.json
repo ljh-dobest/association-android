@@ -8,6 +8,10 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\weather_more.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\mipmap-xhdpi\\weather_more.png"
+    },
+    {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\app_icon.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\mipmap-xhdpi\\app_icon.png"
     },

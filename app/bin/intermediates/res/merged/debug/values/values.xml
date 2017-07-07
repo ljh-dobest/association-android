@@ -825,7 +825,9 @@
     <color name="col_333">#333</color>
     <color name="col_333333">#333333</color>
     <color name="col_444343">#444343</color>
+    <color name="col_66000000">#66000000</color>
     <color name="col_666666">#666666</color>
+    <color name="col_80FFFFFF">#80FFFFFF</color>
     <color name="col_909090">#909090</color>
     <color name="col_999999">#999</color>
     <color name="col_C0C0C0">#C0C0C0</color>

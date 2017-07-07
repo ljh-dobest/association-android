@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\best_answer.png",
-        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\best_answer.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\hobby_unselect.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\hobby_unselect.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\best_answer.png",
+        "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\best_answer.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\my_help_unseleted.png",
@@ -40,12 +40,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\my_answer_seleted.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\sidebar_background.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\mylibrary\\bin\\intermediates\\bundles\\default\\res\\drawable\\sidebar_background.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\fenxiang.png",
         "source": "E:\\project\\xiangmu\\association-android\\helpcenter\\src\\main\\res\\drawable\\fenxiang.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\sidebar_background.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\mylibrary\\bin\\intermediates\\bundles\\default\\res\\drawable\\sidebar_background.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",

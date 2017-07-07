@@ -4122,7 +4122,8 @@ containing a value of this type.
         public static final int qiuzhu=0x7f03000d;
         public static final int recommed=0x7f03000e;
         public static final int tiwen=0x7f03000f;
-        public static final int zhibo=0x7f030010;
+        public static final int weather_more=0x7f030010;
+        public static final int zhibo=0x7f030011;
     }
     public static final class string {
         public static final int QR_code=0x7f070015;
