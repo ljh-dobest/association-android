@@ -1,23 +1,23 @@
 [
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_ext_input_edit_text.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_ext_input_edit_text.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_ext_extension_bar.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_ext_extension_bar.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_ext_input_edit_text.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_ext_input_edit_text.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_fr_conversation.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_fr_conversation.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_item_preview_fragment.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_item_preview_fragment.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_ext_plugin_item.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_ext_plugin_item.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_item_preview_fragment.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_item_preview_fragment.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_ac_albums.xml",
@@ -84,12 +84,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_ext_sub_menu_container.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_item_conversation_member.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_item_conversation_member.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_ac_file_download.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_ac_file_download.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_item_conversation_member.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\layout\\rc_item_conversation_member.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\layout\\rc_cs_alert_warning.xml",

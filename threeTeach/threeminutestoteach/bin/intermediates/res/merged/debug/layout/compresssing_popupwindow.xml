@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/col_10DB9F"
+        android:textSize="@dimen/font_32"
+        android:text="正在发送..."/>
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/pb_uploading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:indicator="BallPulse"
+        app:indicator_color="@color/blue"
+        />
+</LinearLayout>

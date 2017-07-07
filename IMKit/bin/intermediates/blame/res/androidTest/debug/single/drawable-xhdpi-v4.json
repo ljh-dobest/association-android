@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f48d.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f48d.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_picsel_back_pressed.png",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_picsel_back_pressed.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f48d.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f48d.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_receive_voice_three.png",
@@ -16,12 +16,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f60e.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_fr_file_list_ad_icon_file.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_fr_file_list_ad_icon_file.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_star.png",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_star.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_fr_file_list_ad_icon_file.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_fr_file_list_ad_icon_file.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f624.png",
@@ -52,16 +52,16 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_list_divide_line.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_file_icon_cancel.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_file_icon_cancel.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f30f.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f30f.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f62b.png",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f62b.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f30f.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f30f.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_file_icon_cancel.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_file_icon_cancel.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f636.png",
@@ -72,12 +72,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\u1f4a1.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_check.png",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_check.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_ic_volume_7.png",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_ic_volume_7.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\rc_cs_group_check.png",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\rc_cs_group_check.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\u1f525.png",

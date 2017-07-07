@@ -8,6 +8,9 @@ package com.ike.mylibrary;
 
 public final class R {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
     public static final class anim {
         public static final int abc_fade_in = 0x7f050000;
         public static final int abc_fade_out = 0x7f050001;
@@ -480,6 +483,7 @@ public final class R {
         public static final int font_28px = 0x7f08008d;
         public static final int font_30 = 0x7f08008e;
         public static final int font_32 = 0x7f08008f;
+<<<<<<< HEAD
         public static final int font_34 = 0x7f080090;
         public static final int font_36 = 0x7f080091;
         public static final int font_38 = 0x7f080092;
@@ -508,6 +512,34 @@ public final class R {
         public static final int tile = 0x7f0800da;
         public static final int title_text_size = 0x7f0800db;
         public static final int width_title_leftImg = 0x7f0800dc;
+=======
+        public static final int font_36 = 0x7f080090;
+        public static final int font_40 = 0x7f080091;
+        public static final int font_44 = 0x7f080092;
+        public static final int font_58 = 0x7f080094;
+        public static final int highlight_alpha_material_colored = 0x7f0800b0;
+        public static final int highlight_alpha_material_dark = 0x7f0800b1;
+        public static final int highlight_alpha_material_light = 0x7f0800b2;
+        public static final int huge = 0x7f0800b7;
+        public static final int interval = 0x7f0800b8;
+        public static final int interval_10 = 0x7f0800b9;
+        public static final int margin_left = 0x7f0800c3;
+        public static final int margin_right = 0x7f0800c4;
+        public static final int mindistance = 0x7f0800c5;
+        public static final int normal_margin = 0x7f0800c6;
+        public static final int notification_large_icon_height = 0x7f0800ca;
+        public static final int notification_large_icon_width = 0x7f0800cb;
+        public static final int notification_subtext_size = 0x7f0800cf;
+        public static final int offline_down_title_hight = 0x7f0800d2;
+        public static final int offset_title = 0x7f0800d3;
+        public static final int poi_field_size = 0x7f0800d4;
+        public static final int poi_title_size = 0x7f0800d5;
+        public static final int rest = 0x7f0800d6;
+        public static final int sliding_menu_width = 0x7f0800d7;
+        public static final int tile = 0x7f0800d8;
+        public static final int title_text_size = 0x7f0800d9;
+        public static final int width_title_leftImg = 0x7f0800da;
+>>>>>>> ljh
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha = 0x7f020000;
@@ -594,6 +626,7 @@ public final class R {
         public static final int abc_textfield_search_material = 0x7f020051;
         public static final int abc_vector_test = 0x7f020052;
         public static final int btn_back_press = 0x7f02005e;
+<<<<<<< HEAD
         public static final int notification_template_icon_bg = 0x7f0200b6;
         public static final int progressbar = 0x7f0200a3;
         public static final int remove = 0x7f0200a6;
@@ -601,6 +634,15 @@ public final class R {
         public static final int selector_btn_back = 0x7f0200a9;
         public static final int sidebar_background = 0x7f0200ad;
         public static final int transparent = 0x7f0200b8;
+=======
+        public static final int notification_template_icon_bg = 0x7f0200bf;
+        public static final int progressbar = 0x7f0200ac;
+        public static final int remove = 0x7f0200af;
+        public static final int search_clear_pressed_write = 0x7f0200b1;
+        public static final int selector_btn_back = 0x7f0200b2;
+        public static final int sidebar_background = 0x7f0200b6;
+        public static final int transparent = 0x7f0200c1;
+>>>>>>> ljh
     }
     public static final class id {
         public static final int action0 = 0x7f0d0122;
@@ -816,6 +858,7 @@ public final class R {
         public static final int group_activity_partake = 0x7f070056;
         public static final int group_activity_place = 0x7f070057;
         public static final int group_activity_time = 0x7f070058;
+<<<<<<< HEAD
         public static final int local_photo = 0x7f07005a;
         public static final int myself = 0x7f07005b;
         public static final int new_friends = 0x7f07005c;
@@ -850,6 +893,42 @@ public final class R {
         public static final int status_bar_notification_info_overflow = 0x7f070014;
         public static final int time = 0x7f07007d;
         public static final int user = 0x7f07007f;
+=======
+        public static final int local_photo = 0x7f070059;
+        public static final int myself = 0x7f07005a;
+        public static final int new_friends = 0x7f07005b;
+        public static final int nickname = 0x7f07005c;
+        public static final int no_friend = 0x7f07005d;
+        public static final int password = 0x7f07005e;
+        public static final int password_setting = 0x7f07005f;
+        public static final int personal = 0x7f070065;
+        public static final int phone = 0x7f070066;
+        public static final int phoneOrgroups = 0x7f070067;
+        public static final int photograph = 0x7f070068;
+        public static final int place = 0x7f070069;
+        public static final int pop_add_friend_or_group = 0x7f07006a;
+        public static final int pop_add_groups = 0x7f07006b;
+        public static final int pop_chat = 0x7f07006c;
+        public static final int pop_create_group = 0x7f07006d;
+        public static final int pop_create_groupchat = 0x7f07006e;
+        public static final int public_service = 0x7f07006f;
+        public static final int pwd = 0x7f070070;
+        public static final int question = 0x7f070071;
+        public static final int register = 0x7f070072;
+        public static final int repassword = 0x7f070073;
+        public static final int search = 0x7f070074;
+        public static final int search_menu_title = 0x7f070013;
+        public static final int select_end_time = 0x7f070075;
+        public static final int select_start_time = 0x7f070076;
+        public static final int send_email = 0x7f070077;
+        public static final int send_message = 0x7f070078;
+        public static final int send_sms = 0x7f070079;
+        public static final int sex = 0x7f07007a;
+        public static final int start_time = 0x7f07007b;
+        public static final int status_bar_notification_info_overflow = 0x7f070014;
+        public static final int time = 0x7f07007c;
+        public static final int user = 0x7f07007e;
+>>>>>>> ljh
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f0900a1;
@@ -1563,6 +1642,9 @@ public final class R {
         public static final int View_paddingStart = 2;
         public static final int View_theme = 4;
     }
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
 =======
 >>>>>>> ljh
 }
