@@ -1,9 +1,13 @@
 -- Merging decision tree log ---
 manifest
 <<<<<<< HEAD
+<<<<<<< HEAD
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-290:12
 =======
 ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:2:1-288:12
+>>>>>>> ljh
+=======
+ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:2:1-290:12
 >>>>>>> ljh
 	package
 		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:4:5-40
@@ -183,6 +187,7 @@ MERGED from [association-android.Libraries:DroidPlugin:unspecified] E:\project\x
 	android:name
 		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:59:22-63
 application
+<<<<<<< HEAD
 <<<<<<< HEAD
 ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:65:5-288:19
 MERGED from [association-android:mylibrary:unspecified] F:\NB\association-android\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
@@ -406,6 +411,9 @@ ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:177:9-70
 		ADDED from F:\NB\association-android\app\src\main\AndroidManifest.xml:177:19-67
 =======
 ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:65:5-286:19
+=======
+ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:65:5-288:19
+>>>>>>> ljh
 MERGED from [association-android:mylibrary:unspecified] E:\project\xiangmu\association-android\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
 MERGED from [:SMSSDK-2.1.3:] C:\Users\Min\.android\build-cache\04fac45909578368c078cf3b7999f6b7451e91fb\output\AndroidManifest.xml:11:5-12:19
 MERGED from [:SMSSDKGUI-2.1.3:] C:\Users\Min\.android\build-cache\e6b8360f971e6b0eff0a90e2ce9a8d4b3c5dd57f\output\AndroidManifest.xml:11:5-12:19
@@ -451,12 +459,12 @@ MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Min\.android\bu
 	android:name
 		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:66:9-28
 meta-data#RONG_CLOUD_APP_KEY
-ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:74:13-76:45
+ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:73:9-75:45
 MERGED from [association-android:IMLib:unspecified] E:\project\xiangmu\association-android\IMLib\bin\intermediates\bundles\default\AndroidManifest.xml:27:9-29:45
 	android:value
-		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:76:13-42
+		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:75:13-42
 	android:name
-		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:75:13-46
+		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:74:13-46
 meta-data#com.amap.api.v2.apikey
 ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:83:9-85:64
 	android:value
@@ -1033,9 +1041,17 @@ ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:284:19-73
 activity#com.ike.communityalliance.ui.activity.WhoCanSeeActivity
-ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:285:9-76
+ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:285:9-67
 	android:name
 		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:285:19-64
+activity#com.ike.communityalliance.ui.activity.WeatherForecastActivity
+ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:286:9-73
+	android:name
+		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:286:19-70
+activity#com.ike.communityalliance.ui.activity.WeatherCityActivity
+ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:287:9-78
+	android:name
+		ADDED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:287:19-66
 uses-sdk
 INJECTED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [association-android:mylibrary:unspecified] E:\project\xiangmu\association-android\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
@@ -1542,7 +1558,11 @@ ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\associa
 IMPLIED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-290:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested READ_CONTACTS
 =======
 ADDED from [association-android.Libraries:DroidPlugin:unspecified] E:\project\xiangmu\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:66:5-72
+<<<<<<< HEAD
 IMPLIED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:2:1-288:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested READ_CONTACTS
+>>>>>>> ljh
+=======
+IMPLIED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:2:1-290:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested READ_CONTACTS
 >>>>>>> ljh
 	android:name
 		ADDED from [association-android.Libraries:DroidPlugin:unspecified] E:\project\xiangmu\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:66:22-69
@@ -1632,7 +1652,11 @@ ADDED from [association-android.Libraries:DroidPlugin:unspecified] F:\NB\associa
 IMPLIED from F:\NB\association-android\app\src\main\AndroidManifest.xml:2:1-290:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested WRITE_CONTACTS
 =======
 ADDED from [association-android.Libraries:DroidPlugin:unspecified] E:\project\xiangmu\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:98:5-73
+<<<<<<< HEAD
 IMPLIED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:2:1-288:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested WRITE_CONTACTS
+>>>>>>> ljh
+=======
+IMPLIED from E:\project\xiangmu\association-android\app\src\main\AndroidManifest.xml:2:1-290:12 reason: com.morgoo.droidplugin has targetSdkVersion < 16 and requested WRITE_CONTACTS
 >>>>>>> ljh
 	android:name
 		ADDED from [association-android.Libraries:DroidPlugin:unspecified] E:\project\xiangmu\association-android\Libraries\DroidPlugin\bin\intermediates\bundles\default\AndroidManifest.xml:98:22-70

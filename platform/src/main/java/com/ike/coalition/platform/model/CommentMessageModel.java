@@ -28,7 +28,7 @@ public class CommentMessageModel {
         HttpUtils.sendGsonPostRequest("/allNews", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-              listener.showError(e.toString());
+              listener.showError("系统异常！");
             }
 
             @Override
@@ -51,7 +51,7 @@ public class CommentMessageModel {
                     }
                 }catch (Exception e){
                     L.e("MessageCallback",e.toString());
-                    listener.showError("系统异常");
+                    listener.showError("系统解析服务器错误！");
                 }
             }
         });

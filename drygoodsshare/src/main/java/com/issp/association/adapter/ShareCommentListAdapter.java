@@ -14,6 +14,7 @@ import com.issp.association.bean.CommentsBean;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.bean.ShareCommentBean;
 import com.issp.association.network.HttpUtils;
+import com.issp.association.utils.DataUtils;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -35,20 +36,21 @@ public class ShareCommentListAdapter extends BaseRecyclerAdapter<ShareCommentLis
     private int position;
 
     public ShareCommentListAdapter(List<CommentsBean> list, Context context) {
-        this.context=context;
+        this.context = context;
         this.list = list;
     }
 
     @Override
     public void onBindViewHolder(ShareCommentListAdapterViewHolder holder, int position, boolean isItem) {
-        if (isItem){
+        if (isItem) {
             CommentsBean bean = list.get(position);
-        Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
-                .into(holder.ivShareIcon);
-        holder.tvShareUserName.setText(bean.getNickname());
-        holder.tvOperation.setText(bean.getContent());
-        holder.tvShareTitle.setText(bean.getContent());
-        holder.tvCommentTime.setText(bean.getCommentTime());
+            Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
+                    .into(holder.ivShareIcon);
+            holder.tvShareUserName.setText(bean.getNickname());
+            holder.tvOperation.setText(bean.getContent());
+            holder.tvShareTitle.setText(bean.getContent());
+            String time = DataUtils.formateStringBirthday(bean.getCommentTime(), DataUtils.yyyyMMdd);
+            holder.tvCommentTime.setText(time);
         }
 
     }

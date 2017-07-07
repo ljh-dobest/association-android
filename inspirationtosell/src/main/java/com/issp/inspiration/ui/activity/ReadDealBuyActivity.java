@@ -20,6 +20,7 @@ import com.issp.inspiration.bean.DealBuyBean;
 import com.issp.inspiration.interfaces.IReadDealBuyView;
 import com.issp.inspiration.network.HttpUtils;
 import com.issp.inspiration.presenters.ReadDealBuyInfoPresenter;
+import com.issp.inspiration.utils.CircleTransform;
 import com.issp.inspiration.utils.DisplayUtils;
 import com.issp.inspiration.utils.T;
 import com.squareup.picasso.Picasso;
@@ -47,6 +48,8 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     TextView ltMainTitleRight;
     @BindView(R.id.tv_title)
     TextView tvTitle;
+    @BindView(R.id.iv_image)
+    ImageView ivImage;
     @BindView(R.id.iv_deal_buy_icon)
     ImageView ivDealBuyIcon;
     @BindView(R.id.tv_deal_buy_user_Name)
@@ -108,11 +111,11 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     private void initData() {
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("");
-        Intent intent=getIntent();
-        userId=intent.getStringExtra("userId");
-        activesId=intent.getStringExtra("activesId");
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
+        activesId = intent.getStringExtra("activesId");
 
-        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+        App.checkVip = checkVip = Integer.parseInt(getIntent().getStringExtra("checkVip"));
         getDealBuy();
     }
 
@@ -192,6 +195,7 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     void commentClick() {
         Intent intent = new Intent(ReadDealBuyActivity.this, FeedForCommentActivity.class);
         intent.putExtra("bean", bean);
+        intent.putExtra("userId", userId);
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -205,7 +209,14 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
         tvTitle.setText(data.getTitle());
         tvDealBuyUserName.setText(data.getNickname());
         tvTime.setText(data.getReleaseTime());
-        Picasso.with(ReadDealBuyActivity.this).load(HttpUtils.IMAGE_RUL + data.getUserPortraitUrl()).into(ivDealBuyIcon);
+        if (data.getImage() != null) {
+            Picasso.with(ReadDealBuyActivity.this).load(HttpUtils.IMAGE_RUL + data.getImage())
+                    .into(ivImage);
+        }
+        if (null != data.getUserPortraitUrl()) {
+            Picasso.with(ReadDealBuyActivity.this).load(HttpUtils.IMAGE_RUL + data.getUserPortraitUrl())
+                    .transform(new CircleTransform()).into(ivDealBuyIcon);
+        }
         wvContent.loadData(data.getContent(), "text/html; charset=UTF-8", null);
         tvLikeBtn.setText(data.getLikes() + "");
         tvCommentBtn.setText("" + data.getCommentNumber());
@@ -227,7 +238,7 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
             llBuy.setVisibility(View.GONE);
             llPlay.setVisibility(View.VISIBLE);
             wvPlay.loadData(data.getDealContent(), "text/html; charset=UTF-8", null);
-        }else {
+        } else {
             llBuyAndPlay.setVisibility(View.GONE);
         }
         data.setUserId(userId);
@@ -245,7 +256,7 @@ public class ReadDealBuyActivity extends BaseMvpActivity<IReadDealBuyView, ReadD
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            if (requestCode == REQUEST_CODE){
+            if (requestCode == REQUEST_CODE) {
                 getDealBuy();
             }
         }

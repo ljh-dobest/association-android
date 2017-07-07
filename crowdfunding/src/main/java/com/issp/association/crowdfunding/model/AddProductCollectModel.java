@@ -23,7 +23,7 @@ public class AddProductCollectModel {
         HttpUtils.sendFormatPostRequest("/productCollect", formData, file, fileName, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
@@ -45,7 +45,7 @@ public class AddProductCollectModel {
                             break;
                     }
                 } catch (Exception e) {
-                    listener.showError("未知错误");
+                    listener.showError("系统解析服务器发生错误！");
                 }
             }
         });

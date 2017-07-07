@@ -216,7 +216,6 @@
                     android:layout_toEndOf="@+id/iv_share_icon"
                     android:layout_toRightOf="@+id/iv_share_icon"
                     android:gravity="center"
-                    android:text="fsadfafggd"
                     android:textColor="@color/color_33"
                     android:textSize="@dimen/font_28" />
 

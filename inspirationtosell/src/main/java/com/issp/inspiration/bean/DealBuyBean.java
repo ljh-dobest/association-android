@@ -23,6 +23,7 @@ public class DealBuyBean implements Serializable {
     private int likes;   //点赞数量
     private int statusLikes;        //0未点赞1已点赞
     private int commentNumber;   //评论数量
+    private int status;
 
     public String getId() {
         return id;
@@ -134,5 +135,13 @@ public class DealBuyBean implements Serializable {
 
     public void setCommentNumber(int commentNumber) {
         this.commentNumber = commentNumber;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

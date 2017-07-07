@@ -102,9 +102,9 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
 
     private void initView() {
         // PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId = /*"18878481054";//*/getIntent().getStringExtra("loginid");
+        userId = "18878481054";//getIntent().getStringExtra("loginid");
 
-        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
 
@@ -183,6 +183,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
                 Intent intent = new Intent(MainActivity.this, PlatformParticularsActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("activesId", data.getId());
+                intent.putExtra("checkVip",checkVip+"");
                 startActivity(intent);
             }
         });

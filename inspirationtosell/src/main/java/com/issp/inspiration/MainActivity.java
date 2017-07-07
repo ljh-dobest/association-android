@@ -98,9 +98,9 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     private void initView() {
         //PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");//"110";
+        userId = /*getIntent().getStringExtra("loginid");//*/"110";
 
-        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
         lt_main_title.setText("灵感贩卖");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
@@ -157,6 +157,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             public void onItemClick(View view, DealBuyBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadDealBuyActivity.class);
                 intent.putExtra("userId", userId);
+                intent.putExtra("checkVip",checkVip+"");
                 intent.putExtra("activesId", bean.getId());
                 startActivity(intent);
             }
@@ -223,6 +224,7 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
             public void OnBannerClick(int position) {
                 Intent intent = new Intent(MainActivity.this, ReadDealBuyActivity.class);
                 intent.putExtra("userId", userId);
+                intent.putExtra("checkVip",checkVip+"");
                 intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
                 startActivity(intent);
             }

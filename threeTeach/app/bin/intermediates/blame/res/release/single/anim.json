@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\project\\threeTeach\\app\\bin\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\anim\\abc_popup_enter.xml"
+    }
+]

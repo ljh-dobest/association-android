@@ -1,6 +1,7 @@
 package com.issp.association.crowdfunding.model;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.Code;
 import com.issp.association.crowdfunding.bean.ProductCollectBean;
@@ -24,25 +25,29 @@ public class AddSupportProjectModel {
         HttpUtils.sendGsonPostRequest("/allRecommendsUsers", fromData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code<List<ProductCollectBean>>>() {
-                }.getType();
-                Code<List<ProductCollectBean>> code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.getAddSupportProjectInfo("成功");
-                        break;
-                    case 0:
-                        listener.showError("操作失败");
-                        break;
-                    default:
-                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
-                        break;
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code<List<ProductCollectBean>>>() {
+                    }.getType();
+                    Code<List<ProductCollectBean>> code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.getAddSupportProjectInfo("成功");
+                            break;
+                        case 0:
+                            listener.showError("操作失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("系统解析服务器发生错误！");
                 }
             }
         });

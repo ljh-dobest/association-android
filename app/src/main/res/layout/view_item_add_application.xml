@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="@dimen/border_10"
+    android:padding="@dimen/border_20"
+    android:layout_marginRight="@dimen/border_20"
+    android:layout_marginLeft="@dimen/border_20"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -37,6 +39,7 @@
             app:tickDensity="2" />
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/iv_download"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -104,23 +104,25 @@ public class AddApplicationActivity extends BaseActivity {
                 f.getPath() + "/drygoodsshare.apk", "http://7xlet1.com1.z0.glb.clouddn.com/drygoodsshare.apk", 0));
         list.add(new ApplyListItem("inspirationApp", "灵感贩卖", R.mipmap.linggan, 1, "com.issp.inspiration",
                 f.getPath() + "/inspirationtosell.apk", "http://7xlet1.com1.z0.glb.clouddn.com/inspirationtosell.apk", 0));
-        list.add(new ApplyListItem("claimApp", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
+       // list.add(new ApplyListItem("claimApp", "认领中心", R.mipmap.lingyang, 1, "", "", "", 0));
         list.add(new ApplyListItem("streamingApp", "直播中心", R.mipmap.zhibo, 1, "", "", "", 0));
-        list.add(new ApplyListItem("takingTaxiApp", "联盟打车", R.mipmap.dache, 1, "", "", "", 0));
+        list.add(new ApplyListItem("takingTaxiApp", "联盟打车", R.mipmap.dache, 1, "com.ike.sq.taxi",
+                f.getPath() + "/taxi.apk", "http://7xlet1.com1.z0.glb.clouddn.com/taxi.apk", 0));
         list.add(new ApplyListItem("navigationApp", "导航", R.mipmap.daohang, 1, "", "", "", 0));
         list.add(new ApplyListItem("crowdApp", "众筹", R.mipmap.zhongchou, 1, "com.issp.association.crowdfunding",
                 f.getPath() + "/crowdfunding.apk", "http://7xlet1.com1.z0.glb.clouddn.com/crowdfunding.apk", 0));
 
         list.add(new ApplyListItem("threeMinutesApp", "三分钟教学", R.mipmap.sanfenzhong, 1, "com.min.threeminutestoteach",
                 f.getPath() + "/threeminutestoteach.apk", "http://7xlet1.com1.z0.glb.clouddn.com/threeminutestoteach.apk", 0));
-        list.add(new ApplyListItem("surveyResearchApp", "调研中心", R.mipmap.diaoyan, 1, "", "", "", 0));
+      //  list.add(new ApplyListItem("surveyResearchApp", "调研中心", R.mipmap.diaoyan, 1, "", "", "", 0));
         list.add(new ApplyListItem("seekHelpApp", "求助中心", R.mipmap.qiuzhu, 1, "com.min.helpcenter",
                 f.getPath() + "/helpcenter.apk", "http://7xlet1.com1.z0.glb.clouddn.com/helpcenter.apk", 0));
-        list.add(new ApplyListItem("platformApp", "平台活动", R.mipmap.pingtai, 1, "com.ike.coalition.platform", f.getPath() + "/platform.apk",
-                "http://7xlet1.com1.z0.glb.clouddn.com/platform.apk", 0));
+        list.add(new ApplyListItem("platformApp", "平台活动", R.mipmap.pingtai, 1, "com.ike.coalition.platform",
+                f.getPath() + "/platform.apk", "http://7xlet1.com1.z0.glb.clouddn.com/platform.apk", 0));
         list.add(new ApplyListItem("commonwealApp", "公益活动", R.mipmap.gongyi, 1, "com.ike.sq.commonwealactives",
-                "commonwealactives.apk", "http://7xlet1.com1.z0.glb.clouddn.com/commonwealactives.apk", 0));
-        list.add(new ApplyListItem("driverApp", "联盟司机", R.mipmap.siji, 1, "", "", "", 0));
+                f.getPath() + "/commonwealactives.apk", "http://7xlet1.com1.z0.glb.clouddn.com/commonwealactives.apk", 0));
+        list.add(new ApplyListItem("driverApp", "联盟司机", R.mipmap.siji, 1,  "com.ike.sq.taxi",
+                f.getPath() + "/taxi.apk", "http://7xlet1.com1.z0.glb.clouddn.com/taxi.apk", 0));
         list.add(new ApplyListItem("lookForApp", "后台找人", R.mipmap.zhaoren, 1, "", "", "", 0));
         adapter = new AddApplicationAdapter(list, AddApplicationActivity.this);
         gvApplication.setAdapter(adapter);
@@ -152,7 +154,9 @@ public class AddApplicationActivity extends BaseActivity {
     private void updateApk(View view, int position) {
         T.showLong(AddApplicationActivity.this, "亲还没有添加哦");
         taskPb = (ArcProgress) view.findViewById(R.id.pb_schedule);
+        ivDownload= (ImageView) view.findViewById(R.id.iv_download);
         taskPb.setVisibility(View.VISIBLE);
+        ivDownload.setVisibility(View.VISIBLE);
         ApplyListItem model = list.get(position);
         BaseDownloadTask task = FileDownloader.getImpl().create(model.getUrl())
                 .setPath(model.getPath())
@@ -252,6 +256,7 @@ public class AddApplicationActivity extends BaseActivity {
             @Override
             public void onError(Call call, Exception e, int id) {
                 Log.e("getLastVersion", e.toString());
+                mApkOperator.openApk(apkItem);
             }
 
             @Override
@@ -276,7 +281,7 @@ public class AddApplicationActivity extends BaseActivity {
                             }
                             break;
                         default:
-                           // T.showLong(AddApplicationActivity.this,"获取版本失败");
+                            mApkOperator.openApk(apkItem);
                             break;
                     }
 
@@ -381,6 +386,7 @@ public class AddApplicationActivity extends BaseActivity {
         }
     };
     private ArcProgress taskPb;
+    ImageView ivDownload;
     private ImageView iv_download;
 
     /**
@@ -456,5 +462,6 @@ public class AddApplicationActivity extends BaseActivity {
         taskPb.setProgress(1);
         apkTask();
         taskPb.setVisibility(View.GONE);
+        ivDownload.setVisibility(View.GONE);
     }
 }

@@ -1,6 +1,7 @@
 package com.issp.inspiration.model;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.issp.inspiration.bean.Code;
 import com.issp.inspiration.listeners.OnDealBuyConfirmOrderListener;
@@ -24,26 +25,30 @@ public class DealBuyConfirmOrderModel {
         HttpUtils.sendGsonPostRequest("/payDealBuy", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson=new Gson();
-                Type type = new TypeToken<Code>() {
-                }.getType();
-                Code code = gson.fromJson(response,type);
-                switch (code.getCode()) {
-                    case 200:
-                        // ArrayList<ShareCommentBean> data= (ArrayList<ShareCommentBean>) code.getData();
-                        listener.getConfirmOrderInfo("购买成功");
-                        break;
-                    case 0:
-                        listener.showError("sorry！你的贡献币不足");
-                        break;
-                    default:
-                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
-                        break;
+                try {
+                    Gson gson=new Gson();
+                    Type type = new TypeToken<Code>() {
+                    }.getType();
+                    Code code = gson.fromJson(response,type);
+                    switch (code.getCode()) {
+                        case 200:
+                            // ArrayList<ShareCommentBean> data= (ArrayList<ShareCommentBean>) code.getData();
+                            listener.getConfirmOrderInfo("购买成功");
+                            break;
+                        case 0:
+                            listener.showError("sorry！你的贡献币不足");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("系统解析服务器错误！");
                 }
             }
         });

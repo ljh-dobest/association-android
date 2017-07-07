@@ -32,6 +32,7 @@ public final class R {
     }
     public static final class id {
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int bannerFrame = 0x7f1003de;
         public static final int bannerTitle = 0x7f1003e3;
         public static final int center = 0x7f100052;
@@ -54,6 +55,10 @@ public final class R {
 =======
         public static final int bannerFrame = 0x7f100412;
         public static final int bannerTitle = 0x7f100417;
+=======
+        public static final int bannerFrame = 0x7f100421;
+        public static final int bannerTitle = 0x7f100426;
+>>>>>>> ljh
         public static final int center = 0x7f100052;
         public static final int center_crop = 0x7f10008a;
         public static final int center_inside = 0x7f10008b;
@@ -61,16 +66,20 @@ public final class R {
         public static final int fit_end = 0x7f10008d;
         public static final int fit_start = 0x7f10008e;
         public static final int fit_xy = 0x7f10008f;
-        public static final int indicator = 0x7f100414;
-        public static final int indicatorInside = 0x7f100419;
+        public static final int indicator = 0x7f100423;
+        public static final int indicatorInside = 0x7f100428;
         public static final int matrix = 0x7f100090;
-        public static final int numIndicator = 0x7f100415;
-        public static final int numIndicatorInside = 0x7f100418;
-        public static final int titleView = 0x7f100416;
-        public static final int viewpager = 0x7f100413;
+        public static final int numIndicator = 0x7f100424;
+        public static final int numIndicatorInside = 0x7f100427;
+        public static final int titleView = 0x7f100425;
+        public static final int viewpager = 0x7f100422;
     }
     public static final class layout {
+<<<<<<< HEAD
         public static final int banner = 0x7f04009d;
+>>>>>>> ljh
+=======
+        public static final int banner = 0x7f04009f;
 >>>>>>> ljh
     }
     public static final class styleable {

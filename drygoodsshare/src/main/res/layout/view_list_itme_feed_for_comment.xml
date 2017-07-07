@@ -28,7 +28,6 @@
         android:layout_marginTop="@dimen/border_20"
         android:layout_toEndOf="@+id/iv_share_icon"
         android:layout_toRightOf="@+id/iv_share_icon"
-        android:text="用户名"
         android:textColor="@color/color_33"
         android:textSize="@dimen/font_28" />
     <LinearLayout
@@ -52,7 +51,6 @@
             android:id="@+id/tv_like_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="60"
             android:textColor="@color/color_99"
             android:textSize="@dimen/font_22" />
     </LinearLayout>
@@ -68,7 +66,6 @@
         android:layout_marginTop="@dimen/border_10"
         android:layout_toEndOf="@+id/iv_share_icon"
         android:layout_toRightOf="@+id/iv_share_icon"
-        android:text="评论内容"
         android:textColor="@color/color_66"
         android:textSize="@dimen/font_26" />
 
@@ -80,7 +77,6 @@
         android:layout_marginTop="@dimen/border_10"
         android:layout_toEndOf="@+id/iv_share_icon"
         android:layout_toRightOf="@+id/iv_share_icon"
-        android:text="2017.03.19 14:05"
         android:textColor="@color/color_99"
         android:textSize="@dimen/font_22" />
 

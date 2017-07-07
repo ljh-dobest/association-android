@@ -111,9 +111,9 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
 
     private void initView() {
         // PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");//"18878481054";
+        userId =/* getIntent().getStringExtra("loginid");//*/"18878481054";
 
-        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/0;
         lt_main_title.setText(getString(R.string.str_title_main));
 
         xRefreshView.setPullLoadEnable(true);
@@ -176,6 +176,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
                 Intent intent = new Intent(MainActivity.this, ProductParticularsActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("articleId", bean.getId());
+                intent.putExtra("checkVip",checkVip+"");
                 startActivity(intent);
             }
 
@@ -198,6 +199,7 @@ public class MainActivity extends BaseMvpActivity<IProductCollectListView, Produ
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("bean", bean);
+                intent.putExtra("checkVip",checkVip+"");
                 startActivity(intent);
 
             }

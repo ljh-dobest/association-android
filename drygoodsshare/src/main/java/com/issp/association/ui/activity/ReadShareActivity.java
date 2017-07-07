@@ -16,19 +16,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.czp.library.ArcProgress;
 import com.issp.association.App;
 import com.issp.association.R;
 import com.issp.association.base.view.BaseMvpActivity;
+import com.issp.association.bean.DownloadBean;
 import com.issp.association.bean.ShareBean;
+import com.issp.association.greendao.gen.DownloadBeanDao;
 import com.issp.association.interfaces.IReadShareView;
 import com.issp.association.network.HttpUtils;
 import com.issp.association.presenters.ReadShareInfoPresenter;
 import com.issp.association.utils.CircleTransform;
+import com.issp.association.utils.DataUtils;
 import com.issp.association.utils.DisplayUtils;
 import com.issp.association.utils.FileUtils;
+import com.issp.association.utils.GreenDaoManager;
 import com.issp.association.utils.T;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
@@ -36,6 +41,8 @@ import com.liulishuo.filedownloader.FileDownloadSampleListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.liulishuo.filedownloader.model.FileDownloadStatus;
 import com.squareup.picasso.Picasso;
+import com.zhy.autolayout.attr.AutoAttr;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -126,11 +133,12 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
     private void initData() {
         ltMainTitleLeft.setText("返回");
         ltMainTitle.setText("");
+        ltMainTitleRight.setVisibility(View.GONE);
         Intent intent = getIntent();
 
         userId = intent.getStringExtra("userId");
 
-        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
+        App.checkVip = checkVip = /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
 
         activesId = intent.getStringExtra("activesId");
         Map<String, String> formData = new HashMap<String, String>(0);
@@ -186,17 +194,18 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
                 presenter.sharePraiseInfoPresenter(data);
                 break;
             case R.id.ll_download:
-                if (null!=bean.getDownload()&&bean.getDownload().equals("")){
-                if (bean.getIsDownload() == 0) {
-                    downloadWindow();
-                } else {
-                    if (checkVip == 1) {
+                if (null != bean && null != bean.getFile()) {
+                    if (bean.getIsDownload() == 0) {
                         downloadWindow();
                     } else {
-                        showComfirmDialog();
+                        if (checkVip == 1) {
+                            downloadWindow();
+                        } else {
+                            showComfirmDialog();
+                        }
                     }
-                }}else {
-                    T.showLong(ReadShareActivity.this,"没有可下载的干货");
+                } else {
+                    T.showLong(ReadShareActivity.this, "没有可下载的干货");
                 }
                 break;
         }
@@ -204,22 +213,27 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
 
     private Dialog dialog;
     ArcProgress taskPb;
+    String fileName;
+    ImageView iv_file_download;
+
     /**
      * 选择下载
      */
     private void downloadWindow() {
-        FileUtils fileUtils=new FileUtils(ReadShareActivity.this);
+        FileUtils fileUtils = new FileUtils(ReadShareActivity.this);
 
-            final File file=fileUtils.creatSDDir("association");
+        final File file = fileUtils.creatSDDir("association");
 
         dialog = new Dialog(this, R.style.ActionSheetDialogStyle);
         //填充对话框的布局
         View inflate = LayoutInflater.from(this).inflate(R.layout.popupwindow_download, null);
+        AutoUtils.autoSize(inflate, AutoAttr.BASE_HEIGHT);
         //初始化控件
         ImageView iv_close = (ImageView) inflate.findViewById(R.id.iv_close);
-        TextView tv_download = (TextView) inflate.findViewById(R.id.tv_download);
-        taskPb= (ArcProgress) inflate.findViewById(R.id.pb_schedule);
-        final TextView tv_file= (TextView) inflate.findViewById(R.id.tv_file);
+        RelativeLayout rl_download = (RelativeLayout) inflate.findViewById(R.id.rl_download);
+        iv_file_download= (ImageView) inflate.findViewById(R.id.iv_download);
+        taskPb = (ArcProgress) inflate.findViewById(R.id.pb_schedule);
+        final TextView tv_file = (TextView) inflate.findViewById(R.id.tv_file);
         TextView tv_download_history = (TextView) inflate.findViewById(R.id.tv_download_history);
         iv_close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,37 +241,56 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
                 dialog.dismiss();
             }
         });
-        tv_download.setOnClickListener(new View.OnClickListener() {
+        final String download = bean.getFile();
+        String[] name = download.split("/");
+        fileName = name[name.length - 1];
+        rl_download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String download=bean.getDownload();
-                String[] name=download.split("/");
-                String f=file.getPath()+name[name.length-1];
-                BaseDownloadTask task = FileDownloader.getImpl().create(download)
+                iv_file_download.setVisibility(View.GONE);
+                String f = file.getPath() +"/"+ fileName;
+                BaseDownloadTask task = FileDownloader.getImpl().create(HttpUtils.IMAGE_RUL+download)
                         .setPath(f)
                         .setCallbackProgressTimes(100)
                         .setListener(taskDownloadListener);
-                tv_file.setText(f);
+                //tv_file.setText(f);
                 task.start();
+
+                insert(null, fileName, f, 0, 0, DataUtils.currentTime(), download);//添加到数据库
             }
         });
         tv_download_history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                T.showLong(ReadShareActivity.this,"下载管理还在开发中");
+                Intent intent = new Intent(ReadShareActivity.this, DownloadingActivity.class);
+                intent.putExtra("userId", userId);
+                startActivity(intent);
             }
         });
+        DownloadBeanDao userDao = GreenDaoManager.getInstance().getSession().getDownloadBeanDao();
+
+        DownloadBean downloadBean = GreenDaoManager.getInstance().getSession().getDownloadBeanDao().queryBuilder()
+                .where(DownloadBeanDao.Properties.Name.eq(fileName)).build().unique();
+        if (null!=downloadBean){
+            if (downloadBean.getSize()==downloadBean.getSofar()){
+                taskPb.setVisibility(View.GONE);
+                iv_file_download.setImageResource(R.mipmap.selected);
+            }else
+            iv_file_download.setVisibility(View.GONE);
+        }
         //将布局设置给Dialog
         dialog.setContentView(inflate);
         //获取当前Activity所在的窗体
         Window dialogWindow = dialog.getWindow();
         //设置Dialog从窗体底部弹出
         dialogWindow.setGravity(Gravity.BOTTOM);
-        dialog.setCanceledOnTouchOutside(false);dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setCancelable(false);
         //获得窗体的属性
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        lp.y = 20;//设置Dialog距离底部的距离
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.y = 30;//设置Dialog距离底部的距离
+       // lp.x=20;
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
 //       将属性设置给窗体
         dialogWindow.setAttributes(lp);
@@ -359,12 +392,10 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
     private FileDownloadListener taskDownloadListener = new FileDownloadSampleListener() {
 
 
-
         @Override
         protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
             super.pending(task, soFarBytes, totalBytes);
-
-
+            update(fileName, totalBytes, soFarBytes);
             updateDownloading(FileDownloadStatus.pending, soFarBytes
                     , totalBytes);
         }
@@ -397,7 +428,8 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         protected void error(BaseDownloadTask task, Throwable e) {
             super.error(task, e);
 
-
+            update(fileName, task.getLargeFileSoFarBytes()
+                    , task.getLargeFileTotalBytes());
             updateNotDownloaded(FileDownloadStatus.error, task.getLargeFileSoFarBytes()
                     , task.getLargeFileTotalBytes());
         }
@@ -405,7 +437,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         @Override
         protected void paused(BaseDownloadTask task, int soFarBytes, int totalBytes) {
             super.paused(task, soFarBytes, totalBytes);
-
+            update(fileName, totalBytes, soFarBytes);
             updateNotDownloaded(FileDownloadStatus.paused, soFarBytes, totalBytes);
 
         }
@@ -417,7 +449,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
             updateDownloaded();
         }
     };
-    private ImageView iv_download;
+
 
     /**
      * 下载停止状态
@@ -491,6 +523,40 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
         taskPb.setMax(1);
         taskPb.setProgress(1);
         taskPb.setVisibility(View.GONE);
-        T.showLong(ReadShareActivity.this,"下载完成");
+        iv_file_download.setVisibility(View.VISIBLE);
+        iv_file_download.setImageResource(R.mipmap.selected);
+        T.showLong(ReadShareActivity.this, "下载完成");
     }
+
+
+    private void insert(Long id, String name, String path, long size, long sofar, String time,
+                        String url) {
+        DownloadBeanDao userDao = GreenDaoManager.getInstance().getSession().getDownloadBeanDao();
+
+        DownloadBean bean = GreenDaoManager.getInstance().getSession().getDownloadBeanDao().queryBuilder()
+                .where(DownloadBeanDao.Properties.Name.eq(name)).build().unique();
+        if (bean!=null){
+            bean.setSize(size);
+            bean.setSofar(sofar);
+            GreenDaoManager.getInstance().getSession().getDownloadBeanDao().update(bean);
+           // T.showLong(ReadShareActivity.this, "修改成功");
+        }else {
+            DownloadBean downloadBean = new DownloadBean(id, name, path, size, sofar, time, url);
+            long l = userDao.insert(downloadBean);
+        }
+    }
+
+    private void update(String prevName, long size, long sofar) {
+        DownloadBean bean = GreenDaoManager.getInstance().getSession().getDownloadBeanDao().queryBuilder()
+                .where(DownloadBeanDao.Properties.Name.eq(prevName)).build().unique();
+        if (bean != null) {
+            bean.setSize(size);
+            bean.setSofar(sofar);
+            GreenDaoManager.getInstance().getSession().getDownloadBeanDao().update(bean);
+        /*    T.showLong(ReadShareActivity.this, "修改成功");
+        } else {
+            T.showLong(ReadShareActivity.this, "修改失败");*/
+        }
+    }
+
 }

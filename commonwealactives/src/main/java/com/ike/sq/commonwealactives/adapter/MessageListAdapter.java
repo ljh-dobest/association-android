@@ -13,6 +13,7 @@ import com.ike.sq.commonwealactives.base.adpater.BaseRecyclerViewAdapter;
 import com.ike.sq.commonwealactives.bean.CommentsBean;
 import com.ike.sq.commonwealactives.bean.MessageBean;
 import com.ike.sq.commonwealactives.network.HttpUtils;
+import com.ike.sq.commonwealactives.utils.DataUtils;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -48,7 +49,8 @@ public class MessageListAdapter extends BaseRecyclerViewAdapter<MessageListAdapt
         holder.tvShareUserName.setText(bean.getNickname());
         // holder.tvOperation.setText(bean.getContent());
         holder.tvShareTitle.setText(bean.getContent());
-        holder.tvCommentTime.setText(bean.getCommentTime());
+        String time= DataUtils.formateStringBirthday(bean.getCommentTime(),DataUtils.yyyyMMdd);
+        holder.tvCommentTime.setText(time);
 
     }
 

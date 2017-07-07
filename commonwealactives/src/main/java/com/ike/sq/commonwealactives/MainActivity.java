@@ -99,9 +99,9 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
     private void initView() {
         //  PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = getIntent().getStringExtra("loginid");
-        App.checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));
-        //userId = "110";
+        //userId = getIntent().getStringExtra("loginid");
+        App.checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
+        userId = "110";
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
 
@@ -161,6 +161,7 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
             public void onItemClick(View view, BenefitBean bean) {
                 Intent intent = new Intent(MainActivity.this, BenefitParticularsActivity.class);
                 intent.putExtra("userId", userId);
+                intent.putExtra("checkVip",App.checkVip+"");
                 intent.putExtra("activesId", bean.getId());
                 startActivity(intent);
             }

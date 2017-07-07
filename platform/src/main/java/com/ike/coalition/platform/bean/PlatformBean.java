@@ -23,6 +23,11 @@ public class PlatformBean implements Serializable {
     private int joinUsersNumber;  //报名人数
     private List<UserBean> joinUsers;               //报名人员
 
+    private int likes;            //点赞数量
+    private int likesStatus;    //0未点赞  1已点赞
+    private int commentNumber;  //评论数量
+    private int shareNumber;   //分享次数
+
     public String getId() {
         return id;
     }
@@ -133,5 +138,37 @@ public class PlatformBean implements Serializable {
 
     public void setJoinUsers(List<UserBean> joinUsers) {
         this.joinUsers = joinUsers;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public int getLikesStatus() {
+        return likesStatus;
+    }
+
+    public void setLikesStatus(int likesStatus) {
+        this.likesStatus = likesStatus;
+    }
+
+    public int getCommentNumber() {
+        return commentNumber;
+    }
+
+    public void setCommentNumber(int commentNumber) {
+        this.commentNumber = commentNumber;
+    }
+
+    public int getShareNumber() {
+        return shareNumber;
+    }
+
+    public void setShareNumber(int shareNumber) {
+        this.shareNumber = shareNumber;
     }
 }

@@ -1,6 +1,7 @@
 package com.issp.association.crowdfunding.model;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.issp.association.crowdfunding.bean.ArticleCommentBean;
 import com.issp.association.crowdfunding.bean.Code;
@@ -33,29 +34,33 @@ public class FeedForCommentModel {
 
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code<ArticleCommentBean>>() {
-                }.getType();
-                Code<ArticleCommentBean> code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        if (null != code.getData()) {
-                            ArticleCommentBean bean = code.getData();
-                            List<CommentsBean> data = bean.getComments();
-                            listener.getFeedCommentInfo(data);
-                        }
-                        break;
-                    case 0:
-                        listener.showError("暂无评论");
-                        break;
-                    default:
-                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
-                        break;
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code<ArticleCommentBean>>() {
+                    }.getType();
+                    Code<ArticleCommentBean> code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            if (null != code.getData()) {
+                                ArticleCommentBean bean = code.getData();
+                                List<CommentsBean> data = bean.getComments();
+                                listener.getFeedCommentInfo(data);
+                            }
+                            break;
+                        case 0:
+                            listener.showError("暂无评论");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("系统解析服务器发生错误！");
                 }
             }
         });
@@ -71,25 +76,29 @@ public class FeedForCommentModel {
         HttpUtils.sendGsonPostRequest("/articleComment", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code>() {
-                }.getType();
-                Code code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.getAddCommentInfo("评论成功");
-                        break;
-                    case 0:
-                        listener.showError("评论失败");
-                        break;
-                    default:
-                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
-                        break;
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code>() {
+                    }.getType();
+                    Code code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.getAddCommentInfo("评论成功");
+                            break;
+                        case 0:
+                            listener.showError("评论失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("系统解析服务器发生错误！");
                 }
             }
         });
@@ -105,25 +114,29 @@ public class FeedForCommentModel {
         HttpUtils.sendGsonPostRequest("/commentLikes", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson = new Gson();
-                Type type = new TypeToken<Code>() {
-                }.getType();
-                Code code = gson.fromJson(response, type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.commentLikes("点赞成功");
-                        break;
-                    case 0:
-                        listener.showError("点赞失败");
-                        break;
-                    default:
-                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
-                        break;
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Code>() {
+                    }.getType();
+                    Code code = gson.fromJson(response, type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.commentLikes("点赞成功");
+                            break;
+                        case 0:
+                            listener.showError("点赞失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("系统解析服务器发生错误！");
                 }
             }
         });

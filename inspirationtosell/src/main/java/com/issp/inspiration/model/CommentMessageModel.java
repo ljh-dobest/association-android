@@ -1,6 +1,7 @@
 package com.issp.inspiration.model;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.issp.inspiration.bean.ArticleCommentBean;
 import com.issp.inspiration.bean.Code;
@@ -26,25 +27,29 @@ public class CommentMessageModel {
         HttpUtils.sendGsonPostRequest("/allNews", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-              listener.showError(e.toString());
+              listener.showError("系统异常！");
             }
 
             @Override
             public void onResponse(String response, int id) {
-                Gson gson=new Gson();
-                Type type = new TypeToken<Code<List<CommentsBean>>>() {
-                }.getType();
-                Code<List<CommentsBean>> code = gson.fromJson(response,type);
-                switch (code.getCode()) {
-                    case 200:
-                        listener.getCommentMessageInfo(code.getData());
-                        break;
-                    case 0:
-                        listener.showError("查询失败");
-                        break;
-                    default:
-                        listener.showError(CoreErrorConstants.errors.get(code.getCode()));
-                        break;
+                try {
+                    Gson gson=new Gson();
+                    Type type = new TypeToken<Code<List<CommentsBean>>>() {
+                    }.getType();
+                    Code<List<CommentsBean>> code = gson.fromJson(response,type);
+                    switch (code.getCode()) {
+                        case 200:
+                            listener.getCommentMessageInfo(code.getData());
+                            break;
+                        case 0:
+                            listener.showError("查询失败");
+                            break;
+                        default:
+                            listener.showError(CoreErrorConstants.errors.get(code.getCode()));
+                            break;
+                    }
+                } catch (Exception e) {
+                    listener.showError("系统解析服务器错误！");
                 }
             }
         });

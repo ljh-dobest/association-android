@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/col_333333"
-                android:text="发现"/>
+                android:text="朋友圈"/>
             <ImageView
                 android:id="@+id/iv_pop_disc_item"
                 android:layout_marginTop="8dp"

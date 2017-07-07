@@ -15,10 +15,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-<<<<<<< HEAD
-import com.ike.mylibrary.widget.dialog.LoadDialog;
-=======
->>>>>>> ljh
+
 import com.min.helpcenter.R;
 import com.min.helpcenter.base.view.BaseActivity;
 import com.min.helpcenter.bean.BaseBean;
@@ -124,17 +121,13 @@ private void initDialog(){
                     T.showShort(this,"标题或问题描述不能为空");
                     return;
                 }
-<<<<<<< HEAD
+
                 if(contributionCoin.equals("")||contributionCoin.equals("0")){
                     T.showShort(this,"贡献币不能为0");
                     return;
                 }
-<<<<<<< HEAD
-                LoadDialog.show(this);
-=======
->>>>>>> ljh
-=======
->>>>>>> ljh
+
+
                 HttpUtils.postSeekHelp("/addSeekHelp", userId,title, explain,contributionCoin, new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -148,18 +141,12 @@ private void initDialog(){
                         }.getType();
                         Code<BaseBean> code = gson.fromJson(response,type);
                         if(code.getCode()==200){
-<<<<<<< HEAD
-                            LoadDialog.dismiss(AskActivity.this);
-=======
->>>>>>> ljh
+
                             T.showShort(AskActivity.this,"发布成功");
                             setResult(RESULT_OK);
                             finish();
                         }else{
-<<<<<<< HEAD
-                            LoadDialog.dismiss(AskActivity.this);
-=======
->>>>>>> ljh
+
                             T.showShort(AskActivity.this,"发布失败");
                         }
                     }

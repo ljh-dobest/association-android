@@ -8,12 +8,16 @@ package com.xys.libzxing;
 
 public final class R {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
     public static final class drawable {
         public static final int qr_code_bg = 0x7f02010e;
         public static final int scan_line = 0x7f02023f;
         public static final int shadow = 0x7f02024e;
     }
     public static final class id {
+<<<<<<< HEAD
 <<<<<<< HEAD
         public static final int capture_container = 0x7f1001e9;
         public static final int capture_crop_view = 0x7f1001eb;
@@ -24,6 +28,8 @@ public final class R {
         public static final int capture_preview = 0x7f1001e8;
         public static final int capture_scan_line = 0x7f1001ec;
 =======
+=======
+>>>>>>> ljh
         public static final int capture_container = 0x7f1001e3;
         public static final int capture_crop_view = 0x7f1001e5;
         public static final int capture_mask_bottom = 0x7f1001e7;
@@ -32,6 +38,9 @@ public final class R {
         public static final int capture_mask_top = 0x7f1001e4;
         public static final int capture_preview = 0x7f1001e2;
         public static final int capture_scan_line = 0x7f1001e6;
+<<<<<<< HEAD
+>>>>>>> ljh
+=======
 >>>>>>> ljh
         public static final int decode = 0x7f100004;
         public static final int decode_failed = 0x7f100005;
@@ -53,6 +62,9 @@ public final class R {
         public static final int AppBaseTheme = 0x7f0c000c;
         public static final int AppTheme = 0x7f0c00a8;
     }
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
 =======
 >>>>>>> ljh
 }

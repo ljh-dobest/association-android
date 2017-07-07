@@ -15,6 +15,7 @@ import com.issp.association.crowdfunding.bean.CommentsBean;
 import com.issp.association.crowdfunding.bean.MessageBean;
 
 import com.issp.association.crowdfunding.network.HttpUtils;
+import com.issp.association.crowdfunding.utils.DataUtils;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -51,7 +52,8 @@ public class MessageListAdapter extends BaseRecyclerViewAdapter<MessageListAdapt
         holder.tvShareUserName.setText(bean.getNickname());
        // holder.tvOperation.setText(bean.getContent());
         holder.tvShareTitle.setText(bean.getContent());
-        holder.tvCommentTime.setText(bean.getCommentTime());
+        String time = DataUtils.formateStringBirthday(bean.getCommentTime(), DataUtils.yyyyMMdd);
+        holder.tvCommentTime.setText(time);
 
     }
 

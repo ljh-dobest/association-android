@@ -32,12 +32,12 @@ public class PreviewModel {
      * @param fileName
      * @param listener
      */
-    public void publishAnArticle(Map<String, String> params, File file, String fileName,  final OnPreviewListener listener) {
+    public void publishAnArticle(Map<String, String> params, File file, String fileName, final OnPreviewListener listener) {
 
         HttpUtils.sendFormatPostRequest("/dealBuy", params, file, fileName, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                listener.showError(e.toString());
+                listener.showError("系统异常！");
             }
 
             @Override
@@ -58,9 +58,9 @@ public class PreviewModel {
                             listener.showError(CoreErrorConstants.errors.get(code.getCode()));
                             break;
                     }
-                 } catch (Exception e) {
-                listener.showError("未知错误");
-            }
+                } catch (Exception e) {
+                    listener.showError("未知错误");
+                }
 
             }
         });

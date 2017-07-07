@@ -86,6 +86,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
 
     private void initView() {
         ltMainTitle.setText("评论列表");
+        ltMainTitleRight.setVisibility(View.GONE);
         Intent intent = getIntent();
         userId = intent.getStringExtra("userId");
         bean = (ShareBean) intent.getSerializableExtra("bean");

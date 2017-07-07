@@ -8,6 +8,9 @@ package io.rong.imkit;
 
 public final class R {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
     public static final class array {
         public static final int rc_audio_file_suffix = 0x7f0a0020;
         public static final int rc_emoji_code = 0x7f0a0021;
@@ -21,6 +24,7 @@ public final class R {
     }
     public static final class attr {
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int RCCornerRadius = 0x7f010105;
         public static final int RCDefDrawable = 0x7f010108;
         public static final int RCMask = 0x7f010106;
@@ -28,12 +32,17 @@ public final class R {
         public static final int RCShape = 0x7f010107;
         public static final int RCStyle = 0x7f010184;
 =======
+=======
+>>>>>>> ljh
         public static final int RCCornerRadius = 0x7f0100d9;
         public static final int RCDefDrawable = 0x7f0100dc;
         public static final int RCMask = 0x7f0100da;
         public static final int RCMinShortSideSize = 0x7f0100d8;
         public static final int RCShape = 0x7f0100db;
         public static final int RCStyle = 0x7f010178;
+<<<<<<< HEAD
+>>>>>>> ljh
+=======
 >>>>>>> ljh
     }
     public static final class bool {
@@ -48,6 +57,7 @@ public final class R {
         public static final int rc_typing_status = 0x7f0d000f;
     }
     public static final class color {
+<<<<<<< HEAD
         public static final int rc_ad_file_list_no_select_file_text_state = 0x7f0f00b6;
         public static final int rc_ad_file_list_select_file_text_state = 0x7f0f00b7;
         public static final int rc_conversation_list_divider_color = 0x7f0f00b8;
@@ -96,6 +106,56 @@ public final class R {
         public static final int rc_voice_color_left = 0x7f0f00e3;
         public static final int rc_voice_color_right = 0x7f0f00e4;
         public static final int rc_web_progress_bar = 0x7f0f00e5;
+=======
+        public static final int rc_ad_file_list_no_select_file_text_state = 0x7f0f00b8;
+        public static final int rc_ad_file_list_select_file_text_state = 0x7f0f00b9;
+        public static final int rc_conversation_list_divider_color = 0x7f0f00ba;
+        public static final int rc_conversation_top_bg = 0x7f0f00bb;
+        public static final int rc_divider_color = 0x7f0f00bc;
+        public static final int rc_divider_line = 0x7f0f00bd;
+        public static final int rc_draft_color = 0x7f0f00be;
+        public static final int rc_emoji_grid_item_bg = 0x7f0f00bf;
+        public static final int rc_extension_normal = 0x7f0f00c0;
+        public static final int rc_input_bg = 0x7f0f00c1;
+        public static final int rc_input_gap_color = 0x7f0f00c2;
+        public static final int rc_location_text = 0x7f0f00c3;
+        public static final int rc_main_theme = 0x7f0f00c4;
+        public static final int rc_mentioned_color = 0x7f0f00c5;
+        public static final int rc_message_user_name = 0x7f0f00c6;
+        public static final int rc_normal_bg = 0x7f0f00c7;
+        public static final int rc_notice_normal = 0x7f0f00c8;
+        public static final int rc_notice_text = 0x7f0f00c9;
+        public static final int rc_notice_warning = 0x7f0f00ca;
+        public static final int rc_notification_bg = 0x7f0f00cb;
+        public static final int rc_picprev_toolbar_transparent = 0x7f0f00cc;
+        public static final int rc_picsel_catalog_shadow = 0x7f0f00cd;
+        public static final int rc_picsel_grid_mask = 0x7f0f00ce;
+        public static final int rc_picsel_grid_mask_pressed = 0x7f0f00cf;
+        public static final int rc_picsel_toolbar = 0x7f0f00d0;
+        public static final int rc_picsel_toolbar_send_disable = 0x7f0f00d1;
+        public static final int rc_picsel_toolbar_send_normal = 0x7f0f00d2;
+        public static final int rc_picsel_toolbar_send_pressed = 0x7f0f00d3;
+        public static final int rc_picsel_toolbar_send_text_disable = 0x7f0f00d4;
+        public static final int rc_picsel_toolbar_send_text_normal = 0x7f0f00d5;
+        public static final int rc_picsel_toolbar_transparent = 0x7f0f00d6;
+        public static final int rc_plugins_bg = 0x7f0f00d7;
+        public static final int rc_popup_dialog_list_divider_color = 0x7f0f00d8;
+        public static final int rc_popup_dialog_prompt_cancel_color = 0x7f0f00d9;
+        public static final int rc_popup_dialog_prompt_clear_color = 0x7f0f00da;
+        public static final int rc_popup_dialog_prompt_ok_color = 0x7f0f00db;
+        public static final int rc_popup_dialog_text_color = 0x7f0f00dc;
+        public static final int rc_read_receipt_status = 0x7f0f00dd;
+        public static final int rc_text_color_primary = 0x7f0f00de;
+        public static final int rc_text_color_primary_inverse = 0x7f0f00df;
+        public static final int rc_text_color_secondary = 0x7f0f00e0;
+        public static final int rc_text_color_tertiary = 0x7f0f00e1;
+        public static final int rc_text_voice = 0x7f0f00e2;
+        public static final int rc_voice_cancel = 0x7f0f00e3;
+        public static final int rc_voice_color = 0x7f0f00e4;
+        public static final int rc_voice_color_left = 0x7f0f00e5;
+        public static final int rc_voice_color_right = 0x7f0f00e6;
+        public static final int rc_web_progress_bar = 0x7f0f00e7;
+>>>>>>> ljh
     }
     public static final class dimen {
         public static final int rc_conversation_item_data_size = 0x7f0b010f;
@@ -521,6 +581,7 @@ public final class R {
     }
     public static final class id {
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int C = 0x7f1000b9;
         public static final int CE = 0x7f1000ba;
         public static final int EC = 0x7f1000bb;
@@ -654,11 +715,14 @@ public final class R {
         public static final int rc_fm_tv_no_file_message = 0x7f1005ae;
         public static final int rc_fm_tv_storage_folder_list_load_message = 0x7f1005ad;
 =======
+=======
+>>>>>>> ljh
         public static final int C = 0x7f1000b3;
         public static final int CE = 0x7f1000b4;
         public static final int EC = 0x7f1000b5;
         public static final int SC = 0x7f1000b6;
         public static final int SCE = 0x7f1000b7;
+<<<<<<< HEAD
         public static final int account = 0x7f1005e9;
         public static final int back = 0x7f1001ab;
         public static final int camera_mask = 0x7f10062b;
@@ -787,14 +851,147 @@ public final class R {
         public static final int rc_fm_tv_no_file_message = 0x7f1005e1;
         public static final int rc_fm_tv_storage_folder_list_load_message = 0x7f1005e0;
 >>>>>>> ljh
+=======
+        public static final int account = 0x7f1005f9;
+        public static final int back = 0x7f1001ab;
+        public static final int camera_mask = 0x7f10063b;
+        public static final int catalog_listview = 0x7f100631;
+        public static final int catalog_window = 0x7f100630;
+        public static final int checkbox = 0x7f100192;
+        public static final int circle = 0x7f100077;
+        public static final int description = 0x7f1005fc;
+        public static final int enter = 0x7f1005fd;
+        public static final int evaluate_text = 0x7f100611;
+        public static final int ext_main_bar = 0x7f1005d0;
+        public static final int follow = 0x7f1005fe;
+        public static final int func = 0x7f1005fb;
+        public static final int gridlist = 0x7f10062f;
+        public static final int image = 0x7f100180;
+        public static final int image_layout = 0x7f100637;
+        public static final int index_total = 0x7f10062a;
+        public static final int introduction = 0x7f10060f;
+        public static final int iv_complete = 0x7f100615;
+        public static final int iv_no = 0x7f100618;
+        public static final int iv_yes = 0x7f100617;
+        public static final int layout_head = 0x7f1001dd;
+        public static final int layout_praise = 0x7f100612;
+        public static final int layout_praise_area = 0x7f100614;
+        public static final int letter = 0x7f100620;
+        public static final int mask = 0x7f10063c;
+        public static final int memberItem = 0x7f100621;
+        public static final int name = 0x7f1005f8;
+        public static final int number = 0x7f100638;
+        public static final int origin_check = 0x7f10062d;
+        public static final int pic_camera = 0x7f10063a;
+        public static final int pic_type = 0x7f100632;
+        public static final int popup_dialog_button_cancel = 0x7f1005c7;
+        public static final int popup_dialog_button_ok = 0x7f1005c8;
+        public static final int popup_dialog_message = 0x7f1005c5;
+        public static final int popup_dialog_prompt_button = 0x7f1005c6;
+        public static final int popup_dialog_title = 0x7f1005c3;
+        public static final int portrait = 0x7f1005f7;
+        public static final int preview = 0x7f100635;
+        public static final int preview_text = 0x7f100636;
+        public static final int rc_ac_btn_download_button = 0x7f10058e;
+        public static final int rc_ac_fl_storage_folder_list_fragment = 0x7f100592;
+        public static final int rc_ac_iv_file_type_image = 0x7f10058b;
+        public static final int rc_ac_ll_download_file_detail_info = 0x7f10058a;
+        public static final int rc_ac_ll_progress_view = 0x7f10058f;
+        public static final int rc_ac_ll_sd_card = 0x7f100598;
+        public static final int rc_ac_ll_sd_card_one = 0x7f10059a;
+        public static final int rc_ac_ll_sd_card_two = 0x7f10059c;
+        public static final int rc_ac_pb_download_progress = 0x7f100590;
+        public static final int rc_ac_tv_download_progress = 0x7f100591;
+        public static final int rc_ac_tv_file_manager_SD_card = 0x7f100599;
+        public static final int rc_ac_tv_file_manager_SD_card_one = 0x7f10059b;
+        public static final int rc_ac_tv_file_manager_SD_card_two = 0x7f10059d;
+        public static final int rc_ac_tv_file_manager_audio = 0x7f100595;
+        public static final int rc_ac_tv_file_manager_file = 0x7f100593;
+        public static final int rc_ac_tv_file_manager_mobile_memory = 0x7f100597;
+        public static final int rc_ac_tv_file_manager_picture = 0x7f100596;
+        public static final int rc_ac_tv_file_manager_video = 0x7f100594;
+        public static final int rc_ac_tv_file_name = 0x7f10058c;
+        public static final int rc_ac_tv_file_size = 0x7f10058d;
+        public static final int rc_action_bar_back = 0x7f1005a1;
+        public static final int rc_action_bar_ok = 0x7f1005a3;
+        public static final int rc_action_bar_title = 0x7f1005a2;
+        public static final int rc_actionbar = 0x7f100012;
+        public static final int rc_ad_iv_file_list_go_back = 0x7f1005ea;
+        public static final int rc_ad_ll_file_list_title = 0x7f1005e9;
+        public static final int rc_ad_tv_file_list_select_state = 0x7f1005ec;
+        public static final int rc_ad_tv_file_list_title = 0x7f1005eb;
+        public static final int rc_audio_input_toggle = 0x7f1005e2;
+        public static final int rc_audio_state_image = 0x7f100644;
+        public static final int rc_audio_state_text = 0x7f100646;
+        public static final int rc_audio_timer = 0x7f100645;
+        public static final int rc_back = 0x7f100013;
+        public static final int rc_base_container = 0x7f1005a4;
+        public static final int rc_btn_cancel = 0x7f100014;
+        public static final int rc_btn_ok = 0x7f100015;
+        public static final int rc_checkbox = 0x7f100016;
+        public static final int rc_close_button = 0x7f1005ac;
+        public static final int rc_container_layout = 0x7f1005d5;
+        public static final int rc_content = 0x7f100017;
+        public static final int rc_conversation_content = 0x7f100018;
+        public static final int rc_conversation_list_empty_layout = 0x7f1005e7;
+        public static final int rc_conversation_msg_block = 0x7f100019;
+        public static final int rc_conversation_notification_container = 0x7f1005a5;
+        public static final int rc_conversation_notification_textView = 0x7f1005a6;
+        public static final int rc_conversation_status = 0x7f10001a;
+        public static final int rc_conversation_time = 0x7f10001b;
+        public static final int rc_conversation_title = 0x7f10001c;
+        public static final int rc_cs_btn_cancel = 0x7f1005bd;
+        public static final int rc_cs_btn_ok = 0x7f1005be;
+        public static final int rc_cs_btn_select = 0x7f1005bc;
+        public static final int rc_cs_evaluate_content = 0x7f1005b4;
+        public static final int rc_cs_group_checkBox = 0x7f1005b7;
+        public static final int rc_cs_group_dialog_listView = 0x7f1005bf;
+        public static final int rc_cs_msg = 0x7f1005a9;
+        public static final int rc_cs_resolved = 0x7f1005b1;
+        public static final int rc_cs_resolved_or_not = 0x7f1005af;
+        public static final int rc_cs_resolving = 0x7f1005b2;
+        public static final int rc_cs_rootView = 0x7f1005b9;
+        public static final int rc_cs_stars = 0x7f1005a7;
+        public static final int rc_cs_tv_divide = 0x7f1005bb;
+        public static final int rc_cs_tv_group_name = 0x7f1005b6;
+        public static final int rc_cs_tv_title = 0x7f1005ba;
+        public static final int rc_cs_unresolved = 0x7f1005b3;
+        public static final int rc_cs_yes_no = 0x7f1005a8;
+        public static final int rc_description = 0x7f100610;
+        public static final int rc_dialog_popup_item_name = 0x7f1005c1;
+        public static final int rc_edit_text = 0x7f10001d;
+        public static final int rc_emoticon_tab_add = 0x7f1005cd;
+        public static final int rc_emoticon_tab_iv = 0x7f1005cf;
+        public static final int rc_emoticon_toggle = 0x7f1005d8;
+        public static final int rc_emotion_scroll_tab = 0x7f1005ce;
+        public static final int rc_emotion_tab_bar = 0x7f1005cc;
+        public static final int rc_empty_tv = 0x7f1005e8;
+        public static final int rc_evaluate_level = 0x7f1005ae;
+        public static final int rc_ext_amap = 0x7f10061a;
+        public static final int rc_ext_emoji_item = 0x7f1005c9;
+        public static final int rc_ext_location_marker = 0x7f10063d;
+        public static final int rc_ext_my_location = 0x7f10063e;
+        public static final int rc_ext_plugin_icon = 0x7f1005dc;
+        public static final int rc_ext_plugin_title = 0x7f1005dd;
+        public static final int rc_extension = 0x7f1005e3;
+        public static final int rc_fm_ll_storage_folder_list_load = 0x7f1005ee;
+        public static final int rc_fm_lv_storage_folder_list_files = 0x7f1005ed;
+        public static final int rc_fm_pb_storage_folder_list_load_progress = 0x7f1005ef;
+        public static final int rc_fm_tv_no_file_message = 0x7f1005f1;
+        public static final int rc_fm_tv_storage_folder_list_load_message = 0x7f1005f0;
+>>>>>>> ljh
         public static final int rc_fragment = 0x7f10001e;
         public static final int rc_frame = 0x7f10001f;
         public static final int rc_icon = 0x7f100020;
         public static final int rc_img = 0x7f100021;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int rc_indicator = 0x7f100588;
 =======
         public static final int rc_indicator = 0x7f1005bb;
+>>>>>>> ljh
+=======
+        public static final int rc_indicator = 0x7f1005cb;
 >>>>>>> ljh
         public static final int rc_input_extension = 0x7f100022;
         public static final int rc_input_main = 0x7f100023;
@@ -811,6 +1008,7 @@ public final class R {
         public static final int rc_item9 = 0x7f10002e;
         public static final int rc_item_conversation = 0x7f10002f;
         public static final int rc_layout = 0x7f100030;
+<<<<<<< HEAD
 <<<<<<< HEAD
         public static final int rc_layout_item_message = 0x7f1005c9;
         public static final int rc_layout_msg_list = 0x7f100031;
@@ -1028,6 +1226,115 @@ public final class R {
         public static final int volume_animation = 0x7f1006a8;
         public static final int whole_layout = 0x7f100618;
 >>>>>>> ljh
+=======
+        public static final int rc_layout_item_message = 0x7f10060c;
+        public static final int rc_layout_msg_list = 0x7f100031;
+        public static final int rc_left = 0x7f100032;
+        public static final int rc_list = 0x7f100033;
+        public static final int rc_list_dialog_popup_options = 0x7f1005c0;
+        public static final int rc_logo = 0x7f100034;
+        public static final int rc_menu_bar = 0x7f1005da;
+        public static final int rc_menu_icon = 0x7f1005df;
+        public static final int rc_menu_item_text = 0x7f10060d;
+        public static final int rc_menu_line = 0x7f10060e;
+        public static final int rc_menu_title = 0x7f1005de;
+        public static final int rc_message = 0x7f100606;
+        public static final int rc_message_send_failed = 0x7f100035;
+        public static final int rc_msg = 0x7f100036;
+        public static final int rc_msg_canceled = 0x7f10060a;
+        public static final int rc_msg_iv_file_type_image = 0x7f100607;
+        public static final int rc_msg_pb_file_upload_progress = 0x7f10060b;
+        public static final int rc_msg_tv_file_name = 0x7f100608;
+        public static final int rc_msg_tv_file_size = 0x7f100609;
+        public static final int rc_new = 0x7f100037;
+        public static final int rc_new_message_count = 0x7f1005f4;
+        public static final int rc_new_message_number = 0x7f1005f5;
+        public static final int rc_notification_container = 0x7f1005f6;
+        public static final int rc_pager = 0x7f100038;
+        public static final int rc_pager_fragment = 0x7f10059e;
+        public static final int rc_photoView = 0x7f1005f2;
+        public static final int rc_plugin_layout = 0x7f1005d6;
+        public static final int rc_plugin_toggle = 0x7f1005d7;
+        public static final int rc_popup_bg = 0x7f100624;
+        public static final int rc_portrait = 0x7f100039;
+        public static final int rc_portrait_right = 0x7f10003a;
+        public static final int rc_progress = 0x7f10003b;
+        public static final int rc_rating_bar = 0x7f1005ad;
+        public static final int rc_read_receipt = 0x7f10003c;
+        public static final int rc_read_receipt_request = 0x7f10003d;
+        public static final int rc_read_receipt_status = 0x7f10003e;
+        public static final int rc_resolve_progress = 0x7f1005b0;
+        public static final int rc_right = 0x7f10003f;
+        public static final int rc_scroll = 0x7f1005aa;
+        public static final int rc_scroll_item = 0x7f1005ab;
+        public static final int rc_search_btn = 0x7f100601;
+        public static final int rc_search_ed = 0x7f100600;
+        public static final int rc_search_list = 0x7f100602;
+        public static final int rc_send = 0x7f100040;
+        public static final int rc_send_toggle = 0x7f1005d9;
+        public static final int rc_sent_status = 0x7f100041;
+        public static final int rc_setting_item = 0x7f100603;
+        public static final int rc_sidebar = 0x7f100625;
+        public static final int rc_status_bar = 0x7f1005e4;
+        public static final int rc_status_bar_image = 0x7f1005e5;
+        public static final int rc_status_bar_text = 0x7f1005e6;
+        public static final int rc_sub_menu_divider_line = 0x7f1005e1;
+        public static final int rc_sub_menu_title = 0x7f1005e0;
+        public static final int rc_submit_button = 0x7f1005b5;
+        public static final int rc_submit_message = 0x7f1005b8;
+        public static final int rc_switch_divider = 0x7f1005d3;
+        public static final int rc_switch_layout = 0x7f1005d1;
+        public static final int rc_switch_to_keyboard = 0x7f1005db;
+        public static final int rc_switch_to_menu = 0x7f1005d2;
+        public static final int rc_time = 0x7f100042;
+        public static final int rc_title = 0x7f100043;
+        public static final int rc_title_layout = 0x7f100044;
+        public static final int rc_toolbar = 0x7f10061b;
+        public static final int rc_toolbar_close = 0x7f10061c;
+        public static final int rc_toolbar_hide = 0x7f10061e;
+        public static final int rc_txt = 0x7f100045;
+        public static final int rc_unread_message = 0x7f100046;
+        public static final int rc_unread_message_count = 0x7f1005f3;
+        public static final int rc_unread_message_icon = 0x7f100604;
+        public static final int rc_unread_message_icon_right = 0x7f100605;
+        public static final int rc_unread_message_right = 0x7f100047;
+        public static final int rc_user_icons = 0x7f10061d;
+        public static final int rc_user_name = 0x7f100623;
+        public static final int rc_user_portrait = 0x7f100622;
+        public static final int rc_user_text = 0x7f10061f;
+        public static final int rc_view_pager = 0x7f1005ca;
+        public static final int rc_voice_toggle = 0x7f1005d4;
+        public static final int rc_voice_unread = 0x7f100619;
+        public static final int rc_warning = 0x7f100048;
+        public static final int rc_web_progressbar = 0x7f10059f;
+        public static final int rc_webview = 0x7f1005a0;
+        public static final int rc_wi_ad_iv_file_check_state = 0x7f100643;
+        public static final int rc_wi_ad_iv_file_icon = 0x7f100640;
+        public static final int rc_wi_ad_tv_file_details = 0x7f100642;
+        public static final int rc_wi_ad_tv_file_name = 0x7f100641;
+        public static final int real_time_location_bar = 0x7f100626;
+        public static final int real_time_location_text = 0x7f100627;
+        public static final int refresh_loading_indicator = 0x7f10063f;
+        public static final int rel_group_intro = 0x7f1005fa;
+        public static final int rl_popup_dialog_prompt_message = 0x7f1005c4;
+        public static final int rl_popup_dialog_title = 0x7f1005c2;
+        public static final int select_check = 0x7f10062e;
+        public static final int selected = 0x7f100639;
+        public static final int send = 0x7f10062b;
+        public static final int square = 0x7f100078;
+        public static final int text = 0x7f100555;
+        public static final int toolbar_bottom = 0x7f10062c;
+        public static final int toolbar_top = 0x7f100629;
+        public static final int tv_line = 0x7f100613;
+        public static final int tv_prompt = 0x7f100616;
+        public static final int tv_title = 0x7f100129;
+        public static final int type_image = 0x7f100634;
+        public static final int type_text = 0x7f100633;
+        public static final int unfollow = 0x7f1005ff;
+        public static final int viewpager = 0x7f100422;
+        public static final int volume_animation = 0x7f1006bd;
+        public static final int whole_layout = 0x7f100628;
+>>>>>>> ljh
     }
     public static final class integer {
         public static final int rc_audio_encoding_bit_rate = 0x7f0e000b;
@@ -1040,6 +1347,7 @@ public final class R {
         public static final int rc_message_recall_interval = 0x7f0e0012;
     }
     public static final class layout {
+<<<<<<< HEAD
 <<<<<<< HEAD
         public static final int rc_ac_albums = 0x7f040107;
         public static final int rc_ac_camera = 0x7f040108;
@@ -1244,6 +1552,109 @@ public final class R {
         public static final int rc_wi_file_list_adapter = 0x7f04016a;
         public static final int rc_wi_notice = 0x7f04016b;
         public static final int rc_wi_vo_popup = 0x7f04016c;
+>>>>>>> ljh
+=======
+        public static final int rc_ac_albums = 0x7f04010a;
+        public static final int rc_ac_camera = 0x7f04010b;
+        public static final int rc_ac_file_download = 0x7f04010c;
+        public static final int rc_ac_file_list = 0x7f04010d;
+        public static final int rc_ac_file_manager = 0x7f04010e;
+        public static final int rc_ac_picture_pager = 0x7f04010f;
+        public static final int rc_ac_webview = 0x7f040110;
+        public static final int rc_base_activity_layout = 0x7f040111;
+        public static final int rc_camera = 0x7f040112;
+        public static final int rc_conversation_notification_container = 0x7f040113;
+        public static final int rc_cs_alert_human_evaluation = 0x7f040114;
+        public static final int rc_cs_alert_robot_evaluation = 0x7f040115;
+        public static final int rc_cs_alert_warning = 0x7f040116;
+        public static final int rc_cs_evaluate = 0x7f040117;
+        public static final int rc_cs_item_single_choice = 0x7f040118;
+        public static final int rc_cs_leave_message = 0x7f040119;
+        public static final int rc_cs_single_choice_layout = 0x7f04011a;
+        public static final int rc_dialog_popup_options = 0x7f04011b;
+        public static final int rc_dialog_popup_options_item = 0x7f04011c;
+        public static final int rc_dialog_popup_prompt = 0x7f04011d;
+        public static final int rc_dialog_popup_prompt_warning = 0x7f04011e;
+        public static final int rc_ext_emoji_grid_view = 0x7f04011f;
+        public static final int rc_ext_emoji_item = 0x7f040120;
+        public static final int rc_ext_emoji_pager = 0x7f040121;
+        public static final int rc_ext_emoticon_tab_container = 0x7f040122;
+        public static final int rc_ext_emoticon_tab_item = 0x7f040123;
+        public static final int rc_ext_extension_bar = 0x7f040124;
+        public static final int rc_ext_indicator = 0x7f040125;
+        public static final int rc_ext_input_edit_text = 0x7f040126;
+        public static final int rc_ext_menu_container = 0x7f040127;
+        public static final int rc_ext_plugin_grid_view = 0x7f040128;
+        public static final int rc_ext_plugin_item = 0x7f040129;
+        public static final int rc_ext_plugin_pager = 0x7f04012a;
+        public static final int rc_ext_root_menu_item = 0x7f04012b;
+        public static final int rc_ext_sub_menu_container = 0x7f04012c;
+        public static final int rc_ext_sub_menu_item = 0x7f04012d;
+        public static final int rc_ext_voice_input = 0x7f04012e;
+        public static final int rc_fr_conversation = 0x7f04012f;
+        public static final int rc_fr_conversation_member_list = 0x7f040130;
+        public static final int rc_fr_conversationlist = 0x7f040131;
+        public static final int rc_fr_dialog_alter = 0x7f040132;
+        public static final int rc_fr_file_list = 0x7f040133;
+        public static final int rc_fr_image = 0x7f040134;
+        public static final int rc_fr_messagelist = 0x7f040135;
+        public static final int rc_fr_photo = 0x7f040136;
+        public static final int rc_fr_public_service_inf = 0x7f040137;
+        public static final int rc_fr_public_service_search = 0x7f040138;
+        public static final int rc_fr_public_service_sub_list = 0x7f040139;
+        public static final int rc_fragment_base_setting = 0x7f04013a;
+        public static final int rc_icon_rt_location_marker = 0x7f04013b;
+        public static final int rc_input_pager_layout = 0x7f04013c;
+        public static final int rc_item_app_service_conversation = 0x7f04013d;
+        public static final int rc_item_base_conversation = 0x7f04013e;
+        public static final int rc_item_conversation = 0x7f04013f;
+        public static final int rc_item_conversation_member = 0x7f040140;
+        public static final int rc_item_discussion_conversation = 0x7f040141;
+        public static final int rc_item_discussion_notification_message = 0x7f040142;
+        public static final int rc_item_file_message = 0x7f040143;
+        public static final int rc_item_group_conversation = 0x7f040144;
+        public static final int rc_item_group_information_notification_message = 0x7f040145;
+        public static final int rc_item_image_message = 0x7f040146;
+        public static final int rc_item_information_notification_message = 0x7f040147;
+        public static final int rc_item_location_message = 0x7f040148;
+        public static final int rc_item_message = 0x7f040149;
+        public static final int rc_item_preview_fragment = 0x7f04014a;
+        public static final int rc_item_progress = 0x7f04014b;
+        public static final int rc_item_public_service_conversation = 0x7f04014c;
+        public static final int rc_item_public_service_input_menu = 0x7f04014d;
+        public static final int rc_item_public_service_input_menu_item = 0x7f04014e;
+        public static final int rc_item_public_service_input_menus = 0x7f04014f;
+        public static final int rc_item_public_service_list = 0x7f040150;
+        public static final int rc_item_public_service_message = 0x7f040151;
+        public static final int rc_item_public_service_multi_rich_content_message = 0x7f040152;
+        public static final int rc_item_public_service_rich_content_message = 0x7f040153;
+        public static final int rc_item_public_service_search = 0x7f040154;
+        public static final int rc_item_rich_content_message = 0x7f040155;
+        public static final int rc_item_system_conversation = 0x7f040156;
+        public static final int rc_item_text_message = 0x7f040157;
+        public static final int rc_item_text_message_evaluate = 0x7f040158;
+        public static final int rc_item_voice_message = 0x7f040159;
+        public static final int rc_location_preview_activity = 0x7f04015a;
+        public static final int rc_location_real_time_activity = 0x7f04015b;
+        public static final int rc_mention_list_item = 0x7f04015c;
+        public static final int rc_mention_members = 0x7f04015d;
+        public static final int rc_notification_realtime_location = 0x7f04015e;
+        public static final int rc_pic_popup_window = 0x7f04015f;
+        public static final int rc_picprev_activity = 0x7f040160;
+        public static final int rc_picsel_activity = 0x7f040161;
+        public static final int rc_picsel_catalog_listview = 0x7f040162;
+        public static final int rc_picsel_grid_camera = 0x7f040163;
+        public static final int rc_picsel_grid_item = 0x7f040164;
+        public static final int rc_picsel_original = 0x7f040165;
+        public static final int rc_picsel_preview = 0x7f040166;
+        public static final int rc_plugin_location_activity = 0x7f040167;
+        public static final int rc_refresh_list_view = 0x7f040168;
+        public static final int rc_share_location_message = 0x7f040169;
+        public static final int rc_wi_block = 0x7f04016a;
+        public static final int rc_wi_block_popup = 0x7f04016b;
+        public static final int rc_wi_file_list_adapter = 0x7f04016c;
+        public static final int rc_wi_notice = 0x7f04016d;
+        public static final int rc_wi_vo_popup = 0x7f04016e;
 >>>>>>> ljh
     }
     public static final class string {
@@ -1536,14 +1947,22 @@ public final class R {
         public static final int vertical_light_thin_divider = 0x7f0c01cc;
     }
     public static final class styleable {
+<<<<<<< HEAD
         public static final int[] AsyncImageView = { 0x7f010104, 0x7f010105, 0x7f010106, 0x7f010107, 0x7f010108 };
+=======
+        public static final int[] AsyncImageView = { 0x7f0100d8, 0x7f0100d9, 0x7f0100da, 0x7f0100db, 0x7f0100dc };
+>>>>>>> ljh
         public static final int AsyncImageView_RCCornerRadius = 1;
         public static final int AsyncImageView_RCDefDrawable = 4;
         public static final int AsyncImageView_RCMask = 2;
         public static final int AsyncImageView_RCMinShortSideSize = 0;
         public static final int AsyncImageView_RCShape = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] RongExtension = { 0x7f010184 };
+=======
+        public static final int[] RongExtension = { 0x7f010178 };
+>>>>>>> ljh
 =======
         public static final int[] RongExtension = { 0x7f010178 };
 >>>>>>> ljh
@@ -1552,6 +1971,9 @@ public final class R {
     public static final class xml {
         public static final int rc_file_path = 0x7f070001;
     }
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
 =======
 >>>>>>> ljh
 }

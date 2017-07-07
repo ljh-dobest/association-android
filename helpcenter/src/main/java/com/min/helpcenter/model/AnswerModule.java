@@ -63,11 +63,9 @@ public class AnswerModule {
                     listener.showSucceedComment("评价成功");
                         break;
                     case 0:
-<<<<<<< HEAD
-                        listener.showError("评价失败");
-=======
+
                         listener.showSucceedComment("评价失败");
->>>>>>> ljh
+
                         break;
                 }
             }
