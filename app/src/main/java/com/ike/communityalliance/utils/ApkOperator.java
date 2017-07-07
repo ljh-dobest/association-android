@@ -183,11 +183,9 @@ public class ApkOperator {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         SharedPreferences sp=mActivity.getSharedPreferences("config", Context.MODE_APPEND);
         intent.putExtra(PLUGIN_EXTRA_STRING,sp.getString(Const.LOGIN_ID,""));
-<<<<<<< HEAD
+
         intent.putExtra(Const.LOGIN_VIP,sp.getString(Const.LOGIN_VIP,""));
-=======
-        intent.putExtra("checkVip",sp.getString(Const.LOGIN_VIP,""));
->>>>>>> ljh
+
         mActivity.startActivity(intent);
 
     }

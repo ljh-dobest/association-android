@@ -1,7 +1,7 @@
 <resources>
-<<<<<<< HEAD
+
     <string name="help_center">求助中心</string>
-=======
+
     <string name="app_name">HelpCenter</string>
->>>>>>> ljh
+
 </resources>

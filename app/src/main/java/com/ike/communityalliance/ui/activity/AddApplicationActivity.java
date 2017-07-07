@@ -128,13 +128,13 @@ public class AddApplicationActivity extends BaseActivity {
 
     @OnItemClick(R.id.gv_application)
     void itemClick(View view, int position) {
-         apkFromInstall = getApkFromInstall();
+        apkFromInstall = getApkFromInstall();
         boolean boo = true;
         for (int i = 0; i < apkFromInstall.size(); i++) {
             if (apkFromInstall.get(i).packageInfo.packageName.equals(list.get(position).getPackageName())) {
-               // mApkOperator.openApk(apkFromInstall.get(i));
+                // mApkOperator.openApk(apkFromInstall.get(i));
                 T.showLong(AddApplicationActivity.this, "已经添加");
-                getLastVersion(apkFromInstall.get(i),view,position);
+                getLastVersion(apkFromInstall.get(i), view, position);
                 boo = false;
                 return;
             } else {
@@ -143,12 +143,13 @@ public class AddApplicationActivity extends BaseActivity {
 
         }
         if (boo) {
-            updateApk(view,position);
+            updateApk(view, position);
         }
 
 
     }
-    private void updateApk(View view, int position){
+
+    private void updateApk(View view, int position) {
         T.showLong(AddApplicationActivity.this, "亲还没有添加哦");
         taskPb = (ArcProgress) view.findViewById(R.id.pb_schedule);
         taskPb.setVisibility(View.VISIBLE);
@@ -160,7 +161,6 @@ public class AddApplicationActivity extends BaseActivity {
         ((AddApplicationAdapter.ViewHolder) view.getTag()).addTaskForViewHolder(task);
         task.start();
     }
-
 
 
     // 从下载文件夹获取Apk
@@ -244,12 +244,14 @@ public class AddApplicationActivity extends BaseActivity {
         }
 
     }
-    private void getLastVersion(final ApkItem apkItem, final View view, final int position){
-        Map<String,String> formData=new HashMap<>(0);
-        HttpUtils.sendFormBodyPostRequest("", formData, new StringCallback() {
+
+    private void getLastVersion(final ApkItem apkItem, final View view, final int position) {
+        Map<String, String> formData = new HashMap<>(0);
+        formData.put("name", apkItem.packageInfo.packageName);
+        HttpUtils.sendFormBodyPostRequest("/selectApp", formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-
+                Log.e("getLastVersion", e.toString());
             }
 
             @Override
@@ -258,19 +260,26 @@ public class AddApplicationActivity extends BaseActivity {
                 try {
                     Type jsonType = new TypeToken<Code<Version>>() {
                     }.getType();
-                    Code<Version> rowsTable= new Gson().fromJson(response, jsonType);
+                    Code<Version> rowsTable = new Gson().fromJson(response, jsonType);
+                    switch (rowsTable.getCode()) {
+                        case 200:
+                            Version version = rowsTable.getData();
+                            if (null != version) {
+                                int ersionCode = Integer.parseInt(mApkOperator.versionCode(apkItem).replace(".", ""));
+                                int v = Integer.parseInt(version.getVersion().replace(".", ""));
+                                if (v > ersionCode) {
+                                    if (apkTask() < 1) {
+                                        updateApk(view, position);
+                                    }
 
-                    Version version = rowsTable.getData();
-                    if (null != version) {
-                        int ersionCode = Integer.parseInt(mApkOperator.versionCode(apkItem).replace(".", ""));
-                        int v = Integer.parseInt(version.getVersion().replace(".", ""));
-                        if (v > ersionCode) {
-                            if (apkTask() < 1) {
-                                updateApk(view,position);
+                                }
                             }
-
-                        }
+                            break;
+                        default:
+                           // T.showLong(AddApplicationActivity.this,"获取版本失败");
+                            break;
                     }
+
                 } catch (Exception e) {
                     Log.e("AffairsFragment-handler", e.toString());
                 } finally {

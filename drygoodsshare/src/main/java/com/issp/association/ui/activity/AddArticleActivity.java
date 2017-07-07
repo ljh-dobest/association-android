@@ -103,7 +103,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     private ProgressDialog pd;
 
     private String userId;
-    private int status=0;
+    private int status = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -144,8 +144,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     @Override
     public void showError(String errorString) {
-
-        pd.dismiss();
+        if (null != pd)
+            pd.dismiss();
         T.showShort(AddArticleActivity.this, errorString);
     }
 
@@ -158,7 +158,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     @Override
     public void publishAnArticleView(String data) {
-        pd.dismiss();
+        if (null != pd)
+            pd.dismiss();
         T.showShort(AddArticleActivity.this, data);
         AddArticleActivity.this.finish();
     }
@@ -267,7 +268,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         tv_information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                status=0;
+                status = 0;
                 tvOpen.setText("公开");
                 mPopupWindow.dismiss();
             }
@@ -275,7 +276,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         tv_my_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                status=1;
+                status = 1;
                 tvOpen.setText("VIP可见");
                 mPopupWindow.dismiss();
             }
@@ -341,7 +342,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             formData.put("arctitle", title);
             formData.put("synopsis", content);
             formData.put("shareContent", dealContent);
-            formData.put("status",status+"");
+            formData.put("status", status + "");
             Log.e("formData", formData.toString());
             presenter.publishAnArticlePresenter(formData, file, "file");
         } else {
