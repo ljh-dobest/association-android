@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\project\threeTeach\SmallVideoLib\bin\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e77851de57c85feeb93e050792bcb76e9821bcb3">
+        <dex dex="E:\project\threeTeach\threeminutestoteach\bin\intermediates\pre-dexed\debug\classes_7f2770ef464ece4a7a72f1dff82aea83d2d64f1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\project\threeTeach\mylibrary\bin\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="956b1a0a9802168369798d2a51b5100865855de4">
+        <dex dex="E:\project\threeTeach\threeminutestoteach\bin\intermediates\pre-dexed\debug\classes_4edbfbd33be4b08d9062b6f1d0917506bf0be56e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\project\threeTeach\downloader\bin\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="171152e449bdfb2be5c5941457f0ffa9a1af04af">
+        <dex dex="E:\project\threeTeach\threeminutestoteach\bin\intermediates\pre-dexed\debug\classes_51875a8570d990b954d9e77e548f07bedb55edf3.jar" />
+    </item>
+
+</items>

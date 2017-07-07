@@ -37,6 +37,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\mcv_text_date_dark.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\ea1ca48dd439416c39c806e984521ee06d89616e\\output\\res\\color\\mcv_text_date_dark.xml"
 >>>>>>> ljh
@@ -48,8 +49,14 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\37e2d244699941d1fa32075a2346b9107c582029\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
+=======
+>>>>>>> ljh
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\mcv_text_date_dark.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\ea1ca48dd439416c39c806e984521ee06d89616e\\output\\res\\color\\mcv_text_date_dark.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\37e2d244699941d1fa32075a2346b9107c582029\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",

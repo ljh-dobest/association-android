@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+        <com.min.threeminutestoteach.views.CircleImageView
+            android:id="@+id/iv_answer_item_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/ll_answer_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_answer_item_icon"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_answer_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="孟小宝"
+                android:textColor="@color/col_333333"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_answer_item_good"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/like" />
+
+            <TextView
+                android:id="@+id/tv_answer_item_goodNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp"
+                android:text="112"
+                android:textColor="@color/col_999999"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/ll_answer_1"
+            android:layout_toRightOf="@id/iv_answer_item_icon"
+            android:id="@+id/tv_answer_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/col_666666"
+            android:text=""/>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_answer_item_content"
+            android:layout_toRightOf="@id/iv_answer_item_icon"
+            android:id="@+id/tv_answer_item_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/col_666666"
+            android:text="2017-07-12"/>
+    </RelativeLayout>

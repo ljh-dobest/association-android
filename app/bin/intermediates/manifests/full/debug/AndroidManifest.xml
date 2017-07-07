@@ -420,6 +420,11 @@
 <<<<<<< HEAD
 =======
         <activity android:name="com.ike.communityalliance.ui.activity.WhoCanSeeActivity" />
+<<<<<<< HEAD
+>>>>>>> ljh
+=======
+        <activity android:name="com.ike.communityalliance.ui.activity.WeatherForecastActivity" />
+        <activity android:name="com.ike.communityalliance.ui.activity.WeatherCityActivity" />
 >>>>>>> ljh
         <activity android:name="com.xys.libzxing.zxing.activity.CaptureActivity" />
         <activity android:name="io.rong.imkit.plugin.location.AMapLocationActivity" />

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+<com.min.threeminutestoteach.views.XCRoundRectImageView
+    android:id="@+id/iv_msg_item_userHeader"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    />
+    <TextView
+        android:id="@+id/tv_msg_item_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/col_121212"
+        android:text="孟小宝"/>
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/tv_msg_item_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/col_999999"
+        android:text="评论了你的"/>
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/tv_msg_item_tile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/col_121212"
+        android:text="“三分钟”"/>
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_msg_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/col_121212"
+        android:text="2017-01-22"/>
+
+</LinearLayout>

@@ -8,6 +8,9 @@ package com.jrmf360.rylib;
 
 public final class R {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
     public static final class anim {
         public static final int _push_bottom_in = 0x7f050000;
         public static final int _push_bottom_out = 0x7f050001;
@@ -22,6 +25,7 @@ public final class R {
         public static final int open_rp = 0x7f05001d;
     }
     public static final class attr {
+<<<<<<< HEAD
 <<<<<<< HEAD
         public static final int allowEmpty = 0x7f010152;
         public static final int bankground = 0x7f010073;
@@ -65,6 +69,8 @@ public final class R {
         public static final int w_validationMessage = 0x7f010204;
         public static final int w_validatorType = 0x7f010207;
 =======
+=======
+>>>>>>> ljh
         public static final int allowEmpty = 0x7f010146;
         public static final int bankground = 0x7f010047;
         public static final int content = 0x7f010046;
@@ -106,12 +112,16 @@ public final class R {
         public static final int w_title_size = 0x7f010206;
         public static final int w_validationMessage = 0x7f0101f8;
         public static final int w_validatorType = 0x7f0101fb;
+<<<<<<< HEAD
+>>>>>>> ljh
+=======
 >>>>>>> ljh
     }
     public static final class color {
         public static final int background = 0x7f0f0009;
         public static final int black = 0x7f0f0011;
         public static final int blue = 0x7f0f0013;
+<<<<<<< HEAD
         public static final int colorAccent = 0x7f0f0034;
         public static final int colorPrimary = 0x7f0f0035;
         public static final int colorPrimaryDark = 0x7f0f0036;
@@ -145,6 +155,41 @@ public final class R {
         public static final int trans_title_bar_color = 0x7f0f0105;
         public static final int transparent = 0x7f0f0106;
         public static final int white = 0x7f0f0107;
+=======
+        public static final int colorAccent = 0x7f0f0036;
+        public static final int colorPrimary = 0x7f0f0037;
+        public static final int colorPrimaryDark = 0x7f0f0038;
+        public static final int color_03a9f4 = 0x7f0f0039;
+        public static final int color_040000 = 0x7f0f003a;
+        public static final int color_087efb = 0x7f0f003b;
+        public static final int color_1bfd00 = 0x7f0f003c;
+        public static final int color_323232 = 0x7f0f003d;
+        public static final int color_434343 = 0x7f0f003e;
+        public static final int color_46a2fa = 0x7f0f003f;
+        public static final int color_535353 = 0x7f0f0040;
+        public static final int color_80b5b5b5 = 0x7f0f0041;
+        public static final int color_80c9c9c9 = 0x7f0f0042;
+        public static final int color_959595 = 0x7f0f0043;
+        public static final int color_a0a0a0 = 0x7f0f0044;
+        public static final int color_aaaaaa = 0x7f0f0045;
+        public static final int color_b5b5b5 = 0x7f0f0046;
+        public static final int color_b7b7b7 = 0x7f0f0047;
+        public static final int color_bg = 0x7f0f0048;
+        public static final int color_c9c9c9 = 0x7f0f0049;
+        public static final int color_ededed = 0x7f0f004a;
+        public static final int color_fed55a = 0x7f0f004b;
+        public static final int color_ff9893 = 0x7f0f004c;
+        public static final int gray = 0x7f0f0080;
+        public static final int navpage = 0x7f0f00a0;
+        public static final int red = 0x7f0f00e8;
+        public static final int red_dark = 0x7f0f00e9;
+        public static final int red_trans = 0x7f0f00ea;
+        public static final int title_bar_color = 0x7f0f0105;
+        public static final int title_bar_dark_color = 0x7f0f0106;
+        public static final int trans_title_bar_color = 0x7f0f0107;
+        public static final int transparent = 0x7f0f0108;
+        public static final int white = 0x7f0f0109;
+>>>>>>> ljh
     }
     public static final class dimen {
         public static final int actionbar_height = 0x7f0b0055;
@@ -282,6 +327,7 @@ public final class R {
         public static final int trade_detail = 0x7f0202ab;
     }
     public static final class id {
+<<<<<<< HEAD
 <<<<<<< HEAD
         public static final int actionbar = 0x7f1000ca;
         public static final int alpha = 0x7f10009d;
@@ -535,6 +581,8 @@ public final class R {
         public static final int webView = 0x7f100122;
         public static final int wheelView = 0x7f100143;
 =======
+=======
+>>>>>>> ljh
         public static final int actionbar = 0x7f1000c4;
         public static final int alpha = 0x7f100097;
         public static final int alphaNumeric = 0x7f100098;
@@ -546,14 +594,21 @@ public final class R {
         public static final int btn_next_step2 = 0x7f1000d5;
         public static final int btn_pay = 0x7f1000fe;
         public static final int btn_putin = 0x7f10010f;
+<<<<<<< HEAD
         public static final int btn_submit = 0x7f100696;
         public static final int cancle = 0x7f100121;
         public static final int cet_bankCardNum = 0x7f100666;
+=======
+        public static final int btn_submit = 0x7f1006a6;
+        public static final int cancle = 0x7f100121;
+        public static final int cet_bankCardNum = 0x7f100676;
+>>>>>>> ljh
         public static final int cet_bind_code = 0x7f1000e1;
         public static final int cet_bind_idCardNum = 0x7f1000df;
         public static final int cet_bind_name = 0x7f1000de;
         public static final int cet_bind_phone = 0x7f1000e0;
         public static final int cet_code = 0x7f10017a;
+<<<<<<< HEAD
         public static final int cet_confirm_pwd = 0x7f10068f;
         public static final int cet_get_money = 0x7f100149;
         public static final int cet_get_money_time = 0x7f100148;
@@ -562,6 +617,16 @@ public final class R {
         public static final int cet_name = 0x7f1000e3;
         public static final int cet_phone = 0x7f100669;
         public static final int cet_pwd = 0x7f10068e;
+=======
+        public static final int cet_confirm_pwd = 0x7f10069f;
+        public static final int cet_get_money = 0x7f100149;
+        public static final int cet_get_money_time = 0x7f100148;
+        public static final int cet_idCardNum = 0x7f1000e4;
+        public static final int cet_money = 0x7f10068e;
+        public static final int cet_name = 0x7f1000e3;
+        public static final int cet_phone = 0x7f100679;
+        public static final int cet_pwd = 0x7f10069e;
+>>>>>>> ljh
         public static final int civ_header = 0x7f10014f;
         public static final int comm_proress = 0x7f100127;
         public static final int confirm = 0x7f100122;
@@ -572,7 +637,11 @@ public final class R {
         public static final int et_confirm_pwd = 0x7f1000dc;
         public static final int et_default = 0x7f10011b;
         public static final int et_identity = 0x7f1000da;
+<<<<<<< HEAD
         public static final int et_input_sub_bank = 0x7f10068d;
+=======
+        public static final int et_input_sub_bank = 0x7f10069d;
+>>>>>>> ljh
         public static final int et_message = 0x7f100112;
         public static final int et_password = 0x7f1000db;
         public static final int et_peak_amount = 0x7f10010b;
@@ -592,6 +661,7 @@ public final class R {
         public static final int id_tab_left_line = 0x7f1000f0;
         public static final int id_tab_line_iv = 0x7f1000ea;
         public static final int id_tab_right_line = 0x7f1000f1;
+<<<<<<< HEAD
         public static final int idbet_inputview = 0x7f10069a;
         public static final int imageview_failure = 0x7f100697;
         public static final int imageview_progress_spinner = 0x7f10015a;
@@ -602,10 +672,23 @@ public final class R {
         public static final int iv_avatar = 0x7f100153;
         public static final int iv_back = 0x7f100173;
         public static final int iv_bankCardIcon = 0x7f10067c;
+=======
+        public static final int idbet_inputview = 0x7f1006aa;
+        public static final int imageview_failure = 0x7f1006a7;
+        public static final int imageview_progress_spinner = 0x7f10015a;
+        public static final int imageview_success = 0x7f1006a8;
+        public static final int inputView = 0x7f10014e;
+        public static final int iv_accountInfo = 0x7f100683;
+        public static final int iv_arrow = 0x7f100690;
+        public static final int iv_avatar = 0x7f100153;
+        public static final int iv_back = 0x7f100173;
+        public static final int iv_bankCardIcon = 0x7f10068c;
+>>>>>>> ljh
         public static final int iv_bankCardLogo = 0x7f100158;
         public static final int iv_bankIcon = 0x7f100141;
         public static final int iv_bank_icon = 0x7f10011d;
         public static final int iv_changeLogo = 0x7f100165;
+<<<<<<< HEAD
         public static final int iv_check = 0x7f10066a;
         public static final int iv_close = 0x7f10012c;
         public static final int iv_exit = 0x7f1000f5;
@@ -615,21 +698,41 @@ public final class R {
         public static final int iv_my_rp = 0x7f100671;
         public static final int iv_mybank = 0x7f100679;
         public static final int iv_mycard_arrow = 0x7f10067a;
+=======
+        public static final int iv_check = 0x7f10067a;
+        public static final int iv_close = 0x7f10012c;
+        public static final int iv_exit = 0x7f1000f5;
+        public static final int iv_get_arrow = 0x7f100692;
+        public static final int iv_header = 0x7f10012d;
+        public static final int iv_icon = 0x7f10014c;
+        public static final int iv_my_rp = 0x7f100681;
+        public static final int iv_mybank = 0x7f100689;
+        public static final int iv_mycard_arrow = 0x7f10068a;
+>>>>>>> ljh
         public static final int iv_open_rp = 0x7f100131;
         public static final int iv_paytype_icon = 0x7f1000f9;
         public static final int iv_paytype_rmb = 0x7f1000fb;
         public static final int iv_quit = 0x7f100139;
+<<<<<<< HEAD
         public static final int iv_secureSetting = 0x7f100677;
         public static final int iv_selected = 0x7f100167;
         public static final int iv_set_arrow = 0x7f100685;
         public static final int iv_top = 0x7f100152;
         public static final int iv_tradeDetail = 0x7f100675;
+=======
+        public static final int iv_secureSetting = 0x7f100687;
+        public static final int iv_selected = 0x7f100167;
+        public static final int iv_set_arrow = 0x7f100695;
+        public static final int iv_top = 0x7f100152;
+        public static final int iv_tradeDetail = 0x7f100685;
+>>>>>>> ljh
         public static final int layout = 0x7f1000f3;
         public static final int layout_paytype = 0x7f1000f8;
         public static final int layout_pswd = 0x7f100114;
         public static final int layout_step1 = 0x7f1000c5;
         public static final int layout_step2 = 0x7f1000d1;
         public static final int line = 0x7f100120;
+<<<<<<< HEAD
         public static final int line_get = 0x7f100683;
         public static final int line_set = 0x7f100686;
         public static final int listView = 0x7f1000d8;
@@ -648,13 +751,39 @@ public final class R {
         public static final int ll_input_sub_bank = 0x7f10068c;
         public static final int ll_item_root = 0x7f100169;
         public static final int ll_my_change = 0x7f10066b;
+=======
+        public static final int line_get = 0x7f100693;
+        public static final int line_set = 0x7f100696;
+        public static final int listView = 0x7f1000d8;
+        public static final int ll_add_card = 0x7f100144;
+        public static final int ll_all = 0x7f1006a4;
+        public static final int ll_amount_layout = 0x7f100110;
+        public static final int ll_bankCard = 0x7f100140;
+        public static final int ll_cardNum = 0x7f100675;
+        public static final int ll_city = 0x7f100699;
+        public static final int ll_conent = 0x7f100678;
+        public static final int ll_cooperation_loading = 0x7f100159;
+        public static final int ll_deposit = 0x7f1000e6;
+        public static final int ll_deposit_fee = 0x7f1000e8;
+        public static final int ll_getDeposit = 0x7f10067e;
+        public static final int ll_in = 0x7f1000ec;
+        public static final int ll_input_sub_bank = 0x7f10069c;
+        public static final int ll_item_root = 0x7f100169;
+        public static final int ll_my_change = 0x7f10067b;
+>>>>>>> ljh
         public static final int ll_out = 0x7f1000ee;
         public static final int ll_paytype_container = 0x7f10013a;
         public static final int ll_peak_amount_layout = 0x7f100109;
         public static final int ll_peak_num_layout = 0x7f100106;
+<<<<<<< HEAD
         public static final int ll_province = 0x7f100687;
         public static final int ll_sub_bank = 0x7f100145;
         public static final int ll_wallet_recharge = 0x7f10066c;
+=======
+        public static final int ll_province = 0x7f100697;
+        public static final int ll_sub_bank = 0x7f100145;
+        public static final int ll_wallet_recharge = 0x7f10067c;
+>>>>>>> ljh
         public static final int lv_listView = 0x7f1000d6;
         public static final int numberPassword = 0x7f1000bd;
         public static final int numeric = 0x7f10009a;
@@ -664,6 +793,7 @@ public final class R {
         public static final int pop_message = 0x7f100105;
         public static final int progress_dialog_tip = 0x7f100128;
         public static final int refresh = 0x7f1000d7;
+<<<<<<< HEAD
         public static final int rl_accountInfo = 0x7f100672;
         public static final int rl_change = 0x7f100164;
         public static final int rl_get_pwd = 0x7f100681;
@@ -680,15 +810,40 @@ public final class R {
         public static final int rl_transferType = 0x7f100690;
         public static final int rl_update_pwd = 0x7f10067f;
         public static final int rootStatusbar = 0x7f10069b;
+=======
+        public static final int rl_accountInfo = 0x7f100682;
+        public static final int rl_change = 0x7f100164;
+        public static final int rl_get_pwd = 0x7f100691;
+        public static final int rl_my_rp = 0x7f100680;
+        public static final int rl_mybank = 0x7f100688;
+        public static final int rl_new_card = 0x7f10015c;
+        public static final int rl_pay_type = 0x7f100168;
+        public static final int rl_root = 0x7f10015d;
+        public static final int rl_secureSetting = 0x7f100686;
+        public static final int rl_set_pwd = 0x7f100694;
+        public static final int rl_top = 0x7f10016e;
+        public static final int rl_tradeDetail = 0x7f100684;
+        public static final int rl_tradeNo = 0x7f1006a2;
+        public static final int rl_transferType = 0x7f1006a0;
+        public static final int rl_update_pwd = 0x7f10068f;
+        public static final int rootStatusbar = 0x7f1006ab;
+>>>>>>> ljh
         public static final int textPassword = 0x7f1000be;
         public static final int textViewHintTop = 0x7f10013e;
         public static final int textVisiblePassword = 0x7f1000bf;
         public static final int textWebPassword = 0x7f1000c0;
         public static final int textview = 0x7f100175;
+<<<<<<< HEAD
         public static final int textview_message = 0x7f100699;
         public static final int title = 0x7f100178;
         public static final int titleBar = 0x7f10004c;
         public static final int tv_all = 0x7f100695;
+=======
+        public static final int textview_message = 0x7f1006a9;
+        public static final int title = 0x7f100178;
+        public static final int titleBar = 0x7f10004c;
+        public static final int tv_all = 0x7f1006a5;
+>>>>>>> ljh
         public static final int tv_all_money = 0x7f10014a;
         public static final int tv_amount = 0x7f100113;
         public static final int tv_amount_for_show = 0x7f10010e;
@@ -702,12 +857,20 @@ public final class R {
         public static final int tv_bri_name = 0x7f100126;
         public static final int tv_bri_target = 0x7f100125;
         public static final int tv_cardName = 0x7f100142;
+<<<<<<< HEAD
         public static final int tv_cardNum = 0x7f10067b;
+=======
+        public static final int tv_cardNum = 0x7f10068b;
+>>>>>>> ljh
         public static final int tv_cardType = 0x7f100143;
         public static final int tv_cardname = 0x7f1000d4;
         public static final int tv_change = 0x7f100166;
         public static final int tv_charge_tip = 0x7f1000ce;
+<<<<<<< HEAD
         public static final int tv_city = 0x7f10068a;
+=======
+        public static final int tv_city = 0x7f10069a;
+>>>>>>> ljh
         public static final int tv_confirm = 0x7f10013c;
         public static final int tv_content = 0x7f100138;
         public static final int tv_deposit = 0x7f1000e7;
@@ -716,7 +879,11 @@ public final class R {
         public static final int tv_exit = 0x7f100134;
         public static final int tv_forget_pswd = 0x7f100100;
         public static final int tv_forget_pwd = 0x7f10012b;
+<<<<<<< HEAD
         public static final int tv_getDeposit = 0x7f10066f;
+=======
+        public static final int tv_getDeposit = 0x7f10067f;
+>>>>>>> ljh
         public static final int tv_group_member_num = 0x7f100108;
         public static final int tv_idCardNum = 0x7f1000c2;
         public static final int tv_identityno = 0x7f1000d3;
@@ -730,7 +897,11 @@ public final class R {
         public static final int tv_money = 0x7f10012a;
         public static final int tv_month = 0x7f10016d;
         public static final int tv_mount = 0x7f100161;
+<<<<<<< HEAD
         public static final int tv_mount_tip = 0x7f10067d;
+=======
+        public static final int tv_mount_tip = 0x7f10068d;
+>>>>>>> ljh
         public static final int tv_name = 0x7f1000c1;
         public static final int tv_no_rp = 0x7f10012f;
         public static final int tv_no_trade = 0x7f10014d;
@@ -742,7 +913,11 @@ public final class R {
         public static final int tv_peak_amount_icon = 0x7f10010a;
         public static final int tv_peak_type = 0x7f10010c;
         public static final int tv_protocol = 0x7f1000cf;
+<<<<<<< HEAD
         public static final int tv_province = 0x7f100688;
+=======
+        public static final int tv_province = 0x7f100698;
+>>>>>>> ljh
         public static final int tv_pswd_1 = 0x7f100115;
         public static final int tv_pswd_2 = 0x7f100116;
         public static final int tv_pswd_3 = 0x7f100117;
@@ -754,7 +929,11 @@ public final class R {
         public static final int tv_rec_amount = 0x7f100155;
         public static final int tv_receiveBestRpNum = 0x7f100151;
         public static final int tv_receiveRpNum = 0x7f100150;
+<<<<<<< HEAD
         public static final int tv_recharge = 0x7f10066d;
+=======
+        public static final int tv_recharge = 0x7f10067d;
+>>>>>>> ljh
         public static final int tv_redenvelope_amount = 0x7f1000f7;
         public static final int tv_redenvelope_name = 0x7f1000f6;
         public static final int tv_right = 0x7f100137;
@@ -766,8 +945,13 @@ public final class R {
         public static final int tv_send_rp = 0x7f10012e;
         public static final int tv_status = 0x7f100163;
         public static final int tv_subBankName = 0x7f100146;
+<<<<<<< HEAD
         public static final int tv_sub_bank = 0x7f10068b;
         public static final int tv_support = 0x7f100667;
+=======
+        public static final int tv_sub_bank = 0x7f10069b;
+        public static final int tv_support = 0x7f100677;
+>>>>>>> ljh
         public static final int tv_support_banks = 0x7f1000c8;
         public static final int tv_text = 0x7f100174;
         public static final int tv_time = 0x7f10015e;
@@ -775,17 +959,28 @@ public final class R {
         public static final int tv_tips = 0x7f1000c6;
         public static final int tv_title = 0x7f100129;
         public static final int tv_tradeMoney = 0x7f10016f;
+<<<<<<< HEAD
         public static final int tv_tradeNo = 0x7f100693;
         public static final int tv_tradeState = 0x7f100171;
         public static final int tv_tradeTime = 0x7f100172;
         public static final int tv_tradeType = 0x7f100170;
         public static final int tv_transferType = 0x7f100691;
+=======
+        public static final int tv_tradeNo = 0x7f1006a3;
+        public static final int tv_tradeState = 0x7f100171;
+        public static final int tv_tradeTime = 0x7f100172;
+        public static final int tv_tradeType = 0x7f100170;
+        public static final int tv_transferType = 0x7f1006a1;
+>>>>>>> ljh
         public static final int tv_unbind = 0x7f10016c;
         public static final int tv_username = 0x7f1000d2;
         public static final int viewAnim = 0x7f1000dd;
         public static final int viewPager = 0x7f1000eb;
         public static final int webView = 0x7f10011c;
         public static final int wheelView = 0x7f10013d;
+<<<<<<< HEAD
+>>>>>>> ljh
+=======
 >>>>>>> ljh
     }
     public static final class layout {
@@ -850,6 +1045,7 @@ public final class R {
         public static final int _textview = 0x7f04003a;
         public static final int _verification_code_dialog = 0x7f04003b;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int w_activity_add_card_first = 0x7f04017d;
         public static final int w_activity_add_card_second = 0x7f04017e;
         public static final int w_activity_my_rp = 0x7f04017f;
@@ -893,6 +1089,29 @@ public final class R {
         public static final int w_layout_titlebar = 0x7f040190;
         public static final int w_textview = 0x7f040191;
         public static final int w_title_bar = 0x7f040192;
+>>>>>>> ljh
+=======
+        public static final int w_activity_add_card_first = 0x7f040180;
+        public static final int w_activity_add_card_second = 0x7f040181;
+        public static final int w_activity_my_rp = 0x7f040182;
+        public static final int w_activity_my_wallet = 0x7f040183;
+        public static final int w_activity_pwd_check = 0x7f040184;
+        public static final int w_activity_recharge = 0x7f040185;
+        public static final int w_activity_secure_setting = 0x7f040186;
+        public static final int w_activity_select_sub_bank = 0x7f040187;
+        public static final int w_activity_set_pay_pwd = 0x7f040188;
+        public static final int w_activity_support_bank_card = 0x7f040189;
+        public static final int w_activity_trade_detail = 0x7f04018a;
+        public static final int w_activity_trade_history = 0x7f04018b;
+        public static final int w_activity_update_pwd = 0x7f04018c;
+        public static final int w_dialog_progress = 0x7f04018d;
+        public static final int w_divider = 0x7f04018e;
+        public static final int w_gridpasswordview = 0x7f04018f;
+        public static final int w_layout_line = 0x7f040190;
+        public static final int w_layout_line_959595 = 0x7f040191;
+        public static final int w_layout_titlebar = 0x7f040192;
+        public static final int w_textview = 0x7f040193;
+        public static final int w_title_bar = 0x7f040194;
 >>>>>>> ljh
     }
     public static final class raw {
@@ -1039,13 +1258,21 @@ public final class R {
         public static final int text_white_28 = 0x7f0c01ca;
     }
     public static final class styleable {
+<<<<<<< HEAD
         public static final int[] ActionBarView = { 0x7f010072, 0x7f010073, 0x7f010074, 0x7f010075 };
+=======
+        public static final int[] ActionBarView = { 0x7f010046, 0x7f010047, 0x7f010048, 0x7f010049 };
+>>>>>>> ljh
         public static final int ActionBarView_bankground = 1;
         public static final int ActionBarView_content = 0;
         public static final int ActionBarView_isBackFinish = 2;
         public static final int ActionBarView_leftIcon = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] FloatingLabelTextView = { 0x7f010150, 0x7f010151, 0x7f010152, 0x7f010153, 0x7f010154 };
+=======
+        public static final int[] FloatingLabelTextView = { 0x7f010144, 0x7f010145, 0x7f010146, 0x7f010147, 0x7f010148 };
+>>>>>>> ljh
 =======
         public static final int[] FloatingLabelTextView = { 0x7f010144, 0x7f010145, 0x7f010146, 0x7f010147, 0x7f010148 };
 >>>>>>> ljh
@@ -1055,7 +1282,11 @@ public final class R {
         public static final int FloatingLabelTextView_validationMessage = 0;
         public static final int FloatingLabelTextView_validatorType = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] Ry_CircleImageView = { 0x7f010191, 0x7f010192, 0x7f010193, 0x7f010194 };
+=======
+        public static final int[] Ry_CircleImageView = { 0x7f010185, 0x7f010186, 0x7f010187, 0x7f010188 };
+>>>>>>> ljh
 =======
         public static final int[] Ry_CircleImageView = { 0x7f010185, 0x7f010186, 0x7f010187, 0x7f010188 };
 >>>>>>> ljh
@@ -1064,7 +1295,11 @@ public final class R {
         public static final int Ry_CircleImageView_ry_civ_border_width = 0;
         public static final int Ry_CircleImageView_ry_civ_fill_color = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] W_CircleImageView = { 0x7f010200, 0x7f010201, 0x7f010202, 0x7f010203 };
+=======
+        public static final int[] W_CircleImageView = { 0x7f0101f4, 0x7f0101f5, 0x7f0101f6, 0x7f0101f7 };
+>>>>>>> ljh
 =======
         public static final int[] W_CircleImageView = { 0x7f0101f4, 0x7f0101f5, 0x7f0101f6, 0x7f0101f7 };
 >>>>>>> ljh
@@ -1073,7 +1308,11 @@ public final class R {
         public static final int W_CircleImageView_w_civ_border_width = 0;
         public static final int W_CircleImageView_w_civ_fill_color = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] W_FloatingLabelTextView = { 0x7f010204, 0x7f010205, 0x7f010206, 0x7f010207, 0x7f010208 };
+=======
+        public static final int[] W_FloatingLabelTextView = { 0x7f0101f8, 0x7f0101f9, 0x7f0101fa, 0x7f0101fb, 0x7f0101fc };
+>>>>>>> ljh
 =======
         public static final int[] W_FloatingLabelTextView = { 0x7f0101f8, 0x7f0101f9, 0x7f0101fa, 0x7f0101fb, 0x7f0101fc };
 >>>>>>> ljh
@@ -1083,7 +1322,11 @@ public final class R {
         public static final int W_FloatingLabelTextView_w_validationMessage = 0;
         public static final int W_FloatingLabelTextView_w_validatorType = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] W_GridPasswordView = { 0x7f010209, 0x7f01020a, 0x7f01020b, 0x7f01020c, 0x7f01020d, 0x7f01020e, 0x7f01020f, 0x7f010210 };
+=======
+        public static final int[] W_GridPasswordView = { 0x7f0101fd, 0x7f0101fe, 0x7f0101ff, 0x7f010200, 0x7f010201, 0x7f010202, 0x7f010203, 0x7f010204 };
+>>>>>>> ljh
 =======
         public static final int[] W_GridPasswordView = { 0x7f0101fd, 0x7f0101fe, 0x7f0101ff, 0x7f010200, 0x7f010201, 0x7f010202, 0x7f010203, 0x7f010204 };
 >>>>>>> ljh
@@ -1096,17 +1339,23 @@ public final class R {
         public static final int W_GridPasswordView_w_gpvTextColor = 0;
         public static final int W_GridPasswordView_w_gpvTextSize = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int[] W_TitleBar = { 0x7f010211, 0x7f010212, 0x7f010213 };
         public static final int W_TitleBar_w_backgroud = 0;
         public static final int W_TitleBar_w_title_color = 2;
         public static final int W_TitleBar_w_title_size = 1;
         public static final int[] gridPasswordView = { 0x7f010228, 0x7f010229, 0x7f01022a, 0x7f01022b, 0x7f01022c, 0x7f01022d, 0x7f01022e, 0x7f01022f };
 =======
+=======
+>>>>>>> ljh
         public static final int[] W_TitleBar = { 0x7f010205, 0x7f010206, 0x7f010207 };
         public static final int W_TitleBar_w_backgroud = 0;
         public static final int W_TitleBar_w_title_color = 2;
         public static final int W_TitleBar_w_title_size = 1;
         public static final int[] gridPasswordView = { 0x7f01021c, 0x7f01021d, 0x7f01021e, 0x7f01021f, 0x7f010220, 0x7f010221, 0x7f010222, 0x7f010223 };
+<<<<<<< HEAD
+>>>>>>> ljh
+=======
 >>>>>>> ljh
         public static final int gridPasswordView_gpvGridColor = 3;
         public static final int gridPasswordView_gpvLineColor = 2;
@@ -1117,6 +1366,9 @@ public final class R {
         public static final int gridPasswordView_gpvTextColor = 0;
         public static final int gridPasswordView_gpvTextSize = 1;
     }
+<<<<<<< HEAD
+=======
+>>>>>>> ljh
 =======
 >>>>>>> ljh
 }

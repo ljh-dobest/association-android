@@ -12,20 +12,20 @@
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\_bg_white_round.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shape_normal_round_btn_bg.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\shape_normal_round_btn_bg.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\_bg_red_click_round.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\_bg_red_click_round.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shape_click_round_btn_bg.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\shape_click_round_btn_bg.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shape_normal_round_btn_bg.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\shape_normal_round_btn_bg.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\selector_hongbao.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\selector_hongbao.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shape_click_round_btn_bg.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\debug\\res\\drawable\\shape_click_round_btn_bg.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\round_spinner_fade.xml",

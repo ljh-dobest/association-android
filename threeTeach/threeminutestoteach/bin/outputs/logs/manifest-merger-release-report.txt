@@ -1,0 +1,206 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:2:1-53:12
+	package
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:6:5-81
+MERGED from [threeTeach:SmallVideoLib:unspecified] E:\project\threeTeach\SmallVideoLib\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:7:5-80
+MERGED from [threeTeach:SmallVideoLib:unspecified] E:\project\threeTeach\SmallVideoLib\bin\intermediates\bundles\default\AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.INTERNET
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.CAMERA
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:9:5-65
+MERGED from [threeTeach:SmallVideoLib:unspecified] E:\project\threeTeach\SmallVideoLib\bin\intermediates\bundles\default\AndroidManifest.xml:13:5-65
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:9:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:10:5-71
+MERGED from [threeTeach:SmallVideoLib:unspecified] E:\project\threeTeach\SmallVideoLib\bin\intermediates\bundles\default\AndroidManifest.xml:14:5-71
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:10:22-68
+application
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:12:5-51:19
+MERGED from [threeTeach:mylibrary:unspecified] E:\project\threeTeach\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:11:5-17:19
+MERGED from [com.android.support:design:25.0.0] C:\Users\Min\.android\build-cache\47521d297dfc3012e3b73d533b1c22f4990baa64\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.0.0] C:\Users\Min\.android\build-cache\978e29cf5a5a3d78103c635c2c1757cc56d73508\output\AndroidManifest.xml:22:5-20
+MERGED from [com.zhy:mpermission-api:1.0.0] C:\Users\Min\.android\build-cache\e71087dc83f51525454d1d132346711d4abbc3f0\output\AndroidManifest.xml:11:5-14:19
+MERGED from [com.shuyu:GSYVideoPlayer:1.6.5] C:\Users\Min\.android\build-cache\d97ac129f86cdf739b3aa0a28e64d8a51fade171\output\AndroidManifest.xml:11:5-15:19
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.7.9] C:\Users\Min\.android\build-cache\1399af8d2200b16c5ac8481cd1b8f3a257c945db\output\AndroidManifest.xml:9:5-13:19
+MERGED from [com.andkulikov:transitionseverywhere:1.7.0] C:\Users\Min\.android\build-cache\aa4a74c11ce0e9bf2b1e34635938e49d092a1f2f\output\AndroidManifest.xml:12:5-20
+MERGED from [com.danikula:videocache:2.6.4] C:\Users\Min\.android\build-cache\e7a05fdd91826965fc585d6d93094a23b5b959d8\output\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha8] C:\Users\Min\.android\build-cache\8b2d25b9a406a2f7cb51bc48c9f860e08cfcedb2\output\AndroidManifest.xml:9:5-20
+MERGED from [com.wang.avi:library:1.0.0] C:\Users\Min\.android\build-cache\13ba112929a128e2883e54a5509c02f2e8086999\output\AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Min\.android\build-cache\37e2d244699941d1fa32075a2346b9107c582029\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Min\.android\build-cache\418c029888643700ff61e0a8a5d35272320223a2\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Min\.android\build-cache\380cfe42a839604bcca8b460fcc08cfb1b93b840\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Min\.android\build-cache\bfc570b799ae8e70fef7c99adbc8e374189a5b67\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Min\.android\build-cache\19a24de85aaa8dc63382ac2fec7deef5f2602ac1\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Min\.android\build-cache\1606870e86d622b58abfa05046a8e1889ebd65a7\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Min\.android\build-cache\ef4777f4cf8e635440cc548e6b20a4a80fc5584c\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Min\.android\build-cache\656629c90dcf3b7f7f562822aca013339c2f958f\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Min\.android\build-cache\b533904f2366d533a63af6bb25e4b74abbf4aed1\output\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:16:9-41
+	android:supportsRtl
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:18:9-35
+	android:roundIcon
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:17:9-54
+	android:allowBackup
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:14:9-35
+	android:icon
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:15:9-40
+	android:theme
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:19:9-40
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:13:9-38
+activity#com.min.threeminutestoteach.MainActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:20:9-26:20
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:20:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:24:27-74
+activity#com.min.threeminutestoteach.ui.activity.SendTeacheContentActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:27:9-29:70
+	android:windowSoftInputMode
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:29:13-67
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:28:13-66
+activity#cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:30:9-33:52
+	android:screenOrientation
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:33:13-49
+	android:exported
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:32:13-36
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:31:13-81
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:34:9-36:52
+	android:screenOrientation
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:36:13-49
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:35:13-60
+activity#com.min.threeminutestoteach.ui.activity.VedioActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:37:9-39:77
+	android:configChanges
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:39:13-74
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:38:13-54
+activity#mabeijianxi.camera.MediaRecorderActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:40:9-77
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:40:19-74
+activity#com.min.threeminutestoteach.ui.activity.WhoCanSeeActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:41:9-67
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:41:19-64
+activity#com.min.threeminutestoteach.ui.activity.MineMessageActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:42:9-69
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:42:19-66
+activity#com.min.threeminutestoteach.ui.activity.DiscussionActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:43:9-68
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:43:19-65
+activity#com.min.threeminutestoteach.ui.activity.DetailPlayer
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:44:9-47:52
+	android:screenOrientation
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:47:13-49
+	android:configChanges
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:46:13-74
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:45:13-53
+activity#com.min.threeminutestoteach.ui.activity.DownLoadControlActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:48:9-73
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:48:19-70
+activity#com.min.threeminutestoteach.ui.activity.MineDownLoadActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:49:9-70
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:49:19-67
+activity#com.min.threeminutestoteach.ui.activity.MessageActivity
+ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:50:9-74
+	android:name
+		ADDED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml:50:19-62
+uses-sdk
+INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [threeTeach:mylibrary:unspecified] E:\project\threeTeach\mylibrary\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [threeTeach:SmallVideoLib:unspecified] E:\project\threeTeach\SmallVideoLib\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.0.0] C:\Users\Min\.android\build-cache\47521d297dfc3012e3b73d533b1c22f4990baa64\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.0.0] C:\Users\Min\.android\build-cache\978e29cf5a5a3d78103c635c2c1757cc56d73508\output\AndroidManifest.xml:20:5-44
+MERGED from [com.huxq17.xrefreshview:xrefreshview:3.6.2] C:\Users\Min\.android\build-cache\e939f501a7b923b624b3253c46e7e08781842751\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\Min\.android\build-cache\15d3a68eee3e9799d0107e172d312253c8afc5e6\output\AndroidManifest.xml:5:5-43
+MERGED from [cn.finalteam.rxgalleryfinal:library:1.0.7] C:\Users\Min\.android\build-cache\df32717a4edb9dc633553cfa75ba22489dbe7f2c\output\AndroidManifest.xml:8:5-10:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\Min\.android\build-cache\ea26bf1741e715e1a0170ad1be76d7ec24d2ab59\output\AndroidManifest.xml:19:5-43
+MERGED from [com.yalantis:ucrop:2.2.0] C:\Users\Min\.android\build-cache\87ed5221ce13f7feaaa66d83acb9fe4798eb40c4\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\Min\.android\build-cache\34ba2dfa0a0f1a0ccda70609f417f2338ebcf69d\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.zhy:mpermission-api:1.0.0] C:\Users\Min\.android\build-cache\e71087dc83f51525454d1d132346711d4abbc3f0\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.shuyu:GSYVideoPlayer:1.6.5] C:\Users\Min\.android\build-cache\d97ac129f86cdf739b3aa0a28e64d8a51fade171\output\AndroidManifest.xml:7:5-9:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-exo:0.7.9] C:\Users\Min\.android\build-cache\1399af8d2200b16c5ac8481cd1b8f3a257c945db\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.exoplayer:exoplayer:r1.5.11] C:\Users\Min\.android\build-cache\d517fd69d435bb1589733ed02e0ce64b786d2c14\output\AndroidManifest.xml:24:5-26:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.7.9] C:\Users\Min\.android\build-cache\fb7a8eb8093a3108b30ef9fab26308ca1c5688fc\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.andkulikov:transitionseverywhere:1.7.0] C:\Users\Min\.android\build-cache\aa4a74c11ce0e9bf2b1e34635938e49d092a1f2f\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.danikula:videocache:2.6.4] C:\Users\Min\.android\build-cache\e7a05fdd91826965fc585d6d93094a23b5b959d8\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.yanzhenjie:recyclerview-swipe:1.0.4] C:\Users\Min\.android\build-cache\3f062649d066f3158055f4eccd89f78f9563695a\output\AndroidManifest.xml:21:5-23:41
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Min\.android\build-cache\b2ee90b8d27fb0276abe61f061cafe77fe07a3c8\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.0-alpha8] C:\Users\Min\.android\build-cache\8b2d25b9a406a2f7cb51bc48c9f860e08cfcedb2\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.wang.avi:library:1.0.0] C:\Users\Min\.android\build-cache\13ba112929a128e2883e54a5509c02f2e8086999\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Min\.android\build-cache\37e2d244699941d1fa32075a2346b9107c582029\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Min\.android\build-cache\418c029888643700ff61e0a8a5d35272320223a2\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Min\.android\build-cache\380cfe42a839604bcca8b460fcc08cfb1b93b840\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Min\.android\build-cache\bfc570b799ae8e70fef7c99adbc8e374189a5b67\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Min\.android\build-cache\19a24de85aaa8dc63382ac2fec7deef5f2602ac1\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Min\.android\build-cache\1606870e86d622b58abfa05046a8e1889ebd65a7\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Min\.android\build-cache\ef4777f4cf8e635440cc548e6b20a4a80fc5584c\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Min\.android\build-cache\656629c90dcf3b7f7f562822aca013339c2f958f\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Min\.android\build-cache\b533904f2366d533a63af6bb25e4b74abbf4aed1\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.0.0] C:\Users\Min\.android\build-cache\47521d297dfc3012e3b73d533b1c22f4990baa64\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+		INJECTED from E:\project\threeTeach\threeminutestoteach\src\main\AndroidManifest.xml
+service#cn.woblog.android.downloader.DownloadService
+ADDED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:12:9-16:19
+	android:name
+		ADDED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:12:18-77
+intent-filter#cn.woblog.android.downloader.DOWNLOAD_SERVICE
+ADDED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:13:13-15:29
+action#cn.woblog.android.downloader.DOWNLOAD_SERVICE
+ADDED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:14:17-88
+	android:name
+		ADDED from [cn.woblog.android:downloader:1.0.2-SNAPSHOT] E:\project\threeTeach\downloader\bin\intermediates\bundles\default\AndroidManifest.xml:14:25-85

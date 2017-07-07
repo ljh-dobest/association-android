@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\c255aaa2976bdebe47be0a0c30e0da7339f57846\\output\\res\\drawable-xxhdpi-v4\\gallery_ic_camera.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
@@ -28,12 +28,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\8738f64cd72bffacb0cc9931d10e74523fe6f1d3\\output\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\helpcenter\\bin\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png",

@@ -100,12 +100,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\color\\abc_hint_foreground_material_light.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\Min\\.android\\build-cache\\0afd8d6630e0944e751013337d8cc12b7f13c8ee\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\commonwealactives\\bin\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",

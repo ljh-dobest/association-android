@@ -16,12 +16,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\selector_item.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\popwindow_bg.9.png",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\popwindow_bg.9.png"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\main_mine_bg.xml",
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\main_mine_bg.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\popwindow_bg.9.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\popwindow_bg.9.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
@@ -198,16 +198,16 @@
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_ic_yes_selector.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\contribution_core.png",
-        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\contribution_core.png"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_group_ok_text_selector.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_group_ok_text_selector.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_bg_mentionlist_item.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_bg_mentionlist_item.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_group_ok_text_selector.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_group_ok_text_selector.xml"
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\contribution_core.png",
+        "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\contribution_core.png"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
@@ -235,12 +235,12 @@
 >>>>>>> ljh
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\_bg_red_click_round.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\_bg_red_click_round.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_an_voice_sent.xml",
         "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_an_voice_sent.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\_bg_red_click_round.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\_bg_red_click_round.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\smssdk_btn_enable.xml",
@@ -259,12 +259,12 @@
         "source": "C:\\Users\\Min\\.android\\build-cache\\e6b8360f971e6b0eff0a90e2ce9a8d4b3c5dd57f\\output\\res\\drawable\\smssdk_dialog_btn_back.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_emoji_grid_item_selector.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_emoji_grid_item_selector.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\open_rp_anim.xml",
         "source": "E:\\project\\xiangmu\\association-android\\RedPacket\\bin\\intermediates\\bundles\\default\\res\\drawable\\open_rp_anim.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_emoji_grid_item_selector.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_emoji_grid_item_selector.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\app_icon.png",
@@ -319,12 +319,12 @@
         "source": "E:\\project\\xiangmu\\association-android\\app\\src\\main\\res\\drawable\\edit_bg.xml"
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_plugin_toggle_selector.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_plugin_toggle_selector.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\37e2d244699941d1fa32075a2346b9107c582029\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_plugin_toggle_selector.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_plugin_toggle_selector.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\back_press.png",
@@ -356,12 +356,12 @@
 >>>>>>> ljh
     },
     {
-        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_corner_single_check_style.xml",
-        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_corner_single_check_style.xml"
-    },
-    {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\ic_expand_holo_light.xml",
         "source": "C:\\Users\\Min\\.android\\build-cache\\1f71fc1bbb4b911e226a1743bcea682449e9c132\\output\\res\\drawable\\ic_expand_holo_light.xml"
+    },
+    {
+        "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\rc_cs_corner_single_check_style.xml",
+        "source": "E:\\project\\xiangmu\\association-android\\IMKit\\bin\\intermediates\\bundles\\default\\res\\drawable\\rc_cs_corner_single_check_style.xml"
     },
     {
         "merged": "E:\\project\\xiangmu\\association-android\\app\\bin\\intermediates\\res\\merged\\debug\\drawable\\popwindow_green_bg.png",

@@ -1632,7 +1632,8 @@ int mipmap more 0x7f03000c
 int mipmap qiuzhu 0x7f03000d
 int mipmap recommed 0x7f03000e
 int mipmap tiwen 0x7f03000f
-int mipmap zhibo 0x7f030010
+int mipmap weather_more 0x7f030010
+int mipmap zhibo 0x7f030011
 int string QR_code 0x7f070015
 int string abc_action_bar_home_description 0x7f070000
 int string abc_action_bar_home_description_format 0x7f070001
