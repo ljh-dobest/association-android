@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50px"
-            android:text="fdsafewffsadfsafasfsdfsdf"
             android:textColor="@color/color_12"
             android:textSize="@dimen/font_34" />
 
@@ -87,7 +86,6 @@
                 android:layout_marginLeft="@dimen/border_10"
                 android:layout_weight="1"
                 android:padding="@dimen/border_10"
-                android:text="30分钟前"
                 android:textColor="@color/color_99"
                 android:textSize="@dimen/font_24" />
 

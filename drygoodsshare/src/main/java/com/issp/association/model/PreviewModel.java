@@ -57,7 +57,7 @@ public class PreviewModel {
                             break;
                     }
                 } catch (Exception e) {
-                    listener.showError("未知错误");
+                    listener.showError("系统解析服务器发生错误！");
                 }
 
             }

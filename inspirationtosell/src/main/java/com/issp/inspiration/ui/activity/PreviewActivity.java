@@ -16,7 +16,9 @@ import com.issp.inspiration.R;
 import com.issp.inspiration.base.view.BaseMvpActivity;
 import com.issp.inspiration.bean.DealBuyBean;
 import com.issp.inspiration.interfaces.IPreviewView;
+import com.issp.inspiration.network.HttpUtils;
 import com.issp.inspiration.presenters.PreviewPresenter;
+import com.issp.inspiration.utils.CircleTransform;
 import com.issp.inspiration.utils.DisplayUtils;
 import com.issp.inspiration.utils.T;
 import com.squareup.picasso.Picasso;
@@ -77,14 +79,17 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         bean = (DealBuyBean) getIntent().getSerializableExtra("bean");
         ltMainTitle.setText("预览");
         ltMainTitleRight.setText("发布");
-        tvDealBuyUserName.setText("");
+        tvDealBuyUserName.setText(bean.getNickname());
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy.MM.dd hh:mm");
         String date = sDateFormat.format(new java.util.Date());
         tvTime.setText(date);
         file = new File(bean.getImage());
+        tvTitle.setText(bean.getTitle());
         //Picasso.with(PreviewActivity.this).load(file).transform(new CircleTransform()).into(ivDealBuyIcon);
         Picasso.with(PreviewActivity.this).load(file).into(ivImage);
-
+        if (null != bean.getUserPortraitUrl())
+            Picasso.with(PreviewActivity.this).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
+                    .transform(new CircleTransform()).into(ivDealBuyIcon);
         wvContent.loadData(bean.getContent(), "text/html; charset=UTF-8", null);
         wvDealContent.loadData(bean.getDealContent(), "text/html; charset=UTF-8", null);
     }
@@ -105,13 +110,14 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         btn_comfirm_dialog_comfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pd=new ProgressDialog(PreviewActivity.this);
+                pd = new ProgressDialog(PreviewActivity.this);
                 pd.setTitle("提示");
                 pd.setMessage("正在添加灵感贩卖、、、");
                 pd.show();
                 Map<String, String> formData = new HashMap<String, String>(0);
-                formData.put("userId", bean.getId());
+                formData.put("userId", bean.getUserId());
                 formData.put("title", bean.getTitle());
+                formData.put("status", bean.getStatus() + "");
                 formData.put("content", bean.getContent());
                 formData.put("dealContent", bean.getDealContent());
                 formData.put("dealContribution", bean.getDealContribution() + "");
@@ -147,6 +153,8 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
 
     @Override
     public void showError(String errorString) {
+        if (null != pd)
+            pd.dismiss();
         T.showLong(PreviewActivity.this, errorString);
     }
 

@@ -85,6 +85,7 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
     PlatformRegisteredAdapter adapter;
 
     int joinUsersNumber;
+    private boolean expires;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -151,7 +152,7 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
         formData.put("userId", userId);
         formData.put("articleId",activesId);
         formData.put("type","6");
-        formData.put("status", bean.getStatus()==0?"1":"0");
+        formData.put("status", bean.getLikesStatus()==0?"1":"0");
         presenter.addUserPraise(formData);
     }
 
@@ -193,13 +194,18 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
             tvAddRegister.setBackgroundResource(R.color.aam_item_border);
             tvAddRegister.setText("已报名");
         }
+        if (data.getStatus()==0){
+            tvAddRegister.setBackgroundResource(R.color.aam_item_border);
+            tvAddRegister.setText("报名已截止");
+            expires=true;
+        }
         joinUsersNumber=data.getJoinUsersNumber();
         tvJoinUsersNumber.setText("已报名 （" + data.getJoinUsersNumber() + "）");
         if (null != data.getActivesImage()) {
             Picasso.with(PlatformParticularsActivity.this).load(HttpUtils.IMAGE_RUL + data.getActivesImage())
                     .into(ivPlatform);
         }
-        if (data.getStatus() == 1) {
+        if (data.getLikesStatus() == 1) {
             ivLike.setImageResource(R.mipmap.img_comments_have_thumb_up_btn);
         } else {
             ivLike.setImageResource(R.mipmap.img_like_btn_no);
@@ -218,14 +224,14 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
 
     @Override
     public void userPraise(String data) {
-        if (bean.getStatus() == 0) {
+        if (bean.getLikesStatus() == 0) {
             ivLike.setImageResource(R.mipmap.img_comments_have_thumb_up_btn);
             T.showLong(PlatformParticularsActivity.this,"点赞成功！");
-            bean.setStatus(1);
+            bean.setLikesStatus(1);
         } else {
             ivLike.setImageResource(R.mipmap.img_like_btn_no);
             T.showLong(PlatformParticularsActivity.this,"取消点赞！");
-            bean.setStatus(0);
+            bean.setLikesStatus(0);
         }
     }
 
@@ -252,6 +258,10 @@ public class PlatformParticularsActivity extends BaseMvpActivity<IPlatformPartic
 
                 break;
             case R.id.tv_add_register:
+                if (bean.getStatus()==0){
+                    T.showLong(PlatformParticularsActivity.this,"该活动已结束！");
+                    return;
+                }
                 if (bean.getJoinStatus()==0) {
                     TakePhotoPopWin();
                 }else {

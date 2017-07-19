@@ -33,7 +33,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 平台活动详情
+ * 公益活动详情
  * Created by T-BayMax on 2017/4/8.
  */
 
@@ -101,7 +101,7 @@ public class BenefitParticularsActivity extends BaseMvpActivity<IBenefitParticul
         Intent intent = getIntent();
         userId = intent.getStringExtra("userId");
         activesId = intent.getStringExtra("activesId");
-        App.checkVip = checkVip = Integer.parseInt(getIntent().getStringExtra("checkVip"));
+         checkVip = Integer.parseInt(intent.getStringExtra("checkVip"));
         // bean = (PlatformBean) getIntent().getSerializableExtra("bean");
         Map<String, String> formData = new HashMap<String, String>(0);
         formData.put("userId", userId);

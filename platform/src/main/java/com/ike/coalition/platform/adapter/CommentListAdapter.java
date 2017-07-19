@@ -11,6 +11,10 @@ import android.widget.TextView;
 import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
 import com.ike.coalition.platform.R;
 import com.ike.coalition.platform.bean.CommentsBean;
+import com.ike.coalition.platform.network.HttpUtils;
+import com.ike.coalition.platform.utils.CircleTransform;
+import com.ike.coalition.platform.utils.DataUtils;
+import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
 
@@ -37,16 +41,16 @@ public class CommentListAdapter extends BaseRecyclerAdapter<CommentListAdapter.C
 
     @Override
     public void onBindViewHolder(CommentListAdapterViewHolder holder, int position, boolean isItem) {
-       /* if (isItem){
-        ShareCommentBean bean = list.get(position);
-        Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserId().getUserPortraitUrl())
-                .into(holder.ivShareIcon);
-        holder.tvShareUserName.setText(bean.getUserId().getNickname());
-        holder.tvOperation.setText(bean.getContent());
-        holder.tvShareTitle.setText(bean.getShareId().getArcTitle());
-        holder.tvCommentTime.setText(bean.getCommentTime());
+        if (isItem) {
+            CommentsBean bean = list.get(position);
+            Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
+                    .transform(new CircleTransform()).into(holder.ivShareIcon);
+            holder.tvShareUserName.setText(bean.getNickname());
+            holder.tvOperation.setText("评论了你的");
+            holder.tvShareTitle.setText(bean.getContent());
+            String time = DataUtils.formateStringBirthday(bean.getCommentTime(), DataUtils.yyyyMMdd);
+            holder.tvCommentTime.setText(time);
         }
-*/
 
     }
 

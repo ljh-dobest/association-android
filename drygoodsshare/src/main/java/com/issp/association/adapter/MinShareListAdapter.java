@@ -14,6 +14,7 @@ import com.issp.association.R;
 import com.issp.association.bean.ShareBean;
 import com.issp.association.bean.UserBean;
 import com.issp.association.network.HttpUtils;
+import com.issp.association.utils.CircleTransform;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.attr.AutoAttr;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -54,7 +55,7 @@ public class MinShareListAdapter extends BaseRecyclerAdapter<MinShareListAdapter
             holder.ll_comment.setTag(bean);*/
             if (null != bean.getUserPortraitUrl()) {
                 Picasso.with(context).load(HttpUtils.IMAGE_RUL + bean.getUserPortraitUrl())
-                        .into(holder.ivShareIcon);
+                        .transform(new CircleTransform()).into(holder.ivShareIcon);
             }
             holder.tvShareUserName.setText(bean.getNickname());
             holder.tvShareContent.setText(bean.getSynopsis());

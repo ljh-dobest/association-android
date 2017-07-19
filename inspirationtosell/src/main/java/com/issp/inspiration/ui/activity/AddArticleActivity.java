@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -84,6 +85,10 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     AutoLinearLayout llAskInsert;
     @BindView(R.id.activity_ask)
     AutoRelativeLayout activityAsk;
+    @BindView(R.id.ll_open)
+    LinearLayout llOpen;
+    @BindView(R.id.tv_open)
+    TextView tvOpen;
     //屏幕高度
     private EditText et_ask_pop_insertgold;
     private int screenHeight = 0;
@@ -99,8 +104,10 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     File file;
     android.app.AlertDialog comfirmDialog;
     private ProgressDialog pd;
+    private android.app.AlertDialog mPopupWindow;
 
     private String userId;
+    private int status = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -151,6 +158,9 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
 
     @Override
     public void showError(String errorString) {
+
+        if (null != pd)
+            pd.dismiss();
         T.showShort(AddArticleActivity.this, errorString);
     }
 
@@ -161,9 +171,41 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         T.showShort(AddArticleActivity.this, "上传成功");
     }
 
+    void initPopupWindow() {
+        mPopupWindow = new android.app.AlertDialog.Builder(this).create();
+        mPopupWindow.show();
+        Window window = mPopupWindow.getWindow();
+        WindowManager.LayoutParams lp = mPopupWindow.getWindow().getAttributes();
+        lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 300);//定义宽度
+        lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 200);//定义高度
+        mPopupWindow.getWindow().setAttributes(lp);
+        window.setContentView(R.layout.popwindow_more);
+        TextView tv_information = (TextView) mPopupWindow.findViewById(R.id.tv_information);
+        TextView tv_my_share = (TextView) mPopupWindow.findViewById(R.id.tv_my_share);
+        tv_information.setText("公开");
+        tv_my_share.setText("VIP可见");
+        tv_information.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                status = 0;
+                tvOpen.setText("公开");
+                mPopupWindow.dismiss();
+            }
+        });
+        tv_my_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                status = 1;
+                tvOpen.setText("VIP可见");
+                mPopupWindow.dismiss();
+            }
+        });
+    }
     @Override
     public void publishAnArticleView(String data) {
-        pd.dismiss();
+        if (null != pd) {
+            pd.dismiss();
+        }
         T.showShort(AddArticleActivity.this, "灵感贩卖发表成功！");
         AddArticleActivity.this.finish();
     }
@@ -173,7 +215,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         return new AddArticlePresenter();
     }
 
-    @OnClick({R.id.ll_ask_back, R.id.tv_image, R.id.et_title, R.id.et_content, R.id.et_deal_content, R.id.iv_ask_camera,
+    @OnClick({R.id.ll_ask_back, R.id.tv_image, R.id.et_title, R.id.et_content, R.id.et_deal_content,R.id.ll_open, R.id.iv_ask_camera,
             R.id.iv_ask_picture, R.id.iv_ask_gold, R.id.tv_preview, R.id.tv_ask_release})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -222,6 +264,9 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                 break;
             case R.id.iv_ask_camera:
 
+                break;
+            case R.id.ll_open:
+                initPopupWindow();
                 break;
             case R.id.iv_ask_picture:
                 RxGalleryFinal
@@ -283,15 +328,15 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     }
 
     private void releaseArticle(boolean isRelease) {
-        String title = etTitle.getText().toString().trim();                //标题
-        String content = etContent.getHtml().trim();             //非交易内容
+        String title = etTitle.getText().toString();                //标题
+        String content = etContent.getHtml();             //非交易内容
         String dealContent = etDealContent.getHtml();         //交易内容
         String dealContribution = et_ask_pop_insertgold.getText().toString().trim();     //交易币
         if (title.equals("")) {
             T.showLong(AddArticleActivity.this, "标题不能为空！");
             return;
         }
-        if (content.equals("")) {
+        if (null != content && content.equals("")) {
             T.showLong(AddArticleActivity.this, "非交易内容不能为空！");
             return;
         }
@@ -304,13 +349,14 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             return;
         }
         if (isRelease) {
-            pd=new ProgressDialog(AddArticleActivity.this);
+            pd = new ProgressDialog(AddArticleActivity.this);
             pd.setTitle("提示");
             pd.setMessage("正在添加灵感贩卖、、、");
             pd.show();
             Map<String, String> formData = new HashMap<String, String>(0);
             formData.put("userId", userId);
             formData.put("title", title);
+            formData.put("status",status+"");
             formData.put("content", content);
             formData.put("dealContent", dealContent);
             formData.put("dealContribution", dealContribution);
@@ -322,6 +368,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
             bean.setContent(content);
             bean.setDealContent(dealContent);
             bean.setImage(path);
+            bean.setStatus(status);
             if (!dealContribution.equals("")) {
                 bean.setDealContribution(Integer.parseInt(dealContribution));
             } else {

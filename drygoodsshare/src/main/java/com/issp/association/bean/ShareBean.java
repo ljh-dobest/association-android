@@ -23,7 +23,7 @@ public class ShareBean implements Serializable{
     private int commentNumber;   //评论数量
     private int collectionNumber; //收藏数量
     private int status;        //0所有人显示  1只能vip显示
-    private String download;       //上传文件
+    private String file;       //上传文件
     private int isDownload;   //0所以人下载 1vip下载
 
     public String getUserId() {
@@ -138,12 +138,12 @@ public class ShareBean implements Serializable{
         this.status = status;
     }
 
-    public String getDownload() {
-        return download;
+    public String getFile() {
+        return file;
     }
 
-    public void setDownload(String download) {
-        this.download = download;
+    public void setFile(String file) {
+        this.file = file;
     }
 
     public int getIsDownload() {

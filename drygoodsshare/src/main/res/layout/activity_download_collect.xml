@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_custom_toolbar" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/border_10"
+        android:background="@color/aam_item_border"/>
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:id="@+id/rv_download"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

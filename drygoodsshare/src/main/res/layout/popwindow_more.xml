@@ -29,4 +29,19 @@
         android:gravity="center"
         android:textSize="@dimen/font_32"
         android:text="@string/str_my_share"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/border_20"
+        android:layout_marginRight="@dimen/border_20"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/tv_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/border_20"
+        android:gravity="center"
+        android:textSize="@dimen/font_32"
+        android:text="@string/str_download"/>
 </LinearLayout>

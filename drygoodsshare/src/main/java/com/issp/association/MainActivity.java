@@ -3,6 +3,7 @@ package com.issp.association;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +28,7 @@ import com.issp.association.network.HttpUtils;
 import com.issp.association.presenters.ShareInfoPresenter;
 import com.issp.association.ui.activity.AddArticleActivity;
 import com.issp.association.ui.activity.CommentMessageActivity;
+import com.issp.association.ui.activity.DownloadCollectActivity;
 import com.issp.association.ui.activity.FeedForCommentActivity;
 import com.issp.association.ui.activity.MinShareActivity;
 import com.issp.association.ui.activity.ReadShareActivity;
@@ -80,7 +82,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
 
     private String userId;
-    private int checkVip=0;
+    private int checkVip = 0;
 
     private int limit = 20;
     private int page = 1;
@@ -92,6 +94,9 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
         ButterKnife.bind(this);
         initView();
     }
@@ -100,7 +105,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
         //   PreferenceService ps = new PreferenceService(MainActivity.this);
         userId = /*getIntent().getStringExtra("loginid");//*/"13824692192";
 
-        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"));//*/1;
+        App.checkVip = checkVip = /*Integer.parseInt(getIntent().getStringExtra("checkVip"));//*/1;
         Log.e("userId", userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);
@@ -155,12 +160,19 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
                 initData();
             }
         });
+        customerFooter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page++;
+                initData();
+            }
+        });
         adapter.setOnItemClickListener(new SimpleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
                 intent.putExtra("userId", userId);
-                intent.putExtra("checkVip",checkVip);
+                intent.putExtra("checkVip", checkVip);
                 intent.putExtra("activesId", bean.getId());
                 startActivity(intent);
             }
@@ -183,7 +195,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             public void onCommentClick(View view, ShareBean bean) {
                 Intent intent = new Intent(MainActivity.this, FeedForCommentActivity.class);
                 intent.putExtra("userId", userId);
-                intent.putExtra("checkVip",checkVip);
+                intent.putExtra("checkVip", checkVip);
                 intent.putExtra("bean", bean);
                 startActivity(intent);
             }
@@ -221,7 +233,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
         List<String> imgList = new ArrayList<String>(0);
         for (ImageUrlBean url : imageUrlBeanList) {
-            imgList.add(HttpUtils.IMAGE_RUL+url.getImages());
+            imgList.add(HttpUtils.IMAGE_RUL + url.getImages());
         }
         //设置图片加载器
         homepage_banner.setImageLoader(new BannerImageLoader());
@@ -236,7 +248,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             public void OnBannerClick(int position) {
                 Intent intent = new Intent(MainActivity.this, ReadShareActivity.class);
                 intent.putExtra("userId", userId);
-                intent.putExtra("checkVip",checkVip);
+                intent.putExtra("checkVip", checkVip);
                 intent.putExtra("activesId", imageUrlBeanList.get(position).getArticleId());
                 startActivity(intent);
             }
@@ -266,6 +278,7 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
             mPopupWindow.showAsDropDown(lt_main_title_right, -width, 0);
             TextView tv_information = (TextView) popwindow_more.findViewById(R.id.tv_information);
             TextView tv_my_share = (TextView) popwindow_more.findViewById(R.id.tv_my_share);
+            TextView tv_download = (TextView) popwindow_more.findViewById(R.id.tv_download);
 
             tv_information.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -280,6 +293,15 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MinShareActivity.class);
+                    intent.putExtra("userId", userId);
+                    startActivity(intent);
+                    mPopupWindow.dismiss();
+                }
+            });
+            tv_download.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, DownloadCollectActivity.class);
                     intent.putExtra("userId", userId);
                     startActivity(intent);
                     mPopupWindow.dismiss();
