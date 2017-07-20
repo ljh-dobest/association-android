@@ -126,6 +126,7 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         Intent intent = getIntent();
         userId = intent.getStringExtra("userId");
         etDealContent.setEditorHeight(300);
+        etContent.setEditorHeight(200);
         activityAsk.addOnLayoutChangeListener(this);
         etContent.setPlaceholder("请输入简介（40字~140字以内）");
         etDealContent.setPlaceholder("输入正文");
@@ -211,13 +212,16 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
                 }
                 break;
             case R.id.et_title:
+                llAskInsert.setVisibility(View.INVISIBLE);
                 break;
             case R.id.et_content:
+                llAskInsert.setVisibility(View.INVISIBLE);
                 break;
             case R.id.ll_open:
                 initPopupWindow();
                 break;
             case R.id.et_deal_content:
+                llAskInsert.setVisibility(View.VISIBLE);
                 break;
             case R.id.iv_ask_camera:
 
@@ -257,8 +261,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         mPopupWindow.show();
         Window window = mPopupWindow.getWindow();
         WindowManager.LayoutParams lp = mPopupWindow.getWindow().getAttributes();
-        lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 300);//定义宽度
-        lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 200);//定义高度
+        lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 280);//定义宽度
+        lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 180);//定义高度
         mPopupWindow.getWindow().setAttributes(lp);
         window.setContentView(R.layout.popwindow_more);
         TextView tv_information = (TextView) mPopupWindow.findViewById(R.id.tv_information);
@@ -288,8 +292,8 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
         comfirmDialog.show();
         Window window = comfirmDialog.getWindow();
         WindowManager.LayoutParams lp = comfirmDialog.getWindow().getAttributes();
-        lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 300);//定义宽度
-        lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 200);//定义高度
+        lp.width = DisplayUtils.dp2px(AddArticleActivity.this, 280);//定义宽度
+        lp.height = DisplayUtils.dp2px(AddArticleActivity.this, 180);//定义高度
         comfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);
@@ -366,10 +370,13 @@ public class AddArticleActivity extends BaseMvpActivity<IAddArticleView, AddArti
     @Override
     public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
 
-        if (oldBottom != 0 && bottom != 0 && (oldBottom - bottom > keyHeight)) {
-            llAskInsert.setVisibility(View.VISIBLE);
-        } else if (oldBottom != 0 && bottom != 0 && (bottom - oldBottom > keyHeight)) {
-            llAskInsert.setVisibility(View.INVISIBLE);
+        View view=activityAsk.findFocus();
+        if (view!=null&&view.getId()==R.id.et_deal_content) {
+            if (oldBottom != 0 && bottom != 0 && (oldBottom - bottom > keyHeight)) {
+                llAskInsert.setVisibility(View.VISIBLE);
+            } else if (oldBottom != 0 && bottom != 0 && (bottom - oldBottom > keyHeight)) {
+                llAskInsert.setVisibility(View.INVISIBLE);
+            }
         }
     }
 

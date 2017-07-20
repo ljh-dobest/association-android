@@ -165,14 +165,16 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         if (checkInputInfo()) {
             isRefresh = false;
             Map<String, String> formData = new HashMap<String, String>(0);
+            String file="/articleComment";
             if (isComment) {
                 formData.put("commentId", commentsBean.getId());
+                file="/replyArticleComment";
             }
             formData.put("articleId", bean.getId());
             formData.put("userId", userId);
             formData.put("type", "3");
             formData.put("content", editText.getText().toString().trim());
-            presenter.addFeedCommentInfo(formData);
+            presenter.addFeedCommentInfo(file,formData);
         }
     }
 
@@ -198,7 +200,7 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
                 formData.put("status", bean.getLikesStatus() == 0 ? "1" : "0");
                 presenter.addCommentLikes(formData);
                 FeedForCommentActivity.this.viewHolder = viewHolder;
-                FeedForCommentActivity.this.commentsBean = bean;
+                commentsBean = bean;
             }
         });
     }

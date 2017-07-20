@@ -26,8 +26,8 @@ public class FeedForCommentPresenter extends BasePersenter<IFeedForCommentListVi
     public void FeedCommentInfo( Map<String, String> formData ) {
         recommendInfoMoudle.getFeedCommentInfo(formData, this);
     }
-    public void addFeedCommentInfo( Map<String, String> formData ) {
-        recommendInfoMoudle.addCommentInfo(formData, this);
+    public void addFeedCommentInfo(String file, Map<String, String> formData ) {
+        recommendInfoMoudle.addCommentInfo(file,formData, this);
 
     }
     public void addCommentLikes( Map<String, String> formData){

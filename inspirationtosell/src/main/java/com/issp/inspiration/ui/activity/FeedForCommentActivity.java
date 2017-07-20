@@ -164,14 +164,16 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         if (checkInputInfo()) {
             isRefresh = false;
             Map<String, String> formData = new HashMap<String, String>(0);
-            if (isComment){
-                formData.put("commentId",commentsBean.getId());
+            String file="/articleComment";
+            if (isComment) {
+                formData.put("commentId", commentsBean.getId());
+                file="/replyArticleComment";
             }
             formData.put("articleId", bean.getId());
             formData.put("userId", userId);
             formData.put("type","5");
             formData.put("content", editText.getText().toString().trim());
-            presenter.addFeedCommentInfo(formData);
+            presenter.addFeedCommentInfo(file,formData);
         }
     }
     FeedForCommentListAdapter.AdapterViewHolder viewHolder;
@@ -180,10 +182,10 @@ public class FeedForCommentActivity extends BaseMvpActivity<IFeedForCommentListV
         adapter.setOnItemClickListener(new FeedForCommentListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(FeedForCommentListAdapter.AdapterViewHolder viewHolder, CommentsBean data) {
-                isComment=true;
+               /* isComment=true;
                 editText.requestFocus();
                 tvSubmitComment.setVisibility(View.VISIBLE);
-                editText.setHint("回复"+data.getNickname());
+                editText.setHint("回复"+data.getNickname());*/
             }
 
             @Override

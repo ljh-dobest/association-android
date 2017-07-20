@@ -138,7 +138,7 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
 
         userId = intent.getStringExtra("userId");
 
-        App.checkVip = checkVip = /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
+        App.checkVip = checkVip = Integer.parseInt(getIntent().getStringExtra("checkVip"));//1;
 
         activesId = intent.getStringExtra("activesId");
         Map<String, String> formData = new HashMap<String, String>(0);
@@ -165,6 +165,9 @@ public class ReadShareActivity extends BaseMvpActivity<IReadShareView, ReadShare
 
     @OnClick({R.id.lt_main_title_left, R.id.ll_share, R.id.ll_like, R.id.ll_comment, R.id.ll_collect, R.id.ll_download})
     public void onViewClicked(View view) {
+        if (null!=bean){
+            return;
+        }
         switch (view.getId()) {
             case R.id.lt_main_title_left:
                 ReadShareActivity.this.finish();

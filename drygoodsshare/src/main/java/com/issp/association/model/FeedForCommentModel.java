@@ -71,9 +71,9 @@ public class FeedForCommentModel {
      * @param formData
      * @param listener
      */
-    public void addCommentInfo(Map<String, String> formData, final OnFeedForCommentListListener listener) {
+    public void addCommentInfo(String file,Map<String, String> formData, final OnFeedForCommentListListener listener) {
 
-        HttpUtils.sendGsonPostRequest("/articleComment", formData, new StringCallback() {
+        HttpUtils.sendGsonPostRequest(file, formData, new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
                 listener.showError("系统异常！");

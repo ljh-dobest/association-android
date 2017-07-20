@@ -122,7 +122,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="@dimen/border_228"
-                        android:padding="@dimen/border_30"
                         android:textSize="@dimen/font_28" />
 
                     <View
@@ -135,8 +134,7 @@
                         android:id="@+id/et_deal_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="@dimen/border_460"
-                        android:padding="@dimen/border_30"
+                        android:minHeight="@dimen/border_200"
                         android:textSize="@dimen/font_28" />
 
                 <View

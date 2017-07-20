@@ -96,8 +96,8 @@ public class PreviewActivity extends BaseMvpActivity<IPreviewView, PreviewPresen
         comfirmDialog.show();
         Window window = comfirmDialog.getWindow();
         WindowManager.LayoutParams lp = comfirmDialog.getWindow().getAttributes();
-        lp.width = DisplayUtils.dp2px(PreviewActivity.this, 300);//定义宽度
-        lp.height = DisplayUtils.dp2px(PreviewActivity.this, 200);//定义高度
+        lp.width = DisplayUtils.dp2px(PreviewActivity.this, 280);//定义宽度
+        lp.height = DisplayUtils.dp2px(PreviewActivity.this, 180);//定义高度
         comfirmDialog.getWindow().setAttributes(lp);
         window.setContentView(R.layout.comfirm_dialog_layout);
         TextView tv_reminder = (TextView) window.findViewById(R.id.tv_reminder);

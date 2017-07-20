@@ -103,9 +103,9 @@ public class MainActivity extends BaseMvpActivity<IShareListView, ShareInfoPrese
 
     private void initView() {
         //   PreferenceService ps = new PreferenceService(MainActivity.this);
-        userId = /*getIntent().getStringExtra("loginid");//*/"13824692192";
+        userId = getIntent().getStringExtra("loginid");//"13824692192";
 
-        App.checkVip = checkVip = /*Integer.parseInt(getIntent().getStringExtra("checkVip"));//*/1;
+        App.checkVip = checkVip = Integer.parseInt(getIntent().getStringExtra("checkVip"));//1;
         Log.e("userId", userId);
         lt_main_title.setText("干货分享");
         xRefreshView.setPullLoadEnable(true);

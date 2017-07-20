@@ -104,7 +104,7 @@ public class MainActivity extends BaseMvpActivity<IPlatformListView, PlatformPre
         // PreferenceService ps=new PreferenceService(MainActivity.this);
         userId = "18878481054";//getIntent().getStringExtra("loginid");
 
-        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
+        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"));//*/1;
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
 

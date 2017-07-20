@@ -99,9 +99,9 @@ public class MainActivity extends BaseMvpActivity<IBenefitListView, BenefitPrese
 
     private void initView() {
         //  PreferenceService ps = new PreferenceService(MainActivity.this);
-        //userId = getIntent().getStringExtra("loginid");
-        App.checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
-        userId = "110";
+        userId = getIntent().getStringExtra("loginid");//"13824692192";
+        App.checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));//1;
+        //userId = "110";
         xrefreshview.setPullLoadEnable(true);
         recyclerViewTestRv.setHasFixedSize(true);
 

@@ -98,9 +98,9 @@ public class MainActivity extends BaseMvpActivity<IDealBuyListView, DealBuyInfoP
 
     private void initView() {
         //PreferenceService ps=new PreferenceService(MainActivity.this);
-        userId = /*getIntent().getStringExtra("loginid");//*/"110";
+        userId = getIntent().getStringExtra("loginid");//"13824692192";
 
-        App.checkVip=checkVip= /*Integer.parseInt(getIntent().getStringExtra("checkVip"))*/1;
+        App.checkVip=checkVip= Integer.parseInt(getIntent().getStringExtra("checkVip"));//1;
         lt_main_title.setText("灵感贩卖");
         xRefreshView.setPullLoadEnable(true);
         recyclerView.setHasFixedSize(true);
